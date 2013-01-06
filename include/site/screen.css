@@ -214,3 +214,10 @@ dl dd {
     margin-left: 0;
     padding: 2px 0 0 146px;
 }
+
+.meta-social {
+    border-top: #F0F0F0 solid 1px;
+    margin-left: -6px;
+    margin-right: -6px;
+    padding: 32px 6px 0;
+}
