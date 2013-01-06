@@ -74,7 +74,7 @@ $ git reset --hard HEAD
 
 ### Summary
 
-With `gitcrypt` I can work with my repository and enjoy extra security on top of the redundancy and version control that
+With `gitcrypt` I can work with a repository and enjoy extra security on top of the redundancy and version control that
 `git` provides. The only difference from my regular repos is I can't really view my files from [github.com][1] (with the
 convenient exception of the README).
 
