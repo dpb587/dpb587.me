@@ -1,0 +1,19 @@
+{% include header.html %}
+<section>
+    <header>
+        <div class="timeline">
+            <time datetime="{{ page.date|date_to_xmlschema }}"><strong>{{ page.date|date:"%b %d"|upcase }}</strong><br />{{ page.date|date:"%Y" }}</time>
+            {% if page.location %}
+                <a href="https://maps.google.com/maps?hl=en&ll={{ page.location.latitude }},{{ page.location.longitude }}&t=w&z=12"><img height="49" src="https://maps.googleapis.com/maps/api/staticmap?center={{ page.location.latitude }},{{ page.location.longitude }}&zoom=9&size=98x98&sensor=false" title="{{ page.location.title }}" width="49" /></a>
+            {% endif %}
+        </div>
+        <h2>{{ page.title }}</h2>
+    </header>
+    <section>
+        {{ content }}
+    </section>
+    {% if page.tags|size %}
+        <div class="meta">{% for tag in page.tags %}{% if forloop.index0 > 0 %} &middot; {% endif %}<a href="/tags/{{ tag|slugize }}">{{ tag }}</a>{% endfor %}</div>
+    {% endif %}
+</section>
+{% include footer.html %}
