@@ -125,7 +125,7 @@ h3 {
     border-bottom: #DEDEDE solid 1px;
     color: #393939;
     font-size: 17px;
-    margin: 28px -4px 10px;
+    margin: 32px -4px 10px;
     padding: 0 4px 2px;
 }
 
@@ -180,7 +180,7 @@ pre {
     font-family: monaco;
     font-size: 12px;
     line-height: 17px;
-    margin: 14px -2px;
+    margin: 14px -2px 24px;
     overflow: auto;
     padding: 2px 4px;
 }
