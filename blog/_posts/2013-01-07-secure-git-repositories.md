@@ -2,6 +2,7 @@
 title: Secure Git Repositories
 layout: post
 tags: git security
+description: Seamless data encryption of repository files.
 ---
 
 I use private repositories on [GitHub][1], but I still don't feel quite comfortable pushing sensitive data like

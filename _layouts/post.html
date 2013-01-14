@@ -1,10 +1,13 @@
 {% include header.html %}
-<section>
+<section class="layout-post">
     <header>
         <div class="timeline">
-            <time datetime="{{ page.date|date_to_xmlschema }}"><strong>{{ page.date|date:"%b %d"|upcase }}</strong><br />{{ page.date|date:"%Y" }}</time>
+            <time datetime="{{ page.date|date_to_xmlschema }}" title="{{ page.date|date_to_xmlschema }}"><strong>{{ page.date|date:"%b %d"|upcase }}</strong><br />{{ page.date|date:"%Y" }}</time>
             {% if page.location %}
                 <a href="https://maps.google.com/maps?hl=en&ll={{ page.location.latitude }},{{ page.location.longitude }}&t=w&z=12"><img height="49" src="https://maps.googleapis.com/maps/api/staticmap?center={{ page.location.latitude }},{{ page.location.longitude }}&zoom=9&size=98x98&sensor=false" title="{{ page.location.title }}" width="49" /></a>
+            {% endif %}
+            {% if page.code %}
+                <a href="{{ page.code }}"><img height="49" src="/include/icons/code.png" title="{{ page.location.title }}" width="49" /></a>
             {% endif %}
         </div>
         <div class="social">
@@ -18,6 +21,23 @@
     <div class="meta meta-social">
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="dpb587">Tweet</a>
         <div class="g-plusone" data-size="medium" data-width="300"></div>
+    </div>
+    <div class="disqus">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'dpb587';
+            var disqus_identifier = '{{ page.id }}';
+            var disqus_title = '{{ page.title|replace:"'":"\\'" }}';
+            var disqus_url = 'http://dpb587.me{{ page.url }}';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 </section>
 {% include footer.html %}

@@ -145,18 +145,26 @@ article > section .timeline {
 }
 
 section .timeline > * {
+    display: block;
     opacity: 0.6;
+    line-height: 0;
+    margin-bottom: 4px;
 }
 
+    section.layout-post .timeline > *,
     section:hover .timeline > * {
         opacity: 1;
     }
+
+section.layout-post {
+    padding-bottom: 12px;
+}
 
 .timeline {
     background-color: #FFFFFF;
     font-size: 11px;
     line-height: 0;
-    padding: 2px 0;
+    padding-top: 2px;
     position: absolute;
     text-align: center;
     left: -24px;
@@ -169,9 +177,7 @@ section .timeline > * {
     }
 
     .timeline time {
-        display: block;
         line-height: 11px;
-        margin-bottom: 2px;
     }
 
 pre {
@@ -217,7 +223,17 @@ dl dd {
 
 .meta-social {
     border-top: #F0F0F0 solid 1px;
-    margin-left: -6px;
-    margin-right: -6px;
+    margin-left: -8px;
+    margin-right: -8px;
     padding: 32px 6px 0;
+}
+
+.disqus {
+    border-top: #F0F0F0 solid 1px;
+    margin: 28px -8px 0;
+    padding: 27px 8px 0;
+}
+
+section.layout-post .meta.meta-social {
+    display: none;
 }

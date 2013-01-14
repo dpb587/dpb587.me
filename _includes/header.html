@@ -11,6 +11,10 @@
         <link href="/include/site/pygments.css" rel="stylesheet" type="text/css" />
         <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Danny Berger (blog)" />
 
+        {% if page.description %}
+            <meta name="description" content="{{ page.description }}" />
+        {% endif %}
+
         <meta name="twitter:site" content="dpb587" />
         <meta name="twitter:creator" content="dpb587" />
 
