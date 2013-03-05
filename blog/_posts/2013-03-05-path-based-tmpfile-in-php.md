@@ -11,7 +11,9 @@ the path, but doesn't automatically destroy the file.
 
 To get the best of both worlds (temp file + auto-destroy), I have found this useful:
 
-{% highlight php startinline %}
+{% highlight php %}
+<?php
+
 function tmpfilepath() {
     $path = stream_get_meta_data(tmpfile())['uri'];
 
