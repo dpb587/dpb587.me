@@ -54,7 +54,7 @@ And reference a fact in my task...
 ### Summary
 
 So now it's much easier to reference environment information from property files (via interpolation), make targets more
-conditional, and, of course, from actual tasks.
+conditional, and, of course, within actual tasks.
 
 
  [1]: https://puppetlabs.com/puppet/what-is-puppet/
