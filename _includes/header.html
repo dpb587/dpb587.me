@@ -11,12 +11,18 @@
         <link href="/include/site/pygments.css" rel="stylesheet" type="text/css" />
         <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Danny Berger (blog)" />
 
-        {% if page.description %}
-            <meta name="description" content="{{ page.description }}" />
-        {% endif %}
-
         <meta name="twitter:site" content="dpb587" />
         <meta name="twitter:creator" content="dpb587" />
+
+        {% if page.description %}
+            <meta name="description" content="{{ page.description }}" />
+            <meta property="og:description" content="{{ page.description }}" />
+        {% endif %}
+
+        <link rel="canonical" content="{{ page.url }}" />
+        <meta property="og:title" content="{% if page.title == 'Home' %}Danny Berger{% else %}{{ page.title }}{% endif %}" />
+        <meta property="og:url" content="{{ page.url }}?utm_campaign=ref&utm_medium=def&utm_source=opengraph" />
+        <meta name="twitter:url" content="{{ page.url }}?utm_campaign=ref&utm_medium=def&utm_source=twitter" />
 
         <script type="text/javascript">
             var _gaq = _gaq || [];
@@ -49,6 +55,10 @@
                 <a href="https://github.com/dpb587">github</a>
                 &middot;
                 <a href="http://www.linkedin.com/in/dpb587">linkedin</a>
+                <span style="display:none;">
+                    &middot;
+                    <a href="https://plus.google.com/101881290181099762326?rel=author">google+</a>
+                </span>
                 &middot;
                 <a href="mailto:dpb587@gmail.com">email</a>
             </div>
