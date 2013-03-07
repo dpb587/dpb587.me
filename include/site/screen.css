@@ -237,3 +237,10 @@ dl dd {
 section.layout-post .meta.meta-social {
     display: none;
 }
+
+section.layout-post section img {
+    background-color: #F3F3F3;
+    border: #D8D8D8 solid 1px;
+    border-radius: 1px;
+    padding: 4px;
+}
