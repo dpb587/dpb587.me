@@ -1,5 +1,6 @@
-safe: true
 auto: true
-server: true
-pygments: true
 markdown: redcarpet
+paginate: 7
+pygments: true
+safe: true
+server: true

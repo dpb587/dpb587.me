@@ -11,7 +11,7 @@ layout: default
     </p>
 </section>
 
-{% for post in site.posts %}
+{% for post in paginator.posts %}
     <section>
         <header>
             <div class="timeline">
@@ -24,3 +24,12 @@ layout: default
         </header>
     </section>
 {% endfor %}
+
+{% if paginator.next_page %}
+    <section>
+        <header>
+            <h2><a href="/blog/">more posts &rarr;</a></h2>
+            <div class="meta" style="margin-bottom:0;margin-top:0;">See the full list of {{ site.posts.size }} posts.</div>
+        </header>
+    </section>
+{% endif %}
