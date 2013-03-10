@@ -1,5 +1,5 @@
 {% include header.html %}
-<section class="layout-post">
+<section>
     <header>
         <div class="timeline">
             <time datetime="{{ page.date|date_to_xmlschema }}" title="{{ page.date|date_to_xmlschema }}"><strong>{{ page.date|date:"%b %d"|upcase }}</strong><br />{{ page.date|date:"%Y" }}</time>
@@ -10,19 +10,22 @@
                 <a href="{{ page.code }}"><img alt="code" height="49" src="/include/icons/code.png" title="{{ page.location.title }}" width="49" /></a>
             {% endif %}
         </div>
-        <div class="social">
+        <div class="social screen-only">
             
         </div>
-        <h2>{{ page.title }}</h2>
+        <h2>
+            {{ page.title }}
+            <small class="print-only">{{ page.date|date:'%A, %B %d, %Y' }}</small>
+        </h2>
     </header>
-    <section>
+    <section class="post-content">
         {{ content }}
     </section>
-    <div class="meta meta-social">
+    <div class="meta meta-social screen-only">
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="dpb587">Tweet</a>
         <div class="g-plusone" data-size="medium" data-width="300"></div>
     </div>
-    <div class="disqus">
+    <div class="disqus screen-only">
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             var disqus_shortname = 'dpb587';

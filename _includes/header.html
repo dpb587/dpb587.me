@@ -7,8 +7,9 @@
     
         <link rel="icon" type="image/png" href="http://www.gravatar.com/avatar/5544fe6a05400da5a8957ff29dd6718c.png?s=128" />
         <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="/include/site/screen.css" rel="stylesheet" type="text/css" />
+        <link href="/include/site/default.css" rel="stylesheet" type="text/css" />
         <link href="/include/site/pygments.css" rel="stylesheet" type="text/css" />
+        <link href="/include/site/print.css" media="print" rel="stylesheet" type="text/css" />
         <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Danny Berger (blog)" />
 
         <meta name="twitter:site" content="dpb587" />
@@ -36,7 +37,7 @@
             })();
         </script>
     </head>
-    <body>
+    <body class="layout-{{ page.layout }}">
         <header>
             <div class="timeline">
                 <a href="/"><img alt="DPB" src="http://www.gravatar.com/avatar/5544fe6a05400da5a8957ff29dd6718c.png?s=128" /></a>
@@ -49,7 +50,7 @@
             <h1>
                 <strong><a href="/">Danny Berger</a></strong>
             </h1>
-            <div class="meta">
+            <div class="meta screen-only">
                 <a href="http://dpb587.me/" style="color:inherit;">dpb587</a>
                 &middot;
                 <a href="https://github.com/dpb587">github</a>
@@ -61,6 +62,11 @@
                 </span>
                 &middot;
                 <a href="mailto:dpb587@gmail.com">email</a>
+            </div>
+            <div class="meta print-only">
+                <a href="http://dpb587.me/" style="color:inherit;">http://dpb587.me</a>
+                &nbsp;<strong style="color:#999999;">&middot;</strong>&nbsp;
+                <a href="mailto:dpb587@gmail.com" style="color:inherit;">dpb587@gmail.com</a>
             </div>
         </header>
         <article>

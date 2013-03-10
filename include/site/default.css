@@ -9,7 +9,7 @@ body > header, article > section {
     border-bottom: #F0F0F0 solid 1px;
     border-left: #E9E9E9 solid 1px;
     margin-bottom: 2px;
-    padding: 24px 34px 18px 34px;
+    padding: 24px 34px;
     position: relative;
     width: 640px;
 }
@@ -121,6 +121,12 @@ h2 {
     padding: 1px 0;
 }
 
+h2 small {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+}
+
 h3 {
     border-bottom: #DEDEDE solid 1px;
     color: #393939;
@@ -137,7 +143,7 @@ h4 {
 }
 
 hr {
-    margin: 0 -2px;
+    margin: 0 -4px;
 }
 
 article > section .timeline {
@@ -151,12 +157,12 @@ section .timeline > * {
     margin-bottom: 4px;
 }
 
-    section.layout-post .timeline > *,
+    article.layout-post .timeline > *,
     section:hover .timeline > * {
         opacity: 1;
     }
 
-section.layout-post {
+article.layout-post section {
     padding-bottom: 12px;
 }
 
@@ -234,13 +240,17 @@ dl dd {
     padding: 27px 8px 0;
 }
 
-section.layout-post .meta.meta-social {
+article.layout-post .meta.meta-social {
     display: none;
 }
 
-section.layout-post section img {
+section.post-content img {
     background-color: #F3F3F3;
     border: #D8D8D8 solid 1px;
     border-radius: 1px;
     padding: 4px;
+}
+
+.print-only {
+    display: none;
 }
