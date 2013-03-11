@@ -51,9 +51,14 @@ body.layout-post section header .timeline {
     display: none !important;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 p, ul, ol, dl {
     line-height: 18px;
-    margin: 6px 0;
+    margin: 7px 0;
 }
 
 h1 {

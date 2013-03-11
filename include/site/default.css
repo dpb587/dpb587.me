@@ -267,3 +267,15 @@ a.subtle {
 body.no-footer article > section {
     border-bottom: 0;
 }
+
+body.alt-printarticle > header {
+    display: none;
+}
+
+body.alt-printarticle > article > section {
+    padding-top: 0;
+}
+
+body.alt-printarticle > footer {
+    display: none;
+}
