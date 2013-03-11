@@ -37,21 +37,26 @@
             })();
         </script>
     </head>
-    <body class="layout-{{ page.layout }}">
+    <body class="layout-{{ page.layout }}{% if page.body_class %} {{ page.body_class }}{% endif %}">
         <header>
             <div class="timeline">
                 <a href="/"><img alt="DPB" src="http://www.gravatar.com/avatar/5544fe6a05400da5a8957ff29dd6718c.png?s=128" /></a>
             </div>
-            <ul>
+            <ul class="screen-only">
                 <li><a href="/blog/">blog</a></li>
                 <li><a href="/projects.html">projects</a></li>
                 <li><a href="/about.html">about</a></li>
             </ul>
+            {% if page.print_blurb %}
+                <ul class="print-only">
+                    <li>{{ page.print_blurb }}</li>
+                </ul>
+            {% endif %}
             <h1>
                 <strong><a href="/">Danny Berger</a></strong>
             </h1>
             <div class="meta screen-only">
-                <a href="http://dpb587.me/" style="color:inherit;">dpb587</a>
+                <a class="subtle" href="http://dpb587.me/">dpb587</a>
                 &middot;
                 <a href="https://github.com/dpb587">github</a>
                 &middot;
@@ -65,8 +70,6 @@
             </div>
             <div class="meta print-only">
                 <a href="http://dpb587.me/" style="color:inherit;">http://dpb587.me</a>
-                &nbsp;<strong style="color:#999999;">&middot;</strong>&nbsp;
-                <a href="mailto:dpb587@gmail.com" style="color:inherit;">dpb587@gmail.com</a>
             </div>
         </header>
         <article>
