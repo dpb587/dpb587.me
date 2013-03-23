@@ -161,7 +161,7 @@ section .timeline > * {
     margin-bottom: 4px;
 }
 
-    article.layout-post .timeline > *,
+    body.layout-post section .timeline > *,
     section:hover .timeline > * {
         opacity: 1;
     }
