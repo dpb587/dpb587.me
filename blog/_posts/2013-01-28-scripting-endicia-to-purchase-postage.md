@@ -3,7 +3,7 @@ title: Scripting Endicia to Purchase Postage
 layout: post
 tags: applescript endicia loopy
 description: Automating user interactions with AppleScript.
-code: https://gist.github.com/4660132
+code: https://gist.github.com/dpb587/4660132
 ---
 
 We currently use [Endicia for Mac][1] for postage processing at Loopy. We rarely use the UI since I've scripted most of
@@ -36,4 +36,4 @@ valuable timesaver for us.
  [1]: http://www.dymoendicia.com/segments/all-products/endicia-for-mac
  [2]: https://developer.apple.com/library/mac/#documentation/applescript/conceptual/applescriptx/Concepts/as_related_apps.html#//apple_ref/doc/uid/TP40001570-1149074-BAJEIHJA
  [3]: http://www.dymoendicia.com/
- [4]: https://gist.github.com/4660132#file-endicia-purchase-postage-applescript
+ [4]: https://gist.github.com/dpb587/4660132#file-endicia-purchase-postage-applescript

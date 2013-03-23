@@ -3,7 +3,7 @@ title: Terminating Gearman Workers in PHP
 layout: post
 tags: deploy gearman pcntl php
 description: Locally and remotely stopping workers without interrupting jobs.
-code: https://gist.github.com/4531728
+code: https://gist.github.com/dpb587/4531728
 ---
 
 I use [Gearman][1] as a queue/job server. An application gives it a job to do, and Gearman passes the job along to a
@@ -142,9 +142,9 @@ complex possibilities could be self-performing updates, lighter config reloads (
 dynamically registering/unregistering functions depending on application load.
 
 
- [gist]: https://gist.github.com/4531728
- [gist-terminate.php]: https://gist.github.com/4531728#file-terminate-php
- [gist-worker.php]: https://gist.github.com/4531728#file-worker-php
+ [gist]: https://gist.github.com/dpb587/4531728
+ [gist-terminate.php]: https://gist.github.com/dpb587/4531728#file-terminate-php
+ [gist-worker.php]: https://gist.github.com/dpb587/4531728#file-worker-php
 
  [1]: http://gearman.org/
  [2]: http://php.net/manual/en/book.gearman.php
