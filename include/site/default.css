@@ -255,6 +255,10 @@ section.post-content img {
     padding: 4px;
 }
 
+a img {
+    color: inherit;
+}
+
 .print-only {
     display: none;
 }
@@ -278,4 +282,11 @@ body.alt-printarticle > article > section {
 
 body.alt-printarticle > footer {
     display: none;
+}
+
+blockquote {
+    border-left: #F0F0F0 solid 4px;
+    border-right: #F0F0F0 solid 4px;
+    margin: 14px 16px;
+    padding: 1px 18px;
 }
