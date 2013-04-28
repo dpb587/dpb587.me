@@ -111,7 +111,7 @@ a new inline form where customers can ask for help instead of bothering to open 
 
 ### New Stuff
 
-Although I disabled a number of things for later release and chatter, it's always fun to include a some completely new
+Although I disabled a number of things for later release and chatter, it's always fun to include some completely new
 functionality...
 
 
