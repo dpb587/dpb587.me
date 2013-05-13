@@ -197,6 +197,7 @@ pre {
     font-size: 12px;
     line-height: 17px;
     margin: 14px -2px 24px;
+    max-height: 398px;
     overflow: auto;
     padding: 2px 4px;
 }
