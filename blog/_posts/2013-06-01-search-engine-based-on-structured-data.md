@@ -309,7 +309,7 @@ perspective of a bot, giving me a better appreciation of how to efficiently mark
 [11]: https://github.com/ruflin/Elastica/
 [12]: http://www.opensearch.org/Home
 [13]: https://www.theloopyewe.com/search/results.atom?q=spring+fling
-[14]: https://www.theloopyewe.com/search/results.rss?=spring+fling
+[14]: https://www.theloopyewe.com/search/results.rss?q=spring+fling
 [15]: https://www.theloopyewe.com/search/opensearch.xml
 [16]: https://www.theloopyewe.com/search/?q=madelinetosh
 [17]: https://www.theloopyewe.com/shop/g/yarn/madelinetosh/tosh-dk/
