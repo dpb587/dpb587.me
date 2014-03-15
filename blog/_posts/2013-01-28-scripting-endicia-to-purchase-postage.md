@@ -11,7 +11,7 @@ it, but one annoyance had been to regularly open it up and add postage since it 
 happen to forget, it ends up blocking things until we notice. I finally got around to scripting that, too.
 
 
-### Scripted
+## Scripted
 
 In real life, whenever the balance gets too low it throws up an alert and you need to click through a few menus, select
 a purchase amount, and confirm the selection before the application will continue. Using [System Events][2], it can all
@@ -26,7 +26,7 @@ With that step automated, it can be tied in with the `endiciatool` output -- whe
 automatically kick off the script to buy more postage.
 
 
-### Summary
+## Summary
 
 So now that's one less manual step everybody has to worry about, saving some time and hassle. If you happen to be new to
 [Endicia][3], you should check them out (and use the promotional code <code>599888</code>). Their software has been a

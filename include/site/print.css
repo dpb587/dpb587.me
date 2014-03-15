@@ -61,10 +61,10 @@ p, ul, ol, dl {
     margin: 7px 0;
 }
 
-h1 {
+div.site-title {
     margin-top: 6px;
 }
 
-h3 {
+h2 {
     margin-top: 24px;
 }

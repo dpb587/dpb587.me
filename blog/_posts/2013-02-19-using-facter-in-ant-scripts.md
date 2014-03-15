@@ -9,7 +9,7 @@ After using [puppet][1] for a while I have become use to some of the facts that 
 working with [ant][3] build scripts, I started wishing I didn't have to generate similar facts myself through various
 `exec` calls.
 
-### One Fact
+## One Fact
 
 Instead of fragile lookups like...
 
@@ -29,7 +29,7 @@ I can simplify it with...
 {% endhighlight %}
 
 
-### In Bulk
+## In Bulk
 
 Or I can load all facts with...
 
@@ -51,7 +51,7 @@ And reference a fact in my task...
 </exec>
 {% endhighlight %}
 
-### Summary
+## Summary
 
 So now it's much easier to reference environment information from property files (via interpolation), make targets more
 conditional, and, of course, within actual tasks.

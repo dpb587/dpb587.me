@@ -12,7 +12,7 @@ search results from the command line (particularly for automated tasks). Since I
 command to load and parse results using [symfony/console][3] and [xpath][4].
 
 
-### Usage
+## Usage
 
 It's straightforward to use, just provide the OpenGrok server, project to search, and the query. Mimicking grep, the
 output format should look familiar:
@@ -39,7 +39,7 @@ $ vim $(opengrok-cli --list refs:PHP_MODE_PROCESS_STDIN)
 {% endhighlight %}
 
 
-### Open Source
+## Open Source
 
 I published the code to [dpb587/opengrok-cli][5]. Check the `README`, but it's easy to get started:
 

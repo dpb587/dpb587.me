@@ -9,12 +9,12 @@ I've spent the past several months working on some website changes for [The Loop
 push many of those frontend changes out. I thought I'd briefly discuss some of those changes here.
 
 
-### Before and After
+## Before and After
 
 First off, it's fun to show before and after screenshots of many key areas...
 
 
-#### Home Page
+### Home Page
 
 <img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-homepage.jpg" width="308" />
 <a href="http://theloopyewe.com/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-homepage.jpg" width="308" /></a>
@@ -35,7 +35,7 @@ Instead of a simple, almost-non-existant footer on the old site, I took advantag
 information, social links, payment options, and numerous other credentials that customers can appreciate.
 
 
-#### Contact Us
+### Contact Us
 
 <img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-contactus.jpg" width="308" />
 <a href="http://www.theloopyewe.com/contact/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-contactus.jpg" width="308" /></a>
@@ -44,7 +44,7 @@ Contact information is important for customers. In addition to the information n
 cleaner page with a new interactive map to help people visually realize where exactly the shop is located.
 
 
-#### Wonderful Customers
+### Wonderful Customers
 
 <img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-testimonials.jpg" width="308" />
 <a href="http://www.theloopyewe.com/about/wonderful-customers/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-testimonials.jpg" width="308" /></a>
@@ -53,7 +53,7 @@ It's always nice to be able to show feedback customers send in. The new site reo
 readable way, and on separate pages. It's also much simpler to submit a testimonial through the on-screen form.
 
 
-#### Shop
+### Shop
 
 <img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-shop.jpg" width="308" />
 <a href="http://www.theloopyewe.com/shop/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-shop.jpg" width="308" /></a>
@@ -99,7 +99,7 @@ properly indexed and searched via [elasticsearch][2]. I'm looking forward to add
 the site in the future.
 
 
-#### Help
+### Help
 
 <img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-help.jpg" width="308" />
 <a href="http://www.theloopyewe.com/help/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-help.jpg" width="308" /></a>
@@ -109,13 +109,13 @@ new site breaks things down into different topics and adds creative pictures to 
 a new inline form where customers can ask for help instead of bothering to open an email client and compose an email.
 
 
-### New Stuff
+## New Stuff
 
 Although I disabled a number of things for later release and chatter, it's always fun to include some completely new
 functionality...
 
 
-#### Local
+### Local
 
 <a href="http://www.theloopyewe.com/local/classes.html"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-local.jpg" width="628" /></a>
 
@@ -124,7 +124,7 @@ publicize some of the local activities that Fort Collins people would be interes
 customers see how we exist and work in real life to create more of a connection.
 
 
-#### About
+### About
 
 <a href="http://www.theloopyewe.com/about/loopy-central/fort-collins.html"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-about.jpg" width="628" /></a>
 
@@ -132,7 +132,7 @@ Along with a local page, I also wanted a better page for showing our real world 
 connected and understand both who and where they're purchasing from.
 
 
-#### Shop Attributes
+### Shop Attributes
 
 <a href="http://www.theloopyewe.com/shop/a/fiber-material/merino-wool/"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-shop-attribute.jpg" width="628" /></a>
 
@@ -141,7 +141,7 @@ way. If somebody is interested in "Fingering Weight" they can easily see all the
 they need more complicated searches, there's an Advanced Search link at the bottom of each page.
 
 
-#### Site Feedback
+### Site Feedback
 
 <a href="http://www.theloopyewe.com/contact/site-feedback.html?uri=%2Fshop%2Fg%2Fyarn%2Fthe-loopy-ewe%2Floopy-cakes%2F"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-sitefeedback.jpg" width="628" /></a>
 
@@ -150,7 +150,7 @@ feedback. Links at the footer of every page include information like what page t
 authenticated username information, and whatever notes they want to add.
 
 
-#### humans.txt
+### humans.txt
 
 <a href="http://www.theloopyewe.com/humans.txt"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-humans.jpg" width="628" /></a>
 
@@ -158,7 +158,7 @@ Whenever possible, I like discussing and linking to technical resources that I h
 created the `humans.txt` file to document many of the resources that have helped make the website possible.
 
 
-### Conclusion
+## Conclusion
 
 So there's the basic overview about some of the less-technical changes. I'm looking forward to several additional
 features to rollout over time and help keep things fresh over the next few months. Later blog posts can discuss some of

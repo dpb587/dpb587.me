@@ -15,7 +15,7 @@ files through `openssl` for decryption and encryption. The result is `git`'s ind
 contents in base64. Soon I found [`shadowhand/git-encrypt`][3].
 
 
-### Initial Setup
+## Initial Setup
 
 First, I did a one-time install of `shadowhand/git-encrypt` on my machine:
 
@@ -51,7 +51,7 @@ Now I just have to be sure to securely keep the salt and pass elsewhere for the 
 that, it's ready for me to use like any other `git` repository.
 
 
-### A Practical Bit
+## A Practical Bit
 
 Since I won't frequently be setting up this repository, it'd probably be best if I could keep a reminder about what I'll
 need to do. So I update `.gitattributes` to exclude itself and `README` from encryption:
@@ -87,7 +87,7 @@ $ git commit -m 'initial commit'
 {% endhighlight %}
 
 
-### Under the Hood
+## Under the Hood
 
 Originally I was a bit curious and wanted to verify that it's doing what I thought. So I created a simple test file:
 
@@ -128,7 +128,7 @@ Mon Jan  7 15:11:22 MST 2013
 {% endhighlight %}
 
 
-### Summary
+## Summary
 
 With `gitcrypt` I can work with a repository and enjoy extra security on top of the redundancy and version control that
 `git` provides. The only difference from my regular repos is I can't really view my files from [github.com][1] (with the

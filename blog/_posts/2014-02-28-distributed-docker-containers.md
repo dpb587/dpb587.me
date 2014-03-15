@@ -123,7 +123,7 @@ The next step of an idea is to prototype it, and that's where I am today. There 
 working on, but three general topics...
 
 
-### Service Discovery
+## Service Discovery
 
 One of the most interesting concepts is service discovery. I wanted containers to be able to connect with each other
 across multiple hosts and data centers. I've been using DNS for host discovery and, while it works great it doesn't seem
@@ -170,7 +170,7 @@ The disco protocol has a few more features (like using a single server for more 
 filtering services by arbitrary tags like availability zones to improve load balancing), but that's the general idea.
 
 
-### Configuration Files
+## Configuration Files
 
 I'm using YAML files to describe images and containers. They get compiled to a static version, and then cached based on
 the image configuration. For example, take a look at this example [scs-wordpress][16] image manifest. It describes the
@@ -180,7 +180,7 @@ enumerates all the configuration options which affect how the service will run. 
 will be connected to the world.
 
 
-### Self-Provisioning
+## Self-Provisioning
 
 For each of the four dependency/connection types (volumes, service provider, service dependent, network), I'm trying to
 make them suitable for local development and AWS EC2 deployment. For example:

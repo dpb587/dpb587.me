@@ -25,7 +25,7 @@ developed solution. So, I took an afternoon to figure things out, with the worki
 and some of the background below.
 
 
-### Graceful Termination
+## Graceful Termination
 
 For the first part, it was simply a matter of handling a `SIGTERM` signal with PHP's [pcntl module][3] and setting a
 termination flag. The main worker loop could then check the flag every time it finished a job and cleanly exit. The
@@ -65,7 +65,7 @@ $ kill -s TERM 25244
 {% endraw %}{% endhighlight %}
 
 
-### Remote Termination
+## Remote Termination
 
 Sometimes it's easier to remotely terminate workers when they need new code or configuration (and allowing a process
 manager to restart them). Since Gearman doesn't support sending a job to every single worker, an alternative is to have
@@ -94,7 +94,7 @@ $ php queue.php _worker_test1 terminate
 {% endraw %}{% endhighlight %}
 
 
-### Batch Remote Termination
+## Batch Remote Termination
 
 So now I can remotely terminate workers as needed. However, during deploys it's much more common to ask all the workers
 to restart. Using Gearman's [protocol][4] to find running workers I can distribute the termination job and then wait
@@ -134,7 +134,7 @@ $ php terminate.php
 {% endraw %}{% endhighlight %}
 
 
-### Summary
+## Summary
 
 The result is an extra bit of code, but it makes automating tasks, especially around deploys, much easier. This really
 just demonstrates one method of creating an internal workers API - termination is just one possibility. Other more

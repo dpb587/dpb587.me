@@ -10,7 +10,7 @@ on maintaining data integrity, security, and availability. One of my current met
 secure storage and object versioning to ensure backup data can't undesirably be overwritten.
 
 
-### Encryption Keys
+## Encryption Keys
 
 For encryption and decryption I'm using asymmetric keys via [`gpg`][1]. This way, any server can generate and encrypt
 the data, but only administrators who have the private key could actually decrypt the data. Generating the
@@ -80,7 +80,7 @@ Command> quit
 {% endraw %}{% endhighlight %}
 
 
-### Amazon S3
+## Amazon S3
 
 In my case, I wanted to regularly send the encrypted backups offsite and [S3][2] seemed like a flexible, effective
 storage place. This involved a couple steps:
@@ -131,7 +131,7 @@ policy via the [sample][3] policy builder for a particular backup type. My simpl
 {% endhighlight %}
 
 
-### All Together
+## All Together
 
 Putting everything together, a single command could be used to backup the database, compress, encrypt, and upload:
 
@@ -162,7 +162,7 @@ The only task remaining is creating a cleanup script using the S3 API to monitor
 delete them as they expire.
 
 
-### Summary
+## Summary
 
 While it has a bit of overhead to get things set up properly, using `gpg` makes secure backups trivial and S3 provides
 the flexible storage strategy to ensure data is safe.

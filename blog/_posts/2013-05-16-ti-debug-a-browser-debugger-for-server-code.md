@@ -17,7 +17,7 @@ ago when [David][9] from [CityIndex][10] expressed interest in the project. I've
 in order to finish some of the features, update dependencies, and create a more stable project.
 
 
-### Functionality
+## Functionality
 
 If you're familiar with the WebKit developer tools (also found in [Google Chrome][11]), the interface should look
 extremely familiar. The core of `ti-debug` is written in [node.js][12] and when started up, it creates a simple web
@@ -54,7 +54,7 @@ communication can also use `ti-debug`. For example, Python scripts can currently
 <a href="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/python.jpg"><img alt="Screenshot: breakpoint exploration" src="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/python.jpg" width="628" /></a>
 
 
-### Workflow
+## Workflow
 
 One of the ways that `ti-debug` can be run is locally for a single developer, but in the case of DBGp, `ti-debug` can
 also act as a proxy to support multiple developers, or a combination of developers wanting to use both the browser-based

@@ -98,26 +98,26 @@ small {
     color: #666666;
 }
 
-h1 {
+div.site-title {
     font-size: 20px;
     font-weight: 400;
     margin: 4px 0 0;
 }
 
-    h1 strong {
+    div.site-title strong {
         font-weight: 700;
     }
 
-        h1 strong a {
+        div.site-title strong a {
             color: inherit;
             text-decoration: none;
         }
 
-    h1 small {
+    div.site-title small {
         color: #999999;
     }
 
-h2 {
+h1 {
     color: #333333;
     font-size: 18px;
     font-weight: 700;
@@ -125,13 +125,13 @@ h2 {
     padding: 1px 0;
 }
 
-h2 small {
+h1 small {
     display: block;
     font-size: 12px;
     font-weight: normal;
 }
 
-h3 {
+h2 {
     border-bottom: #DEDEDE solid 1px;
     color: #393939;
     font-size: 17px;
@@ -139,7 +139,7 @@ h3 {
     padding: 0 4px 2px;
 }
 
-h4 {
+h3 {
     border-bottom: #DEDEDE dotted 1px;
     font-size: 14px;
     margin: 22px -4px 10px;

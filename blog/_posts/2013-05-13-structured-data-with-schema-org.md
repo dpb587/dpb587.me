@@ -11,7 +11,7 @@ standards and metadata so the content could be programmatically useful. I chose 
 due to its fairly comprehensive data types and broad adoption by search engines.
 
 
-### Introduction
+## Introduction
 
 I think the importance of structured data is growing. Not only does it make things easier for search engines to
 consistently interpret content, it can also help encourage properly designed website architecture. For example, if I
@@ -29,7 +29,7 @@ of how robots would interpret data. For example, I could view the [home page][1]
 was a robot and browse it in a [formatted HTML][11] page where links are rewritten for followup.
 
 
-### Basic Pages
+## Basic Pages
 
 Even basic pages can provide some useful structured data. For example, the page describing the [Loopy Groupies][12]
 doesn't have complicated content, but it still uses the basic [`WebPage`][14] type to identify breadcrumbs, titles, main
@@ -57,7 +57,7 @@ Of course it's not limited to [`schema.org`][2] data types. The robot data also 
 [raw JSON][13] structure.
 
 
-### Products
+## Products
 
 One of the most useful types in an e-commerce environment is [`SomeProducts`][3]. It lets robots see things like
 pricing, inventory, availability, company, model, and various product attributes. For example, here's what our
@@ -139,7 +139,7 @@ relationships that specific page (marked as a product) has with other product co
 graph.
 
 
-### Product Listings
+## Product Listings
 
 For the main product types, pages also support listings that reference the individual products. The main
 [Solid Series][17] listing has the following data:
@@ -197,7 +197,7 @@ For the main product types, pages also support listings that reference the indiv
 {% endhighlight %}
 
 
-### Rationale
+## Rationale
 
 Nearly all pages on the new [website][1] have at least some structured data present, if only the breadcrumb data. All
 this markup isn't simply an academic exercise though. For example, [Ravelry][18] supports checking the pricing and

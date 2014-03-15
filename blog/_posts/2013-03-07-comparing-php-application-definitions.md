@@ -22,7 +22,7 @@ more detailed review...
 <img alt="symfony/console example" height="343" src="/blog-data/2013-03-07-comparing-php-application-definitions/console-diff.png" width="536" />
 
 
-### Usage
+## Usage
 
 If I were upgrading my application with a [`symfony/Console`][1] dependency from `v2.0.22` to `v2.2.0`, I could generate
 the diff of definitions with:
@@ -42,7 +42,7 @@ Take a look at several other reports using the default stylesheet:
  * [`zendframework/zf2`][5] (`release-2.0.0` &rarr; `release-2.1.3`)
 
 
-### Behind the Scenes
+## Behind the Scenes
 
 The logic behind the command looks like:
 
@@ -134,7 +134,7 @@ And after the initial and final commit are compared, the resulting structured di
 {% endhighlight %}
 
 
-### Going Further
+## Going Further
 
 Being able to parse files and have their differences stored in static, semi-agnostic format allows for some interesting
 usages:
@@ -159,7 +159,7 @@ And unlike some of the other tools I ran into, the static representation is not 
 stylesheet to make it human-friendly. This makes the results potentially reusable for multiple different reports.
 
 
-### Summary
+## Summary
 
 I've published this work-in-progress code to [dpb587/diff-defn.php][13] in case you want to try it out with your own PHP
 repositories. It's certainly not a replacement of reading changelogs and understanding what upstream changes are being

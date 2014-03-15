@@ -14,7 +14,7 @@ some extensions don't yet support custom wrappers for file access. An alternativ
 service-oriented approach to keep my application code independent from the storage configuration.
 
 
-### Interface
+## Interface
 
 At the core of my design, is the asset storage interface which looks something like:
 
@@ -37,7 +37,7 @@ The storage engine is responsible for generating a reusable token that can be us
 simply have it generate a UUID as the token, however tokens could have storage-specific meaning.
 
 
-### Sample Storage Engines
+## Sample Storage Engines
 
 I've used several base implementations:
 
@@ -63,7 +63,7 @@ And since `CachedStorageEngine` is just another implementation of `StorageEngine
 interchangeably within the application with performance being the only difference.
 
 
-### Application Usage
+## Application Usage
 
 Using dependency injection, each of the storage backends becomes an independent service, configured depending on the
 application requirements. The application then has no storage-specific calls like `copy`, `file_get_contents`, `fopen`,
@@ -95,7 +95,7 @@ Since `retrieve` will always return a [`SplFileInfo`][5] instance, it can be ref
 (as demonstrated by the `open` call in the example.
 
 
-### Complicating Things
+## Complicating Things
 
 The asset storage interface itself is fairly primitive, but it allows for some more complex configurations:
 
@@ -109,7 +109,7 @@ The asset storage interface itself is fairly primitive, but it allows for some m
    upload time, write it locally and create a job to upload it in the background)
 
 
-### Summary
+## Summary
 
 By abstracting storage logic outside of my application code, it makes my life much more easier as a developer and as a
 systems administrator when trying to manage where files are located and any relocations, as necessary.

@@ -11,7 +11,7 @@ inventory scannable at the [shop][1], and I really wanted to do it in a more mea
 support.
 
 
-### Barcodes: 1D vs 2D
+## Barcodes: 1D vs 2D
 
 There are two different kinds of barcodes: 1 dimensional and 2 dimensional. The 1D allows for a purely linear scan of
 simple, [UPC][2]-like barcodes. While 1D barcodes are extremely commonplace on many products, I dislike them because
@@ -37,7 +37,7 @@ many previously-used 2D scanners can be found on [eBay][6] for very reasonable p
 some of the used ones would quickly turn unreliable after a period of time.
 
 
-### Mapping URLs to retail "things"
+## Mapping URLs to retail "things"
 
 While inventory was the primary target of barcoding, I really wanted to barcode most things involved with retail
 workflows (like order receipts). With that in mind I figured I needed to store three properties:
@@ -69,7 +69,7 @@ Further, the QR code can be used with a redirecting short domain for even simple
  > [`http://tle.io/EyV3chYax`](http://www.theloopyewe.com/io/EyV3chYax)
 
 
-### Adding More Context
+## Adding More Context
 
 One of the reasons I wanted to use QR codes was context. Aside from scans now landing on the shop's website, they can
 be even more context-aware through security roles. For example, if a customer scans the QR code above, they'll end up
@@ -88,7 +88,7 @@ view showing which orders were cut on that specific bolt and how much yardage th
 
 
 
-### Integrated Context
+## Integrated Context
 
 At this point, the barcodes were extremely accessible for one-off scans, but I also wanted to integrate the barcodes
 into specific points of the system. For the computers we're using USB 2D barcode scanners which are capable of acting
@@ -162,7 +162,7 @@ following in a browser...
 </blockquote>
 
 
-### Conclusion
+## Conclusion
 
 I feel like the shop is able to better grow both technically and logistically by having used QR codes as opposed to a
 classic barcode system. A few techy customers have tried the QR codes, but it's not really something we've been

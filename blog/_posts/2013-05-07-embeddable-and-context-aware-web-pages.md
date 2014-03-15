@@ -21,7 +21,7 @@ the main results content is taking advantage of the request design I implemented
  * any page should be capable of being a self-contained subrequest.
 
 
-### Steps
+## Steps
 
 When a subrequest is self-contained, I call it a *subcontext*. These subcontext requests have an additional requirement
 of being publicly accessible. In the product search, the [results][3] page is publicly routed and all the pagination and
@@ -102,7 +102,7 @@ With those simple customizations I no longer have to worry about knowing what pa
 template subrequests. It also paves the way for some more fancy behavior...
 
 
-### Adding Some Magic
+## Adding Some Magic
 
 Since the subcontext pages are publicly accessible, it should be easy to let Ajax reload individual subcontexts without
 having to reload the whole page. To enable that, I went ahead and configured subcontext requests to always end up in a
@@ -139,7 +139,7 @@ Something easily processable with an Ajax request. And since the clicked anchor 
 the new window URL location by using the [HTML5 History API][6].
 
 
-### Conclusion
+## Conclusion
 
 Once I implemented the code snippets for tying all the ideas together, it became much quicker and simpler for me to
 embed other dynamic controllers within my requests. So far it has been working out quite well and I no longer have to
