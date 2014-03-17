@@ -6,9 +6,9 @@
         <title>{% if page.title != "Home" %}{{ page.title }} &ndash; {% endif %}Danny Berger</title>
 
         <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="/include/site/default.css" rel="stylesheet" type="text/css" />
-        <link href="/include/site/pygments.css" rel="stylesheet" type="text/css" />
-        <link href="/include/site/print.css" media="print" rel="stylesheet" type="text/css" />
+        <link href="/static/{{ site.static_version }}/style/default-common.css" rel="stylesheet" type="text/css" />
+        <link href="/static/{{ site.static_version }}/style/default-print.css" media="print" rel="stylesheet" type="text/css" />
+        <link href="/static/{{ site.static_version }}/style/pygments.css" rel="stylesheet" type="text/css" />
         <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Danny Berger (blog)" />
 
         {% if page.path %}
@@ -51,6 +51,9 @@
                 <a href="/"><img alt="DPB" src="http://www.gravatar.com/avatar/5544fe6a05400da5a8957ff29dd6718c.png?s=128" /></a>
             </div>
             <ul class="screen-only">
+                {% if 'dev' == site.environment %}
+                    <li><a href="/private/">private</a></li>
+                {% endif %}
                 <li><a href="/blog/">blog</a></li>
                 <li><a href="/projects.html">projects</a></li>
                 <li><a href="/about.html">about</a></li>

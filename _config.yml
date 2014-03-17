@@ -2,3 +2,5 @@ markdown: redcarpet
 paginate: 7
 pygments: true
 safe: false
+environment: dev
+static_version: dev

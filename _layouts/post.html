@@ -6,10 +6,10 @@
                 <time datetime="{{ page.date|date_to_xmlschema }}" title="{{ page.date|date_to_xmlschema }}"><strong>{{ page.date|date:"%b %d"|upcase }}</strong><br />{{ page.date|date:"%Y" }}</time>
             {% endif %}
             {% if page.location %}
-                <a href="https://maps.google.com/maps?hl=en&ll={{ page.location.latitude }},{{ page.location.longitude }}&t=w&z=12"><img alt="map" height="49" src="https://maps.googleapis.com/maps/api/staticmap?center={{ page.location.latitude }},{{ page.location.longitude }}&zoom=9&size=98x98&sensor=false" title="{{ page.location.title }}" width="49" /></a>
+                <a href="https://maps.google.com/maps?hl=en&amp;ll={{ page.location.latitude }},{{ page.location.longitude }}&amp;t=w&amp;z=12"><img alt="map" height="49" src="https://maps.googleapis.com/maps/api/staticmap?center={{ page.location.latitude }},{{ page.location.longitude }}&amp;zoom=9&amp;size=98x98&amp;sensor=false" title="{{ page.location.title }}" width="49" /></a>
             {% endif %}
             {% if page.code %}
-                <a href="{{ page.code }}"><img alt="code" height="49" src="/include/icons/code.png" width="49" /></a>
+                <a href="{{ page.code }}"><img alt="code" height="49" src="/static/{{ site.static_version }}/icon/code.png" width="49" /></a>
             {% endif %}
         </div>
         <div class="social screen-only">
@@ -29,6 +29,8 @@
             <div class="g-plusone" data-size="medium" data-width="300"></div>
         </div>
     </div>
-    {% include disqus.html %}
+    {% if false != page.comments %}
+        {% include disqus.html %}
+    {% endif %}
 </section>
 {% include footer.html %}

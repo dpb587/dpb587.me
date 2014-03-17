@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# args: s3cmd-config
+
+set -e
+
+[ -e _build ] && rm -fr _build
+
+mkdir _build
+
+STATIC_VERSION=`git rev-parse HEAD | cut -c -10`
+
+(
+  echo 'static_version:' "$STATIC_VERSION" ;
+  echo 'destination: _build/_site'
+  echo 'environment: prod'
+) > _build/_config.yml
+
+jekyll build --config _config.yml,_build/_config.yml 
+
+mv _build/_site/static/dev _build/_site/static/$STATIC_VERSION
+
+s3cmd sync \
+  --config "$1" \
+  --acl-public \
+  --no-delete-removed \
+  --no-preserve \
+  --exclude 'private/*' \
+  --verbose \
+  _build/_site/ \
+  s3://dpb587-us-west-2
