@@ -232,11 +232,28 @@ dl dd {
     padding: 2px 0 0 146px;
 }
 
+.meta-properties {
+    border-top: #F0F0F0 solid 1px;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 10px 8px;
+}
+
 .meta-social {
     border-top: #F0F0F0 solid 1px;
     margin-left: -8px;
     margin-right: -8px;
     padding: 32px 6px 0;
+}
+
+.meta-navigate {
+    border-top: #F0F0F0 solid 1px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 10px;
+    text-align: center;
 }
 
 .disqus {
@@ -291,3 +308,16 @@ blockquote {
     margin: 14px 16px;
     padding: 1px 18px;
 }
+
+.list-gallery {
+    line-height: 0;
+}
+
+    .list-gallery img {
+        padding: 2px !important;
+        margin: 8px 7px 0 0;
+    }
+
+    .list-gallery img:hover {
+        border: #999999 solid 1px !important;
+    }

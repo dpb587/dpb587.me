@@ -1,4 +1,4 @@
 markdown: redcarpet
 paginate: 7
 pygments: true
-safe: true
+safe: false

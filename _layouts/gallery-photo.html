@@ -1,0 +1,82 @@
+{% include header.html %}
+<section>
+    <header>
+        <div class="timeline">
+            {% if page.date %}
+                <time datetime="{{ page.date|date_to_xmlschema }}" title="{{ page.date|date_to_xmlschema }}"><strong>{{ page.date|date:"%b %d"|upcase }}</strong><br />{{ page.date|date:"%Y" }}</time>
+            {% endif %}
+            {% if page.location %}
+                <a href="https://maps.google.com/maps?hl=en&amp;ll={{ page.location.latitude }},{{ page.location.longitude }}&amp;t=w&amp;z=12"><img alt="map" height="49" src="https://maps.googleapis.com/maps/api/staticmap?center={{ page.location.latitude }},{{ page.location.longitude }}&amp;zoom=9&amp;size=98x98&amp;sensor=false" title="{{ page.location.title }}" width="49" /></a>
+            {% endif %}
+            {% if page.code %}
+                <a href="{{ page.code }}"><img alt="code" height="49" src="/include/icons/code.png" width="49" /></a>
+            {% endif %}
+        </div>
+        <div class="social screen-only">
+            
+        </div>
+        <h1>
+            {{ page.title }}
+            <small class="print-only">{{ page.date|date:'%A, %B %d, %Y' }}</small>
+        </h1>
+    </header>
+    <section class="post-content">
+        <p style="text-align:center;">
+            <a href="/asset{{ page.url|replace:".html","~1280.jpg" }}"><img alt="Photo: {{ page.title }}" src="/asset{{ page.url|replace:".html","~640.jpg" }}" style="max-width:630px;" /></a>
+        </p>
+
+        {{ content }}
+    </section>
+    <div class="meta">
+        <div class="meta-properties">
+            <div style="float:left;width:359px;">
+                <dl style="margin-top:0;">
+                    <dt>Date</dt>
+                    <dd>{{ page.date|date:'%A, %B %d, %Y at %I:%M %p'|replace:' 0',' '|replace:' AM',' am'|replace:' PM',' pm' }}
+
+                    <dt>Camera</dt>
+                    <dd>{{ page.exif.make }} {{ page.exif.model }}
+
+                    <dt>Aperture</dt>
+                    <dd>{{ page.exif.aperture }}</dd>
+
+                    <dt>Exposure</dt>
+                    <dd>{{ page.exif.exposure }}</dd>
+                </dl>
+            </div>
+
+            {% if page.location %}
+                <div style="float:left;line-height:0;width:280px;">
+                    <a href="https://maps.google.com/maps?hl=en&amp;ll={{ page.location.latitude }},{{ page.location.longitude }}&amp;t=w&amp;z=12"><img alt="map" height="173" src="https://maps.googleapis.com/maps/api/staticmap?center={{ page.location.latitude }},{{ page.location.longitude }}&amp;zoom=13&amp;size=280x173&amp;markers=size:mid%7Ccolor:orange%7C{{ page.location.latitude }},{{ page.location.longitude }}&amp;sensor=false" title="{{ page.location.title }}" width="280" /></a>
+                </div>
+            {% endif %}
+
+            <div style="clear:left;"></div>
+        </div>
+        <div class="meta-navigate screen-only">
+            {% if page.next %}
+                <div style="float:right;">
+                    <a href="{{ page.next }}.html" rel="next">Next Photo &raquo;</a>
+                </div>
+            {% endif %}
+
+            {% if page.previous %}
+                <div style="float:left;">
+                    <a href="{{ page.previous }}.html" rel="prev">&laquo; Previous</a>
+                </div>
+            {% endif %}
+
+            <div style="padding:0 120px;">
+                <a href="./" rel="contents">Gallery List</a>
+            </div>
+
+            <div style="clear:both;"></div>
+        </div>
+        <div class="meta-social screen-only">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="dpb587">Tweet</a>
+            <div class="g-plusone" data-size="medium" data-width="300"></div>
+        </div>
+    </div>
+    {% include disqus.html %}
+</section>
+{% include footer.html %}

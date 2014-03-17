@@ -1,3 +1,4 @@
-_layouts/private-*
-_site
-private
+/_layouts/private-*
+/_site
+/asset
+/private
