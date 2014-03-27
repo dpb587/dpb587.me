@@ -1,0 +1,12 @@
+---
+layout: post
+title : London &amp; Iceland Trip
+---
+
+<p>
+    My trip to London and Iceland&hellip;
+</p>
+
+<div class="list-gallery">
+    {% loopdir path:gallery/2014-london-iceland-trip match:*.md sort:ordering %}<a href="/gallery/2014-london-iceland-trip/{{ item.name }}.html"><img alt="Photo: {{ item.title }}" height="200" src="{{ site.asset_prefix }}/gallery/2014-london-iceland-trip/{{ item.name }}~200x200.jpg" title="{{ item.title }}" width="200" /></a>{% endloopdir %}
+</div>
