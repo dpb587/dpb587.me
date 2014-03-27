@@ -25,9 +25,8 @@ s3cmd sync \
   --acl-public \
   --no-delete-removed \
   --no-preserve \
-  --exclude 'private/*' \
-  --exclude 'asset/*' \
-  --exclude 'static/*' \
+  --rexclude 'asset/.+' \
+  --rexclude 'static/.+' \
   --add-header 'cache-control:max-age=3600' \
   --verbose \
   . \
