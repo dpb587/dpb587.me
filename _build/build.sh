@@ -23,6 +23,8 @@ echo "--> building $ARTIFACT_BRANCH/$ARTIFACT_COMMIT..."
 
 jekyll build --config _config.yml,_build/target/_config.yml
 
+mv _build/target/artifact/static/dev _build/target/artifact/static/`echo $ARTIFACT_COMMIT | cut -c-10`
+
 export ARTIFACT_PATH="$PWD/_build/target/artifact"
 
 if [[ "" != "$1" ]] ; then

@@ -9,7 +9,7 @@
                 <a href="https://maps.google.com/maps?hl=en&amp;ll={{ page.location.latitude }},{{ page.location.longitude }}&amp;t=w&amp;z=12"><img alt="map" height="49" src="https://maps.googleapis.com/maps/api/staticmap?center={{ page.location.latitude }},{{ page.location.longitude }}&amp;zoom=9&amp;size=98x98&amp;sensor=false" title="{{ page.location.title }}" width="49" /></a>
             {% endif %}
             {% if page.code %}
-                <a href="{{ page.code }}"><img alt="code" height="49" src="/static/{{ site.artifact_commit|truncate:10 }}/icon/code.png" width="49" /></a>
+                <a href="{{ page.code }}"><img alt="code" height="49" src="/static/{{ site.artifact_commit|truncate:10,'' }}/icon/code.png" width="49" /></a>
             {% endif %}
         </div>
         <div class="social screen-only">
