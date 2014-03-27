@@ -12,9 +12,15 @@
                 <a href="{{ page.code }}"><img alt="code" height="49" src="/include/icons/code.png" width="49" /></a>
             {% endif %}
         </div>
-        <div class="social screen-only">
-            
-        </div>
+        <ul style="margin-top:0;">
+            {% if page.previous %}
+                <li><a href="{{ page.previous }}.html" rel="prev">&nbsp;&laquo;&nbsp;</a></li>
+            {% endif %}
+
+            {% if page.next %}
+                <li><a href="{{ page.next }}.html" rel="next">&nbsp;&raquo;&nbsp;</a></li>
+            {% endif %}
+        </ul>
         <h1>
             {{ page.title }}
             <small class="print-only">{{ page.date|date:'%A, %B %d, %Y' }}</small>
@@ -22,7 +28,7 @@
     </header>
     <section class="post-content">
         <p style="text-align:center;">
-            <a href="/asset{{ page.url|replace:".html","~1280.jpg" }}"><img alt="Photo: {{ page.title }}" src="/asset{{ page.url|replace:".html","~640.jpg" }}" style="max-width:630px;" /></a>
+            <a href="{{ site.asset_prefix }}{{ page.url|replace:".html","~1280.jpg" }}"><img alt="Photo: {{ page.title }}" src="{{ site.asset_prefix }}{{ page.url|replace:".html","~640.jpg" }}" style="max-width:630px;" /></a>
         </p>
 
         {{ content }}
@@ -32,7 +38,7 @@
             <div style="float:left;width:359px;">
                 <dl style="margin-top:0;">
                     <dt>Date</dt>
-                    <dd>{{ page.date|date:'%A, %B %d, %Y at %I:%M %p'|replace:' 0',' '|replace:' AM',' am'|replace:' PM',' pm' }}
+                    <dd>{{ page.date|date:'%A, %B %d at %I:%M %p'|replace:' 0',' '|replace:' AM',' am'|replace:' PM',' pm' }}
 
                     <dt>Camera</dt>
                     <dd>{{ page.exif.make }} {{ page.exif.model }}

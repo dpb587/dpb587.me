@@ -13,7 +13,7 @@ module Jekyll
       @attributes['path'] = nil;
       @attributes['parse'] = 'true';
       @attributes['match'] = '*';
-      @attributes['sort'] = 'asc';
+      @attributes['sort'] = 'path';
  
       markup.scan(Liquid::TagAttributes) do | key, value |
         @attributes[key] = value
@@ -35,47 +35,54 @@ module Jekyll
     def render(context)
       context.registers[:loopdir] ||= Hash.new(0)
  
-      files = Dir.glob(File.join(@attributes['path'], @attributes['match']))
-
-      if @attributes['sort'].casecmp('desc') == 0
-        files.sort! do | x, y |
-          y <=> x
-        end
-      else
-        files.sort!
-      end
+      items = []
  
-      result = []
- 
-      context.stack do
-        files.each do |pathname|
-          if @attributes['parse']
-            data = {}
+      Dir.glob(File.join(@attributes['path'], @attributes['match'])).each do |pathname|
+        if @attributes['parse']
+          item = {}
 
-            content = File.read(pathname)
+          content = File.read(pathname)
 
-            if content =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)/m
-              content = $POSTMATCH
+          if content =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)/m
+            content = $POSTMATCH
 
-              begin
-                data = YAML.load($1)
-              rescue => e
-                puts "YAML Exception reading #{name}: #{e.message}"
-              end
+            begin
+              item = YAML.load($1)
+            rescue => e
+              puts "YAML Exception reading #{name}: #{e.message}"
             end
-
-            data['name'] = File.basename(pathname, @attributes['match'].sub('*', ''))
-            data['path'] = pathname
-            data['content'] = content
-
-            context['item'] = data
-          else
-            context['item'] = pathname
           end
 
+          item['content'] = content
+        else
+          context['item'] = pathname
+        end
+
+        item['name'] = File.basename(pathname, @attributes['match'].sub('*', ''))
+        item['path'] = pathname
+
+        items.push item
+      end
+
+      sortby = @attributes['sort'].gsub(/^-/, '')
+
+      items.sort! do | x, y |
+        x[sortby] <=> y[sortby]
+      end
+
+      if sortby != @attributes['sort']
+        items.reverse!
+      end
+
+      context.stack do
+        result = []
+
+        items.each do | item |
+          context['item'] = item
+   
           result << render_all(@nodelist, context)
         end
-   
+
         result
       end
     end

@@ -14,6 +14,14 @@ body > header, article > section {
     width: 640px;
 }
 
+body.layout-gallery-photo > header {
+    display: none;
+}
+
+body.layout-gallery-photo article > section {
+    padding-top: 14px;
+}
+
 body > footer {
     color: #999999;
     font-size: 11px;
@@ -162,6 +170,7 @@ section .timeline > * {
 }
 
     body.layout-post section .timeline > *,
+    body.layout-gallery-photo section .timeline > *,
     section:hover .timeline > * {
         opacity: 1;
     }

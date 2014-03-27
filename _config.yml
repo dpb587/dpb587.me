@@ -3,4 +3,9 @@ paginate: 7
 pygments: true
 safe: false
 environment: dev
-static_version: dev
+artifact_commit: dev
+artifact_branch: master
+asset_prefix: /asset
+exclude:
+- LICENSE
+- README
