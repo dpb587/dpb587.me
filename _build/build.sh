@@ -15,18 +15,21 @@ cd _build/target
 export ARTIFACT_COMMIT=`git rev-parse HEAD`
 export ARTIFACT_BRANCH=`git rev-parse --abbrev-ref HEAD`
 
+STATIC_NAME=`git rev-list -1 HEAD -- 'static/dev' | cut -c-10`
+
 echo "--> building $ARTIFACT_BRANCH/$ARTIFACT_COMMIT..."
 
 (
   echo 'artifact_commit:' "$ARTIFACT_COMMIT" ;
   echo 'artifact_branch:' "$ARTIFACT_BRANCH" ;
   echo 'asset_prefix: //assets.dpb587.me/asset' ;
+  echo "static_prefix: /static/$STATIC_NAME" ;
   echo 'environment: prod'
 ) > _config.patch.yml
 
 jekyll build --config _config.yml,_config.patch.yml
 
-mv _site/static/dev _site/static/`echo $ARTIFACT_COMMIT | cut -c-10`
+mv _site/static/dev _site/static/$STATIC_NAME
 
 export ARTIFACT_PATH="$RPWD/_build/target/_site"
 

@@ -6,6 +6,7 @@ environment: dev
 artifact_commit: dev
 artifact_branch: master
 asset_prefix: /asset
+static_prefix: /static/dev
 exclude:
 - LICENSE
 - README
