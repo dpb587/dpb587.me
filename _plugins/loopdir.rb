@@ -16,7 +16,12 @@ module Jekyll
       @attributes['sort'] = 'path';
  
       markup.scan(Liquid::TagAttributes) do | key, value |
-        @attributes[key] = value
+        if 'path' == key
+          # path can be dynamic to support includes
+          @attributes['path'] = Liquid::Variable.new(value)
+        else
+          @attributes[key] = value.gsub /"(.*)"/, '\1'
+        end
       end
 
       if @attributes['path'].nil?
@@ -36,8 +41,10 @@ module Jekyll
       context.registers[:loopdir] ||= Hash.new(0)
  
       items = []
+
+      path = @attributes['path'].render(context)
  
-      Dir.glob(File.join(@attributes['path'], @attributes['match'])).each do |pathname|
+      Dir.glob(File.join(path, @attributes['match'])).each do |pathname|
         if @attributes['parse']
           item = {}
 
@@ -59,6 +66,7 @@ module Jekyll
         end
 
         item['name'] = File.basename(pathname, @attributes['match'].sub('*', ''))
+        item['fullname'] = path + '/' + item['name']
         item['path'] = pathname
 
         items.push item

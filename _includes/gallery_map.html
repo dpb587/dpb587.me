@@ -1,0 +1,46 @@
+<div id="googlemap" style="height:400px;margin-top:8px;"></div>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDIwEZirrDvuvDkhTtON8OqpmH7jP7DW4&amp;sensor=false"></script>
+<script type="text/javascript">
+    google.maps.event.addDomListener(
+        window,
+        'load',
+        function () {
+            var map = new google.maps.Map(
+                document.getElementById("googlemap"),
+                {
+                    center : new google.maps.LatLng({{ include.latitude }}, {{ include.longitude }}),
+                    mapTypeId : google.maps.MapTypeId.TERRAIN,
+                    zoom : {{ include.zoom }}
+                }
+            );
+
+            {% capture path %}gallery/{{ include.gallery }}{% endcapture %}
+            {% loopdir path:path match:"*.md" sort:"ordering" %}{% if item.location %}
+                (function () {
+                    var wo = false;
+                    var m = new google.maps.Marker({
+                        position: new google.maps.LatLng({{ item.location.latitude }}, {{ item.location.longitude }}),
+                        map : map,
+                        title : "{{ item.title }}"
+                    });
+                    var w = new google.maps.InfoWindow({
+                        content: '<div style="margin-bottom:5px;">{{ item.title|replace:"'","\\'" }}</div><a href="/{{ item.fullname }}.html"><img alt="Photo: {{ item.title|replace:"'","\\'" }}" height="200" src="{{ site.asset_prefix }}/{{ item.fullname }}~200x200.jpg" title="{{ item.title|replace:"'","\\'" }}" width="200" /></a>'
+                    });
+                    google.maps.event.addListener(
+                        m,
+                        'click',
+                        function() {
+                            if (wo) {
+                                w.close();
+                            } else {
+                                w.open(map, m);
+                            }
+
+                            wo = !wo;
+                        }
+                    );
+                })();
+            {% endif %}{% endloopdir %}
+        }
+    );
+</script>
