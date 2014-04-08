@@ -1,4 +1,4 @@
-markdown: redcarpet
+markdown: kramdown
 paginate: 7
 pygments: true
 safe: false
