@@ -1,5 +1,5 @@
 ---
-title: Color Searching with Elasticsearch
+title: Search by Color with Elasticsearch
 layout: post
 tags: [ 'color', 'ecommerce', 'elasticsearch', 'hsv', 'search', 'weighted' ]
 description: Some mappings, strategies, and queries for advanced color searching with elasticsearch.
