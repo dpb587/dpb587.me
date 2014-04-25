@@ -3,7 +3,7 @@ title: Color Searching with Elasticsearch
 layout: post
 tags: [ 'color', 'ecommerce', 'elasticsearch', 'hsv', 'search', 'weighted' ]
 description: Some mappings, strategies, and queries for advanced color searching with elasticsearch.
-primary_image: http://dpb587.me/asset/blog/2014-04-24-color-searching-with-elasticsearch/search0.png
+primary_image: /blog/2014-04-24-color-searching-with-elasticsearch/search0.png
 ---
 
 A [year ago][1] when I updated the [TLE website][2] I dropped the "search by color" functionality. Originally, all the
@@ -15,7 +15,7 @@ attributes and availability. It was neat, but it was not a great user experience
 It took some time to get back to the search by color functionality, but I've finally been able to get back to it and,
 with [elasticsearch][3], significantly improve it.
 
-<a href="http://www.theloopyewe.com/shop/search/cd/0-100~75-90-50~18-12-12/g/59A9BAC5/"><img alt="Screenshot: colorized yarn" height="162" src="/asset/blog/2014-04-24-color-searching-with-elasticsearch/search0.png" width="628" /></a>
+<a href="http://www.theloopyewe.com/shop/search/cd/0-100~75-90-50~18-12-12/g/59A9BAC5/"><img alt="Screenshot: colorized yarn" height="162" src="{{ site.asset_prefix }}/blog/2014-04-24-color-searching-with-elasticsearch/search0.png" width="628" /></a>
 
 
 ## Color Quantification
@@ -31,8 +31,8 @@ colors it also keeps track of their ratios making it easy to realize multi-color
 After batch processing inventory to bring colors up to date, I added hooks to ensure new images are processed for colors
 as they're uploaded.
 
-<a href="https://www.theloopyewe.com/shop/p/78C97118-Gobelin-A-moi-le-coco"><img alt="Screenshot: colorized yarn" height="129" src="/asset/blog/2014-04-24-color-searching-with-elasticsearch/colorizer-yarn.png" width="628" /></a>
-<a href="https://www.theloopyewe.com/shop/p/86330BB1-DS23-Seafaring"><img alt="Screenshot: colorized fabric" height="129" src="/asset/blog/2014-04-24-color-searching-with-elasticsearch/colorizer-fabric.png" width="628" /></a>
+<a href="https://www.theloopyewe.com/shop/p/78C97118-Gobelin-A-moi-le-coco"><img alt="Screenshot: colorized yarn" height="129" src="{{ site.asset_prefix }}/blog/2014-04-24-color-searching-with-elasticsearch/colorizer-yarn.png" width="628" /></a>
+<a href="https://www.theloopyewe.com/shop/p/86330BB1-DS23-Seafaring"><img alt="Screenshot: colorized fabric" height="129" src="{{ site.asset_prefix }}/blog/2014-04-24-color-searching-with-elasticsearch/colorizer-fabric.png" width="628" /></a>
 
 You can see it noticed the significant colors of the yarn and fabric above, along with their approximate ratios. With
 some types of items, it may be possible to infer additional meaning such as the "background color" of fabric.
@@ -191,7 +191,7 @@ between the requested color and the matched color. The [`function_score`][13] qu
 The `_score` can then be used in sorting to show the closest color matches first.
 
 
-<a href="http://www.theloopyewe.com/shop/search/cd/80-100~190-100-50~10-5-5/g/59A9BAC5/"><img alt="Screenshot: search screen shot" height="400" src="/asset/blog/2014-04-24-color-searching-with-elasticsearch/search1.png" width="628" /></a>
+<a href="http://www.theloopyewe.com/shop/search/cd/80-100~190-100-50~10-5-5/g/59A9BAC5/"><img alt="Screenshot: search screen shot" height="400" src="{{ site.asset_prefix }}/blog/2014-04-24-color-searching-with-elasticsearch/search1.png" width="628" /></a>
 
 Of course, these color searches can be added alongside the other facet searches like product availability, attributes,
 and regular keyword searches.

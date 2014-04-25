@@ -47,7 +47,7 @@
         {% else %}
             <meta name="twitter:card" content="summary">
             {% if page.primary_image %}
-                <meta name="twitter:image:src" content="{{ page.primary_image }}">
+                <meta name="twitter:image:src" content="{{ site.asset_prefix }}{{ page.primary_image }}">
             {% endif %}
         {% endif %}
 
