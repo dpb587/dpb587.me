@@ -22,7 +22,7 @@ echo "--> building $ARTIFACT_BRANCH/$ARTIFACT_COMMIT..."
 (
   echo 'artifact_commit:' "$ARTIFACT_COMMIT" ;
   echo 'artifact_branch:' "$ARTIFACT_BRANCH" ;
-  echo 'asset_prefix: //assets.dpb587.me/asset' ;
+  echo 'asset_prefix: http://assets.dpb587.me/asset' ;
   echo "static_prefix: /static/$STATIC_NAME" ;
   echo 'environment: prod'
 ) > _config.patch.yml
