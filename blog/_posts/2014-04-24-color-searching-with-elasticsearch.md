@@ -3,6 +3,7 @@ title: Color Searching with Elasticsearch
 layout: post
 tags: color ecommerce elasticsearch hsv search weighted
 description: Some mappings, strategies, and queries for advanced color searching with elasticsearch.
+primary_image: http://dpb587.me/asset/blog/2014-04-24-color-searching-with-elasticsearch/search0.png
 ---
 
 A [year ago][1] when I updated the [TLE website][2] I dropped the "search by color" functionality. Originally, all the
