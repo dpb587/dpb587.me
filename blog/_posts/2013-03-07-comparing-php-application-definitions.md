@@ -19,7 +19,7 @@ To that end, I made a prototype for a language-intelligent/OOP-diff/structured d
 the programmatic changes in an easily readable report which links definitions back to their file and line number for
 more detailed review...
 
-<img alt="symfony/console example" height="343" src="/blog-data/2013-03-07-comparing-php-application-definitions/console-diff.png" width="536" />
+<img alt="symfony/console example" height="343" src="{{ site.asset_prefix }}/blog/2013-03-07-comparing-php-application-definitions/console-diff.png" width="536" />
 
 
 ## Usage

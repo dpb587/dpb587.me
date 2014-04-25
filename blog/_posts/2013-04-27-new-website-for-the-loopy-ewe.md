@@ -16,8 +16,8 @@ First off, it's fun to show before and after screenshots of many key areas...
 
 ### Home Page
 
-<img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-homepage.jpg" width="308" />
-<a href="http://theloopyewe.com/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-homepage.jpg" width="308" /></a>
+<img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-homepage.jpg" width="308" />
+<a href="http://theloopyewe.com/"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-homepage.jpg" width="308" /></a>
 
 So the home page is one of the first welcome pages to new visitors. I wanted to make sure it was warm and welcoming,
 primarily through the central photos we show; the default one being the entry view of our shop (with a dynamic thumbnail
@@ -37,8 +37,8 @@ information, social links, payment options, and numerous other credentials that 
 
 ### Contact Us
 
-<img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-contactus.jpg" width="308" />
-<a href="http://www.theloopyewe.com/contact/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-contactus.jpg" width="308" /></a>
+<img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-contactus.jpg" width="308" />
+<a href="http://www.theloopyewe.com/contact/"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-contactus.jpg" width="308" /></a>
 
 Contact information is important for customers. In addition to the information now being in the footer, there is a
 cleaner page with a new interactive map to help people visually realize where exactly the shop is located.
@@ -46,8 +46,8 @@ cleaner page with a new interactive map to help people visually realize where ex
 
 ### Wonderful Customers
 
-<img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-testimonials.jpg" width="308" />
-<a href="http://www.theloopyewe.com/about/wonderful-customers/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-testimonials.jpg" width="308" /></a>
+<img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-testimonials.jpg" width="308" />
+<a href="http://www.theloopyewe.com/about/wonderful-customers/"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-testimonials.jpg" width="308" /></a>
 
 It's always nice to be able to show feedback customers send in. The new site reorganizes everything in a nicer, more
 readable way, and on separate pages. It's also much simpler to submit a testimonial through the on-screen form.
@@ -55,16 +55,16 @@ readable way, and on separate pages. It's also much simpler to submit a testimon
 
 ### Shop
 
-<img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-shop.jpg" width="308" />
-<a href="http://www.theloopyewe.com/shop/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-shop.jpg" width="308" /></a>
+<img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-shop.jpg" width="308" />
+<a href="http://www.theloopyewe.com/shop/"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-shop.jpg" width="308" /></a>
 
 Generally speaking, I wanted the photos to be the main defining experience that a visitor has. To that end, product
 photos became significantly larger in an effort to fill in the missing colors of the simple color palette I used.
 Since it's the main shop page, I also included useful links like new products, gift certificates, search, and links for
 browsing by some attributes.
 
-<img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-shop-category.jpg" width="308" />
-<a href="http://www.theloopyewe.com/shop/g/yarn/cascade/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-shop-category.jpg" width="308" /></a>
+<img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-shop-category.jpg" width="308" />
+<a href="http://www.theloopyewe.com/shop/g/yarn/cascade/"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-shop-category.jpg" width="308" /></a>
 
 Within specific shop categories, I only slightly increased the thumbnails and instead favored focusing more on the
 different brands and their distinctions.
@@ -73,24 +73,24 @@ One other significant addition to the new website is the social sharing function
 social sharing links to Twitter, Pinterest, and Facebook. Using a custom short domain and campaign URL arguments, we can
 get better insight into customer interests.
 
-<img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-shop-brand.jpg" width="308" />
-<a href="http://www.theloopyewe.com/shop/g/yarn/cascade/220/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-shop-brand.jpg" width="308" /></a>
+<img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-shop-brand.jpg" width="308" />
+<a href="http://www.theloopyewe.com/shop/g/yarn/cascade/220/"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-shop-brand.jpg" width="308" /></a>
 
 In my opinion, one of the best changes has been to viewing products on pages like this. Using a sidebar to show the
 description and attributes allows customers to more quickly see the enticing and larger product photos together.
 
-<img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-shop-product.jpg" width="308" />
-<a href="http://www.theloopyewe.com/shop/p/F2FDB8A1-220-8905-Robin-Egg-Blue"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-shop-product.jpg" width="308" /></a>
+<img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-shop-product.jpg" width="308" />
+<a href="http://www.theloopyewe.com/shop/p/F2FDB8A1-220-8905-Robin-Egg-Blue"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-shop-product.jpg" width="308" /></a>
 
 I think the second best improvement is the individual product page where the photo takes precedence and shows off the
 quality of the product. A larger call-to-action makes it easier to add the item to carts and wishlists. I reorganized
 the product information as well to better prioritize it, visually.
 
 <p style="line-height:inherit;">
-    <img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-shop-search-grid.jpg" width="308" />
-    <a href="http://www.theloopyewe.com/shop/search/a/fiber-weight/fingering-weight/availability/in-stock/?q=red"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-shop-search-grid.jpg" width="308" /></a>
-    <img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-shop-search-list.jpg" width="308" />
-    <a href="http://www.theloopyewe.com/shop/search/a/fiber-weight/fingering-weight/availability/in-stock/?q=red&amp;r%5Bview%5D=list-tn"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-shop-search-list.jpg" width="308" /></a>
+    <img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-shop-search-grid.jpg" width="308" />
+    <a href="http://www.theloopyewe.com/shop/search/a/fiber-weight/fingering-weight/availability/in-stock/?q=red"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-shop-search-grid.jpg" width="308" /></a>
+    <img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-shop-search-list.jpg" width="308" />
+    <a href="http://www.theloopyewe.com/shop/search/a/fiber-weight/fingering-weight/availability/in-stock/?q=red&amp;r%5Bview%5D=list-tn"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-shop-search-list.jpg" width="308" /></a>
 </p>
 
 One major feature addition has been a real search engine. The old site used some complex and inefficient database
@@ -101,8 +101,8 @@ the site in the future.
 
 ### Help
 
-<img alt="Screenshot: before" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/old-help.jpg" width="308" />
-<a href="http://www.theloopyewe.com/help/"><img alt="Screenshot: after" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-help.jpg" width="308" /></a>
+<img alt="Screenshot: before" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/old-help.jpg" width="308" />
+<a href="http://www.theloopyewe.com/help/"><img alt="Screenshot: after" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-help.jpg" width="308" /></a>
 
 Previously we had a single, text-heavy and difficult to read help page, also known as "frequently asked questions." The
 new site breaks things down into different topics and adds creative pictures to make things more readable. There's also
@@ -117,7 +117,7 @@ functionality...
 
 ### Local
 
-<a href="http://www.theloopyewe.com/local/classes.html"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-local.jpg" width="628" /></a>
+<a href="http://www.theloopyewe.com/local/classes.html"><img alt="Screenshot: web page" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-local.jpg" width="628" /></a>
 
 I created a new topic dedicated to our local customers. Since it's not only an online store anymore, we wanted a way to
 publicize some of the local activities that Fort Collins people would be interested in. It also lets online-only
@@ -126,7 +126,7 @@ customers see how we exist and work in real life to create more of a connection.
 
 ### About
 
-<a href="http://www.theloopyewe.com/about/loopy-central/fort-collins.html"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-about.jpg" width="628" /></a>
+<a href="http://www.theloopyewe.com/about/loopy-central/fort-collins.html"><img alt="Screenshot: web page" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-about.jpg" width="628" /></a>
 
 Along with a local page, I also wanted a better page for showing our real world existence so customers could feel more
 connected and understand both who and where they're purchasing from.
@@ -134,7 +134,7 @@ connected and understand both who and where they're purchasing from.
 
 ### Shop Attributes
 
-<a href="http://www.theloopyewe.com/shop/a/fiber-material/merino-wool/"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-shop-attribute.jpg" width="628" /></a>
+<a href="http://www.theloopyewe.com/shop/a/fiber-material/merino-wool/"><img alt="Screenshot: web page" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-shop-attribute.jpg" width="628" /></a>
 
 In an effort to make navigating the shop easier, I created new pages to view products by attributes in a more organized
 way. If somebody is interested in "Fingering Weight" they can easily see all the companies and brands that offer it. If
@@ -143,7 +143,7 @@ they need more complicated searches, there's an Advanced Search link at the bott
 
 ### Site Feedback
 
-<a href="http://www.theloopyewe.com/contact/site-feedback.html?uri=%2Fshop%2Fg%2Fyarn%2Fthe-loopy-ewe%2Floopy-cakes%2F"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-sitefeedback.jpg" width="628" /></a>
+<a href="http://www.theloopyewe.com/contact/site-feedback.html?uri=%2Fshop%2Fg%2Fyarn%2Fthe-loopy-ewe%2Floopy-cakes%2F"><img alt="Screenshot: web page" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-sitefeedback.jpg" width="628" /></a>
 
 For both the cases of bugs and hearing ideas for improvement, I wanted to be sure visitors could easily send technical
 feedback. Links at the footer of every page include information like what page they were looking at, what browser,
@@ -152,7 +152,7 @@ authenticated username information, and whatever notes they want to add.
 
 ### humans.txt
 
-<a href="http://www.theloopyewe.com/humans.txt"><img alt="Screenshot: web page" src="/blog-data/2013-04-27-new-website-for-the-loopy-ewe/new-humans.jpg" width="628" /></a>
+<a href="http://www.theloopyewe.com/humans.txt"><img alt="Screenshot: web page" src="{{ site.asset_prefix }}/blog/2013-04-27-new-website-for-the-loopy-ewe/new-humans.jpg" width="628" /></a>
 
 Whenever possible, I like discussing and linking to technical resources that I have found useful. For the nerdy types, I
 created the `humans.txt` file to document many of the resources that have helped make the website possible.

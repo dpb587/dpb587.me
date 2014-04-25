@@ -24,26 +24,26 @@ extremely familiar. The core of `ti-debug` is written in [node.js][12] and when 
 server for you to open a browser tab and connect to. While you develop in other tabs, it will wait until there is an
 incoming debug session at which point it loads up the debug environment and waits for you to step through code.
 
-<a href="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/waiting-to-debug.jpg"><img alt="Screenshot: waiting for connection" src="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/waiting-to-debug.jpg" width="308" /></a>
-<a href="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/initial-pause.jpg"><img alt="Screenshot: waiting for interaction" src="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/initial-pause.jpg" width="308" /></a>
+<a href="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/waiting-to-debug.jpg"><img alt="Screenshot: waiting for connection" src="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/waiting-to-debug.jpg" width="308" /></a>
+<a href="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/initial-pause.jpg"><img alt="Screenshot: waiting for interaction" src="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/initial-pause.jpg" width="308" /></a>
 
 The full stack trace is available along with all the local and global variables. In addition to the basic step
 over/into/out, breakpoints can be set throughout the code. When paused, variables can be inspected and explored. In
 addition to simple types like strings and booleans, complex objects and arrays can be expanded and further explored.
 
-<a href="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/breakpoints.jpg"><img alt="Screenshot: breakpoint exploration" src="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/breakpoints.jpg" width="628" /></a>
+<a href="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/breakpoints.jpg"><img alt="Screenshot: breakpoint exploration" src="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/breakpoints.jpg" width="628" /></a>
 
 Not only can variables be read, they can also be updated inline by double clicking and entering new values. Or, for more
 advanced commands, the console can be used to evaluate application code, possibly updating the runtime.
 
-<a href="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/propset-inline.jpg"><img alt="Screenshot: waiting for connection" src="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/propset-inline.jpg" width="308" /></a>
-<a href="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/propset-console.jpg"><img alt="Screenshot: waiting for interaction" src="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/propset-console.jpg" width="308" /></a>
+<a href="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/propset-inline.jpg"><img alt="Screenshot: waiting for connection" src="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/propset-inline.jpg" width="308" /></a>
+<a href="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/propset-console.jpg"><img alt="Screenshot: waiting for interaction" src="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/propset-console.jpg" width="308" /></a>
 
 Like most other IDE debuggers, the frontend supports jumping through the various levels in the stack to inspect the
 runtime and run arbitrary commands. One other minor feature is watch expressions which are evaulated during every pause.
 
-<a href="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/stack-jumping.jpg"><img alt="Screenshot: waiting for connection" src="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/stack-jumping.jpg" width="308" /></a>
-<a href="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/watch-expressions.jpg"><img alt="Screenshot: waiting for interaction" src="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/watch-expressions.jpg" width="308" /></a>
+<a href="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/stack-jumping.jpg"><img alt="Screenshot: waiting for connection" src="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/stack-jumping.jpg" width="308" /></a>
+<a href="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/watch-expressions.jpg"><img alt="Screenshot: waiting for interaction" src="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/watch-expressions.jpg" width="308" /></a>
 
 Once a debug session has completed, the debug tab gets redirected back to the waiting page. Or, if the debug tab gets
 closed in the middle of the debug session, the debugger will detach from the program and let it run to completion.
@@ -51,7 +51,7 @@ closed in the middle of the debug session, the debugger will detach from the pro
 PHP isn't the only supported language. By using the debugging modules from [Komodo][14], other languages using the DBGp
 communication can also use `ti-debug`. For example, Python scripts can currently be debugged, too...
 
-<a href="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/python.jpg"><img alt="Screenshot: breakpoint exploration" src="/blog-data/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/python.jpg" width="628" /></a>
+<a href="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/python.jpg"><img alt="Screenshot: breakpoint exploration" src="{{ site.asset_prefix }}/blog/2013-05-16-ti-debug-for-debugging-server-code-in-the-browser/python.jpg" width="628" /></a>
 
 
 ## Workflow
