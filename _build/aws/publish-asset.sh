@@ -11,6 +11,7 @@ s3cmd sync \
   --acl-public \
   --no-preserve \
   --add-header 'cache-control:max-age=86400' \
+  --exclude .DS_Store \
   --verbose \
   . \
   "s3://assets.dpb587.me/asset/$2/"

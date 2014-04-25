@@ -13,6 +13,7 @@ s3cmd sync \
   --acl-public \
   --no-delete-removed \
   --no-preserve \
+  --exclude .DS_Store \
   --add-header 'cache-control:max-age=604800' \
   --verbose \
   . \
@@ -27,6 +28,7 @@ s3cmd sync \
   --no-preserve \
   --rexclude 'asset/.+' \
   --rexclude 'static/.+' \
+  --exclude .DS_Store \
   --add-header 'cache-control:max-age=3600' \
   --verbose \
   . \
