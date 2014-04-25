@@ -1,7 +1,7 @@
 ---
 title: Terminating Gearman Workers in PHP
 layout: post
-tags: deploy gearman pcntl php
+tags: [ 'deploy', 'gearman', 'pcntl', 'php' ]
 description: Locally and remotely stopping workers without interrupting jobs.
 code: https://gist.github.com/dpb587/4531728
 ---

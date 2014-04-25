@@ -1,7 +1,7 @@
 ---
 title: Bank Card Readers for Web Applications
 layout: post
-tags: bank-card forms javascript reader
+tags: [ 'bank card', 'forms', 'javascript', 'reader' ]
 description: Scanning credit cards into website forms.
 code: https://gist.github.com/dpb587/5229239
 ---

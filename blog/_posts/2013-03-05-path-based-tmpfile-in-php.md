@@ -1,7 +1,7 @@
 ---
 title: Path-based tmpfile in PHP
 layout: post
-tags: php
+tags: [ 'php' ]
 description: When paths are more useful than resources.
 ---
 

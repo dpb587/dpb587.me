@@ -1,7 +1,7 @@
 ---
 title: Photo Galleries for Jekyll
 layout: post
-tags: blog gallery iphoto jekyll jekyllrb photo ruby
+tags: [ 'blog', 'gallery', 'iphoto', 'jekyll', 'jekyllrb', 'photo', 'ruby' ]
 description: Easily exporting my iPhoto album to this Jekyll-based site.
 ---
 

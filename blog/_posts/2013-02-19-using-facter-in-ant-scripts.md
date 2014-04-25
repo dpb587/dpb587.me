@@ -1,7 +1,7 @@
 ---
 title: Using Facter in Ant Scripts
 layout: post
-tags: ant facter
+tags: [ 'ant', 'facter' ]
 description: Reusing facts from build scripts.
 ---
 

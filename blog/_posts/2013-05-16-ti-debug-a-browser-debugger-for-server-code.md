@@ -1,7 +1,7 @@
 ---
 title: "ti-debug: For Debugging Server Code in the Browser"
 layout: post
-tags: node xdebug webkit
+tags: [ 'debugger', 'node', 'php', 'xdebug', 'webkit' ]
 description: Making it easier to debug languages like PHP and Python with only a browser.
 ---
 

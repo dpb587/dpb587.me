@@ -1,7 +1,7 @@
 ---
 title: Comparing PHP Application Definitions
 layout: post
-tags: code diff language php xslt
+tags: [ 'code', 'diff', 'language', 'php', 'xslt' ]
 description: Identifying how classes/interfaces changed between versions.
 code: https://github.com/dpb587/diff-defn.php
 ---

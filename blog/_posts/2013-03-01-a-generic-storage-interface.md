@@ -1,7 +1,7 @@
 ---
 title: A Generic Storage Interface
 layout: post
-tags: asset php storage
+tags: [ 'asset', 'php', 'storage' ]
 description: Abstracting file storage, whether it's local or cloud.
 ---
 

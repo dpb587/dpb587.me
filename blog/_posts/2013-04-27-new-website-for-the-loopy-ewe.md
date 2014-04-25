@@ -1,7 +1,7 @@
 ---
 title: New Website for The Loopy Ewe
 layout: post
-tags: elasticsearch migration redesign theloopyewe
+tags: [ 'elasticsearch', 'migration', 'redesign', 'theloopyewe' ]
 description: A summary of the customer-facing changes I worked on for the site.
 ---
 

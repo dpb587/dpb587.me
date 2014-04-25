@@ -1,7 +1,7 @@
 ---
 title: Embeddable and Context-Aware Web Pages
 layout: post
-tags: architecture http javascript symfony
+tags: [ 'architecture', 'http', 'javascript', 'symfony', 'symfony2' ]
 description: Embedding content in an absolutely relative manner.
 ---
 

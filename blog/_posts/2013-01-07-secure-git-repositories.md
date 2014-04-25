@@ -1,7 +1,7 @@
 ---
 title: Secure Git Repositories
 layout: post
-tags: git security
+tags: [ 'git', 'security' ]
 description: Seamless data encryption of repository files.
 ---
 

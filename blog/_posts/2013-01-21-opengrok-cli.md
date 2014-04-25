@@ -1,7 +1,7 @@
 ---
 title: OpenGrok CLI
 layout: post
-tags: opengrok php symfony xpath
+tags: [ 'opengrok', 'php', 'symfony', 'xpath' ]
 description: Making it easier to search code from the command line.
 code: https://github.com/dpb587/opengrok-cli
 ---

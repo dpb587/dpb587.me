@@ -1,7 +1,7 @@
 ---
 title: Distributed Docker Containers
 layout: post
-tags: aws-ec2 docker nodejs scs-utils
+tags: [ 'aws-ec2', 'docker', 'nodejs', 'scs-utils' ]
 description: A strategy for integrating Docker services across multiple hosts and data centers.
 ---
 

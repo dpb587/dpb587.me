@@ -1,7 +1,7 @@
 ---
 title: "Barcoding Inventory with QR Codes"
 layout: post
-tags: barcode qr-code retail product label scan
+tags: [ 'barcode', 'qr', 'retail', 'product', 'label', 'scan' ]
 description: A web-centric, user-friendly approach for using barcodes in a retail shop.
 ---
 

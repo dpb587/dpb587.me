@@ -1,7 +1,7 @@
 ---
 title: Structured Data with schema.org
 layout: post
-tags: product schema.org structured-data xpath
+tags: [ 'product', 'schema.org', 'structured data', 'xpath' ]
 description: Ensuring content is useful to both humans and robots.
 ---
 

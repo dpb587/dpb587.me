@@ -1,7 +1,7 @@
 ---
 title: Using HTML Headers with wkhtmltopdf
 layout: post
-tags: headers wkhtmltopdf
+tags: [ 'headers', 'wkhtmltopdf' ]
 description: Experimenting with dynamic HTML headers for PDFs.
 ---
 

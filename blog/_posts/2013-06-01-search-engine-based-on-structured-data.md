@@ -1,7 +1,7 @@
 ---
 title: The Basics of a Custom Search Engine
 layout: post
-tags: elasticsearch gearmand schema.org search sitemap structured-data
+tags: [ 'elasticsearch', 'gearmand', 'schema.org', 'search', 'sitemap', 'structured data' ]
 description: Combining elasticsearch and "structured data" to create a self-hosted search engine.
 ---
 

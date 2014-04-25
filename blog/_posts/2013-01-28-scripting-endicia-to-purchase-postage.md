@@ -1,7 +1,7 @@
 ---
 title: Scripting Endicia to Purchase Postage
 layout: post
-tags: applescript endicia loopy
+tags: [ 'applescript', 'endicia', 'loopy' ]
 description: Automating user interactions with AppleScript.
 code: https://gist.github.com/dpb587/4660132
 ---

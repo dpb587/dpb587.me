@@ -1,7 +1,7 @@
 ---
 title: Automating Backups to the Cloud
 layout: post
-tags: backup gpg s3
+tags: [ 'backup', 'gpg', 's3' ]
 description: Combining gpg, Amazon S3 and IAM policies.
 ---
 
