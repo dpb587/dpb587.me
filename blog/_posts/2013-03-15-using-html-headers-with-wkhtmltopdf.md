@@ -42,6 +42,6 @@ added benefits of remaining interactive with embedded links.
 
  [1]: https://code.google.com/p/wkhtmltopdf/
  [2]: /about.html
- [3]: /include/content/header-simple.html
+ [3]: https://github.com/dpb587/dpb587.me/blob/master/static/dev/content/header-simple.html
  [4]: http://static.dpb587.me/about.pdf
  [5]: https://developer.mozilla.org/en-US/docs/CSS/page-break-inside
