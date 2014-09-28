@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/3a0cb32-skogafoss
 ordering: 95
 previous: /gallery/2014-london-iceland-trip/4d26938-panorama
+sizes:
+  1280:
+    height: 276
+    width: 1280
+  640w:
+    height: 138
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Skógafoss
 ---
 

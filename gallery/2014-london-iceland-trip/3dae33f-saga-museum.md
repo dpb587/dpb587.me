@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/69f14ff-hallgrimskirkja
 ordering: 67
 previous: /gallery/2014-london-iceland-trip/524128b-panorama
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: 'Saga Museum'
 ---
 

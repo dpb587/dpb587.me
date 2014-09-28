@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/3dae33f-saga-museum
 ordering: 66
 previous: /gallery/2014-london-iceland-trip/1e88721-saga-museum
+sizes:
+  1280:
+    height: 288
+    width: 1280
+  640w:
+    height: 144
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Panorama
 ---
 

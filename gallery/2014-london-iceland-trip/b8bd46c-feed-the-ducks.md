@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/d6254b6-hallgrimskirkja
 ordering: 50
 previous: /gallery/2014-london-iceland-trip/bf6398b-city-hall
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: 'Feed the Ducks'
 ---
 

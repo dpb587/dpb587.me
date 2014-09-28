@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/6be2794-glacier-walk
 ordering: 84
 previous: /gallery/2014-london-iceland-trip/a7d6a38-panorama
+sizes:
+  1280:
+    height: 290
+    width: 1280
+  640w:
+    height: 145
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: 'Glacier Walk'
 ---
 

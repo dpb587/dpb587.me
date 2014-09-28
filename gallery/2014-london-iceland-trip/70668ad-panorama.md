@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/49594d4-across-the-bay
 ordering: 46
 previous: /gallery/2014-london-iceland-trip/238d28c-reyjkavik-docks
+sizes:
+  1280:
+    height: 389
+    width: 1280
+  640w:
+    height: 195
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Panorama
 ---
 

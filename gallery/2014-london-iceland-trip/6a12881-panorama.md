@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/7a5ddf9-panorama
 ordering: 75
 previous: /gallery/2014-london-iceland-trip/d66f55c-sudhurland
+sizes:
+  1280:
+    height: 286
+    width: 1280
+  640w:
+    height: 143
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Panorama
 ---
 

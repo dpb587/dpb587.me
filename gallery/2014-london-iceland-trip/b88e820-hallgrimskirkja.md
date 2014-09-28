@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/b1ba977-church-organ
 ordering: 52
 previous: /gallery/2014-london-iceland-trip/d6254b6-hallgrimskirkja
+sizes:
+  1280:
+    height: 1280
+    width: 960
+  640w:
+    height: 853
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Hallgrímskirkja
 ---
 

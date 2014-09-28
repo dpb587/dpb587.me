@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/033bb54-royal-observatory
 ordering: 3
 previous: /gallery/2014-london-iceland-trip/b70543a-natural-history-museum
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: 'Hyde Park'
 ---
 

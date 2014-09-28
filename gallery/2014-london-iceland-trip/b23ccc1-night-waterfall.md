@@ -9,6 +9,19 @@ layout: gallery-photo
 next: /gallery/2014-london-iceland-trip/223be54-waterfall
 ordering: 97
 previous: /gallery/2014-london-iceland-trip/3a0cb32-skogafoss
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: 'Night Waterfall'
 ---
 

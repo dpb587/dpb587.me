@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/c16a7b6-thames-cable-car
 ordering: 5
 previous: /gallery/2014-london-iceland-trip/033bb54-royal-observatory
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: 'Greenwich Park'
 ---
 

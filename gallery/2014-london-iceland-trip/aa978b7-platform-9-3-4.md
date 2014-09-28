@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/493e33e-gherkin
 ordering: 16
 previous: /gallery/2014-london-iceland-trip/293e193-its-an-albino-peacock
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: 'Platform 9 3/4'
 ---
 

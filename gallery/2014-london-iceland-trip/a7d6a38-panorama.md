@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/b6db71d-glacier-walk
 ordering: 83
 previous: /gallery/2014-london-iceland-trip/04cac52-museum-of-skogar
+sizes:
+  1280:
+    height: 296
+    width: 1280
+  640w:
+    height: 148
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Panorama
 ---
 

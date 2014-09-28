@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/a8e17f9-stegosaurus
 ordering: 25
 previous: /gallery/2014-london-iceland-trip/f2e51f5-the-national-gallery
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: 'Trafalgar Lunch'
 ---
 

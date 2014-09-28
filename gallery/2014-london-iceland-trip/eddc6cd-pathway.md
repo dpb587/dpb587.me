@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/a02f087-hallgrimskirkja
 ordering: 61
 previous: /gallery/2014-london-iceland-trip/90e6908-colorful
+sizes:
+  1280:
+    height: 1280
+    width: 960
+  640w:
+    height: 853
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Pathway
 ---
 

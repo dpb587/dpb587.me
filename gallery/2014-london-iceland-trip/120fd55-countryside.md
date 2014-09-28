@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/82328eb-bletchley-codebreaking
 ordering: 11
 previous: /gallery/2014-london-iceland-trip/0964b34-british-library
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Countryside
 ---
 

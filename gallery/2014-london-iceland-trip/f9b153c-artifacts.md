@@ -12,6 +12,19 @@ location:
 next: /gallery/2014-london-iceland-trip/56d4241-the-nereid-monument
 ordering: 37
 previous: /gallery/2014-london-iceland-trip/632b686-rosetta-stone
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Artifacts
 ---
 

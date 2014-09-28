@@ -9,6 +9,19 @@ layout: gallery-photo
 next: /gallery/2014-london-iceland-trip/8e50ad8-cityscape
 ordering: 56
 previous: /gallery/2014-london-iceland-trip/34da741-cityscape
+sizes:
+  1280:
+    height: 960
+    width: 1280
+  640w:
+    height: 480
+    width: 640
+  200x200:
+    height: 200
+    width: 200
+  96x96:
+    height: 96
+    width: 96
 title: Cityscape
 ---
 
