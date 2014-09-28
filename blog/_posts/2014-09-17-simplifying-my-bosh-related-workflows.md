@@ -209,7 +209,7 @@ configured)...
     $ cloque boshdirector:inception:start \
       --security-group $( cloque --deployment=core infra:get '.TrustedPeerSecurityGroupId' ) \
       --security-group $( cloque --deployment=core infra:get '.PublicGlobalEgressSecurityGroupId' ) \
-      $(cloque infra:get '.SubnetZ0PublicId') \
+      $( cloque --deployment=core infra:get '.SubnetZ0PublicId' ) \
       t2.micro
     > finding instance...missing
       > instance-id -> i-f84169f3
