@@ -81,6 +81,13 @@ header ul li a:hover {
     color: #FFFFFF;
 }
 
+header ul li .noanchor {
+    color: #CCCCCC;
+    display: block;
+    margin-left: 6px;
+    padding: 1px 5px 2px 5px;
+}
+
 .meta {
     color: #333333;
     font-size: 12px;

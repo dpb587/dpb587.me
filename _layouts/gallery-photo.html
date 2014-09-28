@@ -15,10 +15,14 @@
         <ul style="margin-top:0;">
             {% if page.previous %}
                 <li><a href="{{ page.previous }}.html" rel="prev">&nbsp;&laquo;&nbsp;</a></li>
+            {% else %}
+                <li><span class="noanchor">&nbsp;&laquo;&nbsp;</span></li>
             {% endif %}
 
             {% if page.next %}
                 <li><a href="{{ page.next }}.html" rel="next">&nbsp;&raquo;&nbsp;</a></li>
+            {% else %}
+                <li><span class="noanchor">&nbsp;&raquo;&nbsp;</span></li>
             {% endif %}
         </ul>
         <h1>
@@ -28,14 +32,14 @@
     </header>
     <section class="post-content">
         <p style="text-align:center;">
-            <a href="{{ site.asset_prefix }}{{ page.url|replace:".html","~1280.jpg" }}"><img alt="Photo: {{ page.title }}" src="{{ site.asset_prefix }}{{ page.url|replace:".html","~640.jpg" }}" style="max-width:630px;" /></a>
+            <img alt="Photo: {{ page.title }}" src="{{ site.asset_prefix }}{{ page.url|replace:".html","~640w.jpg" }}" style="max-width:630px;" />
         </p>
 
         {{ content }}
     </section>
     <div class="meta">
         <div class="meta-properties">
-            <div style="float:left;width:359px;">
+            <div style="float:left;width:352px;">
                 <dl style="margin-top:0;">
                     <dt>Date</dt>
                     <dd>{{ page.date|date:'%A, %B %d at %I:%M %p'|replace:' 0',' '|replace:' AM',' am'|replace:' PM',' pm' }}
@@ -48,11 +52,21 @@
 
                     <dt>Exposure</dt>
                     <dd>{{ page.exif.exposure }}</dd>
+
+                    {% if page.sizes %}
+                        <dt>Sizes</dt>
+                        <dd>
+                            {% for size in page.sizes %}
+                                {% if 0 < forloop.index0 %}&nbsp;&middot;&nbsp;{% endif %}
+                                <a href="{{ site.asset_prefix }}{{ page.url|replace:".html","" }}~{{ size[0] }}.jpg">{{ size[1].width }}x{{size[1].height }}</a>
+                            {% endfor %}
+                        </dd>
+                    {% endif %}
                 </dl>
             </div>
 
             {% if page.location %}
-                <div style="float:left;line-height:0;width:280px;">
+                <div style="float:left;line-height:0;margin-left:7px;width:280px;">
                     <a href="https://maps.google.com/maps?hl=en&amp;ll={{ page.location.latitude }},{{ page.location.longitude }}&amp;t=w&amp;z=12"><img alt="map" height="173" src="https://maps.googleapis.com/maps/api/staticmap?center={{ page.location.latitude }},{{ page.location.longitude }}&amp;zoom=13&amp;size=280x173&amp;markers=size:mid%7Ccolor:orange%7C{{ page.location.latitude }},{{ page.location.longitude }}&amp;sensor=false" title="{{ page.location.title }}" width="280" /></a>
                 </div>
             {% endif %}
