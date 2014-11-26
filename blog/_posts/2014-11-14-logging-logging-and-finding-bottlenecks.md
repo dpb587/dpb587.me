@@ -48,8 +48,8 @@ message and indicating when the log message was originally emitted. However, whe
 was up to an hour delay between seeing the messages in dashboards and we had no way to measure how long messages were
 stuck nor see where they were stuck. We decided to inject a few more fields into events...
 
-First, we wanted to know when log messages were first entering our logsearch stack. This would be help validate that
-our shippers are pushing data into the cluster in a timely manner (rather than significant batching or simply getting
+First, we wanted to know when log messages were first entering our logsearch stack. This would help validate that our
+shippers are pushing data into the cluster in a timely manner (rather than significant batching or simply getting
 stuck). To do this, I configured ingestors to add the current time to every message when it came in. I also added
 fields documenting which BOSH job received the message  to help us keep an eye on how balanced the ingestors may be.
 So, now our messages have a few additional fields...
