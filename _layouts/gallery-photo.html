@@ -33,8 +33,16 @@
         </h1>
     </header>
     <section class="post-content">
+        {% assign maxsize = 0 %}
+        {% assign maxref = false %}
+        {% for size in page.sizes %}
+            {% if maxsize < size[1].height * size[1].width %}
+                {% assign maxsize = size[1].height * size[1].width %}
+                {% assign maxref = size %}
+            {% endif %}
+        {% endfor %}
         <p style="text-align:center;">
-            <img alt="Photo: {{ page.title }}" src="{{ site.asset_prefix }}{{ page.url|replace:".html","~640w.jpg" }}" style="max-width:630px;" />
+            <a href="{{ site.asset_prefix }}{{ page.url|replace:".html","" }}~{{ maxref[0] }}.jpg"><img alt="Photo: {{ page.title }}" src="{{ site.asset_prefix }}{{ page.url|replace:".html","~640w.jpg" }}" style="max-width:630px;" /></a>
         </p>
 
         {% if content %}
