@@ -1,5 +1,5 @@
 {% include header.html %}
-<section>
+<section itemscope itemtype="http://schema.org/BlogPosting">
     <header>
         <div class="timeline">
             {% if page.date %}
@@ -16,11 +16,11 @@
             
         </div>
         <h1>
-            {{ page.title }}
-            <small class="print-only">{{ page.date|date:'%A, %B %d, %Y' }}</small>
+            <span itemprop="name">{{ page.title }}</span>
+            <small class="print-only" itemprop="datePublished" content="{{ page.date|date:'%F') }}">{{ page.date|date:'%A, %B %d, %Y' }}</small>
         </h1>
     </header>
-    <section class="post-content">
+    <section class="post-content" itemprop="articleBody">
         {{ content }}
     </section>
     <div class="meta">

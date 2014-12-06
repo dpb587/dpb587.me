@@ -1,0 +1,13 @@
+{% include header.html %}
+<section itemscope itemtype="http://schema.org/ImageGallery">
+    <header>
+        <div class="timeline"></div>
+        <h1>
+            <span itemprop="name">{{ page.title }}</span>
+        </h1>
+    </header>
+    <section class="post-content">
+        {{ content }}
+    </section>
+</section>
+{% include footer.html %}
