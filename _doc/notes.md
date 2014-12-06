@@ -22,6 +22,12 @@ Re-generating galleries...
         --export 200x200 \
         --export 640w \
         --export 1280
+    # 2014-barcelona-trip
+    $ osascript ../jekyll-gallery/export-iphoto.applescript 'Barcelona Trip' \
+      | php -dmemory_limit=1G ../jekyll-gallery/convert.php 2014-barcelona-trip \
+        --export 200x200 \
+        --export 640w \
+        --export 1280
 
 Uploading photo galleries:
 
