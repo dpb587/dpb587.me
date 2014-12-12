@@ -28,6 +28,12 @@ Re-generating galleries...
         --export 200x200 \
         --export 640w \
         --export 1280
+    # 2014-albuquerque-balloon-fiesta
+    $ osascript ../jekyll-gallery/export-iphoto.applescript 'Balloon Fiesta' \
+      | php -dmemory_limit=1G ../jekyll-gallery/convert.php 2014-albuquerque-balloon-fiesta \
+        --export 200x200 \
+        --export 640w \
+        --export 1280
 
 Uploading photo galleries:
 
