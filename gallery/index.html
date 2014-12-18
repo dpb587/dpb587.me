@@ -1,0 +1,24 @@
+---
+title: 'Galleries'
+layout: default
+---
+
+<section>
+    {% loopdir path:"gallery" match:"*/index.html" sort:"-date" %}
+      <div style="display:inline-block;height:274px;margin:8px 10px 0 0;text-align:center;width:200px;">
+        <a href="/{{ item.path|replace:'/index.html','/' }}" style="text-decoration:none;">
+          <img alt="{{ item.title }}" height="200" src="{{ site.asset_prefix }}/{{ item.path|replace:'/index.html','/' }}/{{ item.highlight_photo }}~200x200.jpg" title="{{ item.title }}" width="200" style="border-radius:4px;" />
+          <span style="text-decoration:underline;">{{ item.title }}</span>
+          {% if item.date %}<br />
+            <small>
+              {% if item.date_end %}
+                {{ item.date|date:"%B %-d" }} &ndash; {{ item.date_end|date:"%-d" }}, {{ item.date|date:"%Y" }}
+              {% else %}
+                {{ item.date|date:"%B %-d, %Y" }}
+              {% endif %}
+            </small>
+          {% endif %}
+        </a>
+      </div>
+    {% endloopdir %}
+</section>

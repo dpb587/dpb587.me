@@ -66,7 +66,7 @@ module Jekyll
         end
 
         item['name'] = File.basename(pathname, @attributes['match'].sub('*', ''))
-        item['fullname'] = path + '/' + item['name']
+        item['fullname'] = pathname.gsub(/\.[^\.]+$/, '')
         item['path'] = pathname
 
         items.push item
