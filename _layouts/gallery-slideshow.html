@@ -1,0 +1,198 @@
+<html>
+  {% capture gallery %}{{ page.url|replace:'/slideshow.html',''|remove_first:'/' }}{% endcapture %}
+  <head>
+    <title>{{ page.title }}</title>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/mootools/1.5.1/mootools-yui-compressed.js"></script>
+    
+    <!-- Core CSS file -->
+    <link rel="stylesheet" href="{{ site.static_prefix }}/photo-swipe/photoswipe.css"> 
+
+    <!-- Skin CSS file (optional)
+         In folder of skin CSS file there are also:
+         - .png and .svg icons sprite, 
+         - preloader.gif (for browsers that do not support CSS animations) -->
+    <link rel="stylesheet" href="{{ site.static_prefix }}/photo-swipe/default-skin/default-skin.css"> 
+
+    <!-- Core JS file -->
+    <script src="{{ site.static_prefix }}/photo-swipe/photoswipe.min.js"></script> 
+
+    <!-- UI JS file -->
+    <script src="{{ site.static_prefix }}/photo-swipe/photoswipe-ui-default.min.js"></script>
+    
+    <style type="text/css">
+      body {
+        background-color: #000000;
+        font-family: 'helvetica nueue', helvetica, sans-serif;
+        margin: 0;
+      }
+      
+      h1 {
+        border-bottom: #484848 solid 1px;
+        color: #DEDEDE;
+        font-weight: normal;
+        margin: 8px 12px 4px;
+        padding-bottom: 6px;
+      }
+      
+      section {
+        text-align: center;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <section>
+      <h1>{{ page.title }}</h1>
+      {% loopdir path:gallery match:"*.md" sort:"ordering" %}<div class="photo" style="border-radius:2px;display:inline-block;margin:4px;overflow:hidden;">
+        {% assign maxsize = 0 %}
+        {% assign maxref = false %}
+        {% for size in item.sizes %}
+          {% if maxsize < size[1].height * size[1].width %}
+            {% assign maxsize = size[1].height * size[1].width %}
+            {% assign maxref = size %}
+          {% endif %}
+        {% endfor %}
+        <a href="{{ site.asset_prefix }}/{{ item.fullname }}~{{ maxref[0] }}.jpg" data-size="{{ maxref[1].width }}x{{ maxref[1].height }}">
+            <img src="{{ site.asset_prefix }}/{{ item.fullname }}~200x200.jpg" height="100" alt="{{ item.title }}" width="100" data-size="200x200" />
+        </a>
+        <div class="caption" style="display:none;">{{ item.content }}</div>
+      </div>{% endloopdir %}
+    </section>
+      
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+          <!-- Background of PhotoSwipe. 
+               It's a separate element, as animating opacity is faster than rgba(). -->
+          <div class="pswp__bg"></div>
+
+          <!-- Slides wrapper with overflow:hidden. -->
+          <div class="pswp__scroll-wrap">
+
+              <!-- Container that holds slides. 
+                      PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+              <div class="pswp__container">
+                  <!-- don't modify these 3 pswp__item elements, data is added later on -->
+                  <div class="pswp__item"></div>
+                  <div class="pswp__item"></div>
+                  <div class="pswp__item"></div>
+              </div>
+
+              <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+              <div class="pswp__ui pswp__ui--hidden">
+
+                  <div class="pswp__top-bar">
+
+                      <!--  Controls are self-explanatory. Order can be changed. -->
+
+                      <div class="pswp__counter"></div>
+
+                      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                      <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                      <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                      <!-- element will get class pswp__preloader--active when preloader is running -->
+                      <div class="pswp__preloader">
+                          <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                              <div class="pswp__preloader__donut"></div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                      <div class="pswp__share-tooltip"></div> 
+                  </div>
+
+                  <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                  </button>
+
+                  <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                  </button>
+
+                  <div class="pswp__caption">
+                      <div class="pswp__caption__center"></div>
+                  </div>
+
+                </div>
+
+              </div>
+
+      </div>
+      
+      <script type="text/javascript">
+        window.addEvent('domready', function () {
+          var pswp;
+          var slides = [];
+          
+          function openPhotoSwipe(index) {
+            if (!pswp) {
+              var pswp = new PhotoSwipe(
+                $$('.pswp')[0],
+                PhotoSwipeUI_Default,
+                slides,
+                {
+                  index : index,
+    		        	mainClass : 'pswp--minimal--dark',
+    			        barsSize : {
+                    top: 0,
+                    bottom: 0
+                  },
+    							captionEl : false,
+    							shareEl : false,
+    							bgOpacity : 0.85,
+    							tapToClose : true,
+    							tapToToggleControls : false,
+                  history : false,
+                  getThumbBoundsFn : function (index) {
+                    var imgsize = slides[index].mdom.getAttribute('data-size').split('x');
+                    var coord = slides[index].mdom.getCoordinates(true);
+                
+                    return {
+                      x : coord.left,
+                      y : coord.top,
+                      w : coord.width
+                    };
+                  },
+                  showHideOpacity: true
+                }
+              );
+              pswp.init();
+            } else {
+              pswp.goTo(index);
+            }
+          }
+
+          $$('div.photo').each(function (dom, i) {
+            var adom = dom.getElement('a');
+            var asize = adom.getAttribute('data-size').split('x');
+            var capdom = dom.getElement('div.caption');
+            var imgdom = dom.getElement('img');
+
+            dom.addEvent('click', function (e) {
+              openPhotoSwipe(i);
+              
+              e.preventDefault();
+            });
+            
+            slides.push({
+              src : adom.getAttribute('href'),
+              w : asize[0],
+              h : asize[1],
+              msrc : imgdom.getAttribute('src'),
+              mdom : imgdom
+            });
+          });
+
+          openPhotoSwipe(0);
+        });
+      </script>
+  </body>
+</html>

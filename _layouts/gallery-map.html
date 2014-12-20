@@ -1,3 +1,7 @@
+---
+layout: "post"
+---
+{% capture gallery %}{{ page.url|replace:'/map.html',''|remove_first:'/' }}{% endcapture %}
 <div id="googlemap" style="height:400px;margin-top:8px;"></div>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDIwEZirrDvuvDkhTtON8OqpmH7jP7DW4&amp;sensor=false"></script>
 <script type="text/javascript">
@@ -8,14 +12,13 @@
             var map = new google.maps.Map(
                 document.getElementById("googlemap"),
                 {
-                    center : new google.maps.LatLng({{ include.latitude }}, {{ include.longitude }}),
+                    center : new google.maps.LatLng({{ page.gallery_map.latitude }}, {{ page.gallery_map.longitude }}),
                     mapTypeId : google.maps.MapTypeId.TERRAIN,
-                    zoom : {{ include.zoom }}
+                    zoom : {{ page.gallery_map.zoom }}
                 }
             );
 
-            {% capture path %}gallery/{{ include.gallery }}{% endcapture %}
-            {% loopdir path:path match:"*.md" sort:"ordering" %}{% if item.location %}
+            {% loopdir path:gallery match:"*.md" sort:"ordering" %}{% if item.location %}
                 (function () {
                     var wo = false;
                     var m = new google.maps.Marker({
