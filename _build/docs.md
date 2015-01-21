@@ -34,6 +34,12 @@ Re-generating galleries...
         --export 200x200 \
         --export 640w \
         --export 1280
+    # 2015-costa-rica-trip
+    $ osascript ../dpb587--jekyll-gallery/export-iphoto.applescript 'Costa Rica Trip' \
+      | php -dmemory_limit=1G ../dpb587--jekyll-gallery/convert.php 2015-costa-rica-trip \
+        --export 200x200 \
+        --export 640w \
+        --export 1280
 
 Uploading photo galleries:
 
