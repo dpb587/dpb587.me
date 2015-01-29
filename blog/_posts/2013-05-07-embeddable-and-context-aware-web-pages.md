@@ -143,7 +143,7 @@ the new window URL location by using the [HTML5 History API][6].
 
 Once I implemented the code snippets for tying all the ideas together, it became much quicker and simpler for me to
 embed other dynamic controllers within my requests. So far it has been working out quite well and I no longer have to
-worry abuot page-specific hacks for passing data to subrequests.
+worry about page-specific hacks for passing data to subrequests.
 
 
  [1]: http://www.theloopyewe.com/shop/search/availability/in-stock/?q=red
