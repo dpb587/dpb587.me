@@ -45,9 +45,9 @@
             <meta name="twitter:card" content="photo" />
             <meta name="twitter:image:src" content="{{ site.asset_prefix }}{{ page.url|replace:".html","~640.jpg" }}" />
         {% else %}
-            <meta name="twitter:card" content="summary">
+            <meta name="twitter:card" content="summary" />
             {% if page.primary_image %}
-                <meta name="twitter:image:src" content="{{ site.asset_prefix }}{{ page.primary_image }}">
+                <meta name="twitter:image:src" content="{{ site.asset_prefix }}{{ page.primary_image }}" />
             {% endif %}
         {% endif %}
 
@@ -90,8 +90,6 @@
                 <a class="subtle" href="http://dpb587.me/">dpb587</a>
                 &middot;
                 <a href="https://github.com/dpb587">github</a>
-                &middot;
-                <a href="http://www.linkedin.com/in/dpb587">linkedin</a>
                 <span style="display:none;">
                     &middot;
                     <a href="https://plus.google.com/101881290181099762326?rel=author">google+</a>
