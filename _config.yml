@@ -1,6 +1,6 @@
 markdown: kramdown
 paginate: 7
-pygments: true
+highlighter: pygments
 safe: false
 environment: dev
 artifact_commit: dev
