@@ -6,7 +6,7 @@ description: "Open sourcing a library to easily traverse HTML for microdata."
 code: https://github.com/dpb587/microdata-dom.php
 ---
 
-A couple years I wrote about how I was [adding microdata][3] to [The Loopy Ewe][1] website to annotate things like products, brands, and contact details. I later wrote about how the internal search engine [depended on that microdata][4] for search results. During development and the initial release I was using some basic [XPath][2] queries, but as time passed the implementation became more fragile and incomplete. Since then, the parser has gone through several refactorings and this week I was able to extract it into a separate library that I can [open source][9].
+A couple years ago I wrote about how I was [adding microdata][3] to [The Loopy Ewe][1] website to annotate things like products, brands, and contact details. I later wrote about how the internal search engine [depended on that microdata][4] for search results. During development and the initial release I was using some basic [XPath][2] queries, but as time passed the implementation became more fragile and incomplete. Since then, the parser has gone through several refactorings and this week I was able to extract it into a separate library that I can [open source][9].
 
 
 ## Implementation
