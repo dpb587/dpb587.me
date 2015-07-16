@@ -42,13 +42,14 @@ print_blurb: "r&#233;sum&#233;"
         <dd>
             <a href="https://developer.apple.com/library/mac/#documentation/applescript/conceptual/applescriptx/AppleScriptX.html">applescript</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">css</a>&nbsp;&nbsp;&middot;&nbsp;
+            <a href="https://golang.org/">go</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://en.wikipedia.org/wiki/HTML">html</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://en.wikipedia.org/wiki/JavaScript">javascript</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://lesscss.org/">less</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://nodejs.org/">node.js</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://php.net/">php</a>&nbsp;&nbsp;&middot;&nbsp;
+            <a href="https://www.ruby-lang.org/en/">ruby</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://en.wikipedia.org/wiki/SQL">sql</a>&nbsp;&nbsp;&middot;&nbsp;
-            <a href="http://en.wikipedia.org/wiki/XML">xml</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://en.wikipedia.org/wiki/XSLT">xslt</a>
         </dd>
 
@@ -60,7 +61,6 @@ print_blurb: "r&#233;sum&#233;"
             <a href="http://mootools.net/">mootools</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="https://github.com/sebastianbergmann/phpunit/">phpunit</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://requirejs.org/">require.js</a>&nbsp;&nbsp;&middot;&nbsp;
-            <a href="http://en.wikipedia.org/wiki/RPM_Package_Manager">rpm</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://swiftmailer.org/">swiftmailer</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://symfony.com/">symfony2</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://twig.sensiolabs.org/">twig</a>
@@ -68,7 +68,6 @@ print_blurb: "r&#233;sum&#233;"
 
         <dt>software</dt>
         <dd>
-            <a href="http://httpd.apache.org/">apache-httpd</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="https://github.com/cloudfoundry/bosh">bosh</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://docker.io/">docker</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://www.elasticsearch.org/">elasticsearch</a>&nbsp;&nbsp;&middot;&nbsp;
@@ -76,14 +75,12 @@ print_blurb: "r&#233;sum&#233;"
             <a href="http://git-scm.com/">git</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://jenkins-ci.org/">jenkins</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://www.elasticsearch.org/overview/kibana/">kibana</a>&nbsp;&nbsp;&middot;&nbsp;
+            <a href="https://www.elastic.co/products/logstash">logstash</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://memcached.org/">memcached</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://www.mysql.com/">mysql</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://nginx.org/">nginx</a>&nbsp;&nbsp;&middot;&nbsp;
-            <a href="http://hub.opensolaris.org/bin/view/Project+opengrok/">opengrok</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://openvpn.net/">openvpn</a>&nbsp;&nbsp;&middot;&nbsp;
-            <a href="http://www.oracle.com/us/products/database/overview/index.html">oracle-database</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="https://puppetlabs.com/">puppet</a>&nbsp;&nbsp;&middot;&nbsp;
-            <a href="http://subversion.tigris.org/">subversion</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="http://www.vagrantup.com/">vagrant</a>
         </dd>
 
@@ -101,7 +98,6 @@ print_blurb: "r&#233;sum&#233;"
             <a href="https://www.facebook.com/">facebook</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="https://github.com/">github</a>&nbsp;&nbsp;&middot;&nbsp;
             <a href="https://www.paypal.com/">paypal</a>&nbsp;&nbsp;&middot;&nbsp;
-            <a href="http://www.twilio.com/">twilio</a>
         </dd>
     </dl>
 
@@ -115,7 +111,10 @@ print_blurb: "r&#233;sum&#233;"
     <ul>
         <li>Implemented and managed scalable logstash + elasticsearch + kibana stacks on AWS</li>
         <li>Researched and tested elasticsearch scaling for project needs</li>
-        <li>Creating and managing bosh releases for the logstash + elasticsearch stack</li>
+        <li>Creating and managing BOSH releases for logsearch</li>
+        <li>Creating logsearch-shipper, designed for log forwarding and monitoring of any other BOSH deployments</li>
+        <li>Designing and supporting VPC environments on AWS</li>
+        <li>Defining and implementing logging and monitoring practices for deployments</li>
         <li>Worked remotely</li>
     </ul>
 
@@ -133,6 +132,52 @@ print_blurb: "r&#233;sum&#233;"
             openvpn&nbsp;&nbsp;&middot;&nbsp;
             ruby&nbsp;&nbsp;&middot;&nbsp;
             ubuntu&nbsp;&nbsp;&middot;&nbsp;
+            vagrant
+        </small>
+    </p>
+
+    <hr color="#E9E9E9" size="1" style="margin-bottom:10px;margin-top:14px;" />
+
+    <p style="page-break-inside:avoid;" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+        <strong>Software Systems Engineer</strong> &nbsp;&middot;&nbsp; June '06 &ndash; present<br />
+        <span itemprop="name">The Loopy Ewe</span> (<a href="https://theloopyewe.com/" itemprop="url"><span class="print-only">theloopyewe.com</span><span class="screen-only">website</span></a>) &nbsp;&middot;&nbsp; Fort Collins, Colorado
+    </p>
+    
+    <ul>
+        <li>Developed and currently maintain in-house e-commerce frontend and backoffice tools using primarily PHP and MySQL</li>
+        <li>Migrated the backend website and services to the open-source symfony2 framework</li>
+        <li>Integrated business tools with APIs including PayPal and Endicia</li>
+        <li>Advising on strategic goals for the business and assisting in implementation</li>
+        <li>Migrating from traditional servers to a multi-region cloud environment on AWS</li>
+        <li>Migrating from Puppet-managed servers to a BOSH-managed environment</li>
+        <li>Currently maintain production server environments and services</li>
+    </ul>
+
+    <p style="line-height:14px;padding-top:1px;">
+        <small style="color:#666666;">
+            applescript&nbsp;&nbsp;&middot;&nbsp;
+            aws&nbsp;&nbsp;&middot;&nbsp;
+            composer&nbsp;&nbsp;&middot;&nbsp;
+            css&nbsp;&nbsp;&middot;&nbsp;
+            elasticsearch&nbsp;&nbsp;&middot;&nbsp;
+            git&nbsp;&nbsp;&middot;&nbsp;
+            html&nbsp;&nbsp;&middot;&nbsp;
+            javascript&nbsp;&nbsp;&middot;&nbsp;
+            linux&nbsp;&nbsp;&middot;&nbsp;
+            mootools&nbsp;&nbsp;&middot;&nbsp;
+            mysql&nbsp;&nbsp;&middot;&nbsp;
+            nginx&nbsp;&nbsp;&middot;&nbsp;
+            osx&nbsp;&nbsp;&middot;&nbsp;
+            paypal&nbsp;&nbsp;&middot;&nbsp;
+            php&nbsp;&nbsp;&middot;&nbsp;
+            puppet&nbsp;&nbsp;&middot;&nbsp;
+            require.js&nbsp;&nbsp;&middot;&nbsp;
+            rpm&nbsp;&nbsp;&middot;&nbsp;
+            sql&nbsp;&nbsp;&middot;&nbsp;
+            swiftmailer&nbsp;&nbsp;&middot;&nbsp;
+            symfony2&nbsp;&nbsp;&middot;&nbsp;
+            twig&nbsp;&nbsp;&middot;&nbsp;
+            twilio&nbsp;&nbsp;&middot;&nbsp;
             vagrant
         </small>
     </p>
@@ -170,50 +215,6 @@ print_blurb: "r&#233;sum&#233;"
             subversion&nbsp;&nbsp;&middot;&nbsp;
             symfony2&nbsp;&nbsp;&middot;&nbsp;
             twig
-        </small>
-    </p>
-
-    <hr color="#E9E9E9" size="1" style="margin-bottom:10px;margin-top:14px;" />
-
-    <p style="page-break-inside:avoid;" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-        <strong>Software Systems Engineer</strong> &nbsp;&middot;&nbsp; June '06 &ndash; present<br />
-        <span itemprop="name">The Loopy Ewe</span> (<a href="https://theloopyewe.com/" itemprop="url"><span class="print-only">theloopyewe.com</span><span class="screen-only">website</span></a>) &nbsp;&middot;&nbsp; Fort Collins, Colorado
-    </p>
-    
-    <ul>
-        <li>Developed and currently maintain in-house e-commerce frontend and backoffice tools using primarily PHP and MySQL</li>
-        <li>Migrated the backend website and services to the open-source symfony2 framework</li>
-        <li>Integrated business tools with APIs including PayPal and Endicia</li>
-        <li>Advising on strategic goals for the business and assisting in implementation</li>
-        <li>Currently maintain production server environments and services</li>
-    </ul>
-
-    <p style="line-height:14px;padding-top:1px;">
-        <small style="color:#666666;">
-            applescript&nbsp;&nbsp;&middot;&nbsp;
-            aws&nbsp;&nbsp;&middot;&nbsp;
-            composer&nbsp;&nbsp;&middot;&nbsp;
-            css&nbsp;&nbsp;&middot;&nbsp;
-            elasticsearch&nbsp;&nbsp;&middot;&nbsp;
-            git&nbsp;&nbsp;&middot;&nbsp;
-            html&nbsp;&nbsp;&middot;&nbsp;
-            javascript&nbsp;&nbsp;&middot;&nbsp;
-            linux&nbsp;&nbsp;&middot;&nbsp;
-            mootools&nbsp;&nbsp;&middot;&nbsp;
-            mysql&nbsp;&nbsp;&middot;&nbsp;
-            nginx&nbsp;&nbsp;&middot;&nbsp;
-            osx&nbsp;&nbsp;&middot;&nbsp;
-            paypal&nbsp;&nbsp;&middot;&nbsp;
-            php&nbsp;&nbsp;&middot;&nbsp;
-            puppet&nbsp;&nbsp;&middot;&nbsp;
-            require.js&nbsp;&nbsp;&middot;&nbsp;
-            rpm&nbsp;&nbsp;&middot;&nbsp;
-            sql&nbsp;&nbsp;&middot;&nbsp;
-            swiftmailer&nbsp;&nbsp;&middot;&nbsp;
-            symfony2&nbsp;&nbsp;&middot;&nbsp;
-            twig&nbsp;&nbsp;&middot;&nbsp;
-            twilio&nbsp;&nbsp;&middot;&nbsp;
-            vagrant
         </small>
     </p>
 
