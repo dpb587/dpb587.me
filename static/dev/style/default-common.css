@@ -293,6 +293,18 @@ a img {
     color: inherit;
 }
 
+img.iright {
+    float: right;
+    margin-left: 20px;
+    width: 34%;
+}
+
+img.ileft {
+    float:left;
+    margin-right: 20px;
+    width: 34%;
+}
+
 .print-only {
     display: none;
 }
