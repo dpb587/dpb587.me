@@ -1,0 +1,12 @@
+---
+platform: "linux"
+image: "docker:///dpb587/dpb587-me-default"
+inputs:
+  - name: "repository"
+outputs:
+  - name: "docroot"
+run:
+  path: "repository/ci/tasks/build-docroot/run.sh"
+params:
+  SITE_ENVIRONMENT: dev
+  SITE_URL: ~

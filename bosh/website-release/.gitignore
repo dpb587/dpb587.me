@@ -1,0 +1,8 @@
+/**/*.tgz
+/.blobs
+/.bosh_config
+/.dev_builds
+/blobs
+/config/dev.yml
+/config/private.yml
+/dev_releases

@@ -1,0 +1,77 @@
+#!/bin/bash
+
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+
+#
+# Run through all package deps
+#
+
+$DIR/upgrade
+
+
+#
+# Check if we actually updated anything
+#
+
+DIFFS=$( echo $( git diff HEAD --name-only | wc -l ) )
+
+if [ 0 -eq $DIFFS ] ; then
+  # no changes; nothing else to do
+  exit
+elif [ 1 -eq $DIFFS ] ; then
+  COMMIT_HEADER="Upgraded 1 blob"
+else
+  COMMIT_HEADER="Upgraded $DIFFS blobs"
+fi
+
+
+#
+# Upload new blobs
+#
+
+bosh -n upload blobs
+
+git add config/blobs.yml
+
+
+#
+# Generate the commit message
+#
+
+(
+  echo "${COMMIT_HEADER}"
+  echo ""
+
+  PACKAGE_CURR=""
+
+  for VERSION_PATH in $(
+    git diff HEAD --name-only \
+      | grep -E "^src/blobs/([^/]+)/VERSION$" \
+      | sort
+  ) ; do
+    git add "${VERSION_PATH}"
+
+    BLOB_NAME=$( basename $( dirname "${VERSION_PATH}" ) )
+    VERSION_OLD=$( git show HEAD:$VERSION_PATH )
+    VERSION_NEW=$( cat "${VERSION_PATH}" )
+
+    echo " * ${BLOB_NAME} now ${VERSION_NEW} (was ${VERSION_OLD})"
+  done
+) > commit.msg
+
+
+#
+# Create the commit
+#
+
+git commit -F commit.msg
+
+
+#
+# Cleanup after ourselves
+#
+
+rm commit.msg

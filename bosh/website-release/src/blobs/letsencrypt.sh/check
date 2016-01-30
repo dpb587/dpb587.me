@@ -1,0 +1,9 @@
+
+#!/bin/bash
+
+set -e
+
+git ls-remote --heads https://github.com/lukas2511/letsencrypt.sh.git \
+  | grep -E '\s+refs/heads/master$' \
+  | head -n1 \
+  | awk '{ print $1 }'

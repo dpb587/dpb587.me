@@ -1,12 +1,19 @@
-markdown: kramdown
+markdown: "kramdown"
 paginate: 7
-highlighter: pygments
+highlighter: "pygments"
 safe: false
-environment: dev
-artifact_commit: dev
-artifact_branch: master
-asset_prefix: /asset
-static_prefix: /static/dev
+environment: "dev"
+artifact_commit: "dev"
+asset_prefix: "/asset"
+static_prefix: "/static/dev"
+gems:
+  - "jekyll-paginate"
+  - "jekyll-sitemap"
+  - "pygments.rb"
 exclude:
-- LICENSE
-- README
+  - "LICENSE"
+  - "README.md"
+  - "bosh"
+  - "ci"
+  - "Gemfile"
+  - "vendor"
