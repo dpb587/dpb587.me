@@ -1,0 +1,28 @@
+#!/bin/bash
+
+exec 2>&1
+
+set -e
+set -u
+
+tar -xzf nginx/nginx.tar.gz -C nginx
+tar -xzf openssl/openssl.tar.gz -C openssl
+tar -xzf pcre/pcre.tar.gz -C pcre
+tar -xzf zlib/zlib.tar.gz -C zlib
+
+( cd nginx/nginx-*
+
+  ./configure \
+    --prefix="$BOSH_INSTALL_TARGET" \
+    --with-openssl=../../openssl/openssl-* \
+    --with-pcre=../../pcre/pcre-* \
+    --with-zlib=../../zlib/zlib-* \
+    --with-http_ssl_module \
+    --with-http_v2_module
+
+  make
+  make install
+
+  )
+
+rm -fr "$BOSH_INSTALL_TARGET/html"

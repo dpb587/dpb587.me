@@ -1,0 +1,10 @@
+#!/bin/bash
+
+exec 2>&1
+
+set -e
+set -u
+
+tar -xzf letsencrypt.sh/letsencrypt.sh.tar.gz -C letsencrypt.sh
+
+cp -rp letsencrypt.sh/letsencrypt.sh-*/letsencrypt.sh $BOSH_INSTALL_TARGET/

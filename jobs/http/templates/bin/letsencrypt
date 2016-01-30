@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+/var/vcap/packages/letsencrypt/letsencrypt.sh \
+  --domain "<%= p('http.domains')[0, 1].join(' ') %>" \
+  --challenge http-01 \
+  --config /var/vcap/jobs/http/etc/letsencrypt.config.sh \
+  --hook /var/vcap/jobs/http/etc/letsencrypt.hooks.sh \
+  $@

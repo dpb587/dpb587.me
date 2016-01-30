@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+wget \
+  -q \
+  -O zlib.tar.gz \
+  "https://github.com/madler/zlib/archive/v$VERSION.tar.gz"
