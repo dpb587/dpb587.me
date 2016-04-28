@@ -25,7 +25,7 @@ function deploy_cert {
     cp "$CHAINFILE" /var/vcap/jobs/http/etc/tls.crt
     chmod 0755 "$CHAINFILE"
 
-    #/var/vcap/jobs/http/bin/nginx-control reload
+    /var/vcap/jobs/http/bin/nginx-control reload
 }
 
 HANDLER=$1; shift; $HANDLER $@
