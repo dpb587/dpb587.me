@@ -12,11 +12,17 @@ jobs:
       - get: "repository"
         resource: "repository.ci.docker"
         trigger: true
-      - put: "default-docker-image"
-        params:
-          build: "repository/ci/docker/default"
-        get_params:
-          skip_download: true
+      - aggregate:
+          - put: "default-docker-image"
+            params:
+              build: "repository/ci/docker/default"
+            get_params:
+              skip_download: true
+          - put: "gobosh-docker-image"
+            params:
+              build: "repository/ci/docker/gobosh"
+            get_params:
+              skip_download: true
   - name: "publish-docroot"
     plan:
       - get: "repository"
@@ -62,6 +68,13 @@ resources:
     type: "docker-image"
     source:
       repository: {{docker_repository_default}}
+      username: {{docker_username}}
+      password: {{docker_password}}
+      email: {{docker_email}}
+  - name: "gobosh-docker-image"
+    type: "docker-image"
+    source:
+      repository: {{docker_repository_gobosh}}
       username: {{docker_username}}
       password: {{docker_password}}
       email: {{docker_email}}

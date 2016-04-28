@@ -1,0 +1,21 @@
+---
+platform: "linux"
+image: "docker:///dpb587/dpb587-me-gobosh"
+inputs:
+  - name: "repo"
+  - name: "infra"
+outputs:
+  - name: "infra"
+    path: "updated-infra"
+run:
+  path: "repo/ci/tasks/renew-letsencrypt/run.sh"
+params:
+  target: ~
+  target_ca_crt: ~
+  username: ~
+  password: ~
+  deployment: ~
+  git_user_email: "CI"
+  git_user_name: "ci@localhost"
+  tls_crt: ~
+  tls_key: ~
