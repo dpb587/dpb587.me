@@ -4,19 +4,21 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+cd $DIR/../..
+
 
 #
 # Run through all package deps
 #
 
-$DIR/upgrade
+src/blobs/upgrade
 
 
 #
 # Check if we actually updated anything
 #
 
-DIFFS=$( echo $( git diff HEAD --name-only | wc -l ) )
+DIFFS=$( echo $( git diff HEAD --name-only . | wc -l ) )
 
 if [ 0 -eq $DIFFS ] ; then
   # no changes; nothing else to do
@@ -48,14 +50,14 @@ git add config/blobs.yml
   PACKAGE_CURR=""
 
   for VERSION_PATH in $(
-    git diff HEAD --name-only \
+    git diff HEAD --name-only --relative . \
       | grep -E "^src/blobs/([^/]+)/VERSION$" \
       | sort
   ) ; do
     git add "${VERSION_PATH}"
 
     BLOB_NAME=$( basename $( dirname "${VERSION_PATH}" ) )
-    VERSION_OLD=$( git show HEAD:$VERSION_PATH )
+    VERSION_OLD=$( git show HEAD:$( git ls-tree --full-name --name-only HEAD $VERSION_PATH ) )
     VERSION_NEW=$( cat "${VERSION_PATH}" )
 
     echo " * ${BLOB_NAME} now ${VERSION_NEW} (was ${VERSION_OLD})"
