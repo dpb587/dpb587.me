@@ -1,20 +1,20 @@
 ---
 letsencrypt.sh/letsencrypt.sh.tar.gz:
-  object_id: 0755d0f7-8a73-41e1-8629-10917d5057e7
-  sha: 7f8cdaa29c1df0c077ab44d973f011241a3fd7fe
-  size: 14497
+  object_id: 7b4863a0-bef6-4cda-a07d-1b6dac3319c6
+  sha: 71553b43f5a9fdd318e2e356c69465dec220b747
+  size: 20986
 nginx/nginx.tar.gz:
-  object_id: a3a8cdf3-880f-4c84-80d4-c0352b0d794b
-  sha: b7ddb8bb55ad20c336c94526cd2c26b5699caeb5
-  size: 889267
+  object_id: 27fb934c-9443-40e1-ab86-485b41119727
+  sha: 3d6b4a0ea0f5b09bf83537111a8c80a3f26f81ae
+  size: 924979
 openssl/openssl.tar.gz:
-  object_id: 08ee24a4-9e5c-4531-b7aa-68bd14386f66
-  sha: 2047c592a6e5a42bd37970bdb4a931428110a927
-  size: 5258384
+  object_id: c308fe82-a3c6-4753-88f4-024bbc94c39d
+  sha: 577585f5f5d299c44dd3c993d3c0ac7a219e4949
+  size: 5274412
 pcre/pcre.tar.gz:
-  object_id: 524e4bc3-9bc1-41fe-a56b-45ca28916e92
-  sha: 3ab418d0026c2a4e693ec783bd60660debc32b8f
-  size: 2053336
+  object_id: 5ee4d05a-0aeb-4dc1-b504-9221fc3ba646
+  sha: b3aec1f643d9701841e2f9d57ac121a7ff448fc8
+  size: 2062258
 zlib/zlib.tar.gz:
   object_id: 2be1f5bb-6ced-41d6-80ac-5f31cc4458a0
   sha: 730c4e75b553cafc0c081127de43174192ce98fd
