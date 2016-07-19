@@ -1,0 +1,21 @@
+---
+packages:
+- name: letsencrypt
+  version: b3ceb7f7d8dd86f725770ad275455a41b71e9260
+  fingerprint: b3ceb7f7d8dd86f725770ad275455a41b71e9260
+  sha1: dca3a6dfc9e11b301f25ea85348109a86a931d86
+  dependencies: []
+- name: nginx
+  version: 9797700973c9b18dd5c581ec5cf8bbd7445cfd03
+  fingerprint: 9797700973c9b18dd5c581ec5cf8bbd7445cfd03
+  sha1: 24f2738d088c6d58cf8432acced756140c588963
+  dependencies: []
+jobs:
+- name: http
+  version: 0ae687523b3f316da5fd0759ab58a742495fec1d
+  fingerprint: 0ae687523b3f316da5fd0759ab58a742495fec1d
+  sha1: 65c02c9068f5a0be411cfdcaaaaf398c52642872
+commit_hash: '59260847'
+uncommitted_changes: true
+name: dpb587-website
+version: 0.1.1
