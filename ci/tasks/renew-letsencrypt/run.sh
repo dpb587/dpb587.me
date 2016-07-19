@@ -18,7 +18,7 @@ gobosh target "https://bosh:25555" ${target_args:-}
 gobosh --user "$username" --password "$password" log-in
 gobosh deployment "$deployment"
 
-gobosh ssh -c 'sudo /var/vcap/jobs/http/bin/letsencrypt --cron' | tee /tmp/cron
+gobosh ssh -r -c 'sudo /var/vcap/jobs/http/bin/letsencrypt --cron' | cut -f2 | tee /tmp/cron
 
 if grep -q ' + Valid till' /tmp/cron ; then
   exit
