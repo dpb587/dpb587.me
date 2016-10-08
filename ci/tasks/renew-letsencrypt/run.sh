@@ -24,7 +24,7 @@ if grep -q ' + Valid till' /tmp/cron ; then
   exit
 fi
 
-domain=$( grep '^Processing ' /tmp/cron | awk '{ print $2 }' )
+domain=$( grep 'Processing ' /tmp/cron | rev | cut -d ' ' -f 1 | rev )
 
 echo 'Downloading new certificate'
 
