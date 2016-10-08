@@ -7,4 +7,4 @@ set -u
 
 tar -xzf letsencrypt.sh/letsencrypt.sh.tar.gz -C letsencrypt.sh
 
-cp -rp letsencrypt.sh/letsencrypt.sh-*/letsencrypt.sh $BOSH_INSTALL_TARGET/
+cp -rp letsencrypt.sh/dehydrated-*/dehydrated $BOSH_INSTALL_TARGET/letsencrypt.sh
