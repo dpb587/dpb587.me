@@ -206,6 +206,10 @@ article.layout-post section {
         line-height: 11px;
     }
 
+figure.highlight {
+  margin: 0;
+}
+
 pre {
     background-color: #F9F9F9;
     border: #D8D8D8 solid 1px;
