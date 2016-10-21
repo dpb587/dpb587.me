@@ -3,6 +3,7 @@ title: "Self-Upgrading Packages in BOSH Releases, Part 2"
 layout: "post"
 keywords: [ "bosh", "package manager", "updates", "upgrades", "versions" ]
 description: "A strategy for upgrading and testing dependencies for self-sustaining packages."
+primary_image: "/blog/2016-10-21-self-upgrading-packages-in-bosh-releases-part-2/pull-request.png"
 ---
 
 Last year I wrote [a post][1] about how the process of updating BOSH release blobs could be better automated. The post relied on some [scripts][12] which could be executed to check and download new versions of blobs. The scripts were useful, but they still required manual execution and then testing to verify compatibility. My latest evolution of the idea further automates this with [Concourse][2] to check for new versions, download new blobs, build test releases, and then send pull requests for successful upgrades.

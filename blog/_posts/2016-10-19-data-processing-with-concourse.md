@@ -3,6 +3,7 @@ title: "Data Processing with Concourse"
 layout: "post"
 tags: [ "batch", "concourse", "data", "etl", "kubernetes", pachyderm", "pipeline" ]
 description: "Scheduling data extracts, transforms, and loads through containers."
+primary_image: "/blog/2016-10-19-data-processing-with-concourse/datapact-pipeline.png"
 ---
 
 Recently I needed to focus on a project that regularly processed datasets with typical extract, transform, and load stages. Historically it was using [Amazon SQS][15] to queue up the tasks for each stage, some [supervisor][9]-managed processes to work off the queue, and [Amazon S3][10] to store the results of each stage. The original implementation was struggling because it was inefficient, difficult to detect problems, and more difficult to replay a stage whenever unexpected, bad data showed up.
@@ -33,6 +34,8 @@ Overall, I termed this approach "datapact". It represents a collection of config
 ## Example
 
 As an example, let's say a network environment runs file integrity monitoring. Whenever there is a new base server image available we need to inspect it and eventually send results to our integrity server.
+
+<a href="{{ site.asset_prefix }}/blog/2016-10-19-data-processing-with-concourse/datapact-pipeline.png"><img alt="Screenshot: datapact-pipeline" src="{{ site.asset_prefix }}/blog/2016-10-19-data-processing-with-concourse/datapact-pipeline.png" width="628" /></a>
 
 
 ### Receiving New Server Images
