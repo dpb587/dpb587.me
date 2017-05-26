@@ -5,18 +5,18 @@ exec 2>&1
 set -e
 set -u
 
-tar -xzf nginx/nginx.tar.gz -C nginx
-tar -xzf openssl/openssl.tar.gz -C openssl
-tar -xzf pcre/pcre.tar.gz -C pcre
-tar -xzf zlib/zlib.tar.gz -C zlib
+tar -xzf nginx/*.tar.gz
+tar -xzf openssl/*.tar.gz
+tar -xzf pcre/*.tar.gz
+tar -xzf zlib/*.tar.gz
 
-( cd nginx/nginx-*
+( cd nginx-*
 
   ./configure \
     --prefix="$BOSH_INSTALL_TARGET" \
-    --with-openssl=../../openssl/openssl-* \
-    --with-pcre=../../pcre/pcre-* \
-    --with-zlib=../../zlib/zlib-* \
+    --with-openssl=../openssl-* \
+    --with-pcre=../pcre-* \
+    --with-zlib=../zlib-* \
     --with-http_ssl_module \
     --with-http_v2_module
 
