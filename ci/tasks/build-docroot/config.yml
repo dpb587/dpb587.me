@@ -1,6 +1,9 @@
 ---
 platform: "linux"
-image: "docker:///dpb587/dpb587-me-default"
+image_resource:
+  type: "docker-image"
+  source:
+    repository: "dpb587/dpb587-me-default"
 inputs:
   - name: "repository"
 outputs:
