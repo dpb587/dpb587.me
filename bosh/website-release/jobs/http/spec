@@ -1,48 +1,22 @@
 ---
 name: "http"
 packages:
-  - "letsencrypt"
   - "nginx"
 templates:
-  bin/letsencrypt: "bin/letsencrypt"
   bin/nginx-control: "bin/nginx-control"
   bin/pre-start: "bin/pre-start"
-  etc/letsencrypt.key: "etc/letsencrypt.key"
-  etc/letsencrypt.config.sh: "etc/letsencrypt.config.sh"
-  etc/letsencrypt.hooks.sh: "etc/letsencrypt.hooks.sh"
   etc/nginx.conf: "etc/nginx.conf"
-  etc/tls-dh.key: "etc/tls-dh.key"
-  etc/tls.crt: "etc/tls.crt"
-  etc/tls.key: "etc/tls.key"
 properties:
-  http.domains:
+  domains:
     type: "string[]"
-  http.letsencrypt.enabled:
-    default: false
-    type: "boolean"
-  http.letsencrypt.email:
-    type: "string"
-  http.letsencrypt.key:
-    type: "string"
-  http.hsts:
-    default: false
-    type: "boolean"
-  http.tls.dh:
-    default: ~
-  http.tls.key:
-    default: ~
-    type: "string"
-  http.tls.certificate:
-    default: ~
-    type: "string"
-  http.worker_processes:
+  worker_processes:
     default: 1
     type: "integer"
-  http.worker_connections:
+  worker_connections:
     default: 128
     type: "integer"
-  http.s3_bucket:
+  s3_bucket:
     type: "string"
-  http.docroot_version:
+  docroot_version:
     default: "dev"
     type: "string"
