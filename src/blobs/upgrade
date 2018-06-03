@@ -47,13 +47,22 @@ echo "--> fetching new version"
 rm -fr "$BLOB_DIR-new"
 mkdir -p "$BLOB_DIR-new"
 
-cd "$BLOB_DIR-new"
+pushd "$BLOB_DIR-new" > /dev/null
 
 export VERSION="$VERSION_CHECK"
 "$SRC_DIR/get"
 
-rm -fr "$BLOB_DIR"
-mv "$BLOB_DIR-new" "$BLOB_DIR"
+popd > /dev/null
+
+for name in $( ls $BLOB_DIR ); do
+  bosh remove-blob $BLOB_NAME/$name
+done
+
+for name in $( ls $BLOB_DIR-new ); do
+  bosh add-blob $BLOB_DIR-new/$name $BLOB_NAME/$name
+done
+
+rm -fr "$BLOB_DIR-new"
 
 echo "$VERSION" > "$SRC_DIR/VERSION"
 

@@ -34,7 +34,7 @@ fi
 # Upload new blobs
 #
 
-bosh -n upload blobs
+bosh -n upload-blobs
 
 git add config/blobs.yml
 
