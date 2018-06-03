@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -e
-
-wget \
-  -q \
-  -O letsencrypt.sh.tar.gz \
-  https://github.com/lukas2511/letsencrypt.sh/archive/${VERSION}.tar.gz

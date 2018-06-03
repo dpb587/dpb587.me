@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -e
-
-wget \
-  -q \
-  -O openssl.tar.gz \
-  "ftp://ftp.openssl.org/source/openssl-$VERSION.tar.gz"

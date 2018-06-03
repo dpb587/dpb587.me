@@ -1,6 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 
-chmod +x /var/vcap/jobs/http/etc/letsencrypt.hooks.sh
-chmod 0700 /var/vcap/jobs/http/etc/letsencrypt.key
-chmod 0700 /var/vcap/jobs/http/etc/tls.key
-chmod 0755 /var/vcap/jobs/http/etc/tls.crt
+set -eu
+
+datadir=/var/vcap/data/http
+docroot=$datadir/docroot-<%= p('docroot_version') %>
+
+if [ -e $docroot/version ] ; then
+  exit
+fi
+
+mkdir -p $docroot
+chown vcap:vcap $docroot
+
+find /var/vcap/data/http -maxdepth 1 -name 'docroot-*' | grep -v "$docroot" | xargs rm -fr
+
+wget -qO- https://<%= p('s3_bucket') %>.s3.amazonaws.com/docroot/<%= p('docroot_version') %>.tgz \
+  | tar -xzf- -C "$docroot" --strip-components=1
+
+echo "<%= p('docroot_version') %>" > $docroot/version
