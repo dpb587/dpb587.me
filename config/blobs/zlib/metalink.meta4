@@ -1,0 +1,5 @@
+<metalink xmlns="urn:ietf:params:xml:ns:metalink">
+  <file name="zlib-v1.2.11.tar.gz">
+    <url>https://github.com/madler/zlib/archive/v1.2.11.tar.gz</url>
+  </file>
+</metalink>

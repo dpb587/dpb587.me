@@ -14,7 +14,7 @@ pcre/pcre-8.42.tar.gz:
   size: 2081413
   object_id: 1b1e3a75-32e8-4a8c-6c55-f0f1bdc26025
   sha: ee505270446f4c4bf52ac1a371335fdbb14465cb
-zlib/zlib.tar.gz:
+zlib/zlib-v1.2.11.tar.gz:
   size: 644492
-  object_id: e1172817-715c-4cb4-4c3e-8bef5d9918ec
+  object_id: 93db1311-f44c-4406-4d65-8538f78204b4
   sha: 56559d4c03beaedb0be1c7481d6a371e2458a496
