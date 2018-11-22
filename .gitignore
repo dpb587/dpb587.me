@@ -5,3 +5,6 @@
 /config/dev.yml
 /config/private.yml
 /dev_releases
+/.terraform
+/terraform.tfvars
+/terraform.tfstate*
