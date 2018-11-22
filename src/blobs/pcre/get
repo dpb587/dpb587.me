@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -e
-
-wget \
-  -q \
-  -O pcre.tar.gz \
-  "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$VERSION.tar.gz"

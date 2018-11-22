@@ -1,0 +1,16 @@
+type: dynamic-metalink
+source:
+  version_check: |
+    git ls-remote --tags https://github.com/gohugoio/hugo.git \
+      | cut -f2 \
+      | grep -v '\^{}' \
+      | grep -E '^refs/tags/v.+$' \
+      | sed -E 's/^refs\/tags\/v(.+)$/\1/' \
+      | grep -v '-' \
+      | grep -E '^\d+\.\d+(\.\d+)?$'
+  metalink_get: |
+    jq -n '
+      env.version | {
+        "files": [
+          { "name": "hugo_\(.)_Linux-64bit.tar.gz",
+            "urls": [ { "url": "https://github.com/gohugoio/hugo/releases/download/v\(.)/hugo_\(.)_Linux-64bit.tar.gz" } ] } ] }'

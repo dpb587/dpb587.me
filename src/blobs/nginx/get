@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -e
-
-wget \
-  -q \
-  -O nginx.tar.gz \
-  "http://nginx.org/download/nginx-$VERSION.tar.gz"

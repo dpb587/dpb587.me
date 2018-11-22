@@ -1,0 +1,21 @@
+type: dynamic-metalink
+source:
+  version_check: |
+    git ls-remote --tags https://github.com/openssl/openssl.git \
+      | cut -f2 \
+      | grep -v '\^{}' \
+      | grep -E '^refs/tags/OpenSSL_.+$' \
+      | sed -E 's/^refs\/tags\/OpenSSL_(.+)$/\1/' \
+      | tr '_' '.' \
+      | sort -rV \
+      | grep -E '^\d+\.\d+\.\d+\w?$'
+  metalink_get: |
+    export name="openssl-${version}.tar.gz"
+    export sha256=$( curl -s "https://www.openssl.org/source/$name.sha256" )
+    jq -n '
+      env.name | {
+        "files": [
+          { "name": .,
+            "urls": [ { "url": "https://www.openssl.org/source/\(.)" } ],
+            "hashes": [
+              { "type": "sha-256", "hash": env.sha256 } ] } ] }'

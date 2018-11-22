@@ -1,0 +1,17 @@
+type: dynamic-metalink
+source:
+  version_check: |
+    git ls-remote --tags https://github.com/madler/zlib.git \
+      | cut -f2 \
+      | grep -v '\^{}' \
+      | grep -E '^refs/tags/v.+$' \
+      | sed -E 's/^refs\/tags\/v(.+)$/\1/' \
+      | tr '_' '.' \
+      | grep -v '-' \
+      | grep -E '^\d+\.\d+\.\d+$'
+  metalink_get: |
+    jq -n '
+      env.version | {
+        "files": [
+          { "name": "zlib-v\(.).tar.gz",
+            "urls": [ { "url": "https://github.com/madler/zlib/archive/v\(.).tar.gz" } ] } ] }'

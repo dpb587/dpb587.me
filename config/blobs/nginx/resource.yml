@@ -1,0 +1,13 @@
+type: dynamic-metalink
+source:
+  version_check: |
+    curl -s http://hg.nginx.org/nginx/tags?style=raw \
+      | cut -f1 \
+      | grep '^release-' \
+      | sed -E 's/^release-(.+)$/\1/'
+  metalink_get: |
+    jq -n '
+      "nginx-\(env.version).tar.gz" | {
+        "files": [
+          { "name": .,
+            "urls": [ { "url": "https://nginx.org/download/\(.)" } ] } ] }'

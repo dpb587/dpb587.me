@@ -1,0 +1,57 @@
+---
+bosh_release_blobs_upgrader:
+  track_files:
+  - .resource/metalink.meta4
+  resource_defaults:
+    check_every: 6h
+  serial_groups:
+  - serial
+  after_upload:
+    put: repo
+    params:
+      repository: repo
+      rebase: true
+  on_failure:
+    put: slack-alert
+    params:
+      text: Failed to upgrade ((blob)) to v$TEXT_FILE_CONTENT.
+      text_file: blob/.resource/version
+      attachments:
+      - author_icon: https://github.com/concourse.png
+        author_name: upgrader pipeline
+        author_link: https://github.com/dpb587/dpb587.me/blob/bosh-release/ci/pipelines/upgrader.yml
+        title: $BUILD_JOB_NAME/$BUILD_NAME
+        title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+        color: danger
+  on_success:
+    put: slack-alert
+    params:
+      text: Successfully upgraded ((blob)) to v$TEXT_FILE_CONTENT.
+      text_file: blob/.resource/version
+      attachments:
+      - author_icon: https://github.com/concourse.png
+        author_name: upgrader pipeline
+        author_link: https://github.com/dpb587/dpb587.me/blob/bosh-release/ci/pipelines/upgrader.yml
+        title: $BUILD_JOB_NAME/$BUILD_NAME
+        title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+        color: good
+resources:
+- name: repo
+  type: git
+  source:
+    uri: git@github.com:dpb587/dpb587.me.git
+    branch: ((repo_branch))
+    private_key: ((repo_private_key))
+- name: slack-alert
+  type: slack-notification
+  source:
+    url: ((ci_slack_hook_url))
+resource_types:
+- name: dynamic-metalink
+  type: docker-image
+  source:
+    repository: dpb587/dynamic-metalink-resource
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource

@@ -1,0 +1,12 @@
+type: dynamic-metalink
+source:
+  version_check: |
+    curl -s -l ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
+      | grep -E '^pcre-.+.tar.gz$' \
+      | sed -E 's/^pcre-(.+)\.tar.gz$/\1/'
+  metalink_get: |
+    jq -n '
+      "pcre-\(env.version).tar.gz" | {
+        "files": [
+          { "name": .,
+            "urls": [ { "url": "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/\(.)" } ] } ] }'
