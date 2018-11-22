@@ -3,5 +3,4 @@ final_name: dpb587-website
 blobstore:
   provider: s3
   options:
-    bucket_name: dpb587-bosh-us-east-1
-    folder: dpb587.me/website-release/blobs
+    bucket_name: dpb587-dpb587me-bosh-release-us-east-1
