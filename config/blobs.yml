@@ -10,9 +10,9 @@ openssl/openssl-1.1.0e.tar.gz:
   size: 5202247
   object_id: 66137ab4-49dc-4f39-60dc-5a08c219ec11
   sha: 8bbbaf36feffadd3cb9110912a8192e665ebca4b
-pcre/pcre.tar.gz:
+pcre/pcre-8.42.tar.gz:
   size: 2081413
-  object_id: a0fd3d6b-a230-4580-405a-5d99c55eb401
+  object_id: 1b1e3a75-32e8-4a8c-6c55-f0f1bdc26025
   sha: ee505270446f4c4bf52ac1a371335fdbb14465cb
 zlib/zlib.tar.gz:
   size: 644492
