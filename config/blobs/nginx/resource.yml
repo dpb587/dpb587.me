@@ -1,10 +1,11 @@
 type: dynamic-metalink
 source:
   version_check: |
-    curl -s http://hg.nginx.org/nginx/tags?style=raw \
-      | cut -f1 \
-      | grep '^release-' \
-      | sed -E 's/^release-(.+)$/\1/'
+    git ls-remote --tags https://github.com/nginx/nginx.git \
+      | cut -f2 \
+      | grep -v '\^{}' \
+      | grep -E '^refs/tags/release-.+$' \
+      | sed -E 's/^refs\/tags\/release-(.+)$/\1/'
   metalink_get: |
     jq -n '
       "nginx-\(env.version).tar.gz" | {
