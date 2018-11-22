@@ -1,6 +1,7 @@
-/.bundle
-/_layouts/private-*
-/_site
-/asset
+# hugo
+/public
+/resources
+
+# private repository
+/content/private
 /private
-/vendor

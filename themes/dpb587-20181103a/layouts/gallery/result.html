@@ -1,0 +1,11 @@
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <a href="{{ .URL }}"><strong>{{ .Title }}</strong></a>{{ if .Date }} <small>from {{ dateFormat "January 2, 2006" .Date }}</small>{{ end }}<br>
+        <span class="has-text-grey">{{ .Summary }}</span>
+      </p>
+    </div>
+  </div>
+</article>
+

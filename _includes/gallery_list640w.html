@@ -1,2 +1,0 @@
-{% capture path %}gallery/{{ include.gallery }}{% endcapture %}
-{% loopdir path:path match:"*.md" sort:"ordering" %}<span itemprop="image" itemscope itemtype="http://schema.org/Photograph"><a href="/{{ item.fullname }}.html" itemprop="url"><img alt="Photo: {{ item.title }}" src="{{ site.asset_prefix }}/{{ item.fullname }}~640w.jpg" title="{{ item.title }}" width="640" /></a></span>{% endloopdir %}

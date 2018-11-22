@@ -1,0 +1,9 @@
+{{ range (.Paginate ((where .Data.Pages "Type" "post").GroupByDate "2006")).PageGroups }}
+  <section class="section">
+    <h2 class="title">{{ .Key }}</h2>
+
+    {{ range .Pages }}
+      {{ .Render "result" }}
+    {{ end }}
+  </section>
+{{ end }}

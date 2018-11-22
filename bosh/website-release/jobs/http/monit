@@ -1,4 +1,0 @@
-check process http-nginx with pidfile /var/vcap/sys/run/http/nginx.pid
-  group vcap
-  start program = "/var/vcap/jobs/http/bin/nginx-control start"
-  stop program = "/var/vcap/jobs/http/bin/nginx-control stop"

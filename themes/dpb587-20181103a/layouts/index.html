@@ -1,0 +1,21 @@
+{{ define "main" }}
+  {{ partial "hero" . }}
+  {{ if .Content }}
+    <div class="container">
+      <section class="section blog">
+        <div class="content blog-post">
+          {{.Content}}
+        </div>
+      </div>
+    </div>
+  {{ end }}
+  <div class="container">
+    <section class="section" style="padding-top:0;">
+      <h2 class="title">Latest posts&hellip;</h2>
+
+      {{ range first 7 (where .Pages "Type" "in" .Site.Params.mainSections) }}
+        {{ .Render "result" }}
+      {{ end }}
+    </section>
+  </div>
+{{ end }}

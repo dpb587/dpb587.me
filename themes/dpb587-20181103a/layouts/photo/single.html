@@ -1,0 +1,58 @@
+{{ define "main"}}
+  {{ $gallery := index .Params.galleries 0 }}
+  {{ $baseAssetUrl := printf "%s%s/%s" .Site.Params.assetUrl $gallery .File.BaseFileName }}
+  <div itemscope itemtype="http://schema.org/BlogPosting">
+    {{ template "_internal/schema.html" . }}
+    <section class="hero is-primary has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">{{ .Title }}</h1>
+          <h2 class="subtitle">
+            <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
+              {{ dateFormat "Monday, January 2, 2006" (default .Date (.PublishDate)) }}
+            </time>
+          </h2>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <section class="section blog">
+        <div class="has-text-centered">
+          <img src="{{ $baseAssetUrl }}~640w.jpg" title="{{ .Title }}">
+        </div>
+        {{ if .Content }}
+          <div class="content blog-post" itemprop="articleBody">
+            {{.Content}}
+          </div>
+        {{ end }}
+        <hr>
+        <p class="has-text-grey has-text-centered">
+          {{ with .Params.tags }}
+            <br>
+            <small>{{ delimit (apply (apply (sort .) "partial" "post/tag-link" ".") "chomp" ".") ", " ", " }}</small>
+          {{ end }}
+          <br>
+          <small>
+            {{ with .Params.exif }}
+              {{ if .make }}{{ .make }}{{ end }}
+              {{ if .model }}{{ .model }}{{ end }}
+              {{ if .aperture }}{{ .aperture }}{{ end }}
+              {{ if .exposure }}{{ .exposure }}{{ end }}
+            {{ end }}
+            &mdash;
+            {{ with .Params.sizes }}
+              {{ range $key, $size := . }}
+                <a href="{{ $baseAssetUrl }}~{{ $key }}.jpg">{{ $size.width }}x{{ $size.height }}</a>
+              {{ end }}
+            {{ end }}
+          </small>
+        </p>
+      </section>
+      {{ if .Site.DisqusShortname }}
+        <article>
+          {{ partial "disqus.html" . }}
+        </article>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
