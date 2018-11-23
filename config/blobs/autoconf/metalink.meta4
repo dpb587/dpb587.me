@@ -1,0 +1,5 @@
+<metalink xmlns="urn:ietf:params:xml:ns:metalink">
+  <file name="autoconf-2.69.tar.gz">
+    <url>https://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz</url>
+  </file>
+</metalink>
