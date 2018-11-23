@@ -1,0 +1,3 @@
+[submodule "src/content"]
+	path = src/content
+	url = https://github.com/dpb587/dpb587.me

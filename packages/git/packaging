@@ -1,0 +1,46 @@
+#!/bin/bash
+
+exec 2>&1
+
+set -eu
+
+CPUS=$(grep -c ^processor /proc/cpuinfo)
+
+tar -xzf git/*.tar.gz
+tar -xzf autoconf/*.tar.gz
+tar -xzf zlib/*.tar.gz
+
+export HOME=/home/vcap
+
+( cd autoconf-* ; set -e
+
+  ./configure \
+    --prefix=$PWD/../autoconf
+
+  make -j${CPUS}
+  make install
+)
+
+( cd zlib-* ; set -e
+  ./configure \
+    --prefix=${BOSH_INSTALL_TARGET}/external/zlib
+
+  make -j${CPUS}
+  make install
+)
+
+
+( cd git-* ; set -e
+  export PATH="$PWD/../autoconf/bin:$PATH"
+  export CPPFLAGS="-I${BOSH_INSTALL_TARGET}/external/zlib/include"
+  export LDFLAGS="-L${BOSH_INSTALL_TARGET}/external/zlib/lib"
+
+  make configure
+
+  ./configure \
+    --prefix="${BOSH_INSTALL_TARGET}" \
+    --without-tcltk
+
+  make -j${CPUS} NO_GETTEXT=1
+  make install NO_GETTEXT=1
+)

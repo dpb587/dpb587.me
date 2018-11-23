@@ -60,6 +60,29 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
+data "aws_iam_policy_document" "public_read" {
+  statement {
+    actions = [
+      "s3:GetObject",
+    ]
+    effect = "Allow"
+    principals = {
+      type = "*"
+      identifiers = [
+        "*"
+      ]
+    }
+    resources = [
+      "${aws_s3_bucket.bucket.arn}/*",
+    ]
+  }
+}
+
+resource "aws_s3_bucket_policy" "bucket" {
+  bucket = "${aws_s3_bucket.bucket.id}"
+  policy = "${data.aws_iam_policy_document.public_read.json}"
+}
+
 data "aws_iam_policy_document" "ci_s3" {
   statement {
     actions = [

@@ -5,7 +5,7 @@ set -eu
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
 
 exec fly -t "$FLY_TARGET" set-pipeline \
-  -p dpb587:dpb587.me:bosh-release:upgrader \
-  -c <( bosh-release-blobs-upgrader-pipeline ci/pipelines/upgrader.yml ) \
+  -p dpb587:dpb587.me:bosh-release \
+  -c <( bosh-release-blobs-upgrader-pipeline ci/pipelines/main.yml ) \
   -l <( terraform output --json | jq 'to_entries | map({key, "value": .value.value}) | from_entries' ) \
   -l config/private.yml

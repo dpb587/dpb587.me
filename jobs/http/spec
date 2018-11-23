@@ -1,13 +1,15 @@
 ---
 name: "http"
 packages:
-  - "nginx"
+- "nginx"
+- "docroot"
 templates:
   bin/nginx-control: "bin/nginx-control"
-  bin/pre-start: "bin/pre-start"
   etc/nginx.conf: "etc/nginx.conf"
 properties:
   domains:
+    default:
+    - localhost
     type: "string[]"
   worker_processes:
     default: 1
@@ -16,7 +18,5 @@ properties:
     default: 128
     type: "integer"
   s3_bucket:
-    type: "string"
-  docroot_version:
-    default: "dev"
+    default: dpb587-website-us-east-1
     type: "string"

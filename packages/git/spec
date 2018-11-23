@@ -1,0 +1,6 @@
+---
+name: git
+files:
+- autoconf/*
+- git/*
+- zlib/*

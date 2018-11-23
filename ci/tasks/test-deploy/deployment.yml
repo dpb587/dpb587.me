@@ -1,0 +1,26 @@
+---
+name: test-deploy
+releases:
+- name: dpb587-website
+  url: file://((repo_dir))
+  version: create
+update:
+  canaries: 1
+  canary_watch_time: 10000-60000
+  update_watch_time: 10000-60000
+  max_in_flight: 1
+stemcells:
+- alias: default
+  os: ((os))
+  version: latest
+instance_groups:
+- name: role1
+  azs: [z1]
+  jobs:
+  - name: http
+    release: dpb587-website
+  instances: 1
+  stemcell: default
+  vm_type: default
+  networks:
+  - name: default

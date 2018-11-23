@@ -1,0 +1,16 @@
+#!/bin/bash
+
+exec 2>&1
+
+set -eu
+
+( cd hugo
+
+  tar -xzf *.tar.gz
+)
+
+cd content
+
+export PATH="/var/vcap/packages/git/bin:$PATH"
+
+../hugo/hugo --destination "$BOSH_INSTALL_TARGET"

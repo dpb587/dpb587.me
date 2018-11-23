@@ -1,0 +1,8 @@
+---
+name: docroot
+dependencies:
+- git
+files:
+- hugo/*
+- content/*
+- content/**/*

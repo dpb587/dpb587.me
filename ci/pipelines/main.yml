@@ -1,4 +1,46 @@
 ---
+groups:
+- name: all
+  jobs: []
+jobs: []
+# - name: upgrade-content-src
+#   plan:
+#   - aggregate:
+#     - get: content-repo
+#       trigger: true
+#     - get: repo
+#   - task: upgrade-content
+#     file: repo/ci/tasks/upgrade-content.yml
+#   - task: test-deploy
+#     file: repo/ci/tasks/test-deploy.yml
+#   - put: repo
+#     params:
+#       repository: repo
+resources:
+- name: repo
+  type: git
+  source:
+    uri: git@github.com:dpb587/dpb587.me.git
+    branch: bosh-release
+    private_key: ((repo_private_key))
+# - name: content-repo
+#   type: git
+#   source:
+#     uri: git@github.com:dpb587/dpb587.me.git
+#     branch: master
+- name: slack-alert
+  type: slack-notification
+  source:
+    url: ((ci_slack_hook_url))
+resource_types:
+- name: dynamic-metalink
+  type: docker-image
+  source:
+    repository: dpb587/dynamic-metalink-resource
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
 bosh_release_blobs_upgrader:
   track_files:
   - .resource/metalink.meta4
@@ -35,23 +77,3 @@ bosh_release_blobs_upgrader:
         title: $BUILD_JOB_NAME/$BUILD_NAME
         title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
         color: good
-resources:
-- name: repo
-  type: git
-  source:
-    uri: git@github.com:dpb587/dpb587.me.git
-    branch: ((repo_branch))
-    private_key: ((repo_private_key))
-- name: slack-alert
-  type: slack-notification
-  source:
-    url: ((ci_slack_hook_url))
-resource_types:
-- name: dynamic-metalink
-  type: docker-image
-  source:
-    repository: dpb587/dynamic-metalink-resource
-- name: slack-notification
-  type: docker-image
-  source:
-    repository: cfcommunity/slack-notification-resource

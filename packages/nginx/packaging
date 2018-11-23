@@ -2,8 +2,7 @@
 
 exec 2>&1
 
-set -e
-set -u
+set -eu
 
 tar -xzf nginx/*.tar.gz
 tar -xzf openssl/*.tar.gz

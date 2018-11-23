@@ -1,0 +1,16 @@
+type: dynamic-metalink
+source:
+  version_check: |
+    git ls-remote --tags http://git.sv.gnu.org/r/autoconf.git \
+      | cut -f2 \
+      | grep -v '\^{}' \
+      | grep -E '^refs/tags/v.+$' \
+      | sed -E 's/^refs\/tags\/v(.+)$/\1/' \
+      | grep -v '-' \
+      | grep -E '^\d+\.\d+(\.\d+)?$'
+  metalink_get: |
+    jq -n '
+      env.version | {
+        "files": [
+          { "name": "autoconf-\(.).tar.gz",
+            "urls": [ { "url": "https://ftp.gnu.org/gnu/autoconf/autoconf-\(.).tar.gz" } ] } ] }'

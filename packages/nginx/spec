@@ -1,7 +1,7 @@
 ---
-name: "nginx"
+name: nginx
 files:
- - "nginx/*.tar.gz"
- - "openssl/*.tar.gz"
- - "pcre/*.tar.gz"
- - "zlib/*.tar.gz"
+- nginx/*.tar.gz
+- openssl/*.tar.gz
+- pcre/*.tar.gz
+- zlib/*.tar.gz
