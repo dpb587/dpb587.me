@@ -35,7 +35,7 @@ resources:
 - name: content-repo
   type: git
   source:
-    uri: git@github.com:dpb587/dpb587.me.git
+    uri: https://github.com/dpb587/dpb587.me.git
     branch: master
 - name: slack-alert
   type: slack-notification
