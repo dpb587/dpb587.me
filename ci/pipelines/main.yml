@@ -1,21 +1,30 @@
 ---
 groups:
 - name: all
+  jobs:
+  - upgrade-content-src
+- name: blobs
   jobs: []
-jobs: []
-# - name: upgrade-content-src
-#   plan:
-#   - aggregate:
-#     - get: content-repo
-#       trigger: true
-#     - get: repo
-#   - task: upgrade-content
-#     file: repo/ci/tasks/upgrade-content.yml
-#   - task: test-deploy
-#     file: repo/ci/tasks/test-deploy.yml
-#   - put: repo
-#     params:
-#       repository: repo
+- name: src
+  jobs:
+  - upgrade-content-src
+jobs:
+- name: upgrade-content-src
+  plan:
+  - aggregate:
+    - get: content-repo
+      trigger: true
+      params:
+        depth: 1
+        submodules: none
+    - get: repo
+  - task: upgrade-content
+    file: repo/ci/tasks/upgrade-content/config.yml
+  - task: test-deploy
+    file: repo/ci/tasks/test-deploy/config.yml
+  - put: repo
+    params:
+      repository: repo
 resources:
 - name: repo
   type: git
@@ -23,11 +32,11 @@ resources:
     uri: git@github.com:dpb587/dpb587.me.git
     branch: bosh-release
     private_key: ((repo_private_key))
-# - name: content-repo
-#   type: git
-#   source:
-#     uri: git@github.com:dpb587/dpb587.me.git
-#     branch: master
+- name: content-repo
+  type: git
+  source:
+    uri: git@github.com:dpb587/dpb587.me.git
+    branch: master
 - name: slack-alert
   type: slack-notification
   source:
@@ -48,6 +57,9 @@ bosh_release_blobs_upgrader:
     check_every: 6h
   serial_groups:
   - serial
+  before_upload:
+    task: test-deploy
+    file: repo/ci/tasks/test-deploy/config.yml
   after_upload:
     put: repo
     params:

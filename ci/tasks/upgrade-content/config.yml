@@ -1,0 +1,18 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: dpb587/bosh-main-bosh-docker
+    tag: light
+inputs:
+- name: repo
+  path: repo-input
+- name: content-repo
+outputs:
+- name: repo
+run:
+  path: repo/ci/tasks/upgrade-content/run.sh
+params:
+  git_user_name: CI Bot
+  git_user_email: ci@localhost
