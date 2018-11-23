@@ -1,6 +1,0 @@
-[submodule "hugo/dpb587.me/themes/natrium"]
-	path = hugo/dpb587.me/themes/natrium
-	url = https://github.com/mobybit/hugo-natrium-theme
-[submodule "hugo/dpb587.me/themes/bulma"]
-	path = hugo/dpb587.me/themes/bulma
-	url = https://github.com/jeblister/bulma.git
