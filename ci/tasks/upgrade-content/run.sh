@@ -8,13 +8,17 @@ export GIT_COMMITTER_EMAIL="concourse.ci@localhost"
 git config --global user.email "${git_user_email:-ci@localhost}"
 git config --global user.name "${git_user_name:-CI Bot}"
 
-git clone --recurse-submodules file://$PWD/repo-input repo
+git clone file://$PWD/repo-input repo
 
 cd content-repo
 
 content_commit=$( git rev-parse HEAD )
 
-cd ../repo/src/content
+cd ../repo
+
+git submodule update --init
+
+cd src/content
 
 git checkout $content_commit
 

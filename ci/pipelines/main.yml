@@ -22,6 +22,7 @@ jobs:
     file: repo/ci/tasks/upgrade-content/config.yml
   - task: test-deploy
     file: repo/ci/tasks/test-deploy/config.yml
+    privileged: true
   - put: repo
     params:
       repository: repo
@@ -60,6 +61,7 @@ bosh_release_blobs_upgrader:
   before_upload:
     task: test-deploy
     file: repo/ci/tasks/test-deploy/config.yml
+    privileged: true
   after_upload:
     put: repo
     params:

@@ -6,6 +6,8 @@ fail () { echo "FAILURE: $1" >&2 ; exit 1 ; }
 
 cd repo
 
+git submodule update --init
+
 start-bosh
 
 source /tmp/local-bosh/director/env
