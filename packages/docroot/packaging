@@ -13,4 +13,11 @@ cd content
 
 export PATH="/var/vcap/packages/git/bin:$PATH"
 
+# extract .git
+mv .git .git.git
+mkdir .git
+tar -xzf .git.git -C .git
+sed -i '/worktree/d' .git/config
+rm .git.git
+
 ../hugo/hugo --destination "$BOSH_INSTALL_TARGET"

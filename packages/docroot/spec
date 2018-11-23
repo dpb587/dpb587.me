@@ -4,5 +4,6 @@ dependencies:
 - git
 files:
 - hugo/*
+- content/.git
 - content/*
 - content/**/*

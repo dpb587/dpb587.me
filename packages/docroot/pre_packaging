@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eu
+
+cd content
+
+mv .git .git.git
+
+# submodules symlink .git elsewhere
+tar -czf .git -C "$RELEASE_DIR/src/content/$( grep gitdir .git.git | awk '{ print $2 }' )" ./
+
+rm .git.git
