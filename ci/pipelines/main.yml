@@ -25,6 +25,7 @@ jobs:
     privileged: true
   - put: repo
     params:
+      rebase: true
       repository: repo
 resources:
 - name: repo
