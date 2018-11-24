@@ -1,3 +1,4 @@
 User-agent: *
+Disallow: /internal/
 
 Sitemap: {{ .Site.BaseURL }}sitemap.xml
