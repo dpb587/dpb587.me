@@ -1,6 +1,8 @@
-{{ range ((.Paginate (where .Data.Pages "Type" "post")).Pages.GroupByDate "2006") }}
+{{ range ((.Paginate .Data.Pages).Pages.GroupByDate "2006") }}
   <section class="section">
-    <h2 class="title">{{ .Key }}</h2>
+    {{ if ne .Key "0001" }}
+      <h2 class="title">{{ .Key }}</h2>
+    {{ end }}
 
     {{ range .Pages }}
       {{ .Render "result" }}
