@@ -17,8 +17,6 @@
       <meta name="author" content="{{ .Site.Params.author }}">
     {{ end }}
 
-    {{ template "_internal/google_analytics_async.html" . }}
-
     {{ if .RSSLink }}
       <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end }}
@@ -43,6 +41,8 @@
     {{ block "style" . }}{{end}}
 
     {{ .Hugo.Generator }}
+
+    {{ partial "analytics" . }}
   </head>
 
   <body>

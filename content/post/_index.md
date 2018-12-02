@@ -1,4 +1,4 @@
 ---
 title: Posts
-description: To document some ideas and experiments.
+description: To document some thoughts and learnings.
 ---

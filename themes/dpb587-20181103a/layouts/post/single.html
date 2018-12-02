@@ -37,11 +37,8 @@
           </div>
         </nav>
       </section>
-      {{ if .Site.DisqusShortname }}
-        <article>
-          {{ partial "disqus.html" . }}
-        </article>
-      {{ end }}
+
+      {{ partial "disqus.html" . }}
     </div>
   </div>
 {{ end }}
