@@ -76,7 +76,7 @@ bosh_release_blobs_upgrader:
       attachments:
       - author_icon: https://github.com/concourse.png
         author_name: upgrader pipeline
-        author_link: https://github.com/dpb587/dpb587.me/blob/bosh-release/ci/pipelines/upgrader.yml
+        author_link: https://github.com/dpb587/dpb587.me/blob/bosh-release/ci/pipelines/main.yml
         title: $BUILD_JOB_NAME/$BUILD_NAME
         title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
         color: danger
@@ -88,7 +88,7 @@ bosh_release_blobs_upgrader:
       attachments:
       - author_icon: https://github.com/concourse.png
         author_name: upgrader pipeline
-        author_link: https://github.com/dpb587/dpb587.me/blob/bosh-release/ci/pipelines/upgrader.yml
+        author_link: https://github.com/dpb587/dpb587.me/blob/bosh-release/ci/pipelines/main.yml
         title: $BUILD_JOB_NAME/$BUILD_NAME
         title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
         color: good
