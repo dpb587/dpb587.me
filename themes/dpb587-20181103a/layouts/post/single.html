@@ -38,7 +38,9 @@
         </nav>
       </section>
 
-      {{ partial "disqus.html" . }}
+      {{ if ne .Params.disqus false }}
+        {{ partial "disqus.html" . }}
+      {{ end }}
     </div>
   </div>
 {{ end }}
