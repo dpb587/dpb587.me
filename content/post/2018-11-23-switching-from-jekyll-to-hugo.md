@@ -12,10 +12,11 @@ tags:
 
 It has been a while since I spent any time on my [personal website][1] here, but, recently, I have a few projects and ideas looking for a place to be recorded. As part of revisiting the site, I decided it might be a good opportunity to switch from using [Jekyll][2] as the static site generator to using [Hugo][3]. Here are some of the motivations and small learnings from that process.
 
+<!--more-->
 
 ## Jekyll
 
-I first started with [Jekyll][2] back in 2013 when I was looking for a simple way to publish posts without the need for managing a complex environment, like [WordPress][5]. Eventually I decided to use Jekyll since it had a popular ecosystem, supported exactly what I was trying to do, and GitHub would take care of hosting the site on a custom domain for me. 
+I first started with [Jekyll][2] back in 2013 when I was looking for a simple way to publish posts without the need for managing a complex environment, like [WordPress][5]. Eventually I decided to use Jekyll since it had a popular ecosystem, supported exactly what I was trying to do, and GitHub would take care of hosting the site on a custom domain for me.
 
 Over time, I started wanting to do more things which Jekyll or [GitHub Pages][4] didn't support. This included things like HTTPS for custom domains ([now supported][7]), allowing custom plugins, supporting photo galleries, storing assets outside of the repository. To support those, I ended up self-generating and self-hosting the site. It works, but, despite it being mostly automated, it has quite a bit of overhead if it's to be properly maintained.
 
