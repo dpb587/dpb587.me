@@ -12,6 +12,8 @@ aliases:
 
 I'm a big fan of [OpenVPN][1] - both for personal and professional VPNs. Seeing as how I've been deploying more things with [BOSH][2] lately, an OpenVPN release seemed like a good little project. I started one about nine months ago and have been using development releases ever since, but last week I went ahead and created a ["final" release][6] of it.
 
+<!--more-->
+
 There is only a single job (`openvpn`) and the properties are [well documented][3]. Its primary purpose is to act as a server for other clients to connect to, however you can also configure it to connect as a client and connect to another OpenVPN network as well. This makes it very easy to join multiple networks from a single OpenVPN connection.
 
 One of the more complicated steps of configuring an OpenVPN server is figuring out and remembering the correct commands for creating and signing security keys and certificates. The [README][4] includes all those steps to get a server running in a deployment and a client connected to it. There are also a few other examples about some fancier configuration options such as: setting up `iptables` for shared networks, allowing VPN clients to communicate with each other, and making sure specific clients are assigned static IPs.

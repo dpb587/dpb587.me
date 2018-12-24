@@ -23,6 +23,8 @@ load on our parsers would spike for sustained periods, causing our queue to get 
 get significantly delayed. We were able to see when our queue size was growing, but I needed to find better metrics
 which would demonstrate our real issue.
 
+<!--more-->
+
 ![Screenshot: slow queue](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/slow-queue.jpg)
 
 ## The Event Lifecycle

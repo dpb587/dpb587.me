@@ -14,6 +14,8 @@ aliases:
 
 Outside of [BOSH][1] world, package management is often handled by tools like [yum][2] and [apt][3]. With those tools, you're able to run trivial commands like `yum info apache2` to check the available versions or `yum update apache2` to upgrade to the latest version. It's even possible to automatically apply updates via cron job. With BOSH, it's not nearly so easy since you must monitor upstream releases, manually downloading the sources before moving on to testing and deploying. Personally, this repetitive sort of maintenance is one of my least favorite tasks; so, to avoid it, I started automating.
 
+<!--more-->
+
 
 ## Automating
 

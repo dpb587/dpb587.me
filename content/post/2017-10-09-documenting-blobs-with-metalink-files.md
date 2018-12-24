@@ -16,6 +16,8 @@ aliases:
 
 There are many blobs around the web, with different organizations and teams publishing artifacts through different channels and with varying security. Often a single project will have many dependencies from multiple different sources, and developers need to know specifics about where to download blobs and how to verify them. I started looking for a solution to help unify the way I was both consuming and sharing blobs across my own projects. Eventually I found my way to something called "metalink" files, and it has become a very useful method for managing blobs (and resources) in my projects.
 
+<!--more-->
+
 
 ## About Metalinks
 

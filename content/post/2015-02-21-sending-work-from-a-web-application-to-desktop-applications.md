@@ -22,6 +22,8 @@ aliases:
 
 I prefer working on the web application side of things, but there are frequently tasks that need to be automated outside the context of a browser and server. For [TLE][10], there's a physical shop where inventory, order, and shipping tasks need to happen, and those tasks revolve around web-based systems of one form or another. To help unify and simplify things for the staff (aka [elves][11]), I've been connecting scripts on the workstations with internal web applications via queues in the cloud.
 
+<!--more-->
+
 
 ## Evolution of a bot
 

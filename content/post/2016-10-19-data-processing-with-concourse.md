@@ -17,6 +17,8 @@ aliases:
 
 Recently I needed to focus on a project that regularly processed datasets with typical extract, transform, and load stages. Historically it was using [Amazon SQS][15] to queue up the tasks for each stage, some [supervisor][9]-managed processes to work off the queue, and [Amazon S3][10] to store the results of each stage. The original implementation was struggling because it was inefficient, difficult to detect problems, and more difficult to replay a stage whenever unexpected, bad data showed up.
 
+<!--more-->
+
 Avoiding large-scale solutions like [Hadoop][1], I found [Pachyderm][2] which seemed perfect. It is a newer, container-oriented solution which managed workloads via [Kubernetes][3]. I quickly had a cluster running in [Google Cloud Platform][11], but once I was to the point of executing custom jobs I started running into issues around hanging jobs, non-starting containers, and pods with inexplicably high CPU. After spending some time debugging, I started thinking... I already have [a tool][4] which is really good at managing inputs, containers, outputs and chaining those things together.
 
 

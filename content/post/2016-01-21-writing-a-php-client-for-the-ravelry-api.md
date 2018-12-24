@@ -13,6 +13,8 @@ aliases:
 
 [Ravelry][1] is, in [their own words][2], "a place for knitters, crocheters, designers, spinners, weavers and dyers to keep track of their yarn, tools, project and pattern information, and look to others for ideas and inspiration." It's no wonder so many of [TLE][3]'s customers are also "Ravelers". Several years ago Ravelry created an API so developers could write apps and create integrations that users would love. Classifying myself as more a developer than a knitter, the API piqued my interest. Fast-forward a bit and I've created and now open-sourced a [couple][4] [projects][5] for the Ravelry API.
 
+<!--more-->
+
 
 ## With PHP Scripts
 

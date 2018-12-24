@@ -12,6 +12,8 @@ aliases:
 
 With BOSH, I use deployments to segment various services. For example, [TLE][1] has several services like web and database servers, WordPress blogs, the main e-commerce application, statistics, and internal services. Many of them are interconnected in some way. Historically I've used a combination of hard-coded IP addresses in the deployment properties and dynamic service discovery with [consul][2]. With a small bit of tweaking and an extra pre-parser, I'm now able to emulate much of the proposed links features, but from a more dynamic, distributed perspective.
 
+<!--more-->
+
 
 ## About Links
 

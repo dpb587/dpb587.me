@@ -18,6 +18,8 @@ think, `git commit`ing in case things go bad, `bosh deploy`ing to make it so... 
 I'm much more a visual person and prefer a browser-based tool. Since I've had a bit extra free-time lately, I've spent
 some time experimenting on ideas to help improve my BOSH-quality-of-life.
 
+<!--more-->
+
 
 ## BOSH
 
