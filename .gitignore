@@ -3,5 +3,5 @@
 /resources
 
 # private repository
-/content/private
+/content/*/private
 /private
