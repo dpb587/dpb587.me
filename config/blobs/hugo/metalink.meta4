@@ -1,5 +1,5 @@
 <metalink xmlns="urn:ietf:params:xml:ns:metalink">
-  <file name="hugo_0.52_Linux-64bit.tar.gz">
-    <url>https://github.com/gohugoio/hugo/releases/download/v0.52/hugo_0.52_Linux-64bit.tar.gz</url>
+  <file name="hugo_0.53_Linux-64bit.tar.gz">
+    <url>https://github.com/gohugoio/hugo/releases/download/v0.53/hugo_0.53_Linux-64bit.tar.gz</url>
   </file>
 </metalink>
