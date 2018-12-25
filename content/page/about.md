@@ -3,6 +3,8 @@ slug: about
 title: About Me
 description: To intrigue those with technical challenges.
 print_blurb: "r&#233;sum&#233;"
+aliases:
+- about.html
 ---
 
 I am a _software engineer_ who enjoys pushing the limits of _web technology_ and applying them to _business processes_. Ideally, my job provides me with technical challenges that need _well-designed_ solutions. I have a solid understanding of industry best practices, but I am more interested in _continuously learning_ about why they exist and how they can be further _applied and improved_.
