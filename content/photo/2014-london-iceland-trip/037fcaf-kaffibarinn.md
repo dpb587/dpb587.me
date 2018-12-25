@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Kaffibarinn
+aliases:
+- /gallery/2014-london-iceland-trip/037fcaf-kaffibarinn.html
 ---
 
 A bar which looks like it should be a London Underground station.

@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Natural History Museum'
+aliases:
+- /gallery/2014-london-iceland-trip/b70543a-natural-history-museum.html
 ---
 
 A quick look inside the Natural History Museum. At the upper level, far end they have a slice from a giant sequoia tree from California.

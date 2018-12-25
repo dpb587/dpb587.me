@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/48f23d8-hanging-bridges.html
 ---
 
 The bridge spans ranged from 150ft to 510ft across.

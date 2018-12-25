@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Monteverde Chocolate Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/c8f8633-monteverde-chocolate-tour.html
 ---
 
 They then let us crush the nibs into a powder where they mixed it with warm water for a very strong warm chocolate. We could concoct several different spoonful flavors by adding our own spices and toppings.

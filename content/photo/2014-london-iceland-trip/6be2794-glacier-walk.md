@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Glacier Walk'
+aliases:
+- /gallery/2014-london-iceland-trip/6be2794-glacier-walk.html
 ---
 
 It was fun hiking up and around the different glacier features.

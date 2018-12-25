@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'St. Paul''s Cathedral'
+aliases:
+- /gallery/2014-london-iceland-trip/9b3e52f-st-pauls-cathedral.html
 ---
 
 Built in the late 1600s, this cathedral has hosted quite a few famous events.

@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Parc Güell Entry'
+aliases:
+- /gallery/2014-barcelona-trip/a509b76-parc-guell-entry.html
 ---

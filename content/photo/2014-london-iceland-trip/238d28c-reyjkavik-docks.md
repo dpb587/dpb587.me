@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Reyjkavik Docks'
+aliases:
+- /gallery/2014-london-iceland-trip/238d28c-reyjkavik-docks.html
 ---
 
 Down by some of the docks the first evening.

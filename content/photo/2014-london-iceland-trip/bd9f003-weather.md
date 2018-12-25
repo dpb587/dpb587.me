@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Weather
+aliases:
+- /gallery/2014-london-iceland-trip/bd9f003-weather.html
 ---
 
 Moments before the weather was tolerable, but it quickly changed and covered the ground with snow within five minutes.

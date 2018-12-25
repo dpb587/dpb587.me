@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Boat Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/f6374cd-boat-tour.html
 ---
 
 Heading out to ocean. Some storms were predicted for the afternoon and evening, but fortunately they stayed closer to land and didn't affect us on the boat.

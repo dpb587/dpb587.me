@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Glacier Walk'
+aliases:
+- /gallery/2014-london-iceland-trip/b6db71d-glacier-walk.html
 ---
 
 Here our group was putting on crampons and boots to get up the glacier.

@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Giraffe
+aliases:
+- /gallery/2014-london-iceland-trip/6132b85-giraffe.html
 ---
 
 One exhibit had a whole collection of animals…

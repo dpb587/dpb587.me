@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Glacier Walk'
+aliases:
+- /gallery/2014-london-iceland-trip/b6360f4-glacier-walk.html
 ---
 
 A look back towards where we originally started.

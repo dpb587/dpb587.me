@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: 'Bus Tour'
+aliases:
+- /gallery/2014-london-iceland-trip/c551a16-bus-tour.html
 ---
 
 On a bus tour, we traveled a bit North of Reyjkavik through the country.

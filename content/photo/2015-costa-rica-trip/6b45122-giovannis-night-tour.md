@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/6b45122-giovannis-night-tour.html
 ---
 
 Add a description…Some sleeping birds in the trees who apparently didn't mind bright lights waking them up from their sleep.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/785fc88-don-juan-coffee-tour.html
 ---
 
 On Wednesday we took a tour of a coffee plantation. We were able to see some of the young beans on the trees.

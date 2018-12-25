@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Church
+aliases:
+- /gallery/2014-london-iceland-trip/24b9354-church.html
 ---
 
 I think the church thought it was a tower of a castle.

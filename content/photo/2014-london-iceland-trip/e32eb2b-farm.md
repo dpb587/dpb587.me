@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Farm
+aliases:
+- /gallery/2014-london-iceland-trip/e32eb2b-farm.html
 ---
 
 It looked picturesque.

@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Font màgica de Montjuïc'
+aliases:
+- /gallery/2014-barcelona-trip/7f51e46-font-magica-de-montjuic.html
 ---

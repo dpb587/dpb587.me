@@ -24,6 +24,8 @@ sizes:
     height: 200
     width: 200
 title: 'Monument at Parque Nacional'
+aliases:
+- /gallery/2015-costa-rica-trip/3058bbd-monument-at-parque-nacional.html
 ---
 
 We took an overnight flight and arrived early Saturday morning. We were staying in San José and explored the downtown city a little bit.

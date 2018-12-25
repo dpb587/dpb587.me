@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'River Thames'
+aliases:
+- /gallery/2014-london-iceland-trip/2c1b931-river-thames.html
 ---
 
 A look southeast down River Thames from the gondola.

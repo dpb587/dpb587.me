@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Skógafoss
+aliases:
+- /gallery/2014-london-iceland-trip/9fa3c9a-skogafoss.html
 ---
 
 We stopped at the Skógafoss waterfall.

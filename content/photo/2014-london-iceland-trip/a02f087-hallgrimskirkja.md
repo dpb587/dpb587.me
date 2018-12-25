@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: Hallgrímskirkja
+aliases:
+- /gallery/2014-london-iceland-trip/a02f087-hallgrimskirkja.html
 ---
 
 The church had a very distinctive look.

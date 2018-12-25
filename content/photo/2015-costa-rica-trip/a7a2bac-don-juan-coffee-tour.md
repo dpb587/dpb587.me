@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/a7a2bac-don-juan-coffee-tour.html
 ---
 
 This machine would help sort the beans by their weights. Since smaller sizes will roast more quickly, they should be roasted separately to avoid batches tasting burnt.

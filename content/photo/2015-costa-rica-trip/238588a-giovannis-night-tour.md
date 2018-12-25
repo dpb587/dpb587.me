@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/238588a-giovannis-night-tour.html
 ---
 
 Of course, the tour wasn't complete without being able to see one of the classical green/blue, red-eyes frogs.

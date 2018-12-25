@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Through the Aspens'
+aliases:
+- /gallery/2014-colorado-aspens/79c5a71-through-the-aspens.html
 ---

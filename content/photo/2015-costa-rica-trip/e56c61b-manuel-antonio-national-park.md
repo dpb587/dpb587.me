@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/e56c61b-manuel-antonio-national-park.html
 ---
 
 Raccoons were particularly interested in finding some scraps by the beach's picnic tables.

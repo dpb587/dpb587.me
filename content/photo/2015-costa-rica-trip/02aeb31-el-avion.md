@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'El Avión'
+aliases:
+- /gallery/2015-costa-rica-trip/02aeb31-el-avion.html
 ---
 
 There are going to be a few of these pictures of the sun setting...

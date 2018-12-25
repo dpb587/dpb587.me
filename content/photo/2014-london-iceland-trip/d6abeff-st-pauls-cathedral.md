@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'St. Paul''s Cathedral'
+aliases:
+- /gallery/2014-london-iceland-trip/d6abeff-st-pauls-cathedral.html
 ---
 
 A look out towards some of the “skyscrapers” of the city. Previously, no building was allowed to be taller than St. Paul’s Cathedral.

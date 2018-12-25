@@ -24,4 +24,6 @@ sizes:
     height: 200
     width: 200
 title: 'Velocity Conference'
+aliases:
+- /gallery/2014-barcelona-trip/fdd191f-velocity-conference.html
 ---

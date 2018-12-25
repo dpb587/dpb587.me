@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hike to Cerro Chato'
+aliases:
+- /gallery/2015-costa-rica-trip/e3b74ac-hike-to-cerro-chato.html
 ---
 
 Monday we planned a hike up to Cerro Chato. A small crater lake next to the Arenal Volcano.

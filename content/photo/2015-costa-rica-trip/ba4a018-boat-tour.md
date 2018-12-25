@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Boat Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/ba4a018-boat-tour.html
 ---
 
 Sadly leaving the open sea...

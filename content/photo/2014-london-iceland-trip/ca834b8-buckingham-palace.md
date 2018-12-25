@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Buckingham Palace'
+aliases:
+- /gallery/2014-london-iceland-trip/ca834b8-buckingham-palace.html
 ---
 
 Back by for another look at Buckingham Palace. The Queen was there again.

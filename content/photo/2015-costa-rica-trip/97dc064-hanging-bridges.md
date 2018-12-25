@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/97dc064-hanging-bridges.html
 ---
 
 Thursday morning we went to a park along the forest which had hanging bridges across the rainforest canopy.

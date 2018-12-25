@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Mirador de Colom'
+aliases:
+- /gallery/2014-barcelona-trip/baf4bfd-mirador-de-colom.html
 ---

@@ -24,4 +24,6 @@ sizes:
     height: 200
     width: 200
 title: 'Golden Aspens'
+aliases:
+- /gallery/2014-colorado-aspens/3346d74-golden-aspens.html
 ---

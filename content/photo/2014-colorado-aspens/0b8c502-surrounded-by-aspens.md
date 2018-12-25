@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Surrounded by Aspens'
+aliases:
+- /gallery/2014-colorado-aspens/0b8c502-surrounded-by-aspens.html
 ---

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/5cdf335-don-juan-coffee-tour.html
 ---
 
 Inside, the floor was covered with an inch or two of beans. Workers would regularly rake them to move them around.

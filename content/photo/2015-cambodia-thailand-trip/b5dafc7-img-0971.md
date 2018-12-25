@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: IMG_0971
+aliases:
+- /gallery/2015-cambodia-thailand-trip/b5dafc7-img-0971.html
 ---

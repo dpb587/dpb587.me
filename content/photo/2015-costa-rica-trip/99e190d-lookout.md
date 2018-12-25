@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: Lookout
+aliases:
+- /gallery/2015-costa-rica-trip/99e190d-lookout.html
 ---
 
 One of the breaks along the hike looked out towards La Fortuna.

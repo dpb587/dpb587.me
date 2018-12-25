@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Canopy Zip Line'
+aliases:
+- /gallery/2015-costa-rica-trip/1362d41-canopy-zip-line.html
 ---
 
 Some of the zip lines were shorter, crossing a bit further down the hill.

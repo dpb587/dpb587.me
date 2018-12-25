@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'El Avión'
+aliases:
+- /gallery/2015-costa-rica-trip/5ea206c-el-avion.html
 ---
 
 The story is there were two covert airplanes being used for transporting by the United States. One of them was shot down and this one was abandoned at the airport before being bought and moved/transformed into a restaurant.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/efa7952-hanging-bridges.html
 ---
 
 We went fairly early in the morning hoping to see some wildlife, but aside from the hummingbirds and this crossing the path, we didn't see much activity.

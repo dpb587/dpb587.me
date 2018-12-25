@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: IMG_1117
+aliases:
+- /gallery/2015-cambodia-thailand-trip/ffde6e7-img-1117.html
 ---

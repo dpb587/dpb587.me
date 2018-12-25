@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Torre de Comunicacions de Montjuïc'
+aliases:
+- /gallery/2014-barcelona-trip/55ba6a5-torre-de-comunicacions-de-montjuic.html
 ---

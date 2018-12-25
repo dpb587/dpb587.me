@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Tyrannosaurus Rex'
+aliases:
+- /gallery/2014-london-iceland-trip/59809e9-tyrannosaurus-rex.html
 ---
 
 They had about a dozen large skeletons set up around the exhibit. There were lots of fields trips at the museum.

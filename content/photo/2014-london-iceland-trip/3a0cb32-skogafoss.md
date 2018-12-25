@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Skógafoss
+aliases:
+- /gallery/2014-london-iceland-trip/3a0cb32-skogafoss.html
 ---
 
 Looking back towards the river making the waterfall.

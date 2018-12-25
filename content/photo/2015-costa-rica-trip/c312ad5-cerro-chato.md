@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Cerro Chato'
+aliases:
+- /gallery/2015-costa-rica-trip/c312ad5-cerro-chato.html
 ---
 
 Once at the base, the clouds and fog lifted and we could see across the lake. The tour group in front of us had brought their swimsuits to take a brief break in the lake.

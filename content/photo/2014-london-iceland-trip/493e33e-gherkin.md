@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Gherkin
+aliases:
+- /gallery/2014-london-iceland-trip/493e33e-gherkin.html
 ---
 
 Hey, look, it’s the strange bullet I’ve seen in a lot of pictures.

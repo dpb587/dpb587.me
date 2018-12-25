@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Glacier Walk'
+aliases:
+- /gallery/2014-london-iceland-trip/c758581-glacier-walk.html
 ---
 
 In the crevasse, there was another tour where you could climb up the glacier walls.

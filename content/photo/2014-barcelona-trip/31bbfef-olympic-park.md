@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Olympic Park'
+aliases:
+- /gallery/2014-barcelona-trip/31bbfef-olympic-park.html
 ---

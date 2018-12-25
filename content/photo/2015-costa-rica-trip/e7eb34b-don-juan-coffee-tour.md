@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/e7eb34b-don-juan-coffee-tour.html
 ---
 
 The big roaster. It was still warm from them doing a batch right before our group arrived.

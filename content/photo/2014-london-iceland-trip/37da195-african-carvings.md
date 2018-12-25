@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'African Carvings'
+aliases:
+- /gallery/2014-london-iceland-trip/37da195-african-carvings.html
 ---
 
 Up close, they were very interesting.

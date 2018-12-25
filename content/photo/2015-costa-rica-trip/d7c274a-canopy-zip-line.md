@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Canopy Zip Line'
+aliases:
+- /gallery/2015-costa-rica-trip/d7c274a-canopy-zip-line.html
 ---
 
 While waiting to get started on a zip lining adventure, a large parrot flew by to wish us a good time.

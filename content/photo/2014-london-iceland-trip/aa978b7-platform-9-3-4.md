@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Platform 9 3/4'
+aliases:
+- /gallery/2014-london-iceland-trip/aa978b7-platform-9-3-4.html
 ---
 
 Of course, I had to briefly walk by the [touristy] Harry Potter photo op at Kings Cross.

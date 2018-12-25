@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: Jeep-Boat-Jeep
+aliases:
+- /gallery/2015-costa-rica-trip/4e5af81-jeep-boat-jeep.html
 ---
 
 The vans made a brief stop at a shop for snacks and to break up the bumpy, hour long ride.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Horse Parade'
+aliases:
+- /gallery/2015-costa-rica-trip/ce6a440-horse-parade.html
 ---
 
 Halfway between Ciudad Quesada and La Fortuna the bus broke down going over a bump. We all had to get off while we waited for another one. Soon after, a parade of several dozen horses started trotting down the street towards us.

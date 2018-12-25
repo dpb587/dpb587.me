@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/aabb2db-don-juan-coffee-tour.html
 ---
 
 The greenhouse where the beans are laid out to dry in the heat of the sun.

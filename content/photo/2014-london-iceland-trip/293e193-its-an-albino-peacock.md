@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'It''s an Albino Peacock'
+aliases:
+- /gallery/2014-london-iceland-trip/293e193-its-an-albino-peacock.html
 ---
 
 There were several other peacocks, but only one special albino one.

@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Panorama
+aliases:
+- /gallery/2014-london-iceland-trip/6a12881-panorama.html
 ---
 
 The bus made a brief stop at this farm.

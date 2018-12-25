@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: IMG_1089
+aliases:
+- /gallery/2014-albuquerque-balloon-fiesta/a2f3fee-img-1089.html
 ---

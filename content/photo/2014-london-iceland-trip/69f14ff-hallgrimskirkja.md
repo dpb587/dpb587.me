@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Hallgrímskirkja
+aliases:
+- /gallery/2014-london-iceland-trip/69f14ff-hallgrimskirkja.html
 ---
 
 Walking back from the Saga Museum, this is the back of the church.

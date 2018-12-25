@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: Walkway
+aliases:
+- /gallery/2014-barcelona-trip/f19bddd-walkway.html
 ---

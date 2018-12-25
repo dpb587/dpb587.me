@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Boat Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/19fb74d-boat-tour.html
 ---
 
 ...and arriving back to the marina.

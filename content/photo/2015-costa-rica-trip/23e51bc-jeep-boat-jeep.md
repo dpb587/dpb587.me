@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: Jeep-Boat-Jeep
+aliases:
+- /gallery/2015-costa-rica-trip/23e51bc-jeep-boat-jeep.html
 ---
 
 But eventually it cleared up and were able to see the pretty colors around.

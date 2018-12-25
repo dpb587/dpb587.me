@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Canopy Zip Line'
+aliases:
+- /gallery/2015-costa-rica-trip/de9981c-canopy-zip-line.html
 ---
 
 But regardless, they always had beautiful views of the surrounding valley and forest.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Canopy Zip Line'
+aliases:
+- /gallery/2015-costa-rica-trip/df11754-canopy-zip-line.html
 ---
 
 While waiting, we were able to get some great views of the landscape. Sadly, it was very inconvenient to pull my camera out of my pocket with all the harnesses to take more pictures.

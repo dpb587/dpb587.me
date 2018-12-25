@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'River Thames'
+aliases:
+- /gallery/2014-london-iceland-trip/ca1f5b9-river-thames.html
 ---
 
 A look back East towards the O2 stadium.

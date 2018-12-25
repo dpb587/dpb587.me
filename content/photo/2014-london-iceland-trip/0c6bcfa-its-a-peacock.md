@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'It''s a Peacock'
+aliases:
+- /gallery/2014-london-iceland-trip/0c6bcfa-its-a-peacock.html
 ---
 
 Stopped by Pendley Manor for drinks, and they had peacocks on the property.

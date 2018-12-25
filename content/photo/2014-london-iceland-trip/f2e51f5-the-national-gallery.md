@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'The National Gallery'
+aliases:
+- /gallery/2014-london-iceland-trip/f2e51f5-the-national-gallery.html
 ---
 
 Walked through The National Gallery and saw *lots* of paintings and artwork. It’s an impressive collection.

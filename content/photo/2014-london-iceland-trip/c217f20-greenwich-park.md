@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Greenwich Park'
+aliases:
+- /gallery/2014-london-iceland-trip/c217f20-greenwich-park.html
 ---
 
 A look out from the Royal Observatory over Greenwich Park before we headed back.

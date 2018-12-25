@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Loft Hostel'
+aliases:
+- /gallery/2014-london-iceland-trip/570329a-loft-hostel.html
 ---
 
 A view of Reyjkavik from the patio of where I stayed.

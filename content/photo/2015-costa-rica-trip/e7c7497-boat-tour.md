@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Boat Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/e7c7497-boat-tour.html
 ---
 
 At the end of the night, we were able to see some dolphins alongside the boat.

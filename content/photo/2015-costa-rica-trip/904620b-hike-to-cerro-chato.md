@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hike to Cerro Chato'
+aliases:
+- /gallery/2015-costa-rica-trip/904620b-hike-to-cerro-chato.html
 ---
 
 Fortunately, it was a great day for a hike. There were quite a few rainstorms throughout our visit - most of them in the evenings.

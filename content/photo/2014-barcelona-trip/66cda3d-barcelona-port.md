@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Barcelona Port'
+aliases:
+- /gallery/2014-barcelona-trip/66cda3d-barcelona-port.html
 ---

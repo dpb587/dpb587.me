@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Panorama
+aliases:
+- /gallery/2014-london-iceland-trip/4d26938-panorama.html
 ---
 
 A panorama of the waterfall.

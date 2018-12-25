@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Monteverde Chocolate Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/803d85a-monteverde-chocolate-tour.html
 ---
 
 And then our guide walked us through the processes that beans go through.

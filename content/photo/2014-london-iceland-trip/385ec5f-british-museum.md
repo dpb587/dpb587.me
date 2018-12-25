@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'British Museum'
+aliases:
+- /gallery/2014-london-iceland-trip/385ec5f-british-museum.html
 ---
 
 A look back on my way out…

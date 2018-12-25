@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Monteverde Chocolate Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/0a29380-monteverde-chocolate-tour.html
 ---
 
 Once they're dried, the beans can be skinned and lightly crushed into "nibs" which have the extremely strong chocolate taste.

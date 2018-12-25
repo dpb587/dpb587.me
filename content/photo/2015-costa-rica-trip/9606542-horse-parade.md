@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Horse Parade'
+aliases:
+- /gallery/2015-costa-rica-trip/9606542-horse-parade.html
 ---
 
 We didn't entirely figure out why everybody was riding their horse and meeting up at this soda in the middle of pretty much nowhere, but it kept us entertained for the ~1:30 we waited for the new bus. Oddly, some people driving through town were giving our bus group stranger looks than they gave the horses.

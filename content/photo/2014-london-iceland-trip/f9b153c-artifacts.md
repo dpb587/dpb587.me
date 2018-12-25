@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Artifacts
+aliases:
+- /gallery/2014-london-iceland-trip/f9b153c-artifacts.html
 ---
 
 Old vases which looked exactly like a photo from a sixth grade textbook. Pretty sure they’re fairly common though.

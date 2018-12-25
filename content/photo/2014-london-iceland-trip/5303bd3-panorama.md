@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Panorama
+aliases:
+- /gallery/2014-london-iceland-trip/5303bd3-panorama.html
 ---
 
 Looking out over the glacier.

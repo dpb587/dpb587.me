@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Skólavörðustígur
+aliases:
+- /gallery/2014-london-iceland-trip/489fc1a-skolavor-ustigur.html
 ---
 
 A look back up the roadway to the church.

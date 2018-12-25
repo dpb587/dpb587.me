@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/88d21c0-hanging-bridges.html
 ---
 
 Compared to our hike to Cerro Chato, it was nice having paths which were actually navigable.

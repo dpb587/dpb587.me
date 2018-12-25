@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: Cityscape
+aliases:
+- /gallery/2014-london-iceland-trip/761d483-cityscape.html
 ---
 
 The unique house and roof colors were fun to see throughout the city.

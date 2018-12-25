@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Hyde Park'
+aliases:
+- /gallery/2014-london-iceland-trip/66e837b-hyde-park.html
 ---
 
 Hyde Park, this time walking instead of biking. Seemed like the England version of Central Park.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/e66a29c-hanging-bridges.html
 ---
 
 Everything continued to stay green and beautiful...

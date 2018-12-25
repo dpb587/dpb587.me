@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: IMG_2271-PANO
+aliases:
+- /gallery/2015-cambodia-thailand-trip/0d2ea91-img-2271-pano.html
 ---

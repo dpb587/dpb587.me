@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Hyde Park'
+aliases:
+- /gallery/2014-london-iceland-trip/fbe9b12-hyde-park.html
 ---
 
 As a part of our transportation tour, we biked through Hyde Park and past Buckingham Palace. The Queen was in, but she was too busy to say hi.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/745372b-giovannis-night-tour.html
 ---
 
 This flower looks like fireworks.

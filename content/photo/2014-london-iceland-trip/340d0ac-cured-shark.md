@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Cured Shark'
+aliases:
+- /gallery/2014-london-iceland-trip/340d0ac-cured-shark.html
 ---
 
 It’s apparently a specialty… but not quite my favorite snack.

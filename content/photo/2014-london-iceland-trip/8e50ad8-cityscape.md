@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: Cityscape
+aliases:
+- /gallery/2014-london-iceland-trip/8e50ad8-cityscape.html
 ---
 
 A look back towards the lake and City Hall.

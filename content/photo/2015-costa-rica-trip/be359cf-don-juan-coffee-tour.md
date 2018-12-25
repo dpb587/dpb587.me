@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/be359cf-don-juan-coffee-tour.html
 ---
 
 It's a seasonal job, but they said they're all still hand-picked into large baskets.

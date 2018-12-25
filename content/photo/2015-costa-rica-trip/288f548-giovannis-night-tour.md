@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/288f548-giovannis-night-tour.html
 ---
 
 Saw several different kinds of frogs on the tour, although I quickly forgot their official names.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Tree House Restaurant'
+aliases:
+- /gallery/2015-costa-rica-trip/0f5608b-tree-house-restaurant.html
 ---
 
 For dinner Wednesday, we found a restaurant on the second floor which had the tree top as the roof.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/88a1506-don-juan-coffee-tour.html
 ---
 
 In addition to coffee and cocoa, we also learned about sugar cane. Here were able to taste it in it's raw stick form.

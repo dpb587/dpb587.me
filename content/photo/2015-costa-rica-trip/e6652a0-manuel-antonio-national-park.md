@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/e6652a0-manuel-antonio-national-park.html
 ---
 
 We took a break here to have breakfast... of PB&Js.

@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Church Organ'
+aliases:
+- /gallery/2014-london-iceland-trip/b1ba977-church-organ.html
 ---
 
 The back of the church had a major set of organ pipes.

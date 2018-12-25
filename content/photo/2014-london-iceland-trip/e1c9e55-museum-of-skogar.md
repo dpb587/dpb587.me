@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Museum of Skógar'
+aliases:
+- /gallery/2014-london-iceland-trip/e1c9e55-museum-of-skogar.html
 ---
 
 Iceland has *very* few trees, so most timber used for boats washed up on shore. When found, land owners would mark the wood as their own.

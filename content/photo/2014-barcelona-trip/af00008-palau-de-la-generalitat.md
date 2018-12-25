@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Palau de la Generalitat'
+aliases:
+- /gallery/2014-barcelona-trip/af00008-palau-de-la-generalitat.html
 ---

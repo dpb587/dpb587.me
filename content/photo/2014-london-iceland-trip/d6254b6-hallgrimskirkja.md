@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Hallgrímskirkja
+aliases:
+- /gallery/2014-london-iceland-trip/d6254b6-hallgrimskirkja.html
 ---
 
 A massive building at the top of a hill which overlooks the city.

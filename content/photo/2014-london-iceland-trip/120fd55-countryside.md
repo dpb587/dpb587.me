@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Countryside
+aliases:
+- /gallery/2014-london-iceland-trip/120fd55-countryside.html
 ---
 
 Taking the train up towards Bletchley Park and getting a bit more into the country.

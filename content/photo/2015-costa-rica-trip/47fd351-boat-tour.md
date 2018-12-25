@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Boat Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/47fd351-boat-tour.html
 ---
 
 On Saturday afternoon, after the park, we went on a boat tour which would take us around the coastline of Manuel Antonio, provide snorkeling, and find some dolphins.

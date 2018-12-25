@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Trafalgar Square'
+aliases:
+- /gallery/2014-london-iceland-trip/3bb5ad8-trafalgar-square.html
 ---
 
 One of those places I’ve heard about and remember from my elementary school textbooks.

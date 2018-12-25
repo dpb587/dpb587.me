@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Monteverde Chocolate Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/7cd8fdf-monteverde-chocolate-tour.html
 ---
 
 One of the first steps is fermenting the beans which kills off the germination in the bean. We opened one of the fruits and were able to taste the outer coating of the bean which had a sweet flavor.

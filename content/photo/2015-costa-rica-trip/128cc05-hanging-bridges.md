@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/128cc05-hanging-bridges.html
 ---
 
 ...from the bridge or from the path.

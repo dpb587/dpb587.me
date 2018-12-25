@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Museum of Skógar'
+aliases:
+- /gallery/2014-london-iceland-trip/7cb9f32-museum-of-skogar.html
 ---
 
 And old looms, too.

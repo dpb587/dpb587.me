@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/b442c36-hanging-bridges.html
 ---
 
 Being high up on the bridges made it very easy to see the canopy. It's still green.

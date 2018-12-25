@@ -21,4 +21,6 @@ sizes:
     height: 200
     width: 200
 title: 'Flying Back'
+aliases:
+- /gallery/2014-barcelona-trip/b4f7cf3-flying-back.html
 ---

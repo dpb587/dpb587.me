@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Canopy Zip Line'
+aliases:
+- /gallery/2015-costa-rica-trip/2c4b03b-canopy-zip-line.html
 ---

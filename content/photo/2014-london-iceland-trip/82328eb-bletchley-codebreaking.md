@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Bletchley Codebreaking'
+aliases:
+- /gallery/2014-london-iceland-trip/82328eb-bletchley-codebreaking.html
 ---
 
 Took a tour of the museum - this was responsible for much of the codebreaking during World War II.

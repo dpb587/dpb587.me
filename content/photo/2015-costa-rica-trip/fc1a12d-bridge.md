@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: Bridge
+aliases:
+- /gallery/2015-costa-rica-trip/fc1a12d-bridge.html
 ---
 
 A muddy and questionably stable bridge which wobbled as we crossed it. This was only the beginning of our muddy encounters.

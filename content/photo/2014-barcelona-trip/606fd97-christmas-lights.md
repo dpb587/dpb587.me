@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Christmas Lights'
+aliases:
+- /gallery/2014-barcelona-trip/606fd97-christmas-lights.html
 ---

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/d557dab-manuel-antonio-national-park.html
 ---
 
 The map the park provided was fairly useless... trails not matching up and even the physical land outlines not making sense. Somehow though, we ended up here at the bottom of many flights of stairs looking out over this lagoon.

@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: 'Night Waterfall'
+aliases:
+- /gallery/2014-london-iceland-trip/b23ccc1-night-waterfall.html
 ---
 
 After dinner at Anna’s, we stopped at another waterfall - it was very dark and it was lightly raining.

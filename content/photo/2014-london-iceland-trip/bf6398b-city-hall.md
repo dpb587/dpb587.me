@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'City Hall'
+aliases:
+- /gallery/2014-london-iceland-trip/bf6398b-city-hall.html
 ---
 
 City Hall next to (in?) the pond.

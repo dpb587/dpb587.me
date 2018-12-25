@@ -22,6 +22,8 @@ sizes:
     height: 200
     width: 200
 title: 'En route to La Fortuna'
+aliases:
+- /gallery/2015-costa-rica-trip/319af9c-en-route-to-la-fortuna.html
 ---
 
 It was nice being able to see the countryside along the bus route.

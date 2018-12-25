@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/2cdf51c-hanging-bridges.html
 ---
 
 The trails between the bridges were well-maintained and it continued to be a very green experience.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/b89996d-manuel-antonio-national-park.html
 ---
 
 The park has three beaches in total. One of them was closed because a crocodile was hanging out there. Interestingly, people weren't afraid to lay on the beach... they just avoided the water.

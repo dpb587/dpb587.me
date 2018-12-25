@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Organist
+aliases:
+- /gallery/2014-london-iceland-trip/a6011b3-organist.html
 ---
 
 While there, a couple people were practicing the organ for a later performance. It was very fun to hear.

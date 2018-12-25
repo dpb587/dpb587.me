@@ -22,6 +22,8 @@ sizes:
     height: 200
     width: 200
 title: 'Red Sofa'
+aliases:
+- /gallery/2015-costa-rica-trip/78b6538-red-sofa.html
 ---
 
 We took the bus from San Jose to La Fortuna. One of the bus stops had a sofa sitting out across from the stop.

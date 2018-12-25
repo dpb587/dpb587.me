@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/7c61a51-don-juan-coffee-tour.html
 ---
 
 This machine helped them separate the pieces of the coffee bean, once harvested.

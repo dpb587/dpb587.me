@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Tall Aspens'
+aliases:
+- /gallery/2014-colorado-aspens/3c21081-tall-aspens.html
 ---

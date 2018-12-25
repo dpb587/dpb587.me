@@ -24,4 +24,6 @@ sizes:
     height: 200
     width: 200
 title: 'Aspens Invading'
+aliases:
+- /gallery/2014-colorado-aspens/2dbeedb-aspens-invading.html
 ---

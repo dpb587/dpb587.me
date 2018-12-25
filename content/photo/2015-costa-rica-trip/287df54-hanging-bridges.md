@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/287df54-hanging-bridges.html
 ---
 
 Each bridge had a plaque at its entrance to tell us about them. They listed a capacity, but it's a good thing it wasn't too busy because I don't think anyone was actually paying attention.

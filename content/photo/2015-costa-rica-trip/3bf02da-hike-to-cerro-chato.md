@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hike to Cerro Chato'
+aliases:
+- /gallery/2015-costa-rica-trip/3bf02da-hike-to-cerro-chato.html
 ---
 
 As we got higher in elevation, we were surrounded by more and more of the very green forest.

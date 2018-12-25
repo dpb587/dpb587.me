@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Sculptures
+aliases:
+- /gallery/2014-london-iceland-trip/1f869bd-sculptures.html
 ---
 
 One of *many* rooms displaying recovered wall sculpture segments.

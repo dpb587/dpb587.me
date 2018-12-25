@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Sudhurland
+aliases:
+- /gallery/2014-london-iceland-trip/881baef-sudhurland.html
 ---
 
 Tremors and small earthquakes make it a bit dangerous due to falling rocks.

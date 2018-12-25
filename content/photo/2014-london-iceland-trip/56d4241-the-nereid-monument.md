@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'The Nereid Monument'
+aliases:
+- /gallery/2014-london-iceland-trip/56d4241-the-nereid-monument.html
 ---
 
 An impressive reconstruction of a monument in the museum.

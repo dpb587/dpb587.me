@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/4a08af3-manuel-antonio-national-park.html
 ---
 
 Another crab trying to be king of the rock.

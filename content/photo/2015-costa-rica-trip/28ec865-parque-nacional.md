@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Parque Nacional'
+aliases:
+- /gallery/2015-costa-rica-trip/28ec865-parque-nacional.html
 ---
 
 Apparently Florida is significant here.

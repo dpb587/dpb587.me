@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Canopy Zip Line'
+aliases:
+- /gallery/2015-costa-rica-trip/c7842e3-canopy-zip-line.html
 ---
 
 A few of the lines actually went completely across the valley, making for a very long run and 360º view.

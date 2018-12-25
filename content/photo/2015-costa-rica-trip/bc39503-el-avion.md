@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'El Avión'
+aliases:
+- /gallery/2015-costa-rica-trip/bc39503-el-avion.html
 ---
 
 Sunday night after spending a relaxing day with the beach we went to a restaurant themed around an old airplane. We went a bit early to catch the sunset. This was the view from our table.

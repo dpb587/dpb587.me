@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Buckingham Palace'
+aliases:
+- /gallery/2014-london-iceland-trip/2028f17-buckingham-palace.html
 ---
 
 The guards took a break from their posts to briefly march.

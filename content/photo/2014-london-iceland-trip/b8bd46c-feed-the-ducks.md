@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Feed the Ducks'
+aliases:
+- /gallery/2014-london-iceland-trip/b8bd46c-feed-the-ducks.html
 ---
 
 But don’t feed the seagulls. There are instructions if you need help.

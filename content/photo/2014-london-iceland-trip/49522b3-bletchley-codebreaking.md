@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Bletchley Codebreaking'
+aliases:
+- /gallery/2014-london-iceland-trip/49522b3-bletchley-codebreaking.html
 ---
 
 I think my phone might be a little more powerful, but it’s definitely not as loud as this was.

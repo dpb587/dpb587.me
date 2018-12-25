@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/52fbc4f-hanging-bridges.html
 ---
 
 There also happened to be a lot of hummingbirds hanging around the paths, like this green one.

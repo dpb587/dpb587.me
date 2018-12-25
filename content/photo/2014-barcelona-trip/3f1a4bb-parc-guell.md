@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Parc Güell'
+aliases:
+- /gallery/2014-barcelona-trip/3f1a4bb-parc-guell.html
 ---

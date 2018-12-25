@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: IMG_1182
+aliases:
+- /gallery/2015-cambodia-thailand-trip/f9f7cbe-img-1182.html
 ---

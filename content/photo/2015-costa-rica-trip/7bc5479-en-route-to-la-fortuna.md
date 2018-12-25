@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'En route to La Fortuna'
+aliases:
+- /gallery/2015-costa-rica-trip/7bc5479-en-route-to-la-fortuna.html
 ---
 
 Everything was very green. The rainy season ended a few weeks before we were there.

@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: 'Glacier Walk'
+aliases:
+- /gallery/2014-london-iceland-trip/68119f5-glacier-walk.html
 ---
 
 More glacier pictures…

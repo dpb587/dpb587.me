@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/7d01cf9-don-juan-coffee-tour.html
 ---
 
 Our guide explained how the beans are roasted, and some of the different times required for the different flavors.

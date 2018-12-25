@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: Market
+aliases:
+- /gallery/2014-barcelona-trip/aafcefc-market.html
 ---

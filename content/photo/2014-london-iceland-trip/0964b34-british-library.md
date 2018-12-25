@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'British Library'
+aliases:
+- /gallery/2014-london-iceland-trip/0964b34-british-library.html
 ---
 
 This is looking out from the main patio of the British Library.

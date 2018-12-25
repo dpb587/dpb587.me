@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hike to Cerro Chato'
+aliases:
+- /gallery/2015-costa-rica-trip/a3b1d00-hike-to-cerro-chato.html
 ---
 
 The hike started out relatively easy and on well-marked trails.

@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Sagrada Família'
+aliases:
+- /gallery/2014-barcelona-trip/add608c-sagrada-familia.html
 ---

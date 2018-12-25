@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: 'Glacier Walk'
+aliases:
+- /gallery/2014-london-iceland-trip/c4ff904-glacier-walk.html
 ---
 
 There was a lot of ash across the glacier. Most of it was from an eruption in the early 1900s.

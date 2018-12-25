@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Canopy Zip Line'
+aliases:
+- /gallery/2015-costa-rica-trip/15acca5-canopy-zip-line.html
 ---
 
 In addition to zip lines, they also had bungee jumping which they ran off these cables and down towards the valley. Unfortunately nobody was doing it while we were there to see.

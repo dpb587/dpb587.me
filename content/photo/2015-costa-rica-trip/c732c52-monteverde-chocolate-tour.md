@@ -22,6 +22,8 @@ sizes:
     height: 200
     width: 200
 title: 'Monteverde Chocolate Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/c732c52-monteverde-chocolate-tour.html
 ---
 
 On Tuesday we walked to a Chocolate tour on a young plantation.

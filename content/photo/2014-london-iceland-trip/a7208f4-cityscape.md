@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Cityscape
+aliases:
+- /gallery/2014-london-iceland-trip/a7208f4-cityscape.html
 ---
 
 While at the top, there was a nice break in the clouds, but more weather was definitely coming.

@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Whale
+aliases:
+- /gallery/2014-london-iceland-trip/c8cca33-whale.html
 ---
 
 And some of them were bigger than others

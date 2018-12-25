@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'First Beach'
+aliases:
+- /gallery/2015-costa-rica-trip/1cb087d-first-beach.html
 ---
 
 On our way from Santa Elena to Manuel Antonio, we had a brief stopover at the Puntarenas bus station conveniently located across the street from the beach.

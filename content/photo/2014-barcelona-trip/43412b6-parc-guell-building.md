@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Parc Güell Building'
+aliases:
+- /gallery/2014-barcelona-trip/43412b6-parc-guell-building.html
 ---

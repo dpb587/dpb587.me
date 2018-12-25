@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Missouri monster'
+aliases:
+- /gallery/2014-london-iceland-trip/43e714a-missouri-monster.html
 ---
 
 I’m pretty sure “Mastodon” is a much better name than “Missouri monster”.

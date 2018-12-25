@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Some Peppers'
+aliases:
+- /gallery/2014-barcelona-trip/de8662e-some-peppers.html
 ---

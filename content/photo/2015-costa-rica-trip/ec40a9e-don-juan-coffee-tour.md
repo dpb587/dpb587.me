@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/ec40a9e-don-juan-coffee-tour.html
 ---
 
 And then we were able extract the liquid and taste it as a drink.

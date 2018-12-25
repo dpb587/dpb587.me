@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: A5EE73BD-DFF0-4BA1-9E73-A9ACF32DE02A
+aliases:
+- /gallery/2015-england-trip/fac9303-a5ee73bd-dff0-4ba1-9e73-a9acf32de02a.html
 ---

@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Saga Museum'
+aliases:
+- /gallery/2014-london-iceland-trip/1e88721-saga-museum.html
 ---
 
 There was a patio on top of these six large water tanks just outside downtown.

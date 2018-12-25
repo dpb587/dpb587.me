@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Panorama
+aliases:
+- /gallery/2014-london-iceland-trip/a7d6a38-panorama.html
 ---
 
 A shot looking back down towards the turf houses, museum, and ocean.

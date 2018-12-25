@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/327d1bb-manuel-antonio-national-park.html
 ---
 
 A view from one of the viewpoints at the far end of the park.

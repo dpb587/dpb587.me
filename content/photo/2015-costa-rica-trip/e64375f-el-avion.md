@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'El Avión'
+aliases:
+- /gallery/2015-costa-rica-trip/e64375f-el-avion.html
 ---
 
 Thankfully the great weather that evening made for some very pretty pictures and a very enjoyable dinner.

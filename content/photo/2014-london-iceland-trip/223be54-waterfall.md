@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: Waterfall
+aliases:
+- /gallery/2014-london-iceland-trip/223be54-waterfall.html
 ---
 
 At the waterfall, there was a path that you hike to get around behind the waterfall and look out.

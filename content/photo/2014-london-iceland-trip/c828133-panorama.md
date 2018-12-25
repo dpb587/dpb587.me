@@ -27,6 +27,8 @@ sizes:
     height: 96
     width: 96
 title: Panorama
+aliases:
+- /gallery/2014-london-iceland-trip/c828133-panorama.html
 ---
 
 A panorama from the hostel looking across downton Reyjkavik.

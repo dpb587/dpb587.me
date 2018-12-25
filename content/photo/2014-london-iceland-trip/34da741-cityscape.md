@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Cityscape
+aliases:
+- /gallery/2014-london-iceland-trip/34da741-cityscape.html
 ---
 
 They had a small elevator to get to the top of the church where you could look out over the whole city.

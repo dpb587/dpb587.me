@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'El Avión'
+aliases:
+- /gallery/2015-costa-rica-trip/cdb87b9-el-avion.html
 ---
 
 ...and the plane at the entrance.

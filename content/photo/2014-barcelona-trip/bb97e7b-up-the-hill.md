@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Up the Hill'
+aliases:
+- /gallery/2014-barcelona-trip/bb97e7b-up-the-hill.html
 ---

@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: 'Glacier Walk'
+aliases:
+- /gallery/2014-london-iceland-trip/78e4415-glacier-walk.html
 ---
 
 We stopped here for a quick water break.

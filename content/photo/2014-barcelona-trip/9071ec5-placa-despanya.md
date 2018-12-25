@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Plaça d''Espanya'
+aliases:
+- /gallery/2014-barcelona-trip/9071ec5-placa-despanya.html
 ---

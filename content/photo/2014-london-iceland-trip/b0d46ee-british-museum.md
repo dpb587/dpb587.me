@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'British Museum'
+aliases:
+- /gallery/2014-london-iceland-trip/b0d46ee-british-museum.html
 ---
 
 The museum had a very interesting and impressive entry.

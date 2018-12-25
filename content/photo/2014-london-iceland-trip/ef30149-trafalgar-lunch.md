@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Trafalgar Lunch'
+aliases:
+- /gallery/2014-london-iceland-trip/ef30149-trafalgar-lunch.html
 ---
 
 Took a brief break to people watch and eat lunch from Pret a Manger.

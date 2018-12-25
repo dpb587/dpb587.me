@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Aspens are Turning'
+aliases:
+- /gallery/2014-colorado-aspens/6e859c1-aspens-are-turning.html
 ---

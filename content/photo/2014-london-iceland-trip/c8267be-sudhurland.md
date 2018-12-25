@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Sudhurland
+aliases:
+- /gallery/2014-london-iceland-trip/c8267be-sudhurland.html
 ---
 
 There were many waterfalls along the way.

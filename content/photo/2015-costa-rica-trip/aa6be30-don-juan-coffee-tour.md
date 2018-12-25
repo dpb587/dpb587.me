@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/aa6be30-don-juan-coffee-tour.html
 ---
 
 Some of the beans waiting to be finished and then moved for drying.

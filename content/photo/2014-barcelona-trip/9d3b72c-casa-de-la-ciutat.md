@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Casa de la Ciutat'
+aliases:
+- /gallery/2014-barcelona-trip/9d3b72c-casa-de-la-ciutat.html
 ---

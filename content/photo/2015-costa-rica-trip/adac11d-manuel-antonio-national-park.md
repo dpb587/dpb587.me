@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/adac11d-manuel-antonio-national-park.html
 ---
 
 One of the more friendly animals of the park are the monkeys. This guy was feeling very photogenic when I was walking by.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Monteverde Chocolate Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/0880939-monteverde-chocolate-tour.html
 ---
 
 We got a tour of some of the plants they utilize, like this vanilla vine.

@@ -27,6 +27,8 @@ sizes:
     height: 96
     width: 96
 title: 'A Classic View'
+aliases:
+- /gallery/2014-london-iceland-trip/df5150c-a-classic-view.html
 ---
 
 QCon was held at The Queen Elizabeth II Conference Centre and this was the view out one of the common areas.

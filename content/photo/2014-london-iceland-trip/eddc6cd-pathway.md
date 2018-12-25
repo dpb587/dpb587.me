@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Pathway
+aliases:
+- /gallery/2014-london-iceland-trip/eddc6cd-pathway.html
 ---
 
 My hostel was just past the end of the street leading up to this church.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/b9cdf82-manuel-antonio-national-park.html
 ---
 
 This was the far end of the closed beach, looking back.

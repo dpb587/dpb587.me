@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/6a344be-manuel-antonio-national-park.html
 ---
 
 A look from one of the coves.

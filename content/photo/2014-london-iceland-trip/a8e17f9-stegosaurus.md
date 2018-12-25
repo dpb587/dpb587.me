@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Stegosaurus
+aliases:
+- /gallery/2014-london-iceland-trip/a8e17f9-stegosaurus.html
 ---
 
 Back at the Natural History museum, they had a large exhibit on the dinosaurs.

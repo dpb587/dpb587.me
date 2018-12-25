@@ -25,6 +25,8 @@ sizes:
     height: 96
     width: 96
 title: Cityscape
+aliases:
+- /gallery/2014-london-iceland-trip/f5a8d81-cityscape.html
 ---
 
 Another angle of the city.

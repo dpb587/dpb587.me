@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/d86ce6f-don-juan-coffee-tour.html
 ---
 
 At the end of the tour we were able to sample their coffees and some snacks. They had a very nice back patio which looked out over the plantation, forest, and soon-to-be sunset.

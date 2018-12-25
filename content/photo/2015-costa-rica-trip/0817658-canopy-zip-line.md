@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Canopy Zip Line'
+aliases:
+- /gallery/2015-costa-rica-trip/0817658-canopy-zip-line.html
 ---
 
 Before each line, a plaque would let us know what we were getting ourselves into.

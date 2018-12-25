@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/4aa865c-giovannis-night-tour.html
 ---
 
 The red-eyed tree frog posed in front of a leaf for us.

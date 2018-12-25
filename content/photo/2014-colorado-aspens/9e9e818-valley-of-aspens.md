@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Valley of Aspens'
+aliases:
+- /gallery/2014-colorado-aspens/9e9e818-valley-of-aspens.html
 ---

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Boat Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/1665ce9-boat-tour.html
 ---
 
 Another happy dolphin. It wasn't easy timing photos of them.

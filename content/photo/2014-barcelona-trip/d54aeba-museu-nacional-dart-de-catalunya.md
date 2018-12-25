@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Museu Nacional d''Art de Catalunya'
+aliases:
+- /gallery/2014-barcelona-trip/d54aeba-museu-nacional-dart-de-catalunya.html
 ---

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/30d9cb8-giovannis-night-tour.html
 ---
 
 That night, we did a Night Tour hike where we were guided through a privately maintained park and saw some critters.

@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: IMG_1581
+aliases:
+- /gallery/2015-cambodia-thailand-trip/c3ecee4-img-1581.html
 ---

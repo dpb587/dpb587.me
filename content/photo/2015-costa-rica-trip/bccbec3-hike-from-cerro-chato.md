@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hike from Cerro Chato'
+aliases:
+- /gallery/2015-costa-rica-trip/bccbec3-hike-from-cerro-chato.html
 ---
 
 And a few more pictures of the view on the hike down.

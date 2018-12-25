@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Ciudad Quesada'
+aliases:
+- /gallery/2015-costa-rica-trip/1f2b63b-ciudad-quesada.html
 ---
 
 One of the main stops was in a the town of Ciudad Quesada.

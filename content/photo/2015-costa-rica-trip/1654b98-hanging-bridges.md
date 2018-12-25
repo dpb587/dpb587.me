@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/1654b98-hanging-bridges.html
 ---
 
 Looking down from the bridges could be a bit daunting. Their heights ranged from 36ft to 180ft.

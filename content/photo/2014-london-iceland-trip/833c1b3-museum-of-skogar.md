@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Museum of Skógar'
+aliases:
+- /gallery/2014-london-iceland-trip/833c1b3-museum-of-skogar.html
 ---
 
 There was a museum in Skógar with a large collection of old tools and historical items.

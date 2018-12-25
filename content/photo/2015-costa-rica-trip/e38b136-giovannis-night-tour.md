@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/e38b136-giovannis-night-tour.html
 ---
 
 We saw a few different kinds of lizards hanging out on vines above streams, ready to drop and escape if there was trouble.

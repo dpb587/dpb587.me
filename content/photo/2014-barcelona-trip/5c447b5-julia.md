@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: Julià
+aliases:
+- /gallery/2014-barcelona-trip/5c447b5-julia.html
 ---

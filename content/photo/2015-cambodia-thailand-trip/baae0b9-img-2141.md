@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: IMG_2141
+aliases:
+- /gallery/2015-cambodia-thailand-trip/baae0b9-img-2141.html
 ---

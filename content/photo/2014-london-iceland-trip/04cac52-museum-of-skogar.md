@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Museum of Skógar'
+aliases:
+- /gallery/2014-london-iceland-trip/04cac52-museum-of-skogar.html
 ---
 
 Outside the museum, there were several old turf homes.

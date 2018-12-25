@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/fcef47e-giovannis-night-tour.html
 ---
 
 A baby frog on one of the leaves.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hike to Cerro Chato'
+aliases:
+- /gallery/2015-costa-rica-trip/b0381c7-hike-to-cerro-chato.html
 ---
 
 Some parts of the hike seemed much more geared towards horses with steep steps and muddy areas. It was still pretty though.

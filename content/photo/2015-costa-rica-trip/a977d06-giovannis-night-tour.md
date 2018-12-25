@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/a977d06-giovannis-night-tour.html
 ---
 
 Also, several banana trees were growing along the path.

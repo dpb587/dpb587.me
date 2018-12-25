@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/263b61d-hanging-bridges.html
 ---
 
 Our shadows on the tree canopy below the bridge.

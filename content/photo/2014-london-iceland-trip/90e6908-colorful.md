@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Colorful
+aliases:
+- /gallery/2014-london-iceland-trip/90e6908-colorful.html
 ---
 
 More views from the top of the tower. I was at the top when the 2 o’clock bells rang.

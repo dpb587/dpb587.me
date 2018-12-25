@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/59c3d74-manuel-antonio-national-park.html
 ---
 
 He walked along the railings for a while, hopping back and forth trying to figure out if I was good or bad.

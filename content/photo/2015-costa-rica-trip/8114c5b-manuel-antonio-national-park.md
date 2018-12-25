@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/8114c5b-manuel-antonio-national-park.html
 ---
 
 Some of the trails wound around the outskirts where we would catch occasional glimpses of the ocean.

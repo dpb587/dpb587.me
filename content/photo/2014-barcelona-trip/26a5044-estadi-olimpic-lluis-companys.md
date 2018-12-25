@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Estadi Olímpic Lluís Companys'
+aliases:
+- /gallery/2014-barcelona-trip/26a5044-estadi-olimpic-lluis-companys.html
 ---

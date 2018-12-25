@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Playa Espadilla'
+aliases:
+- /gallery/2015-costa-rica-trip/edfd7fa-playa-espadilla.html
 ---
 
 Once we made it to Manuel Antionio later that afternoon, we took a quick break for some beach time. Soon though, an incoming storm hurried us away.

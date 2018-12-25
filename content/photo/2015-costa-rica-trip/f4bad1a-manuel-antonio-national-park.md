@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/f4bad1a-manuel-antonio-national-park.html
 ---
 
 The beach had quite a few crabs walking around the beach and rocks, like this sand crab.

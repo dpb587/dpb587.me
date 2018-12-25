@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/ab6da0f-don-juan-coffee-tour.html
 ---
 
 Some baby coffee tree sprouts.

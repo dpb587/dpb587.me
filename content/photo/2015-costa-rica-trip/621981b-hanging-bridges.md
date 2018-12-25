@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/621981b-hanging-bridges.html
 ---
 
 Walking out onto the sunny bridges from the covered forests was always a fun transition. Depending on how many others were on it, they could become very wobbly.

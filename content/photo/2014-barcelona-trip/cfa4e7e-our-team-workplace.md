@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Our Team Workplace'
+aliases:
+- /gallery/2014-barcelona-trip/cfa4e7e-our-team-workplace.html
 ---

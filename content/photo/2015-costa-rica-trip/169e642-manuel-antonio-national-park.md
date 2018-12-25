@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/169e642-manuel-antonio-national-park.html
 ---
 
 This monkey enjoyed people watching, hanging out over the trail just within reach of everybody passing by.

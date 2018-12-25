@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'St. Paul''s Cathedral'
+aliases:
+- /gallery/2014-london-iceland-trip/cad4f8c-st-pauls-cathedral.html
 ---
 
 It took about 530 steps to climb up to the Golden Gallery for these great views of the city.

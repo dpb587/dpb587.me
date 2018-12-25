@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Saga Museum'
+aliases:
+- /gallery/2014-london-iceland-trip/3dae33f-saga-museum.html
 ---
 
 The church in the distance is where I was looking out earlier that afternoon.

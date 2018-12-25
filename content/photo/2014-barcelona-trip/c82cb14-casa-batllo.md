@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Casa Batlló'
+aliases:
+- /gallery/2014-barcelona-trip/c82cb14-casa-batllo.html
 ---

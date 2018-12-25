@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'St. Paul''s Cathedral'
+aliases:
+- /gallery/2014-london-iceland-trip/bb52573-st-pauls-cathedral.html
 ---
 
 Looking out over the city from the Golden Gallery from the top of the cathedral.

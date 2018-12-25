@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hike from Cerro Chato'
+aliases:
+- /gallery/2015-costa-rica-trip/2cb76f3-hike-from-cerro-chato.html
 ---
 
 There were cow pastures along this hike, too.

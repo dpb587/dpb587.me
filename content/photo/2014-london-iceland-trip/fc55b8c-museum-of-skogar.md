@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Museum of Skógar'
+aliases:
+- /gallery/2014-london-iceland-trip/fc55b8c-museum-of-skogar.html
 ---
 
 There was a room with old fiber tools like these swifts.

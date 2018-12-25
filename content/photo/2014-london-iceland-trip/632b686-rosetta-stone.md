@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Rosetta Stone'
+aliases:
+- /gallery/2014-london-iceland-trip/632b686-rosetta-stone.html
 ---
 
 The infamous Rosetta Stone which helped decipher ancient hieroglyphics.

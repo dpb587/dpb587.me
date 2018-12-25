@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: Jeep-Boat-Jeep
+aliases:
+- /gallery/2015-costa-rica-trip/932f008-jeep-boat-jeep.html
 ---
 
 The second van ride was extremely bumpy. Very few roads in this area were paved, so the hilly rides were much bumpier and took much longer than they otherwise would have. But at least there were still good views.

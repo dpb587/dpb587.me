@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Canopy Zip Line'
+aliases:
+- /gallery/2015-costa-rica-trip/388aa87-canopy-zip-line.html
 ---
 
 One of the final zip line styles was the "superman".

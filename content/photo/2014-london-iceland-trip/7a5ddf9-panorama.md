@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Panorama
+aliases:
+- /gallery/2014-london-iceland-trip/7a5ddf9-panorama.html
 ---
 
 About the same place, but looking the other direction towards the ocean.

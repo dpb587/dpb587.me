@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Don Juan Coffee Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/507297f-don-juan-coffee-tour.html
 ---
 
 The tour also had a segment on the cocoa bean. We were able to see the various stages of the bean and try a few samples.

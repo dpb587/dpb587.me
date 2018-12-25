@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'En route to La Fortuna'
+aliases:
+- /gallery/2015-costa-rica-trip/95df46a-en-route-to-la-fortuna.html
 ---
 
 Throughout the trip we saw quite a few cows appreciating the very green pastures everywhere.

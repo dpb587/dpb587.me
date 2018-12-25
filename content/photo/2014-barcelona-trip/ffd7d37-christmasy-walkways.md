@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: 'Christmasy Walkways'
+aliases:
+- /gallery/2014-barcelona-trip/ffd7d37-christmasy-walkways.html
 ---

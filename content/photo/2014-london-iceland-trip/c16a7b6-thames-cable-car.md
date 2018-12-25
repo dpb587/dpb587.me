@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Thames Cable Car'
+aliases:
+- /gallery/2014-london-iceland-trip/c16a7b6-thames-cable-car.html
 ---
 
 We took the cable car across the River Thames as another unique transportation method.

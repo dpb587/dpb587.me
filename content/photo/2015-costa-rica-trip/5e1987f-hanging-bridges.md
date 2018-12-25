@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/5e1987f-hanging-bridges.html
 ---
 
 Yes, still green paths and general prettiness.

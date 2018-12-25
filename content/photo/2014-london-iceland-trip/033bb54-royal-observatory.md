@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Royal Observatory'
+aliases:
+- /gallery/2014-london-iceland-trip/033bb54-royal-observatory.html
 ---
 
 Another stop on the transportation tour was the Royal Observatory with the line separating East from West.

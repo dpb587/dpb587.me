@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hanging Bridges'
+aliases:
+- /gallery/2015-costa-rica-trip/698af83-hanging-bridges.html
 ---
 
 It was suggested that there were more trees visible from one of the bridges, than trees that exist in New Mexico...

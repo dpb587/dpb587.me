@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: Beach
+aliases:
+- /gallery/2014-barcelona-trip/1ef572c-beach.html
 ---

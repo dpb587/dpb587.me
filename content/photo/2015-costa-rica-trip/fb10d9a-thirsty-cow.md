@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Thirsty Cow'
+aliases:
+- /gallery/2015-costa-rica-trip/fb10d9a-thirsty-cow.html
 ---
 
 Including this one who came over to take a drink while we were walking by.

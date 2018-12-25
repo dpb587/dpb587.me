@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Hike to Cerro Chato'
+aliases:
+- /gallery/2015-costa-rica-trip/b8030bb-hike-to-cerro-chato.html
 ---
 
 Once we reached the top, the final section down to the crater was essentially a steep mud slide with the occasional step which hasn't been washed out.

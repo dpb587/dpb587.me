@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Giovanni''s Night Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/020bc58-giovannis-night-tour.html
 ---
 
 There was a large termites nest here. Giovanni demonstrated how to set your finger on the nest and attract some of them to it... and then snack on them. I passed on that opportunity though.

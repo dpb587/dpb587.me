@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/04b40de-manuel-antonio-national-park.html
 ---
 
 It was a very nice time of day because the sun wasn't shining too strongly and it was still slightly cooler from the night before. Still way too humid, of course.

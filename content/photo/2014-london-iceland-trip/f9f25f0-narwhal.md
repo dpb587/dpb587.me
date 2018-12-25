@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Narwhal
+aliases:
+- /gallery/2014-london-iceland-trip/f9f25f0-narwhal.html
 ---
 
 Did you know that some of them have double tusks?

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/f279423-manuel-antonio-national-park.html
 ---
 
 Saturday morning we walked to the park right after it opened. The park is well-known for its animal diversity, trails, and beautiful beaches.

@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: Jeep-Boat-Jeep
+aliases:
+- /gallery/2015-costa-rica-trip/6a78f2e-jeep-boat-jeep.html
 ---
 
 The first part of the boat ride across the lake was very foggy.

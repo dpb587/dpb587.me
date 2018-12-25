@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Sudhurland
+aliases:
+- /gallery/2014-london-iceland-trip/d66f55c-sudhurland.html
 ---
 
 The landscape of Iceland is very interesting with the cliffs, caves, and hill locations.

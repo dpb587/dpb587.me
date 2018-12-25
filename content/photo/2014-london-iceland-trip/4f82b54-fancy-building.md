@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Fancy Building'
+aliases:
+- /gallery/2014-london-iceland-trip/4f82b54-fancy-building.html
 ---
 
 Was walking by this building, and it looked interesting…

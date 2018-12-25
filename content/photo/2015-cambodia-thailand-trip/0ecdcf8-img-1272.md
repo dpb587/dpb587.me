@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: IMG_1272
+aliases:
+- /gallery/2015-cambodia-thailand-trip/0ecdcf8-img-1272.html
 ---

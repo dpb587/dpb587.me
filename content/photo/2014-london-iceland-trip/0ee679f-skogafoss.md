@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Skógafoss
+aliases:
+- /gallery/2014-london-iceland-trip/0ee679f-skogafoss.html
 ---
 
 After a tiring hike up, you could look out over the fall.

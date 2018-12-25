@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'St. Paul''s Cathedral'
+aliases:
+- /gallery/2014-london-iceland-trip/1c7cea9-st-pauls-cathedral.html
 ---
 
 Yet another view, but this time looking back towards the London Eye.

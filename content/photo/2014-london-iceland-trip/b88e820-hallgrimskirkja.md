@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Hallgrímskirkja
+aliases:
+- /gallery/2014-london-iceland-trip/b88e820-hallgrimskirkja.html
 ---
 
 Inside the unique church. The proportions and cement-ness were a bit confusing.

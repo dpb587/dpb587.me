@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: Night
+aliases:
+- /gallery/2014-london-iceland-trip/7cf02b5-night.html
 ---
 
 A view walking down South Bank one night looking back towards the Elizabeth Tower.

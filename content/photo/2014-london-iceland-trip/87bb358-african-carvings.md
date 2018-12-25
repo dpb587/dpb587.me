@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'African Carvings'
+aliases:
+- /gallery/2014-london-iceland-trip/87bb358-african-carvings.html
 ---
 
 A whole wall of carvings from Africa.

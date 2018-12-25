@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Manuel Antonio National Park'
+aliases:
+- /gallery/2015-costa-rica-trip/f46cf80-manuel-antonio-national-park.html
 ---
 
 Another view from one of the other viewpoints in the park. There were about 6 specific platforms/viewpoints in the park.

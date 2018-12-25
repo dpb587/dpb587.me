@@ -25,4 +25,6 @@ sizes:
     height: 200
     width: 200
 title: IMG_1958
+aliases:
+- /gallery/2015-cambodia-thailand-trip/cad1df3-img-1958.html
 ---

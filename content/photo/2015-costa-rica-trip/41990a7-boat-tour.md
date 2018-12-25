@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Boat Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/41990a7-boat-tour.html
 ---
 
 A look back from the boat towards Quepos.

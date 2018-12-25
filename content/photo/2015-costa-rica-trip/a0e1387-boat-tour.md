@@ -25,6 +25,8 @@ sizes:
     height: 200
     width: 200
 title: 'Boat Tour'
+aliases:
+- /gallery/2015-costa-rica-trip/a0e1387-boat-tour.html
 ---
 
 After we passed the dolphins, they started being a bit more playful and jumping out of the water.

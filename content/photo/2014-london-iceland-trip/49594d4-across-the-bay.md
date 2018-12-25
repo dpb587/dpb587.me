@@ -28,6 +28,8 @@ sizes:
     height: 96
     width: 96
 title: 'Across the Bay'
+aliases:
+- /gallery/2014-london-iceland-trip/49594d4-across-the-bay.html
 ---
 
 Snowy weather came through several times, very quickly.
