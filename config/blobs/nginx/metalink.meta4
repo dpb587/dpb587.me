@@ -1,5 +1,5 @@
 <metalink xmlns="urn:ietf:params:xml:ns:metalink">
-  <file name="nginx-1.15.7.tar.gz">
-    <url>https://nginx.org/download/nginx-1.15.7.tar.gz</url>
+  <file name="nginx-1.15.8.tar.gz">
+    <url>https://nginx.org/download/nginx-1.15.8.tar.gz</url>
   </file>
 </metalink>
