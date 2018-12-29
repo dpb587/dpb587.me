@@ -15,8 +15,9 @@ body {
   background-color: #fff;
 }
 
-.blog-post>p {
-  font-size: 19px;
+.blog-post {
+  font-size: 1.2rem;
+  line-height: 1.9rem;
 }
 
 .blog-post img {
