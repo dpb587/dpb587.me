@@ -2,4 +2,5 @@
 
 exec hugo serve \
   --baseURL=http://penguin.termina.linux.test:1313 \
+  --buildFuture \
   --disableFastRender
