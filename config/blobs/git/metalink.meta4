@@ -1,5 +1,5 @@
 <metalink xmlns="urn:ietf:params:xml:ns:metalink">
-  <file name="git-2.20.1.tar.gz">
-    <url>https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.gz</url>
+  <file name="git-2.21.0.tar.gz">
+    <url>https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.21.0.tar.gz</url>
   </file>
 </metalink>

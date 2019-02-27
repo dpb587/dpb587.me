@@ -2,10 +2,10 @@ autoconf/autoconf-2.69.tar.gz:
   size: 1927468
   object_id: 8fc4794d-1ab8-479f-7532-b48e2fb83099
   sha: 562471cbcb0dd0fa42a76665acf0dbb68479b78a
-git/git-2.20.1.tar.gz:
-  size: 7962304
-  object_id: 7515b10e-123b-442c-51df-c641406410ab
-  sha: 6439fb9afc9366f7bf1ddf8bfbe59998e0450ed3
+git/git-2.21.0.tar.gz:
+  size: 8289375
+  object_id: be0a3210-11d7-4dbb-5b67-8ae7935ac499
+  sha: 0518e2c751db39108d5109be2d5d45aa1d0d5390
 hugo/hugo_0.54.0_Linux-64bit.tar.gz:
   size: 7767211
   object_id: 9a3ebfbe-28d7-4659-45fb-9d6f2df30e65
