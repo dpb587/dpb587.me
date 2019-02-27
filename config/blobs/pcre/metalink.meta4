@@ -1,5 +1,5 @@
 <metalink xmlns="urn:ietf:params:xml:ns:metalink">
-  <file name="pcre-8.42.tar.gz">
-    <url>ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.42.tar.gz</url>
+  <file name="pcre-8.43.tar.gz">
+    <url>ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.43.tar.gz</url>
   </file>
 </metalink>
