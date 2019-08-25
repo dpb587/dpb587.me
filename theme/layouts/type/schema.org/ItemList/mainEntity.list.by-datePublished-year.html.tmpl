@@ -1,0 +1,42 @@
+{{ define "mainEntity" }}
+  {{ $year := "0000" }}
+
+  {{ range get .mainEntity "itemListElement" }}
+    {{ $itemYear := "Other" }}
+    {{ with getFirstScalar . "datePublished" }}
+      {{ $itemYear = dateFormat . "2006" }}
+    {{ end }}
+    {{ if ne $year $itemYear }}
+      {{ if ne $year "0000" }}
+        </section>
+      {{ end }}
+      <section class="section">
+        <h2 class="title">{{ $itemYear }}</h2>
+        {{ $year = $itemYear }}
+    {{ end }}
+
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <a href="{{ link . }}"><strong>{{ default ( getFirstScalar . "name" ) ( getFirstScalar . "associatedMedia" "name" ) }}</strong></a>
+            {{ with getFirstScalar . "datePublished" }}
+              <small>on {{ dateFormat . "January _2, 2006" }}</small>
+            {{ end }}
+            <br>
+            {{ with getFirstScalar . "articleBody" }}
+              <span class="has-text-grey">{{ summarize . }}</span>
+            {{ end }}
+          </p>
+        </div>
+      </div>
+    </article>
+  {{ else }}
+    <section class="section">
+      <p class="has-text-grey"><em>No items are currently available.</em></p>
+    </section>
+  {{ end }}
+  {{ if ne $year "0000" }}
+    </section>
+  {{ end }}
+{{ end }}

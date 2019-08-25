@@ -1,0 +1,24 @@
+{{ define "mainEntity" }}
+  <section class="section">
+    {{ range get .mainEntity "itemListElement" }}
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <a href="{{ link . }}"><strong>{{ default ( getFirstScalar . "name" ) ( getFirstScalar . "associatedMedia" "name" ) }}</strong></a>
+              {{ with getFirstScalar . "datePublished" }}
+                <small>on {{ dateFormat . "January _2, 2006" }}</small>
+              {{ end }}
+              <br>
+              {{ with getFirstScalar . "articleBody" }}
+                <span class="has-text-grey">{{ summarize . }}</span>
+              {{ end }}
+            </p>
+          </div>
+        </div>
+      </article>
+    {{ else }}
+      <p class="has-text-grey"><em>No items are currently available.</em></p>
+    {{ end }}
+  </section>
+{{ end }}

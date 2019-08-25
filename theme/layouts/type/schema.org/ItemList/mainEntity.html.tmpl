@@ -1,0 +1,4 @@
+{{ define "mainEntity" }}
+  {{ $template := printf "mainEntity.%s" ( default ( getFirstScalar .mainEntity "http://dpb587.github.io/tsg/template" ) "list" ) }}
+  {{ render .mainEntity $template }}
+{{ end }}

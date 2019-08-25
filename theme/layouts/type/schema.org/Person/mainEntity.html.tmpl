@@ -1,0 +1,51 @@
+{{ define "mainEntity" }}
+  <section class="section blog">
+    <div class="content blog-post">
+      {{ getFirstScalar .mainEntity "description" | markdownify }}
+
+      {{ with get .mainEntity "worksFor" }}
+        <h2 id="experience">Experience</h2>
+
+        {{ range . }}
+          <div style="margin-bottom:20px">
+            <p>
+              <strong>{{ getFirstScalar . "roleName" }}</strong> &mdash; {{ with getFirstScalar . "startDate" }}{{ dateFormat . "January '06" }}{{ end }} &ndash; {{ with getFirstScalar . "endDate" }}{{ dateFormat . "January '06" }}{{ else }}present{{ end }}<br>
+              {{ getFirstScalar . "name" }}{{ with getFirstScalar . "url" }} (<a href="{{ . }}">website</a>){{ end }} {{ with getFirst . "address" }}&mdash; {{ getFirstScalar . "addressLocality" }}, {{ getFirstScalar . "addressRegion" }}{{ end }}
+            </p>
+
+            {{ if gt ( len ( union ( get . "responsibilities" ) ( get . "skills" ) ) ) 0 }}
+              <ul>
+                {{ range get . "responsibilities" }}
+                  <li>{{ . }}</li>
+                {{ end }}
+                {{ with get . "skills" }}
+                  <li>
+                    Skills:
+                    {{ $prefix := "" }}
+                    {{ range . -}}
+                      {{ $prefix }}{{ $prefix = ", " }}
+                      {{ . }}
+                    {{- end }}
+                  </li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
+
+      {{ with get .mainEntity "alumniOf" }}
+        <h2 id="education">Education</h2>
+
+        <ul>
+          {{ range . }}
+            <li>
+              <a href="{{ getFirstScalar . "url" }}">{{ getFirstScalar . "name" }}</a> &mdash;
+              {{ getFirstScalar . "roleName" }} ({{ dateFormat ( getFirstScalar . "startDate" ) "2006" }} &ndash; {{ dateFormat ( getFirstScalar . "endDate" ) "2006" }})
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

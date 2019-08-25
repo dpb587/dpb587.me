@@ -1,0 +1,40 @@
+{{ define "mainEntity" }}
+  <section class="section blog">
+    <div class="content blog-post" itemprop="articleBody">
+      {{ getFirstScalar .mainEntity "articleBody" | markdownify }}
+    </div>
+    <hr>
+    <nav class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <p>
+            {{ with getFirstScalar .mainEntity "datePublished" }}
+              Published on
+              <time datetime="{{ dateFormat . "2006-01-02T15:04:05Z07:00" }}" title="{{ dateFormat . "2006-01-02T15:04:05Z07:00" }}">
+                {{ dateFormat . "Monday, January _2, 2006" }}
+              </time>
+            {{ end }}
+
+            {{ with get .mainEntity "keywords" }}
+              <br>
+              <small class="has-text-grey">
+                {{ range . }}
+                  {{ .ScalarString }}
+                {{ end }}
+              </small>
+            {{ end }}
+          </p>
+        </div>
+      </div>
+      <!--
+        <div class="level-right">
+          <div class="level-item has-text-right-tablet">
+            <p>
+              Previous: <a href="/post/2018/12/30/metalink-repositories-mirroring-third-party-dependencies/">Metalink Repositories: Mirroring Third-Party Dependencies</a><br>
+            </p>
+          </div>
+        </div>
+      -->
+    </nav>
+  </section>
+{{ end }}

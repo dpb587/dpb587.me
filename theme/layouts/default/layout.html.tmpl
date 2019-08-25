@@ -1,0 +1,137 @@
+{{ define "output" -}}
+  <!DOCTYPE html>
+  <html lang="en-us">
+    <head>
+      <meta charset="utf-8">
+      <title>
+        {{- block "title" . -}}
+          {{- with getFirstScalar .mainEntity "name" -}}
+            {{- . }} | Danny Berger
+          {{- else -}}
+            Danny Berger
+          {{- end -}}
+        {{- end -}}
+      </title>
+
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      {{ with getFirstScalar .mainEntity "description" }}
+        <meta name="description" content="{{ . }}">
+      {{ end }}
+
+      {{ with getFirst .mainEntity "author" }}
+        <meta name="author" content="{{ getFirstScalar . "name" }}">
+      {{ end }}
+
+      {{ with .mainEntity }}
+        {{ with .ID }}
+          <link rel="canonical" href="{{ . }}">
+        {{ end }}
+      {{ end }}
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="{{ url "/static/css/all.min.css" }}">
+
+      {{ with .Frontend.Generator }}
+        <meta name="generator" content="{{ . }}" />
+      {{ end }}
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37464314-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          if ('dpb587.me' != window.location.hostname) return;
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    </head>
+
+    <body>
+      <header>
+        <nav class="navbar is-transparent">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img alt="gravatar" src="{{ url "/static/img/dpb587-20181104a~256.jpg" }}" />
+              &nbsp;
+              danny berger
+            </a>
+            <div class="navbar-burger burger nav-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div class="navbar-menu nav-menu">
+            <div class="navbar-start">
+
+              <a class="navbar-item" target="blank" href="https://github.com/dpb587" aria-label="Go to GitHub profile">
+                <span class="icon">
+                  <i class="fa fa-github"></i>
+                </span>
+              </a>
+
+              <a class="navbar-item" target="blank" href="https://twitter.com/dpb587" aria-label="Go to Twitter profile">
+                <span class="icon">
+                  <i class="fa fa-twitter"></i>
+                </span>
+              </a>
+
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a itemprop="url" class="navbar-item " href="{{ abslink "https://dpb587.github.io/dpb587.me/content/posts/_index.md" }}"><span itemprop="name">posts</span></a>
+                <a itemprop="url" class="navbar-item " href="{{ abslink "https://dpb587.github.io/dpb587.me/content/galleries/_index.md" }}"><span itemprop="name">galleries</span></a>
+                <a itemprop="url" class="navbar-item " href="{{ abslink "https://dpb587.github.io/dpb587.me/content/pages/about.md" }}"><span itemprop="name">about</span></a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div itemscope itemtype="{{ .mainEntity.ContextType }}">
+          {{ with getFirstScalar .mainEntity "name" }}<meta itemprop="name" content="{{ . }}">{{ end }}
+          {{ with getFirstScalar .mainEntity "description" }}<meta itemprop="description" content="{{ . }}">{{ end }}
+
+          {{ with getFirstScalar .mainEntity "datePublished" }}
+            <meta itemprop="datePublished" content="{{ dateFormat . "2006-01-02T15:04:05Z07:00" }}" />
+          {{ end }}
+
+          <section class="hero is-primary has-text-centered{{ with getFirstScalar .mainEntity "error" }} has-background-danger{{ end }}">
+            <div class="hero-body">
+              <div class="container">
+                {{ with getFirstScalar .mainEntity "name" }}<h1 class="title">{{ . }}</h1>{{ end }}
+                {{ with getFirstScalar .mainEntity "description" }}<h2 class="subtitle">{{ . }}</h2>{{ end }}
+              </div>
+            </div>
+          </section>
+
+          <div class="container">
+            {{ block "mainEntity" . }}{{ end }}
+          </div>
+        </div>
+      </main>
+      <footer>
+        <footer class="footer">
+          <div class="container">
+            <div class="content has-text-centered has-text-grey">
+              <p class="is-size-7">
+                Thanks for visiting! This is a personal site &ndash; it reflects my own opinions and not those of my employers, past or present.<br>
+                This site is <a href="https://github.com/dpb587/dpb587.me">open-source</a>.
+                Unless noted, software code is licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT License</a>
+                and all other content under <a href="http://creativecommons.org/licenses/by/3.0/">CC-BY</a>.
+              </p>
+            </div>
+          </div>
+        </footer>
+      </footer>
+
+      <script async type="text/javascript" src="{{ url "/static/js/bulma.min.js" }}"></script>
+    </body>
+  </html>
+{{ end }}

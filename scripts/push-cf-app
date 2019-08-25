@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -eu
+
+mkdir -p tmp
+mkdir tmp/cf-app
+
+docker build -t dpb587.me .
+container=$( docker create dpb587.me )
+docker export "$container" | tar -xf- -C tmp/cf-app app
+docker rm "$container"
+
+cat >> tmp/cf-app/manifest.yml <<EOF
+applications:
+- name: dpb587.me
+  memory: 32M
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/binary-buildpack.git
+  command: ./exec
+EOF
+
+cd tmp/cf-app/app
+
+cf push -f ../manifest.yml
+
+cd ../../..
+
+rm -fr tmp/cf-app

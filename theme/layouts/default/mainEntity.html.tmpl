@@ -1,0 +1,9 @@
+{{ define "mainEntity" }}
+  {{ with getFirstScalar .mainEntity "description" }}
+    <section class="section blog">
+      <div class="content blog-post" itemprop="articleBody">
+        {{ . | markdownify }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
