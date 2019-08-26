@@ -10,10 +10,10 @@ hugo/hugo_0.57.0_Linux-64bit.tar.gz:
   size: 11990217
   object_id: 917d691d-a116-4d75-6d73-86c30921b71a
   sha: be035974e7f34ebfdc4bdd5b505ecd3de00fd134
-nginx/nginx-1.17.2.tar.gz:
-  size: 1034136
-  object_id: 9d2ca2db-345f-4451-7ca3-31d847c147c2
-  sha: 7fa3238ead37853bc23931f3a2e1be75130d4ae0
+nginx/nginx-1.17.3.tar.gz:
+  size: 1034586
+  object_id: e770da79-2e17-4175-4035-5bded85c9430
+  sha: ce306bc116159f2050f442f35da96ccde93c464d
 openssl/openssl-1.1.1c.tar.gz:
   size: 8864262
   object_id: b68799ea-7853-4ba7-7135-8fa8fa6c50ce
