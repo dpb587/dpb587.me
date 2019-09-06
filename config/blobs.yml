@@ -6,10 +6,10 @@ git/git-2.23.0.tar.gz:
   size: 8641922
   object_id: ff50f658-e746-450f-6546-04f2d5a1e0fe
   sha: 9738b774f38c8e82a6f5cd16ef5bc83e63388f21
-hugo/hugo_0.57.2_Linux-64bit.tar.gz:
-  size: 11992988
-  object_id: d2eb9ff4-f5a0-4283-43ee-2c551932e5fd
-  sha: 0d37a6a1cb1abf8c2754b5e9edc81a3fbc289fcb
+hugo/hugo_0.58.1_Linux-64bit.tar.gz:
+  size: 11649818
+  object_id: 10de79d1-a221-4771-7c0a-65b53ae75ca9
+  sha: 3be27eb3687d1fed52a15baf0abcc3b1406a042d
 nginx/nginx-1.17.3.tar.gz:
   size: 1034586
   object_id: e770da79-2e17-4175-4035-5bded85c9430
