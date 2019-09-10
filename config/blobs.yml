@@ -14,10 +14,10 @@ nginx/nginx-1.17.3.tar.gz:
   size: 1034586
   object_id: e770da79-2e17-4175-4035-5bded85c9430
   sha: ce306bc116159f2050f442f35da96ccde93c464d
-openssl/openssl-1.1.1c.tar.gz:
-  size: 8864262
-  object_id: b68799ea-7853-4ba7-7135-8fa8fa6c50ce
-  sha: 71b830a077276cbeccc994369538617a21bee808
+openssl/openssl-1.1.1d.tar.gz:
+  size: 8845861
+  object_id: 966b1392-d16b-425f-60f1-9b676b9e79d7
+  sha: 056057782325134b76d1931c48f2c7e6595d7ef4
 pcre/pcre-8.43.tar.gz:
   size: 2085854
   object_id: b8ef35bd-bb02-4166-7dac-b2ad9409630b
