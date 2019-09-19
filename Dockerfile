@@ -9,4 +9,7 @@ FROM scratch
 COPY content /app/content
 COPY theme /app/theme
 COPY --from=build-go /build/exec /app/exec
+COPY --from=build-go /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+WORKDIR /app
+EXPOSE 8080
 CMD ["/app/exec"]

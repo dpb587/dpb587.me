@@ -103,8 +103,8 @@
   name = "github.com/gohugoio/hugo"
   packages = ["common/math"]
   pruneopts = "UT"
-  revision = "a849cb2d9b5fc1c1415a96566163b1724e2ac5c1"
-  version = "v0.57.2"
+  revision = "64d8bf1ee9befc665222c05f62cfa310592e0705"
+  version = "v0.58.0"
 
 [[projects]]
   digest = "1:b117faf01abdbdadd7b8ceeae74cd1369c1b073fef41aee8b674c9d704a54c16"
@@ -155,7 +155,7 @@
     "html/atom",
   ]
   pruneopts = "UT"
-  revision = "74dc4d7220e7acc4e100824340f3e66577424772"
+  revision = "ba9fcec4b297b415637633c5a6e8fa592e4a16c3"
 
 [[projects]]
   digest = "1:2ee0f15eb0fb04f918db7c2dcf39745f40d69f798ef171610a730e8a56aaa4fd"
