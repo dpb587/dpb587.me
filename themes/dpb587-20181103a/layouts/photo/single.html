@@ -1,0 +1,61 @@
+{{ define "main"}}
+  {{ $gallery := index ( split .Dir "/" ) 1 }}
+  {{ $baseAssetUrl := printf "%s%s/%s" .Site.Params.assetUrl $gallery .File.BaseFileName }}
+  <div itemscope itemtype="http://schema.org/BlogPosting">
+    {{ template "_internal/schema.html" . }}
+    <section class="hero is-fullheight-with-navbar" style="background:rgba(0, 0, 0, 0) url('{{ $baseAssetUrl }}~1280.jpg') repeat scroll center center / cover">
+      {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}" aria-label="Previous" style="background-color:rgba(255,255,255,0.1);backdrop-filter:blur(3px) invert(10%);border-bottom-right-radius:3px;border-top-right-radius:3px;color:#f0f0f0;display:block;font-size:2em;padding:0.2em;position:absolute;left:-5px;top:50%;"><span class="icon is-large"><i class="fa fa-chevron-left fa-fw"></i></span></a>
+      {{ end }}
+      {{ with .NextInSection }}
+        <a href="{{ .Permalink }}" aria-label="Next" style="background-color:rgba(255,255,255,0.1);backdrop-filter:blur(3px) invert(10%);border-bottom-left-radius:3px;border-top-left-radius:3px;color:#f0f0f0;display:block;font-size:2em;padding:0.2em;position:absolute;right:-5px;top:50%;"><span class="icon is-large"><i class="fa fa-chevron-right fa-fw"></i></span></a>
+      {{ end }}
+    </section>
+    <section id="content" class="hero is-primary has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">{{ .Title }}</h1>
+          <h2 class="subtitle">
+            <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
+              {{ dateFormat "Monday, January 2, 2006" (default .Date (.PublishDate)) }}
+            </time>
+          </h2>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <section class="section blog">
+        <div class="has-text-centered">
+          <a href="{{ $baseAssetUrl }}~1280.jpg"><img src="{{ $baseAssetUrl }}~1280.jpg" title="{{ .Title }}"></a>
+        </div>
+        {{ with .Content }}
+          <div class="content blog-post" itemprop="articleBody">
+            {{ . }}
+          </div>
+        {{ end }}
+        <hr>
+        <p class="has-text-grey has-text-centered">
+          {{ with .Params.tags }}
+            <br>
+            <small>{{ delimit (apply (apply (sort .) "partial" "post/tag-link" ".") "chomp" ".") ", " ", " }}</small>
+          {{ end }}
+          <br>
+          <small>
+            {{ with .Params.exif }}
+              {{ if .make }}{{ .make }}{{ end }}
+              {{ if .model }}{{ .model }}{{ end }}
+              {{ if .aperture }}{{ .aperture }}{{ end }}
+              {{ if .exposure }}{{ .exposure }}{{ end }}
+            {{ end }}
+            &mdash;
+            {{ with .Params.sizes }}
+              {{ range $key, $size := . }}
+                <a href="{{ $baseAssetUrl }}~{{ $key }}.jpg">{{ $size.width }}x{{ $size.height }}</a>
+              {{ end }}
+            {{ end }}
+          </small>
+        </p>
+      </section>
+    </div>
+  </div>
+{{ end }}

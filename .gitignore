@@ -1,1 +1,7 @@
-/tmp
+# hugo
+/public
+/resources
+
+# private repository
+/content/*/private
+/private

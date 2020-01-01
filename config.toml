@@ -1,0 +1,51 @@
+languageCode = "en-us"
+title = "Danny Berger"
+copyright = "Unless noted, software code is licensed under MIT License and all other content under CC-BY."
+disqusShortname = "dpb587"
+googleAnalytics = "UA-37464314-1"
+theme = "dpb587-20181103a"
+enableRobotsTXT = true
+enableGitInfo = true
+pygmentsCodefences = true
+pygmentsStyle = "native"
+paginate = "32"
+
+[author]
+  name = "Danny Berger"
+  email = "dpb587@gmail.com"
+
+[taxonomies]
+  tag = "tags"
+
+[permalinks]
+  post = "/post/:year/:month/:day/:slug/"
+  page = "/:filename/"
+  photo = "/:sections/:filename/"
+
+[[menu.main]]
+  name = "about"
+  url = "/about/"
+  weight = -110
+
+[[menu.main]]
+  name = "posts"
+  url = "/post/"
+  weight = -130
+
+[[menu.main]]
+  name = "photos"
+  url = "/photo/"
+  weight = -120
+
+[params]
+  description = ""
+  assetUrl = "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/"
+  github = "dpb587"
+  twitter = "dpb587"
+  mainSections = ["post" ,"gallery"]
+
+  [params.logo]
+  url = "dpb587.png"
+  width = 50
+  height = 50
+  alt = "dpb587"

@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <div>
+    {{ partial "hero" . }}
+    <div class="container">
+      <section class="section blog">
+        <div class="content blog-post">
+          {{ range $key, $value := .Data.Terms }}
+            <a href="{{ $key | urlize }}">#{{ $key }}</a> ({{ len $value }})
+            &nbsp;
+          {{ end }}
+        </div>
+      </section>
+    </div>
+  </div>
+{{ end }}
