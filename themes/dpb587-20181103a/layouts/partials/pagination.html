@@ -1,31 +1,12 @@
-<div class="container">
-  <div class="tabs">
-    <p class="control">
-      {{if .Paginator.HasPrev }}
-        <a class="button is-primary" href="{{ .Paginator.Prev.URL }}">
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-left"></i>
-          </span>
-          <span>Previous</span>
-        </a>
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+  <nav class="pagination" role="navigation" aria-label="pagination">
+    <a class="pagination-previous" {{ if $paginator.HasPrev }}href="{{ $paginator.Prev.URL }}"{{ else }}disabled{{ end }}>Previous</a>
+    <a class="pagination-next" {{ if $paginator.HasNext }}href="{{ $paginator.Next.URL }}"{{ else }}disabled{{ end }}>Next page</a>
+    <ul class="pagination-list">
+      {{ range $paginator.Pagers }}
+        <li><a class="pagination-link{{ if eq . $paginator }} is-current{{ end }}" href="{{ .URL }}" aria-label="Goto page {{ .PageNumber }}">{{ .PageNumber }}</a></li>
       {{ end }}
-    </p>
-    {{ if gt .Paginator.TotalPages 1 }}
-      <p class="control">
-        <a class="button">
-          Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
-        </a>
-      </p>
-    {{ end }}
-    <p class="control">
-      {{ if .Paginator.HasNext }}
-        <a class="button is-primary" href="{{ .Paginator.Next.URL }}">
-          <span class=" icon is-small ">
-            <i class="fa fa-angle-double-right "></i>
-          </span>
-          <span>Next</span>
-        </a>
-      {{ end }}
-    </p>
-  </div>
-</div>
+    </ul>
+  </nav>
+{{ end }}

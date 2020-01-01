@@ -1,5 +1,5 @@
 {{ define "main"}}
-  {{ $gallery := index .Params.galleries 0 }}
+  {{ $gallery := index ( split .Dir "/" ) 1 }}
   {{ $baseAssetUrl := printf "%s%s/%s" .Site.Params.assetUrl $gallery .File.BaseFileName }}
   <div itemscope itemtype="http://schema.org/BlogPosting">
     {{ template "_internal/schema.html" . }}

@@ -29,7 +29,7 @@
                     <div class="card">
                       <div class="card-image">
                         <figure class="image is-2by2">
-                          <img src="{{ .Site.Params.assetUrl }}{{ index .Params.galleries 0 }}/{{ .File.BaseFileName }}~200x200.jpg" title="{{ .Title }}" />
+                          <img src="{{ .Site.Params.assetUrl }}{{ index ( split .Dir "/" ) 1 }}/{{ .File.BaseFileName }}~200x200.jpg" title="{{ .Title }}" />
                         </figure>
                       </div>
                     </div>
@@ -38,9 +38,9 @@
               {{ end }}
             {{ end }}
           </div>
+          {{ partial "pagination" . }}
         </section>
       </div>
-      {{ partial "pagination" }}
     </div>
   </div>
 {{ end }}
