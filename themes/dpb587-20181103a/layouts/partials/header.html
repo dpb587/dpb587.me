@@ -1,0 +1,43 @@
+<nav class="navbar is-transparent">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{.Site.BaseURL | relURL}}">
+      <img alt="gravatar" src="{{.Site.BaseURL | relURL }}images/dpb587-20181104a~256.jpg" />
+      &nbsp;
+      danny berger
+    </a>
+    <div class="navbar-burger burger nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="navbar-menu nav-menu">
+    <div class="navbar-start">
+      {{ if .Site.Params.github}}
+        <a class="navbar-item" target="blank" href="https://github.com/{{ .Site.Params.github }}">
+          <span class="icon">
+            <i class="fa fa-github"></i>
+          </span>
+        </a>
+      {{end}}
+
+      {{ if .Site.Params.twitter}}
+        <a class="navbar-item" target="blank" href="https://twitter.com/{{ .Site.Params.twitter }}">
+          <span class="icon">
+            <i class="fa fa-twitter"></i>
+          </span>
+        </a>
+      {{end}}
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+          <a itemprop="url" class="navbar-item {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} is-active{{end}}" href="{{.URL}}"><span itemprop="name">{{ .Name }}</span></a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</nav>

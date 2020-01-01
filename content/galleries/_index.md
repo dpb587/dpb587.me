@@ -1,8 +1,4 @@
 ---
-_type: ItemList
-name: Galleries
-http://dpb587.github.io/tsg/template: grid
-itemListOrder: temporalCoverage desc
+title: Galleries
+description: To recount some adventures and places.
 ---
-
-To recount some adventures and places.
