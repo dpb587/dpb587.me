@@ -19,8 +19,8 @@ paginate = "32"
 
 [permalinks]
   post = "/post/:year/:month/:day/:slug/"
-  page = "/:slug/"
-  photo = "/:sections/:slug/"
+  page = "/:filename/"
+  photo = "/:sections/:filename/"
 
 [[menu.main]]
   name = "about"
