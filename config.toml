@@ -8,7 +8,7 @@ enableRobotsTXT = true
 enableGitInfo = true
 pygmentsCodefences = true
 pygmentsStyle = "native"
-paginate = "256"
+paginate = "32"
 
 [author]
   name = "Danny Berger"
@@ -16,13 +16,11 @@ paginate = "256"
 
 [taxonomies]
   tag = "tags"
-  gallery = "galleries"
 
 [permalinks]
   post = "/post/:year/:month/:day/:slug/"
   page = "/:slug/"
-  gallery = "/gallery/:slug/"
-  photo = "/photo/:year/:month/:day/:slug/"
+  photo = "/:sections/:slug/"
 
 [[menu.main]]
   name = "about"
@@ -35,8 +33,8 @@ paginate = "256"
   weight = -130
 
 [[menu.main]]
-  name = "galleries"
-  url = "/galleries/"
+  name = "photos"
+  url = "/photo/"
   weight = -120
 
 [params]
