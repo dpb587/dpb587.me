@@ -1,5 +1,5 @@
 ---
-title: Albuquerque Balloon Fiesta
+title: Balloon Fiesta 2014
 date: '2014-10-09'
 date_end: '2014-10-13'
 highlight_photo: 'f114579-img-1074'

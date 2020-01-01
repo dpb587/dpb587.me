@@ -1,5 +1,5 @@
 ---
-title: Costa Rica Trip
+title: Costa Rica 2015
 date: '2015-01-09'
 date_end: '2015-01-20'
 highlight_photo: 'ae8494f-el-avion'

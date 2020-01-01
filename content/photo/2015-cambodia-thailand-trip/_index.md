@@ -1,5 +1,5 @@
 ---
-title: Cambodia & Thailand Trip
+title: Cambodia & Thailand 2015
 date: '2015-11-14'
 date_end: '2015-11-22'
 highlight_photo: '468d46d-img-1199'
@@ -9,5 +9,3 @@ aliases:
 ---
 
 Exploring Phnom Penh, Siem Reap, and Bangkok for a week.
-
-with something else said

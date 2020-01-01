@@ -1,5 +1,5 @@
 ---
-title: "Colorado Aspens"
+title: Colorado Aspens 2014
 date: '2014-09-27'
 highlight_photo: '2dbeedb-aspens-invading'
 aliases:

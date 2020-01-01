@@ -1,9 +1,13 @@
 {{ define "main"}}
   {{ $gallery := index ( split .Dir "/" ) 1 }}
   {{ $baseAssetUrl := printf "%s%s/%s" .Site.Params.assetUrl $gallery .File.BaseFileName }}
+  {{ $size := "1280" }}
+  {{ if ( index .Params.sizes "1920" ) }}
+    {{ $size = "1920" }}
+  {{ end }}
   <div itemscope itemtype="http://schema.org/BlogPosting">
     {{ template "_internal/schema.html" . }}
-    <section class="hero is-fullheight-with-navbar" style="background:rgba(0, 0, 0, 0) url('{{ $baseAssetUrl }}~1280.jpg') repeat scroll center center / cover">
+    <section class="hero is-fullheight-with-navbar" style="background:rgba(0, 0, 0, 0) url('{{ $baseAssetUrl }}~{{ $size }}.jpg') repeat scroll center center / cover">
       {{ with .PrevInSection }}
         <a href="{{ .Permalink }}" aria-label="Previous" style="background-color:rgba(255,255,255,0.1);backdrop-filter:blur(3px) invert(10%);border-bottom-right-radius:3px;border-top-right-radius:3px;color:#f0f0f0;display:block;font-size:2em;padding:0.2em;position:absolute;left:-5px;top:50%;"><span class="icon is-large"><i class="fa fa-chevron-left fa-fw"></i></span></a>
       {{ end }}
@@ -26,7 +30,7 @@
     <div class="container">
       <section class="section blog">
         <div class="has-text-centered">
-          <a href="{{ $baseAssetUrl }}~1280.jpg"><img src="{{ $baseAssetUrl }}~1280.jpg" title="{{ .Title }}"></a>
+          <a href="{{ $baseAssetUrl }}~{{ $size }}.jpg"><img src="{{ $baseAssetUrl }}~{{ $size }}.jpg" title="{{ .Title }}"></a>
         </div>
         {{ with .Content }}
           <div class="content blog-post" itemprop="articleBody">

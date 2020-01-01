@@ -7,12 +7,17 @@
           <div class="columns is-multiline">
             {{ if .Sections }}
               {{ range ( .Paginate .Sections ).Pages }}
-                <div class="column is-one-third-desktop is-half-tablet">
+                {{ $highlightPage := .GetPage ( printf "photo/%s/%s.md" ( index ( split .Dir "/" ) 1 ) .Params.highlight_photo ) }}
+                {{ $size := "200x200" }}
+                {{ if ( index $highlightPage.Params.sizes "420x420" ) }}
+                  {{ $size = "420x420" }}
+                {{ end }}
+                <div class="column is-one-quarter-desktop is-half-tablet">
                   <a href="{{ .URL }}">
                     <div class="card">
                       <div class="card-image">
                         <figure class="image is-2by2">
-                          <img src="{{ .Site.Params.assetUrl }}{{ index ( split .Dir "/" ) 1 }}/{{ .Params.highlight_photo }}~200x200.jpg" title="{{ .Title }}" />
+                          <img src="{{ .Site.Params.assetUrl }}{{ index ( split $highlightPage.Dir "/" ) 1 }}/{{ $highlightPage.File.BaseFileName }}~{{ $size }}.jpg" title="{{ .Title }}" />
                         </figure>
                       </div>
                       <div class="card-content has-text-centered">
@@ -24,12 +29,16 @@
               {{ end }}
             {{ else }}
               {{ range ( .Paginate .RegularPages.Reverse ).Pages }}
+                {{ $size := "200x200" }}
+                {{ if ( index .Params.sizes "420x420" ) }}
+                  {{ $size = "420x420" }}
+                {{ end }}
                 <div class="column is-one-quarter-desktop is-half-tablet">
                   <a href="{{ .URL }}">
                     <div class="card">
                       <div class="card-image">
                         <figure class="image is-2by2">
-                          <img src="{{ .Site.Params.assetUrl }}{{ index ( split .Dir "/" ) 1 }}/{{ .File.BaseFileName }}~200x200.jpg" title="{{ .Title }}" />
+                          <img src="{{ .Site.Params.assetUrl }}{{ index ( split .Dir "/" ) 1 }}/{{ .File.BaseFileName }}~{{ $size }}.jpg" title="{{ .Title }}" />
                         </figure>
                       </div>
                     </div>
