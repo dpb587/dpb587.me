@@ -1,0 +1,29 @@
+---
+date: "2019-12-17T16:47:51Z"
+exif:
+  aperture: f/2.4
+  iso: 16
+  make: Apple
+  model: iPhone X
+ordering: 141
+sizes:
+  200x200:
+    height: 200
+    width: 200
+  420x420:
+    height: 420
+    width: 420
+  640w:
+    height: 480
+    width: 640
+  "1080":
+    height: 810
+    width: 1080
+  "1280":
+    height: 960
+    width: 1280
+  "1920":
+    height: 1440
+    width: 1920
+title: IMG_0064.HEIC
+---
