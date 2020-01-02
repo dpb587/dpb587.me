@@ -1,3 +1,24 @@
+{{ define "prefetch" }}
+  {{ with .PrevInSection }}
+    {{ $gallery := index ( split .Dir "/" ) 1 }}
+    {{ $baseAssetUrl := printf "%s%s/%s" .Site.Params.assetUrl $gallery .File.BaseFileName }}
+    {{ $size := "1280" }}
+    {{ if ( index .Params.sizes "1920" ) }}
+      {{ $size = "1920" }}
+    {{ end }}
+    <link rel="prefetch" href="{{ $baseAssetUrl }}~{{ $size }}.jpg">
+  {{ end }}
+  {{ with .NextInSection }}
+    {{ $gallery := index ( split .Dir "/" ) 1 }}
+    {{ $baseAssetUrl := printf "%s%s/%s" .Site.Params.assetUrl $gallery .File.BaseFileName }}
+    {{ $size := "1280" }}
+    {{ if ( index .Params.sizes "1920" ) }}
+      {{ $size = "1920" }}
+    {{ end }}
+    <link rel="prefetch" href="{{ $baseAssetUrl }}~{{ $size }}.jpg">
+  {{ end }}
+{{ end }}
+
 {{ define "main"}}
   {{ $gallery := index ( split .Dir "/" ) 1 }}
   {{ $baseAssetUrl := printf "%s%s/%s" .Site.Params.assetUrl $gallery .File.BaseFileName }}
@@ -15,50 +36,38 @@
         <a href="{{ .Permalink }}" aria-label="Next" style="background-color:rgba(255,255,255,0.1);backdrop-filter:blur(3px) invert(10%);border-bottom-left-radius:3px;border-top-left-radius:3px;color:#f0f0f0;display:block;font-size:2em;padding:0.2em;position:absolute;right:-5px;top:50%;"><span class="icon is-large"><i class="fa fa-chevron-right fa-fw"></i></span></a>
       {{ end }}
     </section>
-    <section id="content" class="hero is-primary has-text-centered">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">{{ .Title }}</h1>
-          <h2 class="subtitle">
-            <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
-              {{ dateFormat "Monday, January 2, 2006" (default .Date (.PublishDate)) }}
-            </time>
-          </h2>
-        </div>
-      </div>
-    </section>
+    {{ partial "hero" . }}
     <div class="container">
-      <section class="section blog">
+      {{ with .Content }}
+        <section class="section blog">
+          <div class="content blog-post">
+            {{ . }}
+          </div>
+        </section>
+        <hr class="is-marginless">
+      {{ end }}
+
+      <section class="section">
         <div class="has-text-centered">
           <a href="{{ $baseAssetUrl }}~{{ $size }}.jpg"><img src="{{ $baseAssetUrl }}~{{ $size }}.jpg" title="{{ .Title }}"></a>
         </div>
-        {{ with .Content }}
-          <div class="content blog-post" itemprop="articleBody">
-            {{ . }}
-          </div>
-        {{ end }}
-        <hr>
-        <p class="has-text-grey has-text-centered">
-          {{ with .Params.tags }}
-            <br>
-            <small>{{ delimit (apply (apply (sort .) "partial" "post/tag-link" ".") "chomp" ".") ", " ", " }}</small>
-          {{ end }}
-          <br>
-          <small>
-            {{ with .Params.exif }}
-              {{ if .make }}{{ .make }}{{ end }}
-              {{ if .model }}{{ .model }}{{ end }}
-              {{ if .aperture }}{{ .aperture }}{{ end }}
-              {{ if .exposure }}{{ .exposure }}{{ end }}
-            {{ end }}
-            &mdash;
+        <div class="section">
+          <div class="box">
+            {{ partial "properties/all" . }}
             {{ with .Params.sizes }}
-              {{ range $key, $size := . }}
-                <a href="{{ $baseAssetUrl }}~{{ $key }}.jpg">{{ $size.width }}x{{ $size.height }}</a>
-              {{ end }}
+              <div class="field is-grouped is-grouped-multiline">
+                {{ range $key, $size := . }}
+                  <a class="control" href="{{ $baseAssetUrl }}~{{ $key }}.jpg">
+                    <div class="tags has-addons">
+                      <span class="tag is-success is-light" title="Export"><i class="fa fa-picture-o" aria-hidden="true"></i></span>
+                      <span class="tag is-success is-light">{{ $size.width }}x{{ $size.height }}</span>
+                    </div>
+                  </a>
+                {{ end }}
+              </div>
             {{ end }}
-          </small>
-        </p>
+          </div>
+        </div>
       </section>
     </div>
   </div>

@@ -1,0 +1,8 @@
+{{ with . }}
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-info is-light" title="Duration"><i class="fa fa-hourglass-1" aria-hidden="true"></i></span>
+      <span class="tag is-info is-light">{{ . }} minute{{ if ne . 1 }}s{{ end }}</span>
+    </div>
+  </div>
+{{ end }}

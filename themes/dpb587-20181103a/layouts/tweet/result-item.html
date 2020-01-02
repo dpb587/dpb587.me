@@ -1,0 +1,27 @@
+<article class="media">
+  <div class="media-left">
+    <div class="is-size-4 has-text-grey-light">
+      <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="media-content">
+    <div class="content">
+      <div class="is-size-4">
+        <a href="https://twitter.com/{{ .Params.user.screen_name }}/status/{{ .Params.id_str }}">
+          {{ .RawContent }}
+        </a>
+      </div>
+
+      <div style="margin-top:1em">
+        {{ partial "properties/info" . }}
+      </div>
+    </div>
+  </div>
+  {{ range $media := .Params.extended_entities.media }}
+    <figure class="media-right">
+      <p class="image is-128x128">
+        <img src="{{ $media.media_url_https }}">
+      </p>
+    </figure>
+  {{ end }}
+</article>

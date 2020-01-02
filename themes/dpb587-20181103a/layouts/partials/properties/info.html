@@ -1,0 +1,27 @@
+<div class="field is-grouped is-grouped-multiline">
+  {{ with default .Date .PublishDate }}
+    {{ partial "properties/info/date" . }}
+  {{ end }}
+
+  {{ partial "properties/info/pages" . }}
+
+  {{ if eq .Type "post" }}
+    {{ with .ReadingTime }}
+      {{ partial "properties/info/readtime" . }}
+    {{ end }}
+  {{ end }}
+
+  {{/*
+  {{ with .WordCount }}
+    {{ partial "properties/info/words" . }}
+  {{ end }}
+  */}}
+
+  {{ if eq .Type "tweet" }}
+    {{ with .Params.place }}
+      {{ partial "properties/info/location" .full_name }}
+    {{ end }}
+  {{ end }}
+
+  {{ partial "properties/info/camera" .Params.exif }}
+</div>

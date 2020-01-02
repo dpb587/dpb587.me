@@ -1,7 +1,7 @@
 ---
 title: Cambodia & Thailand 2015
-date: '2015-11-14'
-date_end: '2015-11-22'
+date: '2015-11-22'
+date_start: '2015-11-14'
 highlight_photo: '468d46d-img-1199'
 aliases:
 - /galleries/2015-cambodia-thailand-trip/

@@ -1,0 +1,24 @@
+<article class="media">
+  <div class="media-left">
+    <div class="is-size-4 has-text-grey-light">
+      <i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="media-content">
+    <div class="content">
+      <div class="is-size-4">
+        <a href="{{ .URL }}">{{ .Title }}</a>
+      </div>
+
+      {{ with plainify .Summary | safeHTML }}
+        <div class="has-text-grey">
+          {{ . }}
+        </div>
+      {{ end }}
+
+      <div style="margin-top:1em">
+        {{ partial "properties/info" . }}
+      </div>
+    </div>
+  </div>
+</article>

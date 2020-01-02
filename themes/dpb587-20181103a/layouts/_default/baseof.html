@@ -38,11 +38,13 @@
     {{ $css := slice $cssBulma $cssHighlight $cssCustom | resources.Concat "css/all.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
 
-    {{ block "style" . }}{{end}}
+    {{ block "style" . }}{{ end }}
 
     {{ .Hugo.Generator }}
 
     {{ partial "analytics" . }}
+
+    {{ block "prefetch" . }}{{ end }}
   </head>
 
   <body>

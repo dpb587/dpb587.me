@@ -1,12 +1,13 @@
 {{ define "main" }}
-  <div class="columns is-fullheight">
-    <div class="column">
-      {{ partial "hero" . }}
-      <div class="container">
-        <section class="section">
-          <div class="columns is-multiline">
-            {{ if .Sections }}
-              {{ range ( .Paginate .Sections ).Pages }}
+  {{ if .Sections }}
+    {{ $paginator := .Paginate .Sections }}
+    <div class="columns is-fullheight">
+      <div class="column">
+        {{ partial "hero" . }}
+        <div class="container">
+          <section class="section">
+            <div class="columns is-multiline">
+              {{ range $paginator.Pages }}
                 {{ $highlightPage := .GetPage ( printf "photo/%s/%s.md" ( index ( split .Dir "/" ) 1 ) .Params.highlight_photo ) }}
                 {{ $size := "200x200" }}
                 {{ if ( index $highlightPage.Params.sizes "420x420" ) }}
@@ -27,8 +28,31 @@
                   </a>
                 </div>
               {{ end }}
-            {{ else }}
-              {{ range ( .Paginate .RegularPages.Reverse ).Pages }}
+            </div>
+            {{ partial "pagination" . }}
+          </section>
+        </div>
+      </div>
+    </div>
+  {{ else }}
+    {{ $paginator := .Paginate .RegularPages.Reverse }}
+    {{ partial "hero" . }}
+    <div class="container">
+      {{ if eq $paginator.PageNumber 1 }}
+        {{ with .Content }}
+          <section class="section blog">
+            <div class="content blog-post">
+              {{ . }}
+            </div>
+          </section>
+          <hr class="is-marginless">
+        {{ end }}
+      {{ end }}
+      <section class="section">
+        <div class="columns is-fullheight">
+          <div class="column">
+            <div class="columns is-multiline">
+              {{ range $paginator.Pages }}
                 {{ $size := "200x200" }}
                 {{ if ( index .Params.sizes "420x420" ) }}
                   {{ $size = "420x420" }}
@@ -47,9 +71,9 @@
               {{ end }}
             {{ end }}
           </div>
-          {{ partial "pagination" . }}
-        </section>
+        </div>
       </div>
-    </div>
+      {{ partial "pagination" . }}
+    </section>
   </div>
 {{ end }}

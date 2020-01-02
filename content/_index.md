@@ -1,6 +1,7 @@
 ---
-title: Hello
+title: Hello.
 description: My name is Danny Berger.
+hero_thumbnail: /images/dpb587-20191216a~256.jpg
 ---
 
 Technology intrigues me. Pretty much any sort, but I enjoy web-oriented tech

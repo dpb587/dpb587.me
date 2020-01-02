@@ -4,43 +4,18 @@
     {{ partial "hero" . }}
     <div class="container">
       <section class="section blog">
-        <div class="content blog-post" itemprop="articleBody">
-          {{.Content}}
+        {{ with .Content }}
+          <div class="content blog-post" itemprop="articleBody">
+            {{ . }}
+          </div>
+        {{ end }}
+        <div class="section">
+          <div class="box">
+            {{ partial "properties/all" . }}
+          </div>
         </div>
-        <hr>
-        <nav class="level">
-          <div class="level-left">
-            <div class="level-item">
-              <p>
-                Published on
-                <time datetime="{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Date (.PublishDate)) }}">
-                  {{ dateFormat "Monday, January 2, 2006" (default .Date (.PublishDate)) }}
-                </time>
-                {{ with .Params.tags }}
-                  <br>
-                  <small>{{ delimit (apply (apply (sort .) "partial" "post/tag-link" ".") "chomp" ".") ", " ", " }}</small>
-                {{ end }}
-              </p>
-            </div>
-          </div>
-          <div class="level-right">
-            <div class="level-item has-text-right-tablet">
-              <p>
-                {{ with .NextInSection }}
-                  Next: <a href="{{ .Permalink }}">{{ .Title }}</a><br>
-                {{ end }}
-                {{ with .PrevInSection }}
-                  Previous: <a href="{{ .Permalink }}">{{ .Title }}</a><br>
-                {{ end }}
-              </p>
-            </div>
-          </div>
-        </nav>
+        {{ partial "comments" . }}
       </section>
-
-      {{ if ne .Params.disqus false }}
-        {{ partial "disqus.html" . }}
-      {{ end }}
     </div>
   </div>
 {{ end }}

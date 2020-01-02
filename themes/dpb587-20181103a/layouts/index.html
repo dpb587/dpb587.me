@@ -1,20 +1,17 @@
 {{ define "main" }}
   {{ partial "hero" . }}
-  {{ if .Content }}
-    <div class="container">
+  <div class="container">
+    {{ with .Content }}
       <section class="section blog">
         <div class="content blog-post">
-          {{.Content}}
+          {{ . }}
         </div>
-      </div>
-    </div>
-  {{ end }}
-  <div class="container">
-    <section class="section" style="padding-top:0;">
-      <h2 class="title">Latest posts&hellip;</h2>
-
-      {{ range first 7 (where .Site.Pages "Type" "in" .Site.Params.mainSections) }}
-        {{ .Render "result" }}
+      </section>
+      <hr class="is-marginless">
+    {{ end }}
+    <section class="section">
+      {{ range first 7 ( union ( union ( where ( where .Site.Pages "Type" "eq" "post" ) "Kind" "eq" "page" ) ( where ( where .Site.Pages "Type" "eq" "tweet" ) "Kind" "eq" "page" ) ) ( where ( where .Site.Pages "Type" "eq" "photo" ) "Kind" "eq" "section" ) ).ByDate.Reverse }}
+        {{ .Render "result-item" }}
       {{ end }}
     </section>
   </div>

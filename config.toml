@@ -1,7 +1,6 @@
 languageCode = "en-us"
 title = "Danny Berger"
 copyright = "Unless noted, software code is licensed under MIT License and all other content under CC-BY."
-disqusShortname = "dpb587"
 googleAnalytics = "UA-37464314-1"
 theme = "dpb587-20181103a"
 enableRobotsTXT = true
@@ -21,6 +20,7 @@ paginate = "64"
   post = "/post/:year/:month/:day/:slug/"
   page = "/:filename/"
   photo = "/:sections/:filename/"
+  tweet = "/tweet/:filename/"
 
 [[menu.main]]
   name = "about"
@@ -42,7 +42,7 @@ paginate = "64"
   assetUrl = "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/"
   github = "dpb587"
   twitter = "dpb587"
-  mainSections = ["post" ,"gallery"]
+  enableComments = false
 
   [params.logo]
   url = "dpb587.png"

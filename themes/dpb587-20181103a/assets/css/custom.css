@@ -20,7 +20,24 @@ body {
   line-height: 1.9rem;
 }
 
-.blog-post img {
+.hero figure.image {
+  background-color: #F0CCBB;
+  border: #C84906 solid 1px;
+  border-radius: 3px;
+  margin: -0.95em 1.5em -2em 0;
+  padding: 2px;
+  position: relative;
+  height: 96px;
+  width: 96px;
+}
+
+.hero figure.image img {
+  border-radius: 1px;
+}
+
+.blog-post img,
+figure.media-left .image img,
+figure.media-right .image img {
   border: #DEDEDE solid 1px;
   border-radius: 2px;
   display: block;
