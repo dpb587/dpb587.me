@@ -2,8 +2,6 @@
 title: About Me
 description: To intrigue those with technical challenges.
 print_blurb: "r&#233;sum&#233;"
-aliases:
-- about.html
 hero_thumbnail: /images/dpb587-20191216a~256.jpg
 ---
 
