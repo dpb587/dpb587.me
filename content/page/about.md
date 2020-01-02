@@ -1,5 +1,4 @@
 ---
-slug: about
 title: About Me
 description: To intrigue those with technical challenges.
 print_blurb: "r&#233;sum&#233;"
