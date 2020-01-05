@@ -7,7 +7,7 @@
   <div class="media-content">
     <div class="content">
       <div class="is-size-4">
-        <a href="https://twitter.com/{{ .Params.user.screen_name }}/status/{{ .Params.id_str }}">
+        <a href="https://twitter.com/{{ .Params.api_1_1.user.screenname }}/status/{{ .Params.api_1_1.id }}">
           {{ .RawContent }}
         </a>
       </div>
@@ -17,10 +17,10 @@
       </div>
     </div>
   </div>
-  {{ range $media := .Params.extended_entities.media }}
-    <figure class="media-right">
-      <p class="image is-128x128">
-        <img src="{{ $media.media_url_https }}">
+  {{ range $mediaIdx, $media := .Params.api_1_1.extendedentities.media }}
+    <figure class="media-right" style="width:{{ if gt .sizes.medium.height .sizes.medium.width }}96px{{ else }}164px{{ end }}">
+      <p class="image">
+        <a href="{{ .urlentity.expandedurl }}"><img height="{{ .sizes.medium.height }}" src="{{ $media.mediaurlhttps }}" width="{{ .sizes.medium.width }}"></a>
       </p>
     </figure>
   {{ end }}

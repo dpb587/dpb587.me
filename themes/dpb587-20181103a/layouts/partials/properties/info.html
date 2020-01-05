@@ -18,8 +18,8 @@
   */}}
 
   {{ if eq .Type "tweet" }}
-    {{ with .Params.place }}
-      {{ partial "properties/info/location" .full_name }}
+    {{ with .Params.api_1_1.place }}
+      {{ partial "properties/info/location" .fullname }}
     {{ end }}
   {{ end }}
 
