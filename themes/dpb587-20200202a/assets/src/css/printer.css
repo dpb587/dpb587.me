@@ -1,0 +1,7 @@
+#sidebar, #primary-footer, #aside, #primary-content header {
+  display: none;
+}
+
+#primary {
+  width: 100% !important;
+}

@@ -1,8 +1,9 @@
 ---
-title: London & Iceland 2014
+title: London & Iceland Trip
 date: '2014-03-15'
 date_start: '2014-03-04'
 highlight_photo: 'df5150c-a-classic-view'
+description: Some work, some touring, and an Icelandic detour.
 aliases:
 - /galleries/2014-london-iceland-trip/
 - /gallery/2014-london-iceland-trip/

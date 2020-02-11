@@ -1,0 +1,34 @@
+{{ $heroThumbnail := .Params.hero_thumbnail }}
+{{ if and ( not $heroThumbnail ) ( eq .Type "photo" ) }}
+  {{ $photoPage := . }}
+
+  {{ if and ( eq .Kind "section" ) $photoPage.Params.highlight_photo }}
+    {{ $photoPage = .GetPage ( printf "photo/%s/%s.md" ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.Params.highlight_photo ) }}
+  {{ end }}
+
+  {{ if $photoPage.Params.sizes }}
+    {{ $size := "200x200" }}
+    {{ $heroThumbnail = printf "%s%s/%s~%s.jpg" .Site.Params.assetUrl ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.File.BaseFileName $size }}
+  {{ end }}
+{{ end }}
+
+<a class="flex transition duration-200 block border-t border-b border-white hover:border-gray-300" href="{{ .Permalink }}">
+  {{ with $heroThumbnail }}
+    <div class="flex-none p-1 relative">
+      <img class="w-16 h-16 object-cover" src="{{ . }}" />
+    </div>
+  {{ end }}
+  <div class="flex-grow p-3">
+    <div class="text-black font-semibold">{{ .Title }}</div>
+    {{ with .Params.description }}
+      <div class="text-gray-500">
+        {{ . }}
+      </div>
+    {{ end }}
+  </div>
+  {{ with .Date }}
+    <div class="flex-none text-sm text-gray-500 p-3">
+      {{ . | dateFormat "January '06" }}
+    </div>
+  {{ end }}
+</a>

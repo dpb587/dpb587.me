@@ -1,7 +1,7 @@
 ---
-title: Hello.
-description: My name is Danny Berger.
-hero_thumbnail: /images/dpb587-20191216a~256.jpg
+title: Hello. My name is Danny.
+description: Welcome to my digital home.
+hero_img: https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/2014-colorado-aspens/2dbeedb-aspens-invading~1280.jpg
 ---
 
 Technology intrigues me. Pretty much any sort, but I enjoy web-oriented tech

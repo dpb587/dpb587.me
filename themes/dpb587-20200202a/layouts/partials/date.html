@@ -1,0 +1,26 @@
+{{ if .Params.date_start }}
+  {{ $endYear := dateFormat "2006" .Date }}
+  {{ $endMonth := dateFormat "January" .Date }}
+  {{ $endDay := dateFormat "2" .Date }}
+
+  {{ $startYear := dateFormat "2006" .Params.date_start }}
+  {{ $startMonth := dateFormat "January" .Params.date_start }}
+  {{ $startDay := dateFormat "2" .Params.date_start }}
+
+  {{ if eq $startYear $endYear }}
+    {{ if eq $startMonth $endMonth }}
+      {{ if eq $startDay $endDay }}
+        {{ $startMonth }} {{ $startDay }}, {{ $startYear }}
+      {{ else }}
+        {{ $startMonth }} {{ $startDay }} &ndash; {{ $endDay }}, {{ $startYear }}
+      {{ end }}
+    {{ else }}
+      {{ $startMonth }} {{ $startDay }} &ndash; {{ $endMonth }} {{ $endDay }}, {{ $endYear }}
+    {{ end }}
+  {{ else }}
+    {{ $startMonth }} {{ $startDay }}, {{ $startYear }} &ndash;
+    {{ $endMonth }} {{ $endDay }}, {{ $endYear }}
+  {{ end }}
+{{ else }}
+  {{ dateFormat "January 2, 2006" .Date }}
+{{ end }}

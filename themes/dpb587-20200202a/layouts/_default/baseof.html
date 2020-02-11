@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ block "title" . }}{{ .Title | default "Untitled" }}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
+
+    {{ $css := resources.Get "dist/css/theme.css" }}
+    {{ $css := slice $css | resources.Concat "dist/css/chroma.css" }}
+    {{ $css := $css | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {{ block "stylesheet" . }}{{ end }}
+
+    {{ partial "analytics" . }}
+
+    {{ block "prefetch" . }}{{ end }}
+  </head>
+
+  <body class="text-gray-800">
+    <div class="md:flex md:h-screen">
+      <div id="sidebar" class="w-full md:w-1/5 border-b border-gray md:border-b-0 md:border-r">
+        <div class="flex flex-wrap">
+          <div class="w-1/6 md:w-full">
+            <a href="{{ .Site.BaseURL }}"><img class="transition-filter duration-200 object-cover h-12 md:h-32 w-full filter-grayscale hover:filter-none" src="/images/nav-header-dome-20191214a.jpg"></a>
+          </div>
+          <div class="w-4/6 md:w-full p-2 pl-3 md:p-6">
+            <div class="text-xl md:text-2xl">Danny Berger</div>
+            <div class="hidden md:block text-gray-500 text-sm">Oakland, California</div>
+          </div>
+          <div class="w-1/6 md:hidden text-right">
+            <a id="sidebar-menu-toggle" class="inline-block py-3 px-5" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+          </div>
+          <div id="sidebar-menu" class="hidden w-full md:block px-3 py-3 md:py-0 border-l-8 border-r-8 border-gray-400 md:border-l-0 md:border-r-0">
+            <ul class="text-gray-600">
+              {{ $currentPage := . }}
+              {{ range .Site.Menus.main }}
+                <li class="md:block transition duration-200 border-l-4 {{ if or ($currentPage.IsMenuCurrent "main" . ) ( $currentPage.HasMenuCurrent "main" . ) ( and ( not ( eq .URL "/" )  ) ( hasPrefix $currentPage.RelPermalink .URL ) ) }}border-gray-700 text-gray-700{{ else }}border-white hover:border-black hover:text-black{{ end }}"><a class="block pl-3 py-1" href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ end }}
+              <li><hr class="m-3"></li>
+              {{ range .Site.Menus.social }}
+                <li class="md:block transition duration-200 border-l-4 border-white hover:border-black hover:text-black"><a class="block pl-3 py-1" href="{{ .URL }}" target="_blank">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="primary" class="w-full md:w-4/5 xl:w-3/5 overflow-y-auto">
+        <div id="primary-content">
+          {{ block "main" . }}{{ end }}
+        </div>
+
+        <div id="primary-footer" class="mt-4 p-3 md:p-4 text-sm text-gray-500 border-t border-gray-300 hover:text-gray-700 transition duration-200">
+          <p>Thanks for visiting! This is a personal site – it reflects my own opinions and not those of my employers, past or present.</p>
+          <p>This site is <a href="https://github.com/dpb587/dpb587.me">open-source</a>. Unless noted, software code is licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT License</a> and all other content under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>.</p>
+        </div>
+      </div>
+      <div id="aside" class="xl:w-1/5 bg-gray-200 border-l border-grey"></div>
+    </div>
+  </body>
+  <script>
+    (function () {
+      var toggle = document.getElementById('sidebar-menu-toggle');
+      var menu = document.getElementById('sidebar-menu');
+
+      toggle.addEventListener(
+        'click',
+        function () {
+          menu.classList.toggle('hidden');
+        }
+      );
+    })();
+  </script>
+</html>

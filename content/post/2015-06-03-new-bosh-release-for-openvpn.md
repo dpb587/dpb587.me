@@ -8,6 +8,8 @@ tags:
 - openvpn
 aliases:
 - /blog/2015/06/03/new-bosh-release-for-openvpn.html
+projects:
+- openvpn-bosh-release
 ---
 
 I'm a big fan of [OpenVPN][1] - both for personal and professional VPNs. Seeing as how I've been deploying more things with [BOSH][2] lately, an OpenVPN release seemed like a good little project. I started one about nine months ago and have been using development releases ever since, but last week I went ahead and created a ["final" release][6] of it.

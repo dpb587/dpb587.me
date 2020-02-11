@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <blockquote class="twitter-tweet" data-dnt="true" data-theme="light">
+    <p lang="pt" dir="ltr">{{ .Content }}</p>
+    &mdash; {{ .Params.api_1_1.user.name }} (@{{ .Params.api_1_1.user.screenname }})
+    <a href="https://twitter.com/{{ .Params.api_1_1.user.screenname }}/status/{{ .Params.api_1_1.idstr }}?ref_src=twsrc%5Etfw">{{ .Date | dateFormat "January 2, 2006" }}</a>
+  </blockquote>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{ end }}

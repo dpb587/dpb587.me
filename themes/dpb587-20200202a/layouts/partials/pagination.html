@@ -1,0 +1,25 @@
+{{ if gt .Paginator.TotalPages 1 }}
+  <div class="text-center">
+    <div class="inline-flex">
+      {{ if .Paginator.HasPrev }}
+        <a class="bg-white hover:bg-gray-300 text-gray-800 border border-r-0 border-gray-400 font-semibold py-2 px-4 rounded-l" href="{{ .Paginator.Prev.URL }}">
+      {{ else }}
+        <a class="bg-gray-100 text-gray-500 border border-r-0 border-gray-400 font-semibold py-2 px-4 rounded-l">
+      {{ end }}
+        <i class="fa fa-chevron-left mr-2" aria-hidden="true"></i>
+        Previous
+      </a>
+      <div class="text-gray-700 bg-gray-100 py-2 px-4 border border-gray-400 border-gray-400">
+        Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+      </div>
+      {{ if .Paginator.HasNext }}
+        <a class="bg-white hover:bg-gray-300 text-gray-800 border border-l-0 border-gray-400 font-semibold py-2 px-4 rounded-r" href="{{ .Paginator.Next.URL }}">
+      {{ else }}
+        <a class="bg-gray-100 text-gray-500 border border-l-0 border-gray-400 font-semibold py-2 px-4 rounded-r">
+      {{ end }}
+        Next Page
+        <i class="fa fa-chevron-right ml-2" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+{{ end }}

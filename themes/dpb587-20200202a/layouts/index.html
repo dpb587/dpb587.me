@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <div>
+    {{ $heroImg := default "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/2014-colorado-aspens/9e9e818-valley-of-aspens~1280.jpg" .Params.hero_img }}
+    <img class="object-cover h-32 w-full" src="{{ .Params.hero_img }}">
+  </div>
+  <div class="p-6">
+    <div>
+      <div class="text-3xl">{{ .Title }}</div>
+      {{ with .Params.description }}
+        <div class="text-gray-600">
+          {{ . }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ with .Content }}
+    <div class="p-6 border-t border-gray-200">
+      <div class="prose">
+        {{ . }}
+      </div>
+    </div>
+  {{ end }}
+
+  <section>
+    <div class="px-6 py-3 border-b border-gray-200">
+      <div class="text-2xl">Latest Content</div>
+    </div>
+
+    <div>
+      {{ range first 10 ( union ( union ( where ( where .Site.Pages "Type" "eq" "post" ) "Kind" "eq" "page" ) ( where ( where .Site.Pages "Type" "eq" "tweet" ) "Kind" "eq" "page" ) ) ( where ( where .Site.Pages "Type" "eq" "photo" ) "Kind" "eq" "section" ) ).ByDate.Reverse }}
+        {{ .Render "result-item" }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,96 @@
+{{ define "main" }}
+  {{ if .Sections }}
+    <div>
+      {{ $heroImg := default "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/2014-colorado-aspens/9e9e818-valley-of-aspens~1280.jpg" .Params.hero_img }}
+      <img class="object-cover h-32 w-full" src="{{ .Params.hero_img }}">
+      </div>
+    <div class="p-6 border-b border-gray-200">
+      <div class="text-3xl">{{ .Title }}</div>
+      {{ with .Params.description }}
+        <div class="text-gray-600">
+          {{ . }}
+        </div>
+      {{ end }}
+    </div>
+    {{ with .Content }}
+      <div class="p-6">
+        <div class="prose">
+          {{ . }}
+        </div>
+      </div>
+    {{ end }}
+
+    <div>
+      {{ $paginator := .Paginate .Sections }}
+      {{ range $paginator.Pages }}
+        {{ .Render "result-item" }}
+      {{ end }}
+      {{ partial "pagination" . }}
+    </div>
+  {{ else }}
+    {{ $heroThumbnail := .Params.hero_thumbnail }}
+    {{ if and ( not $heroThumbnail ) ( eq .Type "photo" ) }}
+      {{ $photoPage := . }}
+
+      {{ if and ( eq .Kind "section" ) $photoPage.Params.highlight_photo }}
+        {{ $photoPage = .GetPage ( printf "photo/%s/%s.md" ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.Params.highlight_photo ) }}
+      {{ end }}
+
+      {{ if $photoPage.Params.sizes }}
+        {{ $size := "1280" }}
+        {{ $heroThumbnail = printf "%s%s/%s~%s.jpg" .Site.Params.assetUrl ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.File.BaseFileName $size }}
+      {{ end }}
+    {{ end }}
+
+    {{ with $heroThumbnail }}
+      <div>
+        <img class="object-cover h-32 w-full" src="{{ . }}">
+      </div>
+    {{ end }}
+
+    <div class="p-6 border-b border-gray-200">
+      <div class="text-3xl">{{ .Title }}</div>
+      <div class="text-gray-600">
+        <span class="pr-2">
+          <i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i>
+          {{ partial "date" . }}
+        </span>
+        {{ with .Params.tags }}
+          <span class="pr-2">
+            <i class="fa fa-tag fa-fw" aria-hidden="true"></i>
+            {{ range . }}
+              <a class="hover:text-blue-600" href="#">{{ . }}</a>
+            {{ end }}
+          </span>
+        {{ end }}
+      </div>
+    </div>
+    {{ with .Content }}
+      <div class="p-6">
+        <div class="prose">
+          {{ . }}
+        </div>
+      </div>
+    {{ end }}
+
+    <div>
+      <div class="flex flex-wrap justify-around p-1 pt-0">
+        {{ $paginator := .Paginate .RegularPages.Reverse }}
+        {{ range $paginator.Pages }}
+          {{ $size := "200" }}
+          {{ if ( index .Params.sizes "420x420" ) }}
+            {{ $size = "420" }}
+          {{ end }}
+          <div class="w-1/3 md:w-1/5 p-1">
+            <a href="{{ .URL }}">
+              <img height="200" src="{{ .Site.Params.assetUrl }}{{ index ( split .Dir "/" ) 1 }}/{{ .File.BaseFileName }}~{{ $size }}x{{ $size }}.jpg" alt="{{ .Title }}" width="200">
+            </a>
+          </div>
+        {{ end }}
+      </div>
+      <div class="mb-2">
+        {{ partial "pagination" . }}
+      </div>
+    </div>
+  {{ end }}
+{{ end }}

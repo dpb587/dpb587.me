@@ -2,6 +2,8 @@
 date: 2018-12-23
 title: New Concourse Resource for BOSH Releases
 description: Automating tarball creation and publishing of new versions.
+projects:
+- bosh-release-resource
 tags:
 - automation
 - bosh

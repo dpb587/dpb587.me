@@ -2,12 +2,12 @@ languageCode = "en-us"
 title = "Danny Berger"
 copyright = "Unless noted, software code is licensed under MIT License and all other content under CC-BY."
 googleAnalytics = "UA-37464314-1"
-theme = "dpb587-20181103a"
+theme = "dpb587-20200202a"
 enableRobotsTXT = true
 enableGitInfo = true
 pygmentsCodefences = true
-pygmentsStyle = "native"
-paginate = "64"
+pygmentsUseClasses = "true"
+paginate = "30"
 
 [author]
   name = "Danny Berger"
@@ -23,29 +23,54 @@ paginate = "64"
   tweet = "/tweet/:filename/"
 
 [[menu.main]]
-  name = "about"
-  url = "/about/"
-  weight = -110
+  name = "hello"
+  url = "/"
+  weight = 1
 
 [[menu.main]]
-  name = "posts"
+  name = "thoughts"
   url = "/post/"
-  weight = -130
+  weight = 2
 
 [[menu.main]]
-  name = "photos"
+  name = "sights"
   url = "/photo/"
-  weight = -120
+  weight = 3
+
+[[menu.main]]
+  name = "works"
+  url = "/project/"
+  weight = 4
+
+[[menu.main]]
+  name = "talks"
+  url = "/prezo/"
+  weight = 5
+
+[[menu.main]]
+  name = "résumé"
+  url = "/about/"
+  weight = 6
+
+[[menu.social]]
+  name = "GitHub"
+  url = "https://github.com/dpb587"
+  weight = 1
+  colorClass = "black"
+
+[[menu.social]]
+  name = "Twitter"
+  url = "https://twitter.com/dpb587"
+  weight = 2
+  colorClass = "blue-400"
+
+[[menu.social]]
+  name = "LinkedIn"
+  url = "https://www.linkedin.com/in/dpb587/"
+  weight = 3
+  colorClass = "blue-700"
 
 [params]
   description = ""
   assetUrl = "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/"
-  github = "dpb587"
-  twitter = "dpb587"
   enableComments = false
-
-  [params.logo]
-  url = "dpb587.png"
-  width = 50
-  height = 50
-  alt = "dpb587"

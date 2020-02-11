@@ -1,0 +1,30 @@
+{{ define "main"}}
+  <div>
+    {{ $heroImg := default "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/2014-colorado-aspens/9e9e818-valley-of-aspens~1280.jpg" .Params.hero_img }}
+    <img class="object-cover h-32 w-full" src="{{ $heroImg }}">
+  </div>
+  <div class="p-3 md:p-6 border-b border-gray-200">
+    <div class="text-3xl">{{ .Title }}</div>
+    <div class="text-gray-600">
+      <span class="pr-3">
+        <i class="fa fa-calendar-o fa-fw" aria-hidden="true"></i>
+        {{ dateFormat "January 2, 2006" .Date }}
+      </span>
+      {{ with .Params.tags }}
+        <span class="pr-3">
+          <i class="fa fa-tag fa-fw" aria-hidden="true"></i>
+          {{ range . }}
+            <a class="hover:text-blue-600" href="#">{{ . }}</a>
+          {{ end }}
+        </span>
+      {{ end }}
+    </div>
+  </div>
+  {{ with .Content }}
+    <div class="p-3 md:p-6">
+      <div class="prose">
+        {{ . }}
+      </div>
+    </div>
+  {{ end }}
+{{ end }}

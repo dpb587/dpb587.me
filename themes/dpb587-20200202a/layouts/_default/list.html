@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <div>
+    {{ $heroImg := default "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/2014-colorado-aspens/9e9e818-valley-of-aspens~1280.jpg" .Params.hero_img }}
+    <img class="object-cover h-32 w-full" src="{{ .Params.hero_img }}">
+  </div>
+  <div class="p-6 border-b border-gray-200">
+    <div class="text-3xl">{{ .Title }}</div>
+    <div class="text-gray-600">
+      {{ .Params.description }}
+    </div>
+  </div>
+  {{ with .Content }}
+    <div class="p-6">
+      <div class="prose">
+        {{ . }}
+      </div>
+    </div>
+  {{ end }}
+
+  <div>
+    {{ range .Pages }}
+    {{ .Render "result-item" }}
+    {{ end }}
+  </div>
+  {{ partial "pagination" . }}
+{{ end }}
