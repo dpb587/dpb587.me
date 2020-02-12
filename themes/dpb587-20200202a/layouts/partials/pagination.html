@@ -1,25 +1,25 @@
 {{ if gt .Paginator.TotalPages 1 }}
-  <div class="text-center">
-    <div class="inline-flex">
-      {{ if .Paginator.HasPrev }}
-        <a class="bg-white hover:bg-gray-300 text-gray-800 border border-r-0 border-gray-400 font-semibold py-2 px-4 rounded-l" href="{{ .Paginator.Prev.URL }}">
-      {{ else }}
-        <a class="bg-gray-100 text-gray-500 border border-r-0 border-gray-400 font-semibold py-2 px-4 rounded-l">
+  <div class="flex border-b border-t border-gray-300 text-gray-600">
+    <div class="w-1/3">
+      {{ with .Paginator.Prev }}
+        <a class="block p-4 transition duration-200 hover:bg-gray-100 hover:text-black" href="{{ .URL }}">
+          <i class="fa fa-angle-double-left mr-1" aria-hidden="true"></i>
+          Previous
+        </a>
       {{ end }}
-        <i class="fa fa-chevron-left mr-2" aria-hidden="true"></i>
-        Previous
-      </a>
-      <div class="text-gray-700 bg-gray-100 py-2 px-4 border border-gray-400 border-gray-400">
+    </div>
+    <div class="w-1/3">
+      <div class="p-4 text-center">
         Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
       </div>
-      {{ if .Paginator.HasNext }}
-        <a class="bg-white hover:bg-gray-300 text-gray-800 border border-l-0 border-gray-400 font-semibold py-2 px-4 rounded-r" href="{{ .Paginator.Next.URL }}">
-      {{ else }}
-        <a class="bg-gray-100 text-gray-500 border border-l-0 border-gray-400 font-semibold py-2 px-4 rounded-r">
+    </div>
+    <div class="w-1/3">
+      {{ with .Paginator.Next }}
+        <a class="block p-4 transition duration-200 hover:bg-gray-100 hover:text-black text-right" href="{{ .URL }}">
+          Next Page
+          <i class="fa fa-angle-double-right ml-1" aria-hidden="true"></i>
+        </a>
       {{ end }}
-        Next Page
-        <i class="fa fa-chevron-right ml-2" aria-hidden="true"></i>
-      </a>
     </div>
   </div>
 {{ end }}

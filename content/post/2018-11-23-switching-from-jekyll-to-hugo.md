@@ -2,6 +2,8 @@
 date: 2018-11-23
 title: Switching from Jekyll to Hugo
 description: Fewer dependencies, better information architecture, something new.
+projects:
+- website
 tags:
 - blog
 - docker

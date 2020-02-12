@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ block "title" . }}{{ .Title | default "Untitled" }}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
 
-    {{ $css := resources.Get "dist/css/theme.css" }}
-    {{ $css := slice $css | resources.Concat "dist/css/chroma.css" }}
-    {{ $css := $css | resources.Minify | resources.Fingerprint }}
+    {{ $css := resources.Get "dist/css/theme.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+
+    {{ $css := resources.Get "src/css/chroma.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,14 +25,14 @@
       <div id="sidebar" class="w-full md:w-1/5 border-b border-gray md:border-b-0 md:border-r">
         <div class="flex flex-wrap">
           <div class="w-1/6 md:w-full">
-            <a href="{{ .Site.BaseURL }}"><img class="transition-filter duration-200 object-cover h-12 md:h-32 w-full filter-grayscale hover:filter-none" src="/images/nav-header-dome-20191214a.jpg"></a>
+            <a href="{{ .Site.BaseURL }}"><img class="transition-filter duration-200 object-cover h-8 md:h-32 w-full filter-grayscale hover:filter-none" src="/images/nav-header-dome-20191214a.jpg"></a>
           </div>
-          <div class="w-4/6 md:w-full p-2 pl-3 md:p-6">
-            <div class="text-xl md:text-2xl">Danny Berger</div>
+          <div class="w-4/6 md:w-full p-1 pl-2 md:p-6">
+            <div class="text-l md:text-2xl">Danny Berger</div>
             <div class="hidden md:block text-gray-500 text-sm">Oakland, California</div>
           </div>
           <div class="w-1/6 md:hidden text-right">
-            <a id="sidebar-menu-toggle" class="inline-block py-3 px-5" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            <a id="sidebar-menu-toggle" class="inline-block py-1 px-3" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
           </div>
           <div id="sidebar-menu" class="hidden w-full md:block px-3 py-3 md:py-0 border-l-8 border-r-8 border-gray-400 md:border-l-0 md:border-r-0">
             <ul class="text-gray-600">
@@ -52,9 +53,9 @@
           {{ block "main" . }}{{ end }}
         </div>
 
-        <div id="primary-footer" class="mt-4 p-3 md:p-4 text-sm text-gray-500 border-t border-gray-300 hover:text-gray-700 transition duration-200">
-          <p>Thanks for visiting! This is a personal site – it reflects my own opinions and not those of my employers, past or present.</p>
-          <p>This site is <a href="https://github.com/dpb587/dpb587.me">open-source</a>. Unless noted, software code is licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT License</a> and all other content under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>.</p>
+        <div id="primary-footer" class="mt-4 p-3 md:p-4 text-sm text-gray-500 hover:text-gray-700 transition duration-200 text-center">
+          &copy; 2020 (<a href="https://github.com/dpb587/dpb587.me/blob/master/LICENSE">details</a>) &ndash;
+          a personal, <a href="https://github.com/dpb587/dpb587.me">open-source</a> site
         </div>
       </div>
       <div id="aside" class="xl:w-1/5 bg-gray-200 border-l border-grey"></div>
