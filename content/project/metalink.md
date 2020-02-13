@@ -5,5 +5,3 @@ github: dpb587/metalink
 tags:
 - metalink
 ---
-
-This is a summary content

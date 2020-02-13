@@ -6,5 +6,3 @@ tags:
 - hugo
 - website
 ---
-
-This is a summary content
