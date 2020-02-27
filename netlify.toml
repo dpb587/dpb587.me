@@ -4,19 +4,16 @@ command = "hugo"
 
 [context.production.environment]
 HUGO_VERSION = "0.62.1"
-HUGO_ENABLEGITINFO = "true"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
-command = "hugo --buildFuture -b $DEPLOY_PRIME_URL"
+command = "hugo --buildFuture -b $DEPLOY_PRIME_URL --enableGitInfo"
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.62.1"
-HUGO_ENABLEGITINFO = "true"
 
 [context.branch-deploy]
-command = "hugo -b $DEPLOY_PRIME_URL"
+command = "hugo -b $DEPLOY_PRIME_URL --ignoreCache --enableGitInfo"
 
 [context.branch-deploy.environment]
 HUGO_VERSION = "0.62.1"
-HUGO_ENABLEGITINFO = "true"
