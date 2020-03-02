@@ -2,7 +2,6 @@
 date: 2013-03-23
 title: Bank Card Readers for Web Applications
 description: Scanning credit cards into website forms.
-code: https://gist.github.com/dpb587/5229239
 tags:
 - bank card
 - forms
@@ -43,5 +42,5 @@ connected then the form field is simply a regular field for keyboard input.
 
  [1]: http://en.wikipedia.org/wiki/Point_of_sale
  [2]: http://www.theloopyewe.com/
- [3]: https://gist.github.com/dpb587/5229239#file-cardparser-js
+ [3]: {{< appendix-ref "2013-03-23-bank-card-readers-for-web-applications/cardparser.js" >}}
  [4]: http://en.wikipedia.org/wiki/Magnetic_stripe_card

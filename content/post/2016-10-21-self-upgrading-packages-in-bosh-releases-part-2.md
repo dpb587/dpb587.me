@@ -115,7 +115,7 @@ By automating package upgrades, it is easier to stay up to date with security pa
  [9]: https://github.com/dpb587/openvpn-bosh-release/blob/f6a46f923c364ca4bfbdd3da9de00d7fc5c155b6/ci/pipelines/shared.jq#L25-L51
  [10]: https://github.com/dpb587/openvpn-bosh-release/blob/f6a46f923c364ca4bfbdd3da9de00d7fc5c155b6/ci/tasks/send-release-blob-pr/run.sh#L29-L53
  [11]: https://github.com/
- [12]: https://gist.github.com/dpb587/e2d955f00378c1b78ea2
+ [12]: {{< appendix-ref "2015-08-03-self-upgrading-packages-in-bosh-releases/" >}}
  [13]: https://github.com/dpb587/openvpn-bosh-release/blob/f6a46f923c364ca4bfbdd3da9de00d7fc5c155b6/src/blobs/openssl/check
  [14]: https://github.com/dpb587/openvpn-bosh-release/blob/f6a46f923c364ca4bfbdd3da9de00d7fc5c155b6/src/blobs/openssl/get
  [15]: https://github.com/dpb587/openvpn-bosh-release/blob/f6a46f923c364ca4bfbdd3da9de00d7fc5c155b6/ci/images/release-blob/assets/in

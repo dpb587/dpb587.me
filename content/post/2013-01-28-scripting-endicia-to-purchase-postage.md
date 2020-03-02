@@ -2,7 +2,6 @@
 date: 2013-01-28
 title: Scripting Endicia to Purchase Postage
 description: Automating user interactions with AppleScript.
-code: https://gist.github.com/dpb587/4660132
 tags:
 - applescript
 - endicia
@@ -41,4 +40,4 @@ valuable timesaver for us.
  [1]: http://www.dymoendicia.com/segments/all-products/endicia-for-mac
  [2]: https://developer.apple.com/library/mac/#documentation/applescript/conceptual/applescriptx/Concepts/as_related_apps.html#//apple_ref/doc/uid/TP40001570-1149074-BAJEIHJA
  [3]: http://www.dymoendicia.com/
- [4]: https://gist.github.com/dpb587/4660132#file-endicia-purchase-postage-applescript
+ [4]: {{< appendix-ref "2013-01-28-scripting-endicia-to-purchase-postage/endicia-purchase-postage.applescript" >}}

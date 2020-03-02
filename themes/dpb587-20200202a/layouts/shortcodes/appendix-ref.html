@@ -1,0 +1,6 @@
+{{- $type := "blob" -}}
+{{- $file := .Get 0 -}}
+{{- if strings.HasSuffix $file "/" }}{{ $type = "tree" }}{{ $file = strings.TrimSuffix "/" $file }}{{ end }}
+{{- $fileAbs := path.Join "appendix" $file -}}
+{{- if not ( fileExists $fileAbs ) }}{{ errorf "appendix-ref: file not found: %s" $fileAbs }}{{ end -}}
+{{ $.Site.Params.github_repo }}/{{ $type }}/master/{{ $fileAbs }}

@@ -733,7 +733,6 @@ than other tools I've tried in the areas which are most important to me.
  [11]: http://console.aws.amazon.com/
  [12]: http://stedolan.github.io/jq/
  [13]: https://code.google.com/p/tunnelblick/
- [14]: https://gist.githubusercontent.com/dpb587/c0427635b3316584e12e/raw/183ccda6c504fac02754b79b5a5b267848a70025/transfer-ami.sh
  [15]: http://bosh_artifacts.cfapps.io/
  [16]: https://github.com/cloudfoundry/bosh/tree/master/bosh_cli_plugin_micro
  [18]: https://github.com/dpb587/cloque/blob/master/share/example-multi/network.yml

@@ -137,9 +137,9 @@ If you're interested in experimenting with the scripts from this post, you can f
  [2]: https://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified
  [3]: https://wiki.debian.org/Apt
  [4]: https://openvpn.net/
- [5]: https://gist.github.com/dpb587/e2d955f00378c1b78ea2#file-bin-deps-upgrade-auto-sh
+ [5]: {{< appendix-ref "2015-08-03-self-upgrading-packages-in-bosh-releases/bin/deps-upgrade-auto.sh" >}}
  [6]: http://php.net/
- [7]: https://gist.github.com/dpb587/e2d955f00378c1b78ea2
+ [7]: {{< appendix-ref "2015-08-03-self-upgrading-packages-in-bosh-releases/" >}}
  [8]: http://concourse.ci/
  [9]: https://github.com/dpb587/openvpn-boshrelease
  [10]: https://github.com/dpb587/openvpn-boshrelease/commit/26f115dfd5d80444fee543e17edf198e7d15b485

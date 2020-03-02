@@ -128,7 +128,7 @@ When configurations depend on local, arbitrary files, `render-command` should as
     jq_args="$jq_args --argfile config_auth $manifest_dir/config/auth.json"
     jq_args="$jq_args --arg config_ca_crt \"$( cat $manifest_dir/config/ca.crt )\""
 
-An example implementation of this script is gisted [here](https://gist.github.com/dpb587/6890ccbed6f2c8d468c035fb412c8700).
+An example implementation of this script is gisted [here]({{< appendix-ref "2016-04-26-composing-configurations-with-jq/render.sh" >}}).
 
 
 ## Pipelining

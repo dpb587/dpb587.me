@@ -2,7 +2,6 @@
 date: 2013-01-14
 title: Terminating Gearman Workers in PHP
 description: Locally and remotely stopping workers without interrupting jobs.
-code: https://gist.github.com/dpb587/4531728
 tags:
 - deploy
 - gearman
@@ -149,9 +148,9 @@ complex possibilities could be self-performing updates, lighter config reloads (
 dynamically registering/unregistering functions depending on application load.
 
 
- [gist]: https://gist.github.com/dpb587/4531728
- [gist-terminate.php]: https://gist.github.com/dpb587/4531728#file-terminate-php
- [gist-worker.php]: https://gist.github.com/dpb587/4531728#file-worker-php
+ [gist]: {{< appendix-ref "2013-01-14-terminating-gearman-workers-in-php/" >}}
+ [gist-terminate.php]: {{< appendix-ref "2013-01-14-terminating-gearman-workers-in-php/terminate.php" >}}
+ [gist-worker.php]: {{< appendix-ref "2013-01-14-terminating-gearman-workers-in-php/worker.php" >}}
 
  [1]: http://gearman.org/
  [2]: http://php.net/manual/en/book.gearman.php
