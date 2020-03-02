@@ -11918,6 +11918,10 @@ video {
   color: #dd6b20;
 }
 
+.prose a code {
+  color: #cd5b10;
+}
+
 .prose a:hover {
   text-decoration: underline;
 }
@@ -11926,8 +11930,8 @@ video {
   background-color: #f0f0f0;
   color: #000;
   font-size: 0.875rem;
-  padding-left: 0.125rem;
-  padding-right: 0.125rem;
+  padding-left: 0.135rem;
+  padding-right: 0.135rem;
 }
 
 .prose img {
@@ -11993,11 +11997,14 @@ video {
 }
 
 .prose blockquote {
-  font-style: italic;
   border-left-width: 4px;
   border-left-style: solid;
   border-left-color: #e2e8f0;
+  border-right-width: 4px;
+  border-right-style: solid;
+  border-right-color: #e2e8f0;
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .prose * + blockquote {
@@ -12016,16 +12023,32 @@ video {
   padding-right: 1rem;
   padding-bottom: 0.75rem;
   padding-left: 1rem;
+  margin-bottom: 1rem;
   margin-top: 1rem;
   overflow: auto;
 }
 
-.prose * + pre {
+.prose .pre-code-header {
+  background-color: #090909;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  color: #f0f0f0;
+  font-family: monospace;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
   margin-top: 1rem;
+  margin-bottom: -1rem;
 }
 
-.prose pre + * {
-  margin-top: 1rem;
+.prose .pre-code-header a {
+  color: inherit;
+}
+
+.prose .pre-code-header + .highlight pre {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .prose pre code {

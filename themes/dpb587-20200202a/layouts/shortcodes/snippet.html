@@ -1,0 +1,32 @@
+{{ $file := .Params.file }}
+{{ $fileAbs := ( path.Join .Params.dir .Params.file ) }}
+{{ $lang := default "plain" .Params.lang }}
+{{ $content := readFile $fileAbs }}
+
+{{ if .Params.lines }}
+  {{ $contentLines := split $content "\n" }}
+    
+  {{- range $idx, $rangeStr := ( split .Params.lines ";" ) -}}
+    {{- $contentSubset := "" -}}
+
+    {{- $range := split $rangeStr "-" -}}
+    {{- $headerSuffix := printf " [%s]" ( index $range 0 ) -}}
+    {{- $headerLinkSuffix := printf "#L%s" ( index $range 0 ) -}}
+    {{- if eq 1 ( len $range ) -}}
+      {{- $range = $range | append ( index $range 0 ) -}}
+    {{- else -}}
+      {{- $headerSuffix = printf " [%s:%s]" ( index $range 0 ) ( index $range 1 ) -}}
+      {{- $headerLinkSuffix = printf "#L%s-L%s" ( index $range 0 ) ( index $range 1 ) -}}
+    {{- end -}}
+
+    {{- range ( seq ( sub ( int ( index $range 0 ) ) 1 ) ( sub ( int ( index $range 1 ) ) 1 ) ) -}}
+      {{- $contentSubset = printf "%s%s\n" $contentSubset ( index $contentLines . ) -}}
+    {{- end -}}
+
+    <div class="pre-code-header"><a href="{{ $.Site.Params.github_repo }}/blob/master/{{ $fileAbs }}{{ $headerLinkSuffix }}" target="_blank">{{ $file }}</a>{{ $headerSuffix }}</div>
+    {{- highlight $contentSubset $lang "" -}}
+  {{- end -}}
+{{ else }}
+  <div class="pre-code-header"><a href="{{ $.Site.Params.github_repo }}/blob/master/{{ $fileAbs }}" target="_blank">{{ $file }}</a></div>
+  {{ highlight $content $lang "" }}
+{{ end }}
