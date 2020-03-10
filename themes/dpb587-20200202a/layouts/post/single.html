@@ -37,4 +37,7 @@
       {{ end }}
     </div>
   </div>
+  {{ if ne .Params.disqus false }}
+    {{ partial "disqus.html" . }}
+  {{ end }}
 {{ end }}

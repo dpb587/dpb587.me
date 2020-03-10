@@ -1,0 +1,24 @@
+{{ if .Site.DisqusShortname }}
+  <div class="p-3 md:px-5 md:py-3 border-b border-gray-300 md:border-l-4 md:border-r-4">
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        id = {{ .RelPermalink }}.replace('\\"', '"');
+        {{ if gt .Page.Date "2018-11-01" }}
+          id = id.replace(/^\/post\//, '/blog/').replace(/\/$/, '.html');
+        {{ end }}
+
+        this.page.url = "https://dpb587.me" + id;
+        this.page.identifier = id;
+      };
+
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://{{ .Site.DisqusShortname }}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+{{ end }}
