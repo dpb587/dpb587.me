@@ -195,14 +195,13 @@
   border-right-color: #e2e8f0;
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.prose * + blockquote {
+  margin-bottom: 1rem;
   margin-top: 1rem;
 }
 
-.prose blockquote + * {
-  margin-top: 1rem;
+.prose hr {
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .prose pre {

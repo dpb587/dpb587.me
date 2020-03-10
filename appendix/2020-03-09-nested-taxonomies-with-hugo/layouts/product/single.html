@@ -1,0 +1,12 @@
+{{ define "template" }}product/single.html{{ end }}
+
+{{ define "content" }}
+  <dt>Collections</dt>
+  {{- range .Params.collections }}
+    {{- with $.Site.GetPage ( printf "collection/%s" . ) }}
+      <dd>{{ template "taxonomy-hierarchy" . }}</dd>
+    {{- else }}
+      {{ errorf "unable to find collection: %s" . }}
+    {{- end }}
+  {{- end }}
+{{ end }}
