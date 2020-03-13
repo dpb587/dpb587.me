@@ -1,4 +1,25 @@
 {{ define "main" }}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Person",
+      "name": "Danny Berger",
+      "familyName": "Berger",
+      "givenName": "Danny",
+      "sameAs": [
+        {{ .Site.BaseURL }}
+        {{ range .Site.Menus.social }}
+        , {{ .URL }}
+        {{ end }}
+      ],
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Oakland, California, US"
+      },
+      "url": "https://dpb587.me/"
+    }
+  </script>
+
   <div>
     {{ $heroImg := default "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/2014-colorado-aspens/9e9e818-valley-of-aspens~1280.jpg" .Params.hero_img }}
     <img class="object-cover h-32 w-full" src="{{ .Params.hero_img }}">

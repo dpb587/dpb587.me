@@ -1,4 +1,5 @@
 {{ define "main"}}
+  {{ .Render "single-microdata" }}
   <div>
     {{ $heroImg := default "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/2014-colorado-aspens/9e9e818-valley-of-aspens~1280.jpg" .Params.hero_img }}
     <img class="object-cover h-32 w-full" src="{{ $heroImg }}">
