@@ -1,0 +1,10 @@
+{
+  "name": "default",
+  "dockerFile": "Dockerfile",
+  "appPort": [
+    1313
+  ],
+  "extensions": [
+    "ms-azuretools.vscode-docker"
+  ]
+}
