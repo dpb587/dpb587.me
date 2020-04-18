@@ -1,6 +1,7 @@
 {{ $file := .Params.file }}
 {{ $fileAbs := ( path.Join .Params.dir .Params.file ) }}
 {{ $lang := default "plain" .Params.lang }}
+{{ $stripPrefix := default "" .Params.stripprefix }}
 {{ $content := readFile $fileAbs }}
 
 {{ if .Params.lines }}
@@ -20,7 +21,7 @@
     {{- end -}}
 
     {{- range ( seq ( sub ( int ( index $range 0 ) ) 1 ) ( sub ( int ( index $range 1 ) ) 1 ) ) -}}
-      {{- $contentSubset = printf "%s%s\n" $contentSubset ( index $contentLines . ) -}}
+      {{- $contentSubset = printf "%s%s\n" $contentSubset ( strings.TrimPrefix $stripPrefix ( index $contentLines . ) ) -}}
     {{- end -}}
 
     <div class="pre-code-header"><a href="{{ $.Site.Params.github_repo }}/blob/master/{{ $fileAbs }}{{ $headerLinkSuffix }}" target="_blank">{{ $file }}</a>{{ $headerSuffix }}</div>

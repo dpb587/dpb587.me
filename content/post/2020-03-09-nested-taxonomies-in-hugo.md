@@ -27,11 +27,11 @@ The next type is a *product*, and these are regular pages which can include a li
 
 When it comes to rendering collections, I primarily use the `section.html` template. One of the traditional views is to show all the products in the collection. For this, a straightforward [`where` function](https://gohugo.io/functions/where/) with an `intersect` can be used:
 
-{{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="layouts/collection/section.html" lines="11-13" lang="go-html-template" >}}
+{{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="layouts/collection/section.html" lines="11-13" lang="go-html-template" stripprefix="  " >}}
 
 The result for a collection with two products then looks something like:
 
-> {{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="public/collection/sweets/confections/index.html" lines="56-58" lang="html" >}}
+> {{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="public/collection/sweets/confections/index.html" lines="56-58" lang="html" stripprefix="  " >}}
 
 
 ## Listing Nested Pages
@@ -42,11 +42,11 @@ A more complicated view (which I was not able to reproduce with built-in Hugo ta
 
 Then, after executing it, I use it with another `where`/`intersect` lookup (and I could add [`Paginate`](https://gohugo.io/templates/pagination/) for long lists):
 
-{{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="layouts/collection/section.html" lines="18-24" lang="go-html-template" >}}
+{{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="layouts/collection/section.html" lines="18-24" lang="go-html-template" stripprefix="  " >}}
 
 The result for a collection containing two sub-collections with three total products then looks like:
 
-> {{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="public/collection/sweets/index.html" lines="55-58" lang="html" >}}
+> {{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="public/collection/sweets/index.html" lines="55-58" lang="html" stripprefix="  " >}}
 
 
 ## Page Navigation
@@ -57,11 +57,11 @@ For the product pages, a common view is to show breadcrumbs for the taxonomy col
 
 Then, on the individual product pages, I can show a set of breadcrumbs for each collection. I use the [`.GetPage`](https://gohugo.io/functions/getpage/) function to load the collection before passing it to the template function (with [`errorf`](https://gohugo.io/functions/errorf/) helping to avoid frontmatter typos):
 
-{{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="layouts/product/single.html" lines="4-11" lang="go-html-template" >}}
+{{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="layouts/product/single.html" lines="4-11" lang="go-html-template" stripprefix="  " >}}
 
 The result for a product in the *Confections* and *On Sale* collections then looks like:
 
-> {{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="public/product/schoggi-schokolade/index.html" lines="48-50" lang="html" >}}
+> {{< snippet dir="appendix/2020-03-09-nested-taxonomies-with-hugo" file="public/product/schoggi-schokolade/index.html" lines="48-50" lang="html" stripprefix="  " >}}
 
 
 ## Still, a taxonomy
