@@ -20,35 +20,36 @@
     {{ block "prefetch" . }}{{ end }}
   </head>
 
-  <body class="text-gray-800">
-    <div class="md:flex md:h-screen">
-      <div id="sidebar" class="w-full md:w-1/5 border-b border-gray md:border-b-0 md:border-r">
-        <div class="flex flex-wrap">
-          <div class="w-1/6 md:w-full">
-            <a href="{{ .Site.BaseURL }}"><img class="transition-filter duration-200 object-cover h-8 md:h-32 w-full filter-grayscale hover:filter-none" src="/images/nav-header-dome-20191214a.jpg"></a>
-          </div>
-          <div class="w-4/6 md:w-full p-1 pl-2 md:p-6">
-            <div class="text-l md:text-2xl">Danny Berger</div>
-            <div class="hidden md:block text-gray-500 text-sm">Oakland, California</div>
-          </div>
-          <div class="w-1/6 md:hidden text-right">
-            <a id="sidebar-menu-toggle" class="inline-block py-1 px-3" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
-          </div>
-          <div id="sidebar-menu" class="hidden w-full md:block px-3 py-3 md:py-0 border-l-8 border-r-8 border-gray-400 md:border-l-0 md:border-r-0">
-            <ul class="text-gray-600">
-              {{ $currentPage := . }}
-              {{ range .Site.Menus.main }}
-                <li class="md:block transition duration-200 border-l-4 {{ if or ($currentPage.IsMenuCurrent "main" . ) ( $currentPage.HasMenuCurrent "main" . ) ( and ( not ( eq .URL "/" )  ) ( hasPrefix $currentPage.RelPermalink .URL ) ) }}border-gray-700 text-gray-700{{ else }}border-white hover:border-black hover:text-black{{ end }}"><a class="block pl-3 py-1" href="{{ .URL }}">{{ .Name }}</a></li>
-              {{ end }}
-              <li><hr class="m-3"></li>
-              {{ range .Site.Menus.social }}
-                <li class="md:block transition duration-200 border-l-4 border-white hover:border-black hover:text-black"><a class="block pl-3 py-1" href="{{ .URL }}" target="_blank">{{ .Name }}</a></li>
-              {{ end }}
-            </ul>
-          </div>
+  <body class="text-gray-800 bg-gray-200 relative">
+    <div id="sidebar" class="md:fixed md:h-screen md:w-1/5 md:inset-y-0 md:left-0 border-b border-gray md:border-b-0 md:border-r bg-white">
+      <div class="flex flex-wrap">
+        <div class="w-1/6 md:w-full">
+          <a href="{{ .Site.BaseURL }}"><img class="transition-filter duration-200 object-cover h-10 md:h-32 w-full filter-grayscale hover:filter-none" src="/images/nav-header-dome-20191214a.jpg"></a>
+        </div>
+        <div class="w-4/6 md:w-full p-2 pl-3 md:p-6">
+          <div class="text-l md:text-2xl">Danny Berger</div>
+          <div class="hidden md:block text-gray-500 text-sm">Oakland, California</div>
+        </div>
+        <div class="w-1/6 md:hidden text-right">
+          <a id="sidebar-menu-toggle" class="inline-block py-2 px-3" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
         </div>
       </div>
-      <div id="primary" class="w-full md:w-4/5 xl:w-3/5 overflow-y-auto">
+      <div id="sidebar-menu" class="hidden w-full md:block px-3 py-3 md:py-0 border-l-8 border-r-8 border-gray-400 md:border-l-0 md:border-r-0">
+        <ul class="text-gray-600">
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+            <li class="md:block transition duration-200 border-l-4 {{ if or ($currentPage.IsMenuCurrent "main" . ) ( $currentPage.HasMenuCurrent "main" . ) ( and ( not ( eq .URL "/" )  ) ( hasPrefix $currentPage.RelPermalink .URL ) ) }}border-gray-700 text-gray-700{{ else }}border-white hover:border-black hover:text-black{{ end }}"><a class="block pl-3 py-1" href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+          <li><hr class="m-3"></li>
+          {{ range .Site.Menus.social }}
+            <li class="md:block transition duration-200 border-l-4 border-white hover:border-black hover:text-black"><a class="block pl-3 py-1" href="{{ .URL }}" target="_blank">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="hidden md:w-1/5 md:block"></div>
+      <div id="primary" class="bg-white w-full md:w-4/5 xl:w-3/5">
         <div id="primary-content">
           {{ block "main" . }}{{ end }}
         </div>
@@ -59,7 +60,6 @@
           {{ with .File }}(<a href="{{ $.Site.Params.github_repo }}/blob/master/content/{{ .Path }}" target="_blank">source file</a>){{ end }}
         </div>
       </div>
-      <div id="aside" class="xl:w-1/5 bg-gray-200 border-l border-grey"></div>
     </div>
   </body>
   <script>
@@ -69,8 +69,9 @@
 
       toggle.addEventListener(
         'click',
-        function () {
+        function (e) {
           menu.classList.toggle('hidden');
+          e.preventDefault();
         }
       );
     })();
