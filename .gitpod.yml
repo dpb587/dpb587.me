@@ -1,0 +1,6 @@
+# https://gitpod.io/#https://github.com/dpb587/dpb587.me
+tasks:
+- command: ./scripts/hugo-serve
+ports:
+- port: 1313
+  onOpen: notify

@@ -1,3 +1,3 @@
-This is my personal website running at [dpb587.me](https://dpb587.me/). [Hugo](https://gohugo.io/) is used to generate the site.
+Hello. Welcome to my personal website.
 
-Unless noted, software code is licensed under [MIT License](https://github.com/dpb587/dpb587.me/blob/master/LICENSE) and all other content is licensed under [CC-BY](http://opendefinition.org/licenses/cc-by/).
+View this [Hugo](https://gohugo.io/)-generated site on [dpb587.me](https://dpb587.me/) or locally with [`scripts/hugo-serve`](scripts/hugo-serve).
