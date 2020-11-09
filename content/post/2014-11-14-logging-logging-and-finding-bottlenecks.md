@@ -25,7 +25,7 @@ which would demonstrate our real issue.
 
 <!--more-->
 
-![Screenshot: slow queue](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/slow-queue.jpg)
+![Screenshot: slow queue](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/slow-queue.jpg)
 
 ## The Event Lifecycle
 
@@ -98,25 +98,25 @@ After deploying the changes we were able to make some new Kibana dashboards to h
 Since parsers seemed to be the bottleneck, we first wanted to monitor how many messages the jobs were actually parsing
 at a given time...
 
-![Screenshot: parsed messages](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/parsed-messages.jpg)
+![Screenshot: parsed messages](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/parsed-messages.jpg)
 
 During light loads where everything would be processing in real-time, we expected it to fully mirror our other chart
 measuring the rates we were receiving the messages...
 
-![Screenshot: ingested messages](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/ingested-messages.jpg)
+![Screenshot: ingested messages](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/ingested-messages.jpg)
 
 Historically our spikes seemed random, so we started segmenting the average parse times by log types under the theory
 that some particular log was sending confusing messages. Our average time was around 10 ms, but after splitting by type
 we saw one log type was averaging more than one second (per message)...
 
-![Screenshot: parsing duration before](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/parsing-duration-before.jpg)
+![Screenshot: parsing duration before](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/parsing-duration-before.jpg)
 
 Clearly this would cause all of our parsing to slow down whenever that log suddenly saw a lot of activity. Now that we
 could find slow log messages, we were able to use them to track down some extremely non-performant regular expressions
 in one of our `grok` filters. After deploying the updated filters, we started seeing *much* more consistent parsing
 results among all our log types...
 
-![Screenshot: parsing duration after](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/parsing-duration-after.jpg)
+![Screenshot: parsing duration after](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2014-11-14-logging-logging-and-finding-bottlenecks/parsing-duration-after.jpg)
 
 
 ## Conclusion

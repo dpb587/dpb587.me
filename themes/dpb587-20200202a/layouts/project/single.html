@@ -1,6 +1,6 @@
 {{ define "main"}}
   <div>
-    {{ $heroImg := default "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/2014-colorado-aspens/9e9e818-valley-of-aspens~1280.jpg" .Params.hero_img }}
+    {{ $heroImg := default "https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-colorado-aspens/9e9e818-valley-of-aspens~1280.jpg" .Params.hero_img }}
     <img class="object-cover h-32 w-full" src="{{ $heroImg }}">
   </div>
   <div class="p-3 md:p-6 border-b border-gray-200">

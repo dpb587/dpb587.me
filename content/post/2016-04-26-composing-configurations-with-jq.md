@@ -154,7 +154,7 @@ Once a single command can be used to render configurations, it becomes easier to
 
 Once the Concourse task is created, a pipeline could watch for configuration changes and trigger deploys to AWS CloudFormation, BOSH, and/or Concourse. If an upstream service dependency changes, it could also trigger a local update as well.
 
-![Screenshot: Concourse Pipeline](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2016-04-26-composing-configurations-with-jq/pipeline.jpg)
+![Screenshot: Concourse Pipeline](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2016-04-26-composing-configurations-with-jq/pipeline.jpg)
 
 
 ## Conclusion

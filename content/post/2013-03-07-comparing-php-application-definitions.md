@@ -26,7 +26,7 @@ To that end, I made a prototype for a language-intelligent/OOP-diff/structured d
 the programmatic changes in an easily readable report which links definitions back to their file and line number for
 more detailed review...
 
-![symfony/console example](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2013-03-07-comparing-php-application-definitions/console-diff.png)
+![symfony/console example](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2013-03-07-comparing-php-application-definitions/console-diff.png)
 
 
 ## Usage

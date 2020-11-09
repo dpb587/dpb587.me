@@ -73,6 +73,6 @@ paginate = "30"
 
 [params]
   description = ""
-  assetUrl = "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/"
+  assetUrl = "https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/"
   enableComments = false
   github_repo = "https://github.com/dpb587/dpb587.me"

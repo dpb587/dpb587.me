@@ -113,7 +113,7 @@ This will immediately remove the app server (causing consul-template to remove i
 
 One of the nice perks of consul is being able to get a live view of all the services which are shared within a deployment or with other deployments.
 
-![Screenshot: consul-ui](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2016-01-11-experimenting-with-bosh-links-and-consul/consul-ui.png)
+![Screenshot: consul-ui](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2016-01-11-experimenting-with-bosh-links-and-consul/consul-ui.png)
 
 
 ## Conclusion

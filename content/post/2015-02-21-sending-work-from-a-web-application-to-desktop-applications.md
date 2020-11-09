@@ -69,7 +69,7 @@ Today's bot operates a bit differently. Rather than depending on monitored folde
 
 From the server side of things, it maintains a hard-coded mapping of workstations and their available tasks. Whenever multiple workstations can handle a particular task, an extra field is presented to the user so they can pick where it should happen (defaulting to their own).
 
-![Screenshot: Print To selection](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2015-02-21-sending-work-from-a-web-application-to-desktop-applications/print-to-interface.jpg)
+![Screenshot: Print To selection](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2015-02-21-sending-work-from-a-web-application-to-desktop-applications/print-to-interface.jpg)
 
 Whenever the app needs to send a task to a bot, it queues a JSON object where the key is the task name and the its value is the task options. For example, the payload for purchasing new postage looks like:
 

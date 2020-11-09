@@ -46,7 +46,7 @@ Overall, I termed this approach "datapact". It represents a collection of config
 
 As an example, let's say a network environment runs file integrity monitoring. Whenever there is a new base server image available we need to inspect it and eventually send results to our integrity server.
 
-![Screenshot: datapact-pipeline](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2016-10-19-data-processing-with-concourse/datapact-pipeline.png)
+![Screenshot: datapact-pipeline](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2016-10-19-data-processing-with-concourse/datapact-pipeline.png)
 
 
 ### Receiving New Server Images

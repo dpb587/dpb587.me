@@ -23,7 +23,7 @@ attributes and availability. It was neat, but it was not a great user experience
 It took some time to get back to the search by color functionality, but I've finally been able to get back to it and,
 with [elasticsearch][3], significantly improve it.
 
-[![Screenshot: colorized yarn](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-04-24-color-searching-with-elasticsearch/search0.png)](http://www.theloopyewe.com/shop/search/cd/0-100~75-90-50~18-12-12/g/59A9BAC5/)
+[![Screenshot: colorized yarn](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2014-04-24-color-searching-with-elasticsearch/search0.png)](http://www.theloopyewe.com/shop/search/cd/0-100~75-90-50~18-12-12/g/59A9BAC5/)
 
 
 ## Color Quantification
@@ -39,8 +39,8 @@ colors it also keeps track of their ratios making it easy to realize multi-color
 After batch processing inventory to bring colors up to date, I added hooks to ensure new images are processed for colors
 as they're uploaded.
 
-[![Screenshot: colorized yarn](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-04-24-color-searching-with-elasticsearch/colorizer-yarn.png)](https://www.theloopyewe.com/shop/p/78C97118-Gobelin-A-moi-le-coco)
-[![Screenshot: colorized fabric](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-04-24-color-searching-with-elasticsearch/colorizer-fabric.png)](https://www.theloopyewe.com/shop/p/86330BB1-DS23-Seafaring)
+[![Screenshot: colorized yarn](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2014-04-24-color-searching-with-elasticsearch/colorizer-yarn.png)](https://www.theloopyewe.com/shop/p/78C97118-Gobelin-A-moi-le-coco)
+[![Screenshot: colorized fabric](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2014-04-24-color-searching-with-elasticsearch/colorizer-fabric.png)](https://www.theloopyewe.com/shop/p/86330BB1-DS23-Seafaring)
 
 You can see it noticed the significant colors of the yarn and fabric above, along with their approximate ratios. With
 some types of items, it may be possible to infer additional meaning such as the "background color" of fabric.
@@ -192,7 +192,7 @@ between the requested color and the matched color. The [`function_score`][13] qu
 
 The `_score` can then be used in sorting to show the closest color matches first.
 
-[![Screenshot: search screen shot](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2014-04-24-color-searching-with-elasticsearch/search1.png)](http://www.theloopyewe.com/shop/search/cd/80-100~190-100-50~10-5-5/g/59A9BAC5/)
+[![Screenshot: search screen shot](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2014-04-24-color-searching-with-elasticsearch/search1.png)](http://www.theloopyewe.com/shop/search/cd/80-100~190-100-50~10-5-5/g/59A9BAC5/)
 
 Of course, these color searches can be added alongside the other facet searches like product availability, attributes,
 and regular keyword searches.

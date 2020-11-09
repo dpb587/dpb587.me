@@ -17,7 +17,7 @@ Last year I wrote [a post][1] about how the process of updating BOSH release blo
 
 <!--more-->
 
-![Screenshot: blobs-pipeline](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2016-10-21-self-upgrading-packages-in-bosh-releases-part-2/blobs-pipeline.png)
+![Screenshot: blobs-pipeline](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2016-10-21-self-upgrading-packages-in-bosh-releases-part-2/blobs-pipeline.png)
 
 
 ## Existing Scripts as Concourse Resources
@@ -94,7 +94,7 @@ This allows me to immediately test my release changes without introducing them o
 
 Once tests are successful, it is more reasonable for someone to spend time reviewing and merging the new version. To that end, I configured the final blob-upgrade-tester job to push the changes to a blob-specific branch and [send a pull request][10]. The pull request includes a reminder about what exactly needs to happen.
 
-![Screenshot: pull-request](https://dpb587-website-us-east-1.s3.amazonaws.com/asset/blog/2016-10-21-self-upgrading-packages-in-bosh-releases-part-2/pull-request.png)
+![Screenshot: pull-request](https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/blog/2016-10-21-self-upgrading-packages-in-bosh-releases-part-2/pull-request.png)
 
 By making this [pull request][16], the upgrade becomes something I can easily finish, merge, and cleanup from the [GitHub][11] web UI, even without a terminal or laptop.
 
