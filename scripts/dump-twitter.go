@@ -22,7 +22,7 @@ func main() {
 	// Home Timeline
 	tweets, _, err := client.Timelines.UserTimeline(&twitter.UserTimelineParams{
 		ScreenName: "dpb587",
-		Count:      120,
+		Count:      1000,
 	})
 	if err != nil {
 		panic(errors.Wrap(err, "getting tweets"))
@@ -41,6 +41,10 @@ func main() {
 			} else {
 				panic(errors.Wrap(err, "checking tweet.md"))
 			}
+		}
+
+		if tweet.InReplyToStatusID > 0 {
+			continue
 		}
 
 		buf, err := yaml.Marshal(map[string]interface{}{

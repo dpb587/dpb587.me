@@ -34,24 +34,29 @@ paginate = "30"
   weight = 2
 
 [[menu.main]]
-  name = "sights"
-  url = "/photo/"
+  name = "projects"
+  url = "/project/"
   weight = 3
 
 [[menu.main]]
-  name = "works"
-  url = "/project/"
+  name = "photos"
+  url = "/photo/"
   weight = 4
+
+# [[menu.main]]
+#  name = "tweets"
+#  url = "/tweet/"
+#  weight = 5
 
 [[menu.main]]
   name = "talks"
   url = "/prezo/"
-  weight = 5
+  weight = 6
 
 [[menu.main]]
   name = "résumé"
   url = "/about/"
-  weight = 6
+  weight = 7
 
 [[menu.social]]
   name = "GitHub"
