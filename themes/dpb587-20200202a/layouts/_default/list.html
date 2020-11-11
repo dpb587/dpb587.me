@@ -18,8 +18,8 @@
   {{ end }}
 
   <div>
-    {{ range .Pages }}
-    {{ .Render "result-item" }}
+    {{ range .Paginator.Pages }}
+      {{ .Render "result-item" }}
     {{ end }}
   </div>
   {{ partial "pagination" . }}
