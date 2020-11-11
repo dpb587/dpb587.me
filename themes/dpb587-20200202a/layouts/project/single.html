@@ -28,7 +28,7 @@
   {{ end }}
 
   {{ with .Params.github }}
-    {{ $readmeRaw := split ( base64Decode ( getJSON "https://api.github.com/repos/" . "/contents/README.md" ).content ) "\n" }}
+    {{ $readmeRaw := split ( base64Decode ( getJSON ( printf "https://dpb587:%s@api.github.com/repos/%s/contents/README.md" ( getenv "GITHUB_TOKEN" ) . ) ).content ) "\n" }}
     {{ $readme := "" }}
     {{ $stage := "intro" }}
     {{ range $readmeRaw }}
@@ -68,7 +68,7 @@
     {{ end }}
 
     {{ $latest := false }}
-    {{ range getJSON "https://api.github.com/repos/" . "/releases" }}
+    {{ range getJSON ( printf "https://dpb587:%s@api.github.com/repos/%s/releases" ( getenv "GITHUB_TOKEN" ) . ) }}
       {{ if not $latest }}
         {{ $latest = . }}
       {{ else if gt .created_at $latest.created_at }}
