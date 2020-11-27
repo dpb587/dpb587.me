@@ -5,3 +5,12 @@
 #primary {
   width: 100% !important;
 }
+
+.no-print {
+  display: none;
+}
+
+.print-extra-pad {
+  padding-left: 2em;
+  padding-right: 2em;
+}

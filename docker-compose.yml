@@ -1,0 +1,19 @@
+version: "3"
+services:
+  hugo:
+    build:
+      context: service/hugo
+    ports:
+    - "1313:1313"
+    volumes:
+    - type: bind
+      source: .
+      target: /hugo
+    command: serve --bind=0.0.0.0
+  imaginary:
+    image: h2non/imaginary
+    ports:
+    - "8088:8088"
+    environment:
+    - PORT=8088
+    command: -path-prefix /d0c48e72-6c4f-4c24-ba62-7ebefd4a51da -concurrency 25 -http-cache-ttl 31536000 -enable-url-source -allowed-origins http://127.0.0.1:1313,http://localhost:1313,https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/

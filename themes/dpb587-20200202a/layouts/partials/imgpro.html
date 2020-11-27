@@ -1,0 +1,28 @@
+{{- $root := dict -}}
+{{- $src := "" -}}
+{{- $opname := "" -}}
+{{- $opargs := slice -}}
+
+{{- range $k, $v := . -}}
+  {{- if eq $k "." -}}
+    {{- $root = $v -}}
+  {{- else if eq $k "src" -}}
+    {{- $src = $v -}}
+  {{- else if eq $k "op" -}}
+    {{- $opname = $v -}}
+  {{- else -}}
+    {{- $opargs = $opargs | append ( querify $k $v ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $src -}}
+  {{- errorf "img: missing parameter: src" -}}
+{{- end -}}
+
+{{- $opargs = $opargs | append ( querify "url" $src ) -}}
+
+{{- if or ( not $opname ) ( not $root.Site.Params.imgproUrl ) -}}
+  {{- $src -}}
+{{- else -}}
+  {{- ( printf "%s/%s?%s" $root.Site.Params.imgproUrl $opname ( delimit ( sort $opargs ) "&" ) ) | safeHTML -}}
+{{- end -}}

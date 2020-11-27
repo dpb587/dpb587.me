@@ -2,7 +2,7 @@
   <div class="flex-none p-1 relative">
     {{ with index ( default ( slice ) .Params.api_1_1.extendedentities.media ) 0 }}
       <span class="w-16 h-16 pt-5 text-white z-10 text-center absolute opacity-75"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></span>
-      <img class="w-16 h-16 object-cover transition-all duration-200 filter-grayscale hover:filter-none" src="{{ .mediaurlhttps }}" />
+      <img class="w-16 h-16 object-cover transition-all duration-200" src="{{ .mediaurlhttps }}" />
     {{ else }}
       <span class="w-16 h-16 pt-5 text-gray-500 z-10 text-center inline-block"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></span>
     {{ end }}
