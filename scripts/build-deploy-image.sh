@@ -7,6 +7,8 @@ repo_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
 cd "${repo_dir}"
 
+export DOCKER_BUILDKIT=0
+
 docker build \
   --tag dpb587/dpb587.me \
   --build-arg GITHUB_TOKEN="${GITHUB_TOKEN}" \

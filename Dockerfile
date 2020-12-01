@@ -21,7 +21,7 @@ ADD static static
 ADD themes themes
 ADD config.toml config.toml
 RUN hugo
-RUN git rev-parse HEAD > public/internal/commit
+RUN ( hugo version ; git rev-parse HEAD ; date -u +%Y-%m-%dT%H:%M:%SZ ) > public/internal/hugo
 
 # imgrewrite
 

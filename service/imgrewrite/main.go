@@ -24,6 +24,7 @@ import (
 	"github.com/minio/minio-go/v7/pkg/credentials"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 )
 
 func main() {
@@ -35,6 +36,7 @@ func main() {
 func mainErr() error {
 	loggerConfig := zap.NewProductionConfig()
 	loggerConfig.Encoding = "console"
+	loggerConfig.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
 	logger, _ := loggerConfig.Build()
 	defer logger.Sync()
 
@@ -47,7 +49,7 @@ func mainErr() error {
 	publicURL := ""
 
 	imaginaryOpts := []string{
-		"-path-prefix", "d0c48e72-6c4f-4c24-ba62-7ebefd4a51da",
+		"-path-prefix", "/d0c48e72-6c4f-4c24-ba62-7ebefd4a51da",
 		"-concurrency", "25",
 		"-http-cache-ttl", "31536000",
 		"-enable-url-source",
@@ -55,17 +57,34 @@ func mainErr() error {
 	}
 	imaginaryEndpoint := "http://localhost:8088/d0c48e72-6c4f-4c24-ba62-7ebefd4a51da/"
 
+	logger.Debug(fmt.Sprintf("starting imaginary service"))
+
+	os.Unsetenv("PORT")
 	cmd := exec.Command("/usr/local/bin/imaginary", imaginaryOpts...)
-	cmd.Stdout = os.Stdout
+	// cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
+
 	err := cmd.Start()
 	if err != nil {
-		return errors.Wrap(err, "starting imaginary")
+		return errors.Wrap(err, "running imaginary")
 	}
 
 	defer cmd.Process.Kill()
 
-	time.Sleep(5 * time.Second)
+	timeout := time.Now().Add(60 * time.Second)
+
+	for {
+		res, _ := http.DefaultClient.Get(fmt.Sprintf("%shealth", imaginaryEndpoint))
+		if res != nil && res.StatusCode == 200 {
+			break
+		} else if time.Now().After(timeout) {
+			return fmt.Errorf("exceeded timeout waiting for imaginary service")
+		}
+
+		time.Sleep(time.Second)
+	}
+
+	logger.Info(fmt.Sprintf("started imaginary service"))
 
 	client, err := minio.New(bucketEndpoint, &minio.Options{
 		Creds:  credentials.NewStaticV4(bucketAccessKey, bucketSecretKey, ""),
@@ -308,7 +327,7 @@ func (fp *FileProcessor) ProcessFile(path string) error {
 
 	for _, match := range reFileMatcher.FindAllStringSubmatch(originalData, -1) {
 		matchedURL := match[1]
-		unescapedURL := html.UnescapeString(matchedURL)
+		unescapedURL := strings.ReplaceAll(html.UnescapeString(matchedURL), "\\u0026", "&")
 
 		optimizedURL, err := fp.optimizer.Optimize(unescapedURL)
 		if err != nil {
@@ -431,7 +450,7 @@ func (oc *ObjectStorage) Reload() error {
 
 	oc.existing = existing
 
-	oc.logger.Info(fmt.Sprintf("reloaded objects (found: %d)", len(oc.existing)))
+	oc.logger.Info(fmt.Sprintf("reloaded optimizations (found: %d)", len(oc.existing)))
 
 	return nil
 }
