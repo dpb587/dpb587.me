@@ -7,7 +7,7 @@
       {{ $photoPage = .GetPage ( printf "photo/%s/%s.md" ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.Params.highlight_photo ) }}
     {{ end }}
 
-    {{ with $photoPage.Params.image }}
+    {{ with $photoPage.Params.image.url }}
       {{ $heroImg = . }}
     {{ end }}
   {{ end }}
@@ -31,7 +31,7 @@
       "@type": "ImageObject",
       "thumbnail": {
         "@type": "ImageObject",
-        "contentUrl": {{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "smartcrop" "width" "1280" ) }}
+        "contentUrl": {{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "crop" "width" "1280" ) }}
       },
       {{ with .Params.exif }}
         "exifData": [

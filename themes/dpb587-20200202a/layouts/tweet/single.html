@@ -6,7 +6,7 @@
     {{ with index ( default ( slice ) .Params.api_1_1.extendedentities.media ) 0 }}
       {{ $heroImg = .mediaurlhttps }}
     {{ end }}
-    <img class="object-cover h-32 w-full" src="{{ $heroImg }}">
+    <img class="object-cover h-32 w-full" src="{{ partial "imgpro.html" ( dict "." $ "src" $heroImg "op" "crop" "width" "1280" "height" "256" ) }}">
   </div>
 
   <div class="external" style="margin:10px">

@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ with .Params.hero_img }}
     <div>
-      <img class="object-cover h-32 w-full" src="{{ partial "imgpro.html" ( dict "." $ "src" . "op" "smartcrop" "width" "1280" "height" "256" ) }}">
+      <img class="object-cover h-32 w-full" src="{{ partial "imgpro.html" ( dict "." $ "src" . "op" "crop" "width" "1280" "height" "256" ) }}">
     </div>
   {{ end }}
   <div class="p-6 border-b border-gray-200">

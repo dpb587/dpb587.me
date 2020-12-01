@@ -14,7 +14,7 @@
 <a class="flex transition duration-200 block border-t border-b border-white hover:border-gray-300" href="{{ .Permalink }}">
   {{ if $heroImg }}
     <div class="flex-none p-1 relative">
-      <img class="w-16 h-16 object-cover" src="{{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "smartcrop" "width" "200" "height" "200" ) }}" />
+      <img class="w-16 h-16 object-cover" src="{{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "crop" "width" "200" "height" "200" ) }}" />
     </div>
   {{ end }}
   <div class="flex-grow p-3">

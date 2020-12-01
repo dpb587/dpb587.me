@@ -43,7 +43,7 @@
 
     {{ if $heroImg }}
       <div>
-        <img class="object-cover h-32 w-full" src="{{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "smartcrop" "width" "1280" "height" "256" ) }}">
+        <img class="object-cover h-32 w-full" src="{{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "crop" "width" "1280" "height" "256" ) }}">
       </div>
     {{ end }}
 
@@ -78,7 +78,7 @@
         {{ range $paginator.Pages }}
           <div class="w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
             <a href="{{ .URL }}">
-              <img height="200" src="{{ partial "imgpro.html" ( dict "." . "src" .Params.image.url "op" "smartcrop" "width" "200" "height" "200" ) }}" alt="{{ .Title }}" width="200">
+              <img height="200" src="{{ partial "imgpro.html" ( dict "." . "src" .Params.image.url "op" "crop" "width" "200" "height" "200" ) }}" alt="{{ .Title }}" width="200">
             </a>
           </div>
         {{ end }}
