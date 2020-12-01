@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-london-iceland-trip
-date: '2014-03-14 14:38:08'
+aliases:
+- /gallery/2014-london-iceland-trip/7a5ddf9-panorama.html
+date: "2014-03-14 14:38:08"
 exif:
   aperture: f/2.4
   exposure: 1/1550
   make: Apple
-  model: 'iPhone 5'
+  model: iPhone 5
+galleries:
+- 2014-london-iceland-trip
+image:
+  height: 287
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-london-iceland-trip/7a5ddf9-panorama~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 63.543005
@@ -14,22 +20,7 @@ location:
 next: /gallery/2014-london-iceland-trip/e32eb2b-farm
 ordering: 76
 previous: /gallery/2014-london-iceland-trip/6a12881-panorama
-sizes:
-  1280:
-    height: 287
-    width: 1280
-  640w:
-    height: 143
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-  96x96:
-    height: 96
-    width: 96
 title: Panorama
-aliases:
-- /gallery/2014-london-iceland-trip/7a5ddf9-panorama.html
 ---
 
 About the same place, but looking the other direction towards the ocean.

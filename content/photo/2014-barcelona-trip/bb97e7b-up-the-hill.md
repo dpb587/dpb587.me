@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-barcelona-trip
-date: '2014-11-21 15:30:04'
+aliases:
+- /gallery/2014-barcelona-trip/bb97e7b-up-the-hill.html
+date: "2014-11-21 15:30:04"
 exif:
   aperture: f/2.2
   exposure: 1/158
   make: Apple
-  model: 'iPhone 6'
+  model: iPhone 6
+galleries:
+- 2014-barcelona-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-barcelona-trip/bb97e7b-up-the-hill~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 41.41262833
@@ -14,17 +20,5 @@ location:
 next: /gallery/2014-barcelona-trip/fccc428-font-magica-de-montjuic
 ordering: 9
 previous: /gallery/2014-barcelona-trip/43412b6-parc-guell-building
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-title: 'Up the Hill'
-aliases:
-- /gallery/2014-barcelona-trip/bb97e7b-up-the-hill.html
+title: Up the Hill
 ---

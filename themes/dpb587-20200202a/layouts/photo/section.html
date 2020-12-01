@@ -28,23 +28,22 @@
       {{ partial "pagination" . }}
     </div>
   {{ else }}
-    {{ $heroThumbnail := .Params.hero_thumbnail }}
-    {{ if and ( not $heroThumbnail ) ( eq .Type "photo" ) }}
+    {{ $heroImg := .Params.hero_thumbnail }}
+    {{ if and ( not $heroImg ) ( eq .Type "photo" ) }}
       {{ $photoPage := . }}
 
       {{ if and ( eq .Kind "section" ) $photoPage.Params.highlight_photo }}
         {{ $photoPage = .GetPage ( printf "photo/%s/%s.md" ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.Params.highlight_photo ) }}
       {{ end }}
 
-      {{ if $photoPage.Params.sizes }}
-        {{ $size := "1280" }}
-        {{ $heroThumbnail = printf "%s%s/%s~%s.jpg" .Site.Params.assetUrl ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.File.BaseFileName $size }}
+      {{ with $photoPage.Params.image.url }}
+        {{ $heroImg = . }}
       {{ end }}
     {{ end }}
 
-    {{ with $heroThumbnail }}
+    {{ if $heroImg }}
       <div>
-        <img class="object-cover h-32 w-full" src="{{ . }}">
+        <img class="object-cover h-32 w-full" src="{{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "smartcrop" "width" "1280" "height" "256" ) }}">
       </div>
     {{ end }}
 
@@ -77,13 +76,9 @@
       <div class="flex flex-wrap justify-around p-1 pt-0">
         {{ $paginator := .Paginate .RegularPages.Reverse }}
         {{ range $paginator.Pages }}
-          {{ $size := "200" }}
-          {{ if ( index .Params.sizes "420x420" ) }}
-            {{ $size = "420" }}
-          {{ end }}
           <div class="w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1">
             <a href="{{ .URL }}">
-              <img height="200" src="{{ .Site.Params.assetUrl }}{{ index ( split .Dir "/" ) 1 }}/{{ .File.BaseFileName }}~{{ $size }}x{{ $size }}.jpg" alt="{{ .Title }}" width="200">
+              <img height="200" src="{{ partial "imgpro.html" ( dict "." . "src" .Params.image.url "op" "smartcrop" "width" "200" "height" "200" ) }}" alt="{{ .Title }}" width="200">
             </a>
           </div>
         {{ end }}

@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-barcelona-trip
-date: '2014-11-24 13:14:37'
+aliases:
+- /gallery/2014-barcelona-trip/de8662e-some-peppers.html
+date: "2014-11-24 13:14:37"
 exif:
   aperture: f/2.2
   exposure: 1/30
   make: Apple
-  model: 'iPhone 6'
+  model: iPhone 6
+galleries:
+- 2014-barcelona-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-barcelona-trip/de8662e-some-peppers~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 41.382125
@@ -14,17 +20,5 @@ location:
 next: /gallery/2014-barcelona-trip/f19bddd-walkway
 ordering: 87
 previous: /gallery/2014-barcelona-trip/aafcefc-market
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-title: 'Some Peppers'
-aliases:
-- /gallery/2014-barcelona-trip/de8662e-some-peppers.html
+title: Some Peppers
 ---

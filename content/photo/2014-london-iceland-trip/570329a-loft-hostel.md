@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-london-iceland-trip
-date: '2014-03-12 18:03:54'
+aliases:
+- /gallery/2014-london-iceland-trip/570329a-loft-hostel.html
+date: "2014-03-12 18:03:54"
 exif:
   aperture: f/2.4
   exposure: 1/40
   make: Apple
-  model: 'iPhone 5'
+  model: iPhone 5
+galleries:
+- 2014-london-iceland-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-london-iceland-trip/570329a-loft-hostel~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 64.146797936501
@@ -14,22 +20,7 @@ location:
 next: /gallery/2014-london-iceland-trip/238d28c-reyjkavik-docks
 ordering: 44
 previous: /gallery/2014-london-iceland-trip/2f35742-loop
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-  96x96:
-    height: 96
-    width: 96
-title: 'Loft Hostel'
-aliases:
-- /gallery/2014-london-iceland-trip/570329a-loft-hostel.html
+title: Loft Hostel
 ---
 
 A view of Reyjkavik from the patio of where I stayed.

@@ -1,15 +1,14 @@
 <script type="application/ld+json">
-  {{ $heroThumbnail := .Params.hero_thumbnail }}
-  {{ if and ( not $heroThumbnail ) ( eq .Type "photo" ) }}
+  {{ $heroImg := .Params.hero_thumbnail }}
+  {{ if and ( not $heroImg ) ( eq .Type "photo" ) }}
     {{ $photoPage := . }}
 
     {{ if and ( eq .Kind "section" ) $photoPage.Params.highlight_photo }}
       {{ $photoPage = .GetPage ( printf "photo/%s/%s.md" ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.Params.highlight_photo ) }}
     {{ end }}
 
-    {{ if $photoPage.Params.sizes }}
-      {{ $size := "1280" }}
-      {{ $heroThumbnail = printf "%s%s/%s~%s.jpg" .Site.Params.assetUrl ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.File.BaseFileName $size }}
+    {{ with $photoPage.Params.image }}
+      {{ $heroImg = . }}
     {{ end }}
   {{ end }}
 
@@ -32,7 +31,7 @@
       "@type": "ImageObject",
       "thumbnail": {
         "@type": "ImageObject",
-        "contentUrl": {{ $heroThumbnail }}
+        "contentUrl": {{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "smartcrop" "width" "1280" ) }}
       },
       {{ with .Params.exif }}
         "exifData": [

@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-barcelona-trip
-date: '2014-11-22 21:23:36'
+aliases:
+- /gallery/2014-barcelona-trip/af00008-palau-de-la-generalitat.html
+date: "2014-11-22 21:23:36"
 exif:
   aperture: f/2.2
   exposure: 1/30
   make: Apple
-  model: 'iPhone 6'
+  model: iPhone 6
+galleries:
+- 2014-barcelona-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-barcelona-trip/af00008-palau-de-la-generalitat~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 41.38266167
@@ -14,17 +20,5 @@ location:
 next: /gallery/2014-barcelona-trip/ffd7d37-christmasy-walkways
 ordering: 37
 previous: /gallery/2014-barcelona-trip/9d3b72c-casa-de-la-ciutat
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-title: 'Palau de la Generalitat'
-aliases:
-- /gallery/2014-barcelona-trip/af00008-palau-de-la-generalitat.html
+title: Palau de la Generalitat
 ---

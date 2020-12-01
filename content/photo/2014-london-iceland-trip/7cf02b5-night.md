@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-london-iceland-trip
-date: '2014-03-06 20:00:30'
+aliases:
+- /gallery/2014-london-iceland-trip/7cf02b5-night.html
+date: "2014-03-06 20:00:30"
 exif:
   aperture: f/2.4
   exposure: 1/15
   make: Apple
-  model: 'iPhone 5'
+  model: iPhone 5
+galleries:
+- 2014-london-iceland-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-london-iceland-trip/7cf02b5-night~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 51.50161333
@@ -14,22 +20,7 @@ location:
 next: /gallery/2014-london-iceland-trip/b70543a-natural-history-museum
 ordering: 1
 previous: /gallery/2014-london-iceland-trip/df5150c-a-classic-view
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-  96x96:
-    height: 96
-    width: 96
 title: Night
-aliases:
-- /gallery/2014-london-iceland-trip/7cf02b5-night.html
 ---
 
 A view walking down South Bank one night looking back towards the Elizabeth Tower.

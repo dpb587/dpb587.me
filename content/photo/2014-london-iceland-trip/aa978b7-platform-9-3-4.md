@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-london-iceland-trip
-date: '2014-03-09 20:22:10'
+aliases:
+- /gallery/2014-london-iceland-trip/aa978b7-platform-9-3-4.html
+date: "2014-03-09 20:22:10"
 exif:
   aperture: f/2.4
   exposure: 1/20
   make: Apple
-  model: 'iPhone 5'
+  model: iPhone 5
+galleries:
+- 2014-london-iceland-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-london-iceland-trip/aa978b7-platform-9-3-4~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 51.53209167
@@ -14,22 +20,7 @@ location:
 next: /gallery/2014-london-iceland-trip/493e33e-gherkin
 ordering: 16
 previous: /gallery/2014-london-iceland-trip/293e193-its-an-albino-peacock
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-  96x96:
-    height: 96
-    width: 96
-title: 'Platform 9 3/4'
-aliases:
-- /gallery/2014-london-iceland-trip/aa978b7-platform-9-3-4.html
+title: Platform 9 3/4
 ---
 
 Of course, I had to briefly walk by the [touristy] Harry Potter photo op at Kings Cross.

@@ -5,25 +5,10 @@ exif:
   iso: 80
   make: Apple
   model: iPhone X
+image:
+  height: 791
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2019-south-america/fb3cbd75-a672-31fe-8c62-3dfb3bdd7fac~1920.jpg
+  width: 1920
 ordering: 152
-sizes:
-  200x200:
-    height: 200
-    width: 200
-  420x420:
-    height: 420
-    width: 420
-  640w:
-    height: 264
-    width: 640
-  "1080":
-    height: 445
-    width: 1080
-  "1280":
-    height: 527
-    width: 1280
-  "1920":
-    height: 791
-    width: 1920
 title: IMG_0145.HEIC
 ---

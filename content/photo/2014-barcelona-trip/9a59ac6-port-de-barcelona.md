@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-barcelona-trip
-date: '2014-11-22 21:53:24'
+aliases:
+- /gallery/2014-barcelona-trip/9a59ac6-port-de-barcelona.html
+date: "2014-11-22 21:53:24"
 exif:
   aperture: f/2.2
   exposure: 1/17
   make: Apple
-  model: 'iPhone 6'
+  model: iPhone 6
+galleries:
+- 2014-barcelona-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-barcelona-trip/9a59ac6-port-de-barcelona~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 41.37564667
@@ -14,17 +20,5 @@ location:
 next: /gallery/2014-barcelona-trip/07ed14a-casa-batllo
 ordering: 40
 previous: /gallery/2014-barcelona-trip/baf4bfd-mirador-de-colom
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-title: 'Port de Barcelona'
-aliases:
-- /gallery/2014-barcelona-trip/9a59ac6-port-de-barcelona.html
+title: Port de Barcelona
 ---

@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-london-iceland-trip
-date: '2014-03-08 12:47:03'
+aliases:
+- /gallery/2014-london-iceland-trip/fbe9b12-hyde-park.html
+date: "2014-03-08 12:47:03"
 exif:
   aperture: f/2.4
   exposure: 1/5435
   make: Apple
-  model: 'iPhone 5'
+  model: iPhone 5
+galleries:
+- 2014-london-iceland-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-london-iceland-trip/fbe9b12-hyde-park~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 51.502492355028
@@ -14,22 +20,7 @@ location:
 next: /gallery/2014-london-iceland-trip/033bb54-royal-observatory
 ordering: 3
 previous: /gallery/2014-london-iceland-trip/b70543a-natural-history-museum
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-  96x96:
-    height: 96
-    width: 96
-title: 'Hyde Park'
-aliases:
-- /gallery/2014-london-iceland-trip/fbe9b12-hyde-park.html
+title: Hyde Park
 ---
 
 As a part of our transportation tour, we biked through Hyde Park and past Buckingham Palace. The Queen was in, but she was too busy to say hi.

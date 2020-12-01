@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-london-iceland-trip
-date: '2014-03-11 15:52:19'
+aliases:
+- /gallery/2014-london-iceland-trip/f9b153c-artifacts.html
+date: "2014-03-11 15:52:19"
 exif:
   aperture: f/2.4
   exposure: 1/20
   make: Apple
-  model: 'iPhone 5'
+  model: iPhone 5
+galleries:
+- 2014-london-iceland-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-london-iceland-trip/f9b153c-artifacts~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 51.519401550293
@@ -14,22 +20,7 @@ location:
 next: /gallery/2014-london-iceland-trip/56d4241-the-nereid-monument
 ordering: 37
 previous: /gallery/2014-london-iceland-trip/632b686-rosetta-stone
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-  96x96:
-    height: 96
-    width: 96
 title: Artifacts
-aliases:
-- /gallery/2014-london-iceland-trip/f9b153c-artifacts.html
 ---
 
 Old vases which looked exactly like a photo from a sixth grade textbook. Pretty sure they’re fairly common though.

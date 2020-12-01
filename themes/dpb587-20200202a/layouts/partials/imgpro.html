@@ -16,7 +16,7 @@
 {{- end -}}
 
 {{- if not $src -}}
-  {{- errorf "img: missing parameter: src" -}}
+  {{- errorf "%s: img: missing parameter: src" . -}}
 {{- end -}}
 
 {{- $opargs = $opargs | append ( querify "url" $src ) -}}

@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2015-costa-rica-trip
-date: '2015-01-12 10:31:49'
+aliases:
+- /gallery/2015-costa-rica-trip/a3b1d00-hike-to-cerro-chato.html
+date: "2015-01-12 10:31:49"
 exif:
   aperture: f/2.2
   exposure: 1/204
   make: Apple
-  model: 'iPhone 6'
+  model: iPhone 6
+galleries:
+- 2015-costa-rica-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2015-costa-rica-trip/a3b1d00-hike-to-cerro-chato~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 10.44659167
@@ -14,19 +20,7 @@ location:
 next: /gallery/2015-costa-rica-trip/99e190d-lookout
 ordering: 11
 previous: /gallery/2015-costa-rica-trip/e3b74ac-hike-to-cerro-chato
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-title: 'Hike to Cerro Chato'
-aliases:
-- /gallery/2015-costa-rica-trip/a3b1d00-hike-to-cerro-chato.html
+title: Hike to Cerro Chato
 ---
 
 The hike started out relatively easy and on well-marked trails.

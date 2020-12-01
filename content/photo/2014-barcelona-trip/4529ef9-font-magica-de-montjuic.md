@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-barcelona-trip
-date: '2014-11-21 17:45:27'
+aliases:
+- /gallery/2014-barcelona-trip/4529ef9-font-magica-de-montjuic.html
+date: "2014-11-21 17:45:27"
 exif:
   aperture: f/2.2
   exposure: 1/15
   make: Apple
-  model: 'iPhone 6'
+  model: iPhone 6
+galleries:
+- 2014-barcelona-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-barcelona-trip/4529ef9-font-magica-de-montjuic~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 41.37075
@@ -14,17 +20,5 @@ location:
 next: /gallery/2014-barcelona-trip/5c447b5-julia
 ordering: 23
 previous: /gallery/2014-barcelona-trip/9236b98-museu-nacional-dart-de-catalunya
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-title: 'Font màgica de Montjuïc'
-aliases:
-- /gallery/2014-barcelona-trip/4529ef9-font-magica-de-montjuic.html
+title: Font màgica de Montjuïc
 ---

@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-barcelona-trip
-date: '2014-11-21 16:32:27'
+aliases:
+- /gallery/2014-barcelona-trip/5f5d588-museu-nacional-dart-de-catalunya.html
+date: "2014-11-21 16:32:27"
 exif:
   aperture: f/2.2
   exposure: 1/327
   make: Apple
-  model: 'iPhone 6'
+  model: iPhone 6
+galleries:
+- 2014-barcelona-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-barcelona-trip/5f5d588-museu-nacional-dart-de-catalunya~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 41.37055833
@@ -14,17 +20,5 @@ location:
 next: /gallery/2014-barcelona-trip/8bddadc-museu-nacional-dart-de-catalunya
 ordering: 11
 previous: /gallery/2014-barcelona-trip/fccc428-font-magica-de-montjuic
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-title: 'Museu Nacional d''Art de Catalunya'
-aliases:
-- /gallery/2014-barcelona-trip/5f5d588-museu-nacional-dart-de-catalunya.html
+title: Museu Nacional d'Art de Catalunya
 ---

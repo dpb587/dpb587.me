@@ -5,16 +5,10 @@ exif:
   iso: 20
   make: Apple
   model: iPhone X
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2018-europe-trip/f1a29c0d-ebda-1f0b-fe87-a939b6eda8b4~1280.jpg
+  width: 1280
 ordering: 76
-sizes:
-  200x200:
-    height: 200
-    width: 200
-  640w:
-    height: 480
-    width: 640
-  "1280":
-    height: 960
-    width: 1280
 title: IMG_2683.HEIC
 ---

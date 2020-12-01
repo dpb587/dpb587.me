@@ -1,12 +1,18 @@
 ---
-galleries:
-- 2014-london-iceland-trip
-date: '2014-03-08 15:40:06'
+aliases:
+- /gallery/2014-london-iceland-trip/c217f20-greenwich-park.html
+date: "2014-03-08 15:40:06"
 exif:
   aperture: f/2.4
   exposure: 1/1063
   make: Apple
-  model: 'iPhone 5'
+  model: iPhone 5
+galleries:
+- 2014-london-iceland-trip
+image:
+  height: 960
+  url: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-london-iceland-trip/c217f20-greenwich-park~1280.jpg
+  width: 1280
 layout: gallery-photo
 location:
   latitude: 51.475229287647
@@ -14,22 +20,7 @@ location:
 next: /gallery/2014-london-iceland-trip/c16a7b6-thames-cable-car
 ordering: 5
 previous: /gallery/2014-london-iceland-trip/033bb54-royal-observatory
-sizes:
-  1280:
-    height: 960
-    width: 1280
-  640w:
-    height: 480
-    width: 640
-  200x200:
-    height: 200
-    width: 200
-  96x96:
-    height: 96
-    width: 96
-title: 'Greenwich Park'
-aliases:
-- /gallery/2014-london-iceland-trip/c217f20-greenwich-park.html
+title: Greenwich Park
 ---
 
 A look out from the Royal Observatory over Greenwich Park before we headed back.
