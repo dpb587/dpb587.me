@@ -18,6 +18,7 @@ import (
 	"regexp"
 	"sort"
 	"strings"
+	"time"
 
 	minio "github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
@@ -55,12 +56,16 @@ func mainErr() error {
 	imaginaryEndpoint := "http://localhost:8088/d0c48e72-6c4f-4c24-ba62-7ebefd4a51da/"
 
 	cmd := exec.Command("/usr/local/bin/imaginary", imaginaryOpts...)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
 	err := cmd.Start()
 	if err != nil {
 		return errors.Wrap(err, "starting imaginary")
 	}
 
 	defer cmd.Process.Kill()
+
+	time.Sleep(5 * time.Second)
 
 	client, err := minio.New(bucketEndpoint, &minio.Options{
 		Creds:  credentials.NewStaticV4(bucketAccessKey, bucketSecretKey, ""),
