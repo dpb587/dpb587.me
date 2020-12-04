@@ -24,7 +24,7 @@
   {{- if hasPrefix $src "//localhost" -}}
     {{- $src = printf "http://hugo%s" ( substr $src 11 ) -}}
   {{- else -}}
-    {{- $opname = "" -}}{# TODO #}
+    {{- $opname = "" -}}{{/* TODO */}}
   {{- end -}}
 {{- end -}}
 
