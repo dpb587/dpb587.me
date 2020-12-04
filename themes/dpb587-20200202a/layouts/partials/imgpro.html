@@ -23,6 +23,8 @@
   {{- $src = $src | absURL -}}
   {{- if hasPrefix $src "//localhost" -}}
     {{- $src = printf "http://hugo%s" ( substr $src 11 ) -}}
+  {{- else -}}
+    {{- $opname = "" -}}{# TODO #}
   {{- end -}}
 {{- end -}}
 
