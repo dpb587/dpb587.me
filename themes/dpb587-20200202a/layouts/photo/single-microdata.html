@@ -31,7 +31,7 @@
       "@type": "ImageObject",
       "thumbnail": {
         "@type": "ImageObject",
-        "contentUrl": {{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "crop" "width" "1280" ) }}
+        "contentUrl": {{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "resize" "width" "1280" ) }}
       },
       {{ with .Params.exif }}
         "exifData": [
