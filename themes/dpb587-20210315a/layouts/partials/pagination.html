@@ -1,0 +1,25 @@
+{{ if gt .Paginator.TotalPages 1 }}
+  <div class="flex border-b border-t border-gray-300 text-gray-600">
+    <div class="w-1/3">
+      {{ with .Paginator.Prev }}
+        <a class="block p-4 transition duration-200 hover:bg-gray-100 hover:text-black" href="{{ .URL }}">
+          <i class="fa fa-angle-double-left mr-1" aria-hidden="true"></i>
+          Previous
+        </a>
+      {{ end }}
+    </div>
+    <div class="w-1/3">
+      <div class="p-4 text-center">
+        Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+      </div>
+    </div>
+    <div class="w-1/3">
+      {{ with .Paginator.Next }}
+        <a class="block p-4 transition duration-200 hover:bg-gray-100 hover:text-black text-right" href="{{ .URL }}">
+          Next Page
+          <i class="fa fa-angle-double-right ml-1" aria-hidden="true"></i>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

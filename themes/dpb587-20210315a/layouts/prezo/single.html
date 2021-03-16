@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ partial "section-header" . }}
+  <main class="max-w-3xl mx-auto">
+    {{ partial "section-content" . }}
+    {{ with .Params.slideshow_embed }}
+      <div class="relative w-full overflow-hidden" style="padding-top:59.125%">
+        <iframe class="absolute w-full h-full top-0 left-0" src="{{ . }}" frameborder="0" width="100%" height="720" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+    {{ end }}
+  </main>
+  {{ partial "section-footer" . }}
+{{ end }}

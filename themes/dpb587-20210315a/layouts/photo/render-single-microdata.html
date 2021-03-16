@@ -1,0 +1,81 @@
+<script type="application/ld+json">
+  {{ $heroImg := .Params.hero_thumbnail }}
+  {{ if and ( not $heroImg ) ( eq .Type "photo" ) }}
+    {{ $photoPage := . }}
+
+    {{ if and ( eq .Kind "section" ) $photoPage.Params.highlight_photo }}
+      {{ $photoPage = .GetPage ( printf "photo/%s/%s.md" ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.Params.highlight_photo ) }}
+    {{ end }}
+
+    {{ with $photoPage.Params.image.url }}
+      {{ $heroImg = . }}
+    {{ end }}
+  {{ end }}
+
+  {
+    "@context": "http://schema.org/",
+    "@type": "Photograph",
+    "author": {
+      "@type": "Person",
+      "url": {{ .Site.BaseURL }}
+    },
+    "copyrightHolder": {
+      "@type": "Person",
+      "url": {{ .Site.BaseURL }}
+    },
+    "copyrightYear": {{ .Date.Format "2006" }},
+    "dateModified": {{ .Lastmod }},
+    "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" }},
+    "headline": {{ .Title }},
+    "image": {
+      "@type": "ImageObject",
+      "thumbnail": {
+        "@type": "ImageObject",
+        "contentUrl": {{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "resize" "width" "1280" ) }}
+      },
+      {{ with .Params.exif }}
+        "exifData": [
+          {{ $comma := "" }}
+          {{ with .make }}
+            {{ $comma | safeJS }}{{ $comma = "," }}
+            {
+              "@type": "PropertyValue",
+              "name": "Make",
+              "value": {{ . }}
+            }
+          {{ end }}
+          {{ with .model }}
+            {{ $comma | safeJS }}{{ $comma = "," }}
+            {
+              "@type": "PropertyValue",
+              "name": "Model",
+              "value": {{ . }}
+            }
+          {{ end }}
+          {{ with .aperture }}
+            {{ $comma | safeJS }}{{ $comma = "," }}
+            {
+              "@type": "PropertyValue",
+              "name": "Aperture",
+              "value": {{ . }}
+            }
+          {{ end }}
+          {{ with .exposure }}
+            {{ $comma | safeJS }}{{ $comma = "," }}
+            {
+              "@type": "PropertyValue",
+              "name": "Exposure",
+              "value": {{ . }}
+            }
+          {{ end }}
+        ]
+      {{ end }}
+    },
+    "name": {{ .Title }},
+    "publisher": {
+      "@type": "Person",
+      "url": {{ .Site.BaseURL }}
+    },
+    "url": {{ .Permalink }}
+  }
+</script>

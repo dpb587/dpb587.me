@@ -53,7 +53,7 @@ func mainErr() error {
 		"-concurrency", "25",
 		"-http-cache-ttl", "31536000",
 		"-enable-url-source",
-		"-allowed-origins", "http://127.0.0.1:1313,http://localhost:1313,https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/",
+		"-allowed-origins", "http://127.0.0.1:1313,http://localhost:1313,http://hugo:1313,https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/,https://pbs.twimg.com/media/,https://maps.geoapify.com",
 	}
 	imaginaryEndpoint := "http://localhost:8088/d0c48e72-6c4f-4c24-ba62-7ebefd4a51da/"
 

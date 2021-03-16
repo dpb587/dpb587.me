@@ -1,0 +1,49 @@
+<header class="max-w-3xl mx-auto">
+  <div class="m-6 md:m-8">
+    <div class="flex">
+      <a class="flex-0 border p-0.5 hover:border-yellow-600" href="{{ relURL "/" }}">
+        <img class="h-12 w-12 rounded-sm" alt="Photo of Danny Berger" src="/images/dpb587-20191216a~256.jpg" />
+      </a>
+      <div class="flex-grow ml-3">
+        <div class="text-lg leading-8 text-gray-900 font-bold">{{ .Title }}</div>
+        <div class="text-sm leading-4 text-gray-600">
+          {{ with .Params.byline }}
+            {{ . }}
+          {{ else }}
+            {{ $divider := "" }}
+            {{ if eq .Kind "page" }}
+              {{ if ne .Title ( .Type | humanize ) }}
+                <a class="font-semibold hover:text-yellow-600 hover:underline" href="{{ .Parent.Permalink }}">{{ .Type | humanize }}</a>
+                {{ $divider = "|" }}
+              {{ end }}
+            {{ else if eq .Kind "section" }}
+              {{ if ne .Title ( .Type | pluralize | humanize ) }}
+                <a class="font-semibold hover:text-yellow-600 hover:underline" href="{{ .Parent.Permalink }}">{{ .Type | pluralize | humanize }}</a>
+                {{ $divider = "|" }}
+              {{ end }}
+            {{ else if eq .Kind "taxonomy" }}
+              <a class="font-semibold hover:text-yellow-600 hover:underline" href="{{ relURL .Type }}">{{ .Type | singularize | humanize }}</a>
+              {{ $divider = "|" }}
+            {{ end }}
+            {{ if and .Date ( ne .Kind "taxonomyTerm" ) }}
+              {{ $divider }}
+              {{ partial "format-date" . }}
+            {{ else if .Params.description }}
+              {{ $divider }}
+              {{ .Params.description }}
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ if .Params.header_contacts }}
+        <div class="flex-initial ml-3 text-right">
+          <div class="text-sm leading-8 text-gray-600">New Mexico, United States</div>
+          <div class="text-sm leading-4 text-gray-400">
+            <a class="text-gray-600 hover:text-yellow-600 hover:underline" href="https://dpb587.me/">dpb587.me</a>
+            | <a class="text-gray-600 hover:text-yellow-600 hover:underline" href="mailto:dpb587@gmail.com">dpb587@gmail.com</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</header>

@@ -1,18 +1,19 @@
 # hugo
 
 FROM dpb587/gget as hugo-deps
-ARG hugo_version=0.62.1
+ARG hugo_version=0.81.0
 RUN gget github.com/gohugoio/hugo@v${hugo_version} 'hugo_extended_*_Linux-64bit.tar.gz' --stdout | tar -xzf- hugo
 
-FROM ubuntu AS hugo
+FROM node:stretch AS hugo
 RUN true \
   && apt-get update \
   && apt-get install -y \
     ca-certificates \
     git \
   && rm -rf /var/lib/apt/lists/*
-COPY --from=hugo-deps /result/hugo /bin/hugo
+COPY --from=hugo-deps /result/hugo /usr/bin/hugo
 WORKDIR /result
+ARG GEOAPIFY_TOKEN
 ARG GITHUB_TOKEN
 ADD .git .git
 ADD appendix appendix
@@ -20,7 +21,8 @@ ADD content content
 ADD static static
 ADD themes themes
 ADD config.toml config.toml
-RUN hugo
+ADD service/hugo/hugo-with-env /usr/bin/
+RUN /usr/bin/hugo-with-env
 RUN ( hugo version ; git rev-parse HEAD ; date -u +%Y-%m-%dT%H:%M:%SZ ) > public/internal/hugo
 
 # imgrewrite

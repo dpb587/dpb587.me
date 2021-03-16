@@ -1,5 +1,5 @@
 ---
-title: Hello. My name is Danny.
+title: Danny Berger
 description: Welcome to my digital home.
 hero_img: https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/asset/gallery/2014-colorado-aspens/2dbeedb-aspens-invading~1280.jpg
 ---

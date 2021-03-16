@@ -3,12 +3,16 @@ title = "Danny Berger"
 copyright = "Unless noted, software code is licensed under MIT License and all other content under CC-BY."
 disqusShortname = "dpb587"
 googleAnalytics = "UA-37464314-1"
-theme = "dpb587-20200202a"
+theme = "current"
 enableRobotsTXT = true
 enableGitInfo = true
+buildFuture = true
 pygmentsCodefences = true
 pygmentsUseClasses = "true"
 paginate = "30"
+
+[build]
+writeStats = true
 
 [author]
   name = "Danny Berger"

@@ -1,0 +1,87 @@
+{{ define "main" }}
+  {{ partial "section-header" . }}
+  <main class="max-w-3xl mx-auto divide-y">
+    {{ with .Content }}
+      <section>
+        <div class="m-6 md:m-8">
+          <div class="max-w-none prose prose-yellow leading-6 text-justify text-gray-700">
+            {{ . }}
+          </div>
+        </div>
+      </section>
+    {{ end }}
+    {{ with ( where .Pages "File.Dir" "eq" "cv/role/" ).ByDate.Reverse }}
+      <section>
+        <div class="m-6 md:m-8">
+          <h2 class="font-lg leading-7 font-semibold text-yellow-700 text-center">Employment</h2>
+          {{ $displayRemain := 3 }}
+          {{ range . }}
+            {{ if or ( gt $displayRemain 0 ) ( gt .Date ( now.AddDate -8 0 0 ) ) }}
+              {{ $displayRemain = sub $displayRemain 1 }}
+              <div class="my-6 md:my-8">
+                <div class="flex">
+                  <div class="flex-grow">
+                    <span class="font-semibold">
+                      {{ if .Params.organization.url }}
+                        <a href="{{ .Params.organization.url }}">{{ .Params.organization.name }}</a>
+                      {{- else }}
+                        {{ .Params.organization.name }}
+                      {{- end -}}
+                    </span>,
+                    <span>{{ .Params.title }}</span>
+                  </div>
+                  <div class="flex-initial text-right text-gray-600">
+                    {{ $date := partial "format-date" . }}
+                    {{ replace ( replaceRE " \\d+, 20" " '" $date ) "December '99" "present" | safeHTML }}
+                  </div>
+                </div>
+                {{ with .Content }}
+                  <div class="max-w-none prose prose-yellow leading-6 text-justify text-gray-700">
+                    {{ . }}
+                  </div>
+                {{ end }}
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+    {{ with ( where .Pages "File.Dir" "eq" "cv/cert/" ).ByDate.Reverse }}
+      <section>
+        <div class="m-6 md:m-8">
+          <h2 class="font-lg leading-7 font-semibold text-yellow-700 text-center">Certification</h2>
+          {{ $displayRemain := 3 }}
+          {{ range . }}
+            {{ if or ( gt $displayRemain 0 ) ( gt .Date ( now.AddDate -8 0 0 ) ) }}
+              {{ $displayRemain = sub $displayRemain 1 }}
+              <div class="my-6 md:my-8">
+                <div class="flex">
+                  <div class="flex-grow">
+                    <span class="font-semibold">{{ .Params.title }}</span>,
+                    <span>
+                      {{ if .Params.organization.url }}
+                        <a href="{{ .Params.organization.url }}">{{ .Params.organization.name }}</a>
+                      {{ else }}
+                        {{ .Params.organization.name }}
+                      {{ end }}
+                    </span>
+                  </div>
+                  <div class="flex-initial text-right text-gray-600">
+                    {{ $date := partial "format-date" . }}
+                    {{ replace ( replaceRE " \\d+, 20" " '" $date ) "December '99" "present" | safeHTML }}
+                  </div>
+                </div>
+                {{ with .Content }}
+                  <div class="max-w-none prose prose-yellow leading-6 text-justify text-gray-700">
+                    {{ . }}
+                  </div>
+                {{ end }}
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  </main>
+  {{ partial "section-footer" . }}
+{{ end }}

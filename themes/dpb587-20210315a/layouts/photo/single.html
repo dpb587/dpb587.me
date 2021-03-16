@@ -1,0 +1,66 @@
+{{ define "main" }}
+  <main>
+    {{ .Render "render-single-microdata" }}
+
+    {{ $heroImg := .Params.hero_thumbnail }}
+    {{ if and ( not $heroImg ) ( eq .Type "photo" ) }}
+      {{ $photoPage := . }}
+
+      {{ if and ( eq .Kind "section" ) $photoPage.Params.highlight_photo }}
+        {{ $photoPage = .GetPage ( printf "photo/%s/%s.md" ( index ( split $photoPage.Dir "/" ) 1 ) $photoPage.Params.highlight_photo ) }}
+      {{ end }}
+
+      {{ with $photoPage.Params.image.url }}
+        {{ $heroImg = . }}
+      {{ end }}
+    {{ end }}
+
+    <section class="bg-gray-900">
+      <img class="object-scale-down w-full h-screen" src="{{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "resize" "width" "1280" ) }}">
+    </section>
+
+    {{ partial "section-header" . }}
+    <div class="max-w-3xl mx-auto divide-y">
+      {{ partial "section-content" . }}
+      <div>
+        <div class="m-6 md:m-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <dl class="-mt-4">
+                {{ with .Params.exif }}
+                  <div class="my-4">
+                    <dt class="font-semibold leading-6">Camera</dt>
+                    <dd>
+                      {{ with .make }}<span title="Make">{{ . }}</span>{{ end }}
+                      {{ with .model }}<span title="Model">{{ . }}</span>{{ end }}
+                      {{ with .aperture }}<span title="Aperture">{{ . }}</span>{{ end }}
+                      {{ with .exposure }}<span title="Exposure">{{ . }}</span>{{ end }}
+                    </dd>
+                  </div>
+                {{ end }}
+                {{ with .Params.location }}
+                  <div class="my-4">
+                    <dt class="font-semibold leading-6">Location</dt>
+                    {{ if and .latitude .longitude }}
+                      <dd>
+                        <a class="text-yellow-600 underline" href="https://www.google.com/maps/@{{ .latitude }},{{ .longitude }},14z">
+                          {{ .latitude }}, {{ .longitude }}
+                        </a>
+                      </dd>
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </dl>
+            </div>
+            <div>
+              {{ if and .Params.location.longitude .Params.location.latitude }}
+                <img class="object-cover w-full" src="{{ partial "imgpro.html" ( dict "." . "src" ( printf "https://maps.geoapify.com/v1/staticmap?style=osm-carto&width=720&height=720&center=lonlat:%[1]s&zoom=15&marker=lonlat:%[1]s;color:%%23ec3b0e;size:large&apiKey=%[2]s" ( printf "%v,%v" .Params.location.longitude .Params.location.latitude ) ( getenv "GEOAPIFY_TOKEN" ) ) "op" "crop" "width" "720" ) }}" />
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ partial "section-footer" . }}
+  </main>
+{{ end }}

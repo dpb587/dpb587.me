@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -euo pipefail
+
+themeDir="themes/current"
+
+pushd "${themeDir}"
+npm install
+popd
+
+export PATH="${PWD}/${themeDir}/node_modules/.bin:${PATH}"
+
+exec hugo "$@"

@@ -1,6 +1,7 @@
 /tmp
 
 # hugo
+/hugo_stats.json
 /public
 /resources
 

@@ -1,0 +1,29 @@
+{{ define "main" }}
+  {{ partial "section-header" . }}
+  <main class="max-w-3xl mx-auto divide-y">
+    {{ with .Content }}
+      <section>
+        <div class="m-6 md:m-8">
+          <div class="max-w-none prose prose-yellow leading-6 text-justify text-gray-700">
+            {{ . }}
+          </div>
+        </div>
+      </section>
+    {{ end }}
+    <section>
+      <div class="mx-2 my-3 md:my-5">
+        <ol class="-mb-2 md:-mb-3 mt-2 md:mt-3 mx-1 md:mx-3">
+          {{ range .Paginator.Pages }}
+            <li class="my-2">
+              <a class="block p-3 group rounded transition ease-in delay-500 duration-300 hover:bg-gray-100" href="{{ .Permalink }}">
+                {{ .Render "render-list-line" }}
+              </a>
+            </li>
+          {{ end }}
+        </ol>
+        {{ partial "pagination" . }}
+      </div>
+    </section>
+  </main>
+  {{ partial "section-footer" . }}
+{{ end }}
