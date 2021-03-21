@@ -19,7 +19,7 @@
       <img class="object-scale-down w-full h-screen" src="{{ partial "imgpro.html" ( dict "." . "src" $heroImg "op" "resize" "width" "1280" ) }}">
 
       {{ with .PrevInSection }}
-        <a class="absolute bottom-0 left-0 z-10 p-4 sm:py-8 sm:px-8 align-top text-gray-600 hover:text-gray-400 opacity-50 focus:opacity-75 transition duration-200" href="{{ .PrevInSection.Permalink }}">
+        <a class="absolute bottom-0 left-0 z-10 p-4 sm:py-8 sm:px-8 align-top text-gray-600 hover:text-gray-400 opacity-50 focus:opacity-75 transition duration-200" href="{{ .Permalink }}">
           <svg class="inline h-16 w-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
           </svg>
@@ -27,7 +27,7 @@
       {{ end }}
 
       {{ with .NextInSection }}
-        <a class="absolute bottom-0 right-0 z-10 p-4 sm:py-8 sm:px-8 align-top text-gray-600 hover:text-gray-400 opacity-50 focus:opacity-75 transition duration-200" href="{{ .NextInSection.Permalink }}">
+        <a class="absolute bottom-0 right-0 z-10 p-4 sm:py-8 sm:px-8 align-top text-gray-600 hover:text-gray-400 opacity-50 focus:opacity-75 transition duration-200" href="{{ .Permalink }}">
           <svg class="inline h-16 w-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
           </svg>

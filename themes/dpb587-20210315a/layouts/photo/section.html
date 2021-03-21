@@ -44,7 +44,7 @@
         {{ $paginator := .Paginate .RegularPages.Reverse 256 }}
         {{ range $paginator.Pages }}
           <div class="w-1/2 md:w-1/3 xl:w-1/4 2xl:w-1/5 p-1 lg:p-2 2xl:p-3">
-            <a href="{{ .URL }}">
+            <a href="{{ .Permalink }}">
               <img height="420" loading="lazy" src="{{ partial "imgpro.html" ( dict "." . "src" .Params.image.url "op" "crop" "width" "420" "height" "420" ) }}" alt="{{ .Title }}" width="420">
             </a>
           </div>

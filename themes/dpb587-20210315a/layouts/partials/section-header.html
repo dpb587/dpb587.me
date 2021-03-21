@@ -13,16 +13,16 @@
             {{ $divider := "" }}
             {{ if eq .Kind "page" }}
               {{ if ne .Title ( .Type | humanize ) }}
-                <a class="font-semibold hover:text-yellow-600 hover:underline" href="{{ .Parent.Permalink }}">{{ .Type | humanize }}</a>
+                <a class="hover:text-yellow-600 hover:underline" href="{{ .Parent.Permalink }}">{{ .Type | humanize }}</a>
                 {{ $divider = "|" }}
               {{ end }}
             {{ else if eq .Kind "section" }}
               {{ if ne .Title ( .Type | pluralize | humanize ) }}
-                <a class="font-semibold hover:text-yellow-600 hover:underline" href="{{ .Parent.Permalink }}">{{ .Type | pluralize | humanize }}</a>
+                <a class="hover:text-yellow-600 hover:underline" href="{{ .Parent.Permalink }}">{{ .Type | pluralize | humanize }}</a>
                 {{ $divider = "|" }}
               {{ end }}
             {{ else if eq .Kind "taxonomy" }}
-              <a class="font-semibold hover:text-yellow-600 hover:underline" href="{{ relURL .Type }}">{{ .Type | singularize | humanize }}</a>
+              <a class="hover:text-yellow-600 hover:underline" href="{{ relURL .Type }}">{{ .Type | singularize | humanize }}</a>
               {{ $divider = "|" }}
             {{ end }}
             {{ if and .Date ( ne .Kind "taxonomyTerm" ) }}
