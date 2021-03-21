@@ -3,15 +3,15 @@
   <main class="max-w-3xl mx-auto divide-y">
     {{ with .Content }}
       <section>
-        <div class="m-6 md:m-8">
-          <div class="max-w-none prose prose-yellow leading-6 text-justify text-gray-700">
+        <div class="m-4 md:m-6">
+          <div class="max-w-none prose">
             {{ . }}
           </div>
         </div>
       </section>
     {{ end }}
     <section>
-      <div class="mx-2 my-3 md:my-5">
+      <div class="mx-0 my-3 md:my-5">
         <ol class="-mb-2 md:-mb-3 mt-2 md:mt-3 mx-1 md:mx-3">
           {{ range .Paginator.Pages }}
             <li class="my-2">

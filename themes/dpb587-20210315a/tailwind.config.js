@@ -23,11 +23,35 @@ module.exports = {
     require('@tailwindcss/typography'),
   ],
   theme: {
-    fontFamily: {
-      sans: [
-        'Quicksand',
-        ...defaultTheme.fontFamily.sans,
-      ],
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.800'),
+            a: {
+              color: theme('colors.yellow.600'),
+              '&:hover': {
+                color: '#2c5282',
+              },
+            },
+            ol: {
+              textAlign: 'justify',
+            },
+            p: {
+              textAlign: 'justify',
+            },
+            ul: {
+              textAlign: 'justify',
+            },
+          },
+        },
+      }),
     },
+    // fontFamily: {
+    //   sans: [
+    //     'Quicksand',
+    //     ...defaultTheme.fontFamily.sans,
+    //   ],
+    // },
   },
 };

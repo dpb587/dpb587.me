@@ -1,7 +1,7 @@
 ---
 date: 2014-11-14
 title: "Logging logging and Finding Bottlenecks"
-description: "Some ways logsearch is measuring its own performance with the elasticsearch+logstash+kibana stack."
+description: "Monitoring logsearch with itself - the elasticsearch+logstash+kibana stack."
 primary_image: /blog/2014-11-14-logging-logging-and-finding-bottlenecks/parsed-messages.jpg
 tags:
 - elasticsearch
