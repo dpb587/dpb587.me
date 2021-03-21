@@ -6,7 +6,6 @@
 
     <title>{{ block "title" . }}{{ .Title | default "Untitled" }}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     {{ $css := resources.Get "css/main.css" }}
     {{ $css = $css | resources.PostCSS }}
     {{ if hugo.IsProduction }}
