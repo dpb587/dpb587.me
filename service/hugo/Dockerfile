@@ -2,7 +2,7 @@ FROM dpb587/gget as gget
 ARG hugo_version=0.81.0
 RUN gget github.com/gohugoio/hugo@v${hugo_version} 'hugo_extended_*_Linux-64bit.tar.gz' --stdout | tar -xzf- hugo
 
-FROM node:stretch AS hugo
+FROM node:16-stretch AS hugo
 RUN true \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
