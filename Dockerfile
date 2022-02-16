@@ -4,7 +4,7 @@ FROM dpb587/gget as hugo-deps
 ARG hugo_version=0.81.0
 RUN gget github.com/gohugoio/hugo@v${hugo_version} 'hugo_extended_*_Linux-64bit.tar.gz' --stdout | tar -xzf- hugo
 
-FROM node:stretch AS hugo
+FROM node:16-stretch AS hugo
 RUN true \
   && apt-get update \
   && apt-get install -y \
