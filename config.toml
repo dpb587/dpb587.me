@@ -11,6 +11,11 @@ pygmentsCodefences = true
 pygmentsUseClasses = "true"
 paginate = "30"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      typographer = false
+
 [build]
 writeStats = true
 
