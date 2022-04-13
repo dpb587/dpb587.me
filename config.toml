@@ -89,5 +89,5 @@ writeStats = true
   description = ""
   assetUrl = "https://dpb587-website-us-east-1.s3.amazonaws.com/asset/gallery/"
   imgproUrl = "http://localhost:8088/d0c48e72-6c4f-4c24-ba62-7ebefd4a51da"
-  enableComments = false
   github_repo = "https://github.com/dpb587/dpb587.me"
+  commentsRemarkUrl = "http://localhost:8089"

@@ -6,6 +6,8 @@ tags:
 - jq
 - jsonl
 - tsv
+aliases:
+- /blog/2020/02/13/converting-between-json-and-tsv.html
 ---
 
 Occasionally I want a quick way to convert data between JSON and TSV in BASH scripts. I use these [`jq` scripts](https:/stedolan.github.io/jq) to transform the formats from stdin.

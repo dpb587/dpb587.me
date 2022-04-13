@@ -7,6 +7,8 @@ tags:
 - blobs
 - metalink
 - metalink-repository
+aliases:
+- /blog/2018/12/30/metalink-repositories-mirroring-third-party-dependencies.html
 ---
 
 When managing project dependencies which are outside of your control, it is often best practice to assume those artifacts may disappear (e.g. they may move, disappear, or become corrupt). For this reason, you may want to be mirroring your assets which, with [metalink repositories]({{< ref "/post/2018-12-28-metalink-repositories-background-and-motivation.md" >}}), provides the functionality of:

@@ -9,6 +9,9 @@ tags:
 - minikube
 - networking
 - virtualbox
+aliases:
+- /blog/2020/04/11/bridged-networking-with-minikube.html
+- /blog/2020/04/11/minikube-and-bridged-networking.html
 ---
 
 This week I was running some experiments with [Kubernetes](https://kubernetes.io/). Typically I use [minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/) locally, but, having just cleaned off an old Mac, I wanted to try hosting the cluster there instead. This was a bit of a challenge since minikube is focused on local development -- the Kubernetes cluster it creates is not accessible outside the machine where it is running. Eventually, after some trial and error, I was able to automate the setup so that any device on my local network could access the development cluster and its services.

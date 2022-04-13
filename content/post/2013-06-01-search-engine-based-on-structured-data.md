@@ -11,6 +11,7 @@ tags:
 - structured data
 aliases:
 - /blog/2013/06/01/search-engine-based-on-structured-data.html
+- /blog/2013/06/01/the-basics-of-a-custom-search-engine.html
 ---
 
 One of the most useful features of a website is the ability to search. [The Loopy Ewe][4] has had some form of faceted

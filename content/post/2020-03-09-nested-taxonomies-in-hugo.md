@@ -7,6 +7,8 @@ tags:
 - hugo
 - nested
 - taxonomy
+aliases:
+- /blog/2020/03/09/nested-taxonomies-with-hugo.html
 ---
 
 I was looking into a [WordPress](https://wordpress.org/) to [Hugo](https://gohugo.io/) site migration recently. One problem I noticed was around Hugo's incomplete support for hierarchical taxonomies - something that WordPress offers with its notion of [categories](https://make.wordpress.org/support/user-manual/content/categories-and-tags/categories/). I spent a while trying to adapt the built-in [taxonomy conventions](https://gohugo.io/content-management/taxonomies/), but eventually I decided it wasn't practical. Instead, I switched to using regular content [sections](https://gohugo.io/content-management/sections/) and some extra templating magic to support these more complex taxonomies. The following are general strategies that I found to work for me.

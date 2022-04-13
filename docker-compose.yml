@@ -20,3 +20,22 @@ services:
     environment:
     - PORT=8088
     command: -path-prefix /d0c48e72-6c4f-4c24-ba62-7ebefd4a51da -concurrency 25 -http-cache-ttl 31536000 -enable-url-source -allowed-origins http://127.0.0.1:1313,http://localhost:1313,http://hugo:1313,https://s3.dualstack.us-east-1.amazonaws.com/dpb587-website-us-east-1/,https://pbs.twimg.com/media/,https://maps.geoapify.com
+  # cp /Users/dpb587/Downloads/dpb587-2022-04-09T18_28_40.928773-all.xml tmp/remark42/disqus.xml
+  # docker exec -it dpb587-clean_remark_1 remark42 --url=http://localhost:8080 import --provider disqus --file /srv/var/disqus.xml
+  # grep -E '<link>.+</link>' tmp/remark42/disqus.xml | sort | uniq | sed -E 's#<link>(.+)</link>#\1#'  | ( cd scripts/migrateurls ; go run ./main.go ) > tmp/remark42/disqus-remaps.tsv
+  # docker exec -it dpb587-clean_remark_1 remark42 --url=http://localhost:8080 remap --file /srv/var/disqus-remaps.tsv
+  remark:
+    image: umputun/remark42:latest
+    restart: always
+    ports:
+    - "8089:8080"
+    environment:
+    - REMARK_URL=http://localhost:8089
+    - SECRET=devsecret1234
+    - SITE=dpb587.me
+    - DEBUG=true
+    - AUTH_ANON=true
+    - ADMIN_PASSWD=devadmin1234
+    - TIME_ZONE=UTC
+    volumes:
+    - ./tmp/remark42:/srv/var

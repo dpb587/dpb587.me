@@ -1,0 +1,22 @@
+{{ if .Site.Params.commentsRemarkUrl }}
+  {{ if or ( and ( eq .Type "post" ) ( .Params.comments | default true ) ) .Params.comments }}
+    <section class="border rounded-md shadow-md overflow-hidden">
+      <header class="bg-gray-50 border-b p-3 md:px-5 md:py-4">
+        <h2 id="comments" class="text-lg font-light">Comments</h2>
+      </header>
+      <main class="p-3 md:px-4 md:py-3">
+        <div id="remark42"></div>
+      </main>
+      <script>        
+        var remark_config = {
+          host: {{ .Site.Params.commentsRemarkUrl }},
+          site_id: 'dpb587.me',
+          page_title: {{ .Title }},
+          url: 'https://dpb587.me' + {{ .RelPermalink }}
+        }
+      </script>
+      <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
+      <noscript>Please enable JavaScript to view the comments (powered by <a href="https://remark42.com/" target="_blank" rel="noopener noreferrer">Remark42</a>).</a></noscript>
+    </div>
+  {{ end }}
+{{ end }}

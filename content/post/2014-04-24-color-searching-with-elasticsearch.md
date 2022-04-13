@@ -12,6 +12,7 @@ tags:
 - weighted
 aliases:
 - /blog/2014/04/24/color-searching-with-elasticsearch.html
+- /blog/2014/04/24/search-by-color-with-elasticsearch.html
 ---
 
 A [year ago][1] when I updated the [TLE website][2] I dropped the "search by color" functionality. Originally, all the

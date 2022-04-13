@@ -12,6 +12,8 @@ tags:
 - updates
 - upgrades
 - versions
+aliases:
+- /blog/2018/12/02/watching-upstream-binaries-with-concourse.html
 ---
 
 When building software packages, it's easy to accumulate dependencies on dozens of other, upstream software components. When building the first version of something, it's easy to blindly download the source of the latest version off the packages' website. However, once you're past prototypes and need to deal with auditing or maintenance, it becomes important to have some [automated] processes in place.

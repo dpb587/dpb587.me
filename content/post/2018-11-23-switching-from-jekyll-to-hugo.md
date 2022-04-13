@@ -10,6 +10,8 @@ tags:
 - hugo
 - jekyll
 - migration
+aliases:
+- /blog/2018/11/23/switching-from-jekyll-to-hugo.html
 ---
 
 It has been a while since I spent any time on my [personal website][1] here, but, recently, I have a few projects and ideas looking for a place to be recorded. As part of revisiting the site, I decided it might be a good opportunity to switch from using [Jekyll][2] as the static site generator to using [Hugo][3]. Here are some of the motivations and small learnings from that process.

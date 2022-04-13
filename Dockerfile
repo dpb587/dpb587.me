@@ -15,6 +15,7 @@ COPY --from=hugo-deps /result/hugo /usr/bin/hugo
 WORKDIR /result
 ARG GEOAPIFY_TOKEN
 ARG GITHUB_TOKEN
+ARG HUGO_PARAMS_COMMENTSREMARKURL
 ADD .git .git
 ADD appendix appendix
 ADD content content

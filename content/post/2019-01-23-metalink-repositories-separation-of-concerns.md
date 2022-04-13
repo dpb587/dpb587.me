@@ -7,6 +7,9 @@ tags:
 - blobs
 - metalink
 - metalink-repository
+aliases:
+- /blog/2019/01/23/metalink-repositories-separation-of-concerns.html
+- /blog/2019/01/23/metalink-repositories-stability-channels.html
 ---
 
 Continuing on the topic of [metalink repositories]({{< ref "/post/2018-12-28-metalink-repositories-background-and-motivation.md" >}}), one of the biggest advantages I have found is that I no longer need to worry about complicated rules for when products should be published and what downstream components might be affected. Instead, I can focus on defining what "alpha" vs "rc" vs "stable" mean, and then downstream components consume however it's appropriate for them.

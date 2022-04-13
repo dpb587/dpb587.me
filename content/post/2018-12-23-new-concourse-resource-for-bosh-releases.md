@@ -10,6 +10,8 @@ tags:
 - bosh-release
 - concourse
 - concourse-resource
+aliases:
+- /blog/2018/12/23/new-concourse-resource-for-bosh-releases.html
 ---
 
 As a "continuous thing-doer" [Concourse](https://concourse-ci.org/) is great for documenting workflows and making sure they run. One of the workflows I frequently automate is consuming and publishing BOSH releases. Existing resources had some shortcomings for my needs, so I created the [`bosh-release` resource](https://github.com/dpb587/bosh-release-resource) to support those workflows. This post discusses more of the background and decisions that went into the resource.
