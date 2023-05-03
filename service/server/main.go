@@ -105,6 +105,10 @@ func main() {
 		e.GET("/asset/*", echo.WrapHandler(rp))
 	}
 
+	e.GET("/.well-known/host-meta", func (c echo.Context) error {
+		return c.Redirect(http.StatusFound, "https://social.dpb587.me"+c.Request().RequestURI)
+	})
+
 	e.Use(middleware.Static(os.Args[1]))
 
 	port := os.Getenv("PORT")
