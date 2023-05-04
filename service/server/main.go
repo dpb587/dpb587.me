@@ -105,7 +105,11 @@ func main() {
 		e.GET("/asset/*", echo.WrapHandler(rp))
 	}
 
-	e.GET("/.well-known/host-meta", func (c echo.Context) error {
+	e.GET("/@danny", func(c echo.Context) error {
+		return c.Redirect(http.StatusFound, "https://social.dpb587.me/@danny")
+	})
+
+	e.GET("/.well-known/host-meta", func(c echo.Context) error {
 		return c.Redirect(http.StatusFound, "https://social.dpb587.me"+c.Request().RequestURI)
 	})
 
