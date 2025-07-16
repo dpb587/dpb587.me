@@ -29,6 +29,11 @@ EOF
 
 pushd assets/svelte > /dev/null
 
+if [ ! -e node_modules ]
+then
+    npm ci
+fi
+
 npm run build
 
 popd > /dev/null

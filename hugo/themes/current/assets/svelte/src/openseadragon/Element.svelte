@@ -34,7 +34,7 @@
           ...data,
           // slight ux optimization to preload from mouseover; but also...
           // currently using relative urls in info.json which needs to be absolutized before openseadragon; should probably be absolute for max compatibility and external references
-          'id': new URL(data['id'], infoURL).toString(),
+          'id': new URL(data['id'], window.location.toString()).toString(),
         };
       })
       .catch(error => {
