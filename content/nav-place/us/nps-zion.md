@@ -1,7 +1,7 @@
 ---
 params:
     hero:
-        ref: /story/2021/2021-southern-utah/zion-park/media-b423553nx8pk
+        ref: /story/2024/2024-fall-trip/zion-park/media-bjj975v57k21
     nav:
         place:
             us: true
