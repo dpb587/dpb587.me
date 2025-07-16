@@ -1,0 +1,5 @@
+/.devcontainer
+/hugo/public
+/hugo/themes/current/assets/svelte/node_modules
+/private
+/tmp
