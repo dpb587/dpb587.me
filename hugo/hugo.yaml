@@ -28,7 +28,7 @@ markup:
         rightSingleQuote: "'"
 params:
   repository: "https://github.com/dpb587/dpb587.me"
-  tildePrefix: http://localhost:1314
+  tildePrefix: "" # http://localhost:1314
 permalinks:
   page:
     certification: '/about/certification/:sections[1:]/:slug'

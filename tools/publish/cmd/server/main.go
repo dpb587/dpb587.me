@@ -282,8 +282,8 @@ func main() {
 			return nil
 		}
 
-		mux.Handle("/~/blob-geojson/*", rp)
-		mux.Handle("/~/blob-iiif-image-v3/*", rp)
+		mux.Handle("/~/blob-geojson/", rp)
+		mux.Handle("/~/blob-iiif-image-v3/", rp)
 	}
 
 	mux.Handle("/", &fileHandler{
