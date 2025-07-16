@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+set -euxo pipefail
 
 target="$( cd "${1}" && pwd )"
 
@@ -8,8 +8,7 @@ mkdir -p tmp
 
 cd tools
 
-go run ./publish/cmd/noslash/main.go "${target}" 2>&1 \
-    > tee ../tmp/noslash.log
+go run ./publish/cmd/noslash/main.go "${target}" >../tmp/noslash.log 2>&1
 
 cd "${target}"
 
