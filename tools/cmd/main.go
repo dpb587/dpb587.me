@@ -48,7 +48,7 @@ func mainErr() error {
 	{
 		fileService := storageos.NewService(storageos.ServiceOptions{
 			MountsByVirtual: map[string]string{
-				"file:///mnt/depot/": "/workspaces/dpb587.me-hugo2025/tmp/mnt/",
+				"file:///mnt/depot/": "/workspaces/dpb587.me/tmp/mnt/",
 			},
 		})
 
@@ -64,7 +64,7 @@ func mainErr() error {
 		}
 
 		reversegeocodeCache, err := sqlite3.OpenService[googlemapsreversegeocode.LookupLocationInput, *googlemapsreversegeocode.LookupLocationOutput](
-			"/workspaces/dpb587.me-hugo2025/tmp/googlemapsreversegeocode-cache.sqlite3",
+			"/workspaces/dpb587.me/tmp/googlemapsreversegeocode-cache.sqlite3",
 		)
 		if err != nil {
 			panic(fmt.Errorf("cache: %v", err))
@@ -76,7 +76,7 @@ func mainErr() error {
 	//
 
 	{
-		profiles, err := locationmask.LoadGeoJSON("/workspaces/dpb587.me-hugo2025/private/locationmask/*.geojson")
+		profiles, err := locationmask.LoadGeoJSON("/workspaces/dpb587.me/private/locationmask/*.geojson")
 		if err != nil {
 			panic(fmt.Errorf("load location mask profiles: %w", err))
 		}
@@ -97,7 +97,7 @@ func mainErr() error {
 		}
 
 		repository := ndjson.NewRepository(ndjson.RepositoryOptions{
-			BaseDir:  "/workspaces/dpb587.me-hugo2025/private/data/",
+			BaseDir:  "/workspaces/dpb587.me/private/data/",
 			Compress: true,
 			NodeDescriptorFactory: catalog.NodeDescriptorFactoryList{
 				cGlobal.BlobService,
@@ -124,7 +124,7 @@ func mainErr() error {
 					{
 						Name:            "default",
 						BaseURL:         "/~/blob-iiif-image-v3/",
-						OutputDir:       "/workspaces/dpb587.me-hugo2025/tmp/tilde/blob-iiif-image-v3/",
+						OutputDir:       "/workspaces/dpb587.me/tmp/tilde/blob-iiif-image-v3/",
 						IdentifierNamer: blobIdentifierNamer,
 						FilterExiftool: []string{
 							"-IPTC:CopyrightNotice=Copyright " + time.Now().Format("2006") + " Daniel Berger",
@@ -143,7 +143,7 @@ func mainErr() error {
 					{
 						Name:            "default",
 						BaseURL:         "/~/blob-geojson/",
-						OutputDir:       "/workspaces/dpb587.me-hugo2025/tmp/tilde/blob-geojson/",
+						OutputDir:       "/workspaces/dpb587.me/tmp/tilde/blob-geojson/",
 						IdentifierNamer: blobIdentifierNamer,
 					},
 				}),
