@@ -1,0 +1,6 @@
+{{ $transformed := transform.Markdownify .InnerDeindent -}}
+{{ if .Get "unwrap" -}}
+  nope
+{{ else -}}
+  {{ $transformed -}}
+{{ end -}}

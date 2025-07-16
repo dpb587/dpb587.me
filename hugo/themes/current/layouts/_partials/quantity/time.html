@@ -1,0 +1,17 @@
+{{ if eq .unit "SEC" }}
+	{{ if gt .value 3600 }}
+		{{ math.Floor ( div .value 3600 ) }} hr
+		{{ if gt ( mod .value 3600 ) 0 }}
+			{{ math.Ceil ( div ( mod .value 3600 ) 60 ) }} min
+		{{ end }}
+	{{ else if gt .value 60}}
+		{{ math.Floor ( div .value 60 ) }} min
+		{{ if gt ( mod .value 60 ) 0 }}
+			{{ math.Mod .value 60 }} sec
+		{{ end }}
+	{{ else }}
+		{{ .value }} sec
+	{{ end }}
+{{ else }}
+	{{ errorf "unsupported unit: %s" .unit }}
+{{ end }}

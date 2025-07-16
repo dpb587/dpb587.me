@@ -1,0 +1,66 @@
+---
+date: "2022-09-27T13:39:41-06:00"
+params:
+    mediaType:
+        captureTime:
+            time: "2022-09-27T13:39:41-06:00"
+        catalogNodeUid: 0197d146-5474-77a2-8a90-b3d533a81147
+        exifProfile:
+            apertureValue:
+                number: 1.5
+            focalLength:
+                number: 5.7
+            iso:
+                number: 50
+            lensMake:
+                string: Apple
+            lensModel:
+                string: iPhone 13 Pro back triple camera 5.7mm f/1.5
+            make:
+                string: Apple
+            model:
+                string: iPhone 13 Pro
+            shutterSpeedValue:
+                number: 8000.000008065464
+        geoCoordinates:
+            elevation: 2460.74432677761
+            latitude: 37.74435555555556
+            longitude: -105.52306388888888
+        height: 3024
+        imageService:
+            infoUrl: /~/blob-iiif-image-v3/0cce12c168dbe5b0cd0f0def2d5f730036b37611a14fbb3ce70497f818580e5d/info.json
+        placesProfile:
+            country:
+                code: US
+                name: United States
+            countryRegion:
+                code: US-CO
+                name: Colorado
+            places:
+                - kind: admin2
+                  name: Alamosa County
+        thumbnails:
+            - height: 180
+              url: /~/blob-iiif-image-v3/0cce12c168dbe5b0cd0f0def2d5f730036b37611a14fbb3ce70497f818580e5d/full/240%2C180/0/default.jpg
+              width: 240
+            - height: 360
+              url: /~/blob-iiif-image-v3/0cce12c168dbe5b0cd0f0def2d5f730036b37611a14fbb3ce70497f818580e5d/full/480%2C360/0/default.jpg
+              width: 480
+            - height: 540
+              url: /~/blob-iiif-image-v3/0cce12c168dbe5b0cd0f0def2d5f730036b37611a14fbb3ce70497f818580e5d/full/720%2C540/0/default.jpg
+              width: 720
+            - height: 960
+              url: /~/blob-iiif-image-v3/0cce12c168dbe5b0cd0f0def2d5f730036b37611a14fbb3ce70497f818580e5d/full/1280%2C960/0/default.jpg
+              width: 1280
+            - height: 1440
+              url: /~/blob-iiif-image-v3/0cce12c168dbe5b0cd0f0def2d5f730036b37611a14fbb3ce70497f818580e5d/full/1920%2C1440/0/default.jpg
+              width: 1920
+        width: 4032
+    nav:
+        place:
+            us/co: true
+        type:
+            media: true
+title: IMG_5784.HEIC
+type: media
+---

@@ -1,0 +1,47 @@
+<div class="{{ .layout.standard.maxWidth }} mx-auto">
+  <a href="{{ .page.RelPermalink }}" title="{{ .page.Title }}">
+    <div class="md:grid md:grid-cols-2 md:gap-4 gap-1 md:px-4 md:my-4 px-1">
+      <div class="aspect-w-1 aspect-h-1 relative">
+        <dpb587-map
+          class="w-full h-full"
+          interaction-mode="button"
+				  sources-json="{{ encoding.Jsonify ( slice
+            ( dict
+              `dataURL` ( printf `%s%s` .page.Site.Params.tildePrefix .page.Params.routeType.geojson.url )
+            )
+          ) }}"
+        />
+      </div>
+      <div>
+        <div class="p-4">
+          <div class="mb-4">
+            <strong class="text-2xl font-light">{{ .page.Title }}</strong>
+          </div>
+          {{ $params := .page.Params.routeType }}
+          {{ if or ( gt ( len $params.quantityStats ) 0 ) $params.distance $params.duration }}
+            <dl class="gap-y-3 grid grid-cols-2">
+              {{ if $params.distance }}
+                <div>
+                  <dt class="text-stone-600">Distance</dt>
+                  <dd class="font-semibold text-stone-800">{{ partial "quantity/distance" $params.distance }}</dd>
+                </div>
+              {{ end }}
+              {{ if $params.duration }}
+                <div>
+                  <dt class="text-stone-600">Duration</dt>
+                  <dd class="font-semibold text-stone-800">{{ partial "quantity/time" $params.duration }}</dd>
+                </div>
+              {{ end }}
+              {{ range $params.quantityStats }}
+                <div>
+                  <dt class="text-stone-600">{{ .name }}</dt>
+                  <dd class="font-semibold text-stone-800">{{ partial "quantity/distance" .quantity }}</dd>
+                </div>
+              {{ end }}
+            </dl>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

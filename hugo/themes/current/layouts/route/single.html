@@ -1,0 +1,239 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+{{ end }}
+
+{{ define "main" }}
+	{{ $params := .Params.routeType }}
+	
+	{{ $photosLayerFeatures := slice }}
+	{{ range .Parent.Pages.ByDate }}
+		{{ if and ( eq .Type "media" ) .Params.mediaType.geoCoordinates .Params.mediaType.thumbnails }}
+			{{ $photosLayerFeatures = $photosLayerFeatures | append ( dict
+				"type" "Feature"
+				"geometry" ( dict
+					"type" "Point"
+					"coordinates" ( slice
+						.Params.mediaType.geoCoordinates.longitude
+						.Params.mediaType.geoCoordinates.latitude
+					)
+				)
+				"properties" ( dict
+					"url" .RelPermalink
+					"image" ( printf "%s%s" site.Params.tildePrefix ( index .Params.mediaType.thumbnails 0 ).url )
+					"date" .Date
+				)
+			) }}
+		{{ end }}
+	{{ end }}
+
+	{{ $mapLayers := slice
+		( dict
+			`dataURL` ( printf `%s%s` site.Params.tildePrefix $params.geojson.url )
+		)
+	}}
+
+	{{ if lt 0 ( len $photosLayerFeatures ) }}
+		{{ $mapLayers = $mapLayers | append ( dict
+			"cluster" true
+			"data" ( dict
+				"type" "FeatureCollection"
+				"features" $photosLayerFeatures
+			)
+		) }}
+	{{ end }}
+
+	<div
+		class="md:fixed md:left-12 md:inset-y-2 md:right-96 z-0 relative h-screen/80 md:h-auto"
+	>
+		<div class="absolute z-0 inset-x-0 top-0 bottom-36">
+			<dpb587-map
+				class="h-full w-full"
+				interaction-mode="native"
+				sources-json="{{ encoding.Jsonify $mapLayers }}"
+			></dpb587-map>
+		</div>
+		<div class="absolute z-0 inset-x-0 bottom-0 h-36">
+			<div class="absolute inset-x-0 bottom-0 top-1 bg-stone-200 overflow-hidden">
+				<!-- <dpb587-elevation-chart
+					container-class="h-full w-full"
+					src="{{ site.Params.tildePrefix }}{{ .Params.routeType.geojson.url }}"
+				></dpb587-elevation-chart> -->
+			</div>
+		</div>
+	</div>
+	<div class="flex">
+		<div class="grow"></div>
+		<div class="md:min-h-screen w-full md:w-96 relative z-0 p-2 md:p-4">
+			<!-- <div class=" absolute inset-x-0 bottom-12 top-0 border-b-4 border-stone-800 -z-10" /> -->
+			<!-- <div class="absolute inset-x-0 bottom-0 h-12 bg-stone-50 pr-20">
+				<div class="flex items-center h-full w-full justify-between pl-3.5 pr-5">
+				<div class="text-stone-600">Gallery</div>
+				<Icon class="flex-initial h-4 w-4" name="heroicons/20/solid/chevron-up-down" />
+				</div>
+			</div> -->
+			<section class="bg-stone-100 font-serif p-6">
+				<h1 class="text-xl md:text-2xl">{{ .Title }}</h1>
+				{{ with .Content }}
+					<div class="mt-3 prose prose-sm prose-stone font-serif max-w-none">
+						{{ . }}
+					</div>
+				{{ end }}
+			</section>
+			{{ if or ( gt ( len $params.quantityStats ) 0 ) $params.distance $params.duration }}
+				<section class="bg-stone-100">
+					<div class="flex items-start -mb-2">
+						<div class="h-1 w-4 bg-stone-800 rounded-br"></div>
+						<h3 class="-mt-1 text-xs uppercase text-stone-800 font-semibold tracking-tight px-2">Summary</h3>
+						<div class="h-1 grow bg-stone-800 rounded-bl"></div>
+					</div>
+					<div class="p-3">
+						<dl class="p-3 gap-y-3 grid grid-cols-2">
+							{{ if $params.distance }}
+								<div>
+									<dt class="text-xs text-stone-600">Distance</dt>
+									<dd class="text-sm font-medium text-stone-800">{{ partial "quantity/distance" $params.distance }}</dd>
+								</div>
+							{{ end }}
+							{{ if $params.duration }}
+								<div>
+									<dt class="text-xs text-stone-600">Duration</dt>
+									<dd class="text-sm font-medium text-stone-800">{{ partial "quantity/time" $params.duration }}</dd>
+								</div>
+							{{ end }}
+							{{ range $params.quantityStats }}
+								<div>
+									<dt class="text-xs text-stone-600">{{ .name }}</dt>
+									<dd class="text-sm font-medium text-stone-800">{{ partial "quantity/distance" .quantity }}</dd>
+								</div>
+							{{ end }}
+						</dl>
+					</div>
+				</section>
+			{{ end }}
+			{{ if or $params.startTime $params.startLocation.geoCoordinates }}
+				<section class="bg-stone-100">
+					<div class="flex items-start -mb-2">
+						<div class="h-1 w-4 bg-stone-800 rounded-br"></div>
+						<h3 class="-mt-1 text-xs uppercase text-stone-800 font-semibold tracking-tight px-2">Start</h3>
+						<div class="h-1 grow bg-stone-800 rounded-bl"></div>
+					</div>
+					<div class="p-3">
+						<dl class="py-3 space-y-3">
+							{{ with $params.startTime }}
+								<div class="px-3">
+									<dt class="hidden text-xs text-stone-600 font-semibold">Date</dt>
+									<dd class="text-sm font-medium text-stone-800">{{ time.Format "Monday, January 2, 2006" .time }}</dd>
+								</div>
+								<div class="flex justify-between px-3">
+									<div>
+										<dt class="text-xs text-stone-600">Time</dt>
+										<dd class="text-sm font-medium text-stone-800">{{ time.Format "3:04 PM" .time }}</dd>
+									</div>
+									{{/*{entry.data['startTime/timezoneName'] &&
+										<div class="text-right">
+											<dt class="text-xs text-stone-600">Timezone</dt>
+											<dd class="text-sm font-medium text-stone-800 truncate">{entry.data['startTime/timezoneName']}</dd>
+										</div>
+									*/}}
+								</div>
+							{{ end }}
+							{{ with $params.startLocation.geoCoordinates }}
+								<div class="flex justify-between px-3">
+									<div>
+										<dt class="text-xs text-stone-600">GPS Coordinates</dt>
+										<dd class="text-sm font-medium text-stone-800">{{ math.Div ( math.Round ( math.Mul .latitude 1000000 ) ) 1000000 }}, {{ math.Div ( math.Round ( math.Mul .longitude 1000000 ) ) 1000000 }}</dd>
+									</div>
+									{{ with .elevation }}
+										<div>
+											<dt class="text-xs text-right text-stone-600">Elevation</dt>
+											<dd class="text-sm text-right font-medium text-stone-800">{{ math.Round . }} <abbr class="no-underline" title="metre">m</abbr></dd>
+										</div>
+									{{ end }}
+								</div>
+							{{ end }}
+						</dl>
+					</div>
+				</section>
+			{{ end }}
+			{{ if or $params.endTime $params.endLocation.geoCoordinates }}
+				<section class="bg-stone-100">
+					<div class="flex items-start -mb-2">
+						<div class="h-1 w-4 bg-stone-800 rounded-br"></div>
+						<h3 class="-mt-1 text-xs uppercase text-stone-800 font-semibold tracking-tight px-2">End</h3>
+						<div class="h-1 grow bg-stone-800 rounded-bl"></div>
+					</div>
+					<div class="p-3">
+						<dl class="py-3 space-y-3">
+							{{ with $params.endTime }}
+								{{ if ne ( time.Format "Monday, January 2, 2006" $params.startTime.time ) ( time.Format "Monday, January 2, 2006" .time ) }}
+									<div class="px-3">
+										<dt class="hidden text-xs text-stone-600 font-semibold">Date</dt>
+										<dd class="text-sm font-medium text-stone-800">{{ time.Format "Monday, January 2, 2006" .time }}</dd>
+									</div>
+								{{ end }}
+								<div class="flex justify-between px-3">
+									<div>
+										<dt class="text-xs text-stone-600">Time</dt>
+										<dd class="text-sm font-medium text-stone-800">{{ time.Format "3:04 PM" .time }}</dd>
+									</div>
+									{{/*{entry.data['startTime/timezoneName'] &&
+										<div class="text-right">
+											<dt class="text-xs text-stone-600">Timezone</dt>
+											<dd class="text-sm font-medium text-stone-800 truncate">{entry.data['startTime/timezoneName']}</dd>
+										</div>
+									*/}}
+								</div>
+							{{ end }}
+							{{ with $params.endLocation.geoCoordinates }}
+								<div class="flex justify-between px-3">
+									<div>
+										<dt class="text-xs text-stone-600">GPS Coordinates</dt>
+										<dd class="text-sm font-medium text-stone-800">{{ math.Div ( math.Round ( math.Mul .latitude 1000000 ) ) 1000000 }}, {{ math.Div ( math.Round ( math.Mul .longitude 1000000 ) ) 1000000 }}</dd>
+									</div>
+									{{ with .elevation }}
+										<div>
+											<dt class="text-xs text-right text-stone-600">Elevation</dt>
+											<dd class="text-sm text-right font-medium text-stone-800">{{ math.Round . }} <abbr class="no-underline" title="metre">m</abbr></dd>
+										</div>
+									{{ end }}
+								</div>
+							{{ end }}
+						</dl>
+					</div>
+				</section>
+			{{ end }}
+			{{ if lt 0 ( len $photosLayerFeatures) }}
+				<section class="bg-stone-100">
+					<div class="flex items-start -mb-2">
+						<div class="h-1 w-4 bg-stone-800 rounded-br"></div>
+						<h3 class="-mt-1 text-xs uppercase text-stone-800 font-semibold tracking-tight px-2">Photos</h3>
+						<div class="h-1 grow bg-stone-800 rounded-bl"></div>
+					</div>
+					<div class="px-3 pb-3 pt-2.5">
+						<div class="grid grid-cols-4 gap-1 pt-1 pb-px">
+							{{ range .Parent.Pages.ByDate }}
+								{{ if and ( eq .Type "media" ) .Params.mediaType.geoCoordinates .Params.mediaType.thumbnails }}
+									{{ $thumbnail := index .Params.mediaType.thumbnails 0 }}
+									<a
+										class="aspect-w-1 aspect-h-1"
+										href="{{ .RelPermalink }}"
+									>
+										<div>
+											<img
+												class="w-full h-full object-cover"
+												alt="{{ .Title }}"
+												height="{{ $thumbnail.height }}"
+												src="{{ site.Params.tildePrefix }}{{ $thumbnail.url }}"
+												width="{{ $thumbnail.width }}"
+											/>
+										</div>
+									</a>
+								{{ end }}
+							{{ end }}
+						</div>
+					</div>
+				</section>
+			{{ end }}
+		</div>
+	</div>
+{{ end }}

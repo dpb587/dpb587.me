@@ -1,0 +1,13 @@
+{{ with . }}
+  <section>
+    <div class="px-4 my-2">
+      <h2 class="text-2xl font-semibold">Parks</h2>
+    </div>
+    <div class="border-t border-stone-200 divide-y divide-stone-200">
+      {{ range . }}
+        {{ .Store.Set "img[@sizes]" "(min-width: 768px) 18.6666rem, 100vw" }}
+        {{ partial "entry/visual-row-item" . }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

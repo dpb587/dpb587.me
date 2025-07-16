@@ -1,0 +1,23 @@
+<a class="relative z-0 group hover:z-10 block" href="{{ .link.href }}" title="{{ .link.title }}">
+	<div class="overflow-hidden shadow-none transition-all duration-100 ease-out group-hover:scale-103 group-hover:shadow-md">
+		{{ $tnDefault := index .image.thumbnails 0 }}
+		<img
+			class="w-full h-full object-cover scale-103 transition-all duration-100 ease-out group-hover:scale-100"
+			alt="{{ .image.alt }}"
+			height="{{ $tnDefault.height }}"
+			loading="lazy"
+			src="{{ site.Params.tildePrefix }}{{ $tnDefault.url }}"
+			srcset="{{ range $idx, $tn := .image.thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
+			sizes="{{ .image.viewportSizes }}"
+			width="{{ $tnDefault.width }}"
+		/>
+	</div>
+	{{ with .label }}
+		<div class="absolute inset-x-0 inset-y-0 flex items-end justify-start p-2 md:p-4">
+			<div class="relative z-0 px-2.5 py-1.5 shadow-lg text-sm md:text-base font-serif font-semibold text-stone-100 overflow-hidden transition ease-out duration-100 group-hover:text-stone-50 group-hover:shadow-none">
+				<div class="absolute -z-10 inset-0 bg-stone-800 group-hover:bg-black"></div>
+				<strong>{{ .title }}</strong>
+			</div>
+		</div>
+	{{ end }}
+</a>

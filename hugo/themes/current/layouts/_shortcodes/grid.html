@@ -1,0 +1,5 @@
+<prose:custom-start />
+<div class="{{ if eq ( .Get 0 ) `double` }}grid grid-cols-1 sm:grid-cols-2 gap-4{{ else if eq ( .Get 0 ) `left-right` }}grid grid-cols-2 gap-4{{ else }}{{ errorf `Invalid grid: %s` ( .Get 0 ) }}{{ end }}">
+  {{ .Inner }}
+</div>
+<prose:custom-end />

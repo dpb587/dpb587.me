@@ -1,0 +1,27 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+	<dpb587-toc button-class="md:px-1 py-0.5 md:py-0" for="article"></dpb587-toc>
+{{ end }}
+
+{{ define "main" }}
+	{{ $collectionSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/browse/collections/" .RelPermalink ) ) }}
+
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8 space-y-8 ">
+				{{ partial "prose/render" ( dict 
+					"content" .Content
+					"classColumn" "max-w-4xl mx-auto space-y-8"
+					"classColumnWide" "max-w-6xl mx-auto space-y-8"
+					"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+					"classGutter" "px-4"
+				) }}
+				{{ partial "entry/list-groups" ( dict
+					"Page" .
+					"Groups" ( ( where site.Pages ( printf "Params.nav.collection.%s" $collectionSlug ) "eq" true ).GroupByDate "2006" )
+				) }}
+			</div>
+		</main>
+	</div>
+{{ end }}

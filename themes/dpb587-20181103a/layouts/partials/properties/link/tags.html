@@ -1,8 +1,0 @@
-{{ range . }}
-  <a class="control" href="/tags/{{ . | urlize }}/">
-    <div class="tags has-addons">
-      <span class="tag is-link is-light" title="Tagged with"><i class="fa fa-tag" aria-hidden="true"></i></span>
-      <span class="tag is-link is-light">{{ . }}</span>
-    </div>
-  </a>
-{{ end }}

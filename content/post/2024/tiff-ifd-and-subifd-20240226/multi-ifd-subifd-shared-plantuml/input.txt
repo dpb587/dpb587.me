@@ -1,0 +1,35 @@
+@startuml
+
+folder IFD0 #ffffff {
+    rectangle "<&tag> Next IFD" as IFD0_Tag_NextIFD
+    rectangle "<&tag> SubIFD" as IFD0_Tag_SubIFD
+    rectangle "<&image> //Image Bytes//" as IFD0_Data
+}
+
+folder IFD1 #ffffff {
+    rectangle "<&tag> SubIFD" as IFD1_Tag_SubIFD
+    rectangle "<&image> //Image Bytes//" as IFD1_Data
+}
+
+IFD0_Tag_NextIFD ..> IFD1
+
+folder IFD as IFDm0s1 {
+    rectangle "<&image> //Image Bytes//" as IFDm0s1_Data
+}
+
+IFD0_Tag_SubIFD ..> IFDm0s1 : 0
+IFD1_Tag_SubIFD ..> IFDm0s1 : 1
+
+folder IFD as IFDm0s2 {
+    rectangle "<&image> //Image Bytes//" as IFDm0s2_Data
+}
+
+IFD0_Tag_SubIFD ..> IFDm0s2 : 1
+
+folder IFD as IFDm1s1 {
+    rectangle "<&image> //Image Bytes//" as IFDm1s1_Data
+}
+
+IFD1_Tag_SubIFD ..> IFDm1s1 : 0
+
+@enduml

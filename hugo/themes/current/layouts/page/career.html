@@ -1,0 +1,89 @@
+{{ define "main" }}
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8 space-y-8">
+				{{ partial "prose/render" ( dict 
+					"content" .Content
+					"classColumn" "max-w-4xl mx-auto space-y-8"
+					"classColumnWide" "max-w-6xl mx-auto space-y-8"
+					"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+					"classGutter" "px-4"
+				) }}
+        <section class="max-w-4xl mx-auto font-serif">
+          <h1 class="text-2xl font-semibold px-4 py-2.5">Occupation</h1>
+          <ol class="border-t border-stone-200 divide-y divide-stone-200">
+            {{ range ( where ( where site.Pages "Type" "occupation" ) "RelPermalink" "ne" "" ).ByDate.Reverse }}
+              <li class="p-4 space-y-2.5">
+                <div class="flex items-center space-x-4">
+                  <img class="flex-initial rounded w-12 h-12 shadow" alt="Logo ({{ .Params.occupationType.organization.name }})" src="{{ .Params.occupationType.organization.logo }}" loading="lazy">
+                  <div class="flex-1 -mt-px">
+                    <div class="text-lg">
+                      <a class="hover:underline" href="{{ .RelPermalink }}">
+                        <strong class="font-semibold">{{ .Title }}</strong>
+                      </a>
+                    </div>
+                    <div class="text-sm text-stone-600">
+                      <span>{{ .Params.timeRange.from | default .Date | dateFormat "January '06" }} &ndash; {{ with .Params.timeRange.thru }}{{ . | dateFormat "January '06" }}{{ else }}present{{ end }}</span>
+                      &middot;
+                      <span>{{ .Params.occupationType.employmentType }}</span>
+                    </div>
+                  </div>
+                  <div class="flex-initial hidden sm:block">
+                    <a class="block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white whitespace-nowrap hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-800" href="{{ .RelPermalink }}">
+                      More Details
+                    </a>
+                  </div>
+                </div>
+                <div class="md:flex md:space-x-4">
+                  <div class="md:w-12"></div>
+                  <div class="md:flex-1 mt-5 md:mt-0">
+                    <div class="space-y-8">
+                      {{ partial "prose/render" ( dict 
+                        "content" .Content
+                        "classColumn" "max-w-4xl mx-auto space-y-8"
+                      ) }}
+                    </div>
+                    <div class="sm:hidden mt-5">
+                      <a href="{{ .RelPermalink }}" class="block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded text-gray-700 bg-white whitespace-nowrap hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-800">
+                        More Details
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {{ end }}
+          </ol>
+        </section>
+        <section class="max-w-4xl mx-auto font-serif">
+          <h1 class="text-2xl font-semibold px-4 py-2.5">Certification</h1>
+          <ol class="border-t border-stone-200 divide-y divide-stone-200">
+            {{ range ( where ( where site.Pages "Type" "certification" ) "Title" "ne" "" ).ByDate.Reverse }}
+              <li class="p-4 space-y-2.5">
+                <div class="flex items-center space-x-4">
+                  <img class="flex-initial rounded w-12 h-12 shadow" alt="Logo ({{ .Params.certificationType.organization.name }})" src="{{ .Params.certificationType.organization.logo }}" loading="lazy">
+                  <div class="flex-1 -mt-px">
+                    <div class="text-lg">
+                      <strong class="font-semibold">{{ .Title }}</strong>{{ with .Params.certificationType.qualification }} ({{ . }}){{ end }}
+                    </div>
+                    <div class="text-sm text-stone-600">
+                      <span>{{ .Date | dateFormat "January '06" }}</span>
+                      &middot;
+                      {{ if .Params.certificationType.organization.url }}
+                        <a class="hover:underline" href="{{ .Params.certificationType.organization.url }}" target="_blank" rel="noopener noreferrer">
+                          <span>{{ .Params.certificationType.organization.name }}</span>
+                        </a>
+                      {{ else }}
+                        <span>{{ .Params.certificationType.organization.name }}</span>
+                      {{ end }}
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {{ end }}
+          </ol>
+        </section>
+			</div>
+		</main>
+	</div>
+{{ end }}

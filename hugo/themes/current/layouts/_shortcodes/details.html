@@ -1,0 +1,12 @@
+<prose:custom-start />
+<details class="pl-px"{{ with .Get "open" }} open{{ end }}>
+	<summary class="font-serif font-semibold text-stone-700"><span class="pl-0.5">{{ .Get "summary" }}</span></summary>
+	<div class="border-l-2 border-stone-700 rounded-bl ml-1 mt-1 space-y-4 pt-3 pl-2">
+		{{ partial "prose/render" ( dict
+			"content" .InnerDeindent
+			"classColumn" "space-y-4"
+			"classGutter" "px-4"
+		) }}
+	</div>
+</details>
+<prose:custom-end />

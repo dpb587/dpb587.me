@@ -1,0 +1,18 @@
+{{ $prompt := .Get "prompt" | default "$ " -}}
+{{ $promptNewLine := printf "\n%s" ( strings.Repeat ( len $prompt ) " " ) -}}
+
+{{ $contentLang := index ( index ( strings.FindRESubmatch "(?m)^.*```(\\w*).*$" .Inner ) 0 ) 1 | default "bash" -}}
+{{ $indent := index ( index ( strings.FindRESubmatch "(?m)^([ \\t]*)```" .Inner ) 0 ) 1 -}}
+{{ $content := strings.ReplaceRE "(?ms)^.*```[^\\n]*(\\n.*)\\s*```\\s*" "$1" .Inner -}}
+{{ $content := strings.ReplaceRE ( printf "\n%s" $indent ) "\n" $content -}}
+{{ $content := strings.TrimSpace $content -}}
+
+<div class="flex group">
+	<div class="flex-initial relative">
+		<pre class="text-neutral-400 select-none">{{ $prompt }}</pre>
+	</div>
+	<span class="whitespace-pre-line">{{ partial "prose/code-highlight" ( dict
+		"content" $content
+		"lang" $contentLang
+	) }}</span>
+</div>

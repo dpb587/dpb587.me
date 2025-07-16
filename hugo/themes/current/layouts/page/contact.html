@@ -1,0 +1,122 @@
+{{ define "main" }}
+  {{ $profileGroups := slice
+    ( dict
+      "icon" "24/outline/home-modern"
+      "name" "Home"
+      "profiles" ( slice
+        ( dict
+          "name" "dpb587.me"
+          "note" "My digital home to organize content and thoughts."
+          "url" "/"
+          "icon" "24/outline/link"
+        )
+      )
+    )
+    ( dict
+      "icon" "24/outline/user-group"
+      "name" "Social"
+      "profiles" ( slice
+        ( dict
+          "scope" "linkedin"
+          "name" "dpb587"
+          "note" "For the occasional bit of professional networking."
+          "url" "https://www.linkedin.com/in/dpb587/"
+        )
+        ( dict
+          "scope" "x"
+          "name" "dpb587"
+          "note" "For following some interesting topics (and rarely posting)."
+          "url" "https://twitter.com/dpb587"
+        )
+      )
+    )
+    ( dict
+      "icon" "24/outline/wrench-screwdriver"
+      "name" "Technical"
+      "profiles" ( slice
+        ( dict
+          "scope" "github"
+          "name" "dpb587"
+          "note" "For publishing my open-source work and other projects."
+          "url" "https://github.com/dpb587"
+        )
+        ( dict
+          "scope" "gitlab"
+          "name" "dpb587"
+          "note" "For some ad hoc software projects and collaboration."
+          "url" "https://gitlab.com/dpb587"
+        )
+      )
+    )
+  }}
+  {{/* 
+    ( dict
+      "icon" "24/outline/key"
+      "name" "Key"
+      "profiles" ( slice
+        ( dict
+          "name" "ssh"
+          "note" "For bootstrapping a secure connection."
+          "url" "/authorized_keys"
+          "icon" "24/outline/document-arrow-down"
+        )
+      )
+    )
+  */}}
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8 space-y-8">
+				{{ partial "prose/render" ( dict 
+					"content" .Content
+					"classColumn" "max-w-4xl mx-auto space-y-8"
+					"classColumnWide" "max-w-6xl mx-auto space-y-8"
+					"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+					"classGutter" "px-4"
+				) }}
+        <section class="max-w-2xl mx-auto py-8 space-y-8">
+          <dl class="font-serif text-stone-700">
+            {{ range $profileGroupIdx, $profileGroup := $profileGroups }}
+              <div class="flex pl-2.5 space-x-1">
+                <dt class="pt-3">
+                  {{ partial "heroicons/inline" ( dict
+                    "icon" .icon
+                    "attrs" `class="mt-2 h-5 w-5 text-stone-500"`
+                  ) }}
+                  <span class="sr-only">{{ $profileGroup.name }}</span>
+                </dt>
+                <div class="{{ if eq $profileGroupIdx 0 }}border-y{{ else }}border-b{{ end }} border-stone-300 divide-y divide-stone-300 w-full">
+                  {{ range $profileGroup.profiles }}
+                    <dt class="relative z-0">
+                      <a
+                        class="px-2.5 py-4 flex justify-between space-x-2 group"
+                        href="{{ .url }}"
+                        rel="noopener noreferrer"
+                        {{ if strings.Contains .url "://" }}target="_blank"{{ end }}
+                      >
+                        <div class="block grow">
+                          {{ if .scope }}
+                            <div class="block text-xl group-hover:text-sky-800"><span class="font-semibold">{{ .scope }}</span><span class="font-extralight text-stone-500"> / {{ .name }}</span></div>
+                          {{ else }}
+                            <div class="block text-xl font-semibold group-hover:text-sky-800">{{ .name }}</div>
+                          {{ end }}
+                          {{ with .note }}
+                            <div class="mt-1">{{ . }}</div>
+                          {{ end }}
+                        </div>
+                        {{ partial "heroicons/inline" ( dict
+                          "icon" ( .icon | default "24/outline/arrow-top-right-on-square" )
+                          "attrs" `class="mt-1 h-5 w-5 text-stone-400 group-hover:text-sky-800"`
+                        ) }}
+                      </a>
+                    </dt>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
+          </dl>
+        </section>
+			</div>
+		</main>
+	</div>
+{{ end }}

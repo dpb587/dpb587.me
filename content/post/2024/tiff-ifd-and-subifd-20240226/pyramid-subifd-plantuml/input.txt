@@ -1,0 +1,31 @@
+@startuml
+
+file pyramid-subifd.tif {
+    folder IFD0 #ffffff {
+        rectangle "<&tag> Subfile Type\n**Full-resolution**" as IFD0_Tag_SubfileType
+        rectangle "<&tag> Width\n**4096**" as IFD0_Tag_Width
+        rectangle "<&tag> Height\n**2048**" as IFD0_Tag_Height
+        rectangle "<&tag> SubIFD" as IFD0_Tag_SubIFD
+        rectangle "<&image> //Image Bytes//" as IFD0_Data
+    }
+
+    folder IFD as IFDm0s0 {
+        rectangle "<&tag> Subfile Type\n**Reduced-resolution**" as IFDm0s0_Tag_SubfileType
+        rectangle "<&tag> Width\n**2048**" as IFDm0s0_Tag_Width
+        rectangle "<&tag> Height\n**1024**" as IFDm0s0_Tag_Height
+        rectangle "<&image> //Image Bytes//" as IFDm0s0_Data
+    }
+
+    IFD0_Tag_SubIFD --> IFDm0s0
+
+    folder IFD as IFDm0s1 {
+        rectangle "<&tag> Subfile Type\n**Reduced-resolution**" as IFDm0s1_Tag_SubfileType
+        rectangle "<&tag> Width\n**1024**" as IFDm0s1_Tag_Width
+        rectangle "<&tag> Height\n**512**" as IFDm0s1_Tag_Height
+        rectangle "<&image> //Image Bytes//" as IFDm0s1_Data
+    }
+
+    IFD0_Tag_SubIFD --> IFDm0s1
+}
+
+@enduml

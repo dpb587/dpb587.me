@@ -1,0 +1,130 @@
+{{ $output := slice }}
+
+{{ $current := collections.NewScratch }}
+{{ $current.Set "markdown" true }}
+{{ $current.Set "markdownActive" false }}
+{{ $current.Set "columnClass" .classColumn }}
+{{ $current.Set "columnActive" false }}
+
+{{ $stack := slice }}
+
+{{ $markdownOpen := printf `<div class="prose max-w-none prose-stone font-serif %s">` $.classGutter }}
+
+{{ range strings.Split ( printf "<prose:init />%s" .content ) "<prose:" }}
+    {{ if gt ( len . ) 0 }}
+        {{ $match := index ( strings.FindRESubmatch `(?s)^([^\s>]+)\s*([^>]*) />(.*)$` . ) 0 }}
+        {{ if eq ( index $match 1 ) "custom-start" }}
+            {{ if ( $current.Get "markdownActive" ) }}
+                {{ $output = $output | append ( printf "</div>" ) }}
+                {{ $current.Set "markdownActive" false }}
+            {{ end }}
+
+            {{ $stack = $stack | append $current }}
+            {{ $lastCurrent := $current }}
+
+            {{ $current = collections.NewScratch }}
+            {{ $current.Set "markdown" false }}
+            {{ $current.Set "markdownActive" false }}
+            {{ $current.Set "columnClass" ( $lastCurrent.Get "columnClass" ) }}
+            {{ $current.Set "columnActive" false }}
+
+            {{ $output = $output | append ( index $match 3 ) }}
+        {{ else if eq ( index $match 1 ) "custom-end" }}
+            {{ $current = index $stack ( sub ( len $stack ) 1 ) }}
+            {{ $stack = first ( sub ( len $stack ) 1 ) $stack }}
+
+            {{ if and ( $current.Get "markdown" ) ( gt ( len ( strings.TrimSpace ( index $match 3 ) ) ) 0 ) }}
+                {{ $output = $output | append $markdownOpen }}
+                {{ $current.Set "markdownActive" true }}
+            {{ end }}
+
+            {{ $output = $output | append ( index $match 3 ) }}
+        {{ else if eq ( index $match 1 ) "init" }}
+            {{ if gt ( len ( strings.TrimSpace ( index $match 3 ) ) ) 0 }}
+                {{ $output = $output | append ( printf `<div class="%s">` ( $current.Get "columnClass" ) ) }}
+                {{ $current.Set "columnActive" true }}
+                
+                {{ $output = $output | append $markdownOpen }}
+                {{ $current.Set "markdownActive" true }}
+
+                {{ $output = $output | append ( index $match 3 ) }}
+            {{ end }}
+        {{ else if eq ( index $match 1 ) "column-set" }}
+            {{ if ( $current.Get "markdownActive" ) }}
+                {{ $output = $output | append ( printf "</div>" ) }}
+                {{ $current.Set "markdownActive" false }}
+            {{ end }}
+
+            {{ if ( $current.Get "columnActive" ) }}
+                {{ $output = $output | append ( printf "</div>" ) }}
+                {{ $current.Set "columnActive" false }}
+            {{ end }}
+ 
+            {{ $stack = $stack | append $current }}
+            {{ $lastCurrent := $current }}
+            
+            {{ $current = collections.NewScratch }}
+            {{ $current.Set "markdown" ( $lastCurrent.Get "markdown" ) }}
+            {{ $current.Set "markdownActive" false }}
+            {{ $current.Set "columnActive" false }}
+
+            {{ $columnClass := strings.ReplaceRE `^\s*$` `size="base"` ( index $match 2 ) }}
+            {{ $columnClass = strings.ReplaceRE `size="base"` $.classColumn $columnClass }}
+            {{ $columnClass = strings.ReplaceRE `size="wide"` $.classColumnWide $columnClass }}
+            {{ $columnClass = strings.ReplaceRE `size="tight"` $.classColumnTight $columnClass }}
+            {{ $output = $output | append ( printf `<div class="%s">` $columnClass ) }}
+            {{ $current.Set "columnClass" $columnClass }}
+            {{ $current.Set "columnActive" true }}
+
+            {{ if gt ( len ( strings.TrimSpace ( index $match 3 ) ) ) 0 }}
+                {{ if ( $current.Get "markdown" ) }}
+                    {{ $output = $output | append $markdownOpen }}
+                    {{ $current.Set "markdownActive" true }}
+                {{ end }}
+
+                {{ $output = $output | append ( index $match 3 ) }}
+            {{ end }}
+        {{ else if eq ( index $match 1 ) "column-restore" }}
+            {{ if ( $current.Get "markdownActive" ) }}
+                {{ $output = $output | append ( printf "</div>" ) }}
+                {{ $current.Set "markdownActive" false }}
+            {{ end }}
+
+            {{ if ( $current.Get "columnActive" ) }}
+                {{ $output = $output | append ( printf "</div>" ) }}
+                {{ $current.Set "columnActive" false }}
+            {{ end }}
+
+            {{ $current = index $stack ( sub ( len $stack ) 1 ) }}
+            {{ $stack = first ( sub ( len $stack ) 1 ) $stack }}
+
+            {{ if gt ( len ( strings.TrimSpace ( index $match 3 ) ) ) 0 }}
+                {{ if ( $current.Get "columnClass" )}}
+                    {{ $output = $output | append ( printf `<div class="%s">` ( $current.Get "columnClass" ) ) }}
+                    {{ $current.Set "columnActive" true }}
+                {{ end }}
+
+                {{ if ( $current.Get "markdown" ) }}
+                    {{ $output = $output | append $markdownOpen }}
+                    {{ $current.Set "markdownActive" true }}
+                {{ end }}
+
+                {{ $output = $output | append ( index $match 3 ) }}
+            {{ end }}
+        {{ else }}
+            {{ errorf "unknown prose command: %s\n" ( index $match 1 ) . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if ( $current.Get "markdownActive" ) }}
+    {{ $output = $output | append ( printf "</div>" ) }}
+    {{ $current.Set "markdownActive" false }}
+{{ end }}
+
+{{ if ( $current.Get "columnActive" ) }}
+    {{ $output = $output | append ( printf "</div>" ) }}
+    {{ $current.Set "columnActive" false }}
+{{ end }}
+
+{{ delimit $output "" | safeHTML }}

@@ -1,0 +1,19 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+	<dpb587-toc button-class="md:px-1 py-0.5 md:py-0" for="article"></dpb587-toc>
+{{ end }}
+
+{{ define "main" }}
+	{{ $navSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/browse/places/" .RelPermalink ) ) }}
+
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8">
+				<div class="max-w-4xl mx-auto font-serif space-y-8 pt-px">
+					{{ partial "nav-place/section-parks" ( where ( where site.RegularPages "Type" "eq" "nav-place-park" ) ( printf "Params.nav.place.%s" $navSlug ) "eq" true ) }}
+				</div>
+			</div>
+		</main>
+	</div>
+{{ end }}

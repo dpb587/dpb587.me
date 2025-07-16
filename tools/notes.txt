@@ -1,0 +1,16 @@
+(
+  cd ../tmp/mnt/entry/
+  find ./ -type f \
+    | grep -ve '/\.' \
+    | cut -c3- \
+    | sort \
+    | sed 's#^#file:///mnt/depot/entry/#' \
+    | tr "\n" "\0"
+) | xargs -0 go run ./cmd story-import --content-story-dir=../content/story --content-strip-prefix=file:///mnt/depot/entry/
+go run ./cmd story-index --content-story-dir=../content/story
+
+cd ../tmp/tilde
+~/local/google-cloud-sdk/bin/gcloud storage cp --recursive --cache-control 'public, max-age=604800' . gs://dpb587-www-tilde-us-central1/~/
+rm -fr tmp/tilde
+
+go run ./author/cmd/plantumlcmd -server https://plantuml-server-700326082618.us-central1.run.app -source ../content/post/2024/tiff-ifd-and-subifd-20240226

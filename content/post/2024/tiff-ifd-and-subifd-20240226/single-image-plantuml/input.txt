@@ -1,0 +1,10 @@
+@startuml
+
+file page.tif {
+    folder IFD0 #ffffff {
+        label "Metadata (<&tag>)"
+        rectangle "<&image> //Image Bytes//" as IFD0_Data
+    }
+}
+
+@enduml

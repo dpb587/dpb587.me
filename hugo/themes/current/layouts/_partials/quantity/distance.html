@@ -1,0 +1,9 @@
+{{ if eq .unit "MTR" }}
+	{{ if gt .value 9999 }}
+		{{ div ( math.Round ( div .value 100 ) ) 10 }} km
+	{{ else }}
+		{{ math.Ceil .value }} m
+	{{ end }}
+{{ else }}
+	{{ errorf "unknown unit: %s" .unit }}
+{{ end }}

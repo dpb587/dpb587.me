@@ -1,0 +1,64 @@
+<header class="relative z-0 h-screen -mt-10 md:mt-0">
+	<div class="absolute -z-10 left-0 right-0 bottom-0 top-0 md:top-2 overflow-hidden">
+		<img
+			class="h-full w-full object-cover object-center"
+			alt="{{ .hero.alt }}"
+			height="960"
+			src="{{ site.Params.tildePrefix }}{{ ( index .hero.thumbnails 0 ).src }}"
+			srcset="{{ range $idx, $tn := .hero.thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
+			sizes="(orientation: portrait) 180vw, 100vw"
+			width="1280"
+		/>
+	</div>
+	
+	<div class="absolute z-0 bottom-0 inset-x-0 bg-stone-50">
+		<div class="hidden md:block relative h-2 bg-stone-800"></div>
+		<div class="-mt-16 pb-4">
+			<div class="px-8 pb-4">
+				<div class="relative z-10 p-8 shadow">
+					<div class="absolute -z-10 inset-0 bg-black"></div>
+					<div>
+						<h1 class="text-center text-stone-50 font-serif font-semibold text-2xl md:text-3xl">{{ .title }}</h1>
+						{{ if .subtitles }}
+							<div class="mt-1.5 text-center text-stone-300 text-sm md:text-base font-serif">
+								{{ range $idx, $v := .subtitles }}
+									{{ if $idx }}&middot;{{ end }}
+									{{ if $v.href }}
+										<a class="hover:underline hover:text-stone-100" href="{{ $v.href }}">{{ $v.text }}</a>
+									{{ else }}
+										<span>{{ $v.text }}</span>
+									{{ end }}
+								{{ end }}
+							</div>
+						{{ end }}
+					</div>
+				</div>
+			</div>
+			<div class="relative z-0 group mx-4">
+				<div class="bg-stone-300 h-px absolute z-0 inset-x-0 top-1/2 rounded-full transition duration-100"></div>
+				<div class="text-center">
+					<button class="border border-transparent shadow-none text-stone-300 relative z-10 rounded-full w-8 h-8 bg-stone-50 transition duration-100 ease-out hover:bg-stone-100 group-hover:border-stone-300 hover:text-stone-500 hover:shadow">
+						{{ partial "heroicons/inline" ( dict "icon" "16/solid/chevron-down" "attrs" `class="absolute left-2 top-2 -ml-px -mt-px w-4 h-4 transition duration-75 group-hover:translate-y-1"` ) }}
+						{{ partial "heroicons/inline" ( dict "icon" "16/solid/chevron-up" "attrs" `class="absolute left-2 top-2 -ml-px -mt-px w-4 h-4 translate-y-1 transition duration-75 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"` ) }}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- {datePublished < DateTime.now().plus({ years: -8 }) && (
+		<div class="relative z-0 group mt-8 p-8 text-center font-serif text-base text-stone-600 bg-stone-100 rounded shadow-sm border border-stone-300">
+			<span class="absolute left-1/2 -top-2.5 -translate-x-3 border-t border-x border-stone-300 text-stone-500 z-10 rounded-full p-1.5 bg-stone-100 shadow">
+				<Icon class="w-3.5 h-3.5" name="heroicons/24/outline/square-3-stack-3d" />
+			</span>
+			<p>This post was written a while ago and may reference outdated technology or practices.</p>
+		</div>
+	)} -->
+
+	<!-- <div class="relative z-0 group mt-8 pl-12 py-4 pr-4 font-serif text-sm text-stone-600 bg-stone-100 rounded shadow-sm border border-stone-300">
+		<span class="absolute left-3 top-3 text-stone-600 border border-stone-400 z-10 rounded-full p-1.5 bg-stone">
+			<Icon class="w-3.5 h-3.5" name="heroicons/24/outline/square-3-stack-3d" />
+		</span>
+		<p>Post was originally published {DateTime.fromISO(entry.data.datePublished).toLocaleString(DateTime.DATE_FULL)}.</p>
+	</div> -->
+</header>

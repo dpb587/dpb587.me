@@ -1,0 +1,45 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+	<dpb587-toc button-class="md:px-1 py-0.5 md:py-0" for="article"></dpb587-toc>
+{{ end }}
+
+{{ define "main" }}
+	{{ $navSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/browse/places/" .RelPermalink ) ) }}
+
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8 space-y-8">
+				<div class="max-w-4xl mx-auto font-serif">
+					<table>
+						<thead class="hidden">
+							<tr>
+								<th>Country</th>
+								<th>Regions</th>
+							</tr>
+						</thead>
+						<tbody class=" border-t border-stone-200">
+							{{ range .Sections }}
+								<tr>
+									<td class="px-4 py-2 w-1/3 align-top leading-8 border-b border-stone-200">
+										<h2 id="{{ strings.TrimSuffix "/" ( strings.TrimPrefix "/browse/places/" .RelPermalink ) }}"><a class="font-semibold underline hover:text-stone-900" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+									</td>
+									<td class="px-4 py-2 w-2/3 align-top leading-8 border-b border-stone-200">
+										{{ with .Sections }}
+											{{ $prefix := "" }}
+											{{ range $k, $_ := . -}}
+												{{- $prefix }}
+												<a class="underline hover:text-stone-900" href="{{ .RelPermalink }}">{{ .Title }}</a>
+												{{- $prefix = `<span>&nbsp;&middot;&nbsp;</span> ` | safeHTML }}
+											{{- end }}
+										{{ end }}
+									</td>
+								</tr>
+							{{ end }}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+	</div>
+{{ end }}

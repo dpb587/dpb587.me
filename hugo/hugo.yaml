@@ -1,0 +1,61 @@
+baseURL: https://dpb587.me/
+contentDir: '../content'
+copyright: "Unless noted, software code is licensed under MIT License and all other content under CC-BY-NC."
+disableKinds:
+- rss
+- taxonomy
+- term
+frontmatter:
+  # used as an explicit property; no fallback to date
+  publishDate:
+  - publishdate
+languageCode: 'en-us'
+markup:
+  goldmark:
+    extensions:
+      # dislike the conversions; only want dashes
+      typographer:
+        apostrophe: "'"
+        disable: false
+        ellipsis: '...'
+        emDash: '&mdash;'
+        enDash: '&ndash;'
+        leftAngleQuote: "&lt;&lt;"
+        leftDoubleQuote: '"'
+        leftSingleQuote: "'"
+        rightAngleQuote: "&gt;&gt;"
+        rightDoubleQuote: '"'
+        rightSingleQuote: "'"
+params:
+  repository: "https://github.com/dpb587/dpb587.me"
+  tildePrefix: http://localhost:1314
+permalinks:
+  page:
+    certification: '/about/certification/:sections[1:]/:slug'
+    media: '/entries/:sections[2:]/:contentbasename'
+    nav-collection: '/browse/collections/:sections[1:]/:contentbasename'
+    nav-place: '/browse/places/:sections[1:]/:contentbasename'
+    nav-place-admin1: '/browse/places/:sections[1:]'
+    nav-place-admin2: '/browse/places/:sections[1:]'
+    nav-place-park: '/browse/places/:sections[1:]/:contentbasename'
+    nav-tag: '/browse/tags/:sections[1:]/:contentbasename'
+    nav-type: '/browse/types/:contentbasename'
+    page: '/:sections[1:]/:contentbasename'
+    post: '/entries/:sections[2:]/:contentbasename'
+    project: '/projects/:sections[1:]/:contentbasename'
+    occupation: '/about/occupation/:sections[1:]/:slug'
+    route: '/entries/:sections[2:]/:contentbasename'
+    story: '/entries/:sections[2:]/:contentbasename'
+  section:
+    certification: '/about/certification/:sections[1:]/'
+    nav-collection: '/browse/collections/:sections[1:]'
+    nav-place: '/browse/places/:sections[1:]'
+    nav-tag: '/browse/tags/:sections[1:]'
+    occupation: '/about/occupation/:sections[1:]/'
+    project: '/projects/:sections[1:]'
+    story: '/entries/:sections[2:]'
+# had trouble making builtin work with some additional metadata, hierarchy behaviors, and inter-taxonomy refs i wanted
+# using nav-* types with some taxonomy-ish behaviors
+taxonomies: {}
+theme: 'current'
+title: "Danny Berger"

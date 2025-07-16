@@ -1,0 +1,18 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+	<dpb587-toc button-class="md:px-1 py-0.5 md:py-0" for="article"></dpb587-toc>
+{{ end }}
+
+{{ define "main" }}
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8 space-y-8 ">
+				{{ partial "entry/list-groups" ( dict
+					"Page" .
+					"Groups" ( ( where site.RegularPages "Type" "eq" "post" ).GroupByDate "2006" )
+				) }}
+			</div>
+		</main>
+	</div>
+{{ end }}

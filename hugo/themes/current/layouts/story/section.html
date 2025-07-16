@@ -1,0 +1,38 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+  <dpb587-toc button-class="md:px-1 py-0.5 md:py-0" for="article"></dpb587-toc>
+{{ end }}
+
+{{ define "main" }}
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8">
+				{{ with .Content }}
+					{{ partial "prose/render" ( dict 
+						"content" .
+						"classColumn" "max-w-4xl mx-auto space-y-8"
+						"classColumnWide" "max-w-6xl mx-auto space-y-8"
+						"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+						"classGutter" "px-4"
+					) }}
+					<div class="max-w-4xl mx-auto h-px bg-stone-200 mt-8"></div>
+				{{ end }}
+
+				<div class="pt-px -mt-px">
+					{{ partial "story/storyline-section-children" ( dict
+						"depth" 0
+						"baseSection" .
+						"section" .
+						"children" .Pages.ByDate
+						"layout" ( dict
+							"standard" ( dict
+								"maxWidth" "max-w-4xl"
+							)
+						)
+					) }}
+				</div>
+			</div>
+		</main>
+	</div>
+{{ end }}

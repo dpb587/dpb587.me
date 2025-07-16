@@ -1,0 +1,10 @@
+{{ define "template" }}taxonomy/section.html{{ end }}
+
+{{ define "content" }}
+  <dt>Children</dt>
+  {{ range .Sections }}
+    <dd><a href="{{ .Permalink }}">{{ .Title }}</a></dd>
+  {{ else }}
+    <dd>none</dd>
+  {{ end }}
+{{ end }}

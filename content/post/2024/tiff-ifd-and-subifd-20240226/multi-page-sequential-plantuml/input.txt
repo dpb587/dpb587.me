@@ -1,0 +1,18 @@
+@startuml
+
+file multipage.tif {
+    folder IFD0 #ffffff {
+        rectangle "<&tag> Next IFD" as IFD0_Tag_NextIFD
+        rectangle "<&tag> Page Number\n**1**" as IFD0_Tag_PageNumber
+        rectangle "<&image> //Image Bytes//" as IFD0_Data
+    }
+
+    folder IFD1 #ffffff {
+        rectangle "<&tag> Page Number\n**2**" as IFD1_Tag_PageNumber
+        rectangle "<&image> //Image Bytes//" as IFD1_Data
+    }
+
+    IFD0_Tag_NextIFD --> IFD1
+}
+
+@enduml

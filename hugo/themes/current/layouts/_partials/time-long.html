@@ -1,0 +1,64 @@
+{{ $rfc3339 := "2006-01-02T15:04:05Z07:00" }}
+{{ if .Params.timeRange }}
+  {{ $from := .Params.timeRange.from }}
+  {{ $fromMonthValid := true }}
+  {{ $fromDayValid := true }}
+
+  {{ if lt ( len $from ) 7 }}
+    {{ $fromMonthValid = false }}
+    {{ $from = printf "%s-01" $from }}
+  {{ end }}
+
+  {{ if lt ( len $from ) 10 }}
+    {{ $fromDayValid = false }}
+    {{ $from = printf "%s-01" $from }}
+  {{ end }}
+  
+  {{ $fromParsed := time $from }}
+  {{ $fromYear := dateFormat "2006" $fromParsed }}
+  {{ $fromMonth := dateFormat "January" $fromParsed }}
+  {{ $fromDay := dateFormat "2" $fromParsed }}
+
+  {{ $thru := .Params.timeRange.thru }}
+  {{ $thruMonthValid := true }}
+  {{ $thruDayValid := true }}
+
+  {{ if lt ( len $thru ) 7 }}
+    {{ $thruMonthValid = false }}
+    {{ $thru = printf "%s-01" $thru }}
+  {{ end }}
+
+  {{ if lt ( len $thru ) 10 }}
+    {{ $thruDayValid = false }}
+    {{ $thru = printf "%s-01" $thru }}
+  {{ end }}
+
+  {{ $thruParsed := time $thru }}
+  {{ $thruYear := dateFormat "2006" $thruParsed }}
+  {{ $thruMonth := dateFormat "January" $thruParsed }}
+  {{ $thruDay := dateFormat "2" $thruParsed }}
+
+  {{/* TODO conditional month/day display */}}
+
+  {{ if eq $fromYear $thruYear }}
+    {{ if eq $fromMonth $thruMonth }}
+      {{ if eq $fromDay $thruDay }}
+        <time datetime="{{ dateFormat $rfc3339 $fromParsed }}" title="{{ dateFormat $rfc3339 $fromParsed }}">{{ $fromMonth }} {{ $fromDay }}, {{ $fromYear }}</time>
+      {{ else }}
+        <time datetime="{{ dateFormat $rfc3339 $fromParsed }}" title="{{ dateFormat $rfc3339 $fromParsed }}">{{ $fromMonth }} {{ $fromDay }}</time>
+        &ndash;
+        <time datetime="{{ dateFormat $rfc3339 $thruParsed }}" title="{{ dateFormat $rfc3339 $thruParsed }}">{{ $thruDay }}, {{ $fromYear }}</time>
+      {{ end }}
+    {{ else }}
+      <time datetime="{{ dateFormat $rfc3339 $fromParsed }}" title="{{ dateFormat $rfc3339 $fromParsed }}">{{ $fromMonth }} {{ $fromDay }}</time>
+      &ndash;
+      <time datetime="{{ dateFormat $rfc3339 $thruParsed }}" title="{{ dateFormat $rfc3339 $thruParsed }}">{{ $thruMonth }} {{ $thruDay }}, {{ $thruYear }}</time>
+    {{ end }}
+  {{ else }}
+    <time datetime="{{ dateFormat $rfc3339 $fromParsed }}" title="{{ dateFormat $rfc3339 $fromParsed }}">{{ $fromMonth }} {{ $fromDay }}, {{ $fromYear }}</time>
+    &ndash;
+    <time datetime="{{ dateFormat $rfc3339 $thruParsed }}" title="{{ dateFormat $rfc3339 $thruParsed }}">{{ $thruMonth }} {{ $thruDay }}, {{ $thruYear }}</time>
+  {{ end }}
+{{ else }}
+  <time datetime="{{ dateFormat $rfc3339 .Date }}" title="{{ dateFormat $rfc3339 .Date }}">{{ dateFormat "January 2, 2006" .Date }}</time>
+{{ end }}

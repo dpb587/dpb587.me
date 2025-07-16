@@ -1,0 +1,27 @@
+<a class="relative z-0 group hover:z-10 grid grid-cols-1 md:grid-cols-3 p-4 gap-1" href="{{ .RelPermalink }}">
+	<div class="aspect-w-16 aspect-h-9 overflow-hidden shadow-none transition-all duration-200 ease-out group-hover:scale-103 group-hover:shadow">
+		{{ $image := false }}
+		{{ if eq .Type "media" }}
+			{{ $image = .Params.mediaType }}
+		{{ else if .Params.hero.ref }}
+			{{ $ref := .GetPage .Params.hero.ref }}
+			{{ $image = $ref.Params.mediaType }}
+		{{ end }}
+		{{ with $image }}
+			{{ $tnDefault := index .thumbnails 0 }}
+			<img
+				class="w-full h-full object-cover scale-103 transition-all duration-200 ease-out group-hover:scale-100"
+				alt="{{ $.Title }}"
+				height="{{ $tnDefault.height }}"
+				loading="lazy"
+				src="{{ site.Params.tildePrefix }}{{ $tnDefault.url }}"
+				srcset="{{ range $idx, $tn := .thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
+				sizes="{{ $.Store.Get `img[@sizes]` }}"
+				width="{{ $tnDefault.width }}"
+			/>
+		{{ end }}
+	</div>
+	<div class="md:col-span-2 p-2 md:px-4 md:py-3">
+		<strong class="text-xl underline">{{ .Title }}</strong>
+	</div>
+</a>

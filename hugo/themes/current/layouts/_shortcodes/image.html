@@ -1,0 +1,16 @@
+<prose:custom-start />
+<figure class="border-t md:border-x md:border-b border-stone-200 overflow-hidden shadow md:rounded bg-stone-100 p-4">
+  {{ if .Get "href" }}
+    <a href="{{ .Get `href` | safeURL }}" class="block">{{ template "img" . }}</a>
+  {{ else }}
+    {{ template "img" . }}
+  {{ end }}
+</figure>
+<prose:custom-end />
+
+{{ define "img" }}
+    <img class="mx-auto" src="{{ .Get `src` | safeURL }}"
+      {{- with .Get "alt" }} alt="{{ . }}"{{ end -}}
+      {{- with .Get "title" }} title="{{ . }}"{{ end -}}
+    />
+{{ end }}

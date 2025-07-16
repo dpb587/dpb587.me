@@ -1,0 +1,15 @@
+<prose:custom-start />
+<div class="relative z-0 group bg-stone-100 md:rounded shadow-sm transition-all ease-out hover:border-stone-400 hover:shadow-md border-y sm:border-x border-stone-300 pb-3 pt-6">
+	<span class="absolute left-1/2 -top-2 mt-px border border-stone-100 text-stone-50 z-10 rounded p-1 bg-sky-800">
+		{{ partial "heroicons/inline" ( dict "icon" "16/solid/light-bulb" "attrs" `class="w-3 h-3"` ) }}
+	</span>
+	<div class="absolute top-0.5 inset-x-0.5 rounded-t-sm h-1 bg-sky-800"></div>
+	<div class="space-y-4 -mx-px">
+		{{ partial "prose/render" ( dict
+			"content" .Inner
+			"classColumn" "space-y-4"
+			"classGutter" "px-4"
+		) }}
+	</div>
+</div>
+<prose:custom-end />

@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>{{ block "title" . }}{{ .Title }}{{ end }} | {{ .Site.Title }}</title>
+    <style>
+      a {
+        color: #000099;
+      }
+
+      body {
+        font-family: monospace;
+        margin: 10px;
+      }
+
+      dt {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <dl>
+      <dt>Template</dt>
+      <dd>{{ block "template" . }}unknown{{ end }}</dd>
+
+      <dt>Content Source</dt>
+      <dd><code>{{ default "none" .File.Path }}</code></dd>
+
+      <dt>Content Hierarchy</dt>
+      {{ template "hierarchy" . }}
+    
+      <dt>Title</dt>
+      <dd>{{ .Title }}</dd>
+    
+      {{ block "content" . }}{{ end }}
+
+      <dt>Content</dt>
+      {{ with .RawContent }}
+        <dd>{{ . }}</dd>
+      {{ else }}
+        <dd>none</dd>
+      {{ end }}
+    </dl>
+  </body>
+</html>
+
+{{ define "hierarchy" }}
+  {{ if .Parent }}
+    {{ template "hierarchy" .Parent }}
+  {{ end }}
+  <dd><a href="{{ .Permalink }}">{{ .Title }}</a> (kind:{{ .Kind }}; type:{{ .Type }})</dd>
+{{ end }}
+
+{{ define "taxonomy-hierarchy" }}
+  {{- if and .Parent ( eq .Parent.Type .Type ) }}
+    {{- template "taxonomy-hierarchy" .Parent }} / {{ end -}}
+  <a href="{{ .Permalink }}">{{ .Title }}</a>
+{{- end }}
+
+{{ define "_nested_sections_slice" -}}
+  {{ $.Scratch.Add "nested_sections_slice" ( slice ( .Section.File.Path | strings.TrimPrefix ( printf "%s/" .Section.Type ) | strings.TrimSuffix "/_index.md" ) ) -}}
+  {{ range .Section.Sections -}}
+    {{ template "_nested_sections_slice" ( dict "Scratch" $.Scratch "Section" . ) -}}
+  {{ end -}}
+{{ end -}}

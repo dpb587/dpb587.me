@@ -1,0 +1,243 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+	{{ with .Params.mediaType.imageService }}
+		<dpb587-openseadragon button-class="md:px-1 py-0.5 md:py-0" info-url="{{ printf `%s%s` site.Params.tildePrefix .infoUrl }}" />
+	{{ end }}
+{{ end }}
+
+{{ define "main" }}
+	{{ $params := .Params.mediaType }}
+
+	<div class="min-h-screen">
+		{{ if .CurrentSection }}
+			<div class="fixed z-40 right-0 pr-1 flex flex-row-reverse justify-start bottom-0 w-32 text-stone-400">
+				{{ if .NextInSection }}
+					<a
+						class="py-1 pl-1 group inline-block focus:outline-none"
+						href="{{ .NextInSection.RelPermalink }}"
+						title="{{ .NextInSection.Title }}"
+						hx-boost="true"
+						hx-push-url="true"
+						hx-trigger="click, keyup[key=='ArrowRight'] from:body"
+					>
+						<div class="p-2.5 bg-stone-800 group-hover:bg-black group-hover:text-white group-focus:ring-inset group-focus:ring-4 group-focus:ring-neutral-100">
+							{{ partial "heroicons/inline.html" ( dict "icon" "24/outline/arrow-right" "attrs" `class="w-4 h-4 md:w-5 md:h-5"` ) }}
+						</div>
+					</a>
+				{{ else }}
+					<a
+						class="py-1 pl-1 group inline-block focus:outline-none"
+						href="{{ .CurrentSection.RelPermalink }}"
+						title="{{ .CurrentSection.Title }}"
+						hx-boost="true"
+						hx-push-url="true"
+						hx-trigger="click, keyup[key=='ArrowRight'] from:body"
+					>
+						<div class="p-2.5 bg-stone-800 group-hover:bg-black group-hover:text-white group-focus:ring-inset group-focus:ring-4 group-focus:ring-neutral-100">
+							{{ partial "heroicons/inline.html" ( dict "icon" "24/outline/arrow-up-right" "attrs" `class="w-4 h-4 md:w-5 md:h-5"` ) }}
+						</div>
+					</a>
+				{{ end }}
+				{{ if .PrevInSection }}
+					<a
+						class="py-1 pl-1 group inline-block focus:outline-none"
+						href="{{ .PrevInSection.RelPermalink }}"
+						title="{{ .PrevInSection.Title }}"
+						hx-boost="true"
+						hx-push-url="true"
+						hx-trigger="click, keyup[key=='ArrowLeft'] from:body"
+					>
+						<div class="p-2.5 bg-stone-800 group-hover:bg-black group-hover:text-white group-focus:ring-inset group-focus:ring-4 group-focus:ring-neutral-100">
+							{{ partial "heroicons/inline.html" ( dict "icon" "24/outline/arrow-left" "attrs" `class="w-4 h-4 md:w-5 md:h-5"` ) }}
+						</div>
+					</a>
+				{{ else if .NextInSection }}
+					<a
+						class="py-1 pl-1 group inline-block focus:outline-none"
+						href="{{ .CurrentSection.RelPermalink }}"
+						title="{{ .CurrentSection.Title }}"
+						hx-boost="true"
+						hx-push-url="true"
+						hx-trigger="click, keyup[key=='ArrowLeft'] from:body"
+					>
+						<div class="p-2.5 bg-stone-800 group-hover:bg-black group-hover:text-white group-focus:ring-inset group-focus:ring-4 group-focus:ring-neutral-100">
+							{{ partial "heroicons/inline.html" ( dict "icon" "24/outline/arrow-up-left" "attrs" `class="w-4 h-4 md:w-5 md:h-5"` ) }}
+						</div>
+					</a>
+				{{ end }}
+			</div>
+		{{ end }}
+		{{ $thumbnailsResponsive := index $params.Thumbnails 0 }}
+		<div class="fixed -z-40 left-0 md:left-12 inset-y-0 right-0 overflow-hidden opacity-5">
+			<div class="absolute -inset-8">
+				<img
+					class="w-full h-full blur-xl object-cover"
+					alt="Blurred background of {{ .Title }}"
+					src="{{ site.Params.tildePrefix }}{{ $thumbnailsResponsive.url }}"
+					srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
+					width="{{ $thumbnailsResponsive.width }}"
+					height="{{ $thumbnailsResponsive.height }}"
+				/>
+			</div>
+		</div>
+		<div class="md:fixed md:left-12 md:inset-y-2 md:right-96 z-0">
+			<div class="h-full w-full flex items-center justify-center overflow-hidden">
+				<img
+					class="relative z-20 object-contain shadow-lg {{ if gt $thumbnailsResponsive.height $thumbnailsResponsive.width }}h-full w-auto{{ else }}w-full h-auto{{ end }} transition-all"
+					alt="{{ .Title }}"
+					src="{{ site.Params.tildePrefix }}{{ $thumbnailsResponsive.url }}"
+					srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
+					width="{{ $thumbnailsResponsive.width }}"
+					height="{{ $thumbnailsResponsive.height }}"
+				/>
+			</div>
+		</div>
+		<div class="flex">
+			<div class="grow"></div>
+			<div class="md:min-h-screen w-full md:w-96 relative z-0 p-2 md:p-4">
+				<!-- <div class=" absolute inset-x-0 bottom-12 top-0 border-b-4 border-stone-800 -z-10" /> -->
+				<!-- <div class="absolute inset-x-0 bottom-0 h-12 bg-stone-50 pr-20">
+					<div class="flex items-center h-full w-full justify-between pl-3.5 pr-5">
+					<div class="text-stone-600">Gallery</div>
+					<Icon class="flex-initial h-4 w-4" name="heroicons/20/solid/chevron-up-down" />
+					</div>
+				</div> -->
+				<section class="bg-stone-100 font-serif p-6">
+					<h1 class="text-xl md:text-2xl">{{ .Title }}</h1>
+					{{ with .Content }}
+						<div class="mt-3 prose prose-sm prose-stone font-serif max-w-none">
+							{{ . }}
+						</div>
+					{{ end }}
+				</section>
+				{{ with $params.captureTime }}
+					<section class="bg-stone-100">
+						<div class="flex items-start -mb-2">
+							<div class="h-1 w-4 bg-stone-800 rounded-br"></div>
+							<h3 class="-mt-1 text-xs uppercase text-stone-800 font-semibold tracking-tight px-2">Date</h3>
+							<div class="h-1 grow bg-stone-800 rounded-bl"></div>
+						</div>
+						<div class="p-3">
+							<dl class="py-3 space-y-3">
+								<div class="px-3">
+									<dt class="hidden text-xs text-stone-600 font-semibold">Date</dt>
+									<dd class="text-sm font-medium text-stone-800">{{ time.Format "Monday, January 2, 2006" .time }}</dd>
+								</div>
+								<div class="flex justify-between px-3">
+									<div>
+										<dt class="text-xs text-stone-600">Time</dt>
+										<dd class="text-sm font-medium text-stone-800">{{ time.Format "3:04 PM" .time }}</dd>
+									</div>
+									{{/*{{ with .timeZoneName }}
+										<div class="text-right">
+											<dt class="text-xs text-stone-600">Timezone</dt>
+											<dd class="text-sm font-medium text-stone-800 truncate">{{ . }}</dd>
+										</div>
+									{{ end }}*/}}
+								</div>
+							</dl>
+						</div>
+					</section>
+				{{ end }}
+				{{ with $params.exifProfile }}
+					<section class="bg-stone-100">
+						<div class="flex items-start -mb-2">
+							<div class="h-1 w-4 bg-stone-800 rounded-br"></div>
+							<h3 class="-mt-1 text-xs uppercase text-stone-800 font-semibold tracking-tight px-2">Camera</h3>
+							<div class="h-1 grow bg-stone-800 rounded-bl"></div>
+						</div>
+						<div class="px-3 py-6">
+							<dl class="space-y-3">
+								{{ if or .make .model }}
+									<div class="px-3">
+										<dt class="hidden text-xs text-stone-600">Camera</dt>
+										<dd class="text-sm font-medium text-stone-800">
+											{{ with .make }}<span>{{ .string }}</span>{{ end }}
+											{{ with .model }}<span>{{ .string }}</span>{{ end }}
+										</dd>
+									</div>
+								{{ end }}
+								{{ if or .lensMake .lensModel }}
+									<div class="px-3">
+										<dt class="text-xs text-stone-600">Lens</dt>
+										<dd class="text-sm font-medium text-stone-800">
+											{{ with .lensMake }}<span>{{ .string }}</span>{{ end }}
+											{{ with .lensModel }}<span>{{ .string }}</span>{{ end }}
+										</dd>
+									</div>
+								{{ end }}
+								{{ if or .iso .focalLength .apertureValue .shutterSpeedValue }}
+									<div class="flex justify-between px-3">
+										<div>
+											<dt class="text-xs text-stone-600">ISO</dt>
+											<dd class="text-sm font-medium text-stone-800">{{ with .iso }}<span>ISO {{ .number }}</span>{{ else }}<span class="text-gray-600">&mdash;</span>{{ end }}</dd>
+										</div>
+										<div class="text-center">
+											<dt class="text-xs text-stone-600">Focal Length</dt>
+											<dd class="text-sm font-medium text-stone-800">{{ with .focalLength }}<span>{{ .number }} <abbr class="no-underline" title="millimetre">mm</abbr></span>{{ else }}<span class="text-gray-600">&mdash;</span>{{ end }}</dd>
+										</div>
+										<div class="text-center">
+											<dt class="text-xs text-stone-600">Aperture</dt>
+											<dd class="text-sm font-medium text-stone-800">{{ with .apertureValue }}<span><em>f</em> {{ .number }}</span>{{ else }}<span class="text-gray-600">&mdash;</span>{{ end }}</dd>
+										</div>
+										<div class="text-right">
+											<dt class="text-xs text-stone-600">Shutter Speed</dt>
+											<dd class="text-sm font-medium text-stone-800">{{ with .shutterSpeedValue }}<span>1 / {{ math.Round .number }} <abbr class="no-underline" title="second">s</abbr></span>{{ else }}<span class="text-gray-600">&mdash;</span>{{ end }}</dd>
+										</div>
+									</div>
+								{{ end }}
+							</dl>
+						</div>
+					</section>
+				{{ end }}
+				{{ if or $params.geoCoordinates $params.placesProfile }}
+					<section class="bg-stone-100">
+						<div class="flex items-start -mb-2">
+							<div class="h-1 w-4 bg-stone-800 rounded-br"></div>
+							<h3 class="-mt-1 text-xs uppercase text-stone-800 font-semibold tracking-tight px-2">Location</h3>
+							<div class="h-1 grow bg-stone-800 rounded-bl"></div>
+						</div>
+						<div class="p-3">
+							<dl class="py-3 space-y-3">
+								{{ with $params.placesProfile }}
+									<div class="px-3">
+										<dt class="hidden text-xs text-stone-600">Location</dt>
+										<dd class="text-sm font-medium text-stone-800">
+											{{ if and .places ( gt ( len .places ) 0 ) }}
+												<span>{{ ( index .places ( sub ( len .places ) 1 ) ).name }}</span>{{ if or .countryRegion .country }}, {{ end }}
+											{{ end }}
+											{{ if .countryRegion }}
+												<span>{{ .countryRegion.Name }}</span>{{ if and .country ( ne .country.code "US" ) }}, {{ end }}
+											{{ end }}
+											{{ if .Country }}
+												{{ if and ( or ( and .places ( gt ( len .places ) 0 ) ) .countryRegion ) ( eq .country.code "US" ) }}
+													<span title="{{ .country.name }}">{{ partial "country-flag-emoji" .country.code }}</span>
+												{{ else }}
+													<span>{{ .country.name }}</span>
+												{{ end }}
+											{{ end }}
+										</dd>
+									</div>
+								{{ end }}
+								{{ with $params.geoCoordinates }}
+									<div class="flex justify-between px-3">
+										<div>
+											<dt class="text-xs text-stone-600">GPS Coordinates</dt>
+											<dd class="text-sm font-medium text-stone-800">{{ math.Div ( math.Round ( math.Mul .latitude 1000000 ) ) 1000000 }}, {{ math.Div ( math.Round ( math.Mul .longitude 1000000 ) ) 1000000 }}</dd>
+										</div>
+										{{ with .elevation }}
+											<div>
+												<dt class="text-xs text-right text-stone-600">Elevation</dt>
+												<dd class="text-sm text-right font-medium text-stone-800">{{ math.Round . }} <abbr class="no-underline" title="metre">m</abbr></dd>
+											</div>
+										{{ end }}
+									</div>
+								{{ end }}
+							</dl>
+						</div>
+					</section>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+{{ end }}

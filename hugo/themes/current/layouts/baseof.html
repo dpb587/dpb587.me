@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="bg-stone-800 h-full scroll-smooth antialiased [font-feature-settings:&#x27;ss01&#x27;]">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		{{ with resources.Get "tailwindcss.build.json" | transform.Unmarshal -}}
+			{{ if hugo.IsDevelopment -}}
+				<link rel="stylesheet" href="/assets/styles/main.development.css?{{ .fingerprint }}" />
+			{{- else -}}
+				<link rel="stylesheet" href="/assets/styles/main.css?{{ .fingerprint }}" integrity="{{ index .fileIntegrity `main.css` }}" crossorigin="anonymous" />
+			{{- end -}}
+		{{- end }}
+		<title>{{ block "title" . }}{{ if ne .Title "Danny Berger" }}{{ .Title }} | {{ end }}Danny Berger{{ end }}</title>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js" integrity="sha384-Akqfrbj/HpNVo8k11SXBb6TlBWmXXlYQrCSqEWmyKJe+hDm3Z/B2WVG4smwBkRVm" crossorigin="anonymous"></script> -->
+		<script src="/assets/scripts/elements.iife.js" type="module"></script>
+	</head>
+	<body>
+		{{ block "body" . }}
+			<nav class="fixed z-40 flex top-0 left-0 text-stone-400 bg-stone-800 right-0 h-10 shadow md:bg-transparent md:shadow-none md:flex-col-reverse md:bottom-0 md:right-auto md:h-auto md:w-12">
+				<a
+					class="p-1 group inline-block focus:outline-none"
+					href="/"
+					title="Home"
+				>
+					<div class="px-2.5 py-2 md:py-3 bg-stone-800 group-hover:bg-black group-hover:text-white group-focus:ring-inset group-focus:ring-4 group-focus:ring-neutral-100">
+						<div class="flex flex-row-reverse md:flex-col items-center justify-between">
+							<span class="-mt-px md:mt-0 md:-ml-px md:rotate-180 text-base md:text-xl md:font-extralight md:tracking-wide whitespace-nowrap leading-none md:writing-vlr">Danny Berger</span>
+							{{ partial "heroicons/inline" ( dict "icon" "24/outline/cpu-chip" "attrs" `class="w-4 h-4 md:w-5 md:h-5 mt-0 md:mt-3 mr-2 md:mr-0 -ml-0.5 md:ml-0 md:-mb-0.5"` ) }}
+						</div>
+					</div>
+				</a>
+				<div class="grow"></div>
+				<div class="flex md:flex-col flex-row-reverse pr-0.5 md:pt-1">
+					<!-- <NavSiteButton class="px-0.5 md:px-1 py-0.5 md:py-1" client:load /> -->
+					{{ block "nav" . }}{{ end }}
+				</div>
+			</nav>
+			{{ block "nav-wrapper" . }}
+				<div class="mt-10 md:mt-0 md:ml-12">
+					<div class="relative">
+						{{ block "main" . }}{{ end }}
+					</div>
+				</div>
+			{{ end }}
+
+			<!-- <footer class="relative z-30 bg-stone-800 ml-12 shadow-xl">
+				<div class="h-12 pr-3 flex items-center justify-between text-lg font-light text-stone-400">
+					<div class="-ml-0.5		inline-flex items-center">
+						<span>Copyright {new Date().getUTCFullYear()}</span>
+					</div>
+					<div>
+						<a
+							class="inline-flex items-center hover:text-white hover:underline"
+							href="https://github.com/dpb587/dpb587.me"
+							target="_blank"
+						>
+							<span>Content Source</span>
+							<Icon class="ml-1 h-4 w-4" name="heroicons/20/solid/code-bracket-square" />
+						</a>
+					</div>
+				</div>
+			</footer> -->
+			<footer class="relative z-30 bg-stone-800 md:ml-12 md:pr-12 shadow-xl">
+				<div class="h-10 md:h-12 flex items-center justify-left text-xs font-light text-stone-400">
+					<div>
+						<span><span class="md:hidden">&copy;</span><span class="hidden md:inline">Copyright</span></span> {{ time.Format "2006" time.Now }}
+						<span class="mx-0.5"> // </span>
+						<a class="hover:text-white hover:underline" href="https://dpb587.me/">dpb587.me</a> is a <a class="hover:text-white hover:underline" href="/projects/website">personal</a>, <a class="hover:text-white hover:underline" href="{{ site.Param `repository` }}{{ with .File }}/blob/master/content/{{ .Path }}{{ end }}" target="_blank" rel="nofollow">open source</a> site.
+					</div>
+				</div>
+			</footer>
+			<!-- <aside class="relative z-20 bg-black/40 ml-12 backdrop-blur-xl">
+				<slot name="content-source" />
+			</aside> -->
+		{{ end }}
+	</body>
+</html>

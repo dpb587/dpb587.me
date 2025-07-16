@@ -1,0 +1,4 @@
+{{ $content := transform.Highlight .content ( .lang | default "plain" ) -}}
+{{ $content := strings.ReplaceRE `(?m)^<div[^>]+><pre[^>]+>(.+)` `$1` $content -}}
+{{ $content := strings.ReplaceRE `(?m)(.+)</pre></div>$` `$1` $content -}}
+{{ $content | safeHTML -}}

@@ -1,0 +1,249 @@
+{{ define "nav-wrapper" }}
+	<div class="relative z-40 bg-sky-800">
+		<div class="min-h-screen">
+			<div class="h-full py-16">
+				<div class="h-20 md:h-44"></div>
+				<div class="w-full bg-stone-100 text-neutral-800 shadow">
+					<div class="mx-auto max-w-xl">
+						<div class="relative z-0 h-24">
+							<img class="hidden md:block absolute -left-48 -top-12 z-10 h-48 w-48 rounded-sm shadow-md" alt="Danny Berger" src="/assets/images/dpb587-20221205b~256.jpg" />
+							<div class="h-full flex items-center justify-between px-6">
+								<h1 class="text-3xl md:text-5xl font-extralight text-stone-900 leading-none">Danny Berger</h1>
+								<!-- <img class="w-12 h-12 -mr-40 rotate-90 rounded-sm" src="/qr-dpb.svg" /> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="w-full">
+					<div class="mx-auto max-w-xl">
+						<nav class="flex items-center space-x-2 px-4 py-2">
+							{{ partial "heroicons/inline" ( dict "icon" "24/outline/arrow-top-right-on-square" "attrs" `class="h-5 w-5 text-stone-300"` ) }}
+							<a
+								class="text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-2 transition duration-75 text-stone-300 hover:bg-sky-950 hover:text-white"
+								href="https://github.com/dpb587"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								GitHub
+							</a>
+							<a
+								class="text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-2 transition duration-75 text-stone-300 hover:bg-sky-950 hover:text-white"
+								href="https://www.linkedin.com/in/dpb587/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								LinkedIn
+							</a>
+							<a
+								class="text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-2 transition duration-75 text-stone-300 hover:bg-sky-950 hover:text-white"
+								href="https://twitter.com/dpb587"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								𝕏
+							</a>
+							<a
+								class="text-stone-300 p-2 hover:bg-sky-950 hover:text-white"
+								href="/contact"
+							>
+								{{ partial "heroicons/inline" ( dict "icon" "24/outline/ellipsis-horizontal" "attrs" `class="h-5 w-5"` ) }}
+							</a>
+						</nav>
+					</div>
+					<div class="mx-auto max-w-4xl mt-12">
+						<div class="px-4 md:px-6">
+							<p class="text-base leading-8 md:text-xl md:leading-9 md:text-justify font-serif text-stone-100">
+								<span class="font-bold">Hello</span>! Welcome to my digital home &mdash; a place to organize some of my thoughts and happenings. I am based in Albuquerque, New Mexico, where I build ideas with code and data. The rest of the time I can usually be found traveling, visiting parks, or learning with more code and data.
+							</p>
+
+							<nav class="mt-16 flex items-center justify-center space-x-4 md:space-x-6 py-2">
+								<a
+									class="border-b border-stone-300 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 text-stone-200 transition duration-75 hover:bg-sky-950 hover:text-white hover:border-sky-950"
+									href="#technology"
+								>
+									Tech
+								</a>
+								<a
+									class="border-b border-stone-300 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 text-stone-200 transition duration-75 hover:bg-sky-950 hover:text-white hover:border-sky-950"
+									href="#leisure"
+								>
+									Life
+								</a>
+								<a
+									class="border-b border-stone-300 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 text-stone-200 transition duration-75 hover:bg-sky-950 hover:text-white hover:border-sky-950"
+									href="#career"
+								>
+									Career
+								</a>
+								<!-- <a
+									class="border-b border-stone-300 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 text-stone-200 transition duration-75 hover:bg-sky-950 hover:text-white hover:border-sky-950"
+									href="#latest"
+								>
+									Latest
+								</a> -->
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bg-stone-800 h-4"></div>
+	<div id="technology" class="bg-pink-800 text-stone-200">
+		<div class="ml-2 md:ml-14 mr-3 relative z-0 flex items-center justify-center min-h-screen">
+			<div class="max-w-5xl py-16">
+				<div class="text-center mb-16">
+					<h1 class="text-2xl md:text-4xl font-serif font-extralight">Code and Technology</h1>
+				</div>
+				<div class="font-serif grid grid-cols-7 gap-8">
+					<div class="col-span-7 md:col-span-5">
+						<ol class="divide-y divide-pink-900 text-stone-200">
+							{{ range first 3 ( where site.RegularPages "Type" "eq" "post" ).ByDate.Reverse }}
+								<li class="relative z-0">
+									<a class="block group py-3 pl-8 pr-4" href="{{ .RelPermalink}}">
+										<strong class="block font-semibold underline text-base md:text-lg group-hover:text-stone-50 transition duration-150">{{ .Title }}</strong>
+										<span class="mt-1 md:mt-0.5 block text-sm md:text-base text-stone-300">{{ .Description }}</span>
+										<div class="absolute z-10 left-3 top-5">
+											<div class="absolute left-0.5 top-0.5 z-10 w-1.5 h-1.5 rounded-full bg-stone-300 group-hover:bg-stone-50 transition duration-150"></div>
+											<div class="absolute left-0 top-0 z-0 w-2.5 h-2.5 rounded-full border border-stone-300 opacity-0 scale-50 group-hover:border-stone-50 group-hover:opacity-100 group-hover:scale-100 transition duration-150"></div>
+										</div>
+									</a>
+								</li>
+							{{ end }}
+						</ol>
+					</div>
+					<div class="col-span-7 md:col-span-2">
+						<div class="space-y-2">
+							<div class="md:flex md:space-x-6">
+								<div class="h-1 md:h-auto md:flex-none bg-pink-900 md:w-1 rounded-full"></div>
+								<div class="pt-6 md:pt-4 md:pb-4 pl-2 md:pl-0">
+									<h1 class="block font-semibold text-base underline">Topics</h1>
+									<div class="mt-1 block text-sm text-stone-300 leading-6">
+										<!-- {recentPostsKeywords.map((keywords, keywordsIdx) => (
+											<>
+												{keywordsIdx > 0 && <><span class="mx-0.5">&middot;</span>{' '}</>}
+												<a
+													class="hover:underline"
+													href={`/taxonomy/keywords/${keywords.value}`}
+												>{keywords.value}</a>
+											</>
+										))} -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<nav class="mt-16 flex items-center justify-center space-x-6 py-2">
+					<a
+						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 transition duration-75 hover:bg-pink-950 hover:text-white hover:border-pink-950"
+						href="/browse/types/post"
+					>
+						Posts
+					</a>
+					<!-- <a
+						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 transition duration-75 hover:bg-pink-950 hover:text-white hover:border-pink-950"
+						href="/prezi"
+					>
+						Presentations
+					</a> -->
+					<a
+						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 transition duration-75 hover:bg-pink-950 hover:text-white hover:border-pink-950"
+						href="/projects"
+					>
+						Projects
+					</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="bg-stone-800 h-4"></div>
+	<div id="leisure" class="bg-yellow-600 text-white">
+		<div class="ml-2 md:ml-14 mr-3 relative z-0 flex items-center justify-center min-h-screen">
+			<div class="max-w-5xl mx-auto w-full py-16">
+				<div class="text-center font-serif mb-16">
+					<h1 class="text-2xl md:text-4xl font-extralight">Adventures and Life</h1>
+				</div>
+				<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-2">
+					{{ range first 3 ( where ( site.GetPage "/story" ).Sections "Type" "eq" "story" ).ByDate.Reverse }}
+						{{ .Store.Set "img[@sizes]" "(min-width: 768px) 33.3333vw, 100vw" }}
+						{{ partial "entry/visual-grid-item" . }}
+					{{ end}}
+				</div>
+				<nav class="mt-16 flex items-center justify-center space-x-6 py-2">
+					<a
+						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 text-stone-50 transition duration-75 hover:bg-yellow-900 hover:text-white hover:border-yellow-900"
+						href="/browse/places"
+					>
+						Places
+					</a>
+					<a
+						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 text-stone-50 transition duration-75 hover:bg-yellow-900 hover:text-white hover:border-yellow-900"
+						href="/browse/collections/trails"
+					>
+						Trails
+					</a>
+					<a
+						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 text-stone-50 transition duration-75 hover:bg-yellow-900 hover:text-white hover:border-yellow-900"
+						href="/browse/collections/travels"
+					>
+						Travels
+					</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="bg-stone-800 h-4"></div>
+	<div id="career" class="bg-stone-800 text-stone-50">
+		<div class="ml-2 md:ml-14 mr-3 relative z-0 flex items-center justify-center min-h-screen">
+			<div class="max-w-3xl mx-auto w-full py-16">
+				<div class="text-center font-serif mb-16">
+					<h1 class="text-2xl md:text-4xl font-extralight">Software and Systems</h1>
+				</div>
+				<div class="mx-4 font-serif text-base leading-7 text-stone-300 space-y-4">
+					<p>
+						I am a software engineer with experience across technology stacks and insights into the operations and distributed nature of systems.
+						<span class="mr-1">Previously, I have worked at </span>
+						{{ range ( first 2 ( where ( where ( site.GetPage "/occupation" ).Sections "Type" "eq" "occupation" ) "Params.occupationType.employmentType" "ne" "Contract" ).ByDate.Reverse ) }}
+							<a
+								class="inline-block relative z-0 items-center whitespace-nowrap -m-2 py-2 pl-6 pr-2 hover:bg-black hover:text-white leading-none hover:z-10"
+								href="{{ .RelPermalink }}"
+							>
+								<img class="absolute left-2 top-2 h-4 w-4 rounded-xs" alt="Logo ({{ .Params.occupationType.organization.name }})" src="{{ .Params.occupationType.organization.logo }}" />
+								<span class="pl-1.5">{{ .Params.occupationType.organization.name }}</span>
+							</a><span class="pl-px mr-0.5">, </span>
+						{{ end }}
+						<span>and others.</span>
+					</p>
+				</div>
+				<nav class="mt-16 flex items-center justify-center space-x-6 py-2">
+					<a
+						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 text-stone-50 transition duration-75 hover:bg-black hover:text-white hover:border-black"
+						href="/career"
+					>
+						Details
+					</a>
+					<a
+						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 text-stone-50 transition duration-75 hover:bg-black hover:text-white hover:border-black"
+						href="/contact"
+					>
+						Contact
+					</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+	{{/*<div class="fixed z-30 right-0 pr-1 flex flex-row-reverse justify-start bottom-0 w-32 text-stone-400">
+		{{ with index site.RegularPages.ByDate.Reverse 0 }}
+			<a
+				class="py-1 pl-1 group inline-block focus:outline-none"
+				href="{{ .RelPermalink }}"
+				title="{{ .Title }}"
+			>
+				<div class="p-2.5 bg-stone-800 group-hover:bg-black group-hover:text-white group-focus:ring-inset group-focus:ring-4 group-focus:ring-neutral-100">
+					{{ partial "heroicons/inline.html" ( dict "icon" "24/outline/arrow-right" "attrs" `class="w-4 h-4 md:w-5 md:h-5"` ) }}
+				</div>
+			</a>
+		{{ end }}
+	</div>*/}}
+{{ end }}

@@ -1,0 +1,27 @@
+{{ if eq ( .layout | default .Page.Layout ) "visual" }}
+    <div class="max-w-5xl mx-auto space-y-8">
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 px-2">
+            {{ range .Pages }}
+                {{ .Store.Set "img[@sizes]" "(min-width: 768px) 21.333rem, (min-width: 640px) 32rem, 64rem" }}
+                {{ partial "entry/visual-grid-item" . }}
+            {{ end }}
+        </div>
+    </div>
+{{ else }}
+    <div class="max-w-3xl mx-auto space-y-8">
+        <ul class="font-serif border-y border-stone-200 divide-y divide-stone-200">
+            {{ range .Pages }}
+                <li class="relative z-0">
+                    <a class="block group py-3 pl-8 pr-4" href="{{ .RelPermalink }}">
+                        <strong class="block font-semibold underline md:text-lg text-stone-600 group-hover:text-sky-900 transition duration-150">{{ .Title }}</strong>
+                        <span class="mt-1 md:mt-0.5 block text-sm md:text-base text-stone-500">{{ .Description }}</span>
+                        <div class="absolute z-10 left-3 top-5">
+                            <div class="absolute left-0.5 top-0.5 z-10 w-1.5 h-1.5 rounded-full bg-stone-500 group-hover:bg-sky-900 transition duration-150"></div>
+                            <div class="absolute left-0 top-0 z-0 w-2.5 h-2.5 rounded-full border border-stone-500 opacity-0 scale-50 group-hover:border-sky-900 group-hover:opacity-100 group-hover:scale-100 transition duration-150"></div>
+                        </div>
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+{{ end }}

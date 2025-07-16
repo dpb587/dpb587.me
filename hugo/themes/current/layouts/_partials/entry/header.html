@@ -1,0 +1,39 @@
+{{ $subtitles := slice }}
+
+{{ if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) }}
+	{{ $subtitles = $subtitles | append ( dict
+		"href" .Parent.RelPermalink
+		"text" .Parent.LinkTitle
+	) }}
+{{ end }}
+
+{{ if .PublishDate }}
+	{{ $subtitles = $subtitles | append ( dict
+		"text" ( dateFormat "January 2, 2006" .PublishDate )
+	) }}
+{{ else if .Description }}
+	{{ $subtitles = slice ( dict
+		"text" .Description
+	) }}
+{{ else if or .Date .Params.timeRange }}
+	{{ $subtitles = $subtitles | append ( dict
+		"text" ( partial "time-long" . )
+	) }}
+{{ end }}
+
+{{ if .Params.hero.ref }}
+	{{ $ref := .GetPage .Params.hero.ref }}
+	{{ partial "entry/header-hero" ( dict
+		"title" .Title
+		"subtitles" $subtitles
+		"hero" ( dict
+			"alt" $ref.Title
+			"thumbnails" $ref.Params.mediaType.thumbnails
+		)
+	) }}
+{{ else }}
+	{{ partial "entry/header-text" ( dict
+		"title" .Title
+		"subtitles" $subtitles
+	) }}
+{{ end }}

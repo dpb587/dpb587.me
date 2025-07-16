@@ -1,0 +1,32 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+{{ end }}
+
+{{ define "main" }}
+	{{ $prose := .Params.layout }}
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div class="bg-stone-50 pb-8 space-y-4">
+				{{ partial "prose/render" ( dict 
+					"content" .Content
+					"classColumn" "max-w-4xl mx-auto space-y-8"
+					"classColumnWide" "max-w-6xl mx-auto space-y-8"
+					"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+					"classGutter" "px-4"
+				) }}
+				{{ if .Sections }}
+					{{ partial "entry/list" ( dict
+						"Pages" .Sections
+					) }}
+				{{ end }}
+				{{ if .RegularPages }}
+					{{ partial "entry/list-groups" ( dict
+						"Page" .
+						"Groups" ( .RegularPages.GroupByDate "2006" )
+					) }}
+				{{ end }}
+			</div>
+		</main>
+	</div>
+{{ end }}

@@ -1,0 +1,58 @@
+@startuml
+
+file ome.tif {
+    folder IFD0 #ffffff {  
+        rectangle "<&tag> Image Description" as IFD0_Tag_ImageDescription
+        rectangle "<&tag> Next IFD" as IFD0_Tag_NextIFD
+        rectangle "<&image> Image Data" as IFD0_Data
+    }
+
+    folder IFD1 #ffffff {
+        rectangle "<&tag> Next IFD" as IFD1_Tag_NextIFD
+        rectangle "<&image> Image Data" as IFD1_Data
+    }
+
+    IFD0_Tag_NextIFD ..> IFD1
+
+    folder IFD2 #ffffff {
+        rectangle "<&tag> Next IFD" as IFD2_Tag_NextIFD
+        rectangle "<&image> Image Data" as IFD2_Data
+    }
+
+    IFD1_Tag_NextIFD ..> IFD2
+
+    label "..." as IFDnext
+
+    IFD2_Tag_NextIFD ..> IFDnext
+
+    note as IFD0_Tag_ImageDescription_Value #ffffff
+<!-- ... -->
+<Pixels ...
+    DimensionOrder="XYZTC"
+    SizeZ="3" SizeT="2" SizeC="2"
+>
+    <TiffData />
+</Pixels>
+    end note
+
+    IFD0_Tag_ImageDescription --> IFD0_Tag_ImageDescription_Value
+    
+    map "IFD Dimension Map" as IFD0_Tag_ImageDescription_Value_TiffDataMap {
+        **IFD0** => Z=0, T=0, C=0
+        **IFD1** => Z=1, T=0, C=0
+        **IFD2** => Z=2, T=0, C=0
+        **IFD3** => Z=0, T=1, C=0
+        **IFD4** => Z=1, T=1, C=0
+        **IFD5** => Z=2, T=1, C=0
+        **IFD6** => Z=0, T=0, C=1
+        **IFD7** => Z=1, T=0, C=1
+        **IFD8** => Z=2, T=0, C=1
+        **IFD9** => Z=0, T=1, C=1
+        **IFD10** => Z=1, T=1, C=1
+        **IFD11** => Z=2, T=1, C=1
+    }
+
+    IFD0_Tag_ImageDescription_Value ..> IFD0_Tag_ImageDescription_Value_TiffDataMap
+}
+
+@enduml

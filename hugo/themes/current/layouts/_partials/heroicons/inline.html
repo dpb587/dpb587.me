@@ -1,0 +1,2 @@
+{{ $svg := ( resources.Get ( printf "heroicons/src/%s.svg" .icon ) ).Content }}
+{{ strings.ReplaceRE `<svg ` ( printf `<svg data-heroicons=%q %s` .icon .attrs ) ( strings.ReplaceRE `(\s)(stroke|fill)="(#[a-fA-F0-9]{3,}|black)"` `$2="currentColor"` $svg ) | safeHTML }}

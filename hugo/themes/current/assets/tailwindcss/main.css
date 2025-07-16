@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@config "./tailwind.config.mjs";
+@plugin "@tailwindcss/aspect-ratio";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+/* https://gwfh.mranftl.com/fonts/roboto-serif?subsets=latin */
+
+/* roboto-serif-regular - latin */
+@font-face {
+  font-display: block;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/roboto-serif-v16-latin-regular.woff2') format('woff2');
+}
+
+/* */
+
+@theme {
+  --font-serif: 'Roboto Serif', ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+}
+
+@utility writing-htb {
+  writing-mode: horizontal-tb;
+}
+
+@utility writing-vrl {
+  writing-mode: vertical-rl;
+}
+
+@utility writing-vlr {
+  writing-mode: vertical-lr;
+}
+
+html {
+  scrollbar-color: #78716c #292524;
+}
+
+body {
+  @apply bg-stone-800;
+}
+
+/* offset anchors (namely for headers) for site navigation bar */
+h1[id]::before,
+h2[id]::before,
+h3[id]::before,
+h4[id]::before,
+h5[id]::before,
+h6[id]::before {
+  content: '';
+  @apply block relative w-0 h-10 -mt-10 md:hidden;
+}

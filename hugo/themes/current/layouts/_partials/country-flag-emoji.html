@@ -1,0 +1,1 @@
+{{ ( transform.Unmarshal ( printf `{"V":"\ud83c\u%x\ud83c\u%x"}` ( add ( index . 0 ) 56741 ) ( add ( index . 1 ) 56741 ) ) ).V }}

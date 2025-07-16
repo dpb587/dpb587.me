@@ -1,0 +1,35 @@
+@startuml
+
+file multipage-detail.tif {
+    folder IFD0 #ffffff {
+        rectangle "<&tag> Next IFD" as IFD0_Tag_NextIFD
+        rectangle "<&tag> Width\n**612**" as IFD0_Tag_Width
+        rectangle "<&tag> Height\n**792**" as IFD0_Tag_Height
+        rectangle "<&tag> Subfile Type\n**Full-resolution**\n**Single of multiple pages**" as IFD0_Tag_SubfileType
+        rectangle "<&tag> Page Number\n**1**" as IFD0_Tag_PageNumber
+        rectangle "<&image> //Image Bytes//" as IFD0_Data
+    }
+
+    folder IFD1 #ffffff {
+        rectangle "<&tag> Next IFD" as IFD1_Tag_NextIFD
+        rectangle "<&tag> Width\n**612**" as IFD1_Tag_Width
+        rectangle "<&tag> Height\n**792**" as IFD1_Tag_Height
+        rectangle "<&tag> Subfile Type\n**Full-resolution**\n**Single of multiple pages**" as IFD1_Tag_SubfileType
+        rectangle "<&tag> Page Number\n**2**" as IFD1_Tag_PageNumber
+        rectangle "<&image> //Image Bytes//" as IFD1_Data
+    }
+
+    IFD0_Tag_NextIFD ..> IFD1
+
+    folder IFD2 #ffffff {
+        rectangle "<&tag> Width\n**612**" as IFD2_Tag_Width
+        rectangle "<&tag> Height\n**792**" as IFD2_Tag_Height
+        rectangle "<&tag> Subfile Type\n**Full-resolution**\n**Single of multiple pages**" as IFD2_Tag_SubfileType
+        rectangle "<&tag> Page Number\n**3**" as IFD2_Tag_PageNumber
+        rectangle "<&image> //Image Bytes//" as IFD2_Data
+    }
+
+    IFD1_Tag_NextIFD ..> IFD2
+}
+
+@enduml

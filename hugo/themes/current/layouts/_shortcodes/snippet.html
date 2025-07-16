@@ -1,0 +1,49 @@
+{{ $file := .Params.file }}
+{{ $fileAbs := ( path.Join .Params.dir .Params.file ) }}
+{{ $lang := default "plain" .Params.lang }}
+{{ $stripPrefix := default "" .Params.stripprefix }}
+{{ $content := readFile $fileAbs }}
+
+<prose:custom-start />
+<div class="text-base font-mono pl-2 pr-4 relative z-0 shadow-sm rounded text-neutral-200 border-y sm:border-x border-neutral-900" style="background-color:#272822">
+	{{ if .Params.lines }}
+		{{ $contentLines := split $content "\n" }}
+
+		{{- range $idx, $rangeStr := ( split .Params.lines ";" ) -}}
+			{{- $contentSubset := "" -}}
+
+			{{- $range := split $rangeStr "-" -}}
+			{{- $headerSuffix := printf " [%s]" ( index $range 0 ) -}}
+			{{- $headerLinkSuffix := printf "#L%s" ( index $range 0 ) -}}
+			{{- if eq 1 ( len $range ) -}}
+				{{- $range = $range | append ( index $range 0 ) -}}
+			{{- else -}}
+				{{- $headerSuffix = printf " [%s:%s]" ( index $range 0 ) ( index $range 1 ) -}}
+				{{- $headerLinkSuffix = printf "#L%s-L%s" ( index $range 0 ) ( index $range 1 ) -}}
+			{{- end -}}
+
+			{{- range ( seq ( sub ( int ( index $range 0 ) ) 1 ) ( sub ( int ( index $range 1 ) ) 1 ) ) -}}
+				{{- $contentSubset = printf "%s%s\n" $contentSubset ( strings.TrimPrefix $stripPrefix ( index $contentLines . ) ) -}}
+			{{- end -}}
+
+			<div class="absolute z-10 -top-5 right-4 rounded-t-sm text-xs px-2 py-1" style="background-color:#272822">
+				<a class="hover:text-white hover:underline" href="{{ site.Params.repository }}/blob/master/{{ $fileAbs }}{{ $headerLinkSuffix }}" target="_blank">{{ $file }}</a>
+			</div>
+			<div class="overflow-x-auto">
+				<div class="py-3.5 pl-2 space-y-0.5">
+					{{- highlight $contentSubset $lang "" -}}
+				</div>
+			</div>
+		{{- end -}}
+	{{ else }}
+		<div class="absolute z-10 -top-5 right-4 rounded-t-sm text-xs px-2 py-1" style="background-color:#272822">
+			<a class="hover:text-white hover:underline" href="{{ site.Params.repository }}/blob/master/{{ $fileAbs }}" target="_blank">{{ $file }}</a>
+		</div>
+		<div class="overflow-x-auto">
+			<div class="py-3.5 pl-2 space-y-0.5">
+				{{ highlight $content $lang "" }}
+			</div>
+		</div>
+	{{ end }}
+</div>
+<prose:custom-end />

@@ -1,0 +1,21 @@
+{{ if and ( ne . .CurrentSection ) .CurrentSection .CurrentSection.RelPermalink }}
+	{{ template "item" .CurrentSection }}
+{{ else if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) ( ne .Parent.RelPermalink .RelPermalink ) }}
+	{{ template "item" .Parent }}
+{{ else if eq .Type "post" }}
+	{{ template "item" ( site.GetPage "/nav-type/post" ) }}
+{{ end }}
+
+{{ define "item" }}
+	<div class="relative z-0">
+		<a
+			class="relative z-10 group inline-block focus:outline-none md:px-1 py-0.5 md:py-0"
+			title="{{ .LinkTitle }}"
+			href="{{ .RelPermalink }}"
+		>
+			<div class="p-2.5 bg-stone-800 group-hover:bg-black group-hover:text-white group-focus:ring-inset group-focus:ring-4 group-focus:ring-neutral-100 group-focus:pointer-events-none">
+				{{ partial "heroicons/inline" ( dict "icon" "24/outline/arrow-up-left" "attrs" `class="w-4 md:w-5 h-4 md:h-5"` ) }}
+			</div>
+		</a>
+	</div>
+{{ end }}

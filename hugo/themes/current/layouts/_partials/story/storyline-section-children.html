@@ -1,0 +1,230 @@
+{{ $grid := slice }}
+{{ $restore := false }}
+{{ $divider := false }}
+
+{{ range .children }}
+  {{ if .IsSection }}
+    {{ if $restore }}
+      {{ template "restore" $ }}
+      {{ $restore = false }}
+    {{ end }}
+
+    {{ if gt ( len $grid ) 0 }}
+      {{ if $divider }}
+        {{ template "divider" $ }}
+        {{ $divider = false }}
+      {{ end }}
+
+      {{ template "grid" ( dict
+        "items" $grid
+        "layout" $.layout
+      ) }}
+      {{ $grid = slice }}
+
+      {{ $divider = true }}
+    {{ end }}
+
+    {{ $depth := add $.depth 1 }}
+    <section
+      id="{{ strings.TrimSuffix `/` ( strings.TrimPrefix $.baseSection.RelPermalink .RelPermalink ) }}"
+      class="mt-8"
+    >
+      <div class="{{ $.layout.standard.maxWidth }} mx-auto">
+        <header class="relative z-0 pl-10 py-3.5">
+          <div class="absolute top-4 left-0 rounded-sm bg-stone-800 text-stone-200 p-2">
+            {{ partial "heroicons/inline" ( dict
+              "icon" "24/outline/arrow-down-right"
+              "attrs" `class="w-4 h-4"`
+            ) }}
+          </div>
+          <div class="pl-1">
+            {{ if gt $depth 6 }}
+              <strong class="text-3xl font-light">{{ .Title }}</strong>
+            {{ else }}
+              <h{{ $depth }} class="text-3xl font-light">{{ .Title }}</h{{ $depth }}>
+            {{ end }}
+          </div>
+          {{ if or .Params.nav.placePark .Params.nav.place }}
+            <div class="pl-1 mt-0.5 text-sm text-stone-600 space-x-2">
+              {{ if .Params.nav.placePark }}
+                <span class="inline-flex items-center">
+                  {{ partial "heroicons/inline" ( dict
+                    "icon" "24/outline/map-pin"
+                    "attrs" `class="h-4 w-4"`
+                  ) }}
+                  <span class="ml-0.5">
+                    {{ $idx := 0 }}
+                    {{ range $k, $v := .Params.nav.placePark -}}
+                      {{ if gt $idx 0 }}<span>; </span>{{ end }}
+                      <span>{{ ( $.section.GetPage ( printf "/nav-place-park/%s" $k ) ).Title }}</span>
+                      {{- $idx = add $idx 1 -}}
+                    {{ end }}
+                  </span>
+                </span>
+              {{ end }}
+              {{ if .Params.nav.place }}
+                <span class="inline-flex items-center">
+                  {{ partial "heroicons/inline" ( dict
+                    "icon" "24/outline/globe-americas"
+                    "attrs" `class="h-4 w-4"`
+                  ) }}
+                  <span class="ml-0.5">
+                    {{ $idx := 0 }}
+                    {{ range $k, $v := .Params.nav.place -}}
+                      {{ if gt $idx 0 }}<span>; </span>{{ end }}
+                      <span>{{ ( $.section.GetPage ( printf "/nav-place/%s" $k ) ).Title }}</span>
+                      {{- $idx = add $idx 1 -}}
+                    {{ end }}
+                  </span>
+                </span>
+              {{ end }}
+            </div>
+          {{ end }}
+        </header>
+      </div>
+      <div>
+        {{ with .Content }}
+          <div class="space-y-8">
+            {{ partial "prose/render" ( dict 
+              "content" .
+              "classColumn" "max-w-4xl mx-auto space-y-8"
+              "classColumnWide" "max-w-6xl mx-auto space-y-8"
+              "classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+              "classGutter" "px-4"
+            ) }}
+          </div>
+        {{ end }}
+        {{ partial "story/storyline-section-children" ( dict
+          "depth" $depth
+          "baseSection" $.baseSection
+          "section" .
+          "children" .Pages.ByDate
+          "layout" $.layout
+        ) }}
+      </div>
+    </section>
+
+    {{ $restore = true }}
+    {{ $divider = false }}
+  {{ else if eq .Type "media" }}
+    {{ $grid = $grid | append . }}
+  {{ else }}
+    {{ if $restore }}
+      {{ template "restore" $ }}
+      {{ $restore = false }}
+    {{ end }}
+
+    {{ if gt ( len $grid ) 0 }}
+      {{ if $divider }}
+        {{ template "divider" $ }}
+        {{ $divider = false }}
+      {{ end }}
+      
+      {{ template "grid" ( dict
+        "items" $grid
+        "layout" $.layout
+      ) }}
+      {{ $grid = slice }}
+
+      {{ $divider = true }}
+    {{ end }}
+
+    {{ if $divider }}
+      {{ template "divider" $ }}
+      {{ $divider = false }}
+    {{ end }}
+
+    {{ partial ( printf "story/storyline-row-%s" .Type ) ( dict
+      "depth" ( add 1 $.depth )
+      "page" .
+      "layout" $.layout
+    ) }}
+
+    {{ $divider = true }}
+  {{ end }}
+{{ end }}
+
+{{ if $restore }}
+  {{ template "restore" $ }}
+  {{ $restore = false }}
+{{ end }}
+
+{{ if gt ( len $grid ) 0 }}
+  {{ if $divider }}
+    {{ template "divider" $ }}
+    {{ $divider = false }}
+  {{ end }}
+  
+  {{ template "grid" ( dict
+    "items" $grid
+    "layout" $.layout
+  ) }}
+  {{ $grid = slice }}
+
+  {{ $divider = true }}
+{{ end }}
+
+{{ define "grid" }}
+  {{ $gridClass := "grid md:grid-cols-3 grid-cols-2 md:gap-4 gap-1 md:px-4 md:my-4 px-1 *:aspect-w-1 *:aspect-h-1" }}
+  {{ if eq 1 ( len .items ) }}
+    {{ $gridClass = "grid grid-cols-1 md:px-4 md:my-4 px-1 *:aspect-w-16 *:aspect-h-9" }}
+  {{ else if eq 2 ( len .items ) }}
+    {{ $gridClass = "grid grid-cols-2 md:gap-4 gap-1 md:px-4 md:my-4 *:aspect-w-1 *:aspect-h-1" }}
+  {{ end }}
+
+  <div class="{{ .layout.standard.maxWidth }} mx-auto">
+    <div class="{{ $gridClass }}">
+      {{ range .items }}
+        {{ partial "story/storyline-cell-image" ( dict
+          "link" ( dict
+            "href" .RelPermalink
+            "title" .LinkTitle
+          )
+          "image" ( dict
+            "alt" .Title
+            "thumbnails" .Params.mediaType.thumbnails
+            "viewportSizes" "(min-width: 56rem) 18.6666rem, 50vw"
+          )
+        ) }}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+
+{{ define "restore" }}
+  <aside class="{{ $.layout.standard.maxWidth }} mx-auto mt-8">
+    <div class="flex items-center space-x-1.5">
+      <div class="relative z-0 h-px bg-stone-300 w-full max-w-4 mt-2"></div>
+      <div class="pt-2 text-xs text-stone-500 font-light">
+        {{ template "restore-breadcrumbs" ( dict
+          "section" .section
+          "baseSection" .baseSection
+        ) }}
+      </div>
+      <div class="relative z-0 h-px bg-stone-300 grow mt-2 pr-4"></div>
+      <div class="pt-2">
+        <div class="bg-stone-200 text-stone-600 p-1 rounded-sm">
+          {{ partial "heroicons/inline" ( dict
+            "icon" "24/outline/arrow-down-left"
+            "attrs" `class="w-2 h-2"`
+          ) }}
+        </div>
+      </div>
+    </div>
+  </aside>
+{{ end }}
+
+{{ define "restore-breadcrumbs" }}
+  {{ if and .section.Parent ( ne .section .baseSection ) }}
+    {{ template "restore-breadcrumbs" ( dict
+      "section" .section.Parent
+      "baseSection" .baseSection
+    ) }}
+    //
+  {{ end }}
+  <span>{{ .section.Title }}</span>
+{{ end }}
+
+{{ define "divider" }}
+  <div class="{{ $.layout.standard.maxWidth }} mx-auto h-px bg-stone-200"></div>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "title" }}HTTP 404{{ end }}
+
+{{ define "body" }}
+	<div class="h-screen w-full flex items-center justify-center">
+		<div class="bg-stone-300 text-center p-8 shadow-lg">
+			<div class="m-0 font-mono font-semibold text-stone-900">HTTP 404</div>
+			<div class="mt-4 p-8 bg-stone-800 text-stone-300">
+				<h1 class="m-0 text-4xl font-light">Page Not Found</h1>
+			</div>
+			<div class="mt-12 text-center font-light">
+				<button class="border-b border-stone-800 uppercase text-stone-800 px-2.5 py-2 cursor-pointer hover:bg-stone-800 hover:text-stone-200" onclick="history.go(-1)">Back</button>
+				<span class="mx-4"> or </span>
+				<a class="border-b border-stone-800 uppercase text-stone-800 px-2.5 py-2 hover:bg-stone-800 hover:text-stone-200" href="/">Home</a>
+			</div>
+		</div>
+	</div>
+{{ end }}

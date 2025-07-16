@@ -1,0 +1,24 @@
+{{ $contentLang := index ( index ( strings.FindRESubmatch "(?m)^.*```(\\w*).*$" .Inner ) 0 ) 1 | default "plain" -}}
+{{ $indent := index ( index ( strings.FindRESubmatch "(?m)^([ \\t]*)```" .Inner ) 0 ) 1 -}}
+{{ $content := strings.ReplaceRE "(?ms)^.*```[^\\n]*(\\n.*)\\s*```\\s*" "$1" .Inner -}}
+{{ $content := strings.ReplaceRE ( printf "\n%s" $indent ) "\n" $content -}}
+{{ $content := strings.TrimSpace $content -}}
+
+<div class="-ml-2 pl-2 border-l border-neutral-500">
+	{{ if .Get "summary" }}
+		<details class="-ml-px text-neutral-300">
+			<summary class="text-neutral-400">{{ .Get "summary" }}</summary>
+			<pre class="whitespace-pre-line">{{ partial "prose/code-highlight" ( dict
+				"content" $content
+				"lang" $contentLang
+			) }}</pre>
+		</details>
+	{{ else }}
+		<div class="-ml-px text-neutral-300">
+			<pre class="whitespace-pre-line">{{ partial "prose/code-highlight" ( dict
+				"content" $content
+				"lang" $contentLang
+			) }}</pre>
+		</div>
+	{{ end }}
+</div>

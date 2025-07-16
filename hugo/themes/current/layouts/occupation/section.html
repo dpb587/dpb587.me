@@ -1,0 +1,108 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+{{ end }}
+
+{{ define "main" }}
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8 space-y-8">
+				{{ partial "prose/render" ( dict 
+					"content" .Content
+					"classColumn" "max-w-4xl mx-auto space-y-8"
+					"classColumnWide" "max-w-6xl mx-auto space-y-8"
+					"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+					"classGutter" "px-4"
+				) }}
+				{{ with where ( where site.Pages "Type" "eq" "occupation-event" ) "Parent.RelPermalink" "eq" .RelPermalink }}
+					{{ template "timeline" . }}
+				{{ end }}
+			</div>
+		</main>
+	</div>
+{{ end }}
+
+{{ define "timeline" }}
+	{{ $nameIcons := ( dict
+		"Employment Started" "play"
+		"Job Changed" "identification"
+		"Contract Started" "play"
+		"Contract Renewed" "plus"
+		"Employment Ended" "check"
+		"Contract Ended" "check"
+		"Acquisition" "arrow-uturn-right"
+		"Role Changed" "user-group"
+		"Life Changed" "heart"
+		"Compensation Changed" "banknotes"
+	) }}
+	<section class="max-w-4xl mx-auto font-serif space-y-4">
+		<div class="prose prose-stone max-w-none px-4">
+			<h1>Timeline</h1>
+			<p>The following describes some of the milestones and notable changes during my time here, starting with the most recent events.</p>
+		</div>
+		<ol class="-mt-px space-y-12">
+			{{ range .ByDate.Reverse.GroupByDate "January 2006" }}
+				<li class="mb-6">
+					<div class="relative">
+						<div class="pt-3 pb-1 px-2 text-gray-600 flex justify-content z-10 relative">
+							<div class="flex-1 text-sm pl-10">
+								<span class="inline-block bg-stone-50 px-2">{{ .Key }}</span>
+							</div>
+						</div>
+						<div class="absolute h-1 top-5 border-t inset-x-0 border-stone-300"></div>
+					</div>
+					<ol class="space-y-6">
+						{{ range .Pages }}
+							<li class="px-2 mt-3.5 mb-6">
+								<div class="relative flex items-center px-3 mb-3">
+									<div class="relative mr-3">
+										<div class="p-1 rounded shadow-sm border border-stone-200 text-stone-600">
+											{{ partial "heroicons/inline" ( dict
+												"icon" ( printf "16/solid/%s" ( index $nameIcons .Title | default "sparkles") )
+												"attrs" `class="h-3.5 w-3.5"`
+											) }}
+										</div>
+									</div>
+									<div class="min-w-0 flex-1 py-0.5 font-semibold text-stone-700">{{ .Title }}</div>
+								</div>
+								{{ with .Content }}
+									<div class="space-y-8 pl-8 mt-4">
+										{{ partial "prose/render" ( dict 
+											"content" .
+											"classColumn" "space-y-8"
+											"classGutter" "px-4"
+										) }}
+									</div>
+								{{ end }}
+								{{ with .Params.occupationEventType.properties }}
+									<div class="pl-8 mx-4 text-stone-800 text-sm sm:my-5">
+										<dl class="grid sm:grid-cols-7 sm:gap-y-2 gap-x-1 items-start">
+											{{ $lastPropertyName := false }}
+											{{ range . }}
+												{{ if ne $lastPropertyName .name }}
+													<dt class="col-span-2 mt-3 sm:mt-0 flex items-center sm:justify-end space-x-1">
+														<span class="font-medium">{{ .name }}</span>
+														{{ partial "heroicons/inline" ( dict
+															"icon" "20/solid/chevron-right"
+															"attrs" `class="hidden sm:inline-block h-4 w-4"`
+														) }}
+													</dt>
+													{{ $lastPropertyName = .name }}
+												{{ else }}
+													<div class="col-span-2"></div>
+												{{ end }}
+												<div class="col-span-5">
+													<dd class="font-semibold">{{ .value }}</dd>
+												</div>
+											{{ end }}
+										</dl>
+									</div>
+								{{ end }}
+							</li>
+						{{ end }}
+					</ol>
+				</li>
+			{{ end }}
+		</ol>
+	</section>
+{{ end }}
