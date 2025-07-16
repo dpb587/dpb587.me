@@ -1,14 +1,16 @@
 FROM debian:bookworm-slim AS base
+ARG TARGETARCH
 RUN apt update \
     && apt install -y \
         brotli \
         ca-certificates \
+        git \
         wget \
         zstd \
     && rm -rf /var/lib/apt/lists/*
-RUN wget -qO- https://github.com/gohugoio/hugo/releases/download/v0.147.9/hugo_0.147.9_linux-arm64.tar.gz \
+RUN wget -qO- https://github.com/gohugoio/hugo/releases/download/v0.147.9/hugo_0.147.9_linux-${TARGETARCH}.tar.gz \
     | tar -xzf- -C /usr/local/bin hugo
-RUN wget -qO- https://go.dev/dl/go1.24.4.linux-arm64.tar.gz \
+RUN wget -qO- https://go.dev/dl/go1.24.4.linux-${TARGETARCH}.tar.gz \
     | tar -C /usr/local -xzf-
 ENV PATH="/usr/local/go/bin:${PATH}"
 

@@ -8,7 +8,8 @@ mkdir -p tmp
 
 cd tools
 
-go run ./publish/cmd/noslash/main.go "${target}" 2>&1 | tee ../tmp/noslash.log
+go run ./publish/cmd/noslash/main.go "${target}" 2>&1 \
+    > tee ../tmp/noslash.log
 
 cd "${target}"
 
