@@ -29,8 +29,8 @@
       id="{{ strings.TrimSuffix `/` ( strings.TrimPrefix $.baseSection.RelPermalink .RelPermalink ) }}"
       class="mt-8"
     >
-      <div class="{{ $.layout.standard.maxWidth }} mx-auto">
-        <header class="relative z-0 pl-10 py-3.5">
+      <div class="{{ $.layout.standard.maxWidth }} mx-auto px-3.5">
+        <header class="relative z-0 pl-10 py-3.5 -mb-3.5">
           <div class="absolute top-4 left-0 rounded-sm bg-stone-800 text-stone-200 p-2">
             {{ partial "heroicons/inline" ( dict
               "icon" "24/outline/arrow-down-right"
@@ -38,7 +38,7 @@
             ) }}
           </div>
           <div class="pl-1">
-            {{ if gt $depth 6 }}
+            {{ if gt $depth 8 }}
               <strong class="text-3xl font-light">{{ .Title }}</strong>
             {{ else }}
               <h{{ $depth }} class="text-3xl font-light">{{ .Title }}</h{{ $depth }}>
@@ -84,7 +84,7 @@
       </div>
       <div>
         {{ with .Content }}
-          <div class="space-y-8">
+          <div class="space-y-8 my-4">
             {{ partial "prose/render" ( dict 
               "content" .
               "classColumn" "max-w-4xl mx-auto space-y-8"
@@ -107,7 +107,47 @@
     {{ $restore = true }}
     {{ $divider = false }}
   {{ else if eq .Type "media" }}
-    {{ $grid = $grid | append . }}
+    {{ if .Params.content.highlightSummary }}
+      {{ if $restore }}
+        {{ template "restore" $ }}
+        {{ $restore = false }}
+      {{ end }}
+
+      {{ if gt ( len $grid ) 0 }}
+        {{ if $divider }}
+          {{ template "divider" $ }}
+          {{ $divider = false }}
+        {{ end }}
+
+        {{ template "grid" ( dict
+          "items" $grid
+          "layout" $.layout
+        ) }}
+        {{ $grid = slice }}
+
+        {{ $divider = true }}
+      {{ end }}
+
+      {{ if $divider }}
+        {{ template "divider" $ }}
+        {{ $divider = false }}
+      {{ end }}
+
+      {{ partial "story/storyline-row-media-highlight" ( dict
+        "depth" ( add 1 $.depth )
+        "page" .
+        "image" ( dict
+          "alt" .Title
+          "thumbnails" .Params.mediaType.thumbnails
+          "viewportSizes" "(min-width: 56rem) 18.6666rem, 50vw"
+        )
+        "layout" $.layout
+      ) }}
+
+      {{ $divider = true }}
+    {{ else }}
+      {{ $grid = $grid | append . }}
+    {{ end }}
   {{ else }}
     {{ if $restore }}
       {{ template "restore" $ }}
@@ -165,11 +205,11 @@
 {{ end }}
 
 {{ define "grid" }}
-  {{ $gridClass := "grid md:grid-cols-3 grid-cols-2 md:gap-4 gap-1 md:px-4 md:my-4 px-1 *:aspect-w-1 *:aspect-h-1" }}
+  {{ $gridClass := "grid md:grid-cols-3 grid-cols-2 gap-1 my-1 md:gap-4 md:px-4 md:my-4 lg:px-0 px-1 *:aspect-w-1 *:aspect-h-1" }}
   {{ if eq 1 ( len .items ) }}
-    {{ $gridClass = "grid grid-cols-1 md:px-4 md:my-4 px-1 *:aspect-w-16 *:aspect-h-9" }}
+    {{ $gridClass = "grid grid-cols-1 md:px-0 md:my-4 px-1 *:aspect-w-16 *:aspect-h-9" }}
   {{ else if eq 2 ( len .items ) }}
-    {{ $gridClass = "grid grid-cols-2 md:gap-4 gap-1 md:px-4 md:my-4 *:aspect-w-1 *:aspect-h-1" }}
+    {{ $gridClass = "grid grid-cols-2 gap-1 my-1 md:gap-4 md:px-4 md:my-4 lg:px-0 *:aspect-w-1 *:aspect-h-1" }}
   {{ end }}
 
   <div class="{{ .layout.standard.maxWidth }} mx-auto">

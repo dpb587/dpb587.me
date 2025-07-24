@@ -1,0 +1,30 @@
+<div class="{{ .layout.standard.maxWidth }} mx-auto">
+  <a class="relative z-0 group hover:z-10 block" href="{{ .page.RelPermalink }}" title="{{ .page.Title }}">
+    <div class="md:grid md:grid-cols-2 gap-1 px-1 my-1 md:gap-4 md:px-4 md:my-4 lg:px-0">
+      <div class="overflow-hidden shadow-none transition-all duration-100 ease-out group-hover:scale-103 group-hover:shadow-md aspect-w-1 aspect-h-1 relative">
+        {{ $tnDefault := index .image.thumbnails 0 }}
+        <img
+          class="w-full h-full object-cover scale-103 transition-all duration-100 ease-out group-hover:scale-100"
+          alt="{{ .image.alt }}"
+          height="{{ $tnDefault.height }}"
+          loading="lazy"
+          src="{{ site.Params.tildePrefix }}{{ $tnDefault.url }}"
+          srcset="{{ range $idx, $tn := .image.thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
+          sizes="{{ .image.viewportSizes }}"
+          width="{{ $tnDefault.width }}"
+        />
+      </div>
+      <div class="w-full h-full flex items-center">
+        <div class="space-y-8 py-2 lg:py-0 lg:px-4">
+          {{ partial "prose/render" ( dict 
+            "content" .page.Summary
+            "classColumn" "max-w-4xl mx-auto space-y-8"
+            "classColumnWide" "max-w-6xl mx-auto space-y-8"
+            "classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+            "classGutter" "lg:prose-2xl px-4"
+          ) }}
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
