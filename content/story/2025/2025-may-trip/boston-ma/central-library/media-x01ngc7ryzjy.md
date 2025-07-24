@@ -1,0 +1,68 @@
+---
+date: "2025-05-19T11:46:42-04:00"
+params:
+    mediaType:
+        captureTime:
+            time: "2025-05-19T11:46:42-04:00"
+        catalogNodeUid: 01983c5c-6fb5-7f1b-9d6a-2db32377d1d5
+        exifProfile:
+            apertureValue:
+                number: 1.5
+            focalLength:
+                number: 5.7
+            iso:
+                number: 100
+            lensMake:
+                string: Apple
+            lensModel:
+                string: iPhone 13 Pro back triple camera 5.7mm f/1.5
+            make:
+                string: Apple
+            model:
+                string: iPhone 13 Pro
+            shutterSpeedValue:
+                number: 121.25621394473346
+        geoCoordinates:
+            elevation: 16.568266062602966
+            latitude: 42.349625
+            longitude: -71.07726388888888
+        height: 3024
+        imageService:
+            infoUrl: /~/blob-iiif-image-v3/307d4808c11c335c0fe8c3b1baa3be0bf1ed3950f0fe55e332efbd6fa2e654c1/info.json
+        placesProfile:
+            country:
+                code: US
+                name: United States
+            countryRegion:
+                code: US-MA
+                name: Massachusetts
+            places:
+                - kind: admin2
+                  name: Suffolk County
+                - kind: locality
+                  name: Boston
+        thumbnails:
+            - height: 180
+              url: /~/blob-iiif-image-v3/307d4808c11c335c0fe8c3b1baa3be0bf1ed3950f0fe55e332efbd6fa2e654c1/full/240%2C180/0/default.jpg
+              width: 240
+            - height: 360
+              url: /~/blob-iiif-image-v3/307d4808c11c335c0fe8c3b1baa3be0bf1ed3950f0fe55e332efbd6fa2e654c1/full/480%2C360/0/default.jpg
+              width: 480
+            - height: 540
+              url: /~/blob-iiif-image-v3/307d4808c11c335c0fe8c3b1baa3be0bf1ed3950f0fe55e332efbd6fa2e654c1/full/720%2C540/0/default.jpg
+              width: 720
+            - height: 960
+              url: /~/blob-iiif-image-v3/307d4808c11c335c0fe8c3b1baa3be0bf1ed3950f0fe55e332efbd6fa2e654c1/full/1280%2C960/0/default.jpg
+              width: 1280
+            - height: 1440
+              url: /~/blob-iiif-image-v3/307d4808c11c335c0fe8c3b1baa3be0bf1ed3950f0fe55e332efbd6fa2e654c1/full/1920%2C1440/0/default.jpg
+              width: 1920
+        width: 4032
+    nav:
+        place:
+            us/ma: true
+        type:
+            media: true
+title: IMG_3217.HEIC
+type: media
+---

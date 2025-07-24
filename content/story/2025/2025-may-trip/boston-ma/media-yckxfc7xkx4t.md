@@ -1,0 +1,68 @@
+---
+date: "2025-05-18T12:58:27-04:00"
+params:
+    mediaType:
+        captureTime:
+            time: "2025-05-18T12:58:27-04:00"
+        catalogNodeUid: 01983c61-a2a9-75c4-9c6b-820f1cd5169c
+        exifProfile:
+            apertureValue:
+                number: 1.5
+            focalLength:
+                number: 5.7
+            iso:
+                number: 50
+            lensMake:
+                string: Apple
+            lensModel:
+                string: iPhone 13 Pro back triple camera 5.7mm f/1.5
+            make:
+                string: Apple
+            model:
+                string: iPhone 13 Pro
+            shutterSpeedValue:
+                number: 7462.686578188655
+        geoCoordinates:
+            elevation: -15.022586831451097
+            latitude: 42.36634166666667
+            longitude: -71.0604861111111
+        height: 3024
+        imageService:
+            infoUrl: /~/blob-iiif-image-v3/75f4df298ad933448e29150c40c5ede61b5ebcf1de9da8f45f06575b87aba317/info.json
+        placesProfile:
+            country:
+                code: US
+                name: United States
+            countryRegion:
+                code: US-MA
+                name: Massachusetts
+            places:
+                - kind: admin2
+                  name: Suffolk County
+                - kind: locality
+                  name: Boston
+        thumbnails:
+            - height: 180
+              url: /~/blob-iiif-image-v3/75f4df298ad933448e29150c40c5ede61b5ebcf1de9da8f45f06575b87aba317/full/240%2C180/0/default.jpg
+              width: 240
+            - height: 360
+              url: /~/blob-iiif-image-v3/75f4df298ad933448e29150c40c5ede61b5ebcf1de9da8f45f06575b87aba317/full/480%2C360/0/default.jpg
+              width: 480
+            - height: 540
+              url: /~/blob-iiif-image-v3/75f4df298ad933448e29150c40c5ede61b5ebcf1de9da8f45f06575b87aba317/full/720%2C540/0/default.jpg
+              width: 720
+            - height: 960
+              url: /~/blob-iiif-image-v3/75f4df298ad933448e29150c40c5ede61b5ebcf1de9da8f45f06575b87aba317/full/1280%2C960/0/default.jpg
+              width: 1280
+            - height: 1440
+              url: /~/blob-iiif-image-v3/75f4df298ad933448e29150c40c5ede61b5ebcf1de9da8f45f06575b87aba317/full/1920%2C1440/0/default.jpg
+              width: 1920
+        width: 4032
+    nav:
+        place:
+            us/ma: true
+        type:
+            media: true
+title: IMG_3188.HEIC
+type: media
+---
