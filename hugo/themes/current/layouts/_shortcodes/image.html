@@ -5,12 +5,34 @@
   {{ else }}
     {{ template "img" . }}
   {{ end }}
+
+  {{ with .Get "caption" }}
+    <figcaption class="text-xs font-serif -mb-0.5 mt-3.5 text-stone-500">
+        {{ . }}
+    </figcaption>
+  {{ end }}
 </figure>
 <prose:custom-end />
 
 {{ define "img" }}
-    <img class="mx-auto" src="{{ .Get `src` | safeURL }}"
-      {{- with .Get "alt" }} alt="{{ . }}"{{ end -}}
-      {{- with .Get "title" }} title="{{ . }}"{{ end -}}
-    />
+  {{/* https://github.com/gohugoio/hugo/blob/c5dca3bdeef2620e3f1b240b517e35335328d5ed/tpl/tplimpl/embedded/templates/_markup/render-image.html */}}
+  {{- $u := urls.Parse ( .Get "src" ) -}}
+  {{- $src := $u.String -}}
+  {{- if not $u.IsAbs -}}
+    {{- $path := strings.TrimPrefix "./" $u.Path -}}
+    {{- with or (.Page.Resources.Get $path) (resources.Get $path) -}}
+      {{- $src = .RelPermalink -}}
+      {{- with $u.RawQuery -}}
+        {{- $src = printf "%s?%s" $src . -}}
+      {{- end -}}
+      {{- with $u.Fragment -}}
+        {{- $src = printf "%s#%s" $src . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  <img class="max-h-full w-auto mx-auto" src="{{ $src | safeURL }}"
+    {{- with .Get "alt" }} alt="{{ . }}"{{ end -}}
+    {{- with .Get "title" }} title="{{ . }}"{{ end -}}
+  />
 {{ end }}

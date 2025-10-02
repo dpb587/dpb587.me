@@ -1,0 +1,9 @@
+<prose:custom-start />
+<div{{ with ( .Get "style" ) }} style="{{ . | safeCSS }}"{{ end }}>
+    <div class="h-full overflow-x-auto overflow-y-hidden *:data-active:block">
+        <div class="flex h-full w-full space-x-4 min-w-max">
+            {{ .Inner }}
+        </div>
+    </div>
+</div>
+<prose:custom-end />

@@ -1,5 +1,12 @@
 {{ $file := .Params.file }}
 {{ $fileAbs := ( path.Join .Params.dir .Params.file ) }}
+{{ $fileRepo := $fileAbs }}
+{{ if or ( strings.HasPrefix .Params.file "./" ) ( strings.HasPrefix .Params.dir "./" ) }}
+  {{ with or ( .Page.Resources.Get $fileAbs ) ( resources.Get $fileAbs ) }}
+	{{ $fileRepo = path.Join "content" $.Page.File.Dir $fileAbs }}
+    {{ $fileAbs = path.Join ".." $fileRepo }}
+  {{ end }}
+{{ end }}
 {{ $lang := default "plain" .Params.lang }}
 {{ $stripPrefix := default "" .Params.stripprefix }}
 {{ $content := readFile $fileAbs }}
@@ -27,7 +34,7 @@
 			{{- end -}}
 
 			<div class="absolute z-10 -top-5 right-4 rounded-t-sm text-xs px-2 py-1" style="background-color:#272822">
-				<a class="hover:text-white hover:underline" href="{{ site.Params.repository }}/blob/master/{{ $fileAbs }}{{ $headerLinkSuffix }}" target="_blank">{{ $file }}</a>
+				<a class="hover:text-white hover:underline" href="{{ site.Params.repository }}/blob/master/{{ $fileRepo }}{{ $headerLinkSuffix }}" target="_blank">{{ $file }}</a>
 			</div>
 			<div class="overflow-x-auto">
 				<div class="py-3.5 pl-2 space-y-0.5">
@@ -37,7 +44,7 @@
 		{{- end -}}
 	{{ else }}
 		<div class="absolute z-10 -top-5 right-4 rounded-t-sm text-xs px-2 py-1" style="background-color:#272822">
-			<a class="hover:text-white hover:underline" href="{{ site.Params.repository }}/blob/master/{{ $fileAbs }}" target="_blank">{{ $file }}</a>
+			<a class="hover:text-white hover:underline" href="{{ site.Params.repository }}/blob/master/{{ $fileRepo }}" target="_blank">{{ $file }}</a>
 		</div>
 		<div class="overflow-x-auto">
 			<div class="py-3.5 pl-2 space-y-0.5">
