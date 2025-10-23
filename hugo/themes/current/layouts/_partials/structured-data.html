@@ -1,0 +1,251 @@
+{{- $sd := dict
+  "@context" "https://schema.org"
+  "url" .Permalink
+  "author" ( dict
+    "@type" "Person"
+    "name" "Danny Berger"
+    "url" .Site.BaseURL
+  )
+  "copyrightHolder" ( dict
+    "@type" "Person"
+    "name" "Danny Berger"
+    "url" .Site.BaseURL
+  )
+  "copyrightYear" ( time.Format "2006" ( or .PublishDate .Lastmod ) )
+-}}
+
+{{- with .PublishDate -}}
+  {{- $sd = merge $sd ( dict "datePublished" ( time.Format "2006-01-02T15:04:05Z07:00" . ) ) -}}
+{{- end -}}
+
+{{- with .Lastmod -}}
+  {{- $sd = merge $sd ( dict "dateModified" ( time.Format "2006-01-02T15:04:05Z07:00" . ) ) -}}
+{{- end -}}
+
+{{- with .Params.description -}}
+  {{- $sd = merge $sd ( dict "description" . ) -}}
+{{- end -}}
+
+{{- with .Params.nav.tag -}}
+  {{- $keywords := slice -}}
+
+  {{- range $tag, $_ := . -}}
+    {{- $keywords = $keywords | append (replace $tag "-" " ") -}}
+  {{- end -}}
+
+  {{- if gt (len $keywords) 0 -}}
+    {{- $sd = merge $sd ( dict "keywords" $keywords ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with .Params.nav.place -}}
+  {{- $contentLocation := slice -}}
+
+  {{- range $place, $_ := . -}}
+    {{- $contentLocation = $contentLocation | append ( partial "nav-place/structured-data-ref.txt" ( $.GetPage ( printf "/nav-place/%s" $place ) ) | unmarshal ) -}}
+  {{- end -}}
+
+  {{- if gt (len $contentLocation) 0 -}}
+    {{- $sd = merge $sd ( dict "contentLocation" $contentLocation ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with .Params.timeRange -}}
+  {{- $sd = merge $sd ( dict "temporalCoverage" ( printf "%s/%s" .from .thru ) ) -}}
+{{- end -}}
+
+{{- if eq .Type "post" -}}
+  {{- $sd = merge $sd ( dict
+    "@type" "BlogPosting"
+    "headline" .Title
+    "wordCount" .WordCount
+  ) -}}
+{{- else if eq .Type "media" -}}
+  {{- $mainEntity := dict
+    "@type" "ImageObject"
+    "creator" ( dict
+      "@type" "Person"
+      "name" "Danny Berger"
+      "url" .Site.BaseURL
+    )
+  -}}
+
+  {{- with .Params.mediaType -}}
+    {{- with .captureTime.time -}}
+      {{- $mainEntity = merge $mainEntity ( dict "dateCreated" . ) -}}
+    {{- end -}}
+
+    {{- with .exifProfile -}}
+      {{- $exifData := slice -}}
+
+      {{- with .apertureValue.number -}}
+        {{- $exifData = $exifData | append ( dict
+          "@type" "PropertyValue"
+          "name" "fNumber"
+          "value" .
+        ) -}}
+      {{- end -}}
+
+      {{- with .focalLength.number -}}
+        {{- $exifData = $exifData | append ( dict
+          "@type" "PropertyValue"
+          "name" "focalLength"
+          "value" .
+        ) -}}
+      {{- end -}}
+
+      {{- with .iso.number -}}
+        {{- $exifData = $exifData | append ( dict
+          "@type" "PropertyValue"
+          "name" "iso"
+          "value" .
+        ) -}}
+      {{- end -}}
+
+      {{- with .lensMake.string -}}
+        {{- $exifData = $exifData | append ( dict
+          "@type" "PropertyValue"
+          "name" "lensMake"
+          "value" .
+        ) -}}
+      {{- end -}}
+
+      {{- with .lensModel.string -}}
+        {{- $exifData = $exifData | append ( dict
+          "@type" "PropertyValue"
+          "name" "lensModel"
+          "value" .
+        ) -}}
+      {{- end -}}
+
+      {{- with .make.string -}}
+        {{- $exifData = $exifData | append ( dict
+          "@type" "PropertyValue"
+          "name" "make"
+          "value" .
+        ) -}}
+      {{- end -}}
+
+      {{- with .model.string -}}
+        {{- $exifData = $exifData | append ( dict
+          "@type" "PropertyValue"
+          "name" "model"
+          "value" .
+        ) -}}
+      {{- end -}}
+
+      {{- with .shutterSpeedValue.number -}}
+        {{- $exifData = $exifData | append ( dict
+          "@type" "PropertyValue"
+          "name" "shutterSpeedValue"
+          "value" .
+        ) -}}
+      {{- end -}}
+
+      {{- if gt (len $exifData) 0 -}}
+        {{- $mainEntity = merge $mainEntity ( dict "exifData" $exifData ) -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- with .width -}}
+      {{- $mainEntity = merge $mainEntity ( dict "width" . ) -}}
+    {{- end -}}
+
+    {{- with .height -}}
+      {{- $mainEntity = merge $mainEntity ( dict "height" . ) -}}
+    {{- end -}}
+
+    {{- $place := dict "@type" "Place" -}}
+
+    {{- with .geoCoordinates -}}
+      {{- $geo := dict
+        "@type" "GeoCoordinates"
+      -}}
+
+      {{- with .latitude -}}
+        {{- $geo = merge $geo ( dict "latitude" . ) -}}
+      {{- end -}}
+
+      {{- with .longitude -}}
+        {{- $geo = merge $geo ( dict "longitude" . ) -}}
+      {{- end -}}
+
+      {{- with .elevation -}}
+        {{- $geo = merge $geo ( dict "elevation" . ) -}}
+      {{- end -}}
+
+      {{- $place = merge $place ( dict "geo" $geo ) -}}
+    {{- end -}}
+
+    {{- with .placesProfile -}}
+      {{- $names := slice -}}
+
+      {{- range .places -}}
+        {{- $names = $names | append .name -}}
+      {{- end -}}
+
+      {{- with .countryRegion -}}
+        {{- $names = $names | append .name -}}
+      {{- end -}}
+
+      {{- with .country -}}
+        {{- $names = $names | append .name -}}
+      {{- end -}}
+
+      {{- $place = merge $place ( dict "name" ( delimit $names ", " ) ) -}}
+    {{- end -}}
+
+    {{- if gt (len $place) 1 -}}
+      {{- $mainEntity = merge $mainEntity ( dict "contentLocation" $place ) -}}
+    {{- end -}}
+
+    {{/* keep in sync with the default @src from media/single.html */}}
+    {{- with index .thumbnails 0 -}}
+      {{- $mainEntity = merge $mainEntity ( dict "contentUrl" ( absURL .url ) ) -}}
+    {{- end -}}
+
+    {{- with .thumbnails -}}
+      {{- $thumbnails := slice -}}
+      
+      {{- range . -}}
+        {{- $thumbnail := dict
+          "@type" "ImageObject"
+          "contentUrl" ( absURL .url )
+        -}}
+
+        {{- with .width -}}
+          {{- $thumbnail = merge $thumbnail ( dict "width" . ) -}}
+        {{- end -}}
+
+        {{- with .height -}}
+          {{- $thumbnail = merge $thumbnail ( dict "height" . ) -}}
+        {{- end -}}
+
+        {{- $thumbnails = $thumbnails | append $thumbnail -}}
+      {{- end -}}
+
+      {{- if gt (len $thumbnails) 0 -}}
+        {{- $mainEntity = merge $mainEntity ( dict "thumbnail" $thumbnails ) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $sd = merge $sd ( dict
+    "@type" "WebPage"
+    "name" .Title
+    "mainEntity" $mainEntity
+  ) -}}
+{{- else -}}
+  {{- $sd = merge $sd ( dict
+    "@type" "WebPage"
+    "name" .Title
+  ) -}}
+{{- end -}}
+
+{{- if and ( ne . .CurrentSection ) .CurrentSection .CurrentSection.RelPermalink -}}
+  {{- $sd = merge $sd ( dict "isPartOf" .CurrentSection.Permalink ) -}}
+{{- else if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) ( ne .Parent.RelPermalink .RelPermalink ) -}}
+	{{- $sd = merge $sd ( dict "isPartOf" .Parent.Permalink ) -}}
+{{- end -}}
+
+<script type="application/ld+json">{{- $sd | jsonify | safeJS -}}</script>

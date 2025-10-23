@@ -247,3 +247,35 @@
 		{{ end }}
 	</div>*/}}
 {{ end }}
+
+{{ define "structured-data" }}
+	<script type="application/ld+json">{{ ( dict
+		"@context" "https://schema.org"
+		"@type" "ProfilePage"
+		"url" .Permalink
+		"name" .Title
+		"mainEntity" ( dict
+			"@type" "Person"
+			"name" "Danny Berger"
+			"familyName" "Berger"
+			"givenName" "Danny"
+			"sameAs" ( slice
+				.Permalink
+				"https://www.linkedin.com/in/dpb587/"
+				"https://twitter.com/dpb587"
+				"https://github.com/dpb587"
+				"https://gitlab.com/dpb587"
+			)
+			"homeLocation" ( dict
+				"@type" "Place"
+				"address" ( dict
+					"@type" "PostalAddress"
+					"addressLocality" "Albuquerque"
+					"addressRegion" "NM"
+					"addressCountry" "US"
+				)
+				"name" "Albuquerque, New Mexico"
+			)
+			"image" ( absURL "/assets/images/dpb587-20221205b~256.jpg" )
+		) ) | jsonify | safeJS }}</script>
+{{ end }}

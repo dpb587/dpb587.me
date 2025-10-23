@@ -1,0 +1,14 @@
+{{- $sd := dict
+  "name" .Title
+  "url" .Permalink
+-}}
+
+{{- if eq .Params.type "nav-place-admin1" -}}
+  {{- $sd = merge $sd ( dict "@type" "Country" ) -}}
+{{- else if eq .Params.type "nav-place-admin2" -}}
+  {{- $sd = merge $sd ( dict "@type" "State" ) -}}
+{{- else -}}
+  {{- $sd = merge $sd ( dict "@type" "Place" ) -}}
+{{- end -}}
+
+{{- $sd | jsonify | safeJS -}}
