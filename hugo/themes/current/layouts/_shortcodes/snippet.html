@@ -3,16 +3,19 @@
 {{ $fileRepo := $fileAbs }}
 {{ if or ( strings.HasPrefix .Params.file "./" ) ( strings.HasPrefix .Params.dir "./" ) }}
   {{ with or ( .Page.Resources.Get $fileAbs ) ( resources.Get $fileAbs ) }}
-	{{ $fileRepo = path.Join "content" $.Page.File.Dir $fileAbs }}
+    {{ $fileRepo = path.Join "content" $.Page.File.Dir $fileAbs }}
     {{ $fileAbs = path.Join ".." $fileRepo }}
   {{ end }}
+{{ end }}
+{{ if not ( fileExists $fileAbs ) }}
+	{{ errorf "snippet: file '%s' does not exist" $fileAbs }}
 {{ end }}
 {{ $lang := default "plain" .Params.lang }}
 {{ $stripPrefix := default "" .Params.stripprefix }}
 {{ $content := readFile $fileAbs }}
 
 <prose:custom-start />
-<div class="text-base font-mono pl-2 pr-4 relative z-0 shadow-sm rounded text-neutral-200 border-y sm:border-x border-neutral-900" style="background-color:#272822">
+<div class="text-sm font-mono pl-2 pr-4 relative z-0 shadow-sm rounded text-neutral-200 border-y sm:border-x border-neutral-900" style="background-color:#272822">
 	{{ if .Params.lines }}
 		{{ $contentLines := split $content "\n" }}
 

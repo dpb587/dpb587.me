@@ -1,0 +1,7 @@
+{{- $u := urls.Parse .Destination -}}
+<a href="{{ .Destination | safeURL }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if and $u.IsAbs ( not ( hasPrefix .Destination .Page.Site.BaseURL ) ) }} target="blank"{{ end -}}
+>
+  {{- with .Text }}{{ . }}{{ end -}}
+</a>
