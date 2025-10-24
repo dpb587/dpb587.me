@@ -27,6 +27,9 @@ export default {
       typography: {
         DEFAULT: {
           css: {
+            'p code': {
+              fontWeight: 400,
+            },
             'code::before': {
               content: '""'
             },

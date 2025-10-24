@@ -895,6 +895,9 @@
     :where(.prose > :last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
       margin-bottom: 0;
     }
+    :where(p code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+      font-weight: 400;
+    }
     :where(strong > a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
       font-weight: 600;
     }
