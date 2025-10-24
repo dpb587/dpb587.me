@@ -1,4 +1,0 @@
----
-type: "taxonomy"
-title: "Collections"
----
