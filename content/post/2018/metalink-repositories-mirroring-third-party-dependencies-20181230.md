@@ -11,7 +11,7 @@ publishDate: "2018-12-30"
 title: "Metalink Repositories: Mirroring Third-Party Dependencies"
 ---
 
-When managing project dependencies which are outside of your control, it is often best practice to assume those artifacts may disappear (e.g. they may move, disappear, or become corrupt). For this reason, you may want to be mirroring your assets which, with [metalink repositories](@/src/content/entry/2018/metalink-repositories-background-and-motivation-20181228), provides the functionality of:
+When managing project dependencies which are outside of your control, it is often best practice to assume those artifacts may disappear (e.g. they may move, disappear, or become corrupt). For this reason, you may want to be mirroring your assets which, with [metalink repositories]({{< relref "./metalink-repositories-background-and-motivation-20181228" >}}), provides the functionality of:
 
  * Multiple URLs can be configured for where to find an artifact. This allows for documenting where files were originally discovered, but also supports retrying download from mirrors if one location fails.
  * Download locations can be prioritized and configured for locations which helps ensure you always use a local mirror which may be optimized for your environment.
@@ -22,7 +22,7 @@ Building on top of metalinks is the idea of having a shared repository to docume
 
 # Example {#example}
 
-For a concrete example of mirroring, here is a Concourse pipeline which mirrors Go to a custom S3 bucket. It is based on the [`dynamic-metalink` resource](https://github.com/dpb587/dynamic-metalink-resource) ([learn more](@/src/content/entry/2018/watching-upstream-binaries-with-concourse-20181202)) and the [`metalink-repository` resource](https://github.com/dpb587/metalink-repository-resource). The inline comments provide more insight about what it is doing.
+For a concrete example of mirroring, here is a Concourse pipeline which mirrors Go to a custom S3 bucket. It is based on the [`dynamic-metalink` resource](https://github.com/dpb587/dynamic-metalink-resource) ([learn more]({{< relref "./watching-upstream-binaries-with-concourse-20181202" >}})) and the [`metalink-repository` resource](https://github.com/dpb587/metalink-repository-resource). The inline comments provide more insight about what it is doing.
 
 ```yaml
 resources:

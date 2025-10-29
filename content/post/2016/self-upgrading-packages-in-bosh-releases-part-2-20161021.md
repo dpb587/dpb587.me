@@ -101,7 +101,7 @@ By making this [pull request][16], the upgrade becomes something I can easily fi
 By automating package upgrades, it is easier to stay up to date with security patches which affect my releases. Refactoring my test tasks out into reusable functions helps provide better confidence in the upgrades before they hit any main branches. Utilizing pull requests for applying the changes reduces friction and provides a reminder in my inbox that something needs to happen. Although this process requires a bit of development overhead, the ability to rely on bots for upgrading, testing, and reminding me about dependency changes lets me focus on more creative tasks in the releases I have been testing this approach in.
 
 
- [1]: @/src/content/entry/2015/self-upgrading-packages-in-bosh-releases-20150803
+ [1]: {{< relref "../2015/self-upgrading-packages-in-bosh-releases-20150803" >}}
  [2]: https://concourse.ci/
  [3]: https://github.com/dpb587/openvpn-bosh-release/tree/f6a46f923c364ca4bfbdd3da9de00d7fc5c155b6/ci/images/release-blob/prepare
  [4]: https://www.docker.com/

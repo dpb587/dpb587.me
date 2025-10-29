@@ -11,9 +11,9 @@ publishDate: "2019-01-23"
 title: "Metalink Repositories: Stability Channels"
 ---
 
-Continuing on the topic of [metalink repositories](@/src/content/entry/2018/metalink-repositories-background-and-motivation-20181228), one of the biggest advantages I have found is that I no longer need to worry about complicated rules for when products should be published and what downstream components might be affected. Instead, I can focus on defining what "alpha" vs "rc" vs "stable" mean, and then downstream components consume however it's appropriate for them.
+Continuing on the topic of [metalink repositories]({{< relref "../2018/metalink-repositories-background-and-motivation-20181228" >}}), one of the biggest advantages I have found is that I no longer need to worry about complicated rules for when products should be published and what downstream components might be affected. Instead, I can focus on defining what "alpha" vs "rc" vs "stable" mean, and then downstream components consume however it's appropriate for them.
 
-That may sound trivial and obvious. However, I have found implementing those workflows in a product to be difficult before using metalink repositories (see [Motivations](@/src/content/entry/2018/metalink-repositories-background-and-motivation-20181228#motivation) for more details). Previously I might publish assets to S3, or use branches for source code, or prefixed tags in a git repository; but then you lose checksum options, or the ability to share pre-built assets, or noisy repositories. A [metalink file](@/src/content/entry/2017/documenting-blobs-with-metalink-files-20171009) provides a method for separating the concerns of code from distributing assets.
+That may sound trivial and obvious. However, I have found implementing those workflows in a product to be difficult before using metalink repositories (see [Motivations]({{< relref "../2018/metalink-repositories-background-and-motivation-20181228#motivation" >}}) for more details). Previously I might publish assets to S3, or use branches for source code, or prefixed tags in a git repository; but then you lose checksum options, or the ability to share pre-built assets, or noisy repositories. A [metalink file]({{< relref "../2017/documenting-blobs-with-metalink-files-20171009" >}}) provides a method for separating the concerns of code from distributing assets.
 
 Before getting into a few other benefits, let's start with an example.
 
@@ -78,7 +78,7 @@ resources:
       private_key: "((env_state_private_key))" # read+write access
 ```
 
-Once the `deploy-vpn` job has finished and published to the env-specific repository, others can confidently know it has been accepted. This is, essentially, another example of mirroring metalinks discussed in the [previous post](@/src/content/entry/2018/metalink-repositories-mirroring-third-party-dependencies-20181230), although this does not take the additional steps of mirroring the underlying data to a different storage service.
+Once the `deploy-vpn` job has finished and published to the env-specific repository, others can confidently know it has been accepted. This is, essentially, another example of mirroring metalinks discussed in the [previous post]({{< relref "../2018/metalink-repositories-mirroring-third-party-dependencies-20181230" >}}), although this does not take the additional steps of mirroring the underlying data to a different storage service.
 
 If we assume that was the staging environment, the production environment can have the exact same job automation and the only thing which needs to change is to declare that it wants to use the version that staging's `vpn` deployment has accepted.
 

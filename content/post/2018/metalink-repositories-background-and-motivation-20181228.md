@@ -11,7 +11,7 @@ publishDate: "2018-12-28"
 title: "Metalink Repositories: Background and Motivation"
 ---
 
-A while ago I started standardizing on using metalinks to record information about blobs. In my [original post](@/src/content/entry/2017/documenting-blobs-with-metalink-files-20171009) about metalinks, I briefly touched on the idea of [querying directories of metalinks](@/src/content/entry/2017/documenting-blobs-with-metalink-files-20171009#repository-querying), treating it as a lightweight database. This post starts a short series discussing what shortcomings motivated my interest in something like "metalink repositories" and how I have been building on the concept in several ways.
+A while ago I started standardizing on using metalinks to record information about blobs. In my [original post]({{< relref "../2017/documenting-blobs-with-metalink-files-20171009" >}}) about metalinks, I briefly touched on the idea of [querying directories of metalinks]({{< relref "../2017/documenting-blobs-with-metalink-files-20171009#repository-querying" >}}), treating it as a lightweight database. This post starts a short series discussing what shortcomings motivated my interest in something like "metalink repositories" and how I have been building on the concept in several ways.
 
 
 # Background {#background}
