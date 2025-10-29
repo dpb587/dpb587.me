@@ -301,7 +301,33 @@ func main() {
 
 	slog.Info("Starting server", "url", "http://localhost:"+port)
 
-	if err := http.ListenAndServe(":"+port, mux); err != nil {
+	if err := http.ListenAndServe(":"+port, http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		var redirectHost bool
+
+		if hostname := strings.SplitN(r.Host, ":", 2)[0]; hostname != "dpb587.me" {
+			if hostname == "www.dpb587.me" {
+				redirectHost = true
+			} else {
+				http.Error(w, fmt.Sprintf("not found: host: %s", hostname), http.StatusNotFound)
+
+				return
+			}
+		} else if r.Header.Get("X-Forwarded-Proto") != "https" {
+			redirectHost = true
+		}
+
+		if redirectHost {
+			http.Redirect(w, r, (&url.URL{
+				Scheme: "https",
+				Host:   "dpb587.me",
+				Path:   r.URL.Path,
+			}).String(), http.StatusMovedPermanently)
+
+			return
+		}
+
+		mux.ServeHTTP(w, r)
+	})); err != nil {
 		slog.Error("could not start server", "error", err)
 		os.Exit(1)
 	}
