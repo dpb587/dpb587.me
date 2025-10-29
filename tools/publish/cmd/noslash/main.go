@@ -16,6 +16,7 @@ package main
 // * if an HTML file does not contain any valid links, it should be left unchanged.
 // * the effective destination of a link must not change. For example, a link to `/` must not be rewritten to an empty string or entirely different path.
 // * the `sitemap.xml` file must have <loc> entries rewritten to remove trailing slashes, when possible.
+// * all JSON-LD URL strings within `<script type="application/ld+json">...</script>` tags must be rewritten without a trailing slash. For example, absolute URLs like `"https://dpb587.me/contact/"` should become `"https://dpb587.me/contact"`.
 //
 // Interface:
 //
@@ -133,6 +134,20 @@ func processSitemap(content, filePath string) (string, bool) {
 }
 
 func processHTML(content, filePath, documentRoot string) (string, bool) {
+	hasChanges := false
+
+	// Process href attributes in anchor tags
+	content, hrefChanged := rewriteHrefAttributes(content, filePath, documentRoot)
+	hasChanges = hasChanges || hrefChanged
+
+	// Process JSON-LD URLs within script tags
+	content, jsonldChanged := rewriteJSONLDUrls(content, filePath, documentRoot)
+	hasChanges = hasChanges || jsonldChanged
+
+	return content, hasChanges
+}
+
+func rewriteHrefAttributes(content, filePath, documentRoot string) (string, bool) {
 	// Match href attributes in anchor tags
 	hrefRegex := regexp.MustCompile(`href=["']([^"']+)["']`)
 	hasChanges := false
@@ -180,6 +195,65 @@ func processHTML(content, filePath, documentRoot string) (string, bool) {
 			}
 
 			return newMatch
+		}
+
+		return match
+	})
+
+	return result, hasChanges
+}
+
+func rewriteJSONLDUrls(content, filePath, documentRoot string) (string, bool) {
+	// Match <script type="application/ld+json">...</script> blocks
+	scriptRegex := regexp.MustCompile(`(?s)<script\s+type=["']application/ld\+json["'][^>]*>(.*?)</script>`)
+	hasChanges := false
+
+	result := scriptRegex.ReplaceAllStringFunc(content, func(match string) string {
+		// Extract the JSON-LD content
+		jsonldRegex := regexp.MustCompile(`(?s)<script\s+type=["']application/ld\+json["'][^>]*>(.*?)</script>`)
+		matches := jsonldRegex.FindStringSubmatch(match)
+		if len(matches) < 2 {
+			return match
+		}
+
+		jsonContent := matches[1]
+		originalJSON := jsonContent
+
+		// Rewrite absolute URLs starting with "https://dpb587.me/"
+		urlRegex := regexp.MustCompile(`"(https://dpb587\.me/[^"]*?)"`)
+		jsonContent = urlRegex.ReplaceAllStringFunc(jsonContent, func(urlMatch string) string {
+			// Extract the URL (remove quotes)
+			url := urlMatch[1 : len(urlMatch)-1]
+
+			// Don't modify root URL or URLs that don't end with "/"
+			if url == "https://dpb587.me/" || !strings.HasSuffix(url, "/") {
+				return urlMatch
+			}
+
+			// Extract the path portion
+			urlPath := strings.TrimPrefix(url, "https://dpb587.me")
+
+			// Check if this path resolves to a local file
+			fullPath := filepath.Join(documentRoot, urlPath[1:]) // Remove leading slash from path
+			indexPath := filepath.Join(fullPath, "index.html")
+			if _, err := os.Stat(indexPath); err == nil {
+				// Remove trailing slash
+				newURL := strings.TrimSuffix(url, "/")
+				newMatch := `"` + newURL + `"`
+
+				if newMatch != urlMatch {
+					slog.Info("rewritten JSON-LD URL", "file", filePath, "original", url, "rewritten", newURL)
+					hasChanges = true
+				}
+
+				return newMatch
+			}
+
+			return urlMatch
+		})
+
+		if jsonContent != originalJSON {
+			return strings.Replace(match, originalJSON, jsonContent, 1)
 		}
 
 		return match
