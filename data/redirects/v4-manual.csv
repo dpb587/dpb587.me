@@ -3,6 +3,7 @@
 /career/pivotal,/about/occupation/pivotal
 /career/sentryds,/about/occupation/sentryds
 /career/vmware,/about/occupation/vmware
+/taxonomy/collection/media-galleries,/browse/collections/travels
 /taxonomy/collection/parks,/browse/places
 /taxonomy/collection/trails,/browse/collections/trails
 /taxonomy/keywords/ant,/browse/tags/ant
@@ -164,3 +165,4 @@
 /taxonomy/keywords/xdebug,/browse/tags/xdebug
 /taxonomy/keywords/xpath,/browse/tags/xpath
 /taxonomy/keywords/xslt,/browse/tags/xslt
+/taxonomy/type/blog-posting,/browse/types/post
