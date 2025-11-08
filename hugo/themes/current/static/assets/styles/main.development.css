@@ -1752,6 +1752,9 @@
       background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
     }
   }
+  .bg-neutral-400 {
+    background-color: var(--color-neutral-400);
+  }
   .bg-pink-800 {
     background-color: var(--color-pink-800);
   }
@@ -1913,6 +1916,9 @@
   }
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
+  }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
   }
   .pt-24 {
     padding-top: calc(var(--spacing) * 24);
@@ -3100,6 +3106,11 @@
   .md\:px-1 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 1);
+    }
+  }
+  .md\:px-2 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 2);
     }
   }
   .md\:px-4 {

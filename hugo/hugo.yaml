@@ -28,7 +28,8 @@ markup:
         rightSingleQuote: "'"
 params:
   repository: "https://github.com/dpb587/dpb587.me"
-  tildePrefix: "" # http://localhost:1314
+  tildePrefix: "https://dpb587.me" # http://localhost:1314
+  commentsRemarkUrl: "https://dpb587.me/comments.v2" # http://localhost:1315
 permalinks:
   page:
     certification: '/about/certification/:sections[1:]/:slug'
