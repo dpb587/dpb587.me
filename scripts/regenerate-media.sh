@@ -13,7 +13,7 @@ do
     vipsthumbnail \
         "private/${file}" \
         -o "$PWD/${filedirname}/${filesuffixless}.png" \
-        -s 1024x1024
+        -s 1720x1720
 done < <(
     cd private
     find "${mediadir}" -type f
