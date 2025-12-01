@@ -36,6 +36,9 @@ export default {
             'code::after': {
               content: '""'
             },
+            'strong code': {
+              fontWeight: 600,
+            },
             h1: {
               fontSize: em(24, 14),
               fontWeight: '600',

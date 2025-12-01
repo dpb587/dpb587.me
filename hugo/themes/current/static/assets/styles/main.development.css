@@ -898,6 +898,9 @@
     :where(p code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
       font-weight: 400;
     }
+    :where(strong code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+      font-weight: 600;
+    }
     :where(strong > a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
       font-weight: 600;
     }
