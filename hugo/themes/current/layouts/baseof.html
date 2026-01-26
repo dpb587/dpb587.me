@@ -10,7 +10,19 @@
 				<link rel="stylesheet" href="/assets/styles/main.css?{{ .fingerprint }}" integrity="{{ index .fileIntegrity `main.css` }}" crossorigin="anonymous" />
 			{{- end -}}
 		{{- end }}
-		<title>{{ block "title" . }}{{ if ne .Title "Danny Berger" }}{{ .Title }} | {{ end }}Danny Berger{{ end }}</title>
+		<title>
+			{{- block "title" . }}
+				{{- if ne .Title "Danny Berger" }}
+					{{- .Title }}
+					{{- if and ( ne . .CurrentSection ) .CurrentSection .CurrentSection.RelPermalink }} ({{ .CurrentSection.Title }})
+					{{- else if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) ( ne .Parent.RelPermalink .RelPermalink ) }} ({{ .Parent.Title }})
+					{{- end }} | {{ end -}}
+				Danny Berger
+			{{- end -}}
+		</title>
+		{{ if ne .Kind "404" }}
+			<link rel="canonical" href="{{ .RelPermalink }}" />
+		{{ end }}
 		<!-- <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js" integrity="sha384-Akqfrbj/HpNVo8k11SXBb6TlBWmXXlYQrCSqEWmyKJe+hDm3Z/B2WVG4smwBkRVm" crossorigin="anonymous"></script> -->
 		<script src="/assets/scripts/elements.iife.js" type="module"></script>
 		{{ block "structured-data" . }}{{ end }}
