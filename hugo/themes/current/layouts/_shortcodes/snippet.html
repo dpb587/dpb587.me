@@ -15,7 +15,7 @@
 {{ $content := readFile $fileAbs }}
 
 <prose:custom-start />
-<div class="text-sm font-mono pl-2 pr-4 relative z-0 shadow-sm rounded text-neutral-200 border-y sm:border-x border-neutral-900" style="background-color:#272822">
+<div class="text-sm font-mono pl-2 pr-4 relative z-0 shadow-sm md:rounded text-neutral-200 border-y sm:border-x border-neutral-900" style="background-color:#272822">
 	{{ if .Params.lines }}
 		{{ $contentLines := split $content "\n" }}
 

@@ -1,7 +1,7 @@
 <prose:custom-start />
 <figure class="border-t md:border-x md:border-b border-stone-200 overflow-hidden shadow md:rounded bg-stone-100 p-4 *:data-active:block">
     <div class="hidden relative z-0 group/0">
-        <nav class="hidden group-hover/0:block absolute z-10 top-1 right-1 bg-white/20 backdrop-blur-sm rounded-sm text-lg shadow -m-px">
+        <nav class="hidden group-hover/0:block absolute z-10 top-3 right-1 bg-white/20 backdrop-blur-sm rounded-sm text-lg shadow -m-px">
             <button
                 class="m-px bg-white/90 flex items-center justify-center h-8 w-8 text-stone-500 font-bold rounded-xs hover:text-black hover:bg-white"
                 onclick="((e) => { delete(e.dataset['active']); e.nextElementSibling.dataset['active'] = true })(this.parentElement.parentElement)"
@@ -12,9 +12,9 @@
                 ) }}
             </button>
         </nav>
-        <div class="text-base font-mono pl-2 pr-4 relative z-0 shadow-sm rounded text-neutral-200 border-y sm:border-x border-neutral-900" style="background-color:#272822">
+        <div class="text-base font-mono -mx-1.5 -mt-1.5 pl-2 pr-4 relative z-0 rounded-xs text-neutral-200 border-y sm:border-x border-neutral-900" style="background-color:#272822">
             <div class="overflow-x-auto">
-                <div class="py-3.5 pl-2 space-y-0.5">{{ highlight ( .Page.Resources.Get ( printf "%s/input.txt" ( .Get "dir" ) ) ).Content ( default "plain" ( .Get "lang" ) ) }}</div>
+                <div class="py-3 pl-2 space-y-0.5">{{ highlight ( .Page.Resources.Get ( printf "%s/input.txt" ( .Get "dir" ) ) ).Content ( default "plain" ( .Get "lang" ) ) }}</div>
             </div>
         </div>
     </div>

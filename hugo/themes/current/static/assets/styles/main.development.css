@@ -457,6 +457,9 @@
   .m-px {
     margin: 1px;
   }
+  .-mx-1\.5 {
+    margin-inline: calc(var(--spacing) * -1.5);
+  }
   .-mx-px {
     margin-inline: -1px;
   }
@@ -1106,6 +1109,9 @@
   }
   .-mt-1 {
     margin-top: calc(var(--spacing) * -1);
+  }
+  .-mt-1\.5 {
+    margin-top: calc(var(--spacing) * -1.5);
   }
   .-mt-10 {
     margin-top: calc(var(--spacing) * -10);
