@@ -2,7 +2,7 @@ module github.com/dpb587/dpb587.me/tools
 
 go 1.24.4
 
-replace github.com/dpb587/tacitkb => ../tmp/tacitkb
+replace github.com/dpb587/tacitkb => ../private/cms/cms.v2
 
 require (
 	github.com/dpb587/go-iiif-image-api-v3 v0.0.0-20240212221638-064f8e4333de
@@ -25,6 +25,7 @@ require (
 	github.com/mattn/go-sqlite3 v1.14.28 // indirect
 	github.com/paulmach/orb v0.11.1 // indirect
 	github.com/spf13/pflag v1.0.6 // indirect
+	gitlab.com/jamietanna/content-negotiation-go v0.2.0 // indirect
 	go.mongodb.org/mongo-driver v1.11.4 // indirect
 	go.opencensus.io v0.22.3 // indirect
 	golang.org/x/net v0.0.0-20221002022538-bcab6841153b // indirect

@@ -15,6 +15,7 @@ RUN wget -O- https://go.dev/dl/go1.24.4.linux-${TARGETARCH}.tar.gz \
 ENV PATH="/usr/local/go/bin:${PATH}"
 
 FROM base AS hugo-build
+ARG NG_API_TOKEN
 ADD . /workspaces/main
 WORKDIR /workspaces/main
 RUN cd hugo \

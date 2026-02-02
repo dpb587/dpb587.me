@@ -16,12 +16,15 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+
+	contentnegotiation "gitlab.com/jamietanna/content-negotiation-go"
 )
 
 // sync with package-public.sh
 var compressedExts = map[string]struct{}{
 	".css":  {},
 	".html": {},
+	".md":   {},
 	".js":   {},
 	".svg":  {},
 	".xml":  {},
@@ -42,7 +45,9 @@ type fileRequest struct {
 	CompressionExt      string
 	CompressionEncoding string
 
-	ExtraHeaders http.Header
+	ContentType           string
+	ContentLocationSuffix string
+	ExtraHeaders          http.Header
 }
 
 func (h *fileHandler) serveFile(w http.ResponseWriter, r *http.Request, fr fileRequest) bool {
@@ -70,6 +75,14 @@ func (h *fileHandler) serveFile(w http.ResponseWriter, r *http.Request, fr fileR
 
 	defer f.Close()
 
+	if len(fr.ContentType) > 0 {
+		w.Header().Set("Content-Type", fr.ContentType)
+	}
+
+	if len(fr.ContentLocationSuffix) > 0 {
+		w.Header().Set("Content-Location", fr.CanonicalUserPath+fr.ContentLocationSuffix)
+	}
+
 	w.Header().Set("Content-Length", strconv.FormatInt(info.Size(), 10))
 
 	if fr.CompressionEncoding != "" {
@@ -93,6 +106,23 @@ func (h *fileHandler) serveFile(w http.ResponseWriter, r *http.Request, fr fileR
 
 func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	var compressionExt, compressionEncoding string
+	var contentType, contentLocationSuffix string
+	var markdownSuffix string
+
+	// Content negotiation for markdown
+	if formatParam := r.URL.Query().Get("format"); formatParam == "markdown" {
+		contentType = "text/markdown; charset=utf-8"
+		contentLocationSuffix = "?format=markdown"
+		markdownSuffix = ".md"
+	} else if acceptHeader := r.Header.Get("Accept"); acceptHeader != "" && acceptHeader != "*/*" {
+		negotiator := contentnegotiation.NewNegotiator("text/html", "text/markdown")
+		negotiatedType, _, err := negotiator.Negotiate(acceptHeader)
+		if err == nil && negotiatedType.String() == "text/markdown" {
+			contentType = "text/markdown; charset=utf-8"
+			contentLocationSuffix = "?format=markdown"
+			markdownSuffix = ".md"
+		}
+	}
 
 	if acceptEncoding := r.Header.Get("Accept-Encoding"); len(acceptEncoding) > 0 {
 		if strings.Contains(acceptEncoding, "br") {
@@ -109,11 +139,13 @@ func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	if strings.HasSuffix(r.URL.Path, "/index.html") {
 		if h.serveFile(w, r, fileRequest{
-			FilePath:            r.URL.Path + compressionExt,
-			CompressionExt:      compressionExt,
-			CompressionEncoding: compressionEncoding,
-			UserPath:            r.URL.Path,
-			CanonicalUserPath:   strings.TrimSuffix(r.URL.Path, "/index.html"),
+			FilePath:              r.URL.Path + markdownSuffix + compressionExt,
+			UserPath:              r.URL.Path,
+			CompressionExt:        compressionExt,
+			CompressionEncoding:   compressionEncoding,
+			ContentType:           contentType,
+			ContentLocationSuffix: contentLocationSuffix,
+			CanonicalUserPath:     strings.TrimSuffix(r.URL.Path, "/index.html"),
 		}) {
 			return
 		}
@@ -121,19 +153,23 @@ func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	if strings.HasSuffix(r.URL.Path, "/") || !strings.Contains(r.URL.Path, ".") {
 		if h.serveFile(w, r, fileRequest{
-			FilePath:            filepath.Join(r.URL.Path, "index.html"+compressionExt),
-			CompressionExt:      compressionExt,
-			CompressionEncoding: compressionEncoding,
-			UserPath:            r.URL.Path,
-			CanonicalUserPath:   strings.TrimSuffix(r.URL.Path, "/"),
+			FilePath:              filepath.Join(r.URL.Path, "index.html"+markdownSuffix+compressionExt),
+			UserPath:              r.URL.Path,
+			CompressionExt:        compressionExt,
+			CompressionEncoding:   compressionEncoding,
+			ContentType:           contentType,
+			ContentLocationSuffix: contentLocationSuffix,
+			CanonicalUserPath:     strings.TrimSuffix(r.URL.Path, "/"),
 		}) {
 			return
 		}
 
 		if h.serveFile(w, r, fileRequest{
-			FilePath:          filepath.Join(r.URL.Path, "index.html"),
-			UserPath:          r.URL.Path,
-			CanonicalUserPath: strings.TrimSuffix(r.URL.Path, "/"),
+			FilePath:              filepath.Join(r.URL.Path, "index.html"+markdownSuffix),
+			UserPath:              r.URL.Path,
+			ContentType:           contentType,
+			ContentLocationSuffix: contentLocationSuffix,
+			CanonicalUserPath:     strings.TrimSuffix(r.URL.Path, "/"),
 		}) {
 			return
 		}
