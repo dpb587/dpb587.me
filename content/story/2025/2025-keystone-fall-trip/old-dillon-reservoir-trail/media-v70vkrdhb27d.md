@@ -1,0 +1,66 @@
+---
+date: "2025-09-25T16:37:29-06:00"
+params:
+    mediaType:
+        captureTime:
+            time: "2025-09-25T16:37:29-06:00"
+        catalogNodeUid: 019ca59c-cf77-783a-8011-65abeda8a084
+        exifProfile:
+            apertureValue:
+                number: 2.8
+            focalLength:
+                number: 9
+            iso:
+                number: 32
+            lensMake:
+                string: Apple
+            lensModel:
+                string: iPhone 13 Pro back triple camera 9mm f/2.8
+            make:
+                string: Apple
+            model:
+                string: iPhone 13 Pro
+            shutterSpeedValue:
+                number: 405.3506284545696
+        geoCoordinates:
+            elevation: 2808.7163904235726
+            latitude: 39.611825
+            longitude: -106.07166388888888
+        height: 4032
+        imageService:
+            infoUrl: /~/blob-iiif-image-v3/a6f098af07fef58cd87f9fdac055df70af052d5d5792791b88f515382ce23a20/info.json
+        placesProfile:
+            country:
+                code: US
+                name: United States
+            countryRegion:
+                code: US-CO
+                name: Colorado
+            places:
+                - kind: admin2
+                  name: Summit County
+        thumbnails:
+            - height: 240
+              url: /~/blob-iiif-image-v3/a6f098af07fef58cd87f9fdac055df70af052d5d5792791b88f515382ce23a20/full/180%2C240/0/default.jpg
+              width: 180
+            - height: 480
+              url: /~/blob-iiif-image-v3/a6f098af07fef58cd87f9fdac055df70af052d5d5792791b88f515382ce23a20/full/360%2C480/0/default.jpg
+              width: 360
+            - height: 720
+              url: /~/blob-iiif-image-v3/a6f098af07fef58cd87f9fdac055df70af052d5d5792791b88f515382ce23a20/full/540%2C720/0/default.jpg
+              width: 540
+            - height: 1280
+              url: /~/blob-iiif-image-v3/a6f098af07fef58cd87f9fdac055df70af052d5d5792791b88f515382ce23a20/full/960%2C1280/0/default.jpg
+              width: 960
+            - height: 1920
+              url: /~/blob-iiif-image-v3/a6f098af07fef58cd87f9fdac055df70af052d5d5792791b88f515382ce23a20/full/1440%2C1920/0/default.jpg
+              width: 1440
+        width: 3024
+    nav:
+        place:
+            us/co: true
+        type:
+            media: true
+title: IMG_4195.HEIC
+type: media
+---

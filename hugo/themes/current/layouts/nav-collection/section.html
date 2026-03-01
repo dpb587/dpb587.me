@@ -4,7 +4,7 @@
 {{ end }}
 
 {{ define "main" }}
-	{{ $collectionSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/browse/collections/" .RelPermalink ) ) }}
+	{{ $navSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/browse/collections/" .RelPermalink ) ) }}
 
 	<div class="relative z-0 w-full h-full">
 		<main>
@@ -19,7 +19,7 @@
 				) }}
 				{{ partial "entry/list-groups" ( dict
 					"Page" .
-					"Groups" ( ( where site.Pages ( printf "Params.nav.collection.%s" $collectionSlug ) "eq" true ).GroupByDate "2006" )
+					"Groups" ( ( where site.Pages ( printf "Params.nav.collection.%s" $navSlug ) "eq" true ).GroupByDate "2006" )
 				) }}
 			</div>
 		</main>

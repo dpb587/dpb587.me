@@ -6,6 +6,8 @@ params:
     nav:
         place:
             us/nm: false
+        tag:
+            balloon-fiesta: true
     timeRange:
         from: 2014-10-10T07:22:23
         thru: 2014-10-13T13:50:20

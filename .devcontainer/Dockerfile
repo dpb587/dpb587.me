@@ -1,17 +1,17 @@
-FROM mcr.microsoft.com/devcontainers/base:bookworm
+FROM mcr.microsoft.com/devcontainers/base:jammy
 RUN sudo apt update
 
 # habits
 RUN sudo apt install -y vim
 
 # vips
-RUN sudo apt install -y libvips libvips-tools
+# RUN sudo ./private/scripts/libvips/install.sh
 
 # exiftool
 RUN mkdir /tmp/exiftool \
   && cd /tmp/exiftool \
-  && wget https://exiftool.org/Image-ExifTool-13.31.tar.gz \
-  && tar -xzf Image-ExifTool-*.tar.gz \
+  && wget -O Image-ExifTool.tar.gz 'https://cytranet-dal.dl.sourceforge.net/project/exiftool/Image-ExifTool-13.52.tar.gz?viasf=1' \
+  && tar -xzf Image-ExifTool.tar.gz \
   && cd Image-ExifTool-* \
   && perl Makefile.PL \
   && sudo make install \
