@@ -1,0 +1,22 @@
+{{ $cardType := "summary" }}
+
+<meta name="twitter:creator" content="@dpb587" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title" content="{{ .Title }}" />
+{{ with .Params.description -}}
+  <meta property="og:description" content="{{ . }}" />
+{{ end -}}
+
+{{- if .Params.hero.ref -}}
+	{{- range ( .GetPage .Params.hero.ref ).Params.mediaType.thumbnails -}}
+    {{- if or ( ge .width 720 ) ( ge .height 720 ) -}}
+      {{- $cardType = "summary_large_image" }}
+      <meta property="og:image" content="{{ site.Params.tildePrefix }}{{ .url }}" />
+      <meta property="og:image:width" content="{{ .width }}" />
+      <meta property="og:image:height" content="{{ .height }}" />
+      {{ break -}}
+    {{- end -}}
+  {{- end }}
+{{- end -}}
+
+<meta name="twitter:card" content="{{ $cardType }}" />

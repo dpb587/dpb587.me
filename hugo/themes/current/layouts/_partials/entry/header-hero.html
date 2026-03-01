@@ -4,7 +4,7 @@
 			class="h-full w-full object-cover object-center"
 			alt="{{ .hero.alt }}"
 			height="960"
-			src="{{ site.Params.tildePrefix }}{{ ( index .hero.thumbnails 0 ).src }}"
+			src="{{ site.Params.tildePrefix }}{{ ( index .hero.thumbnails 0 ).url }}"
 			srcset="{{ range $idx, $tn := .hero.thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
 			sizes="(orientation: portrait) 180vw, 100vw"
 			width="1280"
