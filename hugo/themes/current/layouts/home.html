@@ -248,6 +248,14 @@
 	</div>*/}}
 {{ end }}
 
+{{ define "twitter-data" }}
+	<meta property="og:type" content="profile" />
+	<meta property="profile:first_name" content="Danny" />
+	<meta property="profile:last_name" content="Berger" />
+	<meta property="profile:username" content="dpb587" />
+	<meta property="profile:gender" content="male" />
+{{ end }}
+
 {{ define "structured-data" }}
 	<script type="application/ld+json">{{ ( dict
 		"@context" "https://schema.org"

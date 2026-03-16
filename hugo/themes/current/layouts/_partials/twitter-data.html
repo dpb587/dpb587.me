@@ -1,4 +1,5 @@
-{{ $cardType := "summary" }}
+{{ $twitterCard := "summary" }}
+{{ $ogType := "website" }}
 
 <meta name="twitter:creator" content="@dpb587" />
 <meta property="og:url" content="{{ .Permalink }}" />
@@ -10,7 +11,8 @@
 {{- if .Params.hero.ref -}}
 	{{- range ( .GetPage .Params.hero.ref ).Params.mediaType.thumbnails -}}
     {{- if or ( ge .width 720 ) ( ge .height 720 ) -}}
-      {{- $cardType = "summary_large_image" }}
+      {{- $twitterCard = "summary_large_image" }}
+
       <meta property="og:image" content="{{ site.Params.tildePrefix }}{{ .url }}" />
       <meta property="og:image:width" content="{{ .width }}" />
       <meta property="og:image:height" content="{{ .height }}" />
@@ -19,4 +21,31 @@
   {{- end }}
 {{- end -}}
 
-<meta name="twitter:card" content="{{ $cardType }}" />
+{{- if eq .Type "post" -}}
+  {{- $ogType = "article" -}}
+
+  <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}" />
+  {{- if ne .Lastmod .PublishDate }}
+    <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
+  {{- end -}}
+
+  {{- if and ( ne . .CurrentSection ) .CurrentSection .CurrentSection.RelPermalink }}
+    <meta property="article:section" content="{{ .CurrentSection.Title }}" />
+  {{- else if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) ( ne .Parent.RelPermalink .RelPermalink ) }}
+    <meta property="article:section" content="{{ .Parent.Title }}" />
+  {{- end -}}
+{{- else if eq .Type "media" -}}
+  {{- range .Params.mediaType.thumbnails -}}
+    {{- if or ( ge .width 720 ) ( ge .height 720 ) -}}
+      {{- $twitterCard = "summary_large_image" }}
+
+      <meta property="og:image" content="{{ site.Params.tildePrefix }}{{ .url }}" />
+      <meta property="og:image:width" content="{{ .width }}" />
+      <meta property="og:image:height" content="{{ .height }}" />
+      {{ break -}}
+    {{- end -}}
+  {{- end }}
+{{- end }}
+
+<meta name="twitter:card" content="{{ $twitterCard }}" />
+<meta property="og:type" content="{{ $ogType }}" />
