@@ -1,3 +1,7 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-code" . }}
+{{ end }}
+
 {{ define "main" }}
   {{ $profileGroups := slice
     ( dict

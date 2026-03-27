@@ -51,3 +51,7 @@ h6[id]::before {
   content: '';
   @apply block relative w-0 h-10 -mt-10 md:hidden;
 }
+
+.z-45 {
+  z-index: 45;
+}

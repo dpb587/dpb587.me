@@ -1,7 +1,7 @@
 {
-    "fingerprint": "5d000b1958",
+    "fingerprint": "eb2716681d",
     "fileIntegrity": {
-        "main.development.css": "sha384-okp70n/Vt4D18nWT913yGxpJrYxMMMaxKqrmTn88ANatv4hTEH2sMH0vT0PlBpB2",
-        "main.css": "sha384-Cg0ichSafqo8lI83EMqF1oQ5x/8g+hsWtrNfCOMb5yZGrJRXvbBk7hv/dw05W0PC"
+        "main.development.css": "sha384-soAODl2O34KRWHSLlNE1/3nUDTvjRqQK20VeFeednybNoRHAUnCDRPBfukbVnFOr",
+        "main.css": "sha384-Vtk/CWt351iW1BHBuDkya76guClZYIAzIJiv4QI+GDZEzpsuVAgpDq4Fs1GAQ4oJ"
     }
 }

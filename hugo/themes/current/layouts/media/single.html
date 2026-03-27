@@ -1,8 +1,9 @@
 {{ define "nav" }}
 	{{ partial "sidebar/nav-parent" . }}
 	{{ with .Params.mediaType.imageService }}
-		<dpb587-openseadragon button-class="md:px-1 py-0.5 md:py-0" info-url="{{ printf `%s%s` site.Params.tildePrefix .infoUrl }}" />
+		<dpb587-openseadragon button-class="md:px-1 py-0.5 md:py-0" info-url="{{ printf `%s%s` site.Params.tildePrefix .infoUrl }}"></dpb587-openseadragon>
 	{{ end }}
+	{{ partial "sidebar/nav-code" . }}
 {{ end }}
 
 {{ define "main" }}
