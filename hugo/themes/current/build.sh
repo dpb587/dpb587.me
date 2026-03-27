@@ -37,3 +37,12 @@ fi
 npm run build
 
 popd > /dev/null
+
+cat <<EOF > assets/scripts.build.json
+{
+    "fingerprint": "$( sha256sum ./static/assets/scripts/elements.iife.js | cut -d' ' -f1 | cut -c1-10 )",
+    "fileIntegrity": {
+        "elements.iife.js": "sha384-$(sha384sum ./static/assets/scripts/elements.iife.js | cut -d' ' -f1 | xxd -r -p | base64 )"
+    }
+}
+EOF
