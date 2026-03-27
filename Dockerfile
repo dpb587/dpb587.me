@@ -15,7 +15,6 @@ RUN wget -O- https://go.dev/dl/go1.24.4.linux-${TARGETARCH}.tar.gz \
 ENV PATH="/usr/local/go/bin:${PATH}"
 
 FROM base AS hugo-build
-ARG NG_API_TOKEN
 ADD . /workspaces/main
 WORKDIR /workspaces/main
 RUN cd hugo \
@@ -32,6 +31,8 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=hugo-build /workspaces/main/tools/publish/server /deploy/bin/server
 COPY --from=hugo-build /workspaces/main/hugo/public /deploy/docroot/
+COPY content /deploy/content
 ADD data/redirects /deploy/etc/redirects
-CMD ["/deploy/bin/server", "/deploy/docroot", "/deploy/etc/redirects"]
+# ENV NG_API_TOKEN=
+CMD ["/deploy/bin/server", "/deploy/docroot", "/deploy/etc/redirects", "/deploy/content"]
 EXPOSE 8080

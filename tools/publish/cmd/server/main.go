@@ -18,6 +18,8 @@ import (
 	"strings"
 
 	contentnegotiation "gitlab.com/jamietanna/content-negotiation-go"
+
+	tildeexport "github.com/dpb587/dpb587.me/tools/tilde/export"
 )
 
 // sync with package-public.sh
@@ -31,9 +33,10 @@ var compressedExts = map[string]struct{}{
 }
 
 type fileHandler struct {
-	root         fs.StatFS
-	rootPath     string
-	redirectsMap map[string]string
+	root          fs.StatFS
+	rootPath      string
+	redirectsMap  map[string]string
+	exportHandler *tildeexport.Handler
 }
 
 type fileRequest struct {
@@ -45,9 +48,8 @@ type fileRequest struct {
 	CompressionExt      string
 	CompressionEncoding string
 
-	ContentType           string
-	ContentLocationSuffix string
-	ExtraHeaders          http.Header
+	ContentType  string
+	ExtraHeaders http.Header
 }
 
 func (h *fileHandler) serveFile(w http.ResponseWriter, r *http.Request, fr fileRequest) bool {
@@ -79,10 +81,6 @@ func (h *fileHandler) serveFile(w http.ResponseWriter, r *http.Request, fr fileR
 		w.Header().Set("Content-Type", fr.ContentType)
 	}
 
-	if len(fr.ContentLocationSuffix) > 0 {
-		w.Header().Set("Content-Location", fr.CanonicalUserPath+fr.ContentLocationSuffix)
-	}
-
 	w.Header().Set("Content-Length", strconv.FormatInt(info.Size(), 10))
 
 	if fr.CompressionEncoding != "" {
@@ -106,21 +104,16 @@ func (h *fileHandler) serveFile(w http.ResponseWriter, r *http.Request, fr fileR
 
 func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	var compressionExt, compressionEncoding string
-	var contentType, contentLocationSuffix string
-	var markdownSuffix string
+	var contentType string
 
-	// Content negotiation for markdown
-	if formatParam := r.URL.Query().Get("format"); formatParam == "markdown" {
-		contentType = "text/markdown; charset=utf-8"
-		contentLocationSuffix = "?format=markdown"
-		markdownSuffix = ".md"
-	} else if acceptHeader := r.Header.Get("Accept"); acceptHeader != "" && acceptHeader != "*/*" {
+	var extraHeaders http.Header
+
+	var wantMarkdown bool
+	if acceptHeader := r.Header.Get("Accept"); acceptHeader != "" && acceptHeader != "*/*" {
 		negotiator := contentnegotiation.NewNegotiator("text/html", "text/markdown")
 		negotiatedType, _, err := negotiator.Negotiate(acceptHeader)
 		if err == nil && negotiatedType.String() == "text/markdown" {
-			contentType = "text/markdown; charset=utf-8"
-			contentLocationSuffix = "?format=markdown"
-			markdownSuffix = ".md"
+			wantMarkdown = true
 		}
 	}
 
@@ -139,45 +132,51 @@ func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	if strings.HasSuffix(r.URL.Path, "/index.html") {
 		if h.serveFile(w, r, fileRequest{
-			FilePath:              r.URL.Path + markdownSuffix + compressionExt,
-			UserPath:              r.URL.Path,
-			CompressionExt:        compressionExt,
-			CompressionEncoding:   compressionEncoding,
-			ContentType:           contentType,
-			ContentLocationSuffix: contentLocationSuffix,
-			CanonicalUserPath:     strings.TrimSuffix(r.URL.Path, "/index.html"),
+			FilePath:            r.URL.Path + compressionExt,
+			UserPath:            r.URL.Path,
+			CompressionExt:      compressionExt,
+			CompressionEncoding: compressionEncoding,
+			ContentType:         contentType,
+			CanonicalUserPath:   strings.TrimSuffix(r.URL.Path, "/index.html"),
+			ExtraHeaders:        extraHeaders,
 		}) {
 			return
 		}
 	}
 
 	if strings.HasSuffix(r.URL.Path, "/") || !strings.Contains(r.URL.Path, ".") {
+		canonicalPath := strings.TrimSuffix(r.URL.Path, "/")
+
+		if wantMarkdown && h.exportHandler != nil {
+			if h.exportHandler.ServeTextContent(w, r, canonicalPath) {
+				return
+			}
+		}
+
 		if h.serveFile(w, r, fileRequest{
-			FilePath:              filepath.Join(r.URL.Path, "index.html"+markdownSuffix+compressionExt),
-			UserPath:              r.URL.Path,
-			CompressionExt:        compressionExt,
-			CompressionEncoding:   compressionEncoding,
-			ContentType:           contentType,
-			ContentLocationSuffix: contentLocationSuffix,
-			CanonicalUserPath:     strings.TrimSuffix(r.URL.Path, "/"),
+			FilePath:            filepath.Join(r.URL.Path, "index.html"+compressionExt),
+			UserPath:            r.URL.Path,
+			CompressionExt:      compressionExt,
+			CompressionEncoding: compressionEncoding,
+			ContentType:         contentType,
+			CanonicalUserPath:   canonicalPath,
+			ExtraHeaders:        extraHeaders,
 		}) {
 			return
 		}
 
 		if h.serveFile(w, r, fileRequest{
-			FilePath:              filepath.Join(r.URL.Path, "index.html"+markdownSuffix),
-			UserPath:              r.URL.Path,
-			ContentType:           contentType,
-			ContentLocationSuffix: contentLocationSuffix,
-			CanonicalUserPath:     strings.TrimSuffix(r.URL.Path, "/"),
+			FilePath:          filepath.Join(r.URL.Path, "index.html"),
+			UserPath:          r.URL.Path,
+			ContentType:       contentType,
+			CanonicalUserPath: canonicalPath,
+			ExtraHeaders:      extraHeaders,
 		}) {
 			return
 		}
 	}
 
 	//
-
-	var extraHeaders http.Header
 
 	if strings.HasPrefix(r.URL.Path, "/assets/") {
 		extraHeaders = http.Header{
@@ -219,6 +218,7 @@ func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func main() {
 	publicDir := os.Args[1]
 	redirectsDir := os.Args[2]
+	contentDir := os.Args[3]
 
 	type redirectMap map[string]string
 
@@ -322,10 +322,29 @@ func main() {
 		mux.Handle("/~/blob-iiif-image-v3/", rp)
 	}
 
+	var eh *tildeexport.Handler
+	{
+		cacheDir := os.Getenv("CACHE_DIR")
+		if cacheDir == "" {
+			cacheDir = os.TempDir()
+		}
+
+		eh = &tildeexport.Handler{
+			PublicResolver: &tildeexport.DirResolver{Root: publicDir},
+			ContentDir:     contentDir,
+			CacheDir:       cacheDir,
+		}
+
+		mux.HandleFunc("/~/export/text-content", eh.HandleTextContent)
+		mux.HandleFunc("/~/export/structured-data", eh.HandleStructuredData)
+		mux.HandleFunc("/~/export/source", eh.HandleSource)
+	}
+
 	mux.Handle("/", &fileHandler{
-		root:         os.DirFS(publicDir).(fs.StatFS),
-		rootPath:     publicDir,
-		redirectsMap: redirects,
+		root:          os.DirFS(publicDir).(fs.StatFS),
+		rootPath:      publicDir,
+		redirectsMap:  redirects,
+		exportHandler: eh,
 	})
 
 	slog.Info("Serving files", "directory", publicDir)
