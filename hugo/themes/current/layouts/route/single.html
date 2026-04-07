@@ -20,7 +20,7 @@
 				)
 				"properties" ( dict
 					"url" .RelPermalink
-					"image" ( printf "%s%s" site.Params.tildePrefix ( index .Params.mediaType.thumbnails 0 ).url )
+					"image" ( index .Params.mediaType.thumbnails 0 ).url
 					"date" .Date
 				)
 			) }}
@@ -29,7 +29,7 @@
 
 	{{ $mapLayers := slice
 		( dict
-			`dataURL` ( printf `%s%s` site.Params.tildePrefix $params.geojson.url )
+			`dataURL` $params.geojson.url
 		)
 	}}
 
@@ -57,7 +57,7 @@
 			<div class="absolute inset-x-0 bottom-0 top-1 bg-stone-200 overflow-hidden">
 				<!-- <dpb587-elevation-chart
 					container-class="h-full w-full"
-					src="{{ site.Params.tildePrefix }}{{ .Params.routeType.geojson.url }}"
+					src="{{ .Params.routeType.geojson.url }}"
 				></dpb587-elevation-chart> -->
 			</div>
 		</div>
@@ -224,7 +224,7 @@
 												class="w-full h-full object-cover"
 												alt="{{ .Title }}"
 												height="{{ $thumbnail.height }}"
-												src="{{ site.Params.tildePrefix }}{{ $thumbnail.url }}"
+												src="{{ $thumbnail.url }}"
 												width="{{ $thumbnail.width }}"
 											/>
 										</div>

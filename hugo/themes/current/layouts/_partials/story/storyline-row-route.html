@@ -7,7 +7,7 @@
           interaction-mode="button"
 				  sources-json="{{ encoding.Jsonify ( slice
             ( dict
-              `dataURL` ( printf `%s%s` .page.Site.Params.tildePrefix .page.Params.routeType.geojson.url )
+              `dataURL` .page.Params.routeType.geojson.url
             )
           ) }}"
         />

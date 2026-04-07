@@ -1,7 +1,7 @@
 {{ define "nav" }}
 	{{ partial "sidebar/nav-parent" . }}
 	{{ with .Params.mediaType.imageService }}
-		<dpb587-openseadragon button-class="md:px-1 py-0.5 md:py-0" info-url="{{ printf `%s%s` site.Params.tildePrefix .infoUrl }}"></dpb587-openseadragon>
+		<dpb587-openseadragon button-class="md:px-1 py-0.5 md:py-0" info-url="{{ .infoUrl }}"></dpb587-openseadragon>
 	{{ end }}
 	{{ partial "sidebar/nav-code" . }}
 {{ end }}
@@ -74,8 +74,8 @@
 				<img
 					class="w-full h-full blur-xl object-cover"
 					alt="Blurred background of {{ .Title }}"
-					src="{{ site.Params.tildePrefix }}{{ $thumbnailsResponsive.url }}"
-					srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
+					src="{{ $thumbnailsResponsive.url }}"
+					srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ $tn.url}} {{ .width }}w{{ end }}"
 					width="{{ $thumbnailsResponsive.width }}"
 					height="{{ $thumbnailsResponsive.height }}"
 				/>
@@ -86,8 +86,8 @@
 				<img
 					class="relative z-20 object-contain shadow-lg {{ if gt $thumbnailsResponsive.height $thumbnailsResponsive.width }}h-full w-auto{{ else }}w-full h-auto{{ end }} transition-all"
 					alt="{{ .Title }}"
-					src="{{ site.Params.tildePrefix }}{{ $thumbnailsResponsive.url }}"
-					srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
+					src="{{ $thumbnailsResponsive.url }}"
+					srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ $tn.url}} {{ .width }}w{{ end }}"
 					width="{{ $thumbnailsResponsive.width }}"
 					height="{{ $thumbnailsResponsive.height }}"
 				/>

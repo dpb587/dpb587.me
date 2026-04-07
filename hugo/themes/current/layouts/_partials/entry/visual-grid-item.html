@@ -14,8 +14,8 @@
 				alt="{{ $.Title }}"
 				height="{{ $tnDefault.height }}"
 				loading="lazy"
-				src="{{ site.Params.tildePrefix }}{{ $tnDefault.url }}"
-				srcset="{{ range $idx, $tn := .thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ site.Params.tildePrefix }}{{ $tn.url}} {{ .width }}w{{ end }}"
+				src="{{ $tnDefault.url }}"
+				srcset="{{ range $idx, $tn := .thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ $tn.url}} {{ .width }}w{{ end }}"
 				sizes="{{ $.Store.Get `img[@sizes]` }}"
 				width="{{ $tnDefault.width }}"
 			/>
