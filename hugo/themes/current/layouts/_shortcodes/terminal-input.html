@@ -7,12 +7,10 @@
 {{ $content := strings.ReplaceRE ( printf "\n%s" $indent ) "\n" $content -}}
 {{ $content := strings.TrimSpace $content -}}
 
-<div class="flex group">
-	<div class="flex-initial relative">
-		<pre class="text-neutral-400 select-none">{{ $prompt }}</pre>
-	</div>
-	<span class="whitespace-pre-line">{{ partial "prose/code-highlight" ( dict
+<prose:terminal-child><div class="flex items-start group whitespace-pre">{{/*
+	*/}}<code class="flex-initial text-neutral-400 select-none">{{ $prompt }}</code>{{/*
+	*/}}<code>{{ partial "prose/code-highlight" ( dict
 		"content" $content
 		"lang" $contentLang
-	) }}</span>
-</div>
+	) }}</code>{{/*
+*/}}</div></prose:terminal-child>

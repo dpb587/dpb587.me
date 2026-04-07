@@ -4,21 +4,21 @@
 {{ $content := strings.ReplaceRE ( printf "\n%s" $indent ) "\n" $content -}}
 {{ $content := strings.TrimSpace $content -}}
 
-<div class="-ml-2 pl-2 border-l border-neutral-500">
-	{{ if .Get "summary" }}
-		<details class="-ml-px text-neutral-300">
-			<summary class="text-neutral-400">{{ .Get "summary" }}</summary>
-			<pre class="whitespace-pre-line">{{ partial "prose/code-highlight" ( dict
+<prose:terminal-child><div class="-ml-2 pl-2 border-l border-neutral-500">
+	{{- if .Get "summary" -}}
+		<details class="-ml-px text-neutral-300">{{/*
+			*/}}<summary class="text-neutral-400">{{ .Get "summary" }}</summary>
+<code class="whitespace-pre-line">{{ partial "prose/code-highlight" ( dict
 				"content" $content
 				"lang" $contentLang
-			) }}</pre>
-		</details>
-	{{ else }}
-		<div class="-ml-px text-neutral-300">
-			<pre class="whitespace-pre-line">{{ partial "prose/code-highlight" ( dict
+			) }}</code>{{/*
+		*/}}</details>
+	{{- else -}}
+		<div class="-ml-px text-neutral-300">{{/*
+			*/}}<code class="whitespace-pre-line">{{ partial "prose/code-highlight" ( dict
 				"content" $content
 				"lang" $contentLang
-			) }}</pre>
-		</div>
-	{{ end }}
-</div>
+			) }}</code>{{/*
+		*/}}</div>
+	{{- end -}}
+</div></prose:terminal-child>
