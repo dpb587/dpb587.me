@@ -42,22 +42,24 @@
     URL.revokeObjectURL(objectUrl);
   }
 
-  $: sourceHostname = (() => {
+  $: sourcePath = (() => {
     try { return new URL(sourceUrl).pathname.split(/\/blob\/[^\/]+\//)[1]; } catch { return sourceUrl; }
   })();
 </script>
 
 <div class="md:px-12">
   <div class="flex items-center justify-between px-3 py-2 border-b border-stone-300 text-sm text-stone-800">
-    <div class="flex items-center">
+    <div class="flex items-center h-full">
+      <span class="py-1 text-sm text-stone-800">git/{sourcePath}</span>
+    </div>
+    <div class="flex items-center gap-1 -mr-2">
       <a
+        class="font-medium cursor-pointer px-2 py-1 hover:text-black hover:bg-neutral-200 transition-colors"
         href={sourceUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="p-1 text-sm font-semibold text-stone-800 hover:text-black cursor-pointer underline decoration-stone-400"
-      >{sourceHostname}</a>
+      >Open</a>
     </div>
-    <div class="flex items-center gap-1 -mr-2"></div>
   </div>
 
   <div class="px-3 py-4">

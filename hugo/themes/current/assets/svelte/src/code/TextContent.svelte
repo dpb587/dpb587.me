@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
-
   export let textContentUri;
 
   const formats = [
@@ -84,6 +82,12 @@
         on:click={downloadContent}
         disabled={content === null}
       >Download</button>
+      <a
+        class="font-medium cursor-pointer px-2 py-1 hover:text-black hover:bg-neutral-200 transition-colors"
+        href={buildUrl(format)}
+        target="_blank"
+        rel="noopener noreferrer"
+      >Open</a>
     </div>
   </div>
 
