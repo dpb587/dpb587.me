@@ -17,7 +17,7 @@
 								{{ $prefix := "" }}
 								{{ range $k, $_ := . -}}
 									{{- $prefix }}
-									<a class="underline hover:text-stone-900" href="{{ .RelPermalink }}">{{ .Title }}</a>
+									<a class="underline hover:text-stone-900" href="{{ strings.TrimSuffix `/` .RelPermalink }}">{{ .Title }}</a>
 									{{- $prefix = `<span>&nbsp;&middot;&nbsp;</span> ` | safeHTML }}
 								{{- end }}
 							</div>

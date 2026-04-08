@@ -2,7 +2,7 @@
 
 {{ if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) }}
 	{{ $subtitles = $subtitles | append ( dict
-		"href" .Parent.RelPermalink
+		"href" ( strings.TrimSuffix "/" .Parent.RelPermalink )
 		"text" .Parent.LinkTitle
 	) }}
 {{ end }}

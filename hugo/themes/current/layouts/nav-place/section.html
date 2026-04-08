@@ -22,14 +22,14 @@
 							{{ range .Sections }}
 								<tr>
 									<td class="px-4 py-2 w-1/3 align-top leading-8 border-b border-stone-200">
-										<h2 id="{{ strings.TrimSuffix "/" ( strings.TrimPrefix "/browse/places/" .RelPermalink ) }}"><a class="font-semibold underline hover:text-stone-900" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+										<h2 id="{{ strings.TrimSuffix `/` ( strings.TrimPrefix `/browse/places/` .RelPermalink ) }}"><a class="font-semibold underline hover:text-stone-900" href="{{ strings.TrimSuffix `/` .RelPermalink }}">{{ .Title }}</a></h2>
 									</td>
 									<td class="px-4 py-2 w-2/3 align-top leading-8 border-b border-stone-200">
 										{{ with .Sections }}
 											{{ $prefix := "" }}
 											{{ range $k, $_ := . -}}
 												{{- $prefix }}
-												<a class="underline hover:text-stone-900" href="{{ .RelPermalink }}">{{ .Title }}</a>
+												<a class="underline hover:text-stone-900" href="{{ strings.TrimSuffix `/` .RelPermalink }}">{{ .Title }}</a>
 												{{- $prefix = `<span>&nbsp;&middot;&nbsp;</span> ` | safeHTML }}
 											{{- end }}
 										{{ end }}

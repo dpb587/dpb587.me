@@ -15,7 +15,7 @@
 				{{ if .NextInSection }}
 					<a
 						class="py-1 pl-1 group inline-block focus:outline-none"
-						href="{{ .NextInSection.RelPermalink }}"
+						href="{{ strings.TrimSuffix `/` .NextInSection.RelPermalink }}"
 						title="{{ .NextInSection.Title }}"
 						hx-boost="true"
 						hx-push-url="true"
@@ -28,7 +28,7 @@
 				{{ else }}
 					<a
 						class="py-1 pl-1 group inline-block focus:outline-none"
-						href="{{ .CurrentSection.RelPermalink }}"
+						href="{{ strings.TrimSuffix `/` .CurrentSection.RelPermalink }}"
 						title="{{ .CurrentSection.Title }}"
 						hx-boost="true"
 						hx-push-url="true"
@@ -42,7 +42,7 @@
 				{{ if .PrevInSection }}
 					<a
 						class="py-1 pl-1 group inline-block focus:outline-none"
-						href="{{ .PrevInSection.RelPermalink }}"
+						href="{{ strings.TrimSuffix `/` .PrevInSection.RelPermalink }}"
 						title="{{ .PrevInSection.Title }}"
 						hx-boost="true"
 						hx-push-url="true"
@@ -55,7 +55,7 @@
 				{{ else if .NextInSection }}
 					<a
 						class="py-1 pl-1 group inline-block focus:outline-none"
-						href="{{ .CurrentSection.RelPermalink }}"
+						href="{{ strings.TrimSuffix `/` .CurrentSection.RelPermalink }}"
 						title="{{ .CurrentSection.Title }}"
 						hx-boost="true"
 						hx-push-url="true"
@@ -245,6 +245,10 @@
 
 {{ define "structured-data" }}
 	{{ partial "structured-data" . }}
+{{ end }}
+
+{{ define "alternate-links" }}
+	<link rel="alternate" type="text/markdown" href="/~/export/text-content?uri={{ strings.TrimSuffix `/` .RelPermalink | urlquery }}&format=markdown" />
 {{ end }}
 
 {{ define "twitter-data" }}

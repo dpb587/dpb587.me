@@ -42,6 +42,10 @@
 	{{ partial "structured-data" . }}
 {{ end }}
 
+{{ define "alternate-links" }}
+	<link rel="alternate" type="text/markdown" href="/~/export/text-content?uri={{ strings.TrimSuffix `/` .RelPermalink | urlquery }}&format=markdown" />
+{{ end }}
+
 {{ define "twitter-data" }}
 	{{ partial "twitter-data" . }}
 {{ end }}

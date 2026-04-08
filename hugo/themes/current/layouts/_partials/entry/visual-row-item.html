@@ -1,4 +1,4 @@
-<a class="relative z-0 group hover:z-10 grid grid-cols-1 md:grid-cols-3 p-4 gap-1" href="{{ .RelPermalink }}">
+<a class="relative z-0 group hover:z-10 grid grid-cols-1 md:grid-cols-3 p-4 gap-1" href="{{ strings.TrimSuffix `/` .RelPermalink }}">
 	<div class="aspect-w-16 aspect-h-9 overflow-hidden shadow-none transition-all duration-200 ease-out group-hover:scale-103 group-hover:shadow">
 		{{ $image := false }}
 		{{ if eq .Type "media" }}

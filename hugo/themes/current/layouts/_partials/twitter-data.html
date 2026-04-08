@@ -2,7 +2,7 @@
 {{ $ogType := "website" }}
 
 <meta name="twitter:creator" content="@dpb587" />
-<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:url" content="{{ strings.TrimSuffix `/` .Permalink }}" />
 <meta property="og:title" content="{{ .Title }}" />
 {{ with .Params.description -}}
   <meta property="og:description" content="{{ . }}" />

@@ -217,7 +217,7 @@
       {{ range .items }}
         {{ partial "story/storyline-cell-image" ( dict
           "link" ( dict
-            "href" .RelPermalink
+            "href"  ( strings.TrimSuffix "/" .RelPermalink )
             "title" .LinkTitle
           )
           "image" ( dict

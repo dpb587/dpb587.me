@@ -1,6 +1,6 @@
 {{- $sd := dict
   "name" .Title
-  "url" .Permalink
+  "url" ( strings.TrimSuffix "/" .Permalink )
 -}}
 
 {{- if eq .Params.type "nav-place-admin1" -}}

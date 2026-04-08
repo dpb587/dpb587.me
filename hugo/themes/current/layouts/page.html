@@ -22,6 +22,10 @@
 	</div>
 {{ end }}
 
+{{ define "alternate-links" }}
+	<link rel="alternate" type="text/markdown" href="/~/export/text-content?uri={{ strings.TrimSuffix `/` .RelPermalink | urlquery }}&format=markdown" />
+{{ end }}
+
 {{ define "structured-data" }}
 	{{ partial "structured-data" . }}
 {{ end }}

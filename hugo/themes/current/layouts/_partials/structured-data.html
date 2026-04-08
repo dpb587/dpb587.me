@@ -1,6 +1,6 @@
 {{- $sd := dict
   "@context" "https://schema.org"
-  "url" .Permalink
+  "url" ( strings.TrimSuffix "/" .Permalink )
   "author" ( dict
     "@type" "Person"
     "name" "Danny Berger"
@@ -243,9 +243,9 @@
 {{- end -}}
 
 {{- if and ( ne . .CurrentSection ) .CurrentSection .CurrentSection.RelPermalink -}}
-  {{- $sd = merge $sd ( dict "isPartOf" .CurrentSection.Permalink ) -}}
+  {{- $sd = merge $sd ( dict "isPartOf" ( strings.TrimSuffix "/" .CurrentSection.Permalink ) ) -}}
 {{- else if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) ( ne .Parent.RelPermalink .RelPermalink ) -}}
-	{{- $sd = merge $sd ( dict "isPartOf" .Parent.Permalink ) -}}
+	{{- $sd = merge $sd ( dict "isPartOf" ( strings.TrimSuffix "/" .Parent.Permalink ) ) -}}
 {{- end -}}
 
 <script type="application/ld+json">{{- $sd | jsonify | safeJS -}}</script>
