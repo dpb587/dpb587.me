@@ -116,9 +116,7 @@ func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		r.Header.Add("Vary", "Accept")
 		negotiatedType, _, err := negotiator.Negotiate(acceptHeader)
 		if err != nil {
-			http.Error(w, http.StatusText(http.StatusNotAcceptable), http.StatusNotAcceptable)
-
-			return
+			// ignore; they get what they get
 		} else if negotiatedType.String() == "text/markdown" {
 			wantMarkdown = true
 		}
