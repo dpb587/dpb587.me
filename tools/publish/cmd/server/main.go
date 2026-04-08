@@ -102,17 +102,24 @@ func (h *fileHandler) serveFile(w http.ResponseWriter, r *http.Request, fr fileR
 	return true
 }
 
+var negotiator = contentnegotiation.NewNegotiator("text/html", "text/markdown")
+
 func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	var compressionExt, compressionEncoding string
 	var contentType string
 
-	var extraHeaders http.Header
+	extraHeaders := http.Header{}
 
 	var wantMarkdown bool
-	if acceptHeader := r.Header.Get("Accept"); acceptHeader != "" && acceptHeader != "*/*" {
-		negotiator := contentnegotiation.NewNegotiator("text/html", "text/markdown")
+	if acceptHeader := r.Header.Get("Accept"); len(acceptHeader) > 0 {
+		extraHeaders["Vary"] = []string{"Accept"}
+		r.Header.Add("Vary", "Accept")
 		negotiatedType, _, err := negotiator.Negotiate(acceptHeader)
-		if err == nil && negotiatedType.String() == "text/markdown" {
+		if err != nil {
+			http.Error(w, http.StatusText(http.StatusNotAcceptable), http.StatusNotAcceptable)
+
+			return
+		} else if negotiatedType.String() == "text/markdown" {
 			wantMarkdown = true
 		}
 	}
