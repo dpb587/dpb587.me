@@ -10,7 +10,7 @@ publishDate: "2020-02-13"
 title: Converting between JSON and TSV
 ---
 
-Occasionally I want a quick way to convert data between JSON and TSV in BASH scripts. I use these [`jq` scripts](https:/stedolan.github.io/jq) to transform the formats from stdin.
+Occasionally I want a quick way to convert data between JSON and TSV in BASH scripts. I use these [`jq` scripts](https://stedolan.github.io/jq) to transform the formats from stdin.
 
 ```bash
 tsv2jsonl() { jq -cRs 'split("\n") | map(split("\t")) | .[0] as $keys | .[1:-1] | map(. as $values | $keys | keys | map({"key":($keys[.]),"value":($values[.])}) | from_entries)[]' ; }
