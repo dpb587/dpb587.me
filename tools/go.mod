@@ -26,7 +26,6 @@ require (
 	github.com/mattn/go-sqlite3 v1.14.42 // indirect
 	github.com/paulmach/orb v0.13.0 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
-	go.mongodb.org/mongo-driver v1.17.9 // indirect
 	go.mongodb.org/mongo-driver/v2 v2.5.1 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/net v0.53.0 // indirect
