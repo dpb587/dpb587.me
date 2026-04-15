@@ -5,8 +5,8 @@ set -euxo pipefail
 # configure
 
 pkg_name='openseadragon'
-pkg_source_url='https://github.com/openseadragon/openseadragon/releases/download/v4.0.0/openseadragon-bin-4.0.0.tar.gz'
-pkg_source_digest='d89f744e267c1923dcb2531481cb79aa322a346863f87b1af670d555cab0661b'
+pkg_source_url='https://github.com/openseadragon/openseadragon/releases/download/v6.0.2/openseadragon-bin-6.0.2.tar.gz'
+pkg_source_digest='3103459c626f7ae41741e8ae603136a5f852b7625fa15a93b46f0579edacbd13'
 
 resultdir="/result"
 compiledir="${TMPDIR:-/tmp}/${pkg_name}-compile-$$"

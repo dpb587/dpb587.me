@@ -18,7 +18,7 @@ RUN mkdir /tmp/exiftool \
   && rm -fr /tmp/exiftool
 
 # tailwindcss
-RUN sudo wget -O /usr/local/bin/tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v4.1.10/tailwindcss-linux-arm64 \
+RUN sudo wget -O /usr/local/bin/tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v4.2.2/tailwindcss-linux-arm64 \
   && sudo chmod +x /usr/local/bin/tailwindcss
 
 # gcloud (https://docs.cloud.google.com/sdk/docs/install-sdk#deb)

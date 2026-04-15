@@ -8,9 +8,9 @@ RUN apt update \
         wget \
         zstd \
     && rm -rf /var/lib/apt/lists/*
-RUN wget -O- https://github.com/gohugoio/hugo/releases/download/v0.147.9/hugo_0.147.9_linux-${TARGETARCH}.tar.gz \
+RUN wget -O- https://github.com/gohugoio/hugo/releases/download/v0.160.1/hugo_0.160.1_linux-${TARGETARCH}.tar.gz \
     | tar -xzf- -C /usr/local/bin hugo
-RUN wget -O- https://go.dev/dl/go1.24.4.linux-${TARGETARCH}.tar.gz \
+RUN wget -O- https://go.dev/dl/go1.26.2.linux-${TARGETARCH}.tar.gz \
     | tar -C /usr/local -xzf-
 ENV PATH="/usr/local/go/bin:${PATH}"
 
