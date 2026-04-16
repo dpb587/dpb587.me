@@ -21,12 +21,16 @@ import (
 	blobprofilebuilder "github.com/dpb587/tacitkb/ext/blob/profilebuilder"
 	"github.com/dpb587/tacitkb/ext/blobmetaexif"
 	blobmetaexifprofilebuilder "github.com/dpb587/tacitkb/ext/blobmetaexif/profilebuilder"
+	"github.com/dpb587/tacitkb/ext/blobmetaxmp"
+	blobmetaxmpprofilebuilder "github.com/dpb587/tacitkb/ext/blobmetaxmp/profilebuilder"
 	"github.com/dpb587/tacitkb/ext/blobtypeimage"
 	blobtypeimageprofilebuilder "github.com/dpb587/tacitkb/ext/blobtypeimage/profilebuilder"
 	"github.com/dpb587/tacitkb/ext/exportgeojson"
 	exportgeojsonartifactsbuilder "github.com/dpb587/tacitkb/ext/exportgeojson/artifactsbuilder"
 	"github.com/dpb587/tacitkb/ext/exportiiifimage3"
 	exportiiifimage3artifactsbuilder "github.com/dpb587/tacitkb/ext/exportiiifimage3/artifactsbuilder"
+	"github.com/dpb587/tacitkb/ext/exportpannellum"
+	exportpannellumartifactsbuilder "github.com/dpb587/tacitkb/ext/exportpannellum/artifactsbuilder"
 	"github.com/dpb587/tacitkb/tools/googlemapsreversegeocode"
 	"github.com/dpb587/tacitkb/tools/kvcache/sqlite3"
 	"github.com/dpb587/tacitkb/tools/locationmask"
@@ -108,9 +112,11 @@ func mainErr() error {
 			ResourceDescriptorFactory: catalog.ResourceDescriptorFactoryList{
 				cGlobal.BlobService,
 				&blobmetaexif.Factory{},
+				&blobmetaxmp.Factory{},
 				&blobtypeimage.Factory{},
 				&exportiiifimage3.Factory{},
 				&exportgeojson.Factory{},
+				&exportpannellum.Factory{},
 			},
 			ResourceContentFactory: catalog.ResourceContentFactoryList{
 				cGlobal.FileService,
@@ -118,6 +124,7 @@ func mainErr() error {
 			},
 			ResourceBuilder: catalog.ResourceBuilderList{
 				blobmetaexifprofilebuilder.NewBuilder(cGlobal.Log, locationmaskService),
+				blobmetaxmpprofilebuilder.NewBuilder(cGlobal.Log),
 				blobprofilebuilder.NewBuilder(cGlobal.Log),
 				blobtypeimageprofilebuilder.NewBuilder(cGlobal.Log),
 				exportiiifimage3artifactsbuilder.NewBuilder(cGlobal.Log, []exportiiifimage3artifactsbuilder.BuilderProfile{
@@ -144,6 +151,15 @@ func mainErr() error {
 						Name:            "default",
 						BaseURL:         "/~/blob-geojson/",
 						OutputDir:       "/workspaces/dpb587.me/tmp/tilde/blob-geojson/",
+						IdentifierNamer: blobIdentifierNamer,
+					},
+				}),
+				exportpannellumartifactsbuilder.NewBuilder(cGlobal.Log, []exportpannellumartifactsbuilder.BuilderProfile{
+					{
+						Name:            "default",
+						BaseURL:         "/~/blob-pannellum/",
+						OutputDir:       "/workspaces/dpb587.me/tmp/tilde/blob-pannellum/",
+						ScriptPath:      "/workspaces/dpb587.me/private/cms/cms.v2/ext/exportpannellum/artifactsbuilder/generate.py",
 						IdentifierNamer: blobIdentifierNamer,
 					},
 				}),

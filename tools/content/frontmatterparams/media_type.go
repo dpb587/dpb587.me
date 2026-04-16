@@ -11,10 +11,11 @@ type MediaType struct {
 	Thumbnails   MediaType_ThumbnailList `json:"thumbnails,omitempty"`
 	ImageService *MediaType_ImageService `json:"imageService,omitempty"`
 
-	CaptureTime    *MediaType_CaptureTime    `json:"captureTime,omitempty"`
-	GeoCoordinates *MediaType_GeoCoordinates `json:"geoCoordinates,omitempty"`
-	PlacesProfile  *MediaType_PlacesProfile  `json:"placesProfile,omitempty"`
-	ExifProfile    *MediaType_ExifProfile    `json:"exifProfile,omitempty"`
+	CaptureTime     *MediaType_CaptureTime     `json:"captureTime,omitempty"`
+	GeoCoordinates  *MediaType_GeoCoordinates  `json:"geoCoordinates,omitempty"`
+	PlacesProfile   *MediaType_PlacesProfile   `json:"placesProfile,omitempty"`
+	ExifProfile     *MediaType_ExifProfile     `json:"exifProfile,omitempty"`
+	PanoramaProfile *MediaType_PanoramaProfile `json:"panoramaProfile,omitempty"`
 }
 
 type MediaType_Thumbnail struct {
@@ -81,4 +82,18 @@ type MediaType_PlacesProfile_CountryRegion struct {
 type MediaType_PlacesProfile_Place struct {
 	Name string `json:"name,omitempty"`
 	Kind string `json:"kind,omitempty"`
+}
+
+type MediaType_PanoramaProfile struct {
+	ProjectionType     string   `json:"projectionType"`
+	CaptureSoftware    *string  `json:"captureSoftware,omitempty"`
+	StitchingSoftware  *string  `json:"stitchingSoftware,omitempty"`
+	PoseHeadingDegrees *float64 `json:"poseHeadingDegrees,omitempty"`
+	PosePitchDegrees   *float64 `json:"posePitchDegrees,omitempty"`
+	PoseRollDegrees    *float64 `json:"poseRollDegrees,omitempty"`
+
+	TileBasePath   string `json:"tileBasePath,omitempty"`
+	TileResolution int    `json:"tileResolution,omitempty"`
+	MaxLevel       int    `json:"maxLevel,omitempty"`
+	CubeResolution int    `json:"cubeResolution,omitempty"`
 }

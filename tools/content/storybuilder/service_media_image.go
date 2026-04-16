@@ -17,8 +17,10 @@ import (
 	"github.com/dpb587/tacitkb/ext/blob/blobmeta"
 	"github.com/dpb587/tacitkb/ext/blobmetaexif"
 	"github.com/dpb587/tacitkb/ext/blobmetaexif/blobmetaexifutil"
+	"github.com/dpb587/tacitkb/ext/blobmetaxmp"
 	"github.com/dpb587/tacitkb/ext/blobtypeimage"
 	"github.com/dpb587/tacitkb/ext/exportiiifimage3"
+	"github.com/dpb587/tacitkb/ext/exportpannellum"
 	"github.com/dpb587/tacitkb/tools/googlemapsreversegeocode"
 	"github.com/dpb587/tacitkb/util/ptrutil"
 )
@@ -349,6 +351,74 @@ func (b *Service) buildMediaImage(ctx context.Context, blobNode catalog.Node, bl
 	}()
 	if err != nil {
 		return nil, fmt.Errorf("exif: %v", err)
+	}
+
+	//
+
+	err = func() error {
+		profileResource, err := b.repository.GetResource(ctx, blobNode.UID(), blobmetaxmp.ProfileResourceDescriptor{}, catalog.RepositoryGetResourceConfig{
+			Generate: true,
+		})
+		if err != nil {
+			if errors.Is(err, catalog.ErrResourceNotFound) {
+				return nil
+			}
+
+			return fmt.Errorf("get: %w", err)
+		}
+
+		profileData, err := blobmetaxmp.UnmarshalProfileResource(ctx, profileResource)
+		if err != nil {
+			return fmt.Errorf("unmarshal: %w", err)
+		}
+
+		if profileData.GPano == nil || profileData.GPano.ProjectionType == nil {
+			return nil
+		}
+
+		templateData.PanoramaProfile = &frontmatterparams.MediaType_PanoramaProfile{
+			ProjectionType:     *profileData.GPano.ProjectionType,
+			CaptureSoftware:    profileData.GPano.CaptureSoftware,
+			StitchingSoftware:  profileData.GPano.StitchingSoftware,
+			PoseHeadingDegrees: profileData.GPano.PoseHeadingDegrees,
+			PosePitchDegrees:   profileData.GPano.PosePitchDegrees,
+			PoseRollDegrees:    profileData.GPano.PoseRollDegrees,
+		}
+
+		return nil
+	}()
+	if err != nil {
+		return nil, fmt.Errorf("xmp: %v", err)
+	}
+
+	//
+
+	if templateData.PanoramaProfile != nil && templateData.PanoramaProfile.ProjectionType == "equirectangular" {
+		err = func() error {
+			artifactsResource, err := b.repository.GetResource(ctx, blobNode.UID(), exportpannellum.ArtifactsResourceDescriptor{
+				Profile: "default",
+			}, catalog.RepositoryGetResourceConfig{
+				Generate: true,
+			})
+			if err != nil {
+				return fmt.Errorf("get: %w", err)
+			}
+
+			artifactsData, err := exportpannellum.UnmarshalArtifactsResource(ctx, artifactsResource)
+			if err != nil {
+				return fmt.Errorf("unmarshal: %w", err)
+			}
+
+			templateData.PanoramaProfile.TileBasePath = artifactsData.BasePath
+			templateData.PanoramaProfile.TileResolution = artifactsData.TileResolution
+			templateData.PanoramaProfile.MaxLevel = artifactsData.MaxLevel
+			templateData.PanoramaProfile.CubeResolution = artifactsData.CubeResolution
+
+			return nil
+		}()
+		if err != nil {
+			return nil, fmt.Errorf("exportpannellum: %v", err)
+		}
 	}
 
 	//
