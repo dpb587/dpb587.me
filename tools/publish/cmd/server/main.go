@@ -325,6 +325,7 @@ func main() {
 
 		mux.Handle("/~/blob-geojson/", rp)
 		mux.Handle("/~/blob-iiif-image-v3/", rp)
+		mux.Handle("/~/blob-pannellum/", rp)
 	}
 
 	var eh *tildeexport.Handler
