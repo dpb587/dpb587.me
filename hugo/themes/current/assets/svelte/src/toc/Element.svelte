@@ -77,7 +77,7 @@ const levelClassMap = {
 
 <div class="relative z-0">
 	<button
-		class="relative z-10 group inline-block focus:outline-none cursor-pointer {buttonClass}"
+		class="relative z-10 group block focus:outline-none cursor-pointer {buttonClass}"
 		title="Table of Contents"
 		on:click={handleButtonClick}
 	>

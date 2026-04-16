@@ -33,7 +33,7 @@
 	</head>
 	<body>
 		{{ block "body" . }}
-			<nav class="fixed z-30 flex top-0 left-0 text-stone-400 bg-stone-800 right-0 h-10 shadow md:bg-transparent md:shadow-none md:flex-col-reverse md:bottom-0 md:right-auto md:h-auto md:w-12">
+			<nav class="fixed z-40 flex top-0 left-0 text-stone-400 bg-stone-800 right-0 h-10 shadow md:bg-transparent md:shadow-none md:flex-col-reverse md:bottom-0 md:right-auto md:h-auto md:w-12">
 				<a
 					class="relative z-45 p-1 group inline-block focus:outline-none"
 					href="/"
@@ -47,7 +47,7 @@
 					</div>
 				</a>
 				<div class="grow"></div>
-				<div class="flex md:flex-col flex-row-reverse pr-0.5 md:pt-1">
+				<div class="flex md:flex-col flex-row-reverse md:pt-1 space-x-0.5 md:space-x-0 md:space-y-1">
 					<!-- <NavSiteButton class="px-0.5 md:px-1 py-0.5 md:py-1" client:load /> -->
 					{{ block "nav" . }}{{ end }}
 				</div>
@@ -77,7 +77,7 @@
 					</div>
 				</div>
 			</footer> -->
-			<footer class="relative z-30 bg-stone-800 md:ml-12 md:pr-12 shadow-xl">
+			<footer class="relative z-20 bg-stone-800 md:ml-12 md:pr-12 shadow-xl">
 				<div class="h-10 md:h-12 flex items-center justify-left text-xs font-light text-stone-400">
 					<div>
 						<span><span class="hidden md:inline">Copyright</span> <span class="md:hidden">&copy;</span></span> {{ time.Format "2006" time.Now }}

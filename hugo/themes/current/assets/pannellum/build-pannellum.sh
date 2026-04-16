@@ -4,13 +4,13 @@ set -euxo pipefail
 
 # configure
 
-pkg_name='openseadragon-flat-toolbar-icons'
-pkg_source_url='https://github.com/peterthomet/openseadragon-flat-toolbar-icons/tarball/1d32812051ab512f5b05f2b8a179f2cdc88c6db0'
-pkg_source_digest='e078d9dfdfc5ecbe192181dd78fd57be180cbba575e169511bd4d9a5e01f895b'
+pkg_name='pannellum'
+pkg_source_url='https://github.com/mpetroff/pannellum/releases/download/2.5.7/pannellum-2.5.7.zip'
+pkg_source_digest='de768a7999b65a890a889c85b923677da77df7c06900ae1a1493a24671f314c3'
 
 resultdir="/result"
 compiledir="${TMPDIR:-/tmp}/${pkg_name}-compile-$$"
-tmptarball="${compiledir}/tarball.tar.gz"
+tmptarball="${compiledir}/tarball.zip"
 tmpworkdir="${compiledir}/workdir"
 
 # download
@@ -20,15 +20,17 @@ mkdir -p "${tmpworkdir}"
 curl -Lo "${tmptarball}" "${pkg_source_url}"
 echo "${pkg_source_digest} ${tmptarball}" | sha256sum -c
 
-tar -xzf "${tmptarball}" --strip-components=1 -C "${tmpworkdir}"
+unzip "${tmptarball}" -d "${compiledir}/extracted"
+mv "${compiledir}/extracted/${pkg_name}/"* "${tmpworkdir}/"
 
 # install
 
 mkdir -p "${resultdir}/${pkg_name}"
 
 tar -cf- -C "${tmpworkdir}" \
-  images \
-  LICENSE.txt \
+  COPYING \
+  pannellum.js \
+  pannellum.css \
   | tee >( sha256sum - | cut -c-8 > "${compiledir}/digest.txt" ) \
   | tar -xf- -C "${resultdir}/${pkg_name}"
 
