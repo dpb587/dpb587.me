@@ -212,11 +212,14 @@
 {{ end }}
 
 {{ define "grid" }}
-  {{ $gridClass := "grid md:grid-cols-3 grid-cols-2 gap-1 my-1 md:gap-4 md:px-4 md:my-4 lg:px-0 px-1 *:aspect-w-1 *:aspect-h-1" }}
+  {{ $gridClass := "grid md:grid-cols-3 grid-cols-2 gap-1 my-1 md:gap-4 md:px-4 md:my-4 lg:px-0 px-1" }}
+  {{ $mediaClass := "aspect-square" }}
   {{ if eq 1 ( len .items ) }}
-    {{ $gridClass = "grid grid-cols-1 my-1 md:px-0 md:my-4 px-1 *:aspect-w-16 *:aspect-h-9" }}
+    {{ $gridClass = "grid grid-cols-1 my-1 md:px-0 md:my-4 px-1" }}
+    {{ $mediaClass = "aspect-video" }}
   {{ else if eq 2 ( len .items ) }}
-    {{ $gridClass = "grid grid-cols-2 gap-1 my-1 md:gap-4 md:px-4 md:my-4 lg:px-0 px-1 *:aspect-w-1 *:aspect-h-1" }}
+    {{ $gridClass = "grid grid-cols-2 gap-1 my-1 md:gap-4 md:px-4 md:my-4 lg:px-0 px-1" }}
+    {{ $mediaClass = "aspect-square" }}
   {{ end }}
 
   <div class="{{ .layout.standard.maxWidth }} mx-auto">
@@ -235,6 +238,7 @@
           }}
         {{ end }}
         {{ partial "story/storyline-cell-image" ( dict
+          "mediaClass" $mediaClass
           "link" ( dict
             "href"  ( strings.TrimSuffix "/" .RelPermalink )
             "title" .LinkTitle

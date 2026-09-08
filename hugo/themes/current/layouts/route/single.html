@@ -216,7 +216,7 @@
 								{{ if and ( eq .Type "media" ) .Params.mediaType.geoCoordinates .Params.mediaType.thumbnails }}
 									{{ $thumbnail := index .Params.mediaType.thumbnails 0 }}
 									<a
-										class="aspect-w-1 aspect-h-1"
+										class="aspect-square"
 										href="{{ strings.TrimSuffix `/` .RelPermalink }}"
 									>
 										<div>
