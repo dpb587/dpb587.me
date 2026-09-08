@@ -1,0 +1,27 @@
+<prose:custom-start />
+{{ $ref := false }}
+{{- with .Page.GetPage ( .Get "ref" ) -}}
+  {{ $ref = . -}}
+{{- else -}}
+  {{- with .Page.Resources.Get ( .Get "ref" ) -}}
+    {{ $ref = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $ref -}}
+  {{- errorf "model shortcode: page not found: %s" ( .Get "ref" ) -}}
+{{- end -}}
+
+{{- $model := $ref.Params.mediaType.modelService -}}
+{{- if not $model -}}
+  {{- errorf "model shortcode: referenced page has no mediaType.modelService: %s" ( .Get "ref" ) -}}
+{{- end -}}
+<figure class="border-t md:border-x md:border-b border-stone-200 overflow-hidden shadow md:rounded bg-stone-100 p-4">
+  <div class="figurewrap-model-viewer">
+    {{ $model.viewerHtml | safeHTML }}
+  </div>
+  {{- $caption := or ( .Get "caption" ) $ref.Title -}}
+  {{ with $caption }}
+    <figcaption class="text-xs font-serif -mb-0.5 mt-3.5 text-stone-500">{{ . }}</figcaption>
+  {{ end }}
+</figure>
+<prose:custom-end />

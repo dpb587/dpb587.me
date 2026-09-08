@@ -4,6 +4,15 @@
 	{{ partial "sidebar/nav-code" . }}
 {{ end }}
 
+{{ define "head-extra" }}
+	{{ $navSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/topics/" .RelPermalink ) ) }}
+	{{ $pages := ( collections.Union
+		( collections.Where site.Pages ( printf "Params.topics.%s" $navSlug ) "ne" nil )
+		( collections.Where .Pages "Type" "eq" "timeline-event" )
+	).ByDate.Reverse }}
+	{{ if and ( gt ( len $pages ) 0 ) ( ( index $pages 0 ).HasShortcode "model" ) }}{{ partial "modelviewer-assets" . }}{{ end }}
+{{ end }}
+
 {{ define "main" }}
 	{{ $navSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/topics/" .RelPermalink ) ) }}
 

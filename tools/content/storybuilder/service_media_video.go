@@ -106,6 +106,10 @@ func (b *Service) buildMediaVideo(ctx context.Context, blobNode catalog.Node, bl
 
 	if profileData.GPSCoordinates != nil {
 		err := func() error {
+			if b.rgeo == nil {
+				return fmt.Errorf("reverse geocode unavailable; set GOOGLE_API_KEY")
+			}
+
 			templateData.GeoCoordinates = &frontmatterparams.MediaType_GeoCoordinates{
 				Latitude:  ptrutil.Value(profileData.GPSCoordinates.Latitude),
 				Longitude: ptrutil.Value(profileData.GPSCoordinates.Longitude),

@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @config "./tailwind.config.mjs";
-@plugin "@tailwindcss/aspect-ratio";
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 
@@ -90,6 +89,10 @@
   .polaroid {
     transition: none;
   }
+}
+
+.figurewrap-model-viewer model-viewer {
+  @apply block w-full h-auto overflow-hidden aspect-video inset-shadow-sm;
 }
 
 @utility writing-htb {

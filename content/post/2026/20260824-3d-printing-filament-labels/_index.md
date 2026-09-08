@@ -17,6 +17,8 @@ At some point, I found a [filament sample](https://makerworld.com/en/models/3764
 
 {{< image alt="Filament samples hanging on air-tight containers" src="./media/applied-labels.jpg" caption="Filament samples hanging on air-tight containers" >}}
 
+{{< model ref="./embed/media-p6f76x037jn0.md" caption="Filament Sample 3D Model" >}}
+
 {{< video ref="./embed/media-g446hp5y9fc7.md" caption="Print Timelapse - Filament Sample" poster-frame="last" >}}
 
 {{< details summary="Source Code" >}}

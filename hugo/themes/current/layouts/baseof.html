@@ -28,6 +28,8 @@
 		{{ with resources.Get "scripts.build.json" | transform.Unmarshal -}}
 			<script src="/assets/scripts/elements.iife.js?{{ .fingerprint }}" type="module" integrity="{{ index .fileIntegrity `elements.iife.js` }}" crossorigin="anonymous"></script>
 		{{- end }}
+		{{ if .HasShortcode "model" }}{{ partial "modelviewer-assets" . }}{{ end }}
+		{{ block "head-extra" . }}{{ end }}
 		{{ block "structured-data" . }}{{ end }}
 		{{ block "twitter-data" . }}{{ end }}
 	</head>

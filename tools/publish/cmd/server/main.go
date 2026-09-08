@@ -323,10 +323,12 @@ func main() {
 			return nil
 		}
 
+		mux.Handle("/~/blob-3dmodel/", rp)
 		mux.Handle("/~/blob-geojson/", rp)
 		mux.Handle("/~/blob-iiif-image-v3/", rp)
-		mux.Handle("/~/mirror-blob-iiif-image-v3/", rp)
 		mux.Handle("/~/blob-pannellum/", rp)
+		mux.Handle("/~/blob-video-stream/", rp)
+		mux.Handle("/~/mirror-blob-iiif-image-v3/", rp)
 	}
 
 	var eh *tildeexport.Handler

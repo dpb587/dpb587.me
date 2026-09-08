@@ -10,6 +10,7 @@ type MediaType struct {
 
 	Thumbnails   MediaType_ThumbnailList `json:"thumbnails,omitempty"`
 	ImageService *MediaType_ImageService `json:"imageService,omitempty"`
+	ModelService *MediaType_ModelService `json:"modelService,omitempty"`
 	VideoService *MediaType_VideoService `json:"videoService,omitempty"`
 
 	CaptureTime     *MediaType_CaptureTime     `json:"captureTime,omitempty"`
@@ -29,6 +30,12 @@ type MediaType_ThumbnailList []MediaType_Thumbnail
 
 type MediaType_ImageService struct {
 	InfoURL string `json:"infoUrl,omitempty"`
+}
+
+type MediaType_ModelService struct {
+	ModelURL   string `json:"modelUrl,omitempty"`
+	PosterURL  string `json:"posterUrl,omitempty"`
+	ViewerHTML string `json:"viewerHtml,omitempty"`
 }
 
 type MediaType_VideoService struct {

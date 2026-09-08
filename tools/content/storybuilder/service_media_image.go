@@ -263,6 +263,10 @@ func (b *Service) buildMediaImage(ctx context.Context, blobNode catalog.Node, bl
 					templateData.GeoCoordinates.Latitude = &(*gpsCoordinates.LatLng)[0]
 					templateData.GeoCoordinates.Longitude = &(*gpsCoordinates.LatLng)[1]
 
+					if b.rgeo == nil {
+						return fmt.Errorf("reverse geocode unavailable; set GOOGLE_API_KEY")
+					}
+
 					reverseGeocode, err := b.rgeo.LookupLocation(googlemapsreversegeocode.LookupLocationInput{
 						Latitude:  *templateData.GeoCoordinates.Latitude,
 						Longitude: *templateData.GeoCoordinates.Longitude,

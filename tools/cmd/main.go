@@ -28,6 +28,8 @@ import (
 	blobtypeimageprofilebuilder "github.com/dpb587/tacitkb/ext/blobtypeimage/profilebuilder"
 	"github.com/dpb587/tacitkb/ext/blobtypevideo"
 	blobtypevideoprofilebuilder "github.com/dpb587/tacitkb/ext/blobtypevideo/profilebuilder"
+	"github.com/dpb587/tacitkb/ext/export3dmodel"
+	export3dmodelartifactsbuilder "github.com/dpb587/tacitkb/ext/export3dmodel/artifactsbuilder"
 	"github.com/dpb587/tacitkb/ext/exportgeojson"
 	exportgeojsonartifactsbuilder "github.com/dpb587/tacitkb/ext/exportgeojson/artifactsbuilder"
 	"github.com/dpb587/tacitkb/ext/exportiiifimage3"
@@ -76,8 +78,8 @@ func mainErr() error {
 
 	cGlobal.BlobService = blob.NewService()
 
-	{
-		mapsClient, err := maps.NewClient(maps.WithAPIKey(os.Getenv("GOOGLE_API_KEY")), maps.WithRateLimit(2))
+	if googleAPIKey := os.Getenv("GOOGLE_API_KEY"); googleAPIKey != "" {
+		mapsClient, err := maps.NewClient(maps.WithAPIKey(googleAPIKey), maps.WithRateLimit(2))
 		if err != nil {
 			panic(fmt.Errorf("client: %v", err))
 		}
@@ -130,6 +132,7 @@ func mainErr() error {
 				&blobmetaxmp.Factory{},
 				&blobtypeimage.Factory{},
 				&blobtypevideo.Factory{},
+				&export3dmodel.Factory{},
 				&exportiiifimage3.Factory{},
 				&exportgeojson.Factory{},
 				&exportpannellum.Factory{},
@@ -145,6 +148,14 @@ func mainErr() error {
 				blobprofilebuilder.NewBuilder(cGlobal.Log),
 				blobtypeimageprofilebuilder.NewBuilder(cGlobal.Log),
 				blobtypevideoprofilebuilder.NewBuilder(cGlobal.Log, locationmaskService),
+				export3dmodelartifactsbuilder.NewBuilder(cGlobal.Log, []export3dmodelartifactsbuilder.BuilderProfile{
+					{
+						Name:            "default",
+						BaseURL:         "/~/blob-3dmodel/",
+						OutputDir:       "/workspaces/dpb587.me/tmp/tilde/blob-3dmodel/",
+						IdentifierNamer: blobIdentifierNamer,
+					},
+				}),
 				exportiiifimage3artifactsbuilder.NewBuilder(cGlobal.Log, []exportiiifimage3artifactsbuilder.BuilderProfile{
 					{
 						Name:            "default",

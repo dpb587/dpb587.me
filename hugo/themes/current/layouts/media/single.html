@@ -10,6 +10,10 @@
 	{{ partial "sidebar/nav-code" . }}
 {{ end }}
 
+{{ define "head-extra" }}
+	{{ with .Params.mediaType.modelService }}{{ partial "modelviewer-assets" . }}{{ end }}
+{{ end }}
+
 {{ define "main" }}
 	{{ $params := .Params.mediaType }}
 
@@ -79,6 +83,10 @@
 					{{ $posterURL = (index . (sub (len .) 1)).url }}
 				{{ end }}
 				<dpb587-video playlist-url="{{ $params.videoService.playlistUrl }}" vtt-url="{{ $params.videoService.vttUrl }}" poster-url="{{ $posterURL }}"></dpb587-video>
+			</div>
+		{{ else if $params.modelService }}
+			<div class="md:fixed md:left-12 md:inset-y-2 md:right-96 z-0 relative aspect-video md:aspect-auto dpb587-model-viewer" style="--poster-color:#f5f5f4">
+				{{ $params.modelService.viewerHtml | safeHTML }}
 			</div>
 		{{ else }}
 			{{ $thumbnailsResponsive := index $params.Thumbnails 0 }}
