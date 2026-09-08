@@ -123,17 +123,13 @@ func (s *Service) FillSections(ctx context.Context, rootStoryDir string) error {
 					}
 
 					for _, contentItem := range contentByBase {
-						if contentItem.Frontmatter.Params.Nav != nil {
-							if contentItem.Frontmatter.Params.Nav.Place != nil {
-								for k := range *contentItem.Frontmatter.Params.Nav.Place {
-									content.Frontmatter.Params.SetNavPlaceArea(k, false)
+						if contentItem.Frontmatter.Params.Topics != nil {
+							for k := range *contentItem.Frontmatter.Params.Topics {
+								if !strings.HasPrefix(k, "places/") {
+									continue
 								}
-							}
 
-							if contentItem.Frontmatter.Params.Nav.PlacePark != nil {
-								for k := range *contentItem.Frontmatter.Params.Nav.PlacePark {
-									content.Frontmatter.Params.SetNavPlacePark(k, false)
-								}
+								content.Frontmatter.Params.SetTopic(k, frontmatterparams.TopicParam{})
 							}
 						}
 

@@ -55,6 +55,13 @@ func (b *Service) Build(ctx context.Context, blobNode catalog.Node) (*content.Do
 		}
 
 		return rb, nil
+	case "video/mp4", "video/quicktime":
+		rb, err := b.buildMediaVideo(ctx, blobNode, blobProfile)
+		if err != nil {
+			return nil, fmt.Errorf("videoview: %w", err)
+		}
+
+		return rb, nil
 	}
 
 	return nil, nil

@@ -28,11 +28,6 @@ func (b *Service) buildRouteType(ctx context.Context, blobNode catalog.Node, blo
 	doc := &content.Document{
 		Frontmatter: &content.Content_Frontmatter{
 			Params: &content.Content_Frontmatter_Params{
-				Nav: &frontmatterparams.Nav{
-					Type: &frontmatterparams.Nav_Type{
-						"route": true,
-					},
-				},
 				RouteType: templateData,
 			},
 			Type: &routeString,

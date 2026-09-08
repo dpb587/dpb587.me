@@ -1,0 +1,20 @@
+{{ $p := .Params.projectType }}
+<a class="group relative z-0 block bg-white border border-stone-200 hover:border-stone-400 shadow-sm hover:shadow-md transition duration-150 p-5" href="{{ strings.TrimSuffix `/` .RelPermalink }}">
+	<div class="flex items-start justify-between gap-3">
+		<h3 class="font-serif font-semibold text-lg text-stone-800 group-hover:text-sky-900 transition duration-150">{{ .Title }}</h3>
+		{{ partial "project/status-badge" . }}
+	</div>
+	{{ with $p.group }}
+		<div class="mt-0.5 text-xs uppercase tracking-wide text-stone-400">{{ . }}</div>
+	{{ end }}
+	{{ with .Description }}
+		<p class="mt-2 text-sm leading-6 text-stone-600">{{ . }}</p>
+	{{ end }}
+	{{ with $p.languages }}
+		<div class="mt-3 flex flex-wrap gap-1">
+			{{ range . }}
+				<span class="text-[11px] font-mono px-1.5 py-0.5 bg-stone-100 text-stone-600 rounded">{{ . }}</span>
+			{{ end }}
+		</div>
+	{{ end }}
+</a>

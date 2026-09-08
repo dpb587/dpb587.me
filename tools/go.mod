@@ -10,11 +10,12 @@ require (
 	github.com/spf13/cobra v1.10.2
 	github.com/tkrajina/gpxgo v1.4.0
 	gitlab.com/jamietanna/content-negotiation-go v0.2.0
+	go.yaml.in/yaml/v4 v4.0.0-rc.6
 	googlemaps.github.io/maps v1.7.0
-	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
+	github.com/andybalholm/brotli v1.2.2 // indirect
 	github.com/dsoprea/go-exif/v3 v3.0.1 // indirect
 	github.com/dsoprea/go-logging v0.0.0-20200710184922-b02d349568dd // indirect
 	github.com/dsoprea/go-utility/v2 v2.0.0-20221003172846-a3e1774ef349 // indirect
@@ -23,6 +24,7 @@ require (
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/h2non/filetype v1.1.3 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/klauspost/compress v1.17.6 // indirect
 	github.com/mattn/go-sqlite3 v1.14.42 // indirect
 	github.com/paulmach/orb v0.13.0 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect

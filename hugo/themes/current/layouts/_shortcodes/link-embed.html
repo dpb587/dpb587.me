@@ -1,0 +1,70 @@
+{{- $href := .Get "href" -}}
+{{- if not $href -}}
+  {{- errorf "link-embed shortcode: missing required parameter 'href'" -}}
+{{- end -}}
+
+{{- $embedRef := printf "./embed/link-%s.md" ( substr ( sha256 ( printf "content/%s\n%s" .Page.File.Path $href ) ) 0 10 ) -}}
+{{- $ref := false -}}
+{{- with .Page.GetPage $embedRef -}}
+  {{ $ref = . -}}
+{{- else -}}
+  {{- with .Page.Resources.Get $embedRef -}}
+    {{ $ref = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $ref -}}
+  {{- errorf "link-embed shortcode: link metadata not found: %s (href: %s)" $embedRef $href -}}
+{{- end -}}
+
+{{- $metadata := $ref.Params.linkType.metadata -}}
+{{- if not $metadata -}}
+  {{- errorf "link-embed shortcode: referenced page has no linkType.metadata: %s" $embedRef -}}
+{{- end -}}
+{{- $name := htmlUnescape ( or $metadata.name $href ) -}}
+{{- $originName := "" -}}
+{{- with urls.Parse $href -}}
+  {{- $originName = .Host -}}
+{{- end -}}
+{{- $originIcon := "" -}}
+{{- with $metadata.origin -}}
+  {{- with .iconThumbnails -}}
+    {{- $originIcon = ( index . ( sub ( len . ) 1 ) ).url -}}
+  {{- end -}}
+{{- end -}}
+{{- $featuredImage := "" -}}
+{{- with $metadata.featuredImageThumbnails -}}
+  {{- $featuredImage = ( index . ( sub ( len . ) 1 ) ).url -}}
+{{- end -}}
+<prose:custom-start /><a class="block group" href="{{ $href }}" target="_blank" rel="noopener noreferrer"><div class="border-t md:border-x md:border-b border-stone-200 overflow-hidden shadow-sm md:rounded p-4 group-hover:border-stone-300">
+    <div class="flex justify-between gap-x-4">
+        <div class="min-w-0 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+                <div class="flex w-full items-center gap-x-3 text-stone-800">
+                    {{ with $originIcon }}
+                    <div class="flex-shrink-0 bg-white shadow-sm p-2">
+                        <img alt="" class="not-prose size-6" src="{{ . }}">
+                    </div>
+                    {{ end }}
+                    <div class="grow min-w-0 truncate">
+                        <div class="font-medium truncate underline group-hover:text-sky-800">{{ $name }}</div>
+                        {{ with $originName }}
+                        <div class="text-xs flex items-center gap-x-1 text-stone-700">
+                            <span>{{ . }}</span>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ with $metadata.description }}
+                <div class="text-sm text-stone-500 line-clamp-3 leading-5 pl-1.5">
+                    <p>{{ htmlUnescape . }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ with $featuredImage }}
+        <div class="flex-shrink-0 w-auto h-28">
+            <img src="{{ . }}" class="aspect-video h-full w-auto object-cover rounded-xs" />
+        </div>
+        {{ end }}
+    </div>
+</div></a><prose:custom-end />

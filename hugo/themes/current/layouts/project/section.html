@@ -1,0 +1,245 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+	{{ partial "sidebar/nav-code" . }}
+{{ end }}
+
+{{ define "main" }}
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div class="bg-stone-50 pb-8 space-y-8">
+				{{ partial "prose/render" ( dict
+					"content" .Content
+					"classColumn" "max-w-4xl mx-auto space-y-8"
+					"classColumnWide" "max-w-6xl mx-auto space-y-8"
+					"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+					"classGutter" "px-4"
+				) }}
+				{{ if .Sections }}
+					{{ template "project-listing" . }}
+				{{ else }}
+					{{ template "project-detail" . }}
+					{{ template "timeline" . }}
+				{{ end }}
+			</div>
+		</main>
+	</div>
+{{ end }}
+
+{{ define "project-listing" }}
+	{{ $statusGroups := slice
+		( dict "status" "active" "label" "Active" "note" "Maintained and used today." )
+		( dict "status" "community" "label" "Community Maintained" "note" "Ownership has moved to a community fork or successor." )
+		( dict "status" "inactive" "label" "Inactive" "note" "No longer maintained, kept for reference." )
+	}}
+	{{ range $statusGroups }}
+		{{ $pages := where $.Sections "Params.projectType.status" "eq" .status }}
+		{{ if $pages }}
+			<div class="max-w-5xl mx-auto space-y-4">
+				<div class="prose max-w-none prose-stone font-serif px-4">
+					<h2 id="{{ .status }}">{{ .label }}</h2>
+					<p class="text-sm text-stone-500">{{ .note }}</p>
+				</div>
+				<div class="grid md:grid-cols-2 gap-4 px-2">
+					{{ range $pages.ByTitle }}
+						{{ partial "project/card" . }}
+					{{ end }}
+				</div>
+			</div>
+		{{ end }}
+	{{ end }}
+{{ end }}
+
+{{ define "project-detail" }}
+	{{ $p := .Params.projectType }}
+	<div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+		<div class="md:col-span-2 space-y-8">
+			{{ with .Content }}
+				{{ partial "prose/render" ( dict
+					"content" .
+					"classColumn" "space-y-8"
+					"classGutter" ""
+				) }}
+			{{ end }}
+			{{ with $p.screenshots }}
+				<div>
+					<h2 class="font-serif text-lg text-stone-800 mb-2">Screenshots</h2>
+					<div class="grid sm:grid-cols-2 gap-2">
+						{{ range . }}
+							<img class="w-full border border-stone-200" src="{{ .url }}" alt="{{ .alt }}" loading="lazy" />
+						{{ end }}
+					</div>
+				</div>
+			{{ end }}
+		</div>
+		<aside class="space-y-6 font-serif text-sm">
+			<div>
+				<h3 class="text-xs uppercase tracking-wide text-stone-400 mb-1.5">Status</h3>
+				{{ partial "project/status-badge" . }}
+				{{ with $p.statusNote }}
+					<p class="mt-1.5 text-stone-500">{{ . }}</p>
+				{{ end }}
+			</div>
+			{{ with $p.group }}
+				<div>
+					<h3 class="text-xs uppercase tracking-wide text-stone-400 mb-1.5">Category</h3>
+					<p class="text-stone-700">{{ . }}</p>
+				</div>
+			{{ end }}
+			{{ with $p.languages }}
+				<div>
+					<h3 class="text-xs uppercase tracking-wide text-stone-400 mb-1.5">Languages</h3>
+					<div class="flex flex-wrap gap-1">
+						{{ range . }}
+							<span class="text-xs font-mono px-1.5 py-0.5 bg-stone-100 text-stone-600 rounded">{{ . }}</span>
+						{{ end }}
+					</div>
+				</div>
+			{{ end }}
+			{{ with .Params.nav.topic }}
+				<div>
+					<h3 class="text-xs uppercase tracking-wide text-stone-400 mb-1.5">Integrations</h3>
+					<div class="flex flex-wrap gap-1">
+						{{ range $tag, $v := . }}
+							{{ if $v }}
+								{{ with site.GetPage ( printf "/nav-tag/%s" $tag ) }}
+									<a class="text-xs px-1.5 py-0.5 border border-stone-300 rounded hover:border-sky-800 hover:text-sky-900 transition duration-150" href="{{ strings.TrimSuffix `/` .RelPermalink }}">{{ .LinkTitle }}</a>
+								{{ end }}
+							{{ end }}
+						{{ end }}
+					</div>
+				</div>
+			{{ end }}
+			{{ $links := slice }}
+			{{ with $p.website }}
+				{{ $links = $links | append ( dict "url" .url "label" ( cond .archived "Website (Archived)" "Website" ) "icon" "globe-alt" ) }}
+			{{ end }}
+			{{ with $p.documentationWebsite }}
+				{{ $links = $links | append ( dict "url" .url "label" "Documentation" "icon" "book-open" ) }}
+			{{ end }}
+			{{ range .Params.identifier }}
+				{{ if eq .propertyID "github/repository" }}
+					{{ $links = $links | append ( dict "url" .value "label" "Repository" "icon" "code-bracket-square" ) }}
+				{{ end }}
+			{{ end }}
+			{{ if $links }}
+				<div class="space-y-2">
+					{{ range $links }}
+						<a class="flex items-center gap-1.5 text-sky-800 hover:underline" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+							{{ partial "heroicons/inline" ( dict "icon" ( printf "20/solid/%s" .icon ) "attrs" `class="h-4 w-4 flex-none"` ) }}
+							<span>{{ .label }}</span>
+						</a>
+					{{ end }}
+				</div>
+			{{ end }}
+
+		</aside>
+	</div>
+{{ end }}
+
+{{ define "timeline" }}
+	{{ $timelineEvents := where ( where site.Pages "Type" "eq" "timeline-event" ) "Parent.RelPermalink" "eq" .RelPermalink }}
+	{{ $relatedContent := slice }}
+	{{ range .Params.projectType.relatedContent }}
+		{{ with site.GetPage . }}
+			{{ $relatedContent = $relatedContent | append . }}
+		{{ end }}
+	{{ end }}
+	{{ with union $timelineEvents $relatedContent }}
+		<section class="max-w-4xl mx-auto font-serif space-y-4">
+			<div class="prose prose-stone max-w-none px-4">
+				<h1>Timeline</h1>
+				<p>The following describes some of the milestones and notable changes for this project, starting with the most recent events.</p>
+			</div>
+			<ol class="-mt-px space-y-12">
+				{{ range .ByDate.Reverse.GroupByDate "January 2006" }}
+					<li class="mb-6">
+						<div class="relative">
+							<div class="pt-3 pb-1 px-2 text-gray-600 flex justify-content z-10 relative">
+								<div class="flex-1 text-sm pl-10">
+									<span class="inline-block bg-stone-50 px-2">{{ .Key }}</span>
+								</div>
+							</div>
+							<div class="absolute h-1 top-5 border-t inset-x-0 border-stone-300"></div>
+						</div>
+						<ol class="space-y-6">
+							{{ range .Pages }}
+								{{ $isTimelineEvent := eq .Type "timeline-event" }}
+								{{ $icon := "link" }}
+								{{ if $isTimelineEvent }}
+									{{ $icon = .Params.timelineEvent.icon | default "sparkles" }}
+								{{ end }}
+								<li class="px-2 mt-3.5 mb-6">
+									<div class="relative flex items-center px-3 mb-3">
+										<div class="relative mr-3">
+											<div class="p-1 rounded shadow-sm border border-stone-200 text-stone-600">
+												{{ partial "heroicons/inline" ( dict
+													"icon" ( printf "16/solid/%s" $icon )
+													"attrs" `class="h-3.5 w-3.5"`
+												) }}
+											</div>
+										</div>
+										<div class="min-w-0 flex-1 py-0.5 font-semibold text-stone-700">
+											{{ if $isTimelineEvent }}
+												{{ .Title }}
+											{{ else }}
+												<a class="hover:underline" href="{{ strings.TrimSuffix `/` .RelPermalink }}">{{ .Title }}</a>
+											{{ end }}
+										</div>
+									</div>
+									{{ if $isTimelineEvent }}
+										{{ with .Content }}
+											<div class="space-y-8 pl-8 mt-4">
+												{{ partial "prose/render" ( dict 
+													"content" .
+													"classColumn" "space-y-8"
+													"classGutter" "px-4"
+												) }}
+											</div>
+										{{ end }}
+										{{ with .Params.timelineEvent.properties }}
+											<div class="pl-8 mx-4 text-stone-800 text-sm sm:my-5">
+												<dl class="grid sm:grid-cols-7 sm:gap-y-2 gap-x-1 items-start">
+													{{ $lastPropertyName := false }}
+													{{ range . }}
+														{{ if ne $lastPropertyName .name }}
+															<dt class="col-span-2 mt-3 sm:mt-0 flex items-center sm:justify-end space-x-1">
+																<span class="font-medium">{{ .name }}</span>
+																{{ partial "heroicons/inline" ( dict
+																	"icon" "20/solid/chevron-right"
+																	"attrs" `class="hidden sm:inline-block h-4 w-4"`
+																) }}
+															</dt>
+															{{ $lastPropertyName = .name }}
+														{{ else }}
+															<div class="col-span-2"></div>
+														{{ end }}
+														<div class="col-span-5">
+															<dd class="font-semibold">{{ .value }}</dd>
+														</div>
+													{{ end }}
+												</dl>
+											</div>
+										{{ end }}
+									{{ else }}
+										{{ with .Description }}
+											<div class="pl-8 mt-4 text-stone-700">{{ . }}</div>
+										{{ end }}
+									{{ end }}
+								</li>
+							{{ end }}
+						</ol>
+					</li>
+				{{ end }}
+			</ol>
+		</section>
+	{{ end }}
+{{ end }}
+
+{{ define "alternate-links" }}
+	<link rel="alternate" type="text/markdown" href="/~/export/text-content?uri={{ strings.TrimSuffix `/` .RelPermalink | urlquery }}&format=markdown" />
+{{ end }}
+
+{{ define "structured-data" }}
+	{{ partial "structured-data" . }}
+{{ end }}

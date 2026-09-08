@@ -1,0 +1,42 @@
+<prose:custom-start />
+{{ $ref := false }}
+{{- with .Page.GetPage ( .Get "ref" ) -}}
+  {{ $ref = . -}}
+{{- else -}}
+  {{- with .Page.Resources.Get ( .Get "ref" ) -}}
+    {{ $ref = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $ref -}}
+  {{- errorf "video shortcode: page not found: %s" ( .Get "ref" ) -}}
+{{- end -}}
+
+{{- $video := $ref.Params.mediaType.videoService -}}
+{{- if not $video -}}
+  {{- errorf "video shortcode: referenced page has no mediaType.videoService: %s" ( .Get "ref" ) -}}
+{{- end -}}
+{{ $posterURL := "" }}
+{{ $posterFrame := .Get "poster-frame" }}
+{{ if eq $posterFrame "last" }}
+  {{ with $video.endThumbnails }}
+    {{ $posterURL = (index . (sub (len .) 1)).url }}
+  {{ end }}
+{{ else if or ( eq $posterFrame "first" ) ( eq $posterFrame "" ) }}
+  {{ with $video.startThumbnails }}
+    {{ $posterURL = (index . (sub (len .) 1)).url }}
+  {{ end }}
+{{ else }}
+  {{ errorf "video shortcode: invalid poster-frame value: %s" $posterFrame }}
+{{ end }}
+<figure class="border-t md:border-x md:border-b border-stone-200 overflow-hidden shadow md:rounded bg-stone-100 p-4">
+  <div class="aspect-video" style="--plyr-color-main:#A3004C">
+    <dpb587-video playlist-url="{{ $video.playlistUrl }}" vtt-url="{{ $video.vttUrl }}" poster-url="{{ $posterURL }}"></dpb587-video>
+  </div>
+  {{- $caption := or ( .Get "caption" ) $ref.Title -}}
+  {{ with $caption }}
+    <figcaption class="text-xs font-serif -mb-0.5 mt-3.5 text-stone-500">
+      <a href="{{ strings.TrimSuffix `/` $ref.RelPermalink }}" hx-boost="true" hx-push-url="true">{{ . }}</a>
+    </figcaption>
+  {{ end }}
+</figure>
+<prose:custom-end />

@@ -72,52 +72,62 @@
 				{{ end }}
 			</div>
 		{{ end }}
-		{{ $thumbnailsResponsive := index $params.Thumbnails 0 }}
-		<div class="fixed -z-40 left-0 md:left-12 inset-y-0 right-0 overflow-hidden opacity-5">
-			<div class="absolute -inset-8">
-				<img
-					class="w-full h-full blur-xl object-cover"
-					alt="Blurred background of {{ .Title }}"
-					src="{{ $thumbnailsResponsive.url }}"
-					srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ $tn.url}} {{ .width }}w{{ end }}"
-					width="{{ $thumbnailsResponsive.width }}"
-					height="{{ $thumbnailsResponsive.height }}"
-				/>
+		{{ if $params.videoService }}
+			<div class="md:fixed md:left-12 md:inset-y-2 md:right-96 z-0 relative aspect-video md:aspect-auto">
+				{{ $posterURL := "" }}
+				{{ with $params.videoService.startThumbnails }}
+					{{ $posterURL = (index . (sub (len .) 1)).url }}
+				{{ end }}
+				<dpb587-video playlist-url="{{ $params.videoService.playlistUrl }}" vtt-url="{{ $params.videoService.vttUrl }}" poster-url="{{ $posterURL }}"></dpb587-video>
 			</div>
-		</div>
-		<div class="md:fixed md:left-12 md:inset-y-2 md:right-96 z-0 relative">
-			<div class="h-full w-full flex items-center justify-center overflow-hidden">
-				<img
-					class="relative z-20 object-contain shadow-lg cursor-zoom-in {{ if gt $thumbnailsResponsive.height $thumbnailsResponsive.width }}h-full w-auto{{ else }}w-full h-auto{{ end }} transition-all"
-					alt="{{ .Title }}"
-					src="{{ $thumbnailsResponsive.url }}"
-					srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ $tn.url}} {{ .width }}w{{ end }}"
-					width="{{ $thumbnailsResponsive.width }}"
-					height="{{ $thumbnailsResponsive.height }}"
-					{{ with $params.panoramaProfile }}
-						onclick="document.querySelector('dpb587-pannellum button').click();setTimeout(() => this.blur(), 100)"
-						aria-label="View as Panorama"
-					{{ else }}
-						onclick="document.querySelector('dpb587-openseadragon button').click();setTimeout(() => this.blur(), 100)"
-						aria-label="Zoom In"
-					{{ end }}
-				/>
-			</div>
-			{{ with $params.panoramaProfile }}
-				<div class="absolute z-30 inset-0 flex items-center justify-center pointer-events-none">
-					<button
-						class="pointer-events-auto group flex items-center gap-2 focus:outline-none text-stone-300 text-xs md:text-sm font-medium cursor-pointer hover:opacity-80 transition-opacity ease-out"
-						onclick="document.querySelector('dpb587-pannellum button').click();setTimeout(() => this.blur(), 100)"
-					>
-						<div class="border-4 border-black p-0.5 md:p-1 hover:border-black/80">
-							<div class="px-3.5 py-2.5 md:px-5 md:py-3.5 bg-black group-hover:text-white transition-colors ease-out">
-								Open Panorama Viewer
-							</div>
-						</div>
-					</button>
+		{{ else }}
+			{{ $thumbnailsResponsive := index $params.Thumbnails 0 }}
+			<div class="fixed -z-40 left-0 md:left-12 inset-y-0 right-0 overflow-hidden opacity-5">
+				<div class="absolute -inset-8">
+					<img
+						class="w-full h-full blur-xl object-cover"
+						alt="Blurred background of {{ .Title }}"
+						src="{{ $thumbnailsResponsive.url }}"
+						srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ $tn.url}} {{ .width }}w{{ end }}"
+						width="{{ $thumbnailsResponsive.width }}"
+						height="{{ $thumbnailsResponsive.height }}"
+					/>
 				</div>
-			{{ end }}
-		</div>
+			</div>
+			<div class="md:fixed md:left-12 md:inset-y-2 md:right-96 z-0 relative">
+				<div class="h-full w-full flex items-center justify-center overflow-hidden">
+					<img
+						class="relative z-20 object-contain shadow-lg cursor-zoom-in {{ if gt $thumbnailsResponsive.height $thumbnailsResponsive.width }}h-full w-auto{{ else }}w-full h-auto{{ end }} transition-all"
+						alt="{{ .Title }}"
+						src="{{ $thumbnailsResponsive.url }}"
+						srcset="{{ range $idx, $tn := $params.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ $tn.url}} {{ .width }}w{{ end }}"
+						width="{{ $thumbnailsResponsive.width }}"
+						height="{{ $thumbnailsResponsive.height }}"
+						{{ with $params.panoramaProfile }}
+							onclick="document.querySelector('dpb587-pannellum button').click();setTimeout(() => this.blur(), 100)"
+							aria-label="View as Panorama"
+						{{ else }}
+							onclick="document.querySelector('dpb587-openseadragon button').click();setTimeout(() => this.blur(), 100)"
+							aria-label="Zoom In"
+						{{ end }}
+					/>
+				</div>
+				{{ with $params.panoramaProfile }}
+					<div class="absolute z-30 inset-0 flex items-center justify-center pointer-events-none">
+						<button
+							class="pointer-events-auto group flex items-center gap-2 focus:outline-none text-stone-300 text-xs md:text-sm font-medium cursor-pointer hover:opacity-80 transition-opacity ease-out"
+							onclick="document.querySelector('dpb587-pannellum button').click();setTimeout(() => this.blur(), 100)"
+						>
+							<div class="border-4 border-black p-0.5 md:p-1 hover:border-black/80">
+								<div class="px-3.5 py-2.5 md:px-5 md:py-3.5 bg-black group-hover:text-white transition-colors ease-out">
+									Open Panorama Viewer
+								</div>
+							</div>
+						</button>
+					</div>
+				{{ end }}
+			</div>
+		{{ end }}
 		<div class="flex">
 			<div class="grow"></div>
 			<div class="md:min-h-screen w-full md:w-96 relative z-0 p-2 md:p-4">

@@ -1,0 +1,11 @@
+{{ $status := .Params.projectType.status | default "inactive" }}
+{{ $colors := dict
+  "active" ( dict "dot" "bg-sky-600" "text" "text-sky-800" "label" "Active" )
+  "community" ( dict "dot" "bg-amber-500" "text" "text-amber-700" "label" "Community" )
+  "inactive" ( dict "dot" "bg-stone-400" "text" "text-stone-500" "label" "Inactive" )
+}}
+{{ $c := index $colors $status | default ( index $colors "inactive" ) }}
+<span class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide {{ $c.text }}">
+	<span class="h-1.5 w-1.5 rounded-full {{ $c.dot }}"></span>
+	{{ $c.label }}
+</span>

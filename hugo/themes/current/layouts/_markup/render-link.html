@@ -1,7 +1,41 @@
-{{- $u := urls.Parse .Destination -}}
+{{- $destination := .Destination -}}
+{{- $destinationURL := urls.Parse .Destination -}}
+{{- $title := .Title -}}
+{{- $isExternal := and $destinationURL.IsAbs ( not ( hasPrefix .Destination .Page.Site.BaseURL ) ) -}}
+{{- $originIcon := false -}}
+{{- $originIconAlt := "" -}}
+{{- $text := .Text -}}
+
+{{- if and $isExternal .Page.File -}}
+  {{- $embedRef := printf "./embed/link-%s.md" ( substr ( sha256 ( printf "content/%s\n%s" .Page.File.Path $destination ) ) 0 10 ) -}}
+  {{- $ref := false -}}
+  {{- with .Page.GetPage $embedRef -}}
+    {{ $ref = . -}}
+  {{- else -}}
+    {{- with .Page.Resources.Get $embedRef -}}
+      {{ $ref = . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $ref -}}
+    {{- if eq ( len $text ) 0 -}}
+      {{- $text = .Params.linkType.metadata.name -}}
+    {{- else if eq ( len $title ) 0 -}}
+      {{- $title = .Params.linkType.metadata.name -}}
+    {{- end -}}
+    {{- with .Params.linkType.metadata.origin -}}
+      {{- with .iconThumbnails -}}
+        {{- $originIcon = ( index . ( sub ( len . ) 1 ) ) -}}
+        {{- $originIconAlt = $ref.Params.linkType.metadata.origin.name -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 <a href="{{ .Destination | safeURL }}"
-  {{- with .Title }} title="{{ . }}"{{ end -}}
-  {{- if and $u.IsAbs ( not ( hasPrefix .Destination .Page.Site.BaseURL ) ) }} target="blank"{{ end -}}
+  {{- with $title }} title="{{ . }}"{{ end -}}
+  {{- if $isExternal }} target="_blank"{{ end -}}
+  class="inline-flex items-baseline gap-x-1 group hover:text-sky-800"
 >
-  {{- with .Text }}{{ . }}{{ end -}}
+  {{- with $originIcon }}<img alt="{{ $originIconAlt }}" class="not-prose translate-y-0.5 size-4 shadow-sm" height="{{ .height }}" src="{{ .url }}" width="{{ .width }}">{{ end -}}
+  {{- with $text }}<span>{{ . }}</span>{{ end -}}
 </a>

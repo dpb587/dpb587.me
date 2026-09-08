@@ -10,6 +10,7 @@ type MediaType struct {
 
 	Thumbnails   MediaType_ThumbnailList `json:"thumbnails,omitempty"`
 	ImageService *MediaType_ImageService `json:"imageService,omitempty"`
+	VideoService *MediaType_VideoService `json:"videoService,omitempty"`
 
 	CaptureTime     *MediaType_CaptureTime     `json:"captureTime,omitempty"`
 	GeoCoordinates  *MediaType_GeoCoordinates  `json:"geoCoordinates,omitempty"`
@@ -28,6 +29,15 @@ type MediaType_ThumbnailList []MediaType_Thumbnail
 
 type MediaType_ImageService struct {
 	InfoURL string `json:"infoUrl,omitempty"`
+}
+
+type MediaType_VideoService struct {
+	PlaylistURL string `json:"playlistUrl,omitempty"`
+	VTTURL      string `json:"vttUrl,omitempty"`
+	DurationSec int    `json:"durationSec,omitempty"`
+
+	StartThumbnails MediaType_ThumbnailList `json:"startThumbnails,omitempty"`
+	EndThumbnails   MediaType_ThumbnailList `json:"endThumbnails,omitempty"`
 }
 
 type MediaType_CaptureTime struct {

@@ -1,0 +1,104 @@
+{{/*
+	Renders pages as a loose stack of polaroids (or post-it notes, for articles)
+	which spreads apart when the surrounding `.polaroid-scene` element is hovered.
+
+	@param pages  slice of pages to render
+	@param seed   string used to derive deterministic scatter offsets
+	@param sizes  optional img[@sizes] value
+*/}}
+{{ $pages := .pages }}
+{{ $seed := .seed | default "polaroid" }}
+{{ $sizes := .sizes | default "(min-width: 768px) 22vw, 45vw" }}
+{{ $n := len $pages }}
+{{ $center := div ( sub $n 1 ) 2.0 }}
+{{ $noteCount := 0 }}
+<div class="polaroid-stack">
+	{{ range $idx, $page := collections.Reverse $pages }}
+		{{ $h := hash.FNV32a ( printf "%s|%d|%s" $seed $idx $page.RelPermalink ) }}
+		{{ $offset := sub $idx $center }}
+		{{ $rest := dict
+			"x" ( add ( mul $offset 56 ) ( sub ( mod $h 13 ) 6 ) )
+			"y" ( add ( mul $offset 3 ) ( sub ( mod ( div $h 13 ) 13 ) 6 ) )
+			"rotate" ( add ( mul $offset 2.5 ) ( sub ( mod ( div $h 169 ) 15 ) 7 ) )
+		}}
+		{{ $spread := dict
+			"x" ( add ( mul $offset 64 ) ( sub ( mod ( div $h 2197 ) 11 ) 5 ) )
+			"y" ( add ( mul ( math.Abs $offset ) 10 ) ( sub ( mod ( div $h 24167 ) 11 ) 5 ) )
+			"rotate" ( add ( mul $offset 9 ) ( sub ( mod ( div $h 371293 ) 9 ) 4 ) )
+		}}
+        {{ $spread = $rest }}
+		{{ $isArticle := eq $page.Type "article" }}
+		{{ $isNote := not $isArticle }}
+		{{ $media := false }}
+		{{ if and (not $isArticle) (eq $page.Type "media") }}
+			{{ $media = $page.Params.mediaType }}
+		{{ else if not $isArticle }}
+			{{ with $page.Params.hero.ref | default $page.Params.featuredMedia.ref }}
+				{{ $media = ( $page.GetPage . ).Params.mediaType }}
+			{{ end }}
+		{{ end }}
+		{{ $thumbnails := false }}
+		{{ $isVideo := false }}
+		{{ with $media }}
+			{{ if .videoService }}
+				{{ $isVideo = true }}
+				{{ $thumbnails = .videoService.startThumbnails }}
+			{{ else }}
+				{{ $thumbnails = .thumbnails }}
+			{{ end }}
+            {{ $isNote = false }}
+		{{ end }}
+
+		{{ if $isNote }}
+			{{ $noteCount = add $noteCount 1 }}
+		{{ end }}
+		<a
+			class="polaroid {{ if $isArticle }}polaroid-article bg-stone-50{{ else if $isNote }}polaroid-note {{ with mod $noteCount 3 }}{{ if eq . 1 }}bg-yellow-50{{ else if eq . 2 }}bg-pink-50{{ end }}{{ else }}bg-blue-50{{ end }}{{ else }}bg-stone-50{{ end }}"
+			href="{{ strings.TrimSuffix `/` $page.RelPermalink }}"
+			style="
+				z-index: {{ add $idx 1 }};
+				--polaroid-x: {{ $rest.x }}%;
+				--polaroid-y: {{ $rest.y }}%;
+				--polaroid-rotate: {{ $rest.rotate }}deg;
+				--polaroid-spread-x: {{ $spread.x }}%;
+				--polaroid-spread-y: {{ $spread.y }}%;
+				--polaroid-spread-rotate: {{ $spread.rotate }}deg;
+			"
+		>
+			{{ if $isArticle }}
+				<span class="polaroid-staple" aria-hidden="true"></span>
+				<span class="flex h-full flex-col gap-2 overflow-hidden pt-[8%]">
+					<strong class="line-clamp-3 font-handwriting text-sm md:text-base font-semibold leading-tight">{{ $page.Title }}</strong>
+					<span class="line-clamp-8 font-handwriting text-[0.5625rem] md:text-[0.6875rem] leading-snug">{{ $page.Description }}</span>
+				</span>
+			{{ else if $isNote }}
+				<span class="flex aspect-square flex-col gap-1 overflow-hidden">
+					<strong class="line-clamp-2 font-handwriting text-sm md:text-base font-semibold leading-tight">{{ $page.Title }}</strong>
+					<span class="line-clamp-4 font-handwriting text-[0.625rem] md:text-xs leading-snug">{{ $page.Description }}</span>
+				</span>
+			{{ else }}
+				<span class="relative z-0 block aspect-square overflow-hidden bg-stone-300">
+					{{ with $thumbnails }}
+						{{ $tnDefault := index . 0 }}
+						<img
+							class="w-full h-full object-cover"
+							alt="{{ $page.Title }}"
+							height="{{ $tnDefault.height }}"
+							loading="lazy"
+							src="{{ $tnDefault.url }}"
+							srcset="{{ range $tnIdx, $tn := . }}{{ if gt $tnIdx 0 }}, {{ end }}{{ $tn.url }} {{ $tn.width }}w{{ end }}"
+							sizes="{{ $sizes }}"
+							width="{{ $tnDefault.width }}"
+						/>
+					{{ end }}
+					{{ if $isVideo }}
+						<span class="absolute left-2 top-2 z-10 bg-white/80 shadow-inner p-1 text-stone-700" title="Video">
+							{{ partial "heroicons/inline" ( dict "icon" "16/solid/video-camera" "attrs" `class="size-4"` ) }}
+						</span>
+					{{ end }}
+				</span>
+				<span class="block truncate px-1 pt-2 pb-1 text-center font-handwriting text-sm md:text-base leading-tight text-stone-700">{{ $page.Title }}</span>
+			{{ end }}
+		</a>
+	{{ end }}
+</div>

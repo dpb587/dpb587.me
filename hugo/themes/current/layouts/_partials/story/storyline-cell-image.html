@@ -11,6 +11,11 @@
 			sizes="{{ .image.viewportSizes }}"
 			width="{{ $tnDefault.width }}"
 		/>
+		{{ with .badge }}
+			<span class="absolute left-2 top-2 z-10 bg-white/80 shadow-inner p-1 text-stone-700" title="{{ .title }}">
+				{{ partial "heroicons/inline" ( dict "icon" .icon "attrs" `class="size-4"` ) }}
+			</span>
+		{{ end }}
 	</div>
 	{{ with .label }}
 		<div class="absolute inset-x-0 inset-y-0 flex items-end justify-start p-2 md:p-4">

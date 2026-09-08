@@ -35,11 +35,6 @@ func (b *Service) buildMediaImage(ctx context.Context, blobNode catalog.Node, bl
 	doc := &content.Document{
 		Frontmatter: &content.Content_Frontmatter{
 			Params: &content.Content_Frontmatter_Params{
-				Nav: &frontmatterparams.Nav{
-					Type: &frontmatterparams.Nav_Type{
-						"media": true,
-					},
-				},
 				MediaType: templateData,
 			},
 			Type: &mediaString,
@@ -295,20 +290,20 @@ func (b *Service) buildMediaImage(ctx context.Context, blobNode catalog.Node, bl
 
 						switch reverseGeocode.Country.PrimaryShortName {
 						case "CA", "US":
-							doc.Frontmatter.Params.SetNavPlaceArea(
+							doc.Frontmatter.Params.SetTopicPlace(
 								strings.ToLower(fmt.Sprintf("%s/%s", reverseGeocode.Country.PrimaryShortName, reverseGeocode.Admin1.PrimaryShortName)),
-								true,
+								frontmatterparams.TopicParam{},
 							)
 						default:
-							doc.Frontmatter.Params.SetNavPlaceArea(
+							doc.Frontmatter.Params.SetTopicPlace(
 								strings.ToLower(reverseGeocode.Country.PrimaryShortName),
-								true,
+								frontmatterparams.TopicParam{},
 							)
 						}
 					} else {
-						doc.Frontmatter.Params.SetNavPlaceArea(
+						doc.Frontmatter.Params.SetTopicPlace(
 							strings.ToLower(reverseGeocode.Country.PrimaryShortName),
-							true,
+							frontmatterparams.TopicParam{},
 						)
 					}
 

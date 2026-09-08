@@ -8,7 +8,7 @@ import (
 
 	"github.com/dpb587/dpb587.me/tools/content/frontmatterparams"
 	"github.com/dpb587/dpb587.me/tools/content/hugoutil"
-	"gopkg.in/yaml.v3"
+	"go.yaml.in/yaml/v4"
 )
 
 type Document struct {
@@ -67,17 +67,24 @@ func (c Document) WriteTo(w io.Writer) (int64, error) {
 			return 0, fmt.Errorf("unmarshal frontmatter: %v", err)
 		}
 
-		yamlBytes, err := yaml.Marshal(remarshal)
-		if err != nil {
-			return 0, fmt.Errorf("marshal frontmatter to yaml: %v", err)
-		}
-
 		_, err = w.Write([]byte("---\n"))
 		if err != nil {
 			return 0, fmt.Errorf("write separator: %v", err)
 		}
 
-		_, err = w.Write(yamlBytes)
+		frontmatterBytes := &bytes.Buffer{}
+
+		ym, err := yaml.NewDumper(frontmatterBytes)
+		if err != nil {
+			return 0, fmt.Errorf("create yaml dumper: %v", err)
+		}
+
+		err = ym.Dump(remarshal)
+		if err != nil {
+			return 0, fmt.Errorf("write frontmatter: %v", err)
+		}
+
+		_, err = w.Write(frontmatterBytes.Bytes())
 		if err != nil {
 			return 0, fmt.Errorf("write frontmatter: %v", err)
 		}
@@ -120,44 +127,21 @@ type Content_Frontmatter struct {
 //
 
 type Content_Frontmatter_Params struct {
+	LinkType  *frontmatterparams.LinkType  `json:"linkType,omitempty"`
 	MediaType *frontmatterparams.MediaType `json:"mediaType,omitempty"`
-	Nav       *frontmatterparams.Nav       `json:"nav,omitempty"`
 	RouteType *frontmatterparams.RouteType `json:"routeType,omitempty"`
 	TimeRange *frontmatterparams.TimeRange `json:"timeRange,omitempty"`
+	Topics    *frontmatterparams.Topics    `json:"topics,omitempty"`
 }
 
-func (p *Content_Frontmatter_Params) SetNavType(k string, v bool) {
-	if p.Nav == nil {
-		p.Nav = &frontmatterparams.Nav{}
+func (p *Content_Frontmatter_Params) SetTopic(k string, v frontmatterparams.TopicParam) {
+	if p.Topics == nil {
+		p.Topics = &frontmatterparams.Topics{}
 	}
 
-	if p.Nav.Type == nil {
-		p.Nav.Type = &frontmatterparams.Nav_Type{}
-	}
-
-	(*p.Nav.Type)[k] = v
+	(*p.Topics)[k] = v
 }
 
-func (p *Content_Frontmatter_Params) SetNavPlaceArea(k string, v bool) {
-	if p.Nav == nil {
-		p.Nav = &frontmatterparams.Nav{}
-	}
-
-	if p.Nav.Place == nil {
-		p.Nav.Place = &frontmatterparams.Nav_Place{}
-	}
-
-	(*p.Nav.Place)[k] = v
-}
-
-func (p *Content_Frontmatter_Params) SetNavPlacePark(k string, v bool) {
-	if p.Nav == nil {
-		p.Nav = &frontmatterparams.Nav{}
-	}
-
-	if p.Nav.PlacePark == nil {
-		p.Nav.PlacePark = &frontmatterparams.Nav_PlacePark{}
-	}
-
-	(*p.Nav.PlacePark)[k] = v
+func (p *Content_Frontmatter_Params) SetTopicPlace(k string, v frontmatterparams.TopicParam) {
+	p.SetTopic("places/"+k, v)
 }

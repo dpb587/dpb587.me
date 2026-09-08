@@ -26,23 +26,24 @@
   {{- $sd = merge $sd ( dict "description" . ) -}}
 {{- end -}}
 
-{{- with .Params.nav.tag -}}
+{{- with .Params.topics -}}
   {{- $keywords := slice -}}
+  {{- $contentLocation := slice -}}
 
   {{- range $tag, $_ := . -}}
-    {{- $keywords = $keywords | append (replace $tag "-" " ") -}}
+    {{- with site.GetPage ( printf "/topic/%s" $tag ) -}}
+      {{- if or ( eq .Type "topic-place-admin1" ) ( eq .Type "topic-place-admin2" ) ( eq .Type "topic-place-park" ) -}}
+        {{- $contentLocation = $contentLocation | append ( ( partial "nav-place/structured-data-ref.txt" . ) | unmarshal ) -}}
+      {{- else -}}
+        {{- $keywords = $keywords | append (replace $tag "-" " ") -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $keywords = $keywords | append (replace $tag "-" " ") -}}
+    {{- end -}}
   {{- end -}}
 
   {{- if gt (len $keywords) 0 -}}
     {{- $sd = merge $sd ( dict "keywords" $keywords ) -}}
-  {{- end -}}
-{{- end -}}
-
-{{- with .Params.nav.place -}}
-  {{- $contentLocation := slice -}}
-
-  {{- range $place, $_ := . -}}
-    {{- $contentLocation = $contentLocation | append ( partial "nav-place/structured-data-ref.txt" ( $.GetPage ( printf "/nav-place/%s" $place ) ) | unmarshal ) -}}
   {{- end -}}
 
   {{- if gt (len $contentLocation) 0 -}}
@@ -54,7 +55,13 @@
   {{- $sd = merge $sd ( dict "temporalCoverage" ( printf "%s/%s" .from .thru ) ) -}}
 {{- end -}}
 
-{{- if eq .Type "post" -}}
+{{- if eq .Type "article" -}}
+  {{- $sd = merge $sd ( dict
+    "@type" "Article"
+    "headline" .Title
+    "wordCount" .WordCount
+  ) -}}
+{{- else if eq .Type "post" -}}
   {{- $sd = merge $sd ( dict
     "@type" "BlogPosting"
     "headline" .Title

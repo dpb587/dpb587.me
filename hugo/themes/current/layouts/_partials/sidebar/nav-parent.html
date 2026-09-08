@@ -2,6 +2,16 @@
 	{{ template "item" .CurrentSection }}
 {{ else if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) ( ne .Parent.RelPermalink .RelPermalink ) }}
 	{{ template "item" .Parent }}
+{{ else if .Params.topics }}
+	{{ range $k, $v := .Params.topics }}
+		{{ if $v }}
+			{{ template "item" ( site.GetPage ( printf "/topic/%s" $k ) ) }}
+			
+			{{ break }}
+		{{ end }}
+	{{ end }}
+{{ else if eq .Type "article" }}
+	{{ template "item" ( site.GetPage "/nav-type/article" ) }}
 {{ else if eq .Type "post" }}
 	{{ template "item" ( site.GetPage "/nav-type/post" ) }}
 {{ end }}

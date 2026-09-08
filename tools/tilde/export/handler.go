@@ -19,8 +19,8 @@ import (
 )
 
 const (
-	TextContentAPI    = "https://api.namedgraph.com/toolkit.v0/textContent.export"
-	StructuredDataAPI = "https://api.namedgraph.com/toolkit.v0/structuredData.export"
+	TextContentAPI    = "https://api.structuredtext.app/v1/document.export"
+	StructuredDataAPI = "https://api.schemamarkup.app/v1/document.export"
 	SourceURIPrefix   = "https://github.com/dpb587/dpb587.me/blob/main/content/"
 )
 

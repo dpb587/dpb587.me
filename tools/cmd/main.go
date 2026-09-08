@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/dpb587/dpb587.me/tools/cmd/cmdflags"
+	"github.com/dpb587/dpb587.me/tools/cmd/mediaimportcmd"
 	"github.com/dpb587/dpb587.me/tools/cmd/storyimportcmd"
 	"github.com/dpb587/dpb587.me/tools/cmd/storyindexcmd"
 	"github.com/dpb587/go-iiif-image-api-v3/imagerequest"
@@ -25,12 +26,16 @@ import (
 	blobmetaxmpprofilebuilder "github.com/dpb587/tacitkb/ext/blobmetaxmp/profilebuilder"
 	"github.com/dpb587/tacitkb/ext/blobtypeimage"
 	blobtypeimageprofilebuilder "github.com/dpb587/tacitkb/ext/blobtypeimage/profilebuilder"
+	"github.com/dpb587/tacitkb/ext/blobtypevideo"
+	blobtypevideoprofilebuilder "github.com/dpb587/tacitkb/ext/blobtypevideo/profilebuilder"
 	"github.com/dpb587/tacitkb/ext/exportgeojson"
 	exportgeojsonartifactsbuilder "github.com/dpb587/tacitkb/ext/exportgeojson/artifactsbuilder"
 	"github.com/dpb587/tacitkb/ext/exportiiifimage3"
 	exportiiifimage3artifactsbuilder "github.com/dpb587/tacitkb/ext/exportiiifimage3/artifactsbuilder"
 	"github.com/dpb587/tacitkb/ext/exportpannellum"
 	exportpannellumartifactsbuilder "github.com/dpb587/tacitkb/ext/exportpannellum/artifactsbuilder"
+	"github.com/dpb587/tacitkb/ext/exportvideostream"
+	exportvideostreamartifactsbuilder "github.com/dpb587/tacitkb/ext/exportvideostream/artifactsbuilder"
 	"github.com/dpb587/tacitkb/tools/googlemapsreversegeocode"
 	"github.com/dpb587/tacitkb/tools/kvcache/sqlite3"
 	"github.com/dpb587/tacitkb/tools/locationmask"
@@ -42,6 +47,16 @@ func main() {
 	if err := mainErr(); err != nil {
 		panic(err)
 	}
+}
+
+// standardImageSizeRequests is the shared set of pre-determined thumbnail sizes used for both
+// full images (exportiiifimage3) and extracted video poster frames (exportvideostream).
+var standardImageSizeRequests = []imagerequest.RawParams{
+	{"full", "!240,240", "0", "default.jpg"},
+	{"full", "!480,480", "0", "default.jpg"},
+	{"full", "!720,720", "0", "default.jpg"},
+	{"full", "!1280,1280", "0", "default.jpg"},
+	{"full", "!1920,1920", "0", "default.jpg"},
 }
 
 func mainErr() error {
@@ -114,9 +129,11 @@ func mainErr() error {
 				&blobmetaexif.Factory{},
 				&blobmetaxmp.Factory{},
 				&blobtypeimage.Factory{},
+				&blobtypevideo.Factory{},
 				&exportiiifimage3.Factory{},
 				&exportgeojson.Factory{},
 				&exportpannellum.Factory{},
+				&exportvideostream.Factory{},
 			},
 			ResourceContentFactory: catalog.ResourceContentFactoryList{
 				cGlobal.FileService,
@@ -127,6 +144,7 @@ func mainErr() error {
 				blobmetaxmpprofilebuilder.NewBuilder(cGlobal.Log),
 				blobprofilebuilder.NewBuilder(cGlobal.Log),
 				blobtypeimageprofilebuilder.NewBuilder(cGlobal.Log),
+				blobtypevideoprofilebuilder.NewBuilder(cGlobal.Log, locationmaskService),
 				exportiiifimage3artifactsbuilder.NewBuilder(cGlobal.Log, []exportiiifimage3artifactsbuilder.BuilderProfile{
 					{
 						Name:            "default",
@@ -137,13 +155,7 @@ func mainErr() error {
 							"-IPTC:CopyrightNotice=Copyright " + time.Now().Format("2006") + " Daniel Berger",
 							"-IPTC:Credit=Daniel Berger",
 						},
-						PreferredSizeRequests: []imagerequest.RawParams{
-							{"full", "!240,240", "0", "default.jpg"},
-							{"full", "!480,480", "0", "default.jpg"},
-							{"full", "!720,720", "0", "default.jpg"},
-							{"full", "!1280,1280", "0", "default.jpg"},
-							{"full", "!1920,1920", "0", "default.jpg"},
-						},
+						PreferredSizeRequests: standardImageSizeRequests,
 					},
 				}),
 				exportgeojsonartifactsbuilder.NewBuilder(cGlobal.Log, locationmaskService, []exportgeojsonartifactsbuilder.BuilderProfile{
@@ -161,6 +173,29 @@ func mainErr() error {
 						OutputDir:       "/workspaces/dpb587.me/tmp/tilde/blob-pannellum/",
 						ScriptPath:      "/workspaces/dpb587.me/private/cms/cms.v2/ext/exportpannellum/artifactsbuilder/generate.py",
 						IdentifierNamer: blobIdentifierNamer,
+					},
+				}),
+				exportvideostreamartifactsbuilder.NewBuilder(cGlobal.Log, []exportvideostreamartifactsbuilder.BuilderProfile{
+					{
+						Name:            "default",
+						BaseURL:         "/~/blob-video-stream/",
+						OutputDir:       "/workspaces/dpb587.me/tmp/tilde/blob-video-stream/",
+						IdentifierNamer: blobIdentifierNamer,
+						MetadataTags: []string{
+							"copyright=Copyright " + time.Now().Format("2006") + " Daniel Berger",
+							"artist=Daniel Berger",
+						},
+						Renditions: []exportvideostreamartifactsbuilder.BuilderProfile_Rendition{
+							{Name: "1080p", Height: 1080, VideoBitrateKbps: 5000, AudioBitrateKbps: 256},
+							{Name: "720p", Height: 720, VideoBitrateKbps: 2800, AudioBitrateKbps: 192},
+							{Name: "480p", Height: 480, VideoBitrateKbps: 1400, AudioBitrateKbps: 192},
+							{Name: "240p", Height: 240, VideoBitrateKbps: 400, AudioBitrateKbps: 128},
+						},
+						SegmentDurationSec:      10,
+						StoryboardIntervalSec:   5,
+						StoryboardThumbnailSize: 160,
+						StoryboardColumns:       10,
+						PosterFrameSizeRequests: standardImageSizeRequests,
 					},
 				}),
 			},
@@ -188,6 +223,7 @@ func mainErr() error {
 	cmd.AddCommand(
 		storyimportcmd.New(cGlobal),
 		storyindexcmd.New(cGlobal),
+		mediaimportcmd.New(cGlobal),
 	)
 
 	return cmd.Execute()

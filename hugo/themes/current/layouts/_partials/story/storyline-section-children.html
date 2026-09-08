@@ -44,36 +44,43 @@
               <h{{ $depth }} class="text-3xl font-light">{{ .Title }}</h{{ $depth }}>
             {{ end }}
           </div>
-          {{ if or .Params.nav.placePark .Params.nav.place }}
+          {{ $topicPark := slice }}
+          {{ $topicPlace := slice }}
+          {{ range $k, $_ := .Params.topics }}
+            {{ with site.GetPage ( printf "/topic/%s" $k ) }}
+              {{ if eq .Type "topic-place-park" }}
+                {{ $topicPark = $topicPark | append . }}
+              {{ else if or ( eq .Type "topic-place-admin1" ) ( eq .Type "topic-place-admin2" ) }}
+                {{ $topicPlace = $topicPlace | append . }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+          {{ if or ( gt ( len $topicPark ) 0 ) ( gt ( len $topicPlace ) 0 ) }}
             <div class="pl-1 mt-0.5 text-sm text-stone-600 space-x-2">
-              {{ if .Params.nav.placePark }}
+              {{ if gt ( len $topicPark ) 0 }}
                 <span class="inline-flex items-center">
                   {{ partial "heroicons/inline" ( dict
                     "icon" "24/outline/map-pin"
                     "attrs" `class="h-4 w-4"`
                   ) }}
                   <span class="ml-0.5">
-                    {{ $idx := 0 }}
-                    {{ range $k, $v := .Params.nav.placePark -}}
-                      {{ if gt $idx 0 }}<span>; </span>{{ end }}
-                      <span>{{ ( $.section.GetPage ( printf "/nav-place-park/%s" $k ) ).Title }}</span>
-                      {{- $idx = add $idx 1 -}}
+                    {{ range $k, $v := $topicPark -}}
+                      {{ if gt $k 0 }}<span>; </span>{{ end }}
+                      <a class="hover:underline" href="{{ $v.RelPermalink }}">{{ $v.Title }}</a>
                     {{ end }}
                   </span>
                 </span>
               {{ end }}
-              {{ if .Params.nav.place }}
+              {{ if gt ( len $topicPlace ) 0 }}
                 <span class="inline-flex items-center">
                   {{ partial "heroicons/inline" ( dict
                     "icon" "24/outline/globe-americas"
                     "attrs" `class="h-4 w-4"`
                   ) }}
                   <span class="ml-0.5">
-                    {{ $idx := 0 }}
-                    {{ range $k, $v := .Params.nav.place -}}
-                      {{ if gt $idx 0 }}<span>; </span>{{ end }}
-                      <span>{{ ( $.section.GetPage ( printf "/nav-place/%s" $k ) ).Title }}</span>
-                      {{- $idx = add $idx 1 -}}
+                    {{ range $k, $v := $topicPlace -}}
+                      {{ if gt $k 0 }}<span>; </span>{{ end }}
+                      <a class="hover:underline" href="{{ $v.RelPermalink }}">{{ $v.Title }}</a>
                     {{ end }}
                   </span>
                 </span>
@@ -215,6 +222,18 @@
   <div class="{{ .layout.standard.maxWidth }} mx-auto">
     <div class="{{ $gridClass }}">
       {{ range .items }}
+        {{ $badge := false }}
+        {{ if .Params.mediaType.panoramaProfile }}
+          {{ $badge = dict
+            "title" "Panorama"
+            "icon" "16/solid/globe-alt"
+          }}
+        {{ else if .Params.mediaType.videoProfile }}
+          {{ $badge = dict
+            "title" "Video"
+            "icon" "16/solid/video-camera"
+          }}
+        {{ end }}
         {{ partial "story/storyline-cell-image" ( dict
           "link" ( dict
             "href"  ( strings.TrimSuffix "/" .RelPermalink )
@@ -225,6 +244,7 @@
             "thumbnails" .Params.mediaType.thumbnails
             "viewportSizes" "(min-width: 56rem) 18.6666rem, 50vw"
           )
+          "badge" $badge
         ) }}
       {{ end }}
     </div>

@@ -19,6 +19,77 @@
 
 @theme {
   --font-serif: 'Roboto Serif', ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  --font-handwriting: 'Segoe Print', 'Bradley Hand', 'Brush Script MT', 'Comic Sans MS', cursive;
+}
+
+/* polaroid stacks (see partials/entry/visual-polaroid-stack.html) */
+
+.polaroid-stack {
+  position: relative;
+  z-index: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.polaroid {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 38%;
+  transform: translate(-50%, -50%) translate(var(--polaroid-x, 0), var(--polaroid-y, 0)) rotate(var(--polaroid-rotate, 0deg));
+  transition:
+    transform 350ms cubic-bezier(0.2, 0.8, 0.3, 1),
+    box-shadow 100ms ease-out;
+  @apply p-[2%] pb-[6%] shadow;
+}
+
+.polaroid-note {
+  @apply p-[6%] pb-[6%] text-stone-800 shadow-sm;
+}
+
+.polaroid-article {
+  aspect-ratio: 8.5 / 11;
+  @apply p-[8%] text-stone-800 shadow-sm;
+}
+
+.polaroid-staple {
+  position: absolute;
+  left: 7%;
+  top: 5%;
+  width: 16px;
+  height: 1px;
+  border: 1px solid rgb(120 113 108 / 0.4);
+  border-radius: 999px;
+  background: rgb(214 211 209 / 0.8);
+  box-shadow: 0 1px 1px rgb(28 25 23 / 0.25);
+  transform: rotate(-6deg);
+}
+
+.polaroid-scene {
+  @apply relative z-0;
+}
+
+.polaroid-scene:hover,
+.polaroid-scene:focus-within {
+  @apply z-10;
+}
+
+.polaroid-scene:hover .polaroid,
+.polaroid-scene:focus-within .polaroid {
+  transform: translate(-50%, -50%) translate(var(--polaroid-spread-x, 0), var(--polaroid-spread-y, 0))
+    rotate(var(--polaroid-spread-rotate, 0deg));
+  @apply shadow-md;
+}
+
+.polaroid-scene:hover .polaroid:hover,
+.polaroid-scene:focus-within .polaroid:hover {
+  z-index: 20 !important;
+  @apply shadow-xl;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .polaroid {
+    transition: none;
+  }
 }
 
 @utility writing-htb {

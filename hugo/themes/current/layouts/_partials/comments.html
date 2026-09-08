@@ -1,5 +1,5 @@
 {{ if .Site.Params.commentsRemarkUrl }}
-  {{ if or ( and ( eq .Type "post" ) ( .Params.comments | default true ) ) .Params.comments }}
+  {{ if or ( and ( or ( eq .Type "article" ) ( eq .Type "post" ) ) ( .Params.comments | default true ) ) .Params.comments }}
     <section id="comments" class="max-w-4xl mx-auto pt-8 space-y-4">
       <header class="flex items-center">
         <div class="h-px w-8 bg-neutral-400"></div>
