@@ -1,14 +1,13 @@
 ---
 description: Identifying how classes/interfaces changed between versions.
 params:
-    nav:
-        tag:
-            code: true
-            diff: true
-            language: true
-            php: true
-            xslt: true
-publishDate: "2013-03-07"
+  topics:
+    code: {}
+    diff: {}
+    language: {}
+    php: {}
+    xslt: {}
+publishDate: '2013-03-07'
 title: Comparing PHP Application Definitions
 ---
 

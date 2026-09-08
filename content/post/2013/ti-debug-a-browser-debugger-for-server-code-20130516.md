@@ -1,15 +1,14 @@
 ---
 description: Making it easier to debug languages like PHP and Python with only a browser.
 params:
-    nav:
-        tag:
-            debugger: true
-            node: true
-            php: true
-            xdebug: true
-            webkit: true
-publishDate: "2013-05-16"
-title: "ti-debug: For Debugging Server Code in the Browser"
+  topics:
+    debugger: {}
+    node: {}
+    php: {}
+    webkit: {}
+    xdebug: {}
+publishDate: '2013-05-16'
+title: 'ti-debug: For Debugging Server Code in the Browser'
 ---
 
 I find that I am rarely using full IDEs to write code (e.g. [Eclipse][1], [Komodo][6], [NetBeans][3], [Zend Studio][2]).

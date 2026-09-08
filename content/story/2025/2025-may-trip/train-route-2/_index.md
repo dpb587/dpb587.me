@@ -1,12 +1,11 @@
 ---
-date: "2025-05-10T12:37:39-05:00"
+date: '2025-05-10T12:37:39-05:00'
 params:
-    nav:
-        place:
-            us/il: false
-    timeRange:
-        from: "2025-05-10T12:37:39-05:00"
-        thru: "2025-05-10T17:50:07-05:00"
+  timeRange:
+    from: '2025-05-10T12:37:39-05:00'
+    thru: '2025-05-10T17:50:07-05:00'
+  topics:
+    places/us/il: {}
 title: Train Route
 ---
 

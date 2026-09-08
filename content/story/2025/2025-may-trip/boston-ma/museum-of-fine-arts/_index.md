@@ -1,12 +1,11 @@
 ---
-date: "2025-05-19T12:52:47-04:00"
+date: '2025-05-19T12:52:47-04:00'
 params:
-    nav:
-        place:
-            us/ma: false
-    timeRange:
-        from: "2025-05-19T12:52:47-04:00"
-        thru: "2025-05-19T15:57:16-04:00"
+  timeRange:
+    from: '2025-05-19T12:52:47-04:00'
+    thru: '2025-05-19T15:57:16-04:00'
+  topics:
+    places/us/ma: {}
 title: Museum of Fine Arts
 ---
 

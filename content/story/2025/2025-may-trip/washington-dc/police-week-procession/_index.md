@@ -1,12 +1,11 @@
 ---
-date: "2025-05-15T10:59:50-04:00"
+date: '2025-05-15T10:59:50-04:00'
 params:
-    nav:
-        place:
-            us/dc: false
-    timeRange:
-        from: "2025-05-15T10:59:50-04:00"
-        thru: "2025-05-15T11:17:30-04:00"
+  timeRange:
+    from: '2025-05-15T10:59:50-04:00'
+    thru: '2025-05-15T11:17:30-04:00'
+  topics:
+    places/us/dc: {}
 title: Police Week Procession
 ---
 

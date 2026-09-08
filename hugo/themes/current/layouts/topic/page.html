@@ -1,0 +1,62 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+	<dpb587-toc button-class="md:px-1 py-0.5 md:py-0" for="article"></dpb587-toc>
+	{{ partial "sidebar/nav-code" . }}
+{{ end }}
+
+{{ define "main" }}
+	{{ $navSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/topics/" .RelPermalink ) ) }}
+
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8 space-y-8 ">
+				{{ partial "prose/render" ( dict 
+					"content" .Content
+					"classColumn" "max-w-4xl mx-auto space-y-8"
+					"classColumnWide" "max-w-6xl mx-auto space-y-8"
+					"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+					"classGutter" "px-4"
+				) }}
+				{{ if gt ( len $navSlug ) 0 }}
+					{{ partial "entry/list-groups" ( dict
+						"Page" .
+						"Groups" ( ( where ( where site.Pages "Type" "in" ( slice "article" "post" "story" ) ) ( printf "Params.topics.%s" $navSlug ) "ne" nil ).GroupByDate "2006" )
+					) }}
+				{{ end }}
+				{{ $nested := ( collections.Union
+					( collections.Union
+						.Sections
+						( where .Pages "Type" "like" "^topic($|\\-)" )
+					)
+					( where site.AllPages ( printf "Params.topics.%s.rel" $navSlug ) "eq" "parent" )
+				).GroupBy "Type" }}
+				{{ if $nested }}
+					{{ $topicNames := dict
+						"topic-place-admin1" "Countries"
+						"topic-place-admin2" "Areas"
+						"topic-place-park" "Parks"
+						"topic" "Topics"
+					}}
+					<div class="max-w-4xl mx-auto">
+						<h2 class="text-2xl font-bold text-stone-900 px-4">Related Topics</h2>
+						<dl class="grid grid-cols-1 md:grid-cols-4 gap-4">
+							{{ range $nested }}
+								<dt class="font-medium">{{ index $topicNames .Key }}</dt>
+								<div class="md:col-span-3">
+									{{ range $k, $_ := .Pages -}}
+										<dd><a class="underline hover:text-stone-900" href="{{ strings.TrimSuffix `/` .RelPermalink }}">{{ .Title }}</a></dd>
+									{{- end }}
+								</div>
+							{{ end }}
+						</dl>
+					</div>
+				{{ end }}
+			</div>
+		</main>
+	</div>
+{{ end }}
+
+{{ define "alternate-links" }}
+	<link rel="alternate" type="text/markdown" href="/~/export/text-content?uri={{ strings.TrimSuffix `/` .RelPermalink | urlquery }}&format=markdown" />
+{{ end }}

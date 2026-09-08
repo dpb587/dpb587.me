@@ -1,13 +1,12 @@
 ---
-title: Add schema.org JSON-LD to Hugo Templates
 description: Implementing and testing structured data for this web site.
-publishDate: 2025-10-24
 params:
-  nav:
-    tag:
-      schema.org: true
-      structured data: true
-      hugo: true
+  topics:
+    hugo: {}
+    schema.org: {}
+    structured data: {}
+publishDate: 2025-10-24T00:00:00Z
+title: Add schema.org JSON-LD to Hugo Templates
 ---
 
 I wanted to restore "structured data" to this site using some of the basic [schema.org types](https://schema.org/) that [Google Search supports](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) for their search results. The process was fairly straight forward...
@@ -175,7 +174,7 @@ While prototyping, I validated my changes using Google's [Rich Results Test](htt
 
 {{< image alt="Rich Results Test - Home" src="./media/rich-results-test-home.png" >}}
 
-To bulk test all my new structured data, I tried to "dog food" the [Structured Data API](https://www.namedgraph.com/toolkit/structured-data) and hacked together a script to iterate all the JSON-LD references after `hugo build`...
+To bulk test all my new structured data, I tried to "dog food" the [Schema Markup API](https://schemamarkup.app/api) and hacked together a script to iterate all the JSON-LD references after `hugo build`...
 
 {{< snippet dir="appendix/2025-10-24-add-schema-org-json-ld-to-hugo-templates" file="audit-structured-data.sh" lines="33-35" lang="bash" >}}
 

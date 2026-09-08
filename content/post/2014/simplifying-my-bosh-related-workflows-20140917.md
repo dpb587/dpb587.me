@@ -1,19 +1,18 @@
 ---
 description: Discussing some commands and wrappers I've been adding on top of BOSH.
 params:
-    nav:
-        tag:
-            aws: true
-            bosh: true
-            cloudformation: true
-            cloudfoundry: true
-            cloque: true
-            docker: true
-            ec2: true
-            packaging: true
-            snapshots: true
-            twig: true
-publishDate: "2014-09-17"
+  topics:
+    aws: {}
+    bosh: {}
+    cloque: {}
+    cloudformation: {}
+    cloudfoundry: {}
+    docker: {}
+    ec2: {}
+    packaging: {}
+    snapshots: {}
+    twig: {}
+publishDate: '2014-09-17'
 title: Simplifying My BOSH-related Workflows
 ---
 

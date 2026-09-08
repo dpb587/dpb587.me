@@ -1,11 +1,10 @@
 ---
 description: Experimenting with dynamic HTML headers for PDFs.
 params:
-    nav:
-        tag:
-            headers: true
-            wkhtmltopdf: true
-publishDate: "2013-03-15"
+  topics:
+    headers: {}
+    wkhtmltopdf: {}
+publishDate: '2013-03-15'
 title: Using HTML Headers with wkhtmltopdf
 ---
 

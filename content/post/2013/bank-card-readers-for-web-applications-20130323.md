@@ -1,13 +1,12 @@
 ---
-params:
-    nav:
-        tag:
-            - bank-card: true
-            - forms: true
-            - javascript: true
-            - reader: true
 description: Scanning credit cards into website forms.
-publishDate: "2013-03-23"
+params:
+  topics:
+    bank-card: {}
+    forms: {}
+    javascript: {}
+    reader: {}
+publishDate: '2013-03-23'
 title: Bank Card Readers for Web Applications
 ---
 

@@ -1,0 +1,25 @@
+---
+_/SoftwareSourceCode: true
+description: CLI tools and library for using the XML-based specification for assets.
+identifier:
+- propertyID: github/repository
+  value: https://github.com/dpb587/metalink
+params:
+  projectType:
+    group: Software Library (Go)
+    languages:
+    - Go
+    relatedContent:
+    - /post/2017/documenting-blobs-with-metalink-files-20171009
+    - /post/2018/metalink-repositories-background-and-motivation-20181228
+    - /post/2018/metalink-repositories-mirroring-third-party-dependencies-20181230
+    - /post/2019/metalink-repositories-separation-of-concerns-20190123
+    status: inactive
+  topics:
+    bosh: {}
+    golang: {}
+    xml: {}
+title: Metalink
+---
+
+I created this after researching ways to record checksums and mirrors of files and finding an RFC about it. I used this in several private projects, and it also ended up being adopted by the [Cloud Foundry BOSH website](https://bosh.io/) for its `git`-backed database of [releases](https://github.com/bosh-io/releases-index) and [stemcells](https://github.com/bosh-io/stemcells-core-index). I also ended up creating a Concourse resource type for it.

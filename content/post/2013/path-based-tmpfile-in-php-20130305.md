@@ -1,10 +1,9 @@
 ---
 description: When paths are more useful than resources.
 params:
-    nav:
-        tag:
-            php: true
-publishDate: "2013-03-05"
+  topics:
+    php: {}
+publishDate: '2013-03-05'
 title: Path-based tmpfile in PHP
 ---
 

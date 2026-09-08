@@ -1,13 +1,12 @@
 ---
 description: A summary of the customer-facing changes I worked on for the site.
 params:
-    nav:
-        tag:
-            elasticsearch: true
-            migration: true
-            redesign: true
-            theloopyewe: true
-publishDate: "2013-04-27"
+  topics:
+    elasticsearch: {}
+    migration: {}
+    redesign: {}
+    theloopyewe: {}
+publishDate: '2013-04-27'
 title: New Website for The Loopy Ewe
 ---
 

@@ -1,12 +1,11 @@
 ---
-date: "2025-05-22T12:29:57-04:00"
+date: '2025-05-22T12:29:57-04:00'
 params:
-    nav:
-        place:
-            us/ma: false
-    timeRange:
-        from: "2025-05-22T12:29:57-04:00"
-        thru: "2025-05-22T13:48:59-04:00"
+  timeRange:
+    from: '2025-05-22T12:29:57-04:00'
+    thru: '2025-05-22T13:48:59-04:00'
+  topics:
+    places/us/ma: {}
 title: Isabella Stewart Gardner Museum
 ---
 

@@ -1,17 +1,15 @@
 ---
-date: "2019-12-08T11:42:58-08:00"
+date: '2019-12-08T11:42:58-08:00'
 params:
-    hero:
-        ref: media-rg9qb2yh7gnk
-    nav:
-        collection:
-            travels: true
-        place:
-            ar: false
-            br: false
-    timeRange:
-        from: "2019-12-08T11:42:58-08:00"
-        thru: 2019-12-21T22:12:12
+  hero:
+    ref: media-rg9qb2yh7gnk
+  timeRange:
+    from: '2019-12-08T11:42:58-08:00'
+    thru: 2019-12-21T22:12:12
+  topics:
+    places/ar: {}
+    places/br: {}
+    travels: {}
 title: South America
 ---
 

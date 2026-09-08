@@ -1,5 +1,5 @@
 ---
-date: 2015-08-31
+date: 2015-08-31T00:00:00Z
 params:
   occupationType:
     employmentType: Contract
@@ -7,8 +7,8 @@ params:
       logo: /assets/images/org-cityindex~256.jpg
       name: City Index (Labs, R&D)
   timeRange:
-    from: 2013-04-27
-    thru: 2015-08-31
+    from: 2013-04-27T00:00:00Z
+    thru: 2015-08-31T00:00:00Z
 title: City Index (Labs, R&D)
 ---
 

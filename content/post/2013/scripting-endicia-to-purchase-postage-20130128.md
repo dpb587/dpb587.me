@@ -1,12 +1,11 @@
 ---
 description: Automating user interactions with AppleScript.
 params:
-    nav:
-        tag:
-            applescript: true
-            endicia: true
-            loopy: true
-publishDate: "2013-01-28"
+  topics:
+    applescript: {}
+    endicia: {}
+    loopy: {}
+publishDate: '2013-01-28'
 title: Scripting Endicia to Purchase Postage
 ---
 

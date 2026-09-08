@@ -59,24 +59,6 @@
 					</div>
 				</div>
 			{{ end }}
-
-			<!-- <footer class="relative z-30 bg-stone-800 ml-12 shadow-xl">
-				<div class="h-12 pr-3 flex items-center justify-between text-lg font-light text-stone-400">
-					<div class="-ml-0.5		inline-flex items-center">
-						<span>Copyright {new Date().getUTCFullYear()}</span>
-					</div>
-					<div>
-						<a
-							class="inline-flex items-center hover:text-white hover:underline"
-							href="https://github.com/dpb587/dpb587.me"
-							target="_blank"
-						>
-							<span>Content Source</span>
-							<Icon class="ml-1 h-4 w-4" name="heroicons/20/solid/code-bracket-square" />
-						</a>
-					</div>
-				</div>
-			</footer> -->
 			<footer class="relative z-20 bg-stone-800 md:ml-12 md:pr-12 shadow-xl">
 				<div class="h-10 md:h-12 flex items-center justify-left text-xs font-light text-stone-400">
 					<div>
@@ -85,10 +67,12 @@
 						<a class="hover:text-white hover:underline" href="https://dpb587.me/">dpb587.me</a> is a <a class="hover:text-white hover:underline" href="/projects/website">personal</a>, <a class="hover:text-white hover:underline" href="{{ site.Param `repository` }}{{ with .File }}/blob/main/content/{{ .Path }}{{ end }}" target="_blank" rel="nofollow">open source</a> site.
 					</div>
 				</div>
+				{{ if hugo.IsDevelopment }}
+					<div class="text-xs font-mono text-stone-400 pb-2">
+						[render] Type=<strong>{{ .Type }}</strong> Kind=<strong>{{ .Kind }}</strong> Layout=<strong>{{ .Layout }}</strong> Section=<strong>{{ .Section }}</strong> File={{ with .File }}<strong>{{ .Path }}</strong>{{ end }}
+					</div>
+				{{ end }}
 			</footer>
-			<!-- <aside class="relative z-20 bg-black/40 ml-12 backdrop-blur-xl">
-				<slot name="content-source" />
-			</aside> -->
 		{{ end }}
 	</body>
 </html>

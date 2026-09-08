@@ -1,14 +1,13 @@
 ---
 description: A strategy for upgrading and testing dependencies for self-sustaining packages.
 params:
-    nav:
-        tag:
-            bosh: true
-            package manager: true
-            updates: true
-            upgrades: true
-            versions: true
-publishDate: "2016-10-21"
+  topics:
+    bosh: {}
+    package manager: {}
+    updates: {}
+    upgrades: {}
+    versions: {}
+publishDate: '2016-10-21'
 title: Self-Upgrading Packages in BOSH Releases, Part 2
 ---
 

@@ -1,21 +1,20 @@
 ---
 description: Using queues and PHP to automate third-party applications running on staff workstations.
 params:
-    nav:
-        tag:
-            applescript: true
-            automation: true
-            aws-sqs: true
-            box: true
-            dymo: true
-            endicia: true
-            hazel: true
-            launchd: true
-            osx: true
-            phar: true
-            php: true
-            usps: true
-publishDate: "2015-02-21"
+  topics:
+    applescript: {}
+    automation: {}
+    aws-sqs: {}
+    box: {}
+    dymo: {}
+    endicia: {}
+    hazel: {}
+    launchd: {}
+    osx: {}
+    phar: {}
+    php: {}
+    usps: {}
+publishDate: '2015-02-21'
 title: Sending Work from a Web Application to Desktop Applications
 ---
 

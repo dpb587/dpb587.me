@@ -1,5 +1,5 @@
 ---
-date: 2022-01-21
+date: 2022-01-21T00:00:00Z
 params:
   occupationType:
     employmentType: Full-time
@@ -8,8 +8,8 @@ params:
       name: VMware
       url: https://www.vmware.com/
   timeRange:
-    from: 2019-12-30
-    thru: 2022-01-21
+    from: 2019-12-30T00:00:00Z
+    thru: 2022-01-21T00:00:00Z
 title: VMware
 ---
 

@@ -1,14 +1,13 @@
 ---
 description: Open sourcing a library to easily traverse HTML for microdata.
 params:
-    nav:
-        tag:
-            microdata: true
-            opensource: true
-            php: true
-            schema: true
-            xpath: true
-publishDate: "2015-05-01"
+  topics:
+    microdata: {}
+    opensource: {}
+    php: {}
+    schema: {}
+    xpath: {}
+publishDate: '2015-05-01'
 title: Parsing Microdata in PHP
 ---
 

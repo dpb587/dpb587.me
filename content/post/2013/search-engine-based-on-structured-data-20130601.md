@@ -1,15 +1,14 @@
 ---
 description: Combining elasticsearch and "structured data" to create a self-hosted search engine.
 params:
-    nav:
-        tag:
-            elasticsearch: true
-            gearmand: true
-            schema.org: true
-            search: true
-            sitemap: true
-            structured-data: true
-publishDate: "2013-06-01"
+  topics:
+    elasticsearch: {}
+    gearmand: {}
+    schema.org: {}
+    search: {}
+    sitemap: {}
+    structured-data: {}
+publishDate: '2013-06-01'
 title: The Basics of a Custom Search Engine
 ---
 

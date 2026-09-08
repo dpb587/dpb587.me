@@ -9,7 +9,7 @@ frontmatter:
   # used as an explicit property; no fallback to date
   publishDate:
   - publishdate
-languageCode: 'en-us'
+locale: 'en-us'
 markup:
   goldmark:
     extensions:
@@ -31,29 +31,42 @@ params:
   commentsRemarkUrl: "https://dpb587.me/comments.v2" # http://localhost:1315
 permalinks:
   page:
-    certification: '/about/certification/:sections[1:]/:slug'
-    media: '/entries/:sections[2:]/:contentbasename'
-    nav-collection: '/browse/collections/:sections[1:]/:contentbasename'
-    nav-place: '/browse/places/:sections[1:]/:contentbasename'
-    nav-place-admin1: '/browse/places/:sections[1:]'
-    nav-place-admin2: '/browse/places/:sections[1:]'
-    nav-place-park: '/browse/places/:sections[1:]/:contentbasename'
-    nav-tag: '/browse/tags/:sections[1:]/:contentbasename'
-    nav-type: '/browse/types/:contentbasename'
-    page: '/:sections[1:]/:contentbasename'
+    # article is used for long-form writing about a particular topic, finding, or opinion. It typically refers to ideas
+    # relevant at a particular moment in time, and is likely to become outdated in the future.
+    article: '/entries/:sections[2:]/:contentbasename'
+    
+    # post is used for ad hoc notes, thoughts, or updates. Generally not as useful on its own and typically assumes
+    # additional context. May be the basis of other, more well-formed content types at a later time.
     post: '/entries/:sections[2:]/:contentbasename'
+
+    # media describes an audio, image, and video files
+    media: '/entries/:sections[2:]/:contentbasename'
+
+    # route describes an gps-related route files
+    route: '/entries/:sections[2:]/:contentbasename'
+
+    # story is used as a logical content grouping for narrating a particular event. Might be better as a generic "nav"
+    # type in the future.
+    story: '/entries/:sections[2:]/:contentbasename'
+
+    # wiki is used as a reference point for specific topics which are updated over time.
+    wiki: '/wiki/:contentbasename'
+
+    # taxonomies and organizational content
+    topic: '/topics/:sections[1:]/:contentbasename'
+    
+    # generic content
+    certification: '/about/certification/:sections[1:]/:slug'
+    page: '/:sections[1:]/:contentbasename'
     project: '/projects/:sections[1:]/:contentbasename'
     occupation: '/about/occupation/:sections[1:]/:slug'
-    route: '/entries/:sections[2:]/:contentbasename'
-    story: '/entries/:sections[2:]/:contentbasename'
   section:
-    certification: '/about/certification/:sections[1:]/'
-    nav-collection: '/browse/collections/:sections[1:]'
-    nav-place: '/browse/places/:sections[1:]'
-    nav-tag: '/browse/tags/:sections[1:]'
-    occupation: '/about/occupation/:sections[1:]/'
+    certification: '/about/certification/:sections[1:]'
+    topic: '/topics/:sections[1:]'
+    occupation: '/about/occupation/:sections[1:]'
     project: '/projects/:sections[1:]'
     story: '/entries/:sections[2:]'
+    post: '/entries/:sections[2:]'
 # had trouble making builtin work with some additional metadata, hierarchy behaviors, and inter-taxonomy refs i wanted
 # using nav-* types with some taxonomy-ish behaviors
 taxonomies: {}

@@ -1,16 +1,14 @@
 ---
 date: 2023-04-23T10:30:49
 params:
-    hero:
-        ref: media-qpf05gh1bftg
-    nav:
-        collection:
-            trails: true
-        place:
-            us/nm: false
-    timeRange:
-        from: 2023-04-23T10:30:49
-        thru: "2023-04-24T00:00:52Z"
+  hero:
+    ref: media-qpf05gh1bftg
+  timeRange:
+    from: 2023-04-23T10:30:49
+    thru: '2023-04-24T00:00:52Z'
+  topics:
+    places/us/nm: {}
+    trails: {}
 title: La Luz Trail
 ---
 

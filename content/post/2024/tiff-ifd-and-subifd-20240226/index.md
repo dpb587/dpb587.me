@@ -1,7 +1,7 @@
 ---
 description: A technical investigation about some internals of TIFF files.
-publishDate: "2024-02-26"
-title: "TIFF: IFD and SubIFD"
+publishDate: '2024-02-26'
+title: 'TIFF: IFD and SubIFD'
 ---
 
 TIFF is a popular file format for professional images. One of the key features is being able to include multiple images within a single file. That does make it a little more complicated to write libraries for image processing, though. While working on some custom image services, I did a deep-dive into the TIFF specifications and practical usage of the file format. After quite some research and exploration, I've tried to summarize my learnings about TIFF and its multi-image features in this post.

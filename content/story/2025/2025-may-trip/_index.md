@@ -1,22 +1,20 @@
 ---
-date: "2025-05-06T10:59:07-06:00"
+date: '2025-05-06T10:59:07-06:00'
 params:
-    hero:
-        ref: washington-dc/media-n37089rj3k1b
-    nav:
-        collection:
-            travels: true
-        place:
-            us/dc: false
-            us/ia: false
-            us/il: false
-            us/ma: false
-            us/me: false
-            us/mo: false
-            us/nm: false
-    timeRange:
-        from: "2025-05-06T10:59:07-06:00"
-        thru: "2025-06-06T11:12:18-05:00"
+  hero:
+    ref: washington-dc/media-n37089rj3k1b
+  timeRange:
+    from: '2025-05-06T10:59:07-06:00'
+    thru: '2025-06-06T11:12:18-05:00'
+  topics:
+    places/us/dc: {}
+    places/us/ia: {}
+    places/us/il: {}
+    places/us/ma: {}
+    places/us/me: {}
+    places/us/mo: {}
+    places/us/nm: {}
+    travels: {}
 title: May Trip
 ---
 

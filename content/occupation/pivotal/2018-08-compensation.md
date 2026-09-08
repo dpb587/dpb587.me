@@ -1,14 +1,9 @@
 ---
-date: 2018-08-01
+date: 2018-08-01T00:00:00Z
 dateLiteral: 2018-08
 params:
   occupationEventType:
-    properties:
-    # - name: Annual Salary
-    #   value:
-    #     _/MonetaryAmount: true
-    #     currency: USD
-    #     value: 156000
+    properties: null
 title: Compensation Changed
 type: occupation-event
 ---

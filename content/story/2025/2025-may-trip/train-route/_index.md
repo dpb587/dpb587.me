@@ -1,17 +1,16 @@
 ---
-date: "2025-05-06T10:59:07-06:00"
+date: '2025-05-06T10:59:07-06:00'
 params:
-    nav:
-        place:
-            us/co: false
-            us/ia: false
-            us/il: false
-            us/ks: false
-            us/mo: false
-            us/nm: false
-    timeRange:
-        from: "2025-05-06T10:59:07-06:00"
-        thru: "2025-05-07T14:00:37-05:00"
+  timeRange:
+    from: '2025-05-06T10:59:07-06:00'
+    thru: '2025-05-07T14:00:37-05:00'
+  topics:
+    places/us/co: {}
+    places/us/ia: {}
+    places/us/il: {}
+    places/us/ks: {}
+    places/us/mo: {}
+    places/us/nm: {}
 title: Train Route
 ---
 

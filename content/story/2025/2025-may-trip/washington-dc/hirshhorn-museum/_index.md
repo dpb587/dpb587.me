@@ -1,12 +1,11 @@
 ---
-date: "2025-05-14T16:20:53-04:00"
+date: '2025-05-14T16:20:53-04:00'
 params:
-    nav:
-        place:
-            us/dc: false
-    timeRange:
-        from: "2025-05-14T16:20:53-04:00"
-        thru: "2025-05-14T17:26:51-04:00"
+  timeRange:
+    from: '2025-05-14T16:20:53-04:00'
+    thru: '2025-05-14T17:26:51-04:00'
+  topics:
+    places/us/dc: {}
 title: Hirshhorn Museum
 ---
 

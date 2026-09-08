@@ -1,13 +1,12 @@
 ---
 description: A non-technical post with pictures of the changing Aspens in Colorado.
 params:
-    nav:
-        tag:
-            aspen: true
-            autumn: true
-            colorado: true
-            photo-gallery: true
-publishDate: "2014-09-28"
+  topics:
+    aspen: {}
+    autumn: {}
+    colorado: {}
+    photo-gallery: {}
+publishDate: '2014-09-28'
 title: Colorado Aspens
 ---
 

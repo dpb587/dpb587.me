@@ -1,15 +1,14 @@
 ---
 description: Some mappings, strategies, and queries for advanced color searching with elasticsearch.
 params:
-    nav:
-        tag:
-            color: true
-            ecommerce: true
-            elasticsearch: true
-            hsv: true
-            search: true
-            weighted: true
-publishDate: "2014-04-24"
+  topics:
+    color: {}
+    ecommerce: {}
+    elasticsearch: {}
+    hsv: {}
+    search: {}
+    weighted: {}
+publishDate: '2014-04-24'
 title: Search by Color with Elasticsearch
 ---
 

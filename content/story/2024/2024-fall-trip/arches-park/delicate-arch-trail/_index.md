@@ -1,16 +1,14 @@
 ---
-date: "2024-09-15T12:05:07Z"
+date: '2024-09-15T12:05:07Z'
 params:
-    hero:
-        ref: media-x0kkb9zfpxqp
-    nav:
-        collection:
-            trails: true
-        place:
-            us/nps-arch: true
-            us/ut: false
-    timeRange:
-        from: "2024-09-15T12:05:07Z"
-        thru: "2024-09-15T14:27:28Z"
+  hero:
+    ref: media-x0kkb9zfpxqp
+  timeRange:
+    from: '2024-09-15T12:05:07Z'
+    thru: '2024-09-15T14:27:28Z'
+  topics:
+    places/us/nps-arch: {}
+    places/us/ut: {}
+    trails: {}
 title: Delicate Arch Trail
 ---

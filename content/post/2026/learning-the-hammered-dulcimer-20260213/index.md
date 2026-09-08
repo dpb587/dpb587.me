@@ -1,12 +1,11 @@
 ---
-title: Learning the Hammered Dulcimer
 description: Some notes after starting a new instrument.
 params:
-  nav:
-    tag:
-      hammered-dulcimer: true
-      music: true
-publishDate: 2026-02-13
+  topics:
+    hammered-dulcimer: {}
+    music: {}
+publishDate: 2026-02-13T00:00:00Z
+title: Learning the Hammered Dulcimer
 ---
 
 A few months ago I started learning a new instrument: the [hammered dulcimer](https://en.wikipedia.org/wiki/Hammered_dulcimer). It is a trapezoidal, wooden sound board with strings across the top that are played with small, handheld hammers. I have been taking some group and private lessons locally, but this month I joined a virtual event with some extra classes for it, too. Figured it was time to summarize my evolving understanding and some learnings.

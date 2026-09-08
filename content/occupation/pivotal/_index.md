@@ -1,5 +1,5 @@
 ---
-date: 2019-12-30
+date: 2019-12-30T00:00:00Z
 params:
   occupationType:
     employmentType: Full-time
@@ -8,8 +8,8 @@ params:
       name: Pivotal Software
       url: https://pivotal.io/
   timeRange:
-    from: 2015-11-30
-    thru: 2019-12-30
+    from: 2015-11-30T00:00:00Z
+    thru: 2019-12-30T00:00:00Z
 title: Pivotal Software
 ---
 

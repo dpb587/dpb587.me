@@ -1,16 +1,9 @@
 ---
-date: 2017-08-01
+date: 2017-08-01T00:00:00Z
 dateLiteral: 2017-08
 params:
   occupationEventType:
-    properties:
-    # - name: Annual Salary
-    #   value:
-    #     _/MonetaryAmount: true
-    #     currency: USD
-    #     value: 150000
-    # - name: Equity Grant
-    #   value: "Stock Options: 15,000 shares; Vesting 25%:1Y, 2%:1M+"
+    properties: null
 title: Compensation Changed
 type: occupation-event
 ---

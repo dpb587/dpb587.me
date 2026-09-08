@@ -1,18 +1,17 @@
 ---
 description: Unifying how pipelines monitor third-party assets and versions.
 params:
-    nav:
-        tag:
-            bosh: true
-            ci: true
-            concourse: true
-            concourse-resource: true
-            dynamic-metalink: true
-            metalink: true
-            updates: true
-            upgrades: true
-            versions: true
-publishDate: "2018-12-02"
+  topics:
+    bosh: {}
+    ci: {}
+    concourse: {}
+    concourse-resource: {}
+    dynamic-metalink: {}
+    metalink: {}
+    updates: {}
+    upgrades: {}
+    versions: {}
+publishDate: '2018-12-02'
 title: Watching Upstream Binaries with Concourse
 ---
 

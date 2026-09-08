@@ -1,12 +1,11 @@
 ---
-date: "2025-05-15T16:27:52-04:00"
+date: '2025-05-15T16:27:52-04:00'
 params:
-    nav:
-        place:
-            us/dc: false
-    timeRange:
-        from: "2025-05-15T16:27:52-04:00"
-        thru: "2025-05-15T17:34:42-04:00"
+  timeRange:
+    from: '2025-05-15T16:27:52-04:00'
+    thru: '2025-05-15T17:34:42-04:00'
+  topics:
+    places/us/dc: {}
 title: Library of Congress
 ---
 

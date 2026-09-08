@@ -1,7 +1,7 @@
 ---
 description: Using a transparent proxy to decrypt and debug network traffic.
+publishDate: '2025-10-01'
 title: Intercept iOS Network Traffic with mitmproxy
-publishDate: "2025-10-01"
 ---
 
 I wanted to investigate an API used by one of my iPhone's apps. I used the following configuration to intercept the encrypted server connections and investigate its data communications.

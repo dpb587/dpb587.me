@@ -1,13 +1,12 @@
 ---
 description: Making it easier to search code from the command line.
 params:
-    nav:
-        tag:
-            opengrok: true
-            php: true
-            symfony: true
-            xpath: true
-publishDate: "2013-01-21"
+  topics:
+    opengrok: {}
+    php: {}
+    symfony: {}
+    xpath: {}
+publishDate: '2013-01-21'
 title: OpenGrok CLI
 ---
 

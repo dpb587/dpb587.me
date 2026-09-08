@@ -1,11 +1,10 @@
 ---
 description: Reusing facts from build scripts.
 params:
-    nav:
-        tag:
-            ant: true
-            facter: true
-publishDate: "2013-02-19"
+  topics:
+    ant: {}
+    facter: {}
+publishDate: '2013-02-19'
 title: Using Facter in Ant Scripts
 ---
 

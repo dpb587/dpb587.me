@@ -1,14 +1,16 @@
 {{ define "nav" }}
 	{{ partial "sidebar/nav-parent" . }}
+	<dpb587-toc button-class="md:px-1 py-0.5 md:py-0" for="article"></dpb587-toc>
 	{{ partial "sidebar/nav-code" . }}
 {{ end }}
 
 {{ define "main" }}
-	{{ $prose := .Params.layout }}
+	{{ $navSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/topics/" .RelPermalink ) ) }}
+
 	<div class="relative z-0 w-full h-full">
 		<main>
 			{{ partial "entry/header" . }}
-			<div class="bg-stone-50 pb-8 space-y-4">
+			<div id="article" class="bg-stone-50 pb-8 space-y-8 ">
 				{{ partial "prose/render" ( dict 
 					"content" .Content
 					"classColumn" "max-w-4xl mx-auto space-y-8"
@@ -16,16 +18,80 @@
 					"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
 					"classGutter" "px-4"
 				) }}
-				{{ if .Sections }}
-					{{ partial "entry/list" ( dict
-						"Pages" .Sections
-					) }}
+				{{ if eq .Type "topic" }}
+					{{ if .Params.topicType.features }}
+						{{ range $feature := .Params.topicType.features }}
+							{{ if eq $feature.kind "github-repository" }}
+								<section class="max-w-4xl mx-auto px-2 font-serif">
+									<header class="flex items-center gap-2">
+										<div class="text-xs uppercase">Code Repository</div>
+										<div class="grow relative h-px bg-neutral-300"></div>
+									</header>
+									<div class="px-2 pt-2">
+										<a href="{{ $feature.params.url }}" class="underline hover:text-sky-800" target="_blank">{{ $feature.params.url }}</a>
+									</div>
+								</section>
+							{{ else if eq $feature.kind "website" }}
+								<section class="max-w-4xl mx-auto px-2 font-serif">
+									<header class="flex items-center gap-2">
+										<div class="text-xs uppercase">Website</div>
+										<div class="grow relative h-px bg-neutral-300"></div>
+									</header>
+									<div class="px-2 pt-2">
+										<a href="{{ $feature.params.url }}" class="underline hover:text-sky-800" target="_blank">{{ $feature.params.url }}</a>
+									</div>
+								</section>
+							{{ else if eq $feature.kind "journal" }}
+								<section class="max-w-4xl mx-auto px-2 font-serif">
+									<header class="flex items-center gap-2">
+										<div class="text-xs uppercase">Journal</div>
+										<div class="grow relative h-px bg-neutral-300"></div>
+									</header>
+									<div class="px-2 pt-2">
+										<a href="{{ $feature.params.url }}" class="underline hover:text-sky-800" target="_blank">{{ $feature.params.url }}</a>
+									</div>
+								</section>
+							{{ else }}
+								{{ errorf "unknown feature kind: %s" $feature.kind }}
+							{{ end }}
+						{{ end }}
+					{{ end }}
 				{{ end }}
-				{{ if .RegularPages }}
+				{{ if gt ( len $navSlug ) 0 }}
 					{{ partial "entry/list-groups" ( dict
 						"Page" .
-						"Groups" ( .RegularPages.GroupByDate "2006" )
+						"Groups" ( ( where ( where site.Pages "Type" "in" ( slice "article" "post" "story" ) ) ( printf "Params.topics.%s" $navSlug ) "ne" nil ).GroupByDate "2006" )
 					) }}
+				{{ end }}
+				{{ $nested := ( collections.Union
+					( collections.Union
+						.Sections
+						( where .Pages "Type" "like" "^topic($|\\-)" )
+					)
+					( where site.AllPages ( printf "Params.topics.%s.rel" $navSlug ) "eq" "parent" )
+				).GroupBy "Type" }}
+				{{ if $nested }}
+					{{ $topicNames := dict
+						"topic-place-admin1" "Countries"
+						"topic-place-admin2" "Areas"
+						"topic-place-park" "Parks"
+						"topic" "Topics"
+					}}
+					{{ range $nested }}
+						<section class="max-w-3xl mx-auto px-2 font-serif">
+							<header class="flex items-center gap-2">
+								<div class="text-xs uppercase">Related {{ index $topicNames .Key }}</div>
+								<div class="grow relative h-px bg-neutral-300"></div>
+							</header>
+							<div class="px-2 pt-2">
+								<ul class="list-disc ml-4">
+									{{ range $k, $_ := .Pages -}}
+										<li><a class="underline hover:text-sky-800" href="{{ strings.TrimSuffix `/` .RelPermalink }}">{{ .Title }}</a></li>
+									{{- end }}
+								</ul>
+							</div>
+						</section>
+					{{ end }}
 				{{ end }}
 			</div>
 		</main>

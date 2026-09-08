@@ -1,13 +1,12 @@
 ---
 description: Locally and remotely stopping workers without interrupting jobs.
 params:
-    nav:
-        tag:
-            deploy: true
-            gearman: true
-            pcntl: true
-            php: true
-publishDate: "2013-01-14"
+  topics:
+    deploy: {}
+    gearman: {}
+    pcntl: {}
+    php: {}
+publishDate: '2013-01-14'
 title: Terminating Gearman Workers in PHP
 ---
 

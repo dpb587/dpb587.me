@@ -1,14 +1,13 @@
 ---
 description: A strategy for monitoring upstream dependencies for self-sustaining packages.
 params:
-    nav:
-        tag:
-            bosh: true
-            package manager: true
-            updates: true
-            upgrades: true
-            versions: true
-publishDate: "2015-08-03"
+  topics:
+    bosh: {}
+    package manager: {}
+    updates: {}
+    upgrades: {}
+    versions: {}
+publishDate: '2015-08-03'
 title: Self-Upgrading Packages in BOSH Releases
 ---
 

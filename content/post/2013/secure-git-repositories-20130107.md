@@ -1,11 +1,10 @@
 ---
 description: Seamless data encryption of repository files.
 params:
-    nav:
-        tag:
-            git: true
-            security: true
-publishDate: "2013-01-07"
+  topics:
+    git: {}
+    security: {}
+publishDate: '2013-01-07'
 title: Secure Git Repositories
 ---
 

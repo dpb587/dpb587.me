@@ -1,5 +1,5 @@
 ---
-date: 2020-01-01
+date: 2020-01-01T00:00:00Z
 dateLiteral: 2020-01
 params:
   occupationEventType:

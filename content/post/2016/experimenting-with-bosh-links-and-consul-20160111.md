@@ -1,12 +1,11 @@
 ---
 description: Integrating consul and links metadata for inter-deployment service dependencies.
 params:
-    nav:
-        tag:
-            bosh: true
-            consul: true
-            service-discovery: true
-publishDate: "2016-01-11"
+  topics:
+    bosh: {}
+    consul: {}
+    service-discovery: {}
+publishDate: '2016-01-11'
 title: Experimenting with BOSH Links and Consul
 ---
 

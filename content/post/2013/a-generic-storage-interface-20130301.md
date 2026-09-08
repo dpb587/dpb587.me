@@ -1,12 +1,11 @@
 ---
 description: Abstracting file storage, whether it's local or cloud.
 params:
-    nav:
-        tag:
-            asset: true
-            php: true
-            storage: true
-publishDate: "2013-03-01"
+  topics:
+    asset: {}
+    php: {}
+    storage: {}
+publishDate: '2013-03-01'
 title: A Generic Storage Interface
 ---
 

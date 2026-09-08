@@ -1,16 +1,15 @@
 ---
 description: Using S3 as an upstream server for improving long-tail traffic.
 params:
-    nav:
-        tag:
-            aws: true
-            aws-s3: true
-            caching: true
-            nginx: true
-            reverse-proxy: true
-            s3: true
-            upstream: true
-publishDate: "2015-06-20"
+  topics:
+    aws: {}
+    aws-s3: {}
+    caching: {}
+    nginx: {}
+    reverse-proxy: {}
+    s3: {}
+    upstream: {}
+publishDate: '2015-06-20'
 title: Using nginx to Reverse Proxy and Cache S3 Objects
 ---
 

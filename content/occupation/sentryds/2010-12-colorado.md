@@ -1,5 +1,5 @@
 ---
-date: 2010-12-01
+date: 2010-12-01T00:00:00Z
 dateLiteral: 2010-12
 params:
   occupationEventType:

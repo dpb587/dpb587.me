@@ -1,16 +1,11 @@
 ---
-date: 2021-01-01
+date: 2021-01-01T00:00:00Z
 dateLiteral: 2021-01
 params:
   occupationEventType:
     properties:
     - name: Workplace
       value: Remote from Albuquerque, New Mexico
-    # - name: Annual Salary
-    #   value:
-    #     _/MonetaryAmount: true
-    #     currency: USD
-    #     value: 138000
 title: Life Changed
 type: occupation-event
 ---

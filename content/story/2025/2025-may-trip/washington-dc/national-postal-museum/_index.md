@@ -1,12 +1,11 @@
 ---
-date: "2025-05-13T11:37:13-04:00"
+date: '2025-05-13T11:37:13-04:00'
 params:
-    nav:
-        place:
-            us/dc: false
-    timeRange:
-        from: "2025-05-13T11:37:13-04:00"
-        thru: "2025-05-13T12:55:24-04:00"
+  timeRange:
+    from: '2025-05-13T11:37:13-04:00'
+    thru: '2025-05-13T12:55:24-04:00'
+  topics:
+    places/us/dc: {}
 title: National Postal Museum
 ---
 

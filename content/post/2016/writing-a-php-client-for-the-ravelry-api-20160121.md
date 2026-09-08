@@ -1,12 +1,11 @@
 ---
 description: Open sourcing a library to consume the knitting-oriented API.
 params:
-    nav:
-        tag:
-            api: true
-            php: true
-            ravelry: true
-publishDate: "2016-01-21"
+  topics:
+    api: {}
+    php: {}
+    ravelry: {}
+publishDate: '2016-01-21'
 title: Writing a PHP Client for the Ravelry API
 ---
 

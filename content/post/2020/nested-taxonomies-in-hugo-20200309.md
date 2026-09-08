@@ -1,13 +1,12 @@
 ---
 description: Finding ways to support content classified within hierarchies.
 params:
-    nav:
-        tag:
-            hierarchy: true
-            hugo: true
-            nested: true
-            taxonomy: true
-publishDate: "2020-03-09"
+  topics:
+    hierarchy: {}
+    hugo: {}
+    nested: {}
+    taxonomy: {}
+publishDate: '2020-03-09'
 title: Nested Taxonomies with Hugo
 ---
 

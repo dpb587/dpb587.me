@@ -1,12 +1,11 @@
 ---
 description: Combining gpg, Amazon S3 and IAM policies.
 params:
-    nav:
-        tag:
-            backup: true
-            gpg: true
-            s3: true
-publishDate: "2013-02-08"
+  topics:
+    backup: {}
+    gpg: {}
+    s3: {}
+publishDate: '2013-02-08'
 title: Automating Backups to the Cloud
 ---
 

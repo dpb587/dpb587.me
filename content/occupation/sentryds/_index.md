@@ -1,5 +1,5 @@
 ---
-date: 2012-10-22
+date: 2012-10-22T00:00:00Z
 params:
   occupationType:
     employmentType: Full-time
@@ -8,8 +8,8 @@ params:
       name: Sentry Data Systems
       url: https://sentryds.com/
   timeRange:
-    from: 2009-07-20
-    thru: 2012-10-22
+    from: 2009-07-20T00:00:00Z
+    thru: 2012-10-22T00:00:00Z
 title: Sentry Data Systems
 ---
 

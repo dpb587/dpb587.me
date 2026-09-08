@@ -1,14 +1,13 @@
 ---
 description: Embedding content in an absolutely relative manner.
 params:
-    nav:
-        tag:
-            architecture: true
-            http: true
-            javascript: true
-            symfony: true
-            symfony2: true
-publishDate: "2013-05-07"
+  topics:
+    architecture: {}
+    http: {}
+    javascript: {}
+    symfony: {}
+    symfony2: {}
+publishDate: '2013-05-07'
 title: Embeddable and Context-Aware Web Pages
 ---
 

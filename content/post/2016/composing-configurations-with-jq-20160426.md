@@ -1,15 +1,14 @@
 ---
 description: Alternative methods for manifests needing more than simple variable replacements.
 params:
-    nav:
-        tag:
-            bosh: true
-            concourse: true
-            deployment: true
-            jq: true
-            manifest: true
-            pipeline: true
-publishDate: "2016-04-26"
+  topics:
+    bosh: {}
+    concourse: {}
+    deployment: {}
+    jq: {}
+    manifest: {}
+    pipeline: {}
+publishDate: '2016-04-26'
 title: Composing Configurations with JQ
 ---
 

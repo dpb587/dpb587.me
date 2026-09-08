@@ -1,13 +1,12 @@
 ---
 description: Ensuring content is useful to both humans and robots.
 params:
-    nav:
-        tag:
-            product: true
-            schema.org: true
-            structured data: true
-            xpath: true
-publishDate: "2013-05-13"
+  topics:
+    product: {}
+    schema.org: {}
+    structured data: {}
+    xpath: {}
+publishDate: '2013-05-13'
 title: Structured Data with schema.org
 ---
 

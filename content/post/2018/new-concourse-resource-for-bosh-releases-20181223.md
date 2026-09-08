@@ -1,14 +1,13 @@
 ---
 description: Automating tarball creation and publishing of new versions.
 params:
-    nav:
-        tag:
-            automation: true
-            bosh: true
-            bosh-release: true
-            concourse: true
-            concourse-resource: true
-publishDate: "2018-12-23"
+  topics:
+    automation: {}
+    bosh: {}
+    bosh-release: {}
+    concourse: {}
+    concourse-resource: {}
+publishDate: '2018-12-23'
 title: New Concourse Resource for BOSH Releases
 ---
 

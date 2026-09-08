@@ -1,16 +1,15 @@
 ---
 description: A general format for documenting checksums, signatures, and origins of blobs.
 params:
-    nav:
-        tag:
-            blobs: true
-            checksum: true
-            dependencies: true
-            golang: true
-            meta4: true
-            metalink: true
-            signatures: true
-publishDate: "2017-10-09"
+  topics:
+    blobs: {}
+    checksum: {}
+    dependencies: {}
+    golang: {}
+    meta4: {}
+    metalink: {}
+    signatures: {}
+publishDate: '2017-10-09'
 title: Documenting Blobs with Metalink Files
 ---
 

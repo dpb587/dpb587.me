@@ -1,7 +1,7 @@
 ---
-title: A Technical Coda about schema.org
 description: Tools for investigating changes between releases.
-publishDate: "2025-12-01"
+publishDate: '2025-12-01'
+title: A Technical Coda about schema.org
 ---
 
 I created a [small web application](https://schemaorg-coda.dpb.io/) to help me in my tasks and technical investigations of the [schema.org](https://schema.org/) specifications. The official site is targeted towards publishers looking to embed their data; but, for investigating and monitoring upstream changes, it has always been a bit more tedious. The rest of the post includes a few details about the new pages I rely on as well as some [background notes](#background-notes).

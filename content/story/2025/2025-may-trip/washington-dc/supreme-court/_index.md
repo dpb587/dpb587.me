@@ -1,12 +1,11 @@
 ---
-date: "2025-05-12T12:39:53-04:00"
+date: '2025-05-12T12:39:53-04:00'
 params:
-    nav:
-        place:
-            us/dc: false
-    timeRange:
-        from: "2025-05-12T12:39:53-04:00"
-        thru: "2025-05-12T14:09:08-04:00"
+  timeRange:
+    from: '2025-05-12T12:39:53-04:00'
+    thru: '2025-05-12T14:09:08-04:00'
+  topics:
+    places/us/dc: {}
 title: Supreme Court
 ---
 

@@ -1,12 +1,11 @@
 ---
-date: "2025-05-11T19:06:05-04:00"
+date: '2025-05-11T19:06:05-04:00'
 params:
-    nav:
-        place:
-            us/dc: false
-    timeRange:
-        from: "2025-05-11T19:06:05-04:00"
-        thru: "2025-05-16T17:50:04-04:00"
+  timeRange:
+    from: '2025-05-11T19:06:05-04:00'
+    thru: '2025-05-16T17:50:04-04:00'
+  topics:
+    places/us/dc: {}
 title: Washington, D.C.
 ---
 

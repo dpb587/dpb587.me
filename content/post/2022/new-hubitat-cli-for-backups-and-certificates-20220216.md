@@ -1,6 +1,6 @@
 ---
 description: Converting shell scripts and curl to make local management easier.
-publishDate: "2022-02-16"
+publishDate: '2022-02-16'
 title: New Hubitat CLI for Backups and Certificates
 ---
 

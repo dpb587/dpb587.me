@@ -1,14 +1,13 @@
 ---
 description: Avoiding unnecessary disk usage for old, unneeded package files.
 params:
-    nav:
-        tag:
-            blobs: true
-            bosh: true
-            cleanup: true
-            packages: true
-            pruning: true
-publishDate: "2015-08-06"
+  topics:
+    blobs: {}
+    bosh: {}
+    cleanup: {}
+    packages: {}
+    pruning: {}
+publishDate: '2015-08-06'
 title: Pruning Blobs from BOSH Releases
 ---
 

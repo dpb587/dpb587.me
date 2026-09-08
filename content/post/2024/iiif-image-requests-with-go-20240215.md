@@ -1,15 +1,14 @@
 ---
 description: Parsing and validating parameters for upstream routing.
 params:
-    nav:
-        tag:
-            api: true
-            golang: true
-            iiif: true
-            iiif-image-api: true
-            opensource: true
-            package: true
-publishDate: "2024-02-15"
+  topics:
+    api: {}
+    golang: {}
+    iiif: {}
+    iiif-image-api: {}
+    opensource: {}
+    package: {}
+publishDate: '2024-02-15'
 title: IIIF Image Requests with Go
 ---
 

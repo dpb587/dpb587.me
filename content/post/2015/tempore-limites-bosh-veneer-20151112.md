@@ -1,14 +1,13 @@
 ---
 description: Experimenting with a browser frontend to working with BOSH.
 params:
-    nav:
-        tag:
-            bosh: true
-            browser: true
-            frontend: true
-            user-interface: true
-publishDate: "2015-11-12"
-title: "Tempore limites: BOSH Veneer"
+  topics:
+    bosh: {}
+    browser: {}
+    frontend: {}
+    user-interface: {}
+publishDate: '2015-11-12'
+title: 'Tempore limites: BOSH Veneer'
 ---
 
 For all the low-level handling of things, BOSH is a good tool for system administration. But when it comes to

@@ -1,16 +1,15 @@
 ---
 description: Easily exporting my iPhoto album to this Jekyll-based site.
 params:
-    nav:
-        tag:
-            blog: true
-            gallery: true
-            iphoto: true
-            jekyll: true
-            jekyllrb: true
-            photo: true
-            ruby: true
-publishDate: "2014-04-08"
+  topics:
+    blog: {}
+    gallery: {}
+    iphoto: {}
+    jekyll: {}
+    jekyllrb: {}
+    photo: {}
+    ruby: {}
+publishDate: '2014-04-08'
 title: Photo Galleries for Jekyll
 ---
 

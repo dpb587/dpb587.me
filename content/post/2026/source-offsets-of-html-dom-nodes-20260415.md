@@ -1,7 +1,7 @@
 ---
 description: A smuggler's guide for capturing line+column offsets in Go.
+publishDate: 2026-04-15T00:00:00Z
 title: Source Offsets of HTML DOM Nodes
-publishDate: 2026-04-15
 ---
 
 If you need to parse HTML in Go, you probably use the `golang.org/x/net/html` package. The `html.Parse` function tokenizes, parses, and builds a valid HTML5 DOM tree that can be used for content traversal (i.e. a `<body>` element that contains a `<p>` element that contains the `hello` text). But, when it comes to linters and code-mod tools, you probably want to know where those raw bytes originated in source code.
@@ -206,4 +206,4 @@ The `inspecthtml` module already meets my needs to improve the DX/UX of validati
 * Optional retention of raw attribute values to support the calculation of intra-value offsets.
 * Using a custom parser to efficiently support these goals, hopefully with a similar interface.
 
-In the real world, it's used by my [alternative Schema.org Validator](https://www.namedgraph.com/intro/schema-org-validator) for source highlighting of Microdata and HTML+RDFa. If you are building similar linter or validation tools in Go, maybe you'll find this useful, too. Feel free to [open an issue](https://github.com/dpb587/inspecthtml-go/issues) if you discover a bug or have a suggestion.
+In the real world, it's used by my [alternative Schema.org Validator](https://schemamarkup.app/schema-org) for source highlighting of Microdata and HTML+RDFa. If you are building similar linter or validation tools in Go, maybe you'll find this useful, too. Feel free to [open an issue](https://github.com/dpb587/inspecthtml-go/issues) if you discover a bug or have a suggestion.

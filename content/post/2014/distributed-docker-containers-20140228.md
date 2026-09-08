@@ -1,13 +1,12 @@
 ---
 description: A strategy for integrating Docker services across multiple hosts and data centers.
 params:
-    nav:
-        tag:
-            aws-ec2: true
-            docker: true
-            nodejs: true
-            scs-utils: true
-publishDate: "2014-02-28"
+  topics:
+    aws-ec2: {}
+    docker: {}
+    nodejs: {}
+    scs-utils: {}
+publishDate: '2014-02-28'
 title: Distributed Docker Containers
 ---
 

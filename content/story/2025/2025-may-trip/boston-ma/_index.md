@@ -1,13 +1,12 @@
 ---
-date: "2025-05-18T10:58:33-04:00"
+date: '2025-05-18T10:58:33-04:00'
 params:
-    nav:
-        place:
-            us/ma: false
-            us/me: false
-    timeRange:
-        from: "2025-05-18T10:58:33-04:00"
-        thru: "2025-05-24T12:37:14-04:00"
+  timeRange:
+    from: '2025-05-18T10:58:33-04:00'
+    thru: '2025-05-24T12:37:14-04:00'
+  topics:
+    places/us/ma: {}
+    places/us/me: {}
 title: Boston
 ---
 

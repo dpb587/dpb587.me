@@ -1,16 +1,15 @@
 ---
 description: Scheduling data extracts, transforms, and loads through containers.
 params:
-    nav:
-        tag:
-            batch: true
-            concourse: true
-            data: true
-            etl: true
-            kubernetes: true
-            pachyderm: true
-            pipeline: true
-publishDate: "2016-10-19"
+  topics:
+    batch: {}
+    concourse: {}
+    data: {}
+    etl: {}
+    kubernetes: {}
+    pachyderm: {}
+    pipeline: {}
+publishDate: '2016-10-19'
 title: Data Processing with Concourse
 ---
 

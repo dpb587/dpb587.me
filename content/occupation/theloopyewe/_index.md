@@ -1,5 +1,5 @@
 ---
-date: 2021-04-30
+date: 2021-04-30T00:00:00Z
 params:
   occupationType:
     employmentType: Part-time
@@ -8,8 +8,8 @@ params:
       name: The Loopy Ewe
       url: https://www.theloopyewe.com/
   timeRange:
-    from: 2006-05-01
-    thru: 2021-04-30
+    from: 2006-05-01T00:00:00Z
+    thru: 2021-04-30T00:00:00Z
 title: The Loopy Ewe
 ---
 

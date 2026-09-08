@@ -1,15 +1,14 @@
 ---
 description: A web-centric, user-friendly approach for using barcodes in a retail shop.
 params:
-    nav:
-        tag:
-            barcode: true
-            qr: true
-            retail: true
-            product: true
-            label: true
-            scan: true
-publishDate: "2014-01-13"
+  topics:
+    barcode: {}
+    label: {}
+    product: {}
+    qr: {}
+    retail: {}
+    scan: {}
+publishDate: '2014-01-13'
 title: Barcoding Inventory with QR Codes
 ---
 

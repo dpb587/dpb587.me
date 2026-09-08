@@ -1,14 +1,13 @@
 ---
 description: Using metalink repositories to track upstream artifacts.
 params:
-    nav:
-        tag:
-            automation: true
-            blobs: true
-            metalink: true
-            metalink-repository: true
-publishDate: "2018-12-30"
-title: "Metalink Repositories: Mirroring Third-Party Dependencies"
+  topics:
+    automation: {}
+    blobs: {}
+    metalink: {}
+    metalink-repository: {}
+publishDate: '2018-12-30'
+title: 'Metalink Repositories: Mirroring Third-Party Dependencies'
 ---
 
 When managing project dependencies which are outside of your control, it is often best practice to assume those artifacts may disappear (e.g. they may move, disappear, or become corrupt). For this reason, you may want to be mirroring your assets which, with [metalink repositories]({{< relref "./metalink-repositories-background-and-motivation-20181228" >}}), provides the functionality of:

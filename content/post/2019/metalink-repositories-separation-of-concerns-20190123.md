@@ -1,14 +1,13 @@
 ---
 description: Consistently representing both internal and external dependencies.
 params:
-    nav:
-        tag:
-            automation: true
-            blobs: true
-            metalink: true
-            metalink-repository: true
-publishDate: "2019-01-23"
-title: "Metalink Repositories: Stability Channels"
+  topics:
+    automation: {}
+    blobs: {}
+    metalink: {}
+    metalink-repository: {}
+publishDate: '2019-01-23'
+title: 'Metalink Repositories: Stability Channels'
 ---
 
 Continuing on the topic of [metalink repositories]({{< relref "../2018/metalink-repositories-background-and-motivation-20181228" >}}), one of the biggest advantages I have found is that I no longer need to worry about complicated rules for when products should be published and what downstream components might be affected. Instead, I can focus on defining what "alpha" vs "rc" vs "stable" mean, and then downstream components consume however it's appropriate for them.

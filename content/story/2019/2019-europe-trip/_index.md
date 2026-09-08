@@ -1,17 +1,15 @@
 ---
 date: 2019-09-08T15:05:17
 params:
-    hero:
-        ref: media-nfntnr3ccdk3
-    nav:
-        collection:
-            travels: true
-        place:
-            be: false
-            nl: false
-    timeRange:
-        from: 2019-09-08T15:05:17
-        thru: 2019-09-15T13:52:21
+  hero:
+    ref: media-nfntnr3ccdk3
+  timeRange:
+    from: 2019-09-08T15:05:17
+    thru: 2019-09-15T13:52:21
+  topics:
+    places/be: {}
+    places/nl: {}
+    travels: {}
 title: Europe Trip
 ---
 

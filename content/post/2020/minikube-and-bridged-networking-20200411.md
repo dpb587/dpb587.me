@@ -1,15 +1,14 @@
 ---
 description: Exposing a VirtualBox Kubernetes cluster to the local network.
 params:
-    nav:
-        tag:
-            bridged-networking: true
-            kubernetes: true
-            macos: true
-            minikube: true
-            networking: true
-            virtualbox: true
-publishDate: "2020-04-11"
+  topics:
+    bridged-networking: {}
+    kubernetes: {}
+    macos: {}
+    minikube: {}
+    networking: {}
+    virtualbox: {}
+publishDate: '2020-04-11'
 title: Minikube and Bridged Networking
 ---
 

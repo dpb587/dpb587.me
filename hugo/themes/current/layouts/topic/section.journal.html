@@ -1,0 +1,84 @@
+{{ define "nav" }}
+	{{ partial "sidebar/nav-parent" . }}
+	<dpb587-toc button-class="md:px-1 py-0.5 md:py-0" for="article"></dpb587-toc>
+	{{ partial "sidebar/nav-code" . }}
+{{ end }}
+
+{{ define "main" }}
+	{{ $navSlug := ( strings.TrimSuffix "/" ( strings.TrimPrefix "/topics/" .RelPermalink ) ) }}
+
+	<div class="relative z-0 w-full h-full">
+		<main>
+			{{ partial "entry/header" . }}
+			<div id="article" class="bg-stone-50 pb-8 space-y-8 ">
+				{{ partial "prose/render" ( dict 
+					"content" .Content
+					"classColumn" "max-w-4xl mx-auto space-y-8"
+					"classColumnWide" "max-w-6xl mx-auto space-y-8"
+					"classColumnNarrow" "max-w-2xl mx-auto space-y-8"
+					"classGutter" "px-4"
+				) }}
+				{{ $pages := ( collections.Union
+					( collections.Where site.Pages ( printf "Params.topics.%s" $navSlug ) "ne" nil )
+					( collections.Where .Pages "Type" "eq" "timeline-event" )
+				).ByDate.Reverse }}
+				{{ if gt ( len $pages ) 0 }}
+					{{ template "timeline" ( slice ( index $pages 0 ) ) }}
+					{{ if gt ( len $pages ) 1 }}
+						{{ partial "entry/list-groups" ( dict
+							"Page" .
+							"Groups" ( ( collections.After 1 $pages ).GroupByDate "2006" )
+						) }}
+					{{ end }}
+				{{ end }}
+			</div>
+		</main>
+	</div>
+{{ end }}
+
+{{ define "timeline" }}
+	{{ $typeIcons := ( dict
+		"timeline-event" "signal"
+		"post" "signal"
+		"showandtell" "paper-airplane"
+		"article" "pencil"
+	) }}
+	{{ $typeNames := ( dict
+		"post" "Note"
+		"showandtell" "Show & Tell"
+		"article" "Article"
+	) }}
+	{{ range .ByDate.Reverse }}
+		<div>
+			<div class="max-w-4xl mx-auto h-px bg-stone-300"></div>
+			<section class="max-w-4xl mx-auto px-3.5">
+				<header class="relative z-0 pl-12 py-4">
+					<div class="absolute top-4 left-0 rounded-sm bg-stone-800 text-stone-200 p-2 mt-0.5">
+						{{ partial "heroicons/inline" ( dict
+							"icon" ( printf "24/outline/%s" ( index $typeIcons .Type ) )
+							"attrs" `class="w-4 h-4"`
+						) }}
+					</div>
+					<div>
+						<h1 class="text-3xl font-light"><a class="hover:underline" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+						<div class="mt-0.5 text-sm text-stone-600 space-x-2">
+							{{ partial "time-long" . }}
+						</div>
+					</div>
+				</header>
+				<div class="relative z-0">
+					{{ with .Content }}
+						<div class="space-y-8 pl-8">
+							<div class="h-px bg-stone-200"></div>
+							{{ partial "prose/render" ( dict 
+								"content" .
+								"classColumn" "space-y-8"
+								"classGutter" "px-4"
+							) }}
+						</div>
+					{{ end }}
+				</div>
+			</section>
+		</div>
+	{{ end }}
+{{ end }}

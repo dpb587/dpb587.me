@@ -1,12 +1,11 @@
 ---
-date: "2025-05-19T18:44:13-04:00"
+date: '2025-05-19T18:44:13-04:00'
 params:
-    nav:
-        place:
-            us/ma: false
-    timeRange:
-        from: "2025-05-19T18:44:13-04:00"
-        thru: "2025-05-19T20:47:54-04:00"
+  timeRange:
+    from: '2025-05-19T18:44:13-04:00'
+    thru: '2025-05-19T20:47:54-04:00'
+  topics:
+    places/us/ma: {}
 title: Fenway Park
 ---
 

@@ -1,16 +1,14 @@
 ---
-date: "2022-08-29T14:06:45Z"
+date: '2022-08-29T14:06:45Z'
 params:
-    hero:
-        ref: media-p5jqdctyxyzt
-    nav:
-        collection:
-            trails: true
-        place:
-            us/ca: false
-            us/nps-yose: true
-    timeRange:
-        from: "2022-08-29T14:06:45Z"
-        thru: "2022-08-29T21:12:05Z"
+  hero:
+    ref: media-p5jqdctyxyzt
+  timeRange:
+    from: '2022-08-29T14:06:45Z'
+    thru: '2022-08-29T21:12:05Z'
+  topics:
+    places/us/ca: {}
+    places/us/nps-yose: {}
+    trails: {}
 title: Little Yosemite Valley Trail
 ---

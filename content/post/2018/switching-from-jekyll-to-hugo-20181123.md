@@ -1,14 +1,13 @@
 ---
 description: Fewer dependencies, better information architecture, something new.
 params:
-    nav:
-        tag:
-            blog: true
-            docker: true
-            hugo: true
-            jekyll: true
-            migration: true
-publishDate: "2018-11-23"
+  topics:
+    blog: {}
+    docker: {}
+    hugo: {}
+    jekyll: {}
+    migration: {}
+publishDate: '2018-11-23'
 title: Switching from Jekyll to Hugo
 ---
 

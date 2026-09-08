@@ -1,15 +1,14 @@
 ---
 description: An experimental way to import arbitrary JSON into a database.
 params:
-    nav:
-        tag:
-            dynamic: true
-            golang: true
-            gorm: true
-            jsonlines: true
-            reflect: true
-            struct: true
-publishDate: "2021-03-20"
+  topics:
+    dynamic: {}
+    golang: {}
+    gorm: {}
+    jsonlines: {}
+    reflect: {}
+    struct: {}
+publishDate: '2021-03-20'
 title: Using Dynamic Structs in Go and GORM
 ---
 

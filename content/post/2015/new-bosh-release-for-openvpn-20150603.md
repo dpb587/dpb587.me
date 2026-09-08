@@ -1,11 +1,11 @@
 ---
 description: Open sourcing a new BOSH release for managing an OpenVPN network.
 params:
-    nav:
-        tag:
-            bosh: true
-            openvpn: true
-publishDate: "2015-06-03"
+  topics:
+    bosh: {}
+    openvpn: {}
+    openvpn-bosh-release: {}
+publishDate: '2015-06-03'
 title: New BOSH Release for OpenVPN
 ---
 

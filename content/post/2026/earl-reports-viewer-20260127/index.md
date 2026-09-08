@@ -1,13 +1,12 @@
 ---
-title: EARL Reports Viewer
 description: Browse reports and tests from the browser.
-publishDate: "2026-01-27"
 params:
-  nav:
-    tag:
-      earl: true
-      go: true
-      rdfkit: true
+  topics:
+    earl: {}
+    go: {}
+    rdfkit: {}
+publishDate: '2026-01-27'
+title: EARL Reports Viewer
 ---
 
 While generating [EARL Reports](https://www.w3.org/WAI/standards-guidelines/earl/) from [Go unit tests](../earl-reports-and-go-tests-20260114), I wanted a nicer method of browsing both my own and peer reports. In my search for tools, I only found [earl-report](https://github.com/gkellogg/earl-report) which is used to generate the static *Conformance Reports* often referenced from W3C documentation ([example](https://www.w3.org/2013/N-QuadsReports/index.html)). I was hoping for something with more cross-referenced metadata and ability to integrate decentralized sources.

@@ -1,12 +1,11 @@
 ---
 description: Using jq to convert between data file formats.
 params:
-    nav:
-        tag:
-            jq: true
-            jsonl: true
-            tsv: true
-publishDate: "2020-02-13"
+  topics:
+    jq: {}
+    jsonl: {}
+    tsv: {}
+publishDate: '2020-02-13'
 title: Converting between JSON and TSV
 ---
 

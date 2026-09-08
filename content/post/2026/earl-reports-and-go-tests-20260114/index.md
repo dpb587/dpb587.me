@@ -1,13 +1,12 @@
 ---
-title: EARL Reports and Go Tests
 description: An earltesting package for the W3C vocabulary.
-publishDate: "2026-01-14"
 params:
-  nav:
-    tag:
-      earl: true
-      go: true
-      rdfkit: true
+  topics:
+    earl: {}
+    go: {}
+    rdfkit: {}
+publishDate: '2026-01-14'
+title: EARL Reports and Go Tests
 ---
 
 The Evaluation and Report Language (*EARL*), from [w3.org](https://www.w3.org/WAI/standards-guidelines/earl/), is a "machine-readable format for expressing test results" in a framework-agnostic manner. While working on the [`rdfkit-go` module](https://github.com/dpb587/rdfkit-go), I wanted to build these reports for some of the common, public test suites that I was already testing against. So, I have been experimenting with a small [`earltesting` package](https://pkg.go.dev/github.com/dpb587/rdfkit-go/ontology/earl/earltesting) to generate these reports from Go test cases.

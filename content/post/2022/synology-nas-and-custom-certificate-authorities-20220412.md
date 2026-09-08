@@ -1,6 +1,6 @@
 ---
 description: Automating certificate management for private directories with acme.sh.
-publishDate: "2022-04-12"
+publishDate: '2022-04-12'
 title: Synology NAS and Custom Certificate Authorities
 ---
 

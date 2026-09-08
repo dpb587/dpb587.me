@@ -1,17 +1,16 @@
 ---
 description: Monitoring logsearch with itself - the elasticsearch+logstash+kibana stack.
 params:
-    nav:
-        tag:
-            elasticsearch: true
-            kibana: true
-            logsearch: true
-            logstash: true
-            metrics: true
-            performance: true
-            queue: true
-            regex: true
-publishDate: "2014-11-14"
+  topics:
+    elasticsearch: {}
+    kibana: {}
+    logsearch: {}
+    logstash: {}
+    metrics: {}
+    performance: {}
+    queue: {}
+    regex: {}
+publishDate: '2014-11-14'
 title: Logging logging and Finding Bottlenecks
 ---
 
