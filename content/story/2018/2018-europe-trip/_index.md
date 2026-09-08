@@ -2,7 +2,7 @@
 date: 2018-10-11T18:53:24
 params:
   hero:
-    ref: media-c4jytkzyfr34
+    ref: amsterdam-visit/zaandam/media-c4jytkzyfr34
   timeRange:
     from: 2018-10-11T18:53:24
     thru: 2018-11-11T23:45:53

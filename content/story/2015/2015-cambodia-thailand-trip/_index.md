@@ -2,7 +2,7 @@
 date: 2015-11-15T12:34:15
 params:
   hero:
-    ref: media-gjvr86g25b4y
+    ref: phnom-penh/media-gjvr86g25b4y
   timeRange:
     from: 2015-11-15T12:34:15
     thru: 2015-11-22T16:20:35

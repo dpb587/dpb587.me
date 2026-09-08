@@ -2,7 +2,7 @@
 date: '2019-12-08T11:42:58-08:00'
 params:
   hero:
-    ref: media-rg9qb2yh7gnk
+    ref: rio-de-janeiro/media-rg9qb2yh7gnk
   timeRange:
     from: '2019-12-08T11:42:58-08:00'
     thru: 2019-12-21T22:12:12
