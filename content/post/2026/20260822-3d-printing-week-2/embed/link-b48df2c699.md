@@ -1,0 +1,1818 @@
+---
+params:
+  linkType:
+    metadata:
+      description: 'Download this free 3D print file designed by Silvercell. Main
+        FeaturesTwo high airflow and high surface area desiccant container versions
+        for effective moisture absorption for keeping filaments dry. Both having high
+        density open mesh walls and self-centering open spoke ends for improved air
+        circulation throughout the whole desiccant core and spoolHigh Flow (HF) version
+        with triple internal towers to maximise silica gel surface area while allowing
+        air to reach the silica gel deeper within the container for better efficacy.High
+        Capacity (HC) version for greater desiccant capacity for long term storage,
+        easier refilling and additional weight.Performance, strength and print tested
+        container design (test details at the end)Tested to reduce humidity in a dry
+        box faster than a desiccant container with low surface area.2x faster silica
+        gel drying speed with high flow version for faster drying in filament dryers
+        and ovens. Tested to be capable of maintaining low humidity within a heavy
+        duty resealable bag. Load tested to 10kg without structural failure, ensuring
+        a durable design. Able to prevent Bambu spool halves from coming apart. Test
+        fitted in 26 different spools (test fitted spools in “Compatibility List”)Print
+        tested in a wide range of materials including polycarbonate for high temperature
+        drying, and fiber reinforced filaments for advanced users. Highly refined
+        and optimised design print profiles for reliable printing and smooth fitting
+        parts for over 50 different design variations Three core sizes for different
+        inner diameter spoolsStandard Core for 50mm - 63mm inner diameter spools for
+        wide compatibility and high airflow. Can also be adapted for 63mm - 80mm inner
+        diameter spoolsLarge Core for 55mm - 63mm inner diameter spools for maximised
+        desiccant capacity whilst maintaining adequate airflow and compatibility for
+        most spools including Bambu spools. Can also be adapted for 63mm - 80mm inner
+        diameter spoolsXL Core for 60mm - 75mm inner diameter spools for spools with
+        a large inner diameterSilica gel capacities for dry silica gel (wet silica
+        gel will be 20-30% heavier):Standard Core for Bambu spools: HF ~52g, HC ~68gLarge
+        Core for Bambu spools: HF ~68g, HC ~88gXL Core for Sunlu Gen 1 &amp; 2: HF
+        ~75gThree available mesh sizes for different sizes of intact desiccant beads
+        (damaged beads will need finer mesh size):Standard mesh: &gt;2mmFine mesh:
+        &gt;1.5mmUltra fine mesh: &gt;1mmUp to 7 desiccant cores can be dried in the
+        AMS 2 Pro, AMS HT or any filament dryer using the drying spool (link)Different
+        lengths with size markings to provide a secure fit in a wide range of spool
+        sizes from 250g to 1kg spools (test fitted spools in “Compatibility List”
+        and in print profile pictures)Extra options for alternative add-onsHygrometer
+        version for desiccant humidity monitoringStandard and Large Core adapter for
+        63mm - 80mm inner diameter spoolsStandard Core RFID tags for labelling of
+        spools and AMS RFID reading function Two sizes of funnels to aid with fillingAlternative
+        locking end ring lengthsOptional opening toolMore updates and features to
+        be added… Please check Designer Notes for updates and work in progress Print
+        GuidanceThe design and print profiles have been carefully optimized for easy
+        support-free printing. Many hours of work had been spent optimising all the
+        print profiles, and many modifiers are used within the print profiles so please
+        be sure to print using my uploaded print profiles. Do not download STL/CAD
+        files to print from or make changes to the print settings! The mesh on the
+        ends of the container won&#39;t be visible in 3D model, as it relies on slicer
+        modifiers to generate the mesh. Once the models are sliced using the print
+        profiles, the mesh will appear in Bambu Studio “Preview”. If the design is
+        printed without the yellow modifiers &amp; settings, no mesh will be printed!
+        Please also ensure Bambu Studio is up to date as older versions may causes
+        issues. Would recommend printing the design using Bambu Handy App for easy
+        convenience. Filament type can be changed and the number of copies can be
+        increased within the app. (Please note: Bambu Handy App will misalign the
+        mesh when multiple copies are printed. This does not affect the function,
+        but will change the intended appearance. Please use Bambu Studio if you wish
+        to keep the mesh aligned with the body of the container)&nbsp;For Bambu Studio,
+        you can right click to select all the parts, and use keyboard shortcuts (e.g.
+        CTRL+K) to clone a number of copies before right clicking the plate to arrange.
+        Please avoid manually moving models if possible, as it may mess up the placement
+        of modifiers within each model.&nbsp;Please always ensure the print bed is
+        cleaned, and filament is dry before starting the print. Poor bed adhesion
+        can result in first layer problems which can lead to print failures. Moisture
+        in filament can cause stringing in the parts and can also cause issues with
+        parts fitting together.&nbsp;Printing with Bambu Labs filament is recommended
+        for best results. Other filament brands can also be used, but some filament
+        brands may not handle default generic filament profiles, and may result in
+        poor quality prints without filament tuning. If you are having such issues,
+        please tune the filament with appropriate print temperature, volumetric speed,
+        flow dynamics, flow ratio, cooling, etc. Having the correct filament tuning
+        is important, as it can affect the strength, quality and fit of parts. The
+        threads of the design are designed with a loose fit in mind, but filament
+        or printer problems can result in inaccurate threads with imperfections. If
+        there are imperfections on the threads, common reasons are wet filament, or
+        improperly calibrated flow dynamics or flow ratio.&nbsp;When printing with
+        engineering filaments like ABS, ASA, PC, etc., prints must be done within
+        enclosed chambers. Excess cooling can result in warping or weaker parts. Although
+        basic print testing with the X1C produced adequate results in part strength,
+        taking additional steps can further enhance the strength of the design. Pre-heating
+        the chamber, using chamber heating, or reducing part cooling (reducing fan
+        speed for overhangs or disabling forced cooling for overhangs and bridges)
+        can reduce warping and significantly improve layer adhesion strength of the
+        design.&nbsp;The 3D model for the design is only optimised for printing with
+        a 0.4mm nozzle. Most fiber reinforced filaments can be printed using a 0.4mm
+        nozzle but some may require a 0.6mm nozzle. Whilst it&#39;s possible to adjust
+        the print profiles for a 0.6mm nozzle, the print quality may be reduced due
+        to the lack of optimisation in the 3D model for printing with a 0.6mm or 0.8mm
+        nozzle.Slicer settings if printing with STLs onlyImport the raw STLs into
+        the choice of slicer. Exclude the STLs for core_mesh, cap_mesh, core_mod and
+        end_mod. All cap and end STLs are the same so only one of each is needed.
+        The main container body STLs are labelled with HF for high flow, and HC for
+        high capacity, followed by the mesh size.To slice the files, make sure the
+        printer preset is a standard preset for 0.2mm layer height for a 0.4mm nozzle.
+        Other layer heights or nozzle sizes may have issues.Configure the print settings
+        to be 4 wall loops, 0 top shell layers, 0 bottom shell layersDepending on
+        which container is being printed, set sparse infill density in print settings:
+        40% for standard mesh, 55% for fine mesh, or 42% for ultra fine meshThen set
+        sparse infill pattern in print settings: triangles for standard and fine mesh
+        containers, or rectilinear for ultra fine meshSome additional settings may
+        be needed: “Only one wall on top surfaces” should be disabled, and brim may
+        need to be disabled if on auto.&nbsp;Compatibility ListList of spools that
+        have been tested. Other spools will also compatible but will require measuring
+        to determine a suitable container size.Spool BrandInner DiameterStandard CoreLarge
+        CoreXL CoreBambu Lab (reusable)55mm62-69mm width62-69mm width-Sunlu Gen 3
+        (reusable)55mm62-69mm width62-69mm width-Sunlu Gen 263mm62-69mm width + adapter62-69mm
+        width + adapter60-67mm widthSunlu Gen 173mm62-69mm width + adapter62-69mm
+        width + adapter60-67mm widthJAYO (reusable)55mm62-69mm width62-69mm width-JAYO
+        (old version)73mm62-69mm width + adapter62-69mm width + adapter60-67mm widthOverture
+        (cardboard)55mm62-69mm width62-69mm width-Siraya Tech (cardboard)55mm62-69mm
+        width62-69mm width-Polymaker (cardboard)55mm62-69mm width62-69mm width-Creality
+        (clear plastic)55mm62-69mm width62-69mm width-Inslogic (reusable)55mm62-69mm
+        width62-69mm width-Anycubic (reusable)55mm62-69mm width62-69mm width-Kexcelled
+        (reusable)55mm62-69mm width62-69mm width-Chitu Conjure (reusable)54mm62-69mm
+        width62-69mm width-NextShapes (reusable)55mm62-69mm width62-69mm width-XTZL3D55mm62-69mm
+        width62-69mm width-123-3D53mm62-69mm width62-69mm width-Prusament (NFC)51mm62-69mm
+        width--Prusament (old version)51mm62-69mm width*--eSun eSpool+ (reusable)55mm62-69mm
+        width62-69mm width-eSun (clear plastic)52mm57-64mm width--eSun (cardboard)55mm57-64mm
+        width--eSun (black plastic)54mm47-54mm width--Eryone (cardboard)55mm57-64mm
+        width--Geeetech75mm57-64mm width + adapter-55-62mm widthFillamentum (750g
+        clear plastic)53mm52-59mm width--*barely fits the width of the spool. A larger
+        size is recommendedDesiccant Core UsageKeeping filaments dry is crucial for
+        3D printing to ensure you get the best quality prints. Many filaments absorb
+        moisture when left out and can cause issues like oozing, stringing, rougher
+        print surfaces, print discoloration, and reduced part strength. Drying filaments
+        in a filament dryer solves a lot of these issues, and keeping them dry ensures
+        you won&#39;t have issues in future prints. So it&#39;s best practice to always
+        store dried spools with desiccant inside an airtight container or a heavy
+        duty resealable bag. High Flow vs. High CapacityHigh FlowSuited for filaments
+        that are in frequent use which are often exposed to humid air and require
+        frequent drying in the AMS 2 Pro, AMS HT or a filament dryer. The increased
+        exposed surface area allows for improved efficacy especially when it come
+        to drying. It has 2 times faster drying speed when compared to the high capacity
+        variant which shortens the time needed to dry even at lower drying temperatures.
+        Can also be dried in the oven when printed in a suitable material.High CapacitySuited
+        for long term storage of filaments in airtight containers or bags. This version
+        has a higher desiccant capacity for longer endurance, and is easier to fill
+        and empty for drying in the oven or microwave. It can also be used to hold
+        desiccant pouches or weighted objects.Mesh SizesThere are three mesh sizes
+        available which are standard, fine and ultra fine. Standard can be used with
+        large desiccant beads that are around 2-4mm in size. Smaller sizes of desiccant
+        beads or badly damaged desiccant beads may fall out in standard mesh, so a
+        finer mesh size should be used. Would recommend using intact desiccant beads
+        to avoid issues with desiccant falling out. If using larger desiccant beads,
+        it would be advisable to use the high capacity desiccant container instead
+        of the high flow version. If using indicating silica gel, fine and ultra fine
+        mesh will reduce the visibility of the indicating colour.Core SizesThree core
+        sizes are available to suit a range of requirements with regards to inner
+        diameter spool sizing. Standard Core Compatible with spools with an inner
+        diameter of 50mm to 63mm. This version has the largest compatibility range
+        and can even be used down to 48mm inner diameter spools if airflow restriction
+        is not a concern. Standard Core can also be adapted to fit 63mm - 80mm inner
+        diameter spools using a separate adapter ring.Large Core This version is similar
+        to the Standard Core but sizing is changed to fit 55mm to 63mm inner diameter
+        spools. The air gap between the container and spool is reduced to 1.25mm for
+        a larger container with more desiccant. It&#39;s compatible with many 55mm
+        inner diameter spools, but may also be used with inner diameter spools down
+        to 53mm if airflow restriction is not a concern. Large Core can also be adapted
+        to fit 63mm - 80mm inner diameter spools using a separate adapter ring.XL
+        CoreCompatible with spools with an inner diameter of 60mm to 75mm. XL Core
+        also adds an additional air channel to the high flow version.Spool Width CompatibilitySome
+        spools have been test fitted with pictures in the print profiles. The compatible
+        width of the spool will depend on which print profile is printed and the size
+        of the inner spool diameter. If fitting spools with an inner diameter less
+        than 55mm using Standard Core, up to 1.5mm should be deducted from the width
+        specified in the print profiles. If it&#39;s greater than 55mm, up to 1.5mm
+        should be added. For XL Core, spools with an inner diameter less than 75mm
+        will require up to 3mm deducted from the specified width. There&#39;s also
+        the option to print out shorter or longer end pieces if a wider range of fit
+        is needed without needing to reprint a different sized desiccant core.Desiccant
+        Core MaterialIf there are plans to use the desiccant core in a filament dryer,
+        printing in ABS, ASA or polycarbonate is recommended. Higher temperature materials
+        are preferred, as materials like PLA and PETG can deform in filament dryers
+        that can reach above their heat deflection temperature. PA6-GF, PA6-CF, PAHT-CF,
+        PET-CF or higher temperature materials are recommended for advanced users
+        if drying in the oven. Transparent filaments are also preferred if indicating
+        desiccant beads are used.&nbsp;If printing with fiber reinforced filaments,
+        it would be advisable to using a scouring pad, fine sanding sponge or wire
+        brush on the surfaces of the container after printing. Exposed fibers can
+        cause the threads to feel rough or seize, and fibers can break off during
+        from handling. Not all fiber reinforced filaments have the same amount of
+        exposed fibers, so some may not require removal. Rubbing down the exposed
+        surfaces with something abrasive under water will help knock off exposed fibres
+        on surfaces, and help make surfaces smoother. Please ensure dust is contained
+        under water to reduce the risk of dust being breathed in, and to rinse parts
+        thoroughly afterwards. A suitable respirator mask can also be worn during
+        the process. Please also wear gloves during this process to avoid getting
+        fibers into skin.&nbsp;If printing with filaments that require annealing like
+        PET-CF, please ensure the containers are fully annealed before use.&nbsp;Additional
+        print testing details can be found in “Print Testing”.Adding DesiccantBefore
+        filling the desiccant cores with desiccant, please check parts are fitting
+        well in case there are any issues with printing. Optional funnels can be printed
+        to assist with filling. If filling the High Flow container with a funnel,
+        please tilt the container and funnel by 30-45° before filling to reduce the
+        risk of silica bouncing out. When filling the desiccant core, desiccant can
+        be filled to the top but do not overfill before screwing on the cap. If trying
+        to maximise desiccant contained within the container, gently tapping on the
+        container will help settle the beads into empty spaces, and prevent the cap
+        from seizing. Ensure the cap can be fully screwed flush with the container.
+        Failure to screw the cap on properly from overfilling can result in the cap
+        becoming loose and spilling desiccant beads. If there are plans to dry the
+        desiccant core in a filament dryer, please tighten the cap well, as plastic
+        can expand with heat resulting in changes in dimension. Firmly tightening
+        the cap will ensure the cap won&#39;t easily become loose from thermal expansion.Drying
+        DesiccantWhen using silica gel, both versions of the desiccant core can be
+        dried within a 65°C or higher filament dryer when printed using a temperature
+        resistant material. The drying spool available on MakerWorld (link) can also
+        be printed to allow for drying of up to 7 containers. Silica Gel Container
+        Drying Spool AMS 2 Pro &amp; HT available on MakerWorldThe high flow version
+        will dry faster with its higher surface area compared to the high capacity
+        version. The high capacity version will take a considerably longer time to
+        dry due to the density of desiccant beads. Both versions will dry faster if
+        dried at higher temperatures, as long as the printed material can withstand
+        the heat. After drying, please allow the containers to cool down before installing
+        into spools. Desiccant may continue to release moisture while hot if drying
+        duration is not adequate. Thermal expansion and contraction of the containers
+        can also occur which can result in the containers tightening on spools when
+        installed whilst hot.&nbsp;Desiccant cores should also be removed from spools
+        to be dried directly for optimal airflow and drying temperatures. If drying
+        within filament dryers, using the dedicated drying spool is recommended for
+        optimal drying within a filament dryer. Whilst it&#39;s possible to partially
+        dry the desiccant core inside a filament spool, airflow and drying temperatures
+        won&#39;t be optimal. Filament dryers only direct heated air towards the outer
+        spool of filament, so the centers of the spool won&#39;t be adequately heated
+        and may be lower in temperature by 10-20°C. Please also be cautioned when
+        drying Bambu Lab 85A &amp; 90A TPU, as the TPU filament can expand to cause
+        their reusable spools to change in width, noted in their TPU guide.&nbsp;It&#39;s
+        advisable to transfer the desiccant beads to a dish to be dried in an oven
+        or microwave if faster drying is needed. When drying silica gel, please be
+        careful not to exceed 120°C as higher temperatures can damage the silica gel.
+        Please note that with the high flow version, larger desiccant beads can get
+        stuck in between the crevices. The stuck beads can be dislodged by gently
+        squeezing or tapping on the desiccant core. It is recommended to use to high
+        capacity variant to avoid this issue.Filament Storage RecommendationsFrom
+        best to worse performing: (testing data to be added)Resealable aluminium foil
+        bag2500ml round takeaway food container4 litre cereal box Dedicated filament
+        dryboxResealable filament bagResealable vacuum bagHygrometer VersionContained
+        within the print profile for &#34;Bambu Spool Hygrometer Version&#34; and
+        “Alternative End Rings (Hygrometer Mod)” is an end ring version that has a
+        hole to accommodate a circular hygrometer. The circular hygrometer can be
+        obtained from Bambu Lab Maker&#39;s Supply or other circular hygrometers that
+        are similar in size may be used. The end ring takes up 15mm in length to accommodate
+        the hygrometer which will reduce the amount of space where silica gel can
+        be stored. The hygrometer is also in close proximity to the silica gel, so
+        will only provide an indicator as to whether the silica gel requires drying.
+        Currently, there is only a print profile for Bambu Lab spools, which has a
+        47mm-54mm desiccant core together with the hygrometer end ring. Other sizes
+        may be created by pairing the hygrometer end ring from “Alternative End Rings
+        (Hygrometer Mod)” with other lengths of desiccant cores.&nbsp;The hygrometer
+        end ring had been updated for easier removal of the hygrometer when changing
+        battery or when using with the drying spool. The hygrometer can be simply
+        removed by pushing it out from the backside. Please be sure to remove the
+        hygrometer before placing the desiccant cores into the drying spool for drying. &nbsp;To
+        remove the hygrometer from the old hygrometer end ring (before Dec 2025),
+        please take note of the locking tabs on the hygrometer at 12 o&#39;clock and
+        6 o&#39;clock position (may be different for hygrometers that aren&#39;t from
+        Maker&#39;s Supply). Please line up the locking tabs to be visible through
+        the vent holes, and use a flat head screwdriver to depress the lock tab whilst
+        pushing the hygrometer out. Repeat this procedure on the opposing locking
+        tab until the hygrometer fully detaches from the end ring. This procedure
+        may not be required on the XL Core version. RFID TagsThe print profile for
+        RFID Tags consists of various tags for a range of different filament material
+        types available from Bambu Lab. RFID tags from empty Bambu Lab spools can
+        be cut and inserted into the tag. The tag can then be clipped into place into
+        the side of the desiccant cores. RFID labels can be adjusted within Bambu
+        Studio if a custom label is needed. The tags can also be used as labels for
+        spools.  Currently the RFID tags are only available for Standard Core sizes
+        and not compatible when paired with an adaptor. Adjustment may be made in
+        the future.&nbsp;Design TestingPrint TestingThe design had been test printed
+        in PLA, PETG, ABS, ASA, PC, PA6-GF, PA6-CF, PAHT-CF, PET-CF and PPA-CF. Printing
+        the design using PA6 was possible but not recommended due to high shrinkage
+        and warping. Easy PA is also not recommended due to low temperature resistance.
+        HIPS is not recommended due to weak strength. It&#39;s important to note that
+        filaments like PETG, ABS, ASA, PC, PA6-GF, PA6-CF, PAHT-CF, PET-CF and PPA-CF
+        require drying to ensure accurate and reliable printing. Some of these filaments
+        require high temperature drying and may even require days of drying if drying
+        at low temperatures. With ASA, it was noticed that it may be more prone to
+        having weaker layer adhesion due to excess cooling used in overhang/bridging
+        within filament presets. Would be advisable to follow recommendations in “Print
+        Guidance” for engineering filaments to improve layer adhesion. &nbsp;PLA,
+        PETG, ABS, ASA and PC prints all produced smooth loose fitting threads with
+        little to no resistance to thread on. Material shrinkage from ABS, ASA and
+        PC had minimal impact on the threads, and still remained smooth and loose
+        fitting. When interchanging PLA with ABS parts, differences in fit was noticeable
+        but not too significant. With fiber reinforced filaments like PA6-GF, PA6-CF,
+        PAHT-CF, PPA-CF and PET-CF, exposed fibers can affect the threads such that
+        threads would feel rougher but still acceptable in use. With glass fibers
+        in particular in PA6-GF, the stiffer fibers can occasionally cause the threads
+        to seize. PET-CF had the smoothest surface finish with the least amount of
+        exposed fibers, but results can differ between brands. Exposed fibers can
+        be removed by rubbing the surfaces with a fine sanding sponge under running
+        water. Once removed, surfaces become smoother whilst improving the smoothness
+        of threads. With the removal of the exposed fibers, all fiber reinforced filaments
+        produced fairly smooth and loose fitting threads. Part shrinkage may also
+        occur from annealing, which was noticed with many CF nylons and PET-CF where
+        they would shrink in the Z-axis. Despite the shrinkage of even up to 3% in
+        Z-axis in some materials, the threads remained functional without significant
+        resistance. Z-axis expansion was also noticed with PA6 based filaments which
+        are more prone to swelling from moisture.PC, PA6-GF, PET-CF and PPA-CF test
+        prints on X1C 0.4mm nozzle through Bambu Handy App using “62mm - 69mm width
+        spools (Bambu Spool)” and “57mm - 64mm width spools” print profilesClose up
+        of PA6-GF, PET-CF and PPA-CF test printsThe design has also been test printed
+        in PETG on a RepRap Huxley printer without issue, so newer printers shouldn&#39;t
+        have much issue printing out the design. Main importance when printing is
+        ensuring there&#39;s adequate bed adhesion.Design Strength TestingThe test
+        samples are a high capacity Standard Core containers printed in Bambu Lab
+        ABS Black, Inslogic ASA White, Bambu Lab PETG HF White and Bambu Lab PC Transparent.
+        All Bambu Lab filaments were printed using default Bambu Lab filament presets,
+        and Inslogic filament was printed using Bambu Lab ASA filament preset but
+        modified to have a 12mm³/s volumetric speed. Prints were done using a near
+        stock X1C with no active chamber heating. The test samples were loaded with
+        10kg on two areas to check for possible issues with the strength of the design.There
+        were no visible signs of failure or cracks noticed in all the test samples.
+        The design will likely be able to handle much higher loads before failure. &nbsp;It&#39;s
+        important to note that despite the successful tests on verifying the strength
+        of the design, the design relies heavily on having good layer adhesion strength.
+        Many factors can affect the layer strength, such as having correct print temperatures,
+        volumetric print speeds, appropriate cooling and filament quality/type. Having
+        too low of a print temperature, too fast of a print speed or excessive part
+        cooling can reduce the layer adhesion of parts. So it&#39;s important to ensure
+        that the filament quality/type and matching filament preset is adequate in
+        producing reliable parts.Mesh Walls &amp; Flow Through Design Moisture Absorption
+        Efficacy TestingBoth high flow and high capacity versions use high density
+        mesh walls and open spoke ends to maximise airflow and exposed desiccant surface
+        area. This is in order to improve the design for more effective moisture absorption
+        in a dry box or vacuum bag. &nbsp;To test for the efficacy of the mesh walls
+        to ensure they have an effect on improving the performance of the desiccant
+        container, a modified version of the high capacity version was made to have
+        no mesh walls and to only have the mesh top and bottom ends. Both containers
+        hold the same amount of silica gel, and the only difference was the removal
+        of mesh walls in the modified design. Testing of the two designs revealed
+        that the mesh walls made a significant difference to the effectiveness of
+        silica gel in bringing down the humidity within a dry box. The increased exposed
+        surface area in the high capacity version allowed it to reach a lower humidity
+        level within a shorter time frame when compared to the modified version without
+        mesh walls. For the modified version to reach the same level of humidity,
+        it took 4.7 times longer than the high capacity version with its mesh walls.&nbsp;Testing
+        involved using an 8.7 litre dry box, two Bambu spools with filament, two of
+        each version of Standard Core desiccant containers, a large batch of dry silica
+        gel and two Xiaomi Temperature &amp; Humidity Monitors. Before starting the
+        tests, the two spools and two sensors were initially placed into the dry box
+        with desiccant for a day to bring down the humidity within. The sensors were
+        also placed &gt;13cm away from the center of the two spools where the desiccant
+        containers will be situated. To start the tests, the two spools and desiccant
+        were taken out of the dry box and placed into the AMS for 30 mins whilst the
+        dry box was left open to saturate with ambient humidity. After 30 minutes
+        had passed, the spools were removed from the AMS and placed into the dry box
+        together with the high capacity desiccant container secured in the center
+        before sealing the dry box, after which measurements were recorded. This procedure
+        was repeated again for the modified desiccant container.&nbsp;From testing,
+        the high capacity version reached a humidity level of 15% in 140 minutes,
+        whereas the modified version with only mesh top and bottom reached the same
+        humidity level in 660 minutes (11 hours). This suggests that the lack of mesh
+        walls creates a restriction to the silica gel and its ability to absorb moisture,
+        preventing it from more effectively lowering the humidity in the dry box.
+        Although data was not recorded for the high capacity version after 240 minutes,
+        it was observed that the high capacity version was capable of reducing the
+        humidity below 15% after some time.Silica Gel Drying Efficacy TestingThe high
+        capacity version was the first container to be developed, however, it was
+        noticed that silica gel deeper within the center of the container had difficulties
+        drying when the container was placed in a dryer. In order to improve on the
+        container&#39;s design to allow for better drying of silica gel contained
+        within, the high flow version was developed with additional internal towers
+        to direct air deeper into the container whilst increasing available mesh area
+        at the cost of reduced desiccant capacity. &nbsp;Testing of the two containers,
+        high flow and high capacity, revealed that the high flow version had an increased
+        rate of drying compared to the high capacity version. The high capacity version
+        had a more gradual slower rate of drying that took around 2 times longer than
+        the high flow container version. &nbsp;Testing of the two Standard Core containers
+        with standard mesh involved using a batch of partially saturated silica gel
+        for both containers and an AMS HT set to dry at 65°C for 12 hours. Each container
+        was placed into the filament dryer on their own and taken out at 30 to 60
+        minute intervals to measure their weight. At 7 hours of drying, the high flow
+        container had stopped losing weight at around -10% whilst the high capacity
+        version continued to lose weight even up to the end of the drying cycle. As
+        the high capacity version hadn&#39;t yet reached the same percentage of weight
+        lost as the high flow version, additional hours in the filament dryer would
+        be needed.High flow and high capacity Standard Core containers dried at 65°C After
+        drying the silica gel at 65°C, the high flow version was immediately placed
+        into an empty 8.7 litre dry box to measure the silica gel efficacy after drying
+        at 65°C. The dry box was opened to ambient air for 10 minutes prior to sealing
+        the desiccant container within. After 17 hours inside the dry box, the humidity
+        level was reduced down to 8%. Please note that this delay may be due to not
+        letting the silica gel cool to room temperature before placing into the drybox.65°C
+        dried silica gel in an empty 8.7 litre dry boxThe tests were further repeated
+        again using the AMS HT drying at 85°C. After 4 hours of drying, the high flow
+        container had lost 11.8% of its weight, whilst the high capacity container
+        had lost 11.8% after 10 hours.High flow and high capacity Standard Core containers
+        dried at 85°C Placing the 85°C dried high flow container into a 8.7 litre
+        dry box achieved a humidity of 5% after 4 hours.85°C dried silica gel in an
+        empty 8.7 litre dry boxAdditionally after testing, the same silica gel used
+        to perform the tests were further dried in the oven at 120°C to determine
+        how much remaining weight could be removed.  After drying for an additional
+        2 hours in the oven, the average total removable weight from the tested silica
+        gel was 12.5%. Therefore, the silica gel dried at 65°C had 2.5% of removable
+        weight remaining, and the 85°C dried silica gel had 0.7% of removable weight
+        remaining.&nbsp;Please note that these test will differ when drying more than
+        1 container or when drying in a different filament dryer. More test are still
+        underway.Filament Bag TestingFilaments are often packaged in bags made entirely
+        from plastic, or plastic with additional aluminium inner layer. The bags can
+        sometimes be reusable which can allow for a cost effective filament storage
+        solution. To test the effectiveness of such storage solutions, a half empty
+        spool of ABS was dried at 70°C for over 9 hours before letting it cool to
+        room temperature and storing within one of the storage solutions. Each test
+        had a hygrometer placed close to the coils of filament to measure the humidity
+        within. Tests were also repeated to find the effectiveness of adding a high
+        capacity desiccant core (with ~68g of silica gel). All tests were repeated
+        using the same spool and hygrometer. A reusable vacuum bag was used to simulate
+        a resealable plastic bag, whilst a resealable aluminium foil bag was reused
+        from a spool purchase. No vacuum was applied to either storage solutions.
+        Data was recorded hourly, but only data points with humidity changes was graphed.
+        Ambient humidity was greater than 60% in an non air conditioned room.Resealable
+        plastic bag vs. foil filament bag (with/without desiccant)From the tests,
+        it can be seen that the aluminium foil bag provided the most effective filament
+        storage solution that can even be used without desiccant. Humidity remained
+        stable in the foil bag without desiccant but an even lower humidity of 3%
+        was achieved when used with desiccant. This can be particularly beneficial
+        for storing moisture sensitive filaments like TPUs and nylons. The plastic
+        resealable bag on the other hand only had an acceptable result when used with
+        desiccant, as the plastic was not a particularly effective barrier against
+        moisture. A low humidity was still maintained when using with desiccant but
+        will likely require drying after a few months. This can still be sufficient
+        for less moisture sensitive materials. Designer NotesShout out to some great
+        alternative designs on MakerWorld which had inspired me to create my own versionHigh
+        Air Flow Desiccant Holder for Spools by DänDesiccant Holder for Spool - High
+        Airflow by Motiform StudioSpool Silica Desiccant Container by DarwinianUpdatesPlease
+        note that updates will likely be made in the future for further improvements
+        to the design or for additional sizes. Please check in case there are any
+        changes to the design.01/07/2026 - Opening tool for Standard, Large and XL
+        core was added 24/12/2025 - Large Core funnels were added. Sizing of funnels
+        were changed to be two sizes, 70mm &amp; 100mm diameter opening.14/12/2025
+        - Hygrometer end rings have been updated to have a better fit with hygrometers
+        that weren&#39;t purchased from Bambu Lab Maker&#39;s Supply07/12/2025 - XL
+        Core 60mm - 67mm width spools have been updated with the high capacity variant.
+        Standard Core and XL Core hygrometer end rings have been updated for toolless
+        hygrometer removal.26/11/2025 - XL Core for 57-65mm width spools was changed
+        to be 55-62mm for Geetech spools. High capacity variant was also added, but
+        hygrometer version is yet to be added.24/10/2025 - Large Core HF was updated
+        to V1.223/10/2025 - Some print profiles have been updated with Bambu Studio
+        2.3.0.70 for printers with high flow nozzles26/07/2025 - Adapter rings for
+        Standard &amp; Large Cores were added in the profile “Standard &amp; Large
+        Core Adapter for 63-80mm Inner Dia Spools”Hygrometer version added to &#34;XL
+        Core 60mm - 67mm width spools (Sunlu Gen 1 &amp; Gen 2)&#34;17/07/2025 - Large
+        Cores were move to their own print profiles “Large Core 62mm - 69mm width
+        spools (Bambu Spool)”14/07/2025 - 6 Large Core containers were added to “62mm
+        - 69mm width spools (Bambu Spool)” print profile12/07/2025 - RFID tags for
+        Standard Core were added. 47mm-54mm sizes were also uploaded.24/06/2025 -
+        Funnels were adjusted to be more taller to reduce the risk of silica gel beads
+        bouncing out.04/06/2025 - XL Core sizes for Sunlu Gen 1 and Gen 2 were added.20/05/2025
+        - Standard Core hygrometer version was added02/05/2025 - Updated all print
+        profiles with latest Bambu Studio. Adjustments to slicer settings for better
+        bottom mesh strength on high capacity containers.17/04/2025 - Modified funnel
+        shape to be slightly taller13/04/2025 - Re-uploaded &#34;desiccant_core_62mm-69mm.3mf&#34;
+        using latest Bambu Studio version. Previous 3mf file may have had backwards
+        compatibility issues with older Bambu Studio versions27/03/2025 - Added desiccant
+        cores for 66mm - 73mm and 71mm - 78mm width spools22/03/2025 V1.1 Update -
+        XL desiccant core added. Designs updated with size markings and thicker cap
+        threads.Work in progressV1.2 update for slightly increased mesh surface area
+        with additional optimisationsRFID tags for other core sizesRFID tag compatibility
+        with Standard &amp; Large Core adapter ringsRFID tags for other filaments,
+        e.g. PLA Wood, PLA Aero, etc.RFID tag holderXL Core update for larger threadsHygrometer
+        end ring for Large CoreHygrometer version for GeeetechAlternative end rings
+        for other core sizesAlternative end ring for clip in spool desiccant coreStandard
+        Core sizing for &lt;37mm spool widthsFilament storage testingOven drying testingBoost
+        MeIf you like my work, Boosts are greatly appreciated. This design had went
+        through months of iterations and testing for reliability, printability, performance
+        and efficacy.  This design alone already has over 50 different variations
+        created and optimised, and such designs takes multiple weeks to develop and
+        refine. Boosts mean a lot to me as it fuels my passion for 3D printing and
+        allows me to spend time creating highly refined designs for everyone for free.'
+      featuredImageThumbnails:
+      - height: 180
+        url: /~/mirror-blob-iiif-image-v3/2212553354943c962d4c71d8601f79f48051f2155d3c372abd4cb9153e5375b1/full/240%2C180/0/default.jpg
+        width: 240
+      - height: 360
+        url: /~/mirror-blob-iiif-image-v3/2212553354943c962d4c71d8601f79f48051f2155d3c372abd4cb9153e5375b1/full/480%2C360/0/default.jpg
+        width: 480
+      - height: 539
+        url: /~/mirror-blob-iiif-image-v3/2212553354943c962d4c71d8601f79f48051f2155d3c372abd4cb9153e5375b1/full/720%2C539/0/default.jpg
+        width: 720
+      name: High Performance Spool Desiccant Container Holder - Free 3D Print Model
+        - MakerWorld
+      origin:
+        iconThumbnails:
+        - height: 240
+          url: /~/mirror-blob-iiif-image-v3/a56b42dd59f3abee04ca9c29854634c81a2a3aa153bcd5391bd5d28f9cea0c9e/full/240%2C240/0/default.png
+          width: 240
+        name: 'MakerWorld: Download Free 3D Models'
+    referrer: content/post/2026/20260822-3d-printing-week-2/_index.md
+    target: https://makerworld.com/en/models/1193993-high-performance-spool-desiccant-container-holder#profileId-1214551
+    targetOriginFaviconResource:
+      digest: sha-256=ivnH9EpCy0+5kN9GxKsr/AY8NdCou2c4jI2eD68YqSw=
+      landedUrl: https://makerworld.com/favicon.ico
+      mediaType: image/x-icon
+      size: 15406
+      time: '2026-09-03T21:49:44Z'
+      url: https://makerworld.com/favicon.ico
+    targetOriginResource:
+      digest: sha-256=s9+lTcemZV2wPS2TbMYjGznQSfpY5HnSOdnkFcsunKU=
+      landedUrl: https://makerworld.com/en
+      mediaType: text/html
+      profiles:
+      - data: |-
+          <html lang="en">
+          	<head>
+          		<title>MakerWorld: Download Free 3D Models</title>
+          		<meta charset="utf-8"/>
+          		<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+          		<meta content="MakerWorld is the leading 3D printing model community for designers and makers. Download thousands of free 3D models and STL files from the No.1 destination for multicolor designs." property="og:description"/>
+          		<meta content="https://makerworld.bblmw.com/makerworld/static/og-icon.jpeg" property="og:image"/>
+          		<meta content="image/jpeg,image/png,image/webp" property="og:image:type"/>
+          		<meta content="1200" property="og:image:width"/>
+          		<meta content="625" property="og:image:height"/>
+          		<meta content="https://makerworld.com/en" property="og:url"/>
+          		<meta content="website" property="og:type"/>
+          		<meta content="summary_large_image" name="twitter:card"/>
+          		<meta content="Leading 3D printing model community for designers and makers. Download thousands of 3D models and stl models for free, and your No.1 option for multicolor 3D models" name="description"/>
+          		<meta content="free 3D models, download 3D models, 3D printing, multicolor 3D models, STL models" name="keywords"/>
+          		<meta content="MakerWorld: Download Free 3D Models" property="og:title"/>
+          		<meta content="Leading 3D printing model community for designers and makers. Download thousands of 3D models and stl models for free, and your No.1 option for multicolor 3D models" property="og:description"/>
+          		<meta content="https://makerworld.bblmw.com/makerworld/static/og-icon.jpeg" property="og:image"/>
+          		<meta content="1200" property="og:image:width"/>
+          		<meta content="675" property="og:image:height"/>
+          		<meta content="33" name="next-head-count"/>
+          		<meta content="" name="emotion-insertion-point"/>
+          		<link href="/favicon_new.png" rel="icon"/>
+          		<link href="https://makerworld.com/en" rel="canonical"/>
+          		<link href="https://makerworld.com/en" hreflang="en" rel="alternate"/>
+          		<link href="https://makerworld.com/zh" hreflang="zh" rel="alternate"/>
+          		<link href="https://makerworld.com/zh-tw" hreflang="zh-tw" rel="alternate"/>
+          		<link href="https://makerworld.com/de" hreflang="de" rel="alternate"/>
+          		<link href="https://makerworld.com/fr" hreflang="fr" rel="alternate"/>
+          		<link href="https://makerworld.com/it" hreflang="it" rel="alternate"/>
+          		<link href="https://makerworld.com/es" hreflang="es" rel="alternate"/>
+          		<link href="https://makerworld.com/ja" hreflang="ja" rel="alternate"/>
+          		<link href="https://makerworld.com/sv" hreflang="sv" rel="alternate"/>
+          		<link href="https://makerworld.com/pt" hreflang="pt" rel="alternate"/>
+          		<link href="https://makerworld.com/ko" hreflang="ko" rel="alternate"/>
+          		<link href="https://makerworld.com/ru" hreflang="ru" rel="alternate"/>
+          		<link href="https://makerworld.com/en" hreflang="x-default" rel="alternate"/>
+          		<link as="style" href="/_next/static/css/38641f03283250bb.css" nonce="MmQ4OTFkNWYtYTVkYy00ZjkyLWJiMjUtZjMzYjY5ZGZkZWUy" rel="preload"/>
+          		<link data-n-g="" href="/_next/static/css/38641f03283250bb.css" nonce="MmQ4OTFkNWYtYTVkYy00ZjkyLWJiMjUtZjMzYjY5ZGZkZWUy" rel="stylesheet"/>
+          		<link as="style" href="/_next/static/css/f6d6befd804d4f26.css" nonce="MmQ4OTFkNWYtYTVkYy00ZjkyLWJiMjUtZjMzYjY5ZGZkZWUy" rel="preload"/>
+          		<link data-n-g="" href="/_next/static/css/f6d6befd804d4f26.css" nonce="MmQ4OTFkNWYtYTVkYy00ZjkyLWJiMjUtZjMzYjY5ZGZkZWUy" rel="stylesheet"/>
+          		<link as="style" href="/_next/static/css/4ff613f9992b8b8d.css" nonce="MmQ4OTFkNWYtYTVkYy00ZjkyLWJiMjUtZjMzYjY5ZGZkZWUy" rel="preload"/>
+          		<link data-n-p="" href="/_next/static/css/4ff613f9992b8b8d.css" nonce="MmQ4OTFkNWYtYTVkYy00ZjkyLWJiMjUtZjMzYjY5ZGZkZWUy" rel="stylesheet"/>
+          		<link as="style" href="/_next/static/css/653ddeb9e80894ad.css" nonce="MmQ4OTFkNWYtYTVkYy00ZjkyLWJiMjUtZjMzYjY5ZGZkZWUy" rel="preload"/>
+          		<link data-n-p="" href="/_next/static/css/653ddeb9e80894ad.css" nonce="MmQ4OTFkNWYtYTVkYy00ZjkyLWJiMjUtZjMzYjY5ZGZkZWUy" rel="stylesheet"/>
+          	</head>
+          	<body></body>
+          </html>
+        kind: public.html.documentmetadata.v0
+      - data: |-
+          {
+          	"@graph": []
+          }
+        kind: public.html.structureddata.v0
+      - data: |-
+          [](https://makerworld.com/en)
+
+          - [Home](https://makerworld.com/en)
+          - [All Models](https://makerworld.com/en/3d-models)
+          - [Following](https://makerworld.com/en/following)
+          - [MakerLab](https://makerworld.com/en/makerlab?from=navbar)
+          - [Contests](https://makerworld.com/en/contests)
+          - [Crowdfunding](https://makerworld.com/en/crowdfunding)
+
+          Explore
+
+          - [Maker's Supply](https://store.bambulab.com/maker-supply?from=mw_homepage_ms)
+          - [CyberBrick](https://makerworld.com/en/cyberbrick)
+          - [Community](https://makerworld.com/en/community)
+          - [Forum](https://forum.bambulab.com/c/makerworld/144)
+
+          [Privacy](https://bambulab.com/policies/privacy)[Terms](https://makerworld.com/en/user-agreement)[Guidelines](https://makerworld.com/en/community-guidelines)[FAQ](https://makerworld.com/en/faq)
+
+          Cookie Settings
+
+          [Hot Searches](https://makerworld.com/en/more-models)
+
+          © 2026 MakerWorld
+
+          [](https://makerworld.com/en)
+
+          Search models, users, collections, and posts
+
+          Log In
+
+          For You
+
+          Trending
+
+          Household
+
+          Toys & Games
+
+          Tools
+
+          Hobby & DIY
+
+          3D Printer
+
+          Art
+
+          Miniatures
+
+          Props & Cosplays
+
+          Fashion
+
+          Generative 3D Model
+
+          Education
+
+          Laser & Cut
+
+          From Image to Fidget in Seconds
+
+          Explore More
+
+          [MakerLab](https://makerworld.com/en/makerlab)
+
+          [Create easily, customize freely](https://makerworld.com/en/makerlab)
+
+          [![MakerLab](https://public-cdn.bblmw.com/operation/f5aecc081f1ddf19.png?x-oss-process=image/resize,w_500/format,webp)](https://makerworld.com/en/makerlab)
+
+          [Maker's Supply](https://store.bambulab.com/maker-supply?from=mw_homepage_ms)
+
+          [Curated parts, kits & supplies](https://store.bambulab.com/maker-supply?from=mw_homepage_ms)
+
+          [![Maker's Supply](https://public-cdn.bblmw.com/operation/7a811db667cac9cc.png?x-oss-process=image/resize,w_500/format,webp)](https://store.bambulab.com/maker-supply?from=mw_homepage_ms)
+
+          [Crowdfunding](https://makerworld.com/en/crowdfunding)
+
+          [Turn ideas into reality](https://makerworld.com/en/crowdfunding)
+
+          [![Crowdfunding](https://public-cdn.bblmw.com/operation/cf1a7b90b709a9fd.png?x-oss-process=image/resize,w_500/format,webp)](https://makerworld.com/en/crowdfunding)
+
+          [CyberBrick](https://makerworld.com/en/cyberbrick)
+
+          [Build smarter. Code freer. Share globally](https://makerworld.com/en/cyberbrick)
+
+          [![CyberBrick](https://public-cdn.bblmw.com/operation/15a0b378b778dadd.png?x-oss-process=image/resize,w_500/format,webp)](https://makerworld.com/en/cyberbrick)
+
+          Contests
+
+          [All Contests](https://makerworld.com/en/contests)
+
+          Pool Party Design Contest
+
+          Ends in 6 days
+
+          378 models
+
+          $300 Bambu Lab Gift Card
+
+          Join Now
+
+          Modular Pool Noodle Construction Kit
+
+          BOTTLESHIP - Ultimate beverage battlestation
+
+          Pool Battleship – 3D Printed Water Cannon Game
+
+          Floating LED Pool Light
+
+          3in1 Poolbutler für Getränke inklusive Wasp Stop
+
+          Cute Flexi Anaconda|No Supports|Print-in-Place
+
+          Balloon Catamaran – GT Line
+
+          Release the Kraken! Mechanical Iris Pool Game
+
+          Hexagon Honeycomb Coaster Set
+
+          Floating Pool Party DJ Station - NO AMS
+
+          Pooligator (schwimmender Alligator Kopf)
+
+          Cute Flexi Squid – Print-in-Place Articulated Toy
+
+          Riviera V8 Hotrod Mechanical Toy (Wind-Up Edition)
+
+          Small Tiny Mini Micro Cool Ducks
+
+          5 Liter Getränketütenkühler
+
+          Fake Book - Storage/Safety Box
+
+          Rebel Riviera M1 - Cyberbrick Vintage RC Speedboat
+
+          Pool Propellers - boat and plane versions
+
+          Slice of Life – Pool Thermometer Boat
+
+          DAVE THE DIVER – Dave Pool Figure
+
+          Six-Pointed Ninja Star (Shuriken)
+
+          DIY 100W LiFePO4 Power Station 256Wh (20Ah)
+
+          Lucky Koi Fish Parade
+
+          big floating benchy
+
+          Sink the Island –Floating Balance Game-Multiplayer
+
+          Floating Beer Pong Rack – 6 Cup Pool Float
+
+          Mechanical Wind-up Sailboat
+
+          Pool Party Shark
+
+          JellyTune Flexi Sound Fidget
+
+          Orb Pool Lights
+
+          3D
+
+          Hosted by Creator: @itsboyinspace × @Plastic3D × @Sam Prentice RoboDog Mod Challenge
+
+          Ends in 26 days
+
+          67 models
+
+          Rover X1 Pro Flex (worth US$2,999) × 1 Bambu Lab A2L Combo (worth US$569) × 1
+
+          Join Now
+
+          Roboter Hund X1 Schuhe Nike Air Jordan
+
+          ADog – Walking advertisment Display and Candy Box
+
+          MOLLE Deck - Universal PALS Mount Plate
+
+          AgriRail X1 – Agricultural Developer Kit
+
+          Dobot Rover X1 Trailer
+
+          Rover_X1_RescueDeck
+
+          X1 Toddler shoe adapter
+
+          Gear Bag Bungee Rack - Rover X1
+
+          AT-AT star wars rover x1 conversion
+
+          Dire Wolf Skull INFFNI Rover X1
+
+          Rover X1 Modular Search and Rescue Platform
+
+          Rover X1 Modular Quick-Release System
+
+          Rover X1 Snack & Utility Rack
+
+          RoboDog Carrier Modular Back Rail for the Rover X1
+
+          Rover X1 × Drone Chassis x Quick-Release Adapter
+
+          Inffni Rover X1 Cargo Trailer
+
+          R1 Resupply Rover Module
+
+          Iron Rover – Rover X1 Armor
+
+          Rover X1 Wall & Side Storage Mount
+
+          Rover X1 Action Camera Quick-Release Mount
+
+          Rover X1 Gridfinity Utility Drawer
+
+          Gimbal Drink Delivery System for Rover X1
+
+          X1 rover spare battery holder
+
+          Bottle holder with cooling function Flaschenhalter
+
+          Dog Poop Bag Dispenser Attachment - Rover X1
+
+          Grass Seed Spreader Attachment for the Rover X1
+
+          Rover Pak
+
+          Robo Dog food Delivery System
+
+          Modular Snack Delivery System - 2 Versions
+
+          Support for the blind
+
+          3D
+
+          [Vernier Caliper Ruler - Two Lengths](https://makerworld.com/en/models/198362-vernier-caliper-ruler-two-lengths?from=recommend)
+
+          [Vernier Caliper Ruler - Two Lengths](https://makerworld.com/en/models/198362-vernier-caliper-ruler-two-lengths?from=recommend "Vernier Caliper Ruler - Two Lengths")
+
+          [3D Print Masters Hub](https://makerworld.com/en/@3DPrintMastersH)
+
+          68.6 k
+
+          17.8 k
+
+          [My 10 star fidget design](https://makerworld.com/en/models/1755208-my-10-star-fidget-design?from=recommend)
+
+          [My 10 star fidget design](https://makerworld.com/en/models/1755208-my-10-star-fidget-design?from=recommend "My 10 star fidget design")
+
+          [BigDeX](https://makerworld.com/en/@user_2175937239)
+
+          129.4 k
+
+          20.9 k
+
+          [Decorative Fruit Fly Trap](https://makerworld.com/en/models/2711760-decorative-fruit-fly-trap?from=recommend)
+
+          [Decorative Fruit Fly Trap](https://makerworld.com/en/models/2711760-decorative-fruit-fly-trap?from=recommend "Decorative Fruit Fly Trap")
+
+          [JANBERRY DESIGN](https://makerworld.com/en/@janberrydesign)
+
+          30.1 k
+
+          10.6 k
+
+          [Pads & Swabs Holder Ribbed Bath Organizer](https://makerworld.com/en/models/2151198-pads-swabs-holder-ribbed-bath-organizer?from=recommend)
+
+          [Pads & Swabs Holder Ribbed Bath Organizer](https://makerworld.com/en/models/2151198-pads-swabs-holder-ribbed-bath-organizer?from=recommend "Pads & Swabs Holder Ribbed Bath Organizer")
+
+          [3D Man](https://makerworld.com/en/@user_3599505738)
+
+          26.5 k
+
+          11.2 k
+
+          [3D Printable Jet Engine](https://makerworld.com/en/models/13806-3d-printable-jet-engine?from=recommend)
+
+          [3D Printable Jet Engine](https://makerworld.com/en/models/13806-3d-printable-jet-engine?from=recommend "3D Printable Jet Engine")
+
+          [CATIAV5FTW](https://makerworld.com/en/@CATIAV5FTW)
+
+          41.9 k
+
+          11 k
+
+          [Spidey Disc Launcher MK-II (Multi-Shot)](https://makerworld.com/en/models/1832786-spidey-disc-launcher-mk-ii-multi-shot?from=recommend)
+
+          [Spidey Disc Launcher MK-II (Multi-Shot)](https://makerworld.com/en/models/1832786-spidey-disc-launcher-mk-ii-multi-shot?from=recommend "Spidey Disc Launcher MK-II (Multi-Shot)")
+
+          [MechBrick.](https://makerworld.com/en/@MechBrick)
+
+          21.5 k
+
+          14.6 k
+
+          [Generative 3D Floor Plans](https://makerworld.com/en/models/2746484-generative-3d-floor-plans?from=recommend)
+
+          [Generative 3D Floor Plans](https://makerworld.com/en/models/2746484-generative-3d-floor-plans?from=recommend "Generative 3D Floor Plans")
+
+          [Meezi](https://makerworld.com/en/@meezi)
+
+          3.3 k
+
+          10.1 k
+
+          [The world's smallest spider (Nozzle 0.4)](https://makerworld.com/en/models/2864339-the-world-s-smallest-spider-nozzle-0-4?from=recommend)
+
+          [The world's smallest spider (Nozzle 0.4)](https://makerworld.com/en/models/2864339-the-world-s-smallest-spider-nozzle-0-4?from=recommend "The world's smallest spider (Nozzle 0.4)")
+
+          [formastampa](https://makerworld.com/en/@formastampa)
+
+          19.8 k
+
+          4.2 k
+
+          [Decorative F1 Logo, Formula 1](https://makerworld.com/en/models/643241-decorative-f1-logo-formula-1?from=recommend)
+
+          [Decorative F1 Logo, Formula 1](https://makerworld.com/en/models/643241-decorative-f1-logo-formula-1?from=recommend "Decorative F1 Logo, Formula 1")
+
+          [BTR3D.](https://makerworld.com/en/@BTR3D.)
+
+          27.5 k
+
+          10.1 k
+
+          [CAR VISOR SUNGLASSES HOLDER ](https://makerworld.com/en/models/2558189-car-visor-sunglasses-holder?from=recommend)
+
+          [CAR VISOR SUNGLASSES HOLDER](https://makerworld.com/en/models/2558189-car-visor-sunglasses-holder?from=recommend "CAR VISOR SUNGLASSES HOLDER ")
+
+          [formastampa](https://makerworld.com/en/@formastampa)
+
+          25 k
+
+          8.4 k
+
+          [ESP Smart Home Case | Parametric | Antenna](https://makerworld.com/en/models/2540084-esp-smart-home-case-parametric-antenna?from=recommend)
+
+          [ESP Smart Home Case | Parametric | Antenna](https://makerworld.com/en/models/2540084-esp-smart-home-case-parametric-antenna?from=recommend "ESP Smart Home Case | Parametric | Antenna")
+
+          [i-BoxIt](https://makerworld.com/en/@i.boxit)
+
+          1.3 k
+
+          1.6 k
+
+          [The best batman cat helmet ever!](https://makerworld.com/en/models/2717491-the-best-batman-cat-helmet-ever?from=recommend)
+
+          [The best batman cat helmet ever!](https://makerworld.com/en/models/2717491-the-best-batman-cat-helmet-ever?from=recommend "The best batman cat helmet ever!")
+
+          [arlovski](https://makerworld.com/en/@GenX3d77)
+
+          17.6 k
+
+          7.5 k
+
+          [Modular Desk Shelf Fully Printed • Screwable Addon](https://makerworld.com/en/models/1149456-modular-desk-shelf-fully-printed-screwable-addon?from=recommend)
+
+          [Modular Desk Shelf Fully Printed • Screwable Addon](https://makerworld.com/en/models/1149456-modular-desk-shelf-fully-printed-screwable-addon?from=recommend "Modular Desk Shelf Fully Printed • Screwable Addon")
+
+          [Robota](https://makerworld.com/en/@Robota)
+
+          31.9 k
+
+          21.5 k
+
+          [Mani Dock Max](https://makerworld.com/en/models/3145556-mani-dock-max?from=recommend)
+
+          [Mani Dock Max](https://makerworld.com/en/models/3145556-mani-dock-max?from=recommend "Mani Dock Max")
+
+          [Less Design](https://makerworld.com/en/@LessDesign)
+
+          3.5 k
+
+          4.7 k
+
+          [skull detaliert](https://makerworld.com/en/models/2149708-detailed-skull?from=recommend)
+
+          [detailed skull](https://makerworld.com/en/models/2149708-detailed-skull?from=recommend "detailed skull")
+
+          [DireChris](https://makerworld.com/en/@DireChris)
+
+          16 k
+
+          4.2 k
+
+          [Slippery Egg Fidget](https://makerworld.com/en/models/2443178-slippery-egg-fidget?from=recommend)
+
+          [Slippery Egg Fidget](https://makerworld.com/en/models/2443178-slippery-egg-fidget?from=recommend "Slippery Egg Fidget")
+
+          [Spool Craft](https://makerworld.com/en/@EasyPrints)
+
+          16.2 k
+
+          2.6 k
+
+          [Pumpkin Decoration ](https://makerworld.com/en/models/1762970-pumpkin-decoration?from=recommend)
+
+          [Pumpkin Decoration](https://makerworld.com/en/models/1762970-pumpkin-decoration?from=recommend "Pumpkin Decoration ")
+
+          [SabreDesign](https://makerworld.com/en/@SabreDesign)
+
+          12.5 k
+
+          7.2 k
+
+          [Ghost with Balloon](https://makerworld.com/en/models/1911210-ghost-with-balloon?from=recommend)
+
+          [Ghost with Balloon](https://makerworld.com/en/models/1911210-ghost-with-balloon?from=recommend "Ghost with Balloon")
+
+          [Sevro](https://makerworld.com/en/@Sevro)
+
+          16.8 k
+
+          12.5 k
+
+          [Seamless Photo Box Booth Studio Perfect Background](https://makerworld.com/en/models/2358777-seamless-photo-box-booth-studio-perfect-background?from=recommend)
+
+          [Seamless Photo Box Booth Studio Perfect Background](https://makerworld.com/en/models/2358777-seamless-photo-box-booth-studio-perfect-background?from=recommend "Seamless Photo Box Booth Studio Perfect Background")
+
+          [ParadoxH](https://makerworld.com/en/@ParadoxH)
+
+          14.2 k
+
+          10.9 k
+
+          [Spider-Man / NO AMS / AMS FRIENDLY](https://makerworld.com/en/models/2529578-spider-man-no-ams-ams-friendly?from=recommend)
+
+          [Spider-Man / NO AMS / AMS FRIENDLY](https://makerworld.com/en/models/2529578-spider-man-no-ams-ams-friendly?from=recommend "Spider-Man / NO AMS / AMS FRIENDLY")
+
+          [model lover](https://makerworld.com/en/@ModelLover)
+
+          22 k
+
+          11.2 k
+
+          [Design Headphone Stand "Swing" - Quickprint ](https://makerworld.com/en/models/1574312-design-headphone-stand-swing-quickprint?from=recommend)
+
+          [Design Headphone Stand "Swing" - Quickprint](https://makerworld.com/en/models/1574312-design-headphone-stand-swing-quickprint?from=recommend "Design Headphone Stand \"Swing\" - Quickprint ")
+
+          [Deltaprints](https://makerworld.com/en/@deltaprints_de)
+
+          22.6 k
+
+          6.2 k
+
+          [Modular Mini Golf Set](https://makerworld.com/en/models/2969202-modular-mini-golf-set?from=recommend)
+
+          [Modular Mini Golf Set](https://makerworld.com/en/models/2969202-modular-mini-golf-set?from=recommend "Modular Mini Golf Set")
+
+          [3D Paint Lab](https://makerworld.com/en/@3dpaintlab)
+
+          3.1 k
+
+          7.3 k
+
+          [Fantasy Terrain Miniatures Set Scenery Pieces](https://makerworld.com/en/models/2794027-fantasy-terrain-miniatures-set-scenery-pieces?from=recommend)
+
+          [Fantasy Terrain Miniatures Set Scenery Pieces](https://makerworld.com/en/models/2794027-fantasy-terrain-miniatures-set-scenery-pieces?from=recommend "Fantasy Terrain Miniatures Set Scenery Pieces")
+
+          [Elzofans](https://makerworld.com/en/@Elzofans)
+
+          3.3 k
+
+          3 k
+
+          [Silicone / Caulk Cartridge Finishing Nozzle Tips](https://makerworld.com/en/models/2804285-silicone-caulk-cartridge-finishing-nozzle-tips?from=recommend)
+
+          [Silicone / Caulk Cartridge Finishing Nozzle Tips](https://makerworld.com/en/models/2804285-silicone-caulk-cartridge-finishing-nozzle-tips?from=recommend "Silicone / Caulk Cartridge Finishing Nozzle Tips")
+
+          [fifindr](https://makerworld.com/en/@fifindr)
+
+          9.4 k
+
+          9.1 k
+
+          [Air Slides – Lightweight, Breathable, Summer-Ready](https://makerworld.com/en/models/1515698-air-slides-lightweight-breathable-summer-ready?from=recommend)
+
+          [Air Slides – Lightweight, Breathable, Summer-Ready](https://makerworld.com/en/models/1515698-air-slides-lightweight-breathable-summer-ready?from=recommend "Air Slides – Lightweight, Breathable, Summer-Ready")
+
+          [DjangoCashflow](https://makerworld.com/en/@DjangoCashflow)
+
+          47.3 k
+
+          27.7 k
+
+          [Cute Wobbly Penguin – NO AMS](https://makerworld.com/en/models/2830971-cute-wobbly-penguin-no-ams?from=recommend)
+
+          [Cute Wobbly Penguin – NO AMS](https://makerworld.com/en/models/2830971-cute-wobbly-penguin-no-ams?from=recommend "Cute Wobbly Penguin  – NO AMS")
+
+          [Rayxa](https://makerworld.com/en/@Rayxa)
+
+          13 k
+
+          6.9 k
+
+          [Sardines Jewellery Box Travel Case](https://makerworld.com/en/models/1709436-sardines-jewellery-box-travel-case?from=recommend)
+
+          [Sardines Jewellery Box Travel Case](https://makerworld.com/en/models/1709436-sardines-jewellery-box-travel-case?from=recommend "Sardines Jewellery Box Travel Case")
+
+          [kelleninprogress](https://makerworld.com/en/@kelleninprogres)
+
+          10.1 k
+
+          8.5 k
+
+          [Joystick Keycap (KeyboaStick ARROW)](https://makerworld.com/en/models/2566552-joystick-keycap-keyboastick-arrow?from=recommend)
+
+          [Joystick Keycap (KeyboaStick ARROW)](https://makerworld.com/en/models/2566552-joystick-keycap-keyboastick-arrow?from=recommend "Joystick Keycap (KeyboaStick ARROW)")
+
+          [FunOrNothing](https://makerworld.com/en/@FunOrNothing)
+
+          23.3 k
+
+          13.9 k
+
+          [USB cable organizer Box tray IPhone Samsung](https://makerworld.com/en/models/2268549-usb-cable-organizer-box-tray-iphone-samsung?from=recommend)
+
+          [USB cable organizer Box tray IPhone Samsung](https://makerworld.com/en/models/2268549-usb-cable-organizer-box-tray-iphone-samsung?from=recommend "USB cable organizer Box tray IPhone Samsung")
+
+          [Gorilla Labs](https://makerworld.com/en/@_GLabs_)
+
+          34.2 k
+
+          16.3 k
+
+          [Business Card BC005QR](https://makerworld.com/en/models/2019739-business-card-bc005qr?from=recommend)
+
+          [Business Card BC005QR](https://makerworld.com/en/models/2019739-business-card-bc005qr?from=recommend "Business Card BC005QR")
+
+          [Marcin](https://makerworld.com/en/@mar.gontarz)
+
+          4.6 k
+
+          2.5 k
+
+          [Overengineered Mechanical Hand V2 - 4 Fingers!](https://makerworld.com/en/models/1772809-overengineered-mechanical-hand-v2-4-fingers?from=recommend)
+
+          [Overengineered Mechanical Hand V2 - 4 Fingers!](https://makerworld.com/en/models/1772809-overengineered-mechanical-hand-v2-4-fingers?from=recommend "Overengineered Mechanical Hand V2 - 4 Fingers!")
+
+          [TLPOD](https://makerworld.com/en/@TLPOD)
+
+          78.2 k
+
+          19.7 k
+
+          [Book Page Holder V3](https://makerworld.com/en/models/1687004-book-page-holder-v3?from=recommend)
+
+          [Book Page Holder V3](https://makerworld.com/en/models/1687004-book-page-holder-v3?from=recommend "Book Page Holder V3")
+
+          [fifindr](https://makerworld.com/en/@fifindr)
+
+          55.1 k
+
+          13.4 k
+
+          [Vacuum Nozzle – Round or Flat Tip (Customizable)](https://makerworld.com/en/models/2488033-vacuum-nozzle-round-or-flat-tip-customizable?from=recommend)
+
+          [Vacuum Nozzle – Round or Flat Tip (Customizable)](https://makerworld.com/en/models/2488033-vacuum-nozzle-round-or-flat-tip-customizable?from=recommend "Vacuum Nozzle – Round or Flat Tip (Customizable)")
+
+          [John_M](https://makerworld.com/en/@John_M)
+
+          9.6 k
+
+          9.9 k
+
+          [Little Alien Visitors](https://makerworld.com/en/models/749527-little-alien-visitors?from=recommend)
+
+          [Little Alien Visitors](https://makerworld.com/en/models/749527-little-alien-visitors?from=recommend "Little Alien Visitors")
+
+          [jdormer9](https://makerworld.com/en/@jdormer9)
+
+          39.4 k
+
+          11.5 k
+
+          [Sleeping Baby Dragon](https://makerworld.com/en/models/2790106-sleeping-baby-dragon?from=recommend)
+
+          [Sleeping Baby Dragon](https://makerworld.com/en/models/2790106-sleeping-baby-dragon?from=recommend "Sleeping Baby Dragon")
+
+          [BluB](https://makerworld.com/en/@BluB)
+
+          13.2 k
+
+          6.6 k
+
+          [Ständer / Halter für Meta Quest 3 / 3s und Quest 2](https://makerworld.com/en/models/732752-stand-holder-for-meta-quest-3-3s-and-quest-2?from=recommend)
+
+          [Stand / Holder for Meta Quest 3 / 3s and Quest 2](https://makerworld.com/en/models/732752-stand-holder-for-meta-quest-3-3s-and-quest-2?from=recommend "Stand / Holder for Meta Quest 3 / 3s and Quest 2")
+
+          [Dandandu](https://makerworld.com/en/@DanDanDu)
+
+          31.4 k
+
+          10.3 k
+
+          [Airpods pro1代2代宝可梦耳机壳汇总持续更新](https://makerworld.com/en/models/2659610-airpods-pro-1-2-pokemon-earphone-case-collection-c?from=recommend)
+
+          [Airpods Pro 1/2 Pokemon Earphone Case Collection, Continuously Updated](https://makerworld.com/en/models/2659610-airpods-pro-1-2-pokemon-earphone-case-collection-c?from=recommend "Airpods Pro 1/2 Pokemon Earphone Case Collection, Continuously Updated")
+
+          [Ikeda](https://makerworld.com/en/@Ikedasoul)
+
+          1.2 k
+
+          4 k
+
+          [Lipstick case with ornament - keychain](https://makerworld.com/en/models/2893394-lipstick-case-with-ornament-keychain?from=recommend)
+
+          [Lipstick case with ornament - keychain](https://makerworld.com/en/models/2893394-lipstick-case-with-ornament-keychain?from=recommend "Lipstick case with ornament - keychain")
+
+          [NikiPiki](https://makerworld.com/en/@NikiPiki1)
+
+          6.4 k
+
+          4.2 k
+
+          [Barb Union Tube / Hose Splice joint fitting](https://makerworld.com/en/models/1259571-barb-union-tube-hose-splice-joint-fitting?from=recommend)
+
+          [Barb Union Tube / Hose Splice joint fitting](https://makerworld.com/en/models/1259571-barb-union-tube-hose-splice-joint-fitting?from=recommend "Barb Union Tube / Hose Splice joint fitting")
+
+          [SY3D](https://makerworld.com/en/@sylva)
+
+          15.7 k
+
+          11.4 k
+
+          [Pasta Playset: Pasta Box,Noodles,Bowl,&Funny Fork](https://makerworld.com/en/models/1516685-pasta-playset-pasta-box-noodles-bowl-funny-fork?from=recommend)
+
+          [Pasta Playset: Pasta Box,Noodles,Bowl,&Funny Fork](https://makerworld.com/en/models/1516685-pasta-playset-pasta-box-noodles-bowl-funny-fork?from=recommend "Pasta Playset: Pasta Box,Noodles,Bowl,&Funny Fork")
+
+          [3DPmom](https://makerworld.com/en/@3DPmom)
+
+          21.7 k
+
+          13.1 k
+        kind: public.html.markdoc.v0
+      size: 1.40282e+06
+      time: '2026-09-03T21:49:42Z'
+      url: https://makerworld.com
+    targetResource:
+      digest: sha-256=kjhdeHhtoxTSWMsIW5KQyPLAjbtWPVIE/oGLdfepigg=
+      landedUrl: https://makerworld.com/en/models/1193993-high-performance-spool-desiccant-container-holder#profileId-1214551
+      mediaType: text/html
+      profiles:
+      - data: |-
+          <html lang="en">
+          	<head>
+          		<title>High Performance Spool Desiccant Container Holder - Free 3D Print Model - MakerWorld</title>
+          		<meta charset="utf-8"/>
+          		<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+          		<meta content="image/jpeg,image/png,image/webp" property="og:image:type"/>
+          		<meta content="https://makerworld.com/en/models/1193993-high-performance-spool-desiccant-container-holder" property="og:url"/>
+          		<meta content="website" property="og:type"/>
+          		<meta content="summary_large_image" name="twitter:card"/>
+          		<meta content="High Performance Spool Desiccant Container Holder - Free 3D Print Model - MakerWorld" property="og:title"/>
+          		<meta content="https://makerworld.bblmw.com/makerworld/model/US3cd00ef3406625/design/2025-03-22_93398cc809087.jpeg?x-oss-process=image/resize,w_1200/ignore-error,1" property="og:image"/>
+          		<meta content="1200" property="og:image:width"/>
+          		<meta content="720" property="og:image:height"/>
+          		<meta content="Download this free 3D print file designed by Silvercell. Main FeaturesTwo high airflow and high surface area desiccant container versions for effective moisture absorption for keeping filaments dry. Both having high density open mesh walls and self-centering open spoke ends for improved air circulation throughout the whole desiccant core and spoolHigh Flow (HF) version with triple internal towers to maximise silica gel surface area while allowing air to reach the silica gel deeper within the container for better efficacy.High Capacity (HC) version for greater desiccant capacity for long term storage, easier refilling and additional weight.Performance, strength and print tested container design (test details at the end)Tested to reduce humidity in a dry box faster than a desiccant container with low surface area.2x faster silica gel drying speed with high flow version for faster drying in filament dryers and ovens. Tested to be capable of maintaining low humidity within a heavy duty resealable bag. Load tested to 10kg without structural failure, ensuring a durable design. Able to prevent Bambu spool halves from coming apart. Test fitted in 26 different spools (test fitted spools in “Compatibility List”)Print tested in a wide range of materials including polycarbonate for high temperature drying, and fiber reinforced filaments for advanced users. Highly refined and optimised design print profiles for reliable printing and smooth fitting parts for over 50 different design variations Three core sizes for different inner diameter spoolsStandard Core for 50mm - 63mm inner diameter spools for wide compatibility and high airflow. Can also be adapted for 63mm - 80mm inner diameter spoolsLarge Core for 55mm - 63mm inner diameter spools for maximised desiccant capacity whilst maintaining adequate airflow and compatibility for most spools including Bambu spools. Can also be adapted for 63mm - 80mm inner diameter spoolsXL Core for 60mm - 75mm inner diameter spools for spools with a large inner diameterSilica gel capacities for dry silica gel (wet silica gel will be 20-30% heavier):Standard Core for Bambu spools: HF ~52g, HC ~68gLarge Core for Bambu spools: HF ~68g, HC ~88gXL Core for Sunlu Gen 1 &amp;amp; 2: HF ~75gThree available mesh sizes for different sizes of intact desiccant beads (damaged beads will need finer mesh size):Standard mesh: &amp;gt;2mmFine mesh: &amp;gt;1.5mmUltra fine mesh: &amp;gt;1mmUp to 7 desiccant cores can be dried in the AMS 2 Pro, AMS HT or any filament dryer using the drying spool (link)Different lengths with size markings to provide a secure fit in a wide range of spool sizes from 250g to 1kg spools (test fitted spools in “Compatibility List” and in print profile pictures)Extra options for alternative add-onsHygrometer version for desiccant humidity monitoringStandard and Large Core adapter for 63mm - 80mm inner diameter spoolsStandard Core RFID tags for labelling of spools and AMS RFID reading function Two sizes of funnels to aid with fillingAlternative locking end ring lengthsOptional opening toolMore updates and features to be added… Please check Designer Notes for updates and work in progress Print GuidanceThe design and print profiles have been carefully optimized for easy support-free printing. Many hours of work had been spent optimising all the print profiles, and many modifiers are used within the print profiles so please be sure to print using my uploaded print profiles. Do not download STL/CAD files to print from or make changes to the print settings! The mesh on the ends of the container won&amp;#39;t be visible in 3D model, as it relies on slicer modifiers to generate the mesh. Once the models are sliced using the print profiles, the mesh will appear in Bambu Studio “Preview”. If the design is printed without the yellow modifiers &amp;amp; settings, no mesh will be printed! Please also ensure Bambu Studio is up to date as older versions may causes issues. Would recommend printing the design using Bambu Handy App for easy convenience. Filament type can be changed and the number of copies can be increased within the app. (Please note: Bambu Handy App will misalign the mesh when multiple copies are printed. This does not affect the function, but will change the intended appearance. Please use Bambu Studio if you wish to keep the mesh aligned with the body of the container)&amp;nbsp;For Bambu Studio, you can right click to select all the parts, and use keyboard shortcuts (e.g. CTRL+K) to clone a number of copies before right clicking the plate to arrange. Please avoid manually moving models if possible, as it may mess up the placement of modifiers within each model.&amp;nbsp;Please always ensure the print bed is cleaned, and filament is dry before starting the print. Poor bed adhesion can result in first layer problems which can lead to print failures. Moisture in filament can cause stringing in the parts and can also cause issues with parts fitting together.&amp;nbsp;Printing with Bambu Labs filament is recommended for best results. Other filament brands can also be used, but some filament brands may not handle default generic filament profiles, and may result in poor quality prints without filament tuning. If you are having such issues, please tune the filament with appropriate print temperature, volumetric speed, flow dynamics, flow ratio, cooling, etc. Having the correct filament tuning is important, as it can affect the strength, quality and fit of parts. The threads of the design are designed with a loose fit in mind, but filament or printer problems can result in inaccurate threads with imperfections. If there are imperfections on the threads, common reasons are wet filament, or improperly calibrated flow dynamics or flow ratio.&amp;nbsp;When printing with engineering filaments like ABS, ASA, PC, etc., prints must be done within enclosed chambers. Excess cooling can result in warping or weaker parts. Although basic print testing with the X1C produced adequate results in part strength, taking additional steps can further enhance the strength of the design. Pre-heating the chamber, using chamber heating, or reducing part cooling (reducing fan speed for overhangs or disabling forced cooling for overhangs and bridges) can reduce warping and significantly improve layer adhesion strength of the design.&amp;nbsp;The 3D model for the design is only optimised for printing with a 0.4mm nozzle. Most fiber reinforced filaments can be printed using a 0.4mm nozzle but some may require a 0.6mm nozzle. Whilst it&amp;#39;s possible to adjust the print profiles for a 0.6mm nozzle, the print quality may be reduced due to the lack of optimisation in the 3D model for printing with a 0.6mm or 0.8mm nozzle.Slicer settings if printing with STLs onlyImport the raw STLs into the choice of slicer. Exclude the STLs for core_mesh, cap_mesh, core_mod and end_mod. All cap and end STLs are the same so only one of each is needed. The main container body STLs are labelled with HF for high flow, and HC for high capacity, followed by the mesh size.To slice the files, make sure the printer preset is a standard preset for 0.2mm layer height for a 0.4mm nozzle. Other layer heights or nozzle sizes may have issues.Configure the print settings to be 4 wall loops, 0 top shell layers, 0 bottom shell layersDepending on which container is being printed, set sparse infill density in print settings: 40% for standard mesh, 55% for fine mesh, or 42% for ultra fine meshThen set sparse infill pattern in print settings: triangles for standard and fine mesh containers, or rectilinear for ultra fine meshSome additional settings may be needed: “Only one wall on top surfaces” should be disabled, and brim may need to be disabled if on auto.&amp;nbsp;Compatibility ListList of spools that have been tested. Other spools will also compatible but will require measuring to determine a suitable container size.Spool BrandInner DiameterStandard CoreLarge CoreXL CoreBambu Lab (reusable)55mm62-69mm width62-69mm width-Sunlu Gen 3 (reusable)55mm62-69mm width62-69mm width-Sunlu Gen 263mm62-69mm width + adapter62-69mm width + adapter60-67mm widthSunlu Gen 173mm62-69mm width + adapter62-69mm width + adapter60-67mm widthJAYO (reusable)55mm62-69mm width62-69mm width-JAYO (old version)73mm62-69mm width + adapter62-69mm width + adapter60-67mm widthOverture (cardboard)55mm62-69mm width62-69mm width-Siraya Tech (cardboard)55mm62-69mm width62-69mm width-Polymaker (cardboard)55mm62-69mm width62-69mm width-Creality (clear plastic)55mm62-69mm width62-69mm width-Inslogic (reusable)55mm62-69mm width62-69mm width-Anycubic (reusable)55mm62-69mm width62-69mm width-Kexcelled (reusable)55mm62-69mm width62-69mm width-Chitu Conjure (reusable)54mm62-69mm width62-69mm width-NextShapes (reusable)55mm62-69mm width62-69mm width-XTZL3D55mm62-69mm width62-69mm width-123-3D53mm62-69mm width62-69mm width-Prusament (NFC)51mm62-69mm width--Prusament (old version)51mm62-69mm width*--eSun eSpool+ (reusable)55mm62-69mm width62-69mm width-eSun (clear plastic)52mm57-64mm width--eSun (cardboard)55mm57-64mm width--eSun (black plastic)54mm47-54mm width--Eryone (cardboard)55mm57-64mm width--Geeetech75mm57-64mm width + adapter-55-62mm widthFillamentum (750g clear plastic)53mm52-59mm width--*barely fits the width of the spool. A larger size is recommendedDesiccant Core UsageKeeping filaments dry is crucial for 3D printing to ensure you get the best quality prints. Many filaments absorb moisture when left out and can cause issues like oozing, stringing, rougher print surfaces, print discoloration, and reduced part strength. Drying filaments in a filament dryer solves a lot of these issues, and keeping them dry ensures you won&amp;#39;t have issues in future prints. So it&amp;#39;s best practice to always store dried spools with desiccant inside an airtight container or a heavy duty resealable bag. High Flow vs. High CapacityHigh FlowSuited for filaments that are in frequent use which are often exposed to humid air and require frequent drying in the AMS 2 Pro, AMS HT or a filament dryer. The increased exposed surface area allows for improved efficacy especially when it come to drying. It has 2 times faster drying speed when compared to the high capacity variant which shortens the time needed to dry even at lower drying temperatures. Can also be dried in the oven when printed in a suitable material.High CapacitySuited for long term storage of filaments in airtight containers or bags. This version has a higher desiccant capacity for longer endurance, and is easier to fill and empty for drying in the oven or microwave. It can also be used to hold desiccant pouches or weighted objects.Mesh SizesThere are three mesh sizes available which are standard, fine and ultra fine. Standard can be used with large desiccant beads that are around 2-4mm in size. Smaller sizes of desiccant beads or badly damaged desiccant beads may fall out in standard mesh, so a finer mesh size should be used. Would recommend using intact desiccant beads to avoid issues with desiccant falling out. If using larger desiccant beads, it would be advisable to use the high capacity desiccant container instead of the high flow version. If using indicating silica gel, fine and ultra fine mesh will reduce the visibility of the indicating colour.Core SizesThree core sizes are available to suit a range of requirements with regards to inner diameter spool sizing. Standard Core Compatible with spools with an inner diameter of 50mm to 63mm. This version has the largest compatibility range and can even be used down to 48mm inner diameter spools if airflow restriction is not a concern. Standard Core can also be adapted to fit 63mm - 80mm inner diameter spools using a separate adapter ring.Large Core This version is similar to the Standard Core but sizing is changed to fit 55mm to 63mm inner diameter spools. The air gap between the container and spool is reduced to 1.25mm for a larger container with more desiccant. It&amp;#39;s compatible with many 55mm inner diameter spools, but may also be used with inner diameter spools down to 53mm if airflow restriction is not a concern. Large Core can also be adapted to fit 63mm - 80mm inner diameter spools using a separate adapter ring.XL CoreCompatible with spools with an inner diameter of 60mm to 75mm. XL Core also adds an additional air channel to the high flow version.Spool Width CompatibilitySome spools have been test fitted with pictures in the print profiles. The compatible width of the spool will depend on which print profile is printed and the size of the inner spool diameter. If fitting spools with an inner diameter less than 55mm using Standard Core, up to 1.5mm should be deducted from the width specified in the print profiles. If it&amp;#39;s greater than 55mm, up to 1.5mm should be added. For XL Core, spools with an inner diameter less than 75mm will require up to 3mm deducted from the specified width. There&amp;#39;s also the option to print out shorter or longer end pieces if a wider range of fit is needed without needing to reprint a different sized desiccant core.Desiccant Core MaterialIf there are plans to use the desiccant core in a filament dryer, printing in ABS, ASA or polycarbonate is recommended. Higher temperature materials are preferred, as materials like PLA and PETG can deform in filament dryers that can reach above their heat deflection temperature. PA6-GF, PA6-CF, PAHT-CF, PET-CF or higher temperature materials are recommended for advanced users if drying in the oven. Transparent filaments are also preferred if indicating desiccant beads are used.&amp;nbsp;If printing with fiber reinforced filaments, it would be advisable to using a scouring pad, fine sanding sponge or wire brush on the surfaces of the container after printing. Exposed fibers can cause the threads to feel rough or seize, and fibers can break off during from handling. Not all fiber reinforced filaments have the same amount of exposed fibers, so some may not require removal. Rubbing down the exposed surfaces with something abrasive under water will help knock off exposed fibres on surfaces, and help make surfaces smoother. Please ensure dust is contained under water to reduce the risk of dust being breathed in, and to rinse parts thoroughly afterwards. A suitable respirator mask can also be worn during the process. Please also wear gloves during this process to avoid getting fibers into skin.&amp;nbsp;If printing with filaments that require annealing like PET-CF, please ensure the containers are fully annealed before use.&amp;nbsp;Additional print testing details can be found in “Print Testing”.Adding DesiccantBefore filling the desiccant cores with desiccant, please check parts are fitting well in case there are any issues with printing. Optional funnels can be printed to assist with filling. If filling the High Flow container with a funnel, please tilt the container and funnel by 30-45° before filling to reduce the risk of silica bouncing out. When filling the desiccant core, desiccant can be filled to the top but do not overfill before screwing on the cap. If trying to maximise desiccant contained within the container, gently tapping on the container will help settle the beads into empty spaces, and prevent the cap from seizing. Ensure the cap can be fully screwed flush with the container. Failure to screw the cap on properly from overfilling can result in the cap becoming loose and spilling desiccant beads. If there are plans to dry the desiccant core in a filament dryer, please tighten the cap well, as plastic can expand with heat resulting in changes in dimension. Firmly tightening the cap will ensure the cap won&amp;#39;t easily become loose from thermal expansion.Drying DesiccantWhen using silica gel, both versions of the desiccant core can be dried within a 65°C or higher filament dryer when printed using a temperature resistant material. The drying spool available on MakerWorld (link) can also be printed to allow for drying of up to 7 containers. Silica Gel Container Drying Spool AMS 2 Pro &amp;amp; HT available on MakerWorldThe high flow version will dry faster with its higher surface area compared to the high capacity version. The high capacity version will take a considerably longer time to dry due to the density of desiccant beads. Both versions will dry faster if dried at higher temperatures, as long as the printed material can withstand the heat. After drying, please allow the containers to cool down before installing into spools. Desiccant may continue to release moisture while hot if drying duration is not adequate. Thermal expansion and contraction of the containers can also occur which can result in the containers tightening on spools when installed whilst hot.&amp;nbsp;Desiccant cores should also be removed from spools to be dried directly for optimal airflow and drying temperatures. If drying within filament dryers, using the dedicated drying spool is recommended for optimal drying within a filament dryer. Whilst it&amp;#39;s possible to partially dry the desiccant core inside a filament spool, airflow and drying temperatures won&amp;#39;t be optimal. Filament dryers only direct heated air towards the outer spool of filament, so the centers of the spool won&amp;#39;t be adequately heated and may be lower in temperature by 10-20°C. Please also be cautioned when drying Bambu Lab 85A &amp;amp; 90A TPU, as the TPU filament can expand to cause their reusable spools to change in width, noted in their TPU guide.&amp;nbsp;It&amp;#39;s advisable to transfer the desiccant beads to a dish to be dried in an oven or microwave if faster drying is needed. When drying silica gel, please be careful not to exceed 120°C as higher temperatures can damage the silica gel. Please note that with the high flow version, larger desiccant beads can get stuck in between the crevices. The stuck beads can be dislodged by gently squeezing or tapping on the desiccant core. It is recommended to use to high capacity variant to avoid this issue.Filament Storage RecommendationsFrom best to worse performing: (testing data to be added)Resealable aluminium foil bag2500ml round takeaway food container4 litre cereal box Dedicated filament dryboxResealable filament bagResealable vacuum bagHygrometer VersionContained within the print profile for &amp;#34;Bambu Spool Hygrometer Version&amp;#34; and “Alternative End Rings (Hygrometer Mod)” is an end ring version that has a hole to accommodate a circular hygrometer. The circular hygrometer can be obtained from Bambu Lab Maker&amp;#39;s Supply or other circular hygrometers that are similar in size may be used. The end ring takes up 15mm in length to accommodate the hygrometer which will reduce the amount of space where silica gel can be stored. The hygrometer is also in close proximity to the silica gel, so will only provide an indicator as to whether the silica gel requires drying. Currently, there is only a print profile for Bambu Lab spools, which has a 47mm-54mm desiccant core together with the hygrometer end ring. Other sizes may be created by pairing the hygrometer end ring from “Alternative End Rings (Hygrometer Mod)” with other lengths of desiccant cores.&amp;nbsp;The hygrometer end ring had been updated for easier removal of the hygrometer when changing battery or when using with the drying spool. The hygrometer can be simply removed by pushing it out from the backside. Please be sure to remove the hygrometer before placing the desiccant cores into the drying spool for drying. &amp;nbsp;To remove the hygrometer from the old hygrometer end ring (before Dec 2025), please take note of the locking tabs on the hygrometer at 12 o&amp;#39;clock and 6 o&amp;#39;clock position (may be different for hygrometers that aren&amp;#39;t from Maker&amp;#39;s Supply). Please line up the locking tabs to be visible through the vent holes, and use a flat head screwdriver to depress the lock tab whilst pushing the hygrometer out. Repeat this procedure on the opposing locking tab until the hygrometer fully detaches from the end ring. This procedure may not be required on the XL Core version. RFID TagsThe print profile for RFID Tags consists of various tags for a range of different filament material types available from Bambu Lab. RFID tags from empty Bambu Lab spools can be cut and inserted into the tag. The tag can then be clipped into place into the side of the desiccant cores. RFID labels can be adjusted within Bambu Studio if a custom label is needed. The tags can also be used as labels for spools.  Currently the RFID tags are only available for Standard Core sizes and not compatible when paired with an adaptor. Adjustment may be made in the future.&amp;nbsp;Design TestingPrint TestingThe design had been test printed in PLA, PETG, ABS, ASA, PC, PA6-GF, PA6-CF, PAHT-CF, PET-CF and PPA-CF. Printing the design using PA6 was possible but not recommended due to high shrinkage and warping. Easy PA is also not recommended due to low temperature resistance. HIPS is not recommended due to weak strength. It&amp;#39;s important to note that filaments like PETG, ABS, ASA, PC, PA6-GF, PA6-CF, PAHT-CF, PET-CF and PPA-CF require drying to ensure accurate and reliable printing. Some of these filaments require high temperature drying and may even require days of drying if drying at low temperatures. With ASA, it was noticed that it may be more prone to having weaker layer adhesion due to excess cooling used in overhang/bridging within filament presets. Would be advisable to follow recommendations in “Print Guidance” for engineering filaments to improve layer adhesion. &amp;nbsp;PLA, PETG, ABS, ASA and PC prints all produced smooth loose fitting threads with little to no resistance to thread on. Material shrinkage from ABS, ASA and PC had minimal impact on the threads, and still remained smooth and loose fitting. When interchanging PLA with ABS parts, differences in fit was noticeable but not too significant. With fiber reinforced filaments like PA6-GF, PA6-CF, PAHT-CF, PPA-CF and PET-CF, exposed fibers can affect the threads such that threads would feel rougher but still acceptable in use. With glass fibers in particular in PA6-GF, the stiffer fibers can occasionally cause the threads to seize. PET-CF had the smoothest surface finish with the least amount of exposed fibers, but results can differ between brands. Exposed fibers can be removed by rubbing the surfaces with a fine sanding sponge under running water. Once removed, surfaces become smoother whilst improving the smoothness of threads. With the removal of the exposed fibers, all fiber reinforced filaments produced fairly smooth and loose fitting threads. Part shrinkage may also occur from annealing, which was noticed with many CF nylons and PET-CF where they would shrink in the Z-axis. Despite the shrinkage of even up to 3% in Z-axis in some materials, the threads remained functional without significant resistance. Z-axis expansion was also noticed with PA6 based filaments which are more prone to swelling from moisture.PC, PA6-GF, PET-CF and PPA-CF test prints on X1C 0.4mm nozzle through Bambu Handy App using “62mm - 69mm width spools (Bambu Spool)” and “57mm - 64mm width spools” print profilesClose up of PA6-GF, PET-CF and PPA-CF test printsThe design has also been test printed in PETG on a RepRap Huxley printer without issue, so newer printers shouldn&amp;#39;t have much issue printing out the design. Main importance when printing is ensuring there&amp;#39;s adequate bed adhesion.Design Strength TestingThe test samples are a high capacity Standard Core containers printed in Bambu Lab ABS Black, Inslogic ASA White, Bambu Lab PETG HF White and Bambu Lab PC Transparent. All Bambu Lab filaments were printed using default Bambu Lab filament presets, and Inslogic filament was printed using Bambu Lab ASA filament preset but modified to have a 12mm³/s volumetric speed. Prints were done using a near stock X1C with no active chamber heating. The test samples were loaded with 10kg on two areas to check for possible issues with the strength of the design.There were no visible signs of failure or cracks noticed in all the test samples. The design will likely be able to handle much higher loads before failure. &amp;nbsp;It&amp;#39;s important to note that despite the successful tests on verifying the strength of the design, the design relies heavily on having good layer adhesion strength. Many factors can affect the layer strength, such as having correct print temperatures, volumetric print speeds, appropriate cooling and filament quality/type. Having too low of a print temperature, too fast of a print speed or excessive part cooling can reduce the layer adhesion of parts. So it&amp;#39;s important to ensure that the filament quality/type and matching filament preset is adequate in producing reliable parts.Mesh Walls &amp;amp; Flow Through Design Moisture Absorption Efficacy TestingBoth high flow and high capacity versions use high density mesh walls and open spoke ends to maximise airflow and exposed desiccant surface area. This is in order to improve the design for more effective moisture absorption in a dry box or vacuum bag. &amp;nbsp;To test for the efficacy of the mesh walls to ensure they have an effect on improving the performance of the desiccant container, a modified version of the high capacity version was made to have no mesh walls and to only have the mesh top and bottom ends. Both containers hold the same amount of silica gel, and the only difference was the removal of mesh walls in the modified design. Testing of the two designs revealed that the mesh walls made a significant difference to the effectiveness of silica gel in bringing down the humidity within a dry box. The increased exposed surface area in the high capacity version allowed it to reach a lower humidity level within a shorter time frame when compared to the modified version without mesh walls. For the modified version to reach the same level of humidity, it took 4.7 times longer than the high capacity version with its mesh walls.&amp;nbsp;Testing involved using an 8.7 litre dry box, two Bambu spools with filament, two of each version of Standard Core desiccant containers, a large batch of dry silica gel and two Xiaomi Temperature &amp;amp; Humidity Monitors. Before starting the tests, the two spools and two sensors were initially placed into the dry box with desiccant for a day to bring down the humidity within. The sensors were also placed &amp;gt;13cm away from the center of the two spools where the desiccant containers will be situated. To start the tests, the two spools and desiccant were taken out of the dry box and placed into the AMS for 30 mins whilst the dry box was left open to saturate with ambient humidity. After 30 minutes had passed, the spools were removed from the AMS and placed into the dry box together with the high capacity desiccant container secured in the center before sealing the dry box, after which measurements were recorded. This procedure was repeated again for the modified desiccant container.&amp;nbsp;From testing, the high capacity version reached a humidity level of 15% in 140 minutes, whereas the modified version with only mesh top and bottom reached the same humidity level in 660 minutes (11 hours). This suggests that the lack of mesh walls creates a restriction to the silica gel and its ability to absorb moisture, preventing it from more effectively lowering the humidity in the dry box. Although data was not recorded for the high capacity version after 240 minutes, it was observed that the high capacity version was capable of reducing the humidity below 15% after some time.Silica Gel Drying Efficacy TestingThe high capacity version was the first container to be developed, however, it was noticed that silica gel deeper within the center of the container had difficulties drying when the container was placed in a dryer. In order to improve on the container&amp;#39;s design to allow for better drying of silica gel contained within, the high flow version was developed with additional internal towers to direct air deeper into the container whilst increasing available mesh area at the cost of reduced desiccant capacity. &amp;nbsp;Testing of the two containers, high flow and high capacity, revealed that the high flow version had an increased rate of drying compared to the high capacity version. The high capacity version had a more gradual slower rate of drying that took around 2 times longer than the high flow container version. &amp;nbsp;Testing of the two Standard Core containers with standard mesh involved using a batch of partially saturated silica gel for both containers and an AMS HT set to dry at 65°C for 12 hours. Each container was placed into the filament dryer on their own and taken out at 30 to 60 minute intervals to measure their weight. At 7 hours of drying, the high flow container had stopped losing weight at around -10% whilst the high capacity version continued to lose weight even up to the end of the drying cycle. As the high capacity version hadn&amp;#39;t yet reached the same percentage of weight lost as the high flow version, additional hours in the filament dryer would be needed.High flow and high capacity Standard Core containers dried at 65°C After drying the silica gel at 65°C, the high flow version was immediately placed into an empty 8.7 litre dry box to measure the silica gel efficacy after drying at 65°C. The dry box was opened to ambient air for 10 minutes prior to sealing the desiccant container within. After 17 hours inside the dry box, the humidity level was reduced down to 8%. Please note that this delay may be due to not letting the silica gel cool to room temperature before placing into the drybox.65°C dried silica gel in an empty 8.7 litre dry boxThe tests were further repeated again using the AMS HT drying at 85°C. After 4 hours of drying, the high flow container had lost 11.8% of its weight, whilst the high capacity container had lost 11.8% after 10 hours.High flow and high capacity Standard Core containers dried at 85°C Placing the 85°C dried high flow container into a 8.7 litre dry box achieved a humidity of 5% after 4 hours.85°C dried silica gel in an empty 8.7 litre dry boxAdditionally after testing, the same silica gel used to perform the tests were further dried in the oven at 120°C to determine how much remaining weight could be removed.  After drying for an additional 2 hours in the oven, the average total removable weight from the tested silica gel was 12.5%. Therefore, the silica gel dried at 65°C had 2.5% of removable weight remaining, and the 85°C dried silica gel had 0.7% of removable weight remaining.&amp;nbsp;Please note that these test will differ when drying more than 1 container or when drying in a different filament dryer. More test are still underway.Filament Bag TestingFilaments are often packaged in bags made entirely from plastic, or plastic with additional aluminium inner layer. The bags can sometimes be reusable which can allow for a cost effective filament storage solution. To test the effectiveness of such storage solutions, a half empty spool of ABS was dried at 70°C for over 9 hours before letting it cool to room temperature and storing within one of the storage solutions. Each test had a hygrometer placed close to the coils of filament to measure the humidity within. Tests were also repeated to find the effectiveness of adding a high capacity desiccant core (with ~68g of silica gel). All tests were repeated using the same spool and hygrometer. A reusable vacuum bag was used to simulate a resealable plastic bag, whilst a resealable aluminium foil bag was reused from a spool purchase. No vacuum was applied to either storage solutions. Data was recorded hourly, but only data points with humidity changes was graphed. Ambient humidity was greater than 60% in an non air conditioned room.Resealable plastic bag vs. foil filament bag (with/without desiccant)From the tests, it can be seen that the aluminium foil bag provided the most effective filament storage solution that can even be used without desiccant. Humidity remained stable in the foil bag without desiccant but an even lower humidity of 3% was achieved when used with desiccant. This can be particularly beneficial for storing moisture sensitive filaments like TPUs and nylons. The plastic resealable bag on the other hand only had an acceptable result when used with desiccant, as the plastic was not a particularly effective barrier against moisture. A low humidity was still maintained when using with desiccant but will likely require drying after a few months. This can still be sufficient for less moisture sensitive materials. Designer NotesShout out to some great alternative designs on MakerWorld which had inspired me to create my own versionHigh Air Flow Desiccant Holder for Spools by DänDesiccant Holder for Spool - High Airflow by Motiform StudioSpool Silica Desiccant Container by DarwinianUpdatesPlease note that updates will likely be made in the future for further improvements to the design or for additional sizes. Please check in case there are any changes to the design.01/07/2026 - Opening tool for Standard, Large and XL core was added 24/12/2025 - Large Core funnels were added. Sizing of funnels were changed to be two sizes, 70mm &amp;amp; 100mm diameter opening.14/12/2025 - Hygrometer end rings have been updated to have a better fit with hygrometers that weren&amp;#39;t purchased from Bambu Lab Maker&amp;#39;s Supply07/12/2025 - XL Core 60mm - 67mm width spools have been updated with the high capacity variant. Standard Core and XL Core hygrometer end rings have been updated for toolless hygrometer removal.26/11/2025 - XL Core for 57-65mm width spools was changed to be 55-62mm for Geetech spools. High capacity variant was also added, but hygrometer version is yet to be added.24/10/2025 - Large Core HF was updated to V1.223/10/2025 - Some print profiles have been updated with Bambu Studio 2.3.0.70 for printers with high flow nozzles26/07/2025 - Adapter rings for Standard &amp;amp; Large Cores were added in the profile “Standard &amp;amp; Large Core Adapter for 63-80mm Inner Dia Spools”Hygrometer version added to &amp;#34;XL Core 60mm - 67mm width spools (Sunlu Gen 1 &amp;amp; Gen 2)&amp;#34;17/07/2025 - Large Cores were move to their own print profiles “Large Core 62mm - 69mm width spools (Bambu Spool)”14/07/2025 - 6 Large Core containers were added to “62mm - 69mm width spools (Bambu Spool)” print profile12/07/2025 - RFID tags for Standard Core were added. 47mm-54mm sizes were also uploaded.24/06/2025 - Funnels were adjusted to be more taller to reduce the risk of silica gel beads bouncing out.04/06/2025 - XL Core sizes for Sunlu Gen 1 and Gen 2 were added.20/05/2025 - Standard Core hygrometer version was added02/05/2025 - Updated all print profiles with latest Bambu Studio. Adjustments to slicer settings for better bottom mesh strength on high capacity containers.17/04/2025 - Modified funnel shape to be slightly taller13/04/2025 - Re-uploaded &amp;#34;desiccant_core_62mm-69mm.3mf&amp;#34; using latest Bambu Studio version. Previous 3mf file may have had backwards compatibility issues with older Bambu Studio versions27/03/2025 - Added desiccant cores for 66mm - 73mm and 71mm - 78mm width spools22/03/2025 V1.1 Update - XL desiccant core added. Designs updated with size markings and thicker cap threads.Work in progressV1.2 update for slightly increased mesh surface area with additional optimisationsRFID tags for other core sizesRFID tag compatibility with Standard &amp;amp; Large Core adapter ringsRFID tags for other filaments, e.g. PLA Wood, PLA Aero, etc.RFID tag holderXL Core update for larger threadsHygrometer end ring for Large CoreHygrometer version for GeeetechAlternative end rings for other core sizesAlternative end ring for clip in spool desiccant coreStandard Core sizing for &amp;lt;37mm spool widthsFilament storage testingOven drying testingBoost MeIf you like my work, Boosts are greatly appreciated. This design had went through months of iterations and testing for reliability, printability, performance and efficacy.  This design alone already has over 50 different variations created and optimised, and such designs takes multiple weeks to develop and refine. Boosts mean a lot to me as it fuels my passion for 3D printing and allows me to spend time creating highly refined designs for everyone for free." name="description"/>
+          		<meta content="Download this free 3D print file designed by Silvercell. Main FeaturesTwo high airflow and high surface area desiccant container versions for effective moisture absorption for keeping filaments dry. Both having high density open mesh walls and self-centering open spoke ends for improved air circulation throughout the whole desiccant core and spoolHigh Flow (HF) version with triple internal towers to maximise silica gel surface area while allowing air to reach the silica gel deeper within the container for better efficacy.High Capacity (HC) version for greater desiccant capacity for long term storage, easier refilling and additional weight.Performance, strength and print tested container design (test details at the end)Tested to reduce humidity in a dry box faster than a desiccant container with low surface area.2x faster silica gel drying speed with high flow version for faster drying in filament dryers and ovens. Tested to be capable of maintaining low humidity within a heavy duty resealable bag. Load tested to 10kg without structural failure, ensuring a durable design. Able to prevent Bambu spool halves from coming apart. Test fitted in 26 different spools (test fitted spools in “Compatibility List”)Print tested in a wide range of materials including polycarbonate for high temperature drying, and fiber reinforced filaments for advanced users. Highly refined and optimised design print profiles for reliable printing and smooth fitting parts for over 50 different design variations Three core sizes for different inner diameter spoolsStandard Core for 50mm - 63mm inner diameter spools for wide compatibility and high airflow. Can also be adapted for 63mm - 80mm inner diameter spoolsLarge Core for 55mm - 63mm inner diameter spools for maximised desiccant capacity whilst maintaining adequate airflow and compatibility for most spools including Bambu spools. Can also be adapted for 63mm - 80mm inner diameter spoolsXL Core for 60mm - 75mm inner diameter spools for spools with a large inner diameterSilica gel capacities for dry silica gel (wet silica gel will be 20-30% heavier):Standard Core for Bambu spools: HF ~52g, HC ~68gLarge Core for Bambu spools: HF ~68g, HC ~88gXL Core for Sunlu Gen 1 &amp;amp; 2: HF ~75gThree available mesh sizes for different sizes of intact desiccant beads (damaged beads will need finer mesh size):Standard mesh: &amp;gt;2mmFine mesh: &amp;gt;1.5mmUltra fine mesh: &amp;gt;1mmUp to 7 desiccant cores can be dried in the AMS 2 Pro, AMS HT or any filament dryer using the drying spool (link)Different lengths with size markings to provide a secure fit in a wide range of spool sizes from 250g to 1kg spools (test fitted spools in “Compatibility List” and in print profile pictures)Extra options for alternative add-onsHygrometer version for desiccant humidity monitoringStandard and Large Core adapter for 63mm - 80mm inner diameter spoolsStandard Core RFID tags for labelling of spools and AMS RFID reading function Two sizes of funnels to aid with fillingAlternative locking end ring lengthsOptional opening toolMore updates and features to be added… Please check Designer Notes for updates and work in progress Print GuidanceThe design and print profiles have been carefully optimized for easy support-free printing. Many hours of work had been spent optimising all the print profiles, and many modifiers are used within the print profiles so please be sure to print using my uploaded print profiles. Do not download STL/CAD files to print from or make changes to the print settings! The mesh on the ends of the container won&amp;#39;t be visible in 3D model, as it relies on slicer modifiers to generate the mesh. Once the models are sliced using the print profiles, the mesh will appear in Bambu Studio “Preview”. If the design is printed without the yellow modifiers &amp;amp; settings, no mesh will be printed! Please also ensure Bambu Studio is up to date as older versions may causes issues. Would recommend printing the design using Bambu Handy App for easy convenience. Filament type can be changed and the number of copies can be increased within the app. (Please note: Bambu Handy App will misalign the mesh when multiple copies are printed. This does not affect the function, but will change the intended appearance. Please use Bambu Studio if you wish to keep the mesh aligned with the body of the container)&amp;nbsp;For Bambu Studio, you can right click to select all the parts, and use keyboard shortcuts (e.g. CTRL+K) to clone a number of copies before right clicking the plate to arrange. Please avoid manually moving models if possible, as it may mess up the placement of modifiers within each model.&amp;nbsp;Please always ensure the print bed is cleaned, and filament is dry before starting the print. Poor bed adhesion can result in first layer problems which can lead to print failures. Moisture in filament can cause stringing in the parts and can also cause issues with parts fitting together.&amp;nbsp;Printing with Bambu Labs filament is recommended for best results. Other filament brands can also be used, but some filament brands may not handle default generic filament profiles, and may result in poor quality prints without filament tuning. If you are having such issues, please tune the filament with appropriate print temperature, volumetric speed, flow dynamics, flow ratio, cooling, etc. Having the correct filament tuning is important, as it can affect the strength, quality and fit of parts. The threads of the design are designed with a loose fit in mind, but filament or printer problems can result in inaccurate threads with imperfections. If there are imperfections on the threads, common reasons are wet filament, or improperly calibrated flow dynamics or flow ratio.&amp;nbsp;When printing with engineering filaments like ABS, ASA, PC, etc., prints must be done within enclosed chambers. Excess cooling can result in warping or weaker parts. Although basic print testing with the X1C produced adequate results in part strength, taking additional steps can further enhance the strength of the design. Pre-heating the chamber, using chamber heating, or reducing part cooling (reducing fan speed for overhangs or disabling forced cooling for overhangs and bridges) can reduce warping and significantly improve layer adhesion strength of the design.&amp;nbsp;The 3D model for the design is only optimised for printing with a 0.4mm nozzle. Most fiber reinforced filaments can be printed using a 0.4mm nozzle but some may require a 0.6mm nozzle. Whilst it&amp;#39;s possible to adjust the print profiles for a 0.6mm nozzle, the print quality may be reduced due to the lack of optimisation in the 3D model for printing with a 0.6mm or 0.8mm nozzle.Slicer settings if printing with STLs onlyImport the raw STLs into the choice of slicer. Exclude the STLs for core_mesh, cap_mesh, core_mod and end_mod. All cap and end STLs are the same so only one of each is needed. The main container body STLs are labelled with HF for high flow, and HC for high capacity, followed by the mesh size.To slice the files, make sure the printer preset is a standard preset for 0.2mm layer height for a 0.4mm nozzle. Other layer heights or nozzle sizes may have issues.Configure the print settings to be 4 wall loops, 0 top shell layers, 0 bottom shell layersDepending on which container is being printed, set sparse infill density in print settings: 40% for standard mesh, 55% for fine mesh, or 42% for ultra fine meshThen set sparse infill pattern in print settings: triangles for standard and fine mesh containers, or rectilinear for ultra fine meshSome additional settings may be needed: “Only one wall on top surfaces” should be disabled, and brim may need to be disabled if on auto.&amp;nbsp;Compatibility ListList of spools that have been tested. Other spools will also compatible but will require measuring to determine a suitable container size.Spool BrandInner DiameterStandard CoreLarge CoreXL CoreBambu Lab (reusable)55mm62-69mm width62-69mm width-Sunlu Gen 3 (reusable)55mm62-69mm width62-69mm width-Sunlu Gen 263mm62-69mm width + adapter62-69mm width + adapter60-67mm widthSunlu Gen 173mm62-69mm width + adapter62-69mm width + adapter60-67mm widthJAYO (reusable)55mm62-69mm width62-69mm width-JAYO (old version)73mm62-69mm width + adapter62-69mm width + adapter60-67mm widthOverture (cardboard)55mm62-69mm width62-69mm width-Siraya Tech (cardboard)55mm62-69mm width62-69mm width-Polymaker (cardboard)55mm62-69mm width62-69mm width-Creality (clear plastic)55mm62-69mm width62-69mm width-Inslogic (reusable)55mm62-69mm width62-69mm width-Anycubic (reusable)55mm62-69mm width62-69mm width-Kexcelled (reusable)55mm62-69mm width62-69mm width-Chitu Conjure (reusable)54mm62-69mm width62-69mm width-NextShapes (reusable)55mm62-69mm width62-69mm width-XTZL3D55mm62-69mm width62-69mm width-123-3D53mm62-69mm width62-69mm width-Prusament (NFC)51mm62-69mm width--Prusament (old version)51mm62-69mm width*--eSun eSpool+ (reusable)55mm62-69mm width62-69mm width-eSun (clear plastic)52mm57-64mm width--eSun (cardboard)55mm57-64mm width--eSun (black plastic)54mm47-54mm width--Eryone (cardboard)55mm57-64mm width--Geeetech75mm57-64mm width + adapter-55-62mm widthFillamentum (750g clear plastic)53mm52-59mm width--*barely fits the width of the spool. A larger size is recommendedDesiccant Core UsageKeeping filaments dry is crucial for 3D printing to ensure you get the best quality prints. Many filaments absorb moisture when left out and can cause issues like oozing, stringing, rougher print surfaces, print discoloration, and reduced part strength. Drying filaments in a filament dryer solves a lot of these issues, and keeping them dry ensures you won&amp;#39;t have issues in future prints. So it&amp;#39;s best practice to always store dried spools with desiccant inside an airtight container or a heavy duty resealable bag. High Flow vs. High CapacityHigh FlowSuited for filaments that are in frequent use which are often exposed to humid air and require frequent drying in the AMS 2 Pro, AMS HT or a filament dryer. The increased exposed surface area allows for improved efficacy especially when it come to drying. It has 2 times faster drying speed when compared to the high capacity variant which shortens the time needed to dry even at lower drying temperatures. Can also be dried in the oven when printed in a suitable material.High CapacitySuited for long term storage of filaments in airtight containers or bags. This version has a higher desiccant capacity for longer endurance, and is easier to fill and empty for drying in the oven or microwave. It can also be used to hold desiccant pouches or weighted objects.Mesh SizesThere are three mesh sizes available which are standard, fine and ultra fine. Standard can be used with large desiccant beads that are around 2-4mm in size. Smaller sizes of desiccant beads or badly damaged desiccant beads may fall out in standard mesh, so a finer mesh size should be used. Would recommend using intact desiccant beads to avoid issues with desiccant falling out. If using larger desiccant beads, it would be advisable to use the high capacity desiccant container instead of the high flow version. If using indicating silica gel, fine and ultra fine mesh will reduce the visibility of the indicating colour.Core SizesThree core sizes are available to suit a range of requirements with regards to inner diameter spool sizing. Standard Core Compatible with spools with an inner diameter of 50mm to 63mm. This version has the largest compatibility range and can even be used down to 48mm inner diameter spools if airflow restriction is not a concern. Standard Core can also be adapted to fit 63mm - 80mm inner diameter spools using a separate adapter ring.Large Core This version is similar to the Standard Core but sizing is changed to fit 55mm to 63mm inner diameter spools. The air gap between the container and spool is reduced to 1.25mm for a larger container with more desiccant. It&amp;#39;s compatible with many 55mm inner diameter spools, but may also be used with inner diameter spools down to 53mm if airflow restriction is not a concern. Large Core can also be adapted to fit 63mm - 80mm inner diameter spools using a separate adapter ring.XL CoreCompatible with spools with an inner diameter of 60mm to 75mm. XL Core also adds an additional air channel to the high flow version.Spool Width CompatibilitySome spools have been test fitted with pictures in the print profiles. The compatible width of the spool will depend on which print profile is printed and the size of the inner spool diameter. If fitting spools with an inner diameter less than 55mm using Standard Core, up to 1.5mm should be deducted from the width specified in the print profiles. If it&amp;#39;s greater than 55mm, up to 1.5mm should be added. For XL Core, spools with an inner diameter less than 75mm will require up to 3mm deducted from the specified width. There&amp;#39;s also the option to print out shorter or longer end pieces if a wider range of fit is needed without needing to reprint a different sized desiccant core.Desiccant Core MaterialIf there are plans to use the desiccant core in a filament dryer, printing in ABS, ASA or polycarbonate is recommended. Higher temperature materials are preferred, as materials like PLA and PETG can deform in filament dryers that can reach above their heat deflection temperature. PA6-GF, PA6-CF, PAHT-CF, PET-CF or higher temperature materials are recommended for advanced users if drying in the oven. Transparent filaments are also preferred if indicating desiccant beads are used.&amp;nbsp;If printing with fiber reinforced filaments, it would be advisable to using a scouring pad, fine sanding sponge or wire brush on the surfaces of the container after printing. Exposed fibers can cause the threads to feel rough or seize, and fibers can break off during from handling. Not all fiber reinforced filaments have the same amount of exposed fibers, so some may not require removal. Rubbing down the exposed surfaces with something abrasive under water will help knock off exposed fibres on surfaces, and help make surfaces smoother. Please ensure dust is contained under water to reduce the risk of dust being breathed in, and to rinse parts thoroughly afterwards. A suitable respirator mask can also be worn during the process. Please also wear gloves during this process to avoid getting fibers into skin.&amp;nbsp;If printing with filaments that require annealing like PET-CF, please ensure the containers are fully annealed before use.&amp;nbsp;Additional print testing details can be found in “Print Testing”.Adding DesiccantBefore filling the desiccant cores with desiccant, please check parts are fitting well in case there are any issues with printing. Optional funnels can be printed to assist with filling. If filling the High Flow container with a funnel, please tilt the container and funnel by 30-45° before filling to reduce the risk of silica bouncing out. When filling the desiccant core, desiccant can be filled to the top but do not overfill before screwing on the cap. If trying to maximise desiccant contained within the container, gently tapping on the container will help settle the beads into empty spaces, and prevent the cap from seizing. Ensure the cap can be fully screwed flush with the container. Failure to screw the cap on properly from overfilling can result in the cap becoming loose and spilling desiccant beads. If there are plans to dry the desiccant core in a filament dryer, please tighten the cap well, as plastic can expand with heat resulting in changes in dimension. Firmly tightening the cap will ensure the cap won&amp;#39;t easily become loose from thermal expansion.Drying DesiccantWhen using silica gel, both versions of the desiccant core can be dried within a 65°C or higher filament dryer when printed using a temperature resistant material. The drying spool available on MakerWorld (link) can also be printed to allow for drying of up to 7 containers. Silica Gel Container Drying Spool AMS 2 Pro &amp;amp; HT available on MakerWorldThe high flow version will dry faster with its higher surface area compared to the high capacity version. The high capacity version will take a considerably longer time to dry due to the density of desiccant beads. Both versions will dry faster if dried at higher temperatures, as long as the printed material can withstand the heat. After drying, please allow the containers to cool down before installing into spools. Desiccant may continue to release moisture while hot if drying duration is not adequate. Thermal expansion and contraction of the containers can also occur which can result in the containers tightening on spools when installed whilst hot.&amp;nbsp;Desiccant cores should also be removed from spools to be dried directly for optimal airflow and drying temperatures. If drying within filament dryers, using the dedicated drying spool is recommended for optimal drying within a filament dryer. Whilst it&amp;#39;s possible to partially dry the desiccant core inside a filament spool, airflow and drying temperatures won&amp;#39;t be optimal. Filament dryers only direct heated air towards the outer spool of filament, so the centers of the spool won&amp;#39;t be adequately heated and may be lower in temperature by 10-20°C. Please also be cautioned when drying Bambu Lab 85A &amp;amp; 90A TPU, as the TPU filament can expand to cause their reusable spools to change in width, noted in their TPU guide.&amp;nbsp;It&amp;#39;s advisable to transfer the desiccant beads to a dish to be dried in an oven or microwave if faster drying is needed. When drying silica gel, please be careful not to exceed 120°C as higher temperatures can damage the silica gel. Please note that with the high flow version, larger desiccant beads can get stuck in between the crevices. The stuck beads can be dislodged by gently squeezing or tapping on the desiccant core. It is recommended to use to high capacity variant to avoid this issue.Filament Storage RecommendationsFrom best to worse performing: (testing data to be added)Resealable aluminium foil bag2500ml round takeaway food container4 litre cereal box Dedicated filament dryboxResealable filament bagResealable vacuum bagHygrometer VersionContained within the print profile for &amp;#34;Bambu Spool Hygrometer Version&amp;#34; and “Alternative End Rings (Hygrometer Mod)” is an end ring version that has a hole to accommodate a circular hygrometer. The circular hygrometer can be obtained from Bambu Lab Maker&amp;#39;s Supply or other circular hygrometers that are similar in size may be used. The end ring takes up 15mm in length to accommodate the hygrometer which will reduce the amount of space where silica gel can be stored. The hygrometer is also in close proximity to the silica gel, so will only provide an indicator as to whether the silica gel requires drying. Currently, there is only a print profile for Bambu Lab spools, which has a 47mm-54mm desiccant core together with the hygrometer end ring. Other sizes may be created by pairing the hygrometer end ring from “Alternative End Rings (Hygrometer Mod)” with other lengths of desiccant cores.&amp;nbsp;The hygrometer end ring had been updated for easier removal of the hygrometer when changing battery or when using with the drying spool. The hygrometer can be simply removed by pushing it out from the backside. Please be sure to remove the hygrometer before placing the desiccant cores into the drying spool for drying. &amp;nbsp;To remove the hygrometer from the old hygrometer end ring (before Dec 2025), please take note of the locking tabs on the hygrometer at 12 o&amp;#39;clock and 6 o&amp;#39;clock position (may be different for hygrometers that aren&amp;#39;t from Maker&amp;#39;s Supply). Please line up the locking tabs to be visible through the vent holes, and use a flat head screwdriver to depress the lock tab whilst pushing the hygrometer out. Repeat this procedure on the opposing locking tab until the hygrometer fully detaches from the end ring. This procedure may not be required on the XL Core version. RFID TagsThe print profile for RFID Tags consists of various tags for a range of different filament material types available from Bambu Lab. RFID tags from empty Bambu Lab spools can be cut and inserted into the tag. The tag can then be clipped into place into the side of the desiccant cores. RFID labels can be adjusted within Bambu Studio if a custom label is needed. The tags can also be used as labels for spools.  Currently the RFID tags are only available for Standard Core sizes and not compatible when paired with an adaptor. Adjustment may be made in the future.&amp;nbsp;Design TestingPrint TestingThe design had been test printed in PLA, PETG, ABS, ASA, PC, PA6-GF, PA6-CF, PAHT-CF, PET-CF and PPA-CF. Printing the design using PA6 was possible but not recommended due to high shrinkage and warping. Easy PA is also not recommended due to low temperature resistance. HIPS is not recommended due to weak strength. It&amp;#39;s important to note that filaments like PETG, ABS, ASA, PC, PA6-GF, PA6-CF, PAHT-CF, PET-CF and PPA-CF require drying to ensure accurate and reliable printing. Some of these filaments require high temperature drying and may even require days of drying if drying at low temperatures. With ASA, it was noticed that it may be more prone to having weaker layer adhesion due to excess cooling used in overhang/bridging within filament presets. Would be advisable to follow recommendations in “Print Guidance” for engineering filaments to improve layer adhesion. &amp;nbsp;PLA, PETG, ABS, ASA and PC prints all produced smooth loose fitting threads with little to no resistance to thread on. Material shrinkage from ABS, ASA and PC had minimal impact on the threads, and still remained smooth and loose fitting. When interchanging PLA with ABS parts, differences in fit was noticeable but not too significant. With fiber reinforced filaments like PA6-GF, PA6-CF, PAHT-CF, PPA-CF and PET-CF, exposed fibers can affect the threads such that threads would feel rougher but still acceptable in use. With glass fibers in particular in PA6-GF, the stiffer fibers can occasionally cause the threads to seize. PET-CF had the smoothest surface finish with the least amount of exposed fibers, but results can differ between brands. Exposed fibers can be removed by rubbing the surfaces with a fine sanding sponge under running water. Once removed, surfaces become smoother whilst improving the smoothness of threads. With the removal of the exposed fibers, all fiber reinforced filaments produced fairly smooth and loose fitting threads. Part shrinkage may also occur from annealing, which was noticed with many CF nylons and PET-CF where they would shrink in the Z-axis. Despite the shrinkage of even up to 3% in Z-axis in some materials, the threads remained functional without significant resistance. Z-axis expansion was also noticed with PA6 based filaments which are more prone to swelling from moisture.PC, PA6-GF, PET-CF and PPA-CF test prints on X1C 0.4mm nozzle through Bambu Handy App using “62mm - 69mm width spools (Bambu Spool)” and “57mm - 64mm width spools” print profilesClose up of PA6-GF, PET-CF and PPA-CF test printsThe design has also been test printed in PETG on a RepRap Huxley printer without issue, so newer printers shouldn&amp;#39;t have much issue printing out the design. Main importance when printing is ensuring there&amp;#39;s adequate bed adhesion.Design Strength TestingThe test samples are a high capacity Standard Core containers printed in Bambu Lab ABS Black, Inslogic ASA White, Bambu Lab PETG HF White and Bambu Lab PC Transparent. All Bambu Lab filaments were printed using default Bambu Lab filament presets, and Inslogic filament was printed using Bambu Lab ASA filament preset but modified to have a 12mm³/s volumetric speed. Prints were done using a near stock X1C with no active chamber heating. The test samples were loaded with 10kg on two areas to check for possible issues with the strength of the design.There were no visible signs of failure or cracks noticed in all the test samples. The design will likely be able to handle much higher loads before failure. &amp;nbsp;It&amp;#39;s important to note that despite the successful tests on verifying the strength of the design, the design relies heavily on having good layer adhesion strength. Many factors can affect the layer strength, such as having correct print temperatures, volumetric print speeds, appropriate cooling and filament quality/type. Having too low of a print temperature, too fast of a print speed or excessive part cooling can reduce the layer adhesion of parts. So it&amp;#39;s important to ensure that the filament quality/type and matching filament preset is adequate in producing reliable parts.Mesh Walls &amp;amp; Flow Through Design Moisture Absorption Efficacy TestingBoth high flow and high capacity versions use high density mesh walls and open spoke ends to maximise airflow and exposed desiccant surface area. This is in order to improve the design for more effective moisture absorption in a dry box or vacuum bag. &amp;nbsp;To test for the efficacy of the mesh walls to ensure they have an effect on improving the performance of the desiccant container, a modified version of the high capacity version was made to have no mesh walls and to only have the mesh top and bottom ends. Both containers hold the same amount of silica gel, and the only difference was the removal of mesh walls in the modified design. Testing of the two designs revealed that the mesh walls made a significant difference to the effectiveness of silica gel in bringing down the humidity within a dry box. The increased exposed surface area in the high capacity version allowed it to reach a lower humidity level within a shorter time frame when compared to the modified version without mesh walls. For the modified version to reach the same level of humidity, it took 4.7 times longer than the high capacity version with its mesh walls.&amp;nbsp;Testing involved using an 8.7 litre dry box, two Bambu spools with filament, two of each version of Standard Core desiccant containers, a large batch of dry silica gel and two Xiaomi Temperature &amp;amp; Humidity Monitors. Before starting the tests, the two spools and two sensors were initially placed into the dry box with desiccant for a day to bring down the humidity within. The sensors were also placed &amp;gt;13cm away from the center of the two spools where the desiccant containers will be situated. To start the tests, the two spools and desiccant were taken out of the dry box and placed into the AMS for 30 mins whilst the dry box was left open to saturate with ambient humidity. After 30 minutes had passed, the spools were removed from the AMS and placed into the dry box together with the high capacity desiccant container secured in the center before sealing the dry box, after which measurements were recorded. This procedure was repeated again for the modified desiccant container.&amp;nbsp;From testing, the high capacity version reached a humidity level of 15% in 140 minutes, whereas the modified version with only mesh top and bottom reached the same humidity level in 660 minutes (11 hours). This suggests that the lack of mesh walls creates a restriction to the silica gel and its ability to absorb moisture, preventing it from more effectively lowering the humidity in the dry box. Although data was not recorded for the high capacity version after 240 minutes, it was observed that the high capacity version was capable of reducing the humidity below 15% after some time.Silica Gel Drying Efficacy TestingThe high capacity version was the first container to be developed, however, it was noticed that silica gel deeper within the center of the container had difficulties drying when the container was placed in a dryer. In order to improve on the container&amp;#39;s design to allow for better drying of silica gel contained within, the high flow version was developed with additional internal towers to direct air deeper into the container whilst increasing available mesh area at the cost of reduced desiccant capacity. &amp;nbsp;Testing of the two containers, high flow and high capacity, revealed that the high flow version had an increased rate of drying compared to the high capacity version. The high capacity version had a more gradual slower rate of drying that took around 2 times longer than the high flow container version. &amp;nbsp;Testing of the two Standard Core containers with standard mesh involved using a batch of partially saturated silica gel for both containers and an AMS HT set to dry at 65°C for 12 hours. Each container was placed into the filament dryer on their own and taken out at 30 to 60 minute intervals to measure their weight. At 7 hours of drying, the high flow container had stopped losing weight at around -10% whilst the high capacity version continued to lose weight even up to the end of the drying cycle. As the high capacity version hadn&amp;#39;t yet reached the same percentage of weight lost as the high flow version, additional hours in the filament dryer would be needed.High flow and high capacity Standard Core containers dried at 65°C After drying the silica gel at 65°C, the high flow version was immediately placed into an empty 8.7 litre dry box to measure the silica gel efficacy after drying at 65°C. The dry box was opened to ambient air for 10 minutes prior to sealing the desiccant container within. After 17 hours inside the dry box, the humidity level was reduced down to 8%. Please note that this delay may be due to not letting the silica gel cool to room temperature before placing into the drybox.65°C dried silica gel in an empty 8.7 litre dry boxThe tests were further repeated again using the AMS HT drying at 85°C. After 4 hours of drying, the high flow container had lost 11.8% of its weight, whilst the high capacity container had lost 11.8% after 10 hours.High flow and high capacity Standard Core containers dried at 85°C Placing the 85°C dried high flow container into a 8.7 litre dry box achieved a humidity of 5% after 4 hours.85°C dried silica gel in an empty 8.7 litre dry boxAdditionally after testing, the same silica gel used to perform the tests were further dried in the oven at 120°C to determine how much remaining weight could be removed.  After drying for an additional 2 hours in the oven, the average total removable weight from the tested silica gel was 12.5%. Therefore, the silica gel dried at 65°C had 2.5% of removable weight remaining, and the 85°C dried silica gel had 0.7% of removable weight remaining.&amp;nbsp;Please note that these test will differ when drying more than 1 container or when drying in a different filament dryer. More test are still underway.Filament Bag TestingFilaments are often packaged in bags made entirely from plastic, or plastic with additional aluminium inner layer. The bags can sometimes be reusable which can allow for a cost effective filament storage solution. To test the effectiveness of such storage solutions, a half empty spool of ABS was dried at 70°C for over 9 hours before letting it cool to room temperature and storing within one of the storage solutions. Each test had a hygrometer placed close to the coils of filament to measure the humidity within. Tests were also repeated to find the effectiveness of adding a high capacity desiccant core (with ~68g of silica gel). All tests were repeated using the same spool and hygrometer. A reusable vacuum bag was used to simulate a resealable plastic bag, whilst a resealable aluminium foil bag was reused from a spool purchase. No vacuum was applied to either storage solutions. Data was recorded hourly, but only data points with humidity changes was graphed. Ambient humidity was greater than 60% in an non air conditioned room.Resealable plastic bag vs. foil filament bag (with/without desiccant)From the tests, it can be seen that the aluminium foil bag provided the most effective filament storage solution that can even be used without desiccant. Humidity remained stable in the foil bag without desiccant but an even lower humidity of 3% was achieved when used with desiccant. This can be particularly beneficial for storing moisture sensitive filaments like TPUs and nylons. The plastic resealable bag on the other hand only had an acceptable result when used with desiccant, as the plastic was not a particularly effective barrier against moisture. A low humidity was still maintained when using with desiccant but will likely require drying after a few months. This can still be sufficient for less moisture sensitive materials. Designer NotesShout out to some great alternative designs on MakerWorld which had inspired me to create my own versionHigh Air Flow Desiccant Holder for Spools by DänDesiccant Holder for Spool - High Airflow by Motiform StudioSpool Silica Desiccant Container by DarwinianUpdatesPlease note that updates will likely be made in the future for further improvements to the design or for additional sizes. Please check in case there are any changes to the design.01/07/2026 - Opening tool for Standard, Large and XL core was added 24/12/2025 - Large Core funnels were added. Sizing of funnels were changed to be two sizes, 70mm &amp;amp; 100mm diameter opening.14/12/2025 - Hygrometer end rings have been updated to have a better fit with hygrometers that weren&amp;#39;t purchased from Bambu Lab Maker&amp;#39;s Supply07/12/2025 - XL Core 60mm - 67mm width spools have been updated with the high capacity variant. Standard Core and XL Core hygrometer end rings have been updated for toolless hygrometer removal.26/11/2025 - XL Core for 57-65mm width spools was changed to be 55-62mm for Geetech spools. High capacity variant was also added, but hygrometer version is yet to be added.24/10/2025 - Large Core HF was updated to V1.223/10/2025 - Some print profiles have been updated with Bambu Studio 2.3.0.70 for printers with high flow nozzles26/07/2025 - Adapter rings for Standard &amp;amp; Large Cores were added in the profile “Standard &amp;amp; Large Core Adapter for 63-80mm Inner Dia Spools”Hygrometer version added to &amp;#34;XL Core 60mm - 67mm width spools (Sunlu Gen 1 &amp;amp; Gen 2)&amp;#34;17/07/2025 - Large Cores were move to their own print profiles “Large Core 62mm - 69mm width spools (Bambu Spool)”14/07/2025 - 6 Large Core containers were added to “62mm - 69mm width spools (Bambu Spool)” print profile12/07/2025 - RFID tags for Standard Core were added. 47mm-54mm sizes were also uploaded.24/06/2025 - Funnels were adjusted to be more taller to reduce the risk of silica gel beads bouncing out.04/06/2025 - XL Core sizes for Sunlu Gen 1 and Gen 2 were added.20/05/2025 - Standard Core hygrometer version was added02/05/2025 - Updated all print profiles with latest Bambu Studio. Adjustments to slicer settings for better bottom mesh strength on high capacity containers.17/04/2025 - Modified funnel shape to be slightly taller13/04/2025 - Re-uploaded &amp;#34;desiccant_core_62mm-69mm.3mf&amp;#34; using latest Bambu Studio version. Previous 3mf file may have had backwards compatibility issues with older Bambu Studio versions27/03/2025 - Added desiccant cores for 66mm - 73mm and 71mm - 78mm width spools22/03/2025 V1.1 Update - XL desiccant core added. Designs updated with size markings and thicker cap threads.Work in progressV1.2 update for slightly increased mesh surface area with additional optimisationsRFID tags for other core sizesRFID tag compatibility with Standard &amp;amp; Large Core adapter ringsRFID tags for other filaments, e.g. PLA Wood, PLA Aero, etc.RFID tag holderXL Core update for larger threadsHygrometer end ring for Large CoreHygrometer version for GeeetechAlternative end rings for other core sizesAlternative end ring for clip in spool desiccant coreStandard Core sizing for &amp;lt;37mm spool widthsFilament storage testingOven drying testingBoost MeIf you like my work, Boosts are greatly appreciated. This design had went through months of iterations and testing for reliability, printability, performance and efficacy.  This design alone already has over 50 different variations created and optimised, and such designs takes multiple weeks to develop and refine. Boosts mean a lot to me as it fuels my passion for 3D printing and allows me to spend time creating highly refined designs for everyone for free." name="og:description"/>
+          		<meta content="28" name="next-head-count"/>
+          		<meta content="" name="emotion-insertion-point"/>
+          		<link href="/favicon_new.png" rel="icon"/>
+          		<link href="https://makerworld.com/en/models/1193993-high-performance-spool-desiccant-container-holder" rel="canonical"/>
+          		<link href="https://makerworld.com/en/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="en" rel="alternate"/>
+          		<link href="https://makerworld.com/zh/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="zh" rel="alternate"/>
+          		<link href="https://makerworld.com/zh-tw/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="zh-tw" rel="alternate"/>
+          		<link href="https://makerworld.com/de/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="de" rel="alternate"/>
+          		<link href="https://makerworld.com/fr/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="fr" rel="alternate"/>
+          		<link href="https://makerworld.com/it/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="it" rel="alternate"/>
+          		<link href="https://makerworld.com/es/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="es" rel="alternate"/>
+          		<link href="https://makerworld.com/ja/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="ja" rel="alternate"/>
+          		<link href="https://makerworld.com/sv/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="sv" rel="alternate"/>
+          		<link href="https://makerworld.com/pt/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="pt" rel="alternate"/>
+          		<link href="https://makerworld.com/ko/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="ko" rel="alternate"/>
+          		<link href="https://makerworld.com/ru/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="ru" rel="alternate"/>
+          		<link href="https://makerworld.com/en/models/1193993-high-performance-spool-desiccant-container-holder" hreflang="x-default" rel="alternate"/>
+          		<link as="style" href="/_next/static/css/38641f03283250bb.css" nonce="ZGY4YjdmNjQtZjc4ZC00NmRlLTk4Y2QtOTdhYTQ2YjMyZWMy" rel="preload"/>
+          		<link data-n-g="" href="/_next/static/css/38641f03283250bb.css" nonce="ZGY4YjdmNjQtZjc4ZC00NmRlLTk4Y2QtOTdhYTQ2YjMyZWMy" rel="stylesheet"/>
+          		<link as="style" href="/_next/static/css/f6d6befd804d4f26.css" nonce="ZGY4YjdmNjQtZjc4ZC00NmRlLTk4Y2QtOTdhYTQ2YjMyZWMy" rel="preload"/>
+          		<link data-n-g="" href="/_next/static/css/f6d6befd804d4f26.css" nonce="ZGY4YjdmNjQtZjc4ZC00NmRlLTk4Y2QtOTdhYTQ2YjMyZWMy" rel="stylesheet"/>
+          		<link as="style" href="/_next/static/css/4ff613f9992b8b8d.css" nonce="ZGY4YjdmNjQtZjc4ZC00NmRlLTk4Y2QtOTdhYTQ2YjMyZWMy" rel="preload"/>
+          		<link data-n-p="" href="/_next/static/css/4ff613f9992b8b8d.css" nonce="ZGY4YjdmNjQtZjc4ZC00NmRlLTk4Y2QtOTdhYTQ2YjMyZWMy" rel="stylesheet"/>
+          		<link as="style" href="/_next/static/css/653ddeb9e80894ad.css" nonce="ZGY4YjdmNjQtZjc4ZC00NmRlLTk4Y2QtOTdhYTQ2YjMyZWMy" rel="preload"/>
+          		<link data-n-p="" href="/_next/static/css/653ddeb9e80894ad.css" nonce="ZGY4YjdmNjQtZjc4ZC00NmRlLTk4Y2QtOTdhYTQ2YjMyZWMy" rel="stylesheet"/>
+          	</head>
+          	<body></body>
+          </html>
+        kind: public.html.documentmetadata.v0
+      - error: HTTP 400 Bad Request (body eyJjb2RlIjozLCAibWVzc2FnZSI6InNvdXJjZSBleGNlZWRzIG1heGltdW0gc2l6ZSAoMjA5NzE1MiBieXRlcykiLCAiZGV0YWlscyI6W119)
+        kind: public.html.structureddata.v0
+      - data: "[](https://makerworld.com/en)\n\n- [Home](https://makerworld.com/en)\n-
+          [All Models](https://makerworld.com/en/3d-models)\n- [Following](https://makerworld.com/en/following)\n-
+          [MakerLab](https://makerworld.com/en/makerlab?from=navbar)\n- [Contests](https://makerworld.com/en/contests)\n-
+          [Crowdfunding](https://makerworld.com/en/crowdfunding)\n\nExplore\n\n- [Maker's
+          Supply](https://store.bambulab.com/maker-supply?from=mw_homepage_ms)\n-
+          [CyberBrick](https://makerworld.com/en/cyberbrick)\n- [Community](https://makerworld.com/en/community)\n-
+          [Forum](https://forum.bambulab.com/c/makerworld/144)\n\n[Privacy](https://bambulab.com/policies/privacy)[Terms](https://makerworld.com/en/user-agreement)[Guidelines](https://makerworld.com/en/community-guidelines)[FAQ](https://makerworld.com/en/faq)\n\nCookie
+          Settings\n\n[Hot Searches](https://makerworld.com/en/more-models)\n\n© 2026
+          MakerWorld\n\n[](https://makerworld.com/en)\n\nSearch models, users, collections,
+          and posts\n\nLog In\n\n# High Performance Spool Desiccant Container Holder\n\n[Silvercell](https://makerworld.com/en/@Silvercell)\n\nFollow\n\n[3D
+          Printer](https://makerworld.com/en/3d-models/900)>[3D Printer Accessories](https://makerworld.com/en/3d-models/901)\n\nIP
+          Report\n\n#### Print Profile(40)\n\nAll\n\nX1 Carbon\n\nA1\n\nP2S\n\nH2D
+          Pro\n\nP1P\n\nH2D\n\nX2D\n\nA1 mini\n\nX1\n\nP1S\n\nH2C\n\nH2S\n\nX1E\n\nA2L\n\n---\n\n![62mm
+          - 69mm width spools (Bambu Spool)](https://makerworld.bblmw.com/makerworld/model/US3cd00ef3406625/450243963/instance/2025-03-12_ac8d7fdcaa799.jpg?x-oss-process=image%2Fresize%2Cw_100%2Fformat%2Cwebp)\n\n62mm
+          - 69mm width spools (Bambu Spool)\n\nDesigner\n\n11 h\n\n6 plates\n\n5.0(6.8
+          k)\n\n---\n\n![62mm - 69mm width spool (Hygrometer Bambu Spool)](https://makerworld.bblmw.com/makerworld/model/US3cd00ef3406625/541408746/instance/2025-06-16_81c71e6100a27.jpeg?x-oss-process=image%2Fresize%2Cw_100%2Fformat%2Cwebp)\n\n62mm
+          - 69mm width spool (Hygrometer Bambu Spool)\n\nDesigner\n\n10.1 h\n\n6 plates\n\n5.0(713)\n\n---\n\n![XL
+          Core 60mm - 67mm width spools ( JAYO non-reusable spool)](https://makerworld.bblmw.com/makerworld/model/US3cd00ef3406625/849898821/instance/d027b400a8d0f706.jpeg?x-oss-process=image%2Fresize%2Cw_100%2Fformat%2Cwebp)\n\nXL
+          Core 60mm - 67mm width spools ( JAYO non-reusable spool)\n\nDesigner\n\n23.4
+          h\n\n12 plates\n\n5.0(280)\n\n---\n\n![57mm - 64mm width spools](https://makerworld.bblmw.com/makerworld/model/US3cd00ef3406625/568940223/instance/2025-03-13_329c0a92f3227.jpeg?x-oss-process=image%2Fresize%2Cw_100%2Fformat%2Cwebp)\n\n57mm
+          - 64mm width spools\n\nDesigner\n\n10.5 h\n\n6 plates\n\n5.0(362)\n\nClick
+          to see more\n\n---\n\nOpen in Bambu Studio\n\nBoost\n\n26590\n\n99798\n\n11546\n\n5.5
+          k\n\n73.2 k\n\n61.1 k\n\nReleased\n\n### Bill of Materials {% #mws_bom-v2-title
+          %}\n\nDownload Bill of Materials\n\nMaker's Supply Kits and Parts\n\nSelect
+          All\n\n[![Circular  (1PCS) - XF001](https://store.bblcdn.com/s7/default/57adfcd3c0ee45b4bab0a72cc49a31cb/CircularEmbeddedElectronicDigitalThermometerHygrometer1.png)](https://us.store.bambulab.com/products/circular-embedded-electronic-digital-thermometer-hygrometer-1pcs-xf001?skr=yes&id=42676225441928&modelId=1193993)\n\n[Circular
+          Embedded Electronic Digital Thermometer Hygrometer](https://us.store.bambulab.com/products/circular-embedded-electronic-digital-thermometer-hygrometer-1pcs-xf001?skr=yes&id=42676225441928&modelId=1193993)\n\nx1\n\nCircular
+          (1PCS) - XF001\n\nBuy Now\n\nAdd to Cart(1)\n\n### Description\n\n### Main
+          Features\n\n- **Two high airflow and high surface area desiccant container
+          versions for effective moisture absorption for keeping filaments dry**.
+          Both having high density open mesh walls and self-centering open spoke ends
+          for improved air circulation throughout the whole desiccant core and spool\n
+          \ \n  - **High Flow (HF)** version with triple internal towers to maximise
+          silica gel surface area while allowing air to reach the silica gel deeper
+          within the container for better efficacy.\n  - **High Capacity (HC)** version
+          for greater desiccant capacity for long term storage, easier refilling and
+          additional weight.\n  \n- **Performance, strength and print tested container
+          design **_(test details at the end)_\n  \n  - Tested to reduce humidity
+          in a dry box faster than a desiccant container with low surface area.\n
+          \ - 2x faster silica gel drying speed with high flow version for faster
+          drying in filament dryers and ovens.\n  - Tested to be capable of maintaining
+          low humidity within a heavy duty resealable bag.\n  - Load tested to 10kg
+          without structural failure, ensuring a durable design. Able to prevent Bambu
+          spool halves from coming apart.\n  - Test fitted in 26 different spools
+          _(test fitted spools in “Compatibility List”)_\n  - Print tested in a wide
+          range of materials including polycarbonate for high temperature drying,
+          and fiber reinforced filaments for advanced users.\n  - Highly refined and
+          optimised design print profiles for reliable printing and smooth fitting
+          parts for over 50 different design variations\n  \n- **Three core sizes
+          for different inner diameter spools**\n  \n  - **Standard Core** for 50mm
+          - 63mm inner diameter spools for wide compatibility and high airflow. Can
+          also be adapted for 63mm - 80mm inner diameter spools\n  - **Large Core
+          **for 55mm - 63mm inner diameter spools for maximised desiccant capacity
+          whilst maintaining adequate airflow and compatibility for most spools including
+          Bambu spools. Can also be adapted for 63mm - 80mm inner diameter spools\n
+          \ - **XL Core **for 60mm - 75mm inner diameter spools for spools with a
+          large inner diameter\n  \n- **Silica gel capacities** for dry silica gel_
+          (wet silica gel will be 20-30% heavier)_:\n  \n  - Standard Core for Bambu
+          spools: HF ~52g, HC ~68g\n  - Large Core for Bambu spools: HF ~68g, HC ~88g\n
+          \ - XL Core for Sunlu Gen 1 & 2: HF ~75g\n  \n- **Three available mesh sizes
+          **for different sizes of intact desiccant beads_ (damaged beads will need
+          finer mesh size)_:\n  \n  - Standard mesh: >2mm\n  - Fine mesh: >1.5mm\n
+          \ - Ultra fine mesh: >1mm\n  \n- **Up to 7 desiccant cores can be dried
+          in the AMS 2 Pro, AMS HT or any filament dryer** using the drying spool
+          [**(link)**](https://makerworld.com/en/models/1476361-desiccant-container-drying-spool-ams-2-pro-ht)\n-
+          **Different lengths with size markings** to provide a secure fit in a wide
+          range of spool sizes from 250g to 1kg spools_ (test fitted spools in “Compatibility
+          List” and in print profile pictures)_\n- **Extra options for alternative
+          add-ons**\n  \n  - Hygrometer version for desiccant humidity monitoring\n
+          \ - Standard and Large Core adapter for 63mm - 80mm inner diameter spools\n
+          \ - Standard Core RFID tags for labelling of spools and AMS RFID reading
+          function\n  - Two sizes of funnels to aid with filling\n  - Alternative
+          locking end ring lengths\n  - Optional opening tool\n  - _More updates and
+          features to be added… _\n    \n    _Please check Designer Notes for updates
+          and work in progress_\n    \n  \n\n### \n\n### Print Guidance\n\nThe design
+          and print profiles have been carefully optimized for easy support-free printing.
+          Many hours of work had been spent optimising all the print profiles, and
+          many modifiers are used within the print profiles so **please be sure to
+          print using my uploaded print profiles. Do not download STL/CAD files to
+          print from or make changes to the print settings!** **The mesh on the ends
+          of the container won't be visible in 3D model, as it relies on slicer modifiers
+          to generate the mesh. Once the models are sliced using the print profiles,
+          the mesh will appear in Bambu Studio “Preview”. If the design is printed
+          without the yellow modifiers & settings, no mesh will be printed! Please
+          also ensure Bambu Studio is up to date as older versions may causes issues.
+          **Would recommend printing the design using Bambu Handy App for easy convenience.
+          Filament type can be changed and the number of copies can be increased within
+          the app._ (Please note: Bambu Handy App will misalign the mesh when multiple
+          copies are printed. This does not affect the function, but will change the
+          intended appearance. Please use Bambu Studio if you wish to keep the mesh
+          aligned with the body of the container)_\n\nFor Bambu Studio, you can right
+          click to select all the parts, and use keyboard shortcuts (e.g. CTRL+K)
+          to clone a number of copies before right clicking the plate to arrange.
+          Please avoid manually moving models if possible, as it may mess up the placement
+          of modifiers within each model.\n\nPlease always ensure the print bed is
+          cleaned, and filament is dry before starting the print. Poor bed adhesion
+          can result in first layer problems which can lead to print failures. Moisture
+          in filament can cause stringing in the parts and can also cause issues with
+          parts fitting together.\n\nPrinting with Bambu Labs filament is recommended
+          for best results. Other filament brands can also be used, but some filament
+          brands may not handle default generic filament profiles, and may result
+          in poor quality prints without filament tuning. If you are having such issues,
+          please tune the filament with appropriate print temperature, volumetric
+          speed, flow dynamics, flow ratio, cooling, etc. Having the correct filament
+          tuning is important, as it can affect the strength, quality and fit of parts.
+          The threads of the design are designed with a loose fit in mind, but filament
+          or printer problems can result in inaccurate threads with imperfections.
+          If there are imperfections on the threads, common reasons are wet filament,
+          or improperly calibrated flow dynamics or flow ratio.\n\nWhen printing with
+          engineering filaments like ABS, ASA, PC, etc., prints must be done within
+          enclosed chambers. Excess cooling can result in warping or weaker parts.
+          Although basic print testing with the X1C produced adequate results in part
+          strength, taking additional steps can further enhance the strength of the
+          design. Pre-heating the chamber, using chamber heating, or reducing part
+          cooling (reducing fan speed for overhangs or disabling forced cooling for
+          overhangs and bridges) can reduce warping and significantly improve layer
+          adhesion strength of the design.\n\nThe 3D model for the design is only
+          optimised for printing with a 0.4mm nozzle. Most fiber reinforced filaments
+          can be printed using a 0.4mm nozzle but some may require a 0.6mm nozzle.
+          Whilst it's possible to adjust the print profiles for a 0.6mm nozzle, the
+          print quality may be reduced due to the lack of optimisation in the 3D model
+          for printing with a 0.6mm or 0.8mm nozzle.\n\n#### Slicer settings if printing
+          with STLs only\n\n1. Import the raw STLs into the choice of slicer. Exclude
+          the STLs for _core_mesh_, _cap_mesh_, _core_mod_ and _end_mod_. All _cap_
+          and _end_ STLs are the same so only one of each is needed. The main container
+          body STLs are labelled with HF for high flow, and HC for high capacity,
+          followed by the mesh size.\n1. To slice the files, make sure the printer
+          preset is a standard preset for 0.2mm layer height for a 0.4mm nozzle. Other
+          layer heights or nozzle sizes may have issues.\n1. Configure the print settings
+          to be 4 wall loops, 0 top shell layers, 0 bottom shell layers\n1. Depending
+          on which container is being printed, set sparse infill density in print
+          settings: 40% for standard mesh, 55% for fine mesh, or 42% for ultra fine
+          mesh\n1. Then set sparse infill pattern in print settings: triangles for
+          standard and fine mesh containers, or rectilinear for ultra fine mesh\n1.
+          Some additional settings may be needed: “Only one wall on top surfaces”
+          should be disabled, and brim may need to be disabled if on auto.\n\n###
+          Compatibility List\n\nList of spools that have been tested. Other spools
+          will also compatible but will require measuring to determine a suitable
+          container size.\n\n{% table %}\n---\n- **Spool Brand**\n- **Inner Diameter**\n-
+          **Standard Core**\n- **Large Core**\n- **XL Core**\n---\n- Bambu Lab (reusable)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- Sunlu Gen 3 (reusable)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- Sunlu Gen 2\n- 63mm\n-
+          62-69mm width + adapter\n- 62-69mm width + adapter\n- 60-67mm width\n---\n-
+          Sunlu Gen 1\n- 73mm\n- 62-69mm width + adapter\n- 62-69mm width + adapter\n-
+          60-67mm width\n---\n- JAYO (reusable)\n- 55mm\n- 62-69mm width\n- 62-69mm
+          width\n- \\-\n---\n- JAYO (old version)\n- 73mm\n- 62-69mm width + adapter\n-
+          62-69mm width + adapter\n- 60-67mm width\n---\n- Overture (cardboard)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- Siraya Tech (cardboard)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- Polymaker (cardboard)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- Creality (clear plastic)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- Inslogic (reusable)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- Anycubic (reusable)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- Kexcelled (reusable)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- Chitu Conjure (reusable)\n-
+          54mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- NextShapes (reusable)\n-
+          55mm\n- 62-69mm width\n- 62-69mm width\n- \\-\n---\n- XTZL3D\n- 55mm\n-
+          62-69mm width\n- 62-69mm width\n- \\-\n---\n- 123-3D\n- 53mm\n- 62-69mm
+          width\n- 62-69mm width\n- \\-\n---\n- Prusament (NFC)\n- 51mm\n- 62-69mm
+          width\n- \\-\n- \\-\n---\n- Prusament (old version)\n- 51mm\n- _62-69mm
+          width*_\n- \\-\n- \\-\n---\n- eSun eSpool+ (reusable)\n- 55mm\n- 62-69mm
+          width\n- 62-69mm width\n- \\-\n---\n- eSun (clear plastic)\n- 52mm\n- 57-64mm
+          width\n- \\-\n- \\-\n---\n- eSun (cardboard)\n- 55mm\n- 57-64mm width\n-
+          \\-\n- \\-\n---\n- eSun (black plastic)\n- 54mm\n- 47-54mm width\n- \\-\n-
+          \\-\n---\n- Eryone (cardboard)\n- 55mm\n- 57-64mm width\n- \\-\n- \\-\n---\n-
+          Geeetech\n- 75mm\n- 57-64mm width + adapter\n- \\-\n- 55-62mm width\n---\n-
+          Fillamentum (750g clear plastic)\n- 53mm\n- 52-59mm width\n- \\-\n- \\-\n{%
+          /table %}\n\n_*barely fits the width of the spool. A larger size is recommended_\n\n###
+          Desiccant Core Usage\n\nKeeping filaments dry is crucial for 3D printing
+          to ensure you get the best quality prints. Many filaments absorb moisture
+          when left out and can cause issues like oozing, stringing, rougher print
+          surfaces, print discoloration, and reduced part strength. Drying filaments
+          in a filament dryer solves a lot of these issues, and keeping them dry ensures
+          you won't have issues in future prints. So it's best practice to always
+          store dried spools with desiccant inside an airtight container or a heavy
+          duty resealable bag.\n\n#### High Flow vs. High Capacity\n\n- **High Flow**\n
+          \ \n  Suited for filaments that are in frequent use which are often exposed
+          to humid air and require frequent drying in the AMS 2 Pro, AMS HT or a filament
+          dryer. The increased exposed surface area allows for improved efficacy especially
+          when it come to drying. It has 2 times faster drying speed when compared
+          to the high capacity variant which shortens the time needed to dry even
+          at lower drying temperatures. Can also be dried in the oven when printed
+          in a suitable material.\n  \n- **High Capacity**\n  \n  Suited for long
+          term storage of filaments in airtight containers or bags. This version has
+          a higher desiccant capacity for longer endurance, and is easier to fill
+          and empty for drying in the oven or microwave. It can also be used to hold
+          desiccant pouches or weighted objects.\n  \n\n#### Mesh Sizes\n\nThere are
+          three mesh sizes available which are standard, fine and ultra fine. Standard
+          can be used with large desiccant beads that are around 2-4mm in size. Smaller
+          sizes of desiccant beads or badly damaged desiccant beads may fall out in
+          standard mesh, so a finer mesh size should be used. Would recommend using
+          intact desiccant beads to avoid issues with desiccant falling out. If using
+          larger desiccant beads, it would be advisable to use the high capacity desiccant
+          container instead of the high flow version. If using indicating silica gel,
+          fine and ultra fine mesh will reduce the visibility of the indicating colour.\n\n####
+          Core Sizes\n\nThree core sizes are available to suit a range of requirements
+          with regards to inner diameter spool sizing.\n\n- **Standard Core **\n  \n
+          \ Compatible with spools with an inner diameter of 50mm to 63mm. This version
+          has the largest compatibility range and can even be used down to 48mm inner
+          diameter spools if airflow restriction is not a concern. Standard Core can
+          also be adapted to fit 63mm - 80mm inner diameter spools using a separate
+          adapter ring.\n  \n- **Large Core**\n  \n  This version is similar to the
+          Standard Core but sizing is changed to fit 55mm to 63mm inner diameter spools.
+          The air gap between the container and spool is reduced to 1.25mm for a larger
+          container with more desiccant. It's compatible with many 55mm inner diameter
+          spools, but may also be used with inner diameter spools down to 53mm if
+          airflow restriction is not a concern. Large Core can also be adapted to
+          fit 63mm - 80mm inner diameter spools using a separate adapter ring.\n  \n-
+          **XL Core**\n  \n  Compatible with spools with an inner diameter of 60mm
+          to 75mm. XL Core also adds an additional air channel to the high flow version.\n
+          \ \n\n#### Spool Width Compatibility\n\nSome spools have been test fitted
+          with pictures in the print profiles. The compatible width of the spool will
+          depend on which print profile is printed and the size of the inner spool
+          diameter. If fitting spools with an inner diameter less than 55mm using
+          Standard Core, up to 1.5mm should be deducted from the width specified in
+          the print profiles. If it's greater than 55mm, up to 1.5mm should be added.
+          For XL Core, spools with an inner diameter less than 75mm will require up
+          to 3mm deducted from the specified width. There's also the option to print
+          out shorter or longer end pieces if a wider range of fit is needed without
+          needing to reprint a different sized desiccant core.\n\n#### Desiccant Core
+          Material\n\nIf there are plans to use the desiccant core in a filament dryer,
+          printing in ABS, ASA or polycarbonate is recommended. Higher temperature
+          materials are preferred, as materials like PLA and PETG can deform in filament
+          dryers that can reach above their heat deflection temperature. PA6-GF, PA6-CF,
+          PAHT-CF, PET-CF or higher temperature materials are recommended for advanced
+          users if drying in the oven. Transparent filaments are also preferred if
+          indicating desiccant beads are used.\n\nIf printing with fiber reinforced
+          filaments, it would be advisable to using a scouring pad, fine sanding sponge
+          or wire brush on the surfaces of the container after printing. Exposed fibers
+          can cause the threads to feel rough or seize, and fibers can break off during
+          from handling. Not all fiber reinforced filaments have the same amount of
+          exposed fibers, so some may not require removal. Rubbing down the exposed
+          surfaces with something abrasive under water will help knock off exposed
+          fibres on surfaces, and help make surfaces smoother. Please ensure dust
+          is contained under water to reduce the risk of dust being breathed in, and
+          to rinse parts thoroughly afterwards. A suitable respirator mask can also
+          be worn during the process. Please also wear gloves during this process
+          to avoid getting fibers into skin.\n\nIf printing with filaments that require
+          annealing like PET-CF, please ensure the containers are fully annealed before
+          use.\n\nAdditional print testing details can be found in “Print Testing”.\n\n####
+          Adding Desiccant\n\nBefore filling the desiccant cores with desiccant, please
+          check parts are fitting well in case there are any issues with printing.
+          Optional funnels can be printed to assist with filling. If filling the High
+          Flow container with a funnel, please tilt the container and funnel by 30-45°
+          before filling to reduce the risk of silica bouncing out. When filling the
+          desiccant core,** ****desiccant can be filled to the top but do not overfill
+          before screwing on the cap**. If trying to maximise desiccant contained
+          within the container, gently tapping on the container will help settle the
+          beads into empty spaces, and prevent the cap from seizing. **Ensure the
+          cap can be fully screwed flush with the container**. Failure to screw the
+          cap on properly from overfilling can result in the cap becoming loose and
+          spilling desiccant beads. If there are plans to dry the desiccant core in
+          a filament dryer, please tighten the cap well, as plastic can expand with
+          heat resulting in changes in dimension. Firmly tightening the cap will ensure
+          the cap won't easily become loose from thermal expansion.\n\n#### Drying
+          Desiccant\n\nWhen using silica gel, both versions of the desiccant core
+          can be dried within a 65°C or higher filament dryer when printed using a
+          temperature resistant material. The drying spool available on MakerWorld
+          [**(link)**](https://makerworld.com/en/models/1476361-desiccant-container-drying-spool-ams-2-pro-ht)
+          can also be printed to allow for drying of up to 7 containers.\n\nSilica
+          Gel Container Drying Spool AMS 2 Pro & HT available on MakerWorld\n\nThe
+          high flow version will dry faster with its higher surface area compared
+          to the high capacity version. The high capacity version will take a considerably
+          longer time to dry due to the density of desiccant beads. Both versions
+          will dry faster if dried at higher temperatures, as long as the printed
+          material can withstand the heat. After drying, please allow the containers
+          to cool down before installing into spools. Desiccant may continue to release
+          moisture while hot if drying duration is not adequate. Thermal expansion
+          and contraction of the containers can also occur which can result in the
+          containers tightening on spools when installed whilst hot.\n\nDesiccant
+          cores should also be removed from spools to be dried directly for optimal
+          airflow and drying temperatures. If drying within filament dryers, using
+          the dedicated drying spool is recommended for optimal drying within a filament
+          dryer. Whilst it's possible to partially dry the desiccant core inside a
+          filament spool, airflow and drying temperatures won't be optimal. Filament
+          dryers only direct heated air towards the outer spool of filament, so the
+          centers of the spool won't be adequately heated and may be lower in temperature
+          by 10-20°C. Please also be cautioned when drying Bambu Lab 85A & 90A TPU,
+          as the TPU filament can expand to cause their reusable spools to change
+          in width, noted in their [TPU guide](https://wiki.bambulab.com/en/filament-acc/filament/tpu-85a-90a-printing-guide-for-x-series).\n\nIt's
+          advisable to transfer the desiccant beads to a dish to be dried in an oven
+          or microwave if faster drying is needed. When drying silica gel, please
+          be careful not to exceed 120°C as higher temperatures can damage the silica
+          gel. Please note that with the high flow version, larger desiccant beads
+          can get stuck in between the crevices. The stuck beads can be dislodged
+          by gently squeezing or tapping on the desiccant core. It is recommended
+          to use to high capacity variant to avoid this issue.\n\n#### Filament Storage
+          Recommendations\n\nFrom best to worse performing: _(testing data to be added)_\n\n1.
+          Resealable aluminium foil bag\n1. 2500ml round takeaway food container\n1.
+          4 litre cereal box\n1. Dedicated filament drybox\n1. Resealable filament
+          bag\n1. Resealable vacuum bag\n\n#### Hygrometer Version\n\nContained within
+          the print profile for \"Bambu Spool Hygrometer Version\" and “Alternative
+          End Rings (Hygrometer Mod)” is an end ring version that has a hole to accommodate
+          a circular hygrometer. The circular hygrometer can be obtained from Bambu
+          Lab Maker's Supply or other circular hygrometers that are similar in size
+          may be used. The end ring takes up 15mm in length to accommodate the hygrometer
+          which will reduce the amount of space where silica gel can be stored. The
+          hygrometer is also in close proximity to the silica gel, so will only provide
+          an indicator as to whether the silica gel requires drying. Currently, there
+          is only a print profile for Bambu Lab spools, which has a 47mm-54mm desiccant
+          core together with the hygrometer end ring. Other sizes may be created by
+          pairing the hygrometer end ring from “Alternative End Rings (Hygrometer
+          Mod)” with other lengths of desiccant cores.\n\nThe hygrometer end ring
+          had been updated for easier removal of the hygrometer when changing battery
+          or when using with the drying spool. The hygrometer can be simply removed
+          by pushing it out from the backside. Please be sure to remove the hygrometer
+          before placing the desiccant cores into the drying spool for drying.\n\nTo
+          remove the hygrometer from the old hygrometer end ring (before Dec 2025),
+          please take note of the locking tabs on the hygrometer at 12 o'clock and
+          6 o'clock position (may be different for hygrometers that aren't from Maker's
+          Supply). Please line up the locking tabs to be visible through the vent
+          holes, and use a flat head screwdriver to depress the lock tab whilst pushing
+          the hygrometer out. Repeat this procedure on the opposing locking tab until
+          the hygrometer fully detaches from the end ring. This procedure may not
+          be required on the XL Core version.\n\n#### RFID Tags\n\nThe print profile
+          for RFID Tags consists of various tags for a range of different filament
+          material types available from Bambu Lab. RFID tags from empty Bambu Lab
+          spools can be cut and inserted into the tag. The tag can then be clipped
+          into place into the side of the desiccant cores. RFID labels can be adjusted
+          within Bambu Studio if a custom label is needed. The tags can also be used
+          as labels for spools.  Currently the RFID tags are only available for Standard
+          Core sizes and not compatible when paired with an adaptor. Adjustment may
+          be made in the future.\n\n### Design Testing\n\n#### Print Testing\n\nThe
+          design had been test printed in PLA, PETG, ABS, ASA, PC, PA6-GF, PA6-CF,
+          PAHT-CF, PET-CF and PPA-CF. Printing the design using PA6 was possible but
+          not recommended due to high shrinkage and warping. Easy PA is also not recommended
+          due to low temperature resistance. HIPS is not recommended due to weak strength.
+          It's important to note that filaments like PETG, ABS, ASA, PC, PA6-GF, PA6-CF,
+          PAHT-CF, PET-CF and PPA-CF require drying to ensure accurate and reliable
+          printing. Some of these filaments require high temperature drying and may
+          even require days of drying if drying at low temperatures. With ASA, it
+          was noticed that it may be more prone to having weaker layer adhesion due
+          to excess cooling used in overhang/bridging within filament presets. Would
+          be advisable to follow recommendations in “Print Guidance” for engineering
+          filaments to improve layer adhesion.\n\nPLA, PETG, ABS, ASA and PC prints
+          all produced smooth loose fitting threads with little to no resistance to
+          thread on. Material shrinkage from ABS, ASA and PC had minimal impact on
+          the threads, and still remained smooth and loose fitting. When interchanging
+          PLA with ABS parts, differences in fit was noticeable but not too significant.
+          With fiber reinforced filaments like PA6-GF, PA6-CF, PAHT-CF, PPA-CF and
+          PET-CF, exposed fibers can affect the threads such that threads would feel
+          rougher but still acceptable in use. With glass fibers in particular in
+          PA6-GF, the stiffer fibers can occasionally cause the threads to seize.
+          PET-CF had the smoothest surface finish with the least amount of exposed
+          fibers, but results can differ between brands. Exposed fibers can be removed
+          by rubbing the surfaces with a fine sanding sponge under running water.
+          Once removed, surfaces become smoother whilst improving the smoothness of
+          threads. With the removal of the exposed fibers, all fiber reinforced filaments
+          produced fairly smooth and loose fitting threads. Part shrinkage may also
+          occur from annealing, which was noticed with many CF nylons and PET-CF where
+          they would shrink in the Z-axis. Despite the shrinkage of even up to 3%
+          in Z-axis in some materials, the threads remained functional without significant
+          resistance. Z-axis expansion was also noticed with PA6 based filaments which
+          are more prone to swelling from moisture.\n\nPC, PA6-GF, PET-CF and PPA-CF
+          test prints on X1C 0.4mm nozzle through Bambu Handy App using “62mm - 69mm
+          width spools (Bambu Spool)” and “57mm - 64mm width spools” print profiles\n\nClose
+          up of PA6-GF, PET-CF and PPA-CF test prints\n\nThe design has also been
+          test printed in PETG on a RepRap Huxley printer without issue, so newer
+          printers shouldn't have much issue printing out the design. Main importance
+          when printing is ensuring there's adequate bed adhesion.\n\n#### Design
+          Strength Testing\n\nThe test samples are a high capacity Standard Core containers
+          printed in Bambu Lab ABS Black, Inslogic ASA White, Bambu Lab PETG HF White
+          and Bambu Lab PC Transparent. All Bambu Lab filaments were printed using
+          default Bambu Lab filament presets, and Inslogic filament was printed using
+          Bambu Lab ASA filament preset but modified to have a 12mm³/s volumetric
+          speed. Prints were done using a near stock X1C with no active chamber heating.
+          The test samples were loaded with 10kg on two areas to check for possible
+          issues with the strength of the design.\n\nThere were no visible signs of
+          failure or cracks noticed in all the test samples. The design will likely
+          be able to handle much higher loads before failure.\n\nIt's important to
+          note that despite the successful tests on verifying the strength of the
+          design, the design relies heavily on having good layer adhesion strength.
+          Many factors can affect the layer strength, such as having correct print
+          temperatures, volumetric print speeds, appropriate cooling and filament
+          quality/type. Having too low of a print temperature, too fast of a print
+          speed or excessive part cooling can reduce the layer adhesion of parts.
+          So it's important to ensure that the filament quality/type and matching
+          filament preset is adequate in producing reliable parts.\n\n#### Mesh Walls
+          & Flow Through Design Moisture Absorption Efficacy Testing\n\nBoth high
+          flow and high capacity versions use high density mesh walls and open spoke
+          ends to maximise airflow and exposed desiccant surface area. This is in
+          order to improve the design for more effective moisture absorption in a
+          dry box or vacuum bag.\n\nTo test for the efficacy of the mesh walls to
+          ensure they have an effect on improving the performance of the desiccant
+          container, a modified version of the high capacity version was made to have
+          no mesh walls and to only have the mesh top and bottom ends. Both containers
+          hold the same amount of silica gel, and the only difference was the removal
+          of mesh walls in the modified design. Testing of the two designs revealed
+          that the mesh walls made a significant difference to the effectiveness of
+          silica gel in bringing down the humidity within a dry box. The increased
+          exposed surface area in the high capacity version allowed it to reach a
+          lower humidity level within a shorter time frame when compared to the modified
+          version without mesh walls. For the modified version to reach the same level
+          of humidity, it took 4.7 times longer than the high capacity version with
+          its mesh walls.\n\nTesting involved using an 8.7 litre dry box, two Bambu
+          spools with filament, two of each version of Standard Core desiccant containers,
+          a large batch of dry silica gel and two Xiaomi Temperature & Humidity Monitors.
+          Before starting the tests, the two spools and two sensors were initially
+          placed into the dry box with desiccant for a day to bring down the humidity
+          within. The sensors were also placed >13cm away from the center of the two
+          spools where the desiccant containers will be situated. To start the tests,
+          the two spools and desiccant were taken out of the dry box and placed into
+          the AMS for 30 mins whilst the dry box was left open to saturate with ambient
+          humidity. After 30 minutes had passed, the spools were removed from the
+          AMS and placed into the dry box together with the high capacity desiccant
+          container secured in the center before sealing the dry box, after which
+          measurements were recorded. This procedure was repeated again for the modified
+          desiccant container.\n\nFrom testing, the high capacity version reached
+          a humidity level of 15% in 140 minutes, whereas the modified version with
+          only mesh top and bottom reached the same humidity level in 660 minutes
+          (11 hours). This suggests that the lack of mesh walls creates a restriction
+          to the silica gel and its ability to absorb moisture, preventing it from
+          more effectively lowering the humidity in the dry box. Although data was
+          not recorded for the high capacity version after 240 minutes, it was observed
+          that the high capacity version was capable of reducing the humidity below
+          15% after some time.\n\n#### Silica Gel Drying Efficacy Testing\n\nThe high
+          capacity version was the first container to be developed, however, it was
+          noticed that silica gel deeper within the center of the container had difficulties
+          drying when the container was placed in a dryer. In order to improve on
+          the container's design to allow for better drying of silica gel contained
+          within, the high flow version was developed with additional internal towers
+          to direct air deeper into the container whilst increasing available mesh
+          area at the cost of reduced desiccant capacity.\n\nTesting of the two containers,
+          high flow and high capacity, revealed that the high flow version had an
+          increased rate of drying compared to the high capacity version. The high
+          capacity version had a more gradual slower rate of drying that took around
+          2 times longer than the high flow container version.\n\nTesting of the two
+          Standard Core containers with standard mesh involved using a batch of partially
+          saturated silica gel for both containers and an AMS HT set to dry at 65°C
+          for 12 hours. Each container was placed into the filament dryer on their
+          own and taken out at 30 to 60 minute intervals to measure their weight.
+          At 7 hours of drying, the high flow container had stopped losing weight
+          at around -10% whilst the high capacity version continued to lose weight
+          even up to the end of the drying cycle. As the high capacity version hadn't
+          yet reached the same percentage of weight lost as the high flow version,
+          additional hours in the filament dryer would be needed.\n\nHigh flow and
+          high capacity Standard Core containers dried at 65°C\n\nAfter drying the
+          silica gel at 65°C, the high flow version was immediately placed into an
+          empty 8.7 litre dry box to measure the silica gel efficacy after drying
+          at 65°C. The dry box was opened to ambient air for 10 minutes prior to sealing
+          the desiccant container within. After 17 hours inside the dry box, the humidity
+          level was reduced down to 8%. Please note that this delay may be due to
+          not letting the silica gel cool to room temperature before placing into
+          the drybox.\n\n65°C dried silica gel in an empty 8.7 litre dry box\n\nThe
+          tests were further repeated again using the AMS HT drying at 85°C. After
+          4 hours of drying, the high flow container had lost 11.8% of its weight,
+          whilst the high capacity container had lost 11.8% after 10 hours.\n\nHigh
+          flow and high capacity Standard Core containers dried at 85°C\n\nPlacing
+          the 85°C dried high flow container into a 8.7 litre dry box achieved a humidity
+          of 5% after 4 hours.\n\n85°C dried silica gel in an empty 8.7 litre dry
+          box\n\nAdditionally after testing, the same silica gel used to perform the
+          tests were further dried in the oven at 120°C to determine how much remaining
+          weight could be removed.  After drying for an additional 2 hours in the
+          oven, the average total removable weight from the tested silica gel was
+          12.5%. Therefore, the silica gel dried at 65°C had 2.5% of removable weight
+          remaining, and the 85°C dried silica gel had 0.7% of removable weight remaining.\n\nPlease
+          note that these test will differ when drying more than 1 container or when
+          drying in a different filament dryer. More test are still underway.\n\n####
+          Filament Bag Testing\n\nFilaments are often packaged in bags made entirely
+          from plastic, or plastic with additional aluminium inner layer. The bags
+          can sometimes be reusable which can allow for a cost effective filament
+          storage solution. To test the effectiveness of such storage solutions, a
+          half empty spool of ABS was dried at 70°C for over 9 hours before letting
+          it cool to room temperature and storing within one of the storage solutions.
+          Each test had a hygrometer placed close to the coils of filament to measure
+          the humidity within. Tests were also repeated to find the effectiveness
+          of adding a high capacity desiccant core (with ~68g of silica gel). All
+          tests were repeated using the same spool and hygrometer. A reusable vacuum
+          bag was used to simulate a resealable plastic bag, whilst a resealable aluminium
+          foil bag was reused from a spool purchase. No vacuum was applied to either
+          storage solutions. Data was recorded hourly, but only data points with humidity
+          changes was graphed. Ambient humidity was greater than 60% in an non air
+          conditioned room.\n\nResealable plastic bag vs. foil filament bag (with/without
+          desiccant)\n\nFrom the tests, it can be seen that the aluminium foil bag
+          provided the most effective filament storage solution that can even be used
+          without desiccant. Humidity remained stable in the foil bag without desiccant
+          but an even lower humidity of 3% was achieved when used with desiccant.
+          This can be particularly beneficial for storing moisture sensitive filaments
+          like TPUs and nylons. The plastic resealable bag on the other hand only
+          had an acceptable result when used with desiccant, as the plastic was not
+          a particularly effective barrier against moisture. A low humidity was still
+          maintained when using with desiccant but will likely require drying after
+          a few months. This can still be sufficient for less moisture sensitive materials.\n\n###
+          Designer Notes\n\nShout out to some great alternative designs on MakerWorld
+          which had inspired me to create my own version\n\n- [High Air Flow Desiccant
+          Holder for Spools by Dän](https://makerworld.com/en/models/641332-high-air-flow-desiccant-holder-for-spools)\n-
+          [Desiccant Holder for Spool - High Airflow by Motiform Studio](https://makerworld.com/en/models/935352-desiccant-holder-for-spool-high-airflow)\n-
+          [Spool Silica Desiccant Container by Darwinian](https://makerworld.com/en/models/669118-spool-silica-desiccant-container)\n\n####
+          Updates\n\nPlease note that updates will likely be made in the future for
+          further improvements to the design or for additional sizes. Please check
+          in case there are any changes to the design.\n\n- 01/07/2026 - Opening tool
+          for Standard, Large and XL core was added\n- 24/12/2025 - Large Core funnels
+          were added. Sizing of funnels were changed to be two sizes, 70mm & 100mm
+          diameter opening.\n- 14/12/2025 - Hygrometer end rings have been updated
+          to have a better fit with hygrometers that weren't purchased from Bambu
+          Lab Maker's Supply\n- 07/12/2025 - XL Core 60mm - 67mm width spools have
+          been updated with the high capacity variant. Standard Core and XL Core hygrometer
+          end rings have been updated for toolless hygrometer removal.\n- 26/11/2025
+          - XL Core for 57-65mm width spools was changed to be 55-62mm for Geetech
+          spools. High capacity variant was also added, but hygrometer version is
+          yet to be added.\n- 24/10/2025 - Large Core HF was updated to V1.2\n- 23/10/2025
+          - Some print profiles have been updated with Bambu Studio 2.3.0.70 for printers
+          with high flow nozzles\n- 26/07/2025 - Adapter rings for Standard & Large
+          Cores were added in the profile “Standard & Large Core Adapter for 63-80mm
+          Inner Dia Spools”\n  \n  Hygrometer version added to \"XL Core 60mm - 67mm
+          width spools (Sunlu Gen 1 & Gen 2)\"\n  \n- 17/07/2025 - Large Cores were
+          move to their own print profiles “Large Core 62mm - 69mm width spools (Bambu
+          Spool)”\n- 14/07/2025 - 6 Large Core containers were added to “62mm - 69mm
+          width spools (Bambu Spool)” print profile\n- 12/07/2025 - RFID tags for
+          Standard Core were added. 47mm-54mm sizes were also uploaded.\n- 24/06/2025
+          - Funnels were adjusted to be more taller to reduce the risk of silica gel
+          beads bouncing out.\n- 04/06/2025 - XL Core sizes for Sunlu Gen 1 and Gen
+          2 were added.\n- 20/05/2025 - Standard Core hygrometer version was added\n-
+          02/05/2025 - Updated all print profiles with latest Bambu Studio. Adjustments
+          to slicer settings for better bottom mesh strength on high capacity containers.\n-
+          17/04/2025 - Modified funnel shape to be slightly taller\n- 13/04/2025 -
+          Re-uploaded \"desiccant_core_62mm-69mm.3mf\" using latest Bambu Studio version.
+          Previous 3mf file may have had backwards compatibility issues with older
+          Bambu Studio versions\n- 27/03/2025 - Added desiccant cores for 66mm - 73mm
+          and 71mm - 78mm width spools\n- 22/03/2025 V1.1 Update - XL desiccant core
+          added. Designs updated with size markings and thicker cap threads.\n\n####
+          Work in progress\n\n- V1.2 update for slightly increased mesh surface area
+          with additional optimisations\n- RFID tags for other core sizes\n- RFID
+          tag compatibility with Standard & Large Core adapter rings\n- RFID tags
+          for other filaments, e.g. PLA Wood, PLA Aero, etc.\n- RFID tag holder\n-
+          XL Core update for larger threads\n- Hygrometer end ring for Large Core\n-
+          Hygrometer version for Geeetech\n- Alternative end rings for other core
+          sizes\n- Alternative end ring for clip in spool desiccant core\n- Standard
+          Core sizing for <37mm spool widths\n- Filament storage testing\n- Oven drying
+          testing\n\nBoost Me (for free)\n\nIf you like my work, Boosts are greatly
+          appreciated. This design had went through months of iterations and testing
+          for reliability, printability, performance and efficacy.  This design alone
+          already has over 50 different variations created and optimised, and such
+          designs takes multiple weeks to develop and refine. Boosts mean a lot to
+          me as it fuels my passion for 3D printing and allows me to spend time creating
+          highly refined designs for everyone for free.\n\n[BAMBU](https://makerworld.com/en/search/models?keyword=tag:%20BAMBU)\n\n[BAMBULAB](https://makerworld.com/en/search/models?keyword=tag:%20BAMBULAB)\n\n[BamBulab](https://makerworld.com/en/search/models?keyword=tag:%20BamBulab)\n\n[Bambu](https://makerworld.com/en/search/models?keyword=tag:%20Bambu)\n\n[3d
+          printer](https://makerworld.com/en/search/models?keyword=tag:%203d%20printer)\n\n[flow](https://makerworld.com/en/search/models?keyword=tag:%20flow)\n\n[box](https://makerworld.com/en/search/models?keyword=tag:%20box)\n\n[bead](https://makerworld.com/en/search/models?keyword=tag:%20bead)\n\n[desiccant](https://makerworld.com/en/search/models?keyword=tag:%20desiccant)\n\n[bambu
+          spool](https://makerworld.com/en/search/models?keyword=tag:%20bambu%20spool)\n\n[container](https://makerworld.com/en/search/models?keyword=tag:%20container)\n\n[filament](https://makerworld.com/en/search/models?keyword=tag:%20filament)\n\n[dryer](https://makerworld.com/en/search/models?keyword=tag:%20dryer)\n\n[dry](https://makerworld.com/en/search/models?keyword=tag:%20dry)\n\n[silica](https://makerworld.com/en/search/models?keyword=tag:%20silica)\n\n[silica
+          gel](https://makerworld.com/en/search/models?keyword=tag:%20silica%20gel)\n\n[AMS](https://makerworld.com/en/search/models?keyword=tag:%20AMS)\n\n[creality](https://makerworld.com/en/search/models?keyword=tag:%20creality)\n\n[esun](https://makerworld.com/en/search/models?keyword=tag:%20esun)\n\n[overture](https://makerworld.com/en/search/models?keyword=tag:%20overture)\n\n[prusa](https://makerworld.com/en/search/models?keyword=tag:%20prusa)\n\n[anycubic](https://makerworld.com/en/search/models?keyword=tag:%20anycubic)\n\n[sunlu](https://makerworld.com/en/search/models?keyword=tag:%20sunlu)\n\n[sovol](https://makerworld.com/en/search/models?keyword=tag:%20sovol)\n\n[polymaker](https://makerworld.com/en/search/models?keyword=tag:%20polymaker)\n\n[weight](https://makerworld.com/en/search/models?keyword=tag:%20weight)\n\n[air](https://makerworld.com/en/search/models?keyword=tag:%20air)\n\n[tpu](https://makerworld.com/en/search/models?keyword=tag:%20tpu)\n\n[TPU](https://makerworld.com/en/search/models?keyword=tag:%20TPU)\n\n[nylon](https://makerworld.com/en/search/models?keyword=tag:%20nylon)\n\n[polycarbonate](https://makerworld.com/en/search/models?keyword=tag:%20polycarbonate)\n\n[dehydrator](https://makerworld.com/en/search/models?keyword=tag:%20dehydrator)\n\n[petg](https://makerworld.com/en/search/models?keyword=tag:%20petg)\n\n[canister](https://makerworld.com/en/search/models?keyword=tag:%20canister)\n\n[hygro
+          meter](https://makerworld.com/en/search/models?keyword=tag:%20hygro%20meter)\n\n[h2d](https://makerworld.com/en/search/models?keyword=tag:%20h2d)\n\n[ams
+          2](https://makerworld.com/en/search/models?keyword=tag:%20ams%202)\n\n[AMS
+          - Lite](https://makerworld.com/en/search/models?keyword=tag:%20AMS%20-%20Lite)\n\n[airflow](https://makerworld.com/en/search/models?keyword=tag:%20airflow)\n\n[lock](https://makerworld.com/en/search/models?keyword=tag:%20lock)\n\n[NFC](https://makerworld.com/en/search/models?keyword=tag:%20NFC)\n\n[rfid](https://makerworld.com/en/search/models?keyword=tag:%20rfid)\n\n[pod](https://makerworld.com/en/search/models?keyword=tag:%20pod)\n\n[storage](https://makerworld.com/en/search/models?keyword=tag:%20storage)\n\n[drybox](https://makerworld.com/en/search/models?keyword=tag:%20drybox)\n\n[p2s](https://makerworld.com/en/search/models?keyword=tag:%20p2s)\n\n[ams
+          ht](https://makerworld.com/en/search/models?keyword=tag:%20ams%20ht)\n\n###
+          Comment & Rating (11546)\n\nAdd Photo\n\n(0/1000)\n\nPost\n\n---\n\nAll\n\nTop\n\nMost
+          Likes\n\nNewest First\n\nMost Replies\n\n#### License\n\nThis user content
+          is licensed under a Standard Digital File License.\n\nYou shall not share,
+          sub-license, sell, rent, host, transfer, or distribute in any way the digital
+          or 3D printed versions of this object, nor any other derivative work of
+          this object in its digital or physical format (including - but not limited
+          to - remixes of this object, and hosting on other digital platforms). The
+          objects may not be used without permission in any way whatsoever in which
+          you charge money, or collect fees.\n\n### Ideas for you\n\n[Benchy Bambu
+          Pla Basic](https://makerworld.com/en/models/40146-benchy-bambu-pla-basic)\n\n[Benchy
+          Bambu Pla Basic](https://makerworld.com/en/models/40146-benchy-bambu-pla-basic
+          \"Benchy Bambu Pla Basic\")\n\n[Bambu Lab](https://makerworld.com/en/@BambuLab)\n\n397.6
+          k\n\n12.3 k\n\n[3D Printing Starter Kit –Toolkit P1S/P2s](https://makerworld.com/en/models/2346559-3d-printing-starter-kit-toolkit-p1s-p2s)\n\n[3D
+          Printing Starter Kit –Toolkit P1S/P2s](https://makerworld.com/en/models/2346559-3d-printing-starter-kit-toolkit-p1s-p2s
+          \"3D Printing Starter Kit –Toolkit P1S/P2s\")\n\n[arts et impression](https://makerworld.com/en/@atimpression)\n\n8.4
+          k\n\n3.8 k\n\n[AMS 2 Pro Lattice Dry Pods](https://makerworld.com/en/models/2320073-ams-2-pro-lattice-dry-pods)\n\n[AMS
+          2 Pro Lattice Dry Pods](https://makerworld.com/en/models/2320073-ams-2-pro-lattice-dry-pods
+          \"AMS 2 Pro Lattice Dry Pods\")\n\n[dedge](https://makerworld.com/en/@dedge)\n\n28
+          k\n\n5.5 k\n\n[Perfectly clean bed for perfect prints!](https://makerworld.com/en/models/1313798-perfectly-clean-bed-for-perfect-prints)\n\n[Perfectly
+          clean bed for perfect prints!](https://makerworld.com/en/models/1313798-perfectly-clean-bed-for-perfect-prints
+          \"Perfectly clean bed for perfect prints!\")\n\n[LorenzCR](https://makerworld.com/en/@LorenzCR)\n\n20.6
+          k\n\n2.9 k"
+        kind: public.html.markdoc.v0
+      size: 2.797979e+06
+      time: '2026-09-03T21:49:39Z'
+      url: https://makerworld.com/en/models/1193993-high-performance-spool-desiccant-container-holder#profileId-1214551
+---
