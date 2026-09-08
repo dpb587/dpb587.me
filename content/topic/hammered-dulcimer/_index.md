@@ -2,7 +2,7 @@
 description: A journal about learning this instrument (and music theory).
 params:
   topicType:
-    featured: true
+    featured: 1
     features:
     - kind: journal
       params:

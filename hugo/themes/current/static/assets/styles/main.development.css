@@ -334,6 +334,9 @@
   .end {
     inset-inline-end: var(--spacing);
   }
+  .end\! {
+    inset-inline-end: var(--spacing) !important;
+  }
   .-top-2 {
     top: calc(var(--spacing) * -2);
   }
@@ -1742,6 +1745,11 @@
       border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
     }
   }
+  .divide-neutral-200 {
+    :where(& > :not(:last-child)) {
+      border-color: var(--color-neutral-200);
+    }
+  }
   .divide-pink-900 {
     :where(& > :not(:last-child)) {
       border-color: var(--color-pink-900);
@@ -2092,6 +2100,9 @@
   .pt-1 {
     padding-top: calc(var(--spacing) * 1);
   }
+  .pt-1\.5 {
+    padding-top: calc(var(--spacing) * 1.5);
+  }
   .pt-2 {
     padding-top: calc(var(--spacing) * 2);
   }
@@ -2357,6 +2368,9 @@
   }
   .text-neutral-400 {
     color: var(--color-neutral-400);
+  }
+  .text-neutral-500 {
+    color: var(--color-neutral-500);
   }
   .text-neutral-600 {
     color: var(--color-neutral-600);
@@ -2743,10 +2757,24 @@
       }
     }
   }
+  .group-hover\:text-stone-900 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-stone-900);
+      }
+    }
+  }
   .group-hover\:text-white {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         color: var(--color-white);
+      }
+    }
+  }
+  .group-hover\:underline {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        text-decoration-line: underline;
       }
     }
   }

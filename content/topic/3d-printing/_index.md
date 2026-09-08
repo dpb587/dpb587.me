@@ -2,7 +2,7 @@
 description: A recent hobby with my Bambu Lab X2D.
 params:
   topicType:
-    featured: true
+    featured: 1
     features:
     - kind: journal
       params:

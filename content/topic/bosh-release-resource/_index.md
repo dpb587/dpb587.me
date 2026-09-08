@@ -1,15 +1,6 @@
 ---
 description: A Concourse resource to publish BOSH releases using best practices.
 params:
-  projectType:
-    githubRepositoryList:
-    - url: https://github.com/dpb587/bosh-release-resource
-    group: Concourse Resource Type
-    languages:
-    - Go
-    relatedContent:
-    - /post/2018/new-concourse-resource-for-bosh-releases-20181223
-    status: inactive
   topicType:
     features:
     - kind: github-repository

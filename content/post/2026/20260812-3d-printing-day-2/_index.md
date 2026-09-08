@@ -25,7 +25,7 @@ After moving around some furniture and making space for the new setup, it was fi
 
 Finally, I was able to print my first Benchy sample in PLA True Red! It was a bit magical to watch the machine move around, and the timelapse videos are a fun artifact, too.
 
-{{< video ref="./embed/media-jdpxk6gz7d5c.md" poster-frame="last" >}}
+{{< video ref="./embed/media-jdpxk6gz7d5c.md" caption="Print Timelapse - Benchy" poster-frame="last" >}}
 
 ## Filament Spool Tires
 
@@ -33,5 +33,5 @@ I saw recommendations that cardboard filament spools (like the ones packaged wit
 
 {{< link-embed href="https://makerworld.com/en/models/32165-inland-bambu-lab-ams-cardboard-spool-adapter-ring#profileId-28796" >}}
 
-{{< video ref="./embed/media-bgdnhv931rqj.md" poster-frame="last" >}}
-{{< video ref="./embed/media-zhg6kv11ztg8.md" poster-frame="last" >}}
+{{< video ref="./embed/media-bgdnhv931rqj.md" caption="Print Timelapse - Tire (A)" poster-frame="last" >}}
+{{< video ref="./embed/media-zhg6kv11ztg8.md" caption="Print Timelapse - Tire (B)" poster-frame="last" >}}

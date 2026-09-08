@@ -4,17 +4,8 @@ identifier:
 - propertyID: github/repository
   value: https://github.com/dpb587/gget
 params:
-  projectType:
-    githubRepositoryList:
-    - url: https://github.com/dpb587/gget
-    group: Command Line Interface
-    languages:
-    - Go
-    status: active
-    website:
-      url: https://gget.io/
   topicType:
-    featured: true
+    featured: 1
     features:
     - kind: github-repository
       params:

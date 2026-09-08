@@ -1,6 +1,6 @@
 ---
 params:
   topicType:
-    featured: true
+    featured: 1
 title: National Parks
 ---

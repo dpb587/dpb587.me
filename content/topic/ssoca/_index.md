@@ -4,14 +4,17 @@ identifier:
 - propertyID: github/repository
   value: https://github.com/dpb587/ssoca
 params:
-  projectType:
-    group: Network Security
-    languages:
-    - Go
-    status: inactive
   topics:
     golang: {}
     openvpn: {}
+  topicType:
+    features:
+    - kind: github-repository
+      params:
+        url: https://github.com/dpb587/ssoca
+    - kind: website
+      params:
+        url: https://dpb587.github.io/ssoca/reference/
 title: SSOCA Service Manager
 ---
 

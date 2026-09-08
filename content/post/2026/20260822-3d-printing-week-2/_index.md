@@ -17,9 +17,9 @@ First I printed a set of the high flow, fine mesh spools, but then I switched to
 
 {{< link-embed href="https://makerworld.com/en/models/1193993-high-performance-spool-desiccant-container-holder#profileId-1214551" >}}
 
-{{< video ref="./embed/media-t060jy0dfyvv.md" poster-frame="last" >}}
+{{< video ref="./embed/media-t060jy0dfyvv.md" caption="Print Timelapse - Spool Containers (Fine Mesh)" poster-frame="last" >}}
 
-{{< video ref="./embed/media-jbg2kjcc7ft5.md" poster-frame="last" >}}
+{{< video ref="./embed/media-jbg2kjcc7ft5.md" caption="Print Timelapse - Spool Containers (Standard Mesh)" poster-frame="last" >}}
 
 ## Multi-color Paris Cityscape Print
 
@@ -30,4 +30,4 @@ I tried out another cityscape print of Paris - also part of my plans to make cit
 
 {{< link-embed href="https://makerworld.com/en/models/1247384-paris-france-3d-miniature-v2#profileId-1269173" >}}
 
-{{< video ref="./embed/media-n50y2kprqnyd.md" poster-frame="last" >}}
+{{< video ref="./embed/media-n50y2kprqnyd.md" caption="Print Timelapse - Paris" poster-frame="last" >}}

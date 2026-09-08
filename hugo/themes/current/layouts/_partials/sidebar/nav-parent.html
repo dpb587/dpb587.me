@@ -4,8 +4,9 @@
 	{{ template "item" .Parent }}
 {{ else if .Params.topics }}
 	{{ range $k, $v := .Params.topics }}
-		{{ if $v }}
-			{{ template "item" ( site.GetPage ( printf "/topic/%s" $k ) ) }}
+		{{ $topic := ( site.GetPage ( printf "/topic/%s" $k ) ) }}
+		{{ if $topic.Params.topicType.featured }}
+			{{ template "item" $topic }}
 			
 			{{ break }}
 		{{ end }}

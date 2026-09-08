@@ -1,13 +1,8 @@
 ---
 description: A Go library and toolkit for working with RDF data structures and serializations.
 params:
-  projectType:
-    group: Software Library (Go)
-    languages:
-    - Go
-    status: active
   topicType:
-    featured: true
+    featured: 1
     features:
     - kind: github-repository
       params:

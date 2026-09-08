@@ -1,0 +1,83 @@
+{{ $otherTopics := slice }}
+{{ $relTopics := slice }}
+{{ range $k, $_ := .Params.topics }}
+  {{ $topic := site.GetPage ( printf "topic/%s" $k ) }}
+  {{ if $topic }}
+    {{ if eq $topic.Layout "journal" }}
+        {{ $relTopics = $relTopics | append $topic }}
+    {{ else }}
+        {{ $otherTopics = $otherTopics | append $topic }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if or ( gt ( len $relTopics) 0 ) ( gt ( len $otherTopics ) 0 ) }}
+    <section id="related" class="max-w-4xl mx-auto pt-8 space-y-4">
+      <header class="flex items-center">
+        <div class="h-px w-8 bg-neutral-400"></div>
+        <h2 class="text-xl font-serif font-semibold flex-initial px-2">Related</h2>
+        <div class="h-px bg-neutral-400 grow"></div>
+      </header>
+        {{ if gt ( len $relTopics) 0 }}
+            {{ range $topic := $relTopics }}
+                <section class="max-w-4xl mx-auto">
+                    <header class="flex items-center gap-2 pl-2">
+                        <div class="text-xs uppercase"><a class="font-semibold hover:underline hover:text-sky-800" href="{{ $topic.RelPermalink }}">{{ $topic.Title }}</a></div>
+                        <div class="grow relative h-px bg-neutral-300"></div>
+                    </header>
+                    <div class="divide-y divide-neutral-200">
+                        {{ $topicPages := where site.Pages ( printf "Params.topics.%s" ( strings.TrimSuffix "/" ( strings.TrimPrefix "/topics/" .RelPermalink ) ) ) "ne" nil }}
+                        {{ $prev := ( where $topicPages "Date" "lt" $.Date ).ByDate | last 1 }}
+                        {{ $next := ( where $topicPages "Date" "gt" $.Date ).ByDate | first 1 }}
+                        {{ if gt ( len $next ) 0 }}
+                            {{ template "link" dict
+                            "rel" "Next"
+                            "page" ( index $next 0 )
+                            }}
+                        {{ end }}
+                        {{ if gt ( len $prev ) 0 }}
+                            {{ template "link" dict
+                            "rel" "Previous"
+                            "page" ( index $prev 0 )
+                            }}
+                        {{ end }}
+                    </div>
+                </section>
+            {{ end }}
+        {{ end }}
+        {{ if gt ( len $otherTopics ) 0 }}
+            <section class="max-w-4xl mx-auto px-2">
+                <header class="flex items-center gap-2">
+                    <div class="text-xs uppercase"><span class="font-semibold">Topics</span></div>
+                    <div class="grow relative h-px bg-neutral-300"></div>
+                </header>
+                <div>
+                    <div class="flex gap-1.5 py-1.5">
+                        <div class="pt-1">{{ partial "heroicons/inline" ( dict "icon" "16/solid/tag" "attrs" `class="size-4 text-neutral-400"` ) }}</div>
+                        <div>
+                            {{ range $i, $topic := $otherTopics }}
+                                {{ if gt $i 0 }}<span>&middot;</span>{{ end }}
+                                <a href="{{ $topic.RelPermalink }}" class="underline group-hover:text-sky-800">{{ $topic.Title }}</a>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {{ end }}
+    </section>
+{{ end }}
+
+{{ define "link" }}
+    <div class="flex">
+        <div class="pt-2.5">{{ partial "heroicons/inline" ( dict "icon" "16/solid/link" "attrs" `class="size-4 text-neutral-400"` ) }}</div>
+        <a href="{{ .page.RelPermalink }}" class="grow block group pl-1.5 pr-2 pt-1.5 pb-2">
+            <div class="flex justify-between items-baseline">
+                <strong class="font-medium group-hover:underline group-hover:text-sky-800">{{ .page.Title }}</strong>
+                <div class="text-sm text-neutral-500">{{ .rel }} &middot; {{ .page.Date.Format "2006-01-02" }}</div>
+            </div>
+            {{ if .page.Description }}
+                <div class="text-sm text-neutral-500 group-hover:text-sky-800">{{ .page.Description }}</div>
+            {{ end }}
+        </a>
+    </div>
+{{ end }}

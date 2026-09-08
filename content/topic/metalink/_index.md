@@ -5,16 +5,6 @@ identifier:
 - propertyID: github/repository
   value: https://github.com/dpb587/metalink
 params:
-  projectType:
-    group: Software Library (Go)
-    languages:
-    - Go
-    relatedContent:
-    - /post/2017/documenting-blobs-with-metalink-files-20171009
-    - /post/2018/metalink-repositories-background-and-motivation-20181228
-    - /post/2018/metalink-repositories-mirroring-third-party-dependencies-20181230
-    - /post/2019/metalink-repositories-separation-of-concerns-20190123
-    status: inactive
   topics:
     bosh: {}
     golang: {}

@@ -15,7 +15,7 @@ Next was a "poop" bin to collect all the filament change poops that come out the
 
 {{< link-embed href="https://makerworld.com/en/models/2677120-x2d-p2s-poop-bin#profileId-2964185" >}}
 
-{{< video ref="./embed/media-bqb8p0d4r617.md" poster-frame="last" >}}
+{{< video ref="./embed/media-bqb8p0d4r617.md" caption="Print Timelapse - Poop Bin" poster-frame="last" >}}
 
 ## 3D Modeling
 

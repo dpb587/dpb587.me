@@ -12,4 +12,4 @@ type: showandtell
 
 Progress learning a new hymn - Amazing Grace - and practicing left/right hand coordination...
 
-{{< video ref="embed/media-z0yffhzbqf3x.md" >}}
+{{< video ref="embed/media-z0yffhzbqf3x.md" caption="Video Recording" >}}

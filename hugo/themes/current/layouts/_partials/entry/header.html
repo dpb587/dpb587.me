@@ -7,8 +7,8 @@
 	) }}
 {{ else if .Params.topics }}
 	{{ range $k, $v := .Params.topics }}
-		{{ if $v }}
-			{{ $topic := ( site.GetPage ( printf "/topic/%s" $k ) ) }}
+		{{ $topic := ( site.GetPage ( printf "/topic/%s" $k ) ) }}
+		{{ if $topic.Params.topicType.featured }}
 			{{ $subtitles = $subtitles | append ( dict
 				"href" ( strings.TrimSuffix "/" $topic.RelPermalink )
 				"text" $topic.LinkTitle

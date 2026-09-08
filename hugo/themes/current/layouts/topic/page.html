@@ -19,9 +19,17 @@
 					"classGutter" "px-4"
 				) }}
 				{{ if gt ( len $navSlug ) 0 }}
+					{{ $pages := site.Pages }}
+					{{ with .Params.topicType.pageEnumerator }}
+					    {{ range . }}
+							{{ $pages = where $pages .key .operator .value }}
+						{{ end }}
+					{{ else }}
+					    {{ $pages = where ( where $pages "Type" "in" ( slice "article" "post" "story" ) ) ( printf "Params.topics.%s" $navSlug ) "ne" nil }}
+					{{ end }}
 					{{ partial "entry/list-groups" ( dict
 						"Page" .
-						"Groups" ( ( where ( where site.Pages "Type" "in" ( slice "article" "post" "story" ) ) ( printf "Params.topics.%s" $navSlug ) "ne" nil ).GroupByDate "2006" )
+						"Groups" ( $pages.GroupByDate "2006" )
 					) }}
 				{{ end }}
 				{{ $nested := ( collections.Union
@@ -29,7 +37,7 @@
 						.Sections
 						( where .Pages "Type" "like" "^topic($|\\-)" )
 					)
-					( where site.AllPages ( printf "Params.topics.%s.rel" $navSlug ) "eq" "parent" )
+					( where site.Pages ( printf "Params.topics.%s.rel" $navSlug ) "eq" "parent" )
 				).GroupBy "Type" }}
 				{{ if $nested }}
 					{{ $topicNames := dict

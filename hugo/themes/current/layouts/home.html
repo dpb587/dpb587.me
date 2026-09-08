@@ -95,49 +95,26 @@
 				<div class="text-center mb-16">
 					<h1 class="text-2xl md:text-4xl font-serif font-extralight">Code and Technology</h1>
 				</div>
-				<div class="font-serif grid grid-cols-7 gap-8">
-					<div class="col-span-7 md:col-span-5">
-						<ol class="divide-y divide-pink-900 text-stone-200">
-							{{ range first 3 ( where site.RegularPages "Type" "eq" "article" ).ByDate.Reverse }}
-								<li class="relative z-0">
-									<a class="block group py-3 pl-8 pr-4" href="{{ strings.TrimSuffix "/" .RelPermalink}}">
-										<strong class="block font-semibold underline text-base md:text-lg group-hover:text-stone-50 transition duration-150">{{ .Title }}</strong>
-										<span class="mt-1 md:mt-0.5 block text-sm md:text-base text-stone-300">{{ .Description }}</span>
-										<div class="absolute z-10 left-3 top-5">
-											<div class="absolute left-0.5 top-0.5 z-10 w-1.5 h-1.5 rounded-full bg-stone-300 group-hover:bg-stone-50 transition duration-150"></div>
-											<div class="absolute left-0 top-0 z-0 w-2.5 h-2.5 rounded-full border border-stone-300 opacity-0 scale-50 group-hover:border-stone-50 group-hover:opacity-100 group-hover:scale-100 transition duration-150"></div>
-										</div>
-									</a>
-								</li>
-							{{ end }}
-						</ol>
-					</div>
-					<div class="col-span-7 md:col-span-2">
-						<div class="space-y-2">
-							<div class="md:flex md:space-x-6">
-								<div class="h-1 md:h-auto md:flex-none bg-pink-900 md:w-1 rounded-full"></div>
-								<div class="pt-6 md:pt-4 md:pb-4 pl-2 md:pl-0">
-									<h1 class="block font-semibold text-base underline">Topics</h1>
-									<div class="mt-1 block text-sm text-stone-300 leading-6">
-										<!-- {recentPostsKeywords.map((keywords, keywordsIdx) => (
-											<>
-												{keywordsIdx > 0 && <><span class="mx-0.5">&middot;</span>{' '}</>}
-												<a
-													class="hover:underline"
-													href={`/taxonomy/keywords/${keywords.value}`}
-												>{keywords.value}</a>
-											</>
-										))} -->
+				<div class="font-serif">
+					<ol class="divide-y divide-pink-900 text-stone-200">
+						{{ range first 3 ( where site.RegularPages "Type" "eq" "article" ).ByDate.Reverse }}
+							<li class="relative z-0">
+								<a class="block group py-3 pl-8 pr-4" href="{{ strings.TrimSuffix "/" .RelPermalink}}">
+									<strong class="block font-semibold underline text-base md:text-lg group-hover:text-stone-50 transition duration-150">{{ .Title }}</strong>
+									<span class="mt-1 md:mt-0.5 block text-sm md:text-base text-stone-300">{{ .Description }}</span>
+									<div class="absolute z-10 left-3 top-5">
+										<div class="absolute left-0.5 top-0.5 z-10 w-1.5 h-1.5 rounded-full bg-stone-300 group-hover:bg-stone-50 transition duration-150"></div>
+										<div class="absolute left-0 top-0 z-0 w-2.5 h-2.5 rounded-full border border-stone-300 opacity-0 scale-50 group-hover:border-stone-50 group-hover:opacity-100 group-hover:scale-100 transition duration-150"></div>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+								</a>
+							</li>
+						{{ end }}
+					</ol>
 				</div>
 				<nav class="mt-16 flex items-center justify-center space-x-6 py-2">
 					<a
 						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 transition duration-75 hover:bg-pink-950 hover:text-white hover:border-pink-950"
-						href="/topics/post-type"
+						href="/topics/articles"
 					>
 						Posts
 					</a>
@@ -149,9 +126,9 @@
 					</a> -->
 					<a
 						class="border-b border-stone-200 text-lg md:text-xl font-extralight tracking-wide whitespace-nowrap leading-none px-2.5 py-1.5 transition duration-75 hover:bg-pink-950 hover:text-white hover:border-pink-950"
-						href="/topics/projects"
+						href="/topics"
 					>
-						Projects
+						Topics
 					</a>
 				</nav>
 			</div>

@@ -12,4 +12,4 @@ type: showandtell
 
 Progress learning a new Irish reel - John Stinson's (#2) - and technique for descending drone...
 
-{{< video ref="./embed/media-bzc7pd2ybtkq.md" >}}
+{{< video ref="./embed/media-bzc7pd2ybtkq.md" caption="Video Recording" >}}

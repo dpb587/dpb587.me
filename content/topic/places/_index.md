@@ -2,6 +2,6 @@
 layout: places
 params:
   topicType:
-    featured: true
+    featured: 1
 title: Places
 ---

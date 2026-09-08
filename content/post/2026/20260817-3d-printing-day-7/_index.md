@@ -28,11 +28,11 @@ A theme of Albuquerque is its morning hot air balloons (and [yearly festival](/t
 
 {{< link-embed href="https://makerworld.com/en/models/1132818-hot-air-balloon-tea-light-candle#profileId-1133342" >}}
 
-{{< video ref="./embed/media-p1g5nzpx7tn7.md" poster-frame="last" >}}
+{{< video ref="./embed/media-p1g5nzpx7tn7.md" caption="Print Timelapse - Hot Air Balloon, Envelope" poster-frame="last" >}}
 
-{{< video ref="./embed/media-n4xrnzvxj9f1.md" poster-frame="last" >}}
+{{< video ref="./embed/media-n4xrnzvxj9f1.md" caption="Print Timelapse - Hot Air Balloon, Basket" poster-frame="last" >}}
 
-{{< video ref="./embed/media-p5644t18j245.md" poster-frame="last" >}}
+{{< video ref="./embed/media-p5644t18j245.md" caption="Print Timelapse - Hot Air Balloon, Struts" poster-frame="last" >}}
 
 ## San Francisco City Print
 
@@ -40,7 +40,7 @@ Eventually, I want to learn how to print some of my own sections of cities, so S
 
 {{< link-embed href="https://makerworld.com/en/models/113500-san-francisco-california-3d-miniature#profileId-121972" >}}
 
-{{< video ref="./embed/media-vd6q64b71c85.md" poster-frame="last" >}}
+{{< video ref="./embed/media-vd6q64b71c85.md" caption="Print Timelapse - San Francisco" poster-frame="last" >}}
 
 ## Fan Deflectors Print
 
@@ -49,7 +49,7 @@ I saw recommendations to print fan deflectors which help avoid strong, direct ai
 {{< link-embed href="https://makerworld.com/en/models/1968610-right-chamber-fan-deflector-x2d-p2s-no-warping#profileId-2116508" >}}
 {{< link-embed href="https://makerworld.com/en/models/2675999-x2d-left-aux-fan-45deg-deflector-warping-denied#profileId-2962713" >}}
 
-{{< video ref="./embed/media-gv1zrtk5vptk.md" poster-frame="last" >}}
+{{< video ref="./embed/media-gv1zrtk5vptk.md" caption="Print Timelapse - Fan Deflectors" poster-frame="last" >}}
 
 ## AMS Pro Dry Pods Print
 
@@ -57,7 +57,7 @@ The AMS Pro has a few spots for dessicant holders, so I printed some "dry pods" 
 
 {{< link-embed href="https://makerworld.com/en/models/1534406-ams-2-pro-dry-pods-multiple-sizes-and-funnel#profileId-1609418" >}}
 
-{{< video ref="./embed/media-py8ppbkp4xhn.md" poster-frame="last" >}}
+{{< video ref="./embed/media-py8ppbkp4xhn.md" caption="Print Timelapse - Dry Pods" poster-frame="last" >}}
 
 ## OpenSCAD
 

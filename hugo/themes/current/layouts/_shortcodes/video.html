@@ -34,9 +34,7 @@
   </div>
   {{- $caption := or ( .Get "caption" ) $ref.Title -}}
   {{ with $caption }}
-    <figcaption class="text-xs font-serif -mb-0.5 mt-3.5 text-stone-500">
-      <a href="{{ strings.TrimSuffix `/` $ref.RelPermalink }}" hx-boost="true" hx-push-url="true">{{ . }}</a>
-    </figcaption>
+    <figcaption class="text-xs font-serif -mb-0.5 mt-3.5 text-stone-500">{{ . }}</figcaption>
   {{ end }}
 </figure>
 <prose:custom-end />
