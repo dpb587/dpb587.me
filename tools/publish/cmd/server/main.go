@@ -111,9 +111,10 @@ func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	extraHeaders := http.Header{}
 
 	var wantMarkdown bool
+
+	w.Header().Add("Vary", "Accept, Accept-Encoding")
+
 	if acceptHeader := r.Header.Get("Accept"); len(acceptHeader) > 0 {
-		extraHeaders["Vary"] = []string{"Accept"}
-		r.Header.Add("Vary", "Accept")
 		negotiatedType, _, err := negotiator.Negotiate(acceptHeader)
 		if err != nil {
 			// ignore; they get what they get
