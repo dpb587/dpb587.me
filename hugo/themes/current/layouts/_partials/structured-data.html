@@ -1,5 +1,6 @@
 {{- $sd := dict
   "@context" "https://schema.org"
+  "@id" ( strings.TrimSuffix "/" .Permalink )
   "url" ( strings.TrimSuffix "/" .Permalink )
   "author" ( dict
     "@type" "Person"
@@ -256,3 +257,61 @@
 {{- end -}}
 
 <script type="application/ld+json">{{- $sd | jsonify | safeJS -}}</script>
+
+{{- $breadcrumbs := slice -}}
+{{- $breadcrumbEval := false -}}
+{{- $breadcrumbEvalNext := . -}}
+{{- range seq 8 -}}
+  {{ if ne $breadcrumbEval $breadcrumbEvalNext }}
+    {{- $breadcrumbEval = $breadcrumbEvalNext -}}
+  {{ else }}
+    {{- break -}}
+  {{ end }}
+
+  {{/* mirrored in nav-parent.html */}}
+  {{- if and ( eq $breadcrumbEval.Type "topic" ) ( eq $breadcrumbEval.Params.topicType.featured 1 ) -}}
+    {{/* done */}}
+  {{- else if and ( ne $breadcrumbEval $breadcrumbEval.CurrentSection ) $breadcrumbEval.CurrentSection $breadcrumbEval.CurrentSection.RelPermalink -}}
+    {{- $breadcrumbEvalNext = $breadcrumbEval.CurrentSection -}}
+    {{- $breadcrumbs = $breadcrumbs | append $breadcrumbEvalNext -}}
+  {{- else if and $breadcrumbEval.Parent.RelPermalink ( ne $breadcrumbEval.Parent.RelPermalink "/" ) ( ne $breadcrumbEval.Parent.RelPermalink $breadcrumbEval.RelPermalink ) -}}
+      {{- $breadcrumbEvalNext = $breadcrumbEval.Parent -}}
+    {{- $breadcrumbs = $breadcrumbs | append $breadcrumbEvalNext -}}
+  {{- else if eq $breadcrumbEval.Type "article" -}}
+    {{- $breadcrumbEvalNext = ( site.GetPage "/topic/articles" ) -}}
+    {{- $breadcrumbs = $breadcrumbs | append $breadcrumbEvalNext -}}
+  {{- else if $breadcrumbEval.Params.topics -}}
+    {{- range $k, $v := $breadcrumbEval.Params.topics -}}
+      {{- $topic := ( site.GetPage ( printf "/topic/%s" $k ) ) -}}
+      {{- if $topic.Params.topicType.featured -}}
+        {{- $breadcrumbEvalNext = $topic -}}
+        {{- $breadcrumbs = $breadcrumbs | append $breadcrumbEvalNext -}}
+        
+        {{- break -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if gt (len $breadcrumbs) 0 -}}
+    {{- $elements := slice -}}
+    {{- range $i, $e := collections.Reverse $breadcrumbs -}}
+      {{- $elements = $elements | append ( dict
+        "@type" "ListItem"
+        "position" ( add $i 1 )
+        "name" $e.LinkTitle
+        "item" ( strings.TrimSuffix "/" $e.Permalink )
+      ) -}}
+    {{- end -}}
+    {{- $elements = $elements | append ( dict
+      "@type" "ListItem"
+      "position" ( add (len $elements) 1 )
+      "name" .LinkTitle
+    ) }}
+
+<script type="application/ld+json">{{- ( dict
+  "@context" "https://schema.org"
+  "@type" "BreadcrumbList"
+  "itemListElement" $elements
+) | jsonify | safeJS -}}</script>
+{{- end -}}

@@ -1,21 +1,22 @@
-{{ if and ( ne . .CurrentSection ) .CurrentSection .CurrentSection.RelPermalink }}
-	{{ template "item" .CurrentSection }}
-{{ else if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) ( ne .Parent.RelPermalink .RelPermalink ) }}
-	{{ template "item" .Parent }}
-{{ else if .Params.topics }}
-	{{ range $k, $v := .Params.topics }}
-		{{ $topic := ( site.GetPage ( printf "/topic/%s" $k ) ) }}
-		{{ if $topic.Params.topicType.featured }}
-			{{ template "item" $topic }}
+{{/* mirrored in structured-data.html for breadcrumbs */}}
+{{- if and ( eq .Type "topic" ) ( eq .Params.topicType.featured 1 ) -}}
+	{{/* done */}}
+{{- else if and ( ne . .CurrentSection ) .CurrentSection .CurrentSection.RelPermalink -}}
+	{{- template "item" .CurrentSection -}}
+{{- else if and .Parent.RelPermalink ( ne .Parent.RelPermalink "/" ) ( ne .Parent.RelPermalink .RelPermalink ) -}}
+	{{- template "item" .Parent -}}
+{{- else if eq .Type "article" -}}
+	{{- template "item" ( site.GetPage "/topic/articles" ) -}}
+{{- else if .Params.topics -}}
+	{{- range $k, $v := .Params.topics -}}
+		{{- $topic := ( site.GetPage ( printf "/topic/%s" $k ) ) -}}
+		{{- if $topic.Params.topicType.featured -}}
+			{{- template "item" $topic -}}
 			
-			{{ break }}
-		{{ end }}
-	{{ end }}
-{{ else if eq .Type "article" }}
-	{{ template "item" ( site.GetPage "/nav-type/article" ) }}
-{{ else if eq .Type "post" }}
-	{{ template "item" ( site.GetPage "/nav-type/post" ) }}
-{{ end }}
+			{{- break -}}
+		{{- end -}}
+	{{- end -}}
+{{- end -}}
 
 {{ define "item" }}
 	<div class="relative z-0">

@@ -1,6 +1,7 @@
 ---
 description: Notes as I learn printing and modeling.
 layout: journal
+linkTitle: Journal
 title: 3D Printing Journal
 params:
   topicType:

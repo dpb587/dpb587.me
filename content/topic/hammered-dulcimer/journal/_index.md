@@ -1,6 +1,7 @@
 ---
 description: Notes as I learn the instrument and music theory.
 layout: journal
+linkTitle: Journal
 title: Hammered Dulcimer Journal
 params:
   topicType:

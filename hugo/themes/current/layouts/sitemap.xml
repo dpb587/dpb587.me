@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {{ range where .Pages "Sitemap.Disable" "ne" true }}
+    {{- if or ( eq .Type "media" ) ( eq .Type "route" ) ( eq .Type "occupation-event" ) ( eq .Type "timeline-event" ) -}}
+      {{/* valid url w/ additional metadata and viewer, but low-value for indexing prioritization */}}
+      {{- continue -}}
+    {{- end -}}
     {{- if .Permalink -}}
   <url>
     <loc>{{ strings.TrimSuffix `/` .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
