@@ -61,7 +61,7 @@ func (h *fileHandler) serveFile(w http.ResponseWriter, r *http.Request, fr fileR
 	}
 
 	if len(fr.CanonicalUserPath) > 0 && fr.CanonicalUserPath != r.URL.Path {
-		http.Redirect(w, r, fr.CanonicalUserPath, http.StatusFound)
+		http.Redirect(w, r, fr.CanonicalUserPath, http.StatusMovedPermanently)
 
 		return true
 	}
@@ -136,14 +136,14 @@ func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	if strings.HasSuffix(r.URL.Path, "/index.html") {
+	if before, ok := strings.CutSuffix(r.URL.Path, "/index.html"); ok {
 		if h.serveFile(w, r, fileRequest{
 			FilePath:            r.URL.Path + compressionExt,
 			UserPath:            r.URL.Path,
 			CompressionExt:      compressionExt,
 			CompressionEncoding: compressionEncoding,
 			ContentType:         contentType,
-			CanonicalUserPath:   strings.TrimSuffix(r.URL.Path, "/index.html"),
+			CanonicalUserPath:   before,
 			ExtraHeaders:        extraHeaders,
 		}) {
 			return
@@ -236,6 +236,7 @@ func main() {
 			"v3-content-generated.csv",
 			"v3-content-manual.csv",
 			"v4-manual.csv",
+			"v5-topics.csv",
 		} {
 			fh, err := os.OpenFile(filepath.Join(redirectsDir, redirectFilePath), os.O_RDONLY, 0)
 			if err != nil {
