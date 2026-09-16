@@ -35,7 +35,7 @@ var compressedExts = map[string]struct{}{
 type fileHandler struct {
 	root          fs.StatFS
 	rootPath      string
-	redirectsMap  map[string]string
+	redirectsMap  redirectsMap
 	exportHandler *tildeexport.Handler
 }
 
@@ -209,8 +209,8 @@ func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if dest, ok := h.redirectsMap[r.URL.Path]; ok {
-		http.Redirect(w, r, dest, http.StatusMovedPermanently)
+	if redirectPath, ok := h.redirectsMap.Check(r.URL.Path); ok {
+		http.Redirect(w, r, redirectPath, http.StatusMovedPermanently)
 
 		return
 	}
@@ -221,15 +221,37 @@ func (h *fileHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "Not Found")
 }
 
+type redirectsMap map[string]string
+
+func (rm redirectsMap) Check(p string) (string, bool) {
+	dest, ok := rm[p]
+	if !ok {
+		return "", false
+	}
+
+	flattenHops := 16
+
+	for flattenHops > 0 {
+		if nextDest, ok := rm[dest]; ok {
+			dest = nextDest
+			flattenHops--
+
+			continue
+		}
+
+		break
+	}
+
+	return dest, true
+}
+
 func main() {
 	publicDir := os.Args[1]
 	redirectsDir := os.Args[2]
 	contentDir := os.Args[3]
 
-	type redirectMap map[string]string
-
-	redirects, err := (func() (redirectMap, error) {
-		redirects := redirectMap{}
+	redirects, err := (func() (redirectsMap, error) {
+		redirects := redirectsMap{}
 
 		for _, redirectFilePath := range []string{
 			"v2-generated.csv",
@@ -240,7 +262,7 @@ func main() {
 		} {
 			fh, err := os.OpenFile(filepath.Join(redirectsDir, redirectFilePath), os.O_RDONLY, 0)
 			if err != nil {
-				return redirectMap{}, fmt.Errorf("open %s: %v", redirectFilePath, err)
+				return redirectsMap{}, fmt.Errorf("open %s: %v", redirectFilePath, err)
 			}
 
 			defer fh.Close()
@@ -254,7 +276,7 @@ func main() {
 						break
 					}
 
-					return redirectMap{}, fmt.Errorf("read %s: %v", redirectFilePath, err)
+					return redirectsMap{}, fmt.Errorf("read %s: %v", redirectFilePath, err)
 				}
 
 				redirects[record[0]] = record[1]
@@ -383,10 +405,16 @@ func main() {
 		}
 
 		if redirectHost {
+			targetPath := r.URL.Path
+
+			if redirectPath, ok := redirects.Check(targetPath); ok {
+				targetPath = redirectPath
+			}
+
 			http.Redirect(w, r, (&url.URL{
 				Scheme: "https",
 				Host:   "dpb587.me",
-				Path:   r.URL.Path,
+				Path:   targetPath,
 			}).String(), http.StatusMovedPermanently)
 
 			return
