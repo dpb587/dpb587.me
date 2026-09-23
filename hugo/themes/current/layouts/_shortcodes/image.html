@@ -1,16 +1,41 @@
 <prose:custom-start />
+{{ $ref := false }}
+{{- with .Get "ref" -}}
+  {{- with $.Page.GetPage . -}}
+    {{- $ref = . -}}
+  {{- else -}}
+    {{- with $.Page.Resources.Get . -}}
+      {{- $ref = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if and ( .Get "ref" ) ( not $ref ) -}}
+  {{- errorf "image shortcode: page not found: %s" ( .Get "ref" ) -}}
+{{- end -}}
+{{- if $ref -}}
+  {{- if ne $ref.Type "media" -}}
+    {{- errorf "image shortcode: referenced page is not media: %s" ( .Get "ref" ) -}}
+  {{- end -}}
+  {{- if not $ref.Params.mediaType.thumbnails -}}
+    {{- errorf "image shortcode: referenced media has no thumbnails: %s" ( .Get "ref" ) -}}
+  {{- end -}}
+{{- end -}}
+{{ $caption := .Get "caption" }}
+{{- if and ( not $caption ) $ref -}}
+  {{- $caption = $ref.Title -}}
+{{- end -}}
 <figure class="border-t md:border-x md:border-b border-stone-200 overflow-hidden shadow md:rounded bg-stone-100 p-4">
   {{ if .Get "href" }}
     {{- $href := .Get `href` -}}
     {{- $u := urls.Parse $href -}}
     <a href="{{ $href | safeURL }}" class="block"
       {{- if and $u.IsAbs ( not ( hasPrefix $href .Page.Site.BaseURL ) ) }} target="blank"{{ end -}}
-    >{{ template "img" . }}</a>
+    >{{ template "img" ( dict "shortcode" . "media" $ref ) }}</a>
   {{ else }}
-    {{ template "img" . }}
+    {{ template "img" ( dict "shortcode" . "media" $ref ) }}
   {{ end }}
 
-  {{ with .Get "caption" }}
+  {{ with $caption }}
     <figcaption class="text-xs font-serif -mb-0.5 mt-3.5 text-stone-500">
         {{ . }}
     </figcaption>
@@ -20,11 +45,23 @@
 
 {{ define "img" }}
   {{/* https://github.com/gohugoio/hugo/blob/c5dca3bdeef2620e3f1b240b517e35335328d5ed/tpl/tplimpl/embedded/templates/_markup/render-image.html */}}
-  {{- $u := urls.Parse ( .Get "src" ) -}}
+  {{- $shortcode := .shortcode -}}
+  {{- if .media -}}
+    {{- $thumbnail := index .media.Params.mediaType.Thumbnails 0 -}}
+    <img class="max-h-full w-auto mx-auto" src="{{ $thumbnail.url | safeURL }}"
+      {{- with $shortcode.Get "alt" }} alt="{{ . }}"{{ else }} alt="{{ .media.Title }}"{{ end -}}
+      {{- with $shortcode.Get "title" }} title="{{ . }}"{{ end -}}
+      srcset="{{ range $idx, $tn := .media.Params.mediaType.Thumbnails }}{{ if gt $idx 0 }}, {{ end }}{{ $tn.url | safeURL }} {{ $tn.width }}w{{ end }}"
+      width="{{ $thumbnail.width }}"
+      height="{{ $thumbnail.height }}"
+      loading="lazy"
+    />
+  {{- else -}}
+  {{- $u := urls.Parse ( $shortcode.Get "src" ) -}}
   {{- $src := $u.String -}}
   {{- if not $u.IsAbs -}}
     {{- $path := strings.TrimPrefix "./" $u.Path -}}
-    {{- with or (.Page.Resources.Get $path) (resources.Get $path) -}}
+    {{- with or ($shortcode.Page.Resources.Get $path) (resources.Get $path) -}}
       {{- $src = .RelPermalink -}}
       {{- with $u.RawQuery -}}
         {{- $src = printf "%s?%s" $src . -}}
@@ -36,8 +73,9 @@
   {{- end -}}
 
   <img class="max-h-full w-auto mx-auto" src="{{ $src | safeURL }}"
-    {{- with .Get "alt" }} alt="{{ . }}"{{ end -}}
-    {{- with .Get "title" }} title="{{ . }}"{{ end -}}
+    {{- with $shortcode.Get "alt" }} alt="{{ . }}"{{ end -}}
+    {{- with $shortcode.Get "title" }} title="{{ . }}"{{ end -}}
     loading="lazy"
   />
+  {{- end -}}
 {{ end }}

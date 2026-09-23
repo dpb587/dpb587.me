@@ -1,0 +1,24 @@
+{{ $page := .page }}
+{{ $ref := .ref }}
+{{ $media := false }}
+{{ with $page.GetPage $ref }}
+	{{ $media = .Params.mediaType }}
+{{ else }}
+	{{ $u := urls.Parse $ref }}
+	{{ if not $u.IsAbs }}
+		{{ $path := strings.TrimPrefix "./" $u.Path }}
+		{{ with or ($page.Resources.Get $path) ($page.Resources.GetMatch $path) (resources.Get $path) }}
+			{{ if eq .MediaType.MainType "image" }}
+				{{ $url := .RelPermalink }}
+				{{ with $u.RawQuery }}
+					{{ $url = printf "%s?%s" $url . }}
+				{{ end }}
+				{{ with $u.Fragment }}
+					{{ $url = printf "%s#%s" $url . }}
+				{{ end }}
+				{{ $media = dict "thumbnails" (slice (dict "url" $url "width" .Width "height" .Height)) }}
+			{{ end }}
+		{{ end }}
+	{{ end }}
+{{ end }}
+{{ return $media }}

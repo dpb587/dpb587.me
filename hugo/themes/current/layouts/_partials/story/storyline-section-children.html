@@ -226,16 +226,18 @@
     <div class="{{ $gridClass }}">
       {{ range .items }}
         {{ $badge := false }}
+        {{ $thumbnails := .Params.mediaType.thumbnails }}
         {{ if .Params.mediaType.panoramaProfile }}
           {{ $badge = dict
             "title" "Panorama"
             "icon" "16/solid/globe-alt"
           }}
-        {{ else if .Params.mediaType.videoProfile }}
+        {{ else if .Params.mediaType.videoService }}
           {{ $badge = dict
             "title" "Video"
             "icon" "16/solid/video-camera"
           }}
+          {{ $thumbnails = .Params.mediaType.videoService.startThumbnails }}
         {{ end }}
         {{ partial "story/storyline-cell-image" ( dict
           "mediaClass" $mediaClass
@@ -245,7 +247,7 @@
           )
           "image" ( dict
             "alt" .Title
-            "thumbnails" .Params.mediaType.thumbnails
+            "thumbnails" $thumbnails
             "viewportSizes" "(min-width: 56rem) 18.6666rem, 50vw"
           )
           "badge" $badge

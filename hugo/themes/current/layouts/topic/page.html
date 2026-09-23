@@ -19,7 +19,7 @@
 					"classGutter" "px-4"
 				) }}
 				{{ if gt ( len $navSlug ) 0 }}
-					{{ $pages := site.Pages }}
+					{{ $pages := where site.Pages "RelPermalink" "ne" "" }}
 					{{ with .Params.topicType.pageEnumerator }}
 					    {{ range . }}
 							{{ $pages = where $pages .key .operator .value }}

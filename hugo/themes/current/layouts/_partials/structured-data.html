@@ -36,10 +36,10 @@
       {{- if or ( eq .Type "topic-place-admin1" ) ( eq .Type "topic-place-admin2" ) ( eq .Type "topic-place-park" ) -}}
         {{- $contentLocation = $contentLocation | append ( ( partial "nav-place/structured-data-ref.txt" . ) | unmarshal ) -}}
       {{- else -}}
-        {{- $keywords = $keywords | append (replace $tag "-" " ") -}}
+        {{- $keywords = $keywords | append (replace ( replace $tag "/" " " ) "-" " ") -}}
       {{- end -}}
     {{- else -}}
-      {{- $keywords = $keywords | append (replace $tag "-" " ") -}}
+      {{- $keywords = $keywords | append (replace ( replace $tag "/" " " ) "-" " ") -}}
     {{- end -}}
   {{- end -}}
 

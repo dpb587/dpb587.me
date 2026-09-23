@@ -33,8 +33,12 @@
 		{{ if and (not $isArticle) (eq $page.Type "media") }}
 			{{ $media = $page.Params.mediaType }}
 		{{ else if not $isArticle }}
-			{{ with $page.Params.hero.ref | default $page.Params.featuredMedia.ref }}
+			{{ with $page.Params.hero.ref }}
 				{{ $media = ( $page.GetPage . ).Params.mediaType }}
+			{{ else }}
+				{{ with $page.Params.featuredMedia.ref }}
+					{{ $media = partial "entry/media" ( dict "page" $page "ref" . ) }}
+				{{ end }}
 			{{ end }}
 		{{ end }}
 		{{ $thumbnails := false }}
@@ -43,6 +47,8 @@
 			{{ if .videoService }}
 				{{ $isVideo = true }}
 				{{ $thumbnails = .videoService.startThumbnails }}
+			{{ else if .modelService }}
+				{{ $thumbnails = slice ( dict "url" .modelService.posterUrl "width" 16 "height" 9 ) }}
 			{{ else }}
 				{{ $thumbnails = .thumbnails }}
 			{{ end }}

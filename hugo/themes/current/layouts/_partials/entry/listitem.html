@@ -1,0 +1,42 @@
+{{ $page := .Page }}
+{{ $marker := .Marker | default "bullet" }}
+{{ $thumbnails := false }}
+{{ with $page.Params.featuredMedia.ref }}
+    {{ $media := partial "entry/media" ( dict "page" $page "ref" . ) }}
+    {{ if $media.videoService }}
+        {{ $thumbnails = $media.videoService.endThumbnails }}
+    {{ else if $media.modelService }}
+        {{ $thumbnails = slice ( dict "url" $media.modelService.posterUrl "width" 16 "height" 9 ) }}
+    {{ else }}
+        {{ $thumbnails = $media.thumbnails }}
+    {{ end }}
+{{ end }}
+<li class="relative z-0">
+    <a class="relative block group py-3 pl-8 {{ if $thumbnails }}min-h-24 pr-30{{ else }}pr-4{{ end }}" href="{{ strings.TrimSuffix `/` $page.RelPermalink }}">
+        <strong class="block font-semibold underline md:text-lg text-stone-600 group-hover:text-sky-900 transition duration-150">{{ $page.Title }}</strong>
+        <span class="mt-1 md:mt-0.5 block text-sm md:text-base text-stone-500">{{ $page.Date.Format "2006-01-02" }}{{ with $page.Description }} &middot; {{ . }}{{ end }}</span>
+        {{ with $thumbnails }}
+            {{ $tnDefault := index . 0 }}
+            <img
+                class="absolute right-2 top-2 aspect-video h-20 w-auto object-cover"
+                alt=""
+                height="{{ $tnDefault.height }}"
+                loading="lazy"
+                src="{{ $tnDefault.url }}"
+                srcset="{{ range $idx, $tn := . }}{{ if gt $idx 0 }}, {{ end }}{{ $tn.url }} {{ $tn.width }}w{{ end }}"
+                sizes="6rem"
+                width="{{ $tnDefault.width }}"
+            />
+        {{ end }}
+        {{ if eq $marker "bullet" }}
+            <div class="absolute z-10 left-3 top-5">
+                <div class="absolute left-0.5 top-0.5 z-10 w-1.5 h-1.5 rounded-full bg-stone-500 group-hover:bg-sky-900 transition duration-150"></div>
+                <div class="absolute left-0 top-0 z-0 w-2.5 h-2.5 rounded-full border border-stone-500 opacity-0 scale-50 group-hover:border-sky-900 group-hover:opacity-100 group-hover:scale-100 transition duration-150"></div>
+            </div>
+        {{ else if eq $marker "prev" }}
+            {{ partial "heroicons/inline" ( dict "icon" "16/solid/backward" "attrs" `class="absolute left-2 top-5 -translate-y-0.5 size-4 text-stone-500 group-hover:text-sky-900 transition duration-150"` ) }}
+        {{ else if eq $marker "next" }}
+            {{ partial "heroicons/inline" ( dict "icon" "16/solid/forward" "attrs" `class="absolute left-2 top-5 -translate-y-0.5 size-4 text-stone-500 group-hover:text-sky-900 transition duration-150"` ) }}
+        {{ end }}
+    </a>
+</li>
