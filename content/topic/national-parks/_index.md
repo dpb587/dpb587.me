@@ -1,4 +1,5 @@
 ---
+layout: visualindex
 params:
   topicType:
     featured: 1

@@ -1,6 +1,8 @@
 ---
-description: Finding all the locations of chord notes
+description: Finding all the locations of chord notes.
 params:
+  featuredMedia:
+    ref: ./media/screenshot.png
   topics:
     hammered-dulcimer/journal: {}
 publishDate: 2026-07-31

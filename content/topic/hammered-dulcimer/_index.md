@@ -6,7 +6,7 @@ params:
     features:
     - kind: journal
       params:
-        ref: 3d-printing/journal
+        ref: hammered-dulcimer/journal
 title: Hammered Dulcimer
 ---
 

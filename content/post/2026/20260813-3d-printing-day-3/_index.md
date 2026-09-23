@@ -1,10 +1,13 @@
 ---
 publishDate: 2026-08-13
 title: 3D Printing, Day 3
-description: Tires; "poop" bin
+description: Tires; "poop" bin.
 params:
+  featuredMedia:
+    ref: embed/media-bqb8p0d4r617
   topics:
     3d-printing/journal: {}
+    openscad: {}
 ---
 
 More utilitatiran priting, including 5 more pairs of the [cardboard spool tires](https://makerworld.com/en/models/32165-inland-bambu-lab-ams-cardboard-spool-adapter-ring#profileId-28796) for the Inland spools.

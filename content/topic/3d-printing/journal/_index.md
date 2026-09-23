@@ -1,5 +1,5 @@
 ---
-description: Notes as I learn printing and modeling.
+description: Show and tell from learning 3D printers and modeling.
 layout: journal
 linkTitle: Journal
 title: 3D Printing Journal
@@ -8,4 +8,4 @@ params:
     featured: 2
 ---
 
-Occasional updates as I am learning or printing new things on my 3D printer.
+Periodic updates as I learn more about my Bambu Lab X2D printer and, eventually, how to create my own custom 3D creations.

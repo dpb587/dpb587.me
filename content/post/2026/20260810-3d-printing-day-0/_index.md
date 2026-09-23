@@ -1,6 +1,6 @@
 ---
 title: 3D Printing, Day 0
-description: New hobby; Bambu Lab X2D
+description: New hobby; Bambu Lab X2D.
 publishDate: 2026-08-10
 params:
   topics:

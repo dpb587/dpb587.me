@@ -1,8 +1,10 @@
 ---
 title: 3D Printing, Day 2
-description: Educational videos; unbox; benchy; spool tires
+description: Educational videos; unbox; benchy; spool tires.
 publishDate: 2026-08-12
 params:
+  featuredMedia:
+    ref: embed/media-jdpxk6gz7d5c
   topics:
     3d-printing/journal: {}
 ---

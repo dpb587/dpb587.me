@@ -1,10 +1,13 @@
 ---
 title: 3D Printing, Filament Labels
-description: Custom labels; Sandia topology
+description: Custom labels; Sandia topology.
 publishDate: 2026-08-24
 params:
+  featuredMedia:
+    ref: ./media/applied-labels.jpg
   topics:
     3d-printing/journal: {}
+    openscad: {}
 ---
 
 My new workbench arrived, so I got it assembled and moved the equipment on to it (and then ran a recalibration). I also added desiccant to the printed filament spool containers and installed them. Then I started learning more about OpenSCAD...

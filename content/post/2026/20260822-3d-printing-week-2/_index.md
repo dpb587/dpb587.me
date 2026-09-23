@@ -1,8 +1,10 @@
 ---
 title: 3D Printing, Week 2
-description: Dessicant spools; Paris
+description: Dessicant spools; Paris.
 publishDate: 2026-08-22
 params:
+  featuredMedia:
+    ref: embed/media-jbg2kjcc7ft5
   topics:
     3d-printing/journal: {}
 ---

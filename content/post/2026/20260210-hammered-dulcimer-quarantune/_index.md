@@ -1,5 +1,5 @@
 ---
-description: Class with Bowman, Marshall, Brown, Dickerson
+description: Class with Bowman, Marshall, Brown, Dickerson.
 params:
   topics:
     hammered-dulcimer/journal: {}

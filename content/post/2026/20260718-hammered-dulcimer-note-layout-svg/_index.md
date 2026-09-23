@@ -1,6 +1,8 @@
 ---
-description: Generated diagrams of instrument notes
+description: Generated diagrams of instrument notes.
 params:
+  featuredMedia:
+    ref: ./media/screenshot.png
   topics:
     hammered-dulcimer/journal: {}
 publishDate: 2026-07-18

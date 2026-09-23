@@ -1,10 +1,13 @@
 ---
 title: 3D Printing, Day 7
-description: Hot Air Ballon; SF; deflectors; dry pods; OpenSCAD
+description: Hot Air Ballon; SF; deflectors; dry pods; OpenSCAD.
 publishDate: 2026-08-17
 params:
+  featuredMedia:
+    ref: embed/media-vd6q64b71c85
   topics:
     3d-printing/journal: {}
+    openscad: {}
 ---
 
 Before the more interesting prints, some random progress from the weekend...

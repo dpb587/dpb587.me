@@ -1,6 +1,8 @@
 ---
-description: Animating note sequences to learn a song
+description: Animating note sequences to learn a song.
 params:
+  featuredMedia:
+    ref: ./media/screenshot.png
   topics:
     hammered-dulcimer/journal: {}
 publishDate: 2026-08-05
