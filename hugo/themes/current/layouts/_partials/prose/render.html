@@ -19,6 +19,11 @@
                 {{ $current.Set "markdownActive" false }}
             {{ end }}
 
+            {{ if not ( $current.Get "columnActive" ) }}
+                {{ $output = $output | append ( printf `<div class="%s">` ( $current.Get "columnClass" ) ) }}
+                {{ $current.Set "columnActive" true }}
+            {{ end }}
+
             {{ $stack = $stack | append $current }}
             {{ $lastCurrent := $current }}
 

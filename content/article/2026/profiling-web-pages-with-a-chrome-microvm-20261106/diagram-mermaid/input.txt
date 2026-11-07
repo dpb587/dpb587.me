@@ -1,0 +1,19 @@
+flowchart LR
+    client["Client"] -->|"fetch this page"| api["Structured Text API (credits, submit)"]
+    api -->|"publish job"| queue["RabbitMQ (prefetch = pool size)"]
+    queue -->|"next job"| worker["webio-worker (pool, proxy, robots, DNS)"]
+    worker -->|"upstream fetches"| egress["Squid cache + SOCKS gateway"]
+
+    subgraph slot["network namespace webio-vm-N"]
+        bridge["veth + tap (the repeated 192.168.200.0/30)"]
+        subgraph guest["guest 192.168.200.2, restored from snapshot"]
+            controller["webio-vmcontroller (Yamux :2222, CDP forward :9222)"]
+            chrome["headless Chrome (CDP :9223, proxy :3128)"]
+        end
+    end
+
+    worker -->|"CDP over :9222"| bridge
+    bridge --> controller
+    controller --> chrome
+    chrome -->|"loopback proxy :3128"| controller
+    controller -->|"Yamux streams over :2222"| bridge
